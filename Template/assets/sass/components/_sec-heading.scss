@@ -1,0 +1,45 @@
+@use "../utilities" as *;
+/**----------------------------------------
+START: Section Heading CSS
+----------------------------------------*/
+.section {
+	&_heading {
+		.sec_title {
+			margin-top: 16px;
+		}
+		&_center {
+			text-align: center;
+		}
+		&_inner {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+}
+.sec {
+	&_subtitle {
+		display: block;
+		font-family: var(--tj-ff-body);
+		font-weight: var(--tj-fw-medium);
+		font-size: 15px;
+		line-height: 1.7;
+		text-transform: uppercase;
+		color: var(--tj-color-theme-primary);
+		margin: 0;
+
+		> span {
+			color: var(--tj-color-heading-primary);
+		}
+	}
+
+	&_title {
+		text-transform: uppercase;
+		margin: 0;
+	}
+}
+.section-divider {
+	border-top: 1px solid var(--tj-color-border-1);
+}
+// END: Section Heading CSS

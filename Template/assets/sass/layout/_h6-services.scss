@@ -1,0 +1,302 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Service CSS
+----------------------------------------*/
+
+.h6 {
+	&_service {
+		&_section {
+			padding-top: 160px;
+			padding-bottom: 120px;
+			overflow: hidden;
+			@media #{$lg} {
+				padding-top: 120px;
+				padding-bottom: 120px;
+			}
+			@media #{$md} {
+				padding-top: 90px;
+				padding-bottom: 90px;
+			}
+			@media #{$sm, $xs} {
+				padding-top: 70px;
+				padding-bottom: 70px;
+			}
+		}
+		&_left {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			gap: 229px;
+			@media #{$lg} {
+				gap: 160px;
+			}
+			@media #{$md, $sm, $xs} {
+				gap: 0;
+			}
+			.section_heading {
+				max-width: 580px;
+				.sec_title {
+					margin-bottom: 20px;
+				}
+			}
+		}
+		&_items {
+			width: 100%;
+			position: relative;
+			padding-inline-start: 60px;
+			&::before {
+				content: "";
+				width: 1px;
+				height: 500%;
+				background-color: var(--tj-color-border-1);
+				position: absolute;
+				inset-inline-start: 0;
+				top: -200%;
+			}
+			@media #{$md,$sm,$xs} {
+				padding-inline-start: 0;
+				&::before {
+					display: none;
+				}
+			}
+		}
+		&_item {
+			&_wrapper {
+				max-width: 1205px;
+				margin-inline-start: auto;
+				@media #{$xl} {
+					max-width: 800px;
+				}
+				@media #{$lg} {
+					max-width: 644px;
+				}
+				@media #{$md,$sm,$xs} {
+					display: block;
+				}
+				@media #{$md} {
+					margin-top: 50px;
+				}
+				@media #{$sm,$xs} {
+					margin-top: 40px;
+				}
+			}
+
+			.service {
+				&_icon {
+					width: 100px;
+					aspect-ratio: 1/1;
+					opacity: 0.2;
+					position: relative;
+					z-index: 0;
+					transform: scale(1);
+					transition: all 0.3s ease-in-out;
+
+					@media #{$lg} {
+						width: 90px;
+					}
+					@media #{$md} {
+						width: 80px;
+					}
+					@media #{$sm} {
+						width: 70px;
+					}
+					@media #{$xs} {
+						width: 60px;
+					}
+					i {
+						width: 100%;
+						height: 100%;
+						font-size: 52px;
+						color: var(--tj-color-heading-primary);
+						background-image: url("");
+						display: inline-flex;
+						align-items: center;
+						justify-content: center;
+						line-height: 1;
+						will-change: transform;
+						transition: all 0.3s ease-in-out;
+
+						@media #{$lg} {
+							font-size: 42px;
+						}
+						@media #{$md} {
+							font-size: 31px;
+						}
+						@media #{$sm} {
+							font-size: 30px;
+						}
+						@media #{$xs} {
+							font-size: 24px;
+						}
+					}
+					&_shape {
+						width: 100%;
+						height: 100%;
+						position: absolute;
+						inset-inline-start: 0;
+						top: 0;
+						z-index: -1;
+						&_corner {
+							width: 14px;
+							height: 14px;
+							position: absolute;
+							border-style: solid;
+							border-color: var(--tj-color-heading-primary);
+							border-width: 0;
+							transition: all 0.3s ease-in-out;
+							&_tl,
+							&_tr {
+								top: 0;
+								border-top-width: 2px;
+							}
+							&_bl,
+							&_br {
+								bottom: 0;
+								border-bottom-width: 2px;
+							}
+							&_tl,
+							&_bl {
+								inset-inline-start: 0;
+								border-inline-start-width: 2px;
+							}
+							&_tr,
+							&_br {
+								inset-inline-end: 0;
+								border-inline-end-width: 2px;
+							}
+						}
+					}
+				}
+			}
+			.split-flip-text-2 {
+				.flip-layer {
+					&:first-child {
+						color: var(--tj-color-heading-primary);
+					}
+				}
+			}
+			max-width: 100%;
+			gap: 15px;
+			border-color: var(--tj-color-border-1);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 30px 0;
+			@media #{$md,$sm,$xs} {
+				max-width: 100%;
+			}
+
+			&:not(.is-active) {
+				.service_content {
+					opacity: 1;
+				}
+			}
+			&:first-child {
+				border-top: 1px solid var(--tj-color-border-1);
+			}
+			.icon_btn_rounded {
+				flex-shrink: 0;
+				opacity: 0;
+				transform-origin: left center;
+				transform: translateX(-50%) scale(0.6);
+				transition-delay: 0.6;
+			}
+			.service {
+				&_link {
+					cursor: none;
+				}
+
+				&_count {
+					min-width: inherit;
+					flex-shrink: 0;
+					align-self: flex-start;
+					line-height: 1;
+					& > span {
+						color: var(--tj-color-heading-primary);
+					}
+					@media #{$xs} {
+						font-size: 14px;
+					}
+				}
+				@media #{$md,$sm,$xs} {
+					&_icon {
+						display: inline-flex;
+					}
+				}
+				&_title {
+					margin-left: 0;
+					color: var(--tj-color-heading-primary);
+					font-size: 44px;
+					font-weight: var(--tj-fw-sbold);
+					letter-spacing: -0.02em;
+					line-height: 0.7;
+					text-transform: uppercase;
+					@media #{$lg} {
+						font-size: 40px;
+					}
+					@media #{$md,$sm,$xs} {
+						width: 100%;
+						margin-bottom: -2px;
+					}
+					@media #{$sm} {
+						font-size: 36px;
+					}
+					@media #{$xs} {
+						font-size: 28px;
+					}
+				}
+
+				&_content {
+					flex-wrap: nowrap;
+					align-items: center;
+					gap: 15px;
+
+					@media #{$sm,$xs} {
+						gap: 8px;
+						flex-direction: row;
+					}
+				}
+			}
+			&:hover,
+			&.active {
+				.service {
+					&_icon {
+						transform: scale(1.25);
+						opacity: 1;
+						i {
+							color: var(--tj-color-theme-primary);
+						}
+						&_shape {
+							&_corner {
+								border-color: var(--tj-color-theme-primary);
+							}
+						}
+					}
+					&_count {
+						& > span {
+							padding: 0;
+							color: var(--tj-color-theme-primary);
+						}
+					}
+					&_title {
+						color: var(--tj-color-theme-primary);
+					}
+				}
+				.split-flip-text-2 {
+					.flip-layer {
+						&:nth-child(2) {
+							width: 100%;
+						}
+					}
+				}
+				.icon_btn_rounded {
+					opacity: 1;
+					transform: translateX(0) scale(1);
+				}
+			}
+		}
+	}
+}
+
+/* !END: Service CSS */

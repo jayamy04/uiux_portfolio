@@ -1,0 +1,241 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Hero CSS
+----------------------------------------*/
+
+.h4 {
+	&-hero {
+		&-section {
+			position: relative;
+			background-color: var(--tj-color-theme-bg-dark);
+			min-height: 911px;
+			z-index: 0;
+			display: flex;
+			align-items: flex-end;
+			&::after {
+				position: absolute;
+			}
+			.hero {
+				&_title {
+					color: var(--tj-color-light-1);
+					display: flex;
+					flex-direction: column;
+					gap: 20px;
+					margin-inline-start: -21px;
+					margin-bottom: 40px;
+					@media #{$xxl,$xl,$lg,$md,$sm,$xs} {
+						margin-inline-start: -14px;
+					}
+					@media #{$sm,$xs} {
+						margin-inline-start: -7px;
+						margin-bottom: 27px;
+					}
+					&_greeting {
+						margin-inline-start: 10px;
+						@media #{$xxl,$xl,$lg,$md,$sm,$xs} {
+							margin-inline-start: 0;
+						}
+						&_right {
+							margin-inline-start: 12px;
+						}
+					}
+				}
+				&-image {
+					position: absolute;
+					inset-inline-start: 50%;
+					bottom: 0;
+					transform: translateX(-50%);
+					width: 62.5%;
+					z-index: -1;
+					@media #{$xxl,$xl} {
+						width: 90.5%;
+					}
+					@media #{$xl} {
+						inset-inline-start: 45%;
+					}
+					@media #{$lg} {
+						width: 100%;
+						inset-inline-start: 47%;
+					}
+					@media #{$md,$sm,$xs} {
+						width: 100%;
+						position: relative;
+						transform: translateX(0);
+						inset-inline-start: 0;
+						text-align: center;
+						margin-top: -40px;
+					}
+					@media #{$sm,$xs} {
+						margin-top: -20px;
+					}
+				}
+				&-action {
+					display: flex;
+					flex-wrap: wrap;
+					gap: 15px;
+					@media #{$sm,$xs} {
+						gap: 10px;
+					}
+				}
+				&-rate {
+					&-box {
+						max-width: 445px;
+						background-color: var(--tj-color-grey-3);
+						backdrop-filter: blur(31px);
+						padding: 58px 40px;
+						mask-image: url("../images/shapes/h4-rate-box-bg-shape.svg");
+						mask-repeat: no-repeat;
+						mask-size: cover;
+						mask-position: left;
+						margin-inline-end: -60px;
+						@media #{$xxl} {
+							margin-inline-end: -40px;
+						}
+						@media #{$xl, $lg} {
+							margin-inline-end: -30px;
+						}
+						@media #{$lg} {
+							max-width: 390px;
+							padding: 48px 30px;
+						}
+						@media #{$md, $sm,$xs} {
+							margin-inline-end: 0;
+							max-width: 100%;
+							mask-position: left bottom;
+						}
+						@media #{$xs} {
+							padding: 35px 20px;
+						}
+						.currency {
+							font-family: var(--tj-ff-heading);
+							font-size: 22px;
+							letter-spacing: -0.02em;
+							color: var(--tj-color-light-1);
+							line-height: 1;
+						}
+						.desc {
+							color: var(--tj-color-light-2);
+							margin-bottom: 26px;
+							&_wrapper {
+								padding-top: 28px;
+								margin-top: 32px;
+								border-top: 1px solid var(--tj-color-border-3);
+							}
+						}
+						.tj_icon_btn {
+							color: var(--tj-color-light-1);
+							.icon_btn {
+								background-color: var(--tj-color-theme-primary);
+							}
+							&.rounded_icon .flip-text::after {
+								background-color: var(--tj-color-light-1);
+							}
+						}
+					}
+					font-size: 120px;
+					line-height: 0.7;
+					letter-spacing: -0.04em;
+					color: var(--tj-color-light-1);
+					margin-bottom: 0;
+					@media #{$lg} {
+						font-size: 90px;
+					}
+					@media #{$md} {
+						font-size: 100px;
+					}
+					@media #{$sm,$xs} {
+						font-size: 60px;
+					}
+					&-unit {
+						font-size: 14px;
+						text-transform: uppercase;
+						color: var(--tj-color-light-3);
+						letter-spacing: 0.01em;
+						align-self: flex-end;
+					}
+					&-wrapper {
+						display: flex;
+						gap: 5px;
+					}
+				}
+				&-right {
+					display: flex;
+					flex-direction: column;
+					gap: 130px 30px;
+					align-items: flex-end;
+					.tj_scroll_down {
+						margin-inline-start: auto;
+						.text span {
+							color: var(--tj-color-light-2);
+						}
+					}
+					@media #{$md,$sm,$xs} {
+						width: 100%;
+						align-items: center;
+						.tj_scroll_down {
+							margin-inline-start: 0;
+						}
+					}
+					@media #{$md} {
+						gap: 50px 30px;
+					}
+					@media #{$sm,$xs} {
+						gap: 30px;
+					}
+				}
+			}
+		}
+		&-content {
+			padding-top: 120px;
+			padding-bottom: 80px;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+			@media #{$md,$sm,$xs} {
+				flex-wrap: wrap;
+				gap: 50px;
+				align-items: flex-start;
+				justify-content: space-between;
+				padding-bottom: 0;
+			}
+			@media #{$md} {
+				padding-top: 160px;
+			}
+			@media #{$sm,$xs} {
+				padding-top: 140px;
+				gap: 35px;
+			}
+		}
+	}
+}
+.tj-blur-shape {
+	&-wrapper {
+		opacity: 0.6;
+		position: absolute;
+		inset-inline-start: 30%;
+		top: 0;
+		transform: translateY(-60%);
+		z-index: -2;
+	}
+	width: 38.3vw;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	filter: blur(200px);
+	background-color: var(--tj-color-theme-primary);
+	@media #{$lg,$md} {
+		width: 50vw;
+		filter: blur(150px);
+	}
+	@media #{$sm,$xs} {
+		width: 100vw;
+		filter: blur(100px);
+	}
+}
+.tj-hover-parallex {
+	position: relative;
+	&-wrapper {
+		position: relative;
+	}
+}
+/* !END: Hero CSS */

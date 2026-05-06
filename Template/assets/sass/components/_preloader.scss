@@ -1,0 +1,180 @@
+@use "../utilities" as *;
+/**----------------------------------------
+START: Preloader CSS
+----------------------------------------*/
+
+.tj-preloader {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	inset: 0;
+	padding: 60px;
+	background-color: transparent;
+	display: flex;
+
+	pointer-events: none;
+	z-index: 1000;
+
+	> svg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 110vh;
+		fill: var(--tj-color-theme-bg-dark-6);
+		z-index: -1;
+	}
+
+	.loading_marquee {
+		display: flex;
+		justify-content: flex-start;
+		flex-wrap: nowrap;
+		white-space: nowrap;
+		gap: 80px;
+		font-family: var(--tj-ff-heading);
+		font-weight: 400;
+		font-size: 30px;
+		line-height: 1.3;
+		letter-spacing: -0.015em;
+		color: var(--tj-color-light-1);
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		will-change: transform;
+		animation: preloader_marquee 200s linear infinite;
+
+		.marquee_text {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			min-width: 100px;
+		}
+	}
+
+	&_bottom {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: auto;
+
+		.copyright,
+		.loading {
+			&_text {
+				color: var(--tj-color-theme-primary);
+				font-family: var(--tj-ff-body);
+				font-weight: var(--tj-fw-medium);
+				font-size: 15px;
+				line-height: 1.5;
+				text-transform: uppercase;
+
+				> span {
+					color: var(--tj-color-light-1);
+				}
+			}
+		}
+	}
+
+	@media #{$xxl} {
+		padding: 40px;
+	}
+	@media #{$xl, $lg, $md} {
+		padding: 30px;
+	}
+	@media #{$sm} {
+		padding: 30px 20px;
+
+		.loading_marquee {
+			font-size: 25px;
+			gap: 20px;
+		}
+	}
+	@media #{$xs} {
+		padding: 30px 15px;
+
+		.loading_marquee {
+			font-size: 25px;
+			gap: 10px;
+		}
+	}
+}
+
+.tj-page-transition {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	inset: 0;
+	z-index: 9999;
+	pointer-events: none;
+	visibility: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.cubes {
+		width: 100%;
+		height: 100%;
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		span {
+			width: 100%;
+			height: 100%;
+			background: var(--tj-color-theme-bg-dark);
+			transform: scale(0);
+			will-change: transform;
+		}
+	}
+
+	.brand-logo {
+		position: absolute;
+		transform-origin: center;
+		max-width: 60px;
+		width: 100%;
+		display: inline-flex;
+		animation: preloaderHeartBeat 2s infinite ease-in-out;
+	}
+
+	@media #{$xl} {
+		.cubes {
+			grid-template-columns: repeat(5, 1fr);
+		}
+	}
+	@media #{$lg, $md} {
+		.cubes {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+	@media #{$sm, $xs} {
+		.cubes {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+}
+
+@keyframes preloader_marquee {
+	0% {
+		transform: translateY(-50%) translateZ(0);
+	}
+	to {
+		transform: translateY(-50%) translate3d(-100%, 0, 0);
+	}
+}
+
+@keyframes preloaderHeartBeat {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+/* !END: Preloader CSS */

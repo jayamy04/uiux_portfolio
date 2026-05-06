@@ -1,0 +1,53 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START:  Footer CSS
+----------------------------------------*/
+.h6 {
+	&_footer {
+		&_widgets {
+			border: 0;
+			padding-bottom: 140px;
+			&_wrap {
+				flex-direction: row-reverse;
+			}
+			&::after {
+				@media #{$lg,$md,$sm,$xs} {
+					display: none;
+				}
+				@media #{$xl} {
+					left: 56%;
+				}
+			}
+			@media #{$xl,$lg} {
+				padding-bottom: 100px;
+			}
+			@media #{$md} {
+				padding-bottom: 90px;
+			}
+			@media #{$sm,$xs} {
+				padding-bottom: 70px;
+			}
+		}
+		&_right {
+			padding-inline-start: 0;
+			padding-inline-end: 50px;
+			@media #{$xxl,$xl} {
+				padding-inline-end: 10px;
+			}
+			@media #{$lg,$md,$sm,$xs} {
+				padding-inline-end: 0;
+			}
+		}
+		&_left {
+			.tj_footer_widget {
+				margin-inline-start: auto;
+				@media #{$lg,$md,$sm,$xs} {
+					margin-inline-start: 0;
+				}
+			}
+		}
+	}
+}
+
+/* !END:  Footer CSS */

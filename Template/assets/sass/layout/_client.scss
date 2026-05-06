@@ -1,0 +1,341 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Client CSS
+----------------------------------------*/
+.h1 {
+	&-client-section {
+		border-top: 1px solid var(--tj-color-border-2);
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+	&_client_wrapper {
+		.section_heading {
+			margin-bottom: 52px;
+
+			@media #{$sm, $xs} {
+				margin-bottom: 40px;
+			}
+		}
+	}
+}
+
+.tj {
+	&_client_item {
+		width: 100%;
+		background-color: var(--tj-color-theme-bg);
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 14px 11px;
+		z-index: 1;
+		transition: all 0.4s ease-in-out 0s;
+
+		&::before {
+			content: "";
+			background-color: var(--tj-color-theme-primary);
+			width: 100%;
+			height: 0;
+			bottom: 0;
+			position: absolute;
+			z-index: -1;
+			transition: all 0.5s;
+		}
+
+		> span {
+			max-width: 204px;
+			width: 100%;
+			overflow: hidden;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+
+			.front {
+				display: block;
+				transition: all 0.5s;
+			}
+			.back {
+				position: absolute;
+				top: 100%;
+				display: block;
+				transition: all 0.5s;
+			}
+		}
+
+		&:hover,
+		&:focus {
+			background-color: var(--tj-color-theme-bg);
+
+			&::before {
+				height: 100%;
+			}
+
+			> span {
+				.front {
+					transform: translateY(-150%);
+				}
+				.back {
+					top: 50%;
+					transform: translateY(-50%);
+				}
+			}
+		}
+
+		@media #{$sm} {
+			> span {
+				max-width: 170px;
+			}
+		}
+		@media #{$xs} {
+			> span {
+				max-width: 130px;
+			}
+		}
+	}
+}
+.h2 {
+	&-client-section {
+		padding-bottom: 150px;
+		.section_heading {
+			margin-bottom: 40px;
+		}
+		@media #{$xl,$lg} {
+			padding-bottom: 120px;
+		}
+		@media #{$md} {
+			padding-bottom: 90px;
+		}
+		@media #{$sm,$xs} {
+			padding-bottom: 70px;
+		}
+	}
+	&_client_wrap {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		border-top: 1px solid var(--tj-color-border-3);
+		border-left: 1px solid var(--tj-color-border-3);
+
+		.tj_client_item {
+			min-height: 260px;
+			border-bottom: 1px solid var(--tj-color-border-3);
+			border-right: 1px solid var(--tj-color-border-3);
+			position: relative;
+			&::before {
+				display: none;
+			}
+			> span {
+				img {
+					transition:
+						opacity 0.4s ease,
+						transform 0.8s ease;
+					transition-delay: 0.5s;
+				}
+				.back {
+					top: 0;
+					opacity: 0;
+				}
+			}
+			&:hover,
+			&:focus {
+				> span {
+					.front {
+						transform: translate(0);
+					}
+					.back {
+						top: 0;
+						transform: translate(0);
+					}
+				}
+			}
+			@media #{$md,$sm} {
+				min-height: 200px;
+			}
+			@media #{$xs} {
+				min-height: 150px;
+			}
+		}
+
+		@media #{$md,$sm,$xs} {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+}
+.h3 {
+	&_client {
+		&_section {
+			padding-top: 150px;
+			padding-bottom: 120px;
+			overflow: hidden;
+			@media #{$lg} {
+				padding-top: 94px;
+				padding-bottom: 120px;
+			}
+			@media #{$md} {
+				padding-top: 90px;
+				padding-bottom: 90px;
+			}
+			@media #{$sm,$xs} {
+				padding-top: 70px;
+				padding-bottom: 70px;
+			}
+			&_header {
+				.sec_subtitle {
+					margin-top: 26px;
+					@media #{$md,$sm,$xs} {
+						margin-top: 0;
+					}
+				}
+			}
+			.section_heading {
+				max-width: 885px;
+				@media #{$lg} {
+					max-width: 730px;
+				}
+				@media #{$md} {
+					margin-bottom: 50px;
+				}
+				@media #{$sm,$xs} {
+					margin-bottom: 40px;
+				}
+				.sec_title {
+					margin-bottom: 20px;
+				}
+			}
+		}
+		&_card {
+			max-width: 290px;
+			padding: 30px;
+			background-color: var(--tj-color-theme-bg-2);
+			.tj_users_list {
+				margin-bottom: 20px;
+			}
+			.trusted_text {
+				color: var(--tj-color-heading-primary);
+			}
+			@media #{$md,$sm,$xs} {
+				margin-bottom: 30px;
+			}
+			@media #{$xs} {
+				max-width: 100%;
+			}
+		}
+	}
+	&_client_wrap {
+		max-width: 886px;
+		margin-inline-start: auto;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		border-top: 1px solid var(--tj-color-border-3);
+		border-left: 1px solid var(--tj-color-border-3);
+		position: relative;
+		@media #{$md,$sm,$xs} {
+			margin-inline-start: 0;
+		}
+		@media #{$xs} {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		&::after {
+			width: 4px;
+			height: calc(33.33333333333% - 1px);
+			inset-inline-start: -1px;
+			transform: translate(-50%, calc(100% + 1px));
+		}
+		.tj_client_item {
+			aspect-ratio: 221/210;
+			border-bottom: 1px solid var(--tj-color-border-3);
+			border-right: 1px solid var(--tj-color-border-3);
+			position: relative;
+
+			&::before {
+				display: none;
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				background-color: var(--tj-color-theme-bg);
+				opacity: 0;
+			}
+			&:nth-child(3) {
+				&::after {
+					width: 100%;
+					height: 4px;
+					inset-inline-end: 0;
+					top: -1px;
+					transform: translateY(-50%);
+					opacity: 1;
+				}
+			}
+			&:nth-child(5) {
+				&::after {
+					width: 4px;
+					height: 100%;
+					inset-inline-start: 0;
+					transform: translateX(-50%);
+					opacity: 1;
+				}
+			}
+			&:nth-child(8),
+			&:nth-child(10) {
+				border-right: 0;
+			}
+			&:nth-child(10),
+			&:nth-child(11) {
+				border-bottom: 0;
+			}
+
+			> span {
+				aspect-ratio: 205 / 72;
+				max-width: 180px;
+				img {
+					transition:
+						opacity 0.4s ease,
+						transform 0.8s ease;
+					transition-delay: 0.5s;
+					width: 100%;
+				}
+				.back {
+					top: 0;
+					opacity: 0;
+				}
+				.middle {
+					position: absolute;
+					top: 0;
+					display: block;
+					opacity: 0;
+				}
+			}
+			&:not(:has(span)) {
+				@media #{$sm,$xs} {
+					display: none;
+				}
+			}
+			@media #{$lg} {
+				max-width: 150px;
+				> span {
+					max-width: 135px;
+				}
+			}
+			&:hover,
+			&:focus {
+				> span {
+					.front {
+						transform: translate(0);
+					}
+					.back {
+						top: 0;
+						transform: translate(0);
+					}
+				}
+			}
+		}
+	}
+}
+
+/* !END: Client CSS */

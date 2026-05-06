@@ -1,0 +1,54 @@
+@use "../utilities" as *;
+/**----------------------------------------
+START: Paginations CSS
+----------------------------------------*/
+.tj-pagination {
+	margin-top: 50px;
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 10px;
+		li {
+			.page-numbers {
+				display: inline-block;
+				width: 48px;
+				height: 48px;
+				// border-radius: 50%;
+				line-height: 48px;
+				text-align: center;
+				border: 1px solid var(--tj-color-border-1);
+				font-weight: var(--tj-fw-sbold);
+				color: var(--tj-color-heading-primary);
+				i {
+					line-height: 1;
+					color: var(--tj-color-heading-primary);
+					transition: all 0.5s;
+				}
+				&:hover {
+					background-color: var(--tj-color-theme-primary);
+					color: var(--tj-color-common-white);
+					border-color: var(--tj-color-theme-primary);
+					i {
+						color: var(--tj-color-common-white);
+					}
+				}
+				&.current {
+					background-color: var(--tj-color-theme-bg-dark);
+					color: var(--tj-color-common-white);
+					border-color: var(--tj-color-theme-bg-dark);
+					i {
+						color: var(--tj-color-common-white);
+					}
+				}
+				&.next {
+					font-size: 22px;
+				}
+			}
+		}
+	}
+}
+/* !END: Paginations CSS */

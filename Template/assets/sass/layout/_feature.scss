@@ -1,0 +1,46 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Feature CSS
+----------------------------------------*/
+.h1 {
+	&-features-section {
+		position: relative;
+		background-color: var(--tj-color-theme-bg);
+		z-index: 2;
+		margin-top: -2px;
+
+		padding-bottom: 140px;
+		@media #{$lg} {
+			padding-bottom: 100px;
+		}
+		@media #{$md} {
+			padding-bottom: 90px;
+		}
+		@media #{$sm,$xs} {
+			padding-bottom: 70px;
+		}
+	}
+	&_features_wrap {
+		display: grid;
+		gap: 30px;
+		grid-template-columns: 1fr 1fr 2fr;
+	}
+
+	@media #{$lg, $md} {
+		&_features_wrap {
+			grid-template-columns: 1fr 1fr;
+			.tj_feature_item {
+				&:last-child {
+					grid-column: 1/3;
+				}
+			}
+		}
+	}
+	@media #{$sm, $xs} {
+		&_features_wrap {
+			grid-template-columns: auto;
+		}
+	}
+}
+// END: Feature CSS

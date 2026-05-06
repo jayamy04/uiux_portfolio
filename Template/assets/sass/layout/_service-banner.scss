@@ -1,0 +1,126 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Service CSS
+----------------------------------------*/
+.service-banner {
+	.section_heading {
+		.sec_title {
+			max-width: 1036px;
+			width: 100%;
+			margin-top: -8px;
+
+			@media #{$xxl} {
+				max-width: 1030px;
+			}
+			@media #{$xl} {
+				max-width: 876px;
+			}
+			@media #{$lg} {
+				max-width: 736px;
+				font-size: 50px;
+			}
+			@media #{$md,$sm,$xs} {
+				max-width: 100%;
+				margin-top: 15px;
+			}
+		}
+	}
+	&-bottom {
+		margin-top: -50px;
+		.inner-action {
+			margin-bottom: 8px;
+			@media #{$sm,$xs} {
+				margin-bottom: 0;
+			}
+		}
+		@media #{$lg} {
+			margin-top: -20px;
+		}
+		@media #{$md,$sm,$xs} {
+			margin-top: 50px;
+			gap: 30px;
+		}
+		@media #{$sm,$xs} {
+			margin-top: 30px;
+		}
+	}
+	&-img {
+		height: 869px;
+		overflow: hidden;
+		margin-top: 120px;
+		@media #{$xxxl} {
+			height: 750px;
+		}
+		@media #{$xxl} {
+			height: 660px;
+		}
+		@media #{$xl} {
+			height: 570px;
+		}
+		@media #{$lg} {
+			height: 480px;
+			img {
+				height: 145%;
+				object-fit: cover;
+			}
+		}
+		@media #{$md} {
+			height: 400px;
+			margin-top: 90px;
+			img {
+				width: 100%;
+				height: 155%;
+				object-fit: cover;
+			}
+		}
+		@media #{$sm,$xs} {
+			height: 300px;
+			margin-top: 70px;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transform: none !important;
+			}
+		}
+	}
+}
+
+.inner-counter {
+	.counter {
+		font-size: 180px;
+		line-height: 0.7;
+		margin-bottom: 15px;
+		@media #{$xl} {
+			font-size: 164px;
+		}
+		@media #{$lg,$md} {
+			font-size: 145px;
+		}
+		@media #{$sm,$xs} {
+			font-size: 100px;
+		}
+	}
+	.text {
+		font-size: 24px;
+		font-weight: var(--tj-fw-medium);
+		letter-spacing: -0.02em;
+		margin: 0;
+		max-width: 350px;
+		width: 100%;
+
+		@media #{$lg,$md} {
+			font-size: 22px;
+		}
+		@media #{$sm,$xs} {
+			font-size: 20px;
+		}
+		@media #{$xs} {
+			br {
+				display: none;
+			}
+		}
+	}
+}
+/* !END: Service CSS */

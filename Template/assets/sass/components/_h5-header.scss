@@ -1,0 +1,114 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Header CSS
+----------------------------------------*/
+
+// Other headers
+.header {
+	&-5 {
+		padding: 15px;
+
+		@media #{$sm,$xs} {
+			padding: 15px 0;
+		}
+		.tj-header_wrap {
+			background-color: var(--tj-color-grey-6);
+			backdrop-filter: blur(30px);
+			padding: 0 12px 0 30px;
+			border-radius: 60px;
+			border: 1px solid var(--tj-color-border-6);
+		}
+		.site_logo {
+			padding: 18px 0;
+			.logo {
+				max-width: 155px;
+			}
+		}
+		.tj-header {
+			&_right {
+				align-items: center;
+				gap: 30px;
+				padding: 12px 0;
+				.tj_btn {
+					background-color: var(--tj-color-light-1);
+					border-radius: 50px;
+					overflow: hidden;
+					&::before {
+						background-color: var(--tj-color-theme-primary);
+					}
+					.flip-text .front {
+						color: var(--tj-color-heading-primary);
+					}
+				}
+			}
+		}
+		.site_navigation {
+			nav {
+				background-color: transparent;
+				padding: 0;
+				ul {
+					&:not(.sub-menu) {
+						> li {
+							> a {
+								color: var(--tj-color-light-2);
+								padding-top: 23px;
+								padding-bottom: 23px;
+								position: relative;
+								z-index: 1;
+							}
+
+							&.menu-item-has-children,
+							&.has-dropdown {
+								> a {
+									position: relative;
+									z-index: 1;
+									&::after {
+										top: 35px;
+									}
+								}
+							}
+
+							&.current-menu-item,
+							&.current-menu-ancestor,
+							&.current-menu-parent {
+								> a {
+									color: var(--tj-color-theme-primary);
+								}
+							}
+
+							&:hover {
+								> a {
+									color: var(--tj-color-theme-primary);
+								}
+							}
+
+							.sub-menu {
+								background: var(--tj-color-theme-bg-dark-2);
+
+								> li {
+									> a {
+										color: var(--tj-color-light-1);
+									}
+
+									&:hover {
+										> a {
+											background-color: rgba(112, 112, 112, 0.5);
+											color: var(--tj-color-light-1);
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.tj_sidebar_toggle {
+			border-radius: 50%;
+			padding: 12px;
+		}
+	}
+}
+
+/* !END: Header CSS */

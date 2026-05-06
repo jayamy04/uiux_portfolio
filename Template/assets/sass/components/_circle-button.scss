@@ -1,0 +1,66 @@
+@use "../utilities" as *;
+
+// circle
+.tj {
+	&_circle_btn {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 136px;
+		height: 136px;
+		background-color: var(--tj-color-theme-bg-dark);
+		border-radius: 50%;
+		z-index: 1;
+		font-size: 16px;
+		color: var(--tj-color-light-1);
+
+		i,
+		svg {
+			display: inline-flex;
+			line-height: 1;
+		}
+		svg {
+			max-width: 16px;
+			height: auto;
+		}
+
+		.btn_text {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 85%;
+			height: 85%;
+			transform: translate(-50%, -50%);
+			animation: rotateClock 20s infinite linear;
+		}
+
+		&:hover {
+			color: var(--tj-color-light-1);
+		}
+
+		@media #{$xl, $lg} {
+			width: 120px;
+			height: 120px;
+		}
+		@media #{$md} {
+			width: 110px;
+			height: 110px;
+		}
+		@media #{$sm, $xs} {
+			width: 100px;
+			height: 100px;
+		}
+	}
+}
+
+@keyframes rotateClock {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}

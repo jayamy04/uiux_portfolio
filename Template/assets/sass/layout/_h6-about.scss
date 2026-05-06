@@ -1,0 +1,263 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: About CSS
+----------------------------------------*/
+.h6 {
+	&_about {
+		&_section {
+			background-color: var(--tj-color-theme-bg);
+			position: relative;
+			padding-top: 160px;
+			padding-bottom: 120px;
+			display: flex;
+			align-items: center;
+			z-index: 2;
+			overflow: hidden;
+			@media #{$md,$sm,$xs} {
+				min-height: auto;
+			}
+			@media #{$lg} {
+				padding-top: 120px;
+				padding-bottom: 120px;
+			}
+			@media #{$md} {
+				padding-top: 90px;
+				padding-bottom: 90px;
+			}
+			@media #{$sm,$xs} {
+				padding-top: 70px;
+				padding-bottom: 70px;
+			}
+		}
+		&_title_heighlight {
+			color: var(--tj-color-light-2);
+		}
+	}
+
+	&_about_content_wrap {
+		position: relative;
+		z-index: 1;
+
+		.section_heading {
+			.sec_title {
+				width: 100%;
+				margin-top: -8px;
+				max-width: 1038px;
+				.title-img-anim {
+					margin-top: -10px;
+					display: inline-block;
+					width: 194px;
+					height: 71px;
+					transition: all 0.3s ease-in-out;
+					@media #{$xxl} {
+						width: 154px;
+						height: 66px;
+					}
+					@media #{$xl} {
+						width: 154px;
+						height: 64px;
+					}
+					@media #{$lg} {
+						width: 134px;
+						height: 56px;
+					}
+					@media #{$md,$sm,$xs} {
+						width: 80px;
+						height: 39px;
+					}
+					&-2 {
+						width: 80px;
+						height: 80px;
+						img {
+							border-radius: 50%;
+						}
+						@media #{$lg} {
+							width: 55px;
+							height: 55px;
+						}
+						@media #{$md} {
+							width: 40px;
+							height: 40px;
+						}
+						@media #{$sm,$xs} {
+							width: 35px;
+							height: 35px;
+						}
+					}
+					&-3 {
+						width: auto;
+						height: auto;
+						img {
+							border-radius: 0;
+							height: auto;
+							object-fit: cover;
+							width: auto;
+						}
+						@media #{$lg} {
+							width: 55px;
+						}
+						@media #{$md} {
+							width: 43px;
+						}
+						@media #{$sm,$xs} {
+							width: 35px;
+							img {
+								margin-top: -9px;
+							}
+						}
+					}
+				}
+				img {
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+					margin-top: -10px;
+					border-radius: 70px;
+				}
+
+				@media #{$lg} {
+					font-size: 50px;
+					img {
+						margin-top: -5px;
+					}
+				}
+				@media #{$md} {
+					font-size: 53px;
+				}
+				@media #{$xs} {
+					font-size: 31px;
+					img {
+						margin-top: -1px;
+					}
+				}
+			}
+		}
+	}
+	&_about {
+		&_right {
+			max-width: 1145px;
+			width: 100%;
+			margin-inline-start: auto;
+			padding-inline-start: 60px;
+			position: relative;
+			z-index: 1;
+			&::before {
+				content: "";
+				width: 1px;
+				height: 500%;
+				background-color: var(--tj-color-border-1);
+				position: absolute;
+				inset-inline-start: 0;
+				top: -200%;
+			}
+			@media #{$xxl} {
+				max-width: 870px;
+			}
+			@media #{$xl} {
+				max-width: 834px;
+			}
+			@media #{$lg} {
+				max-width: 730px;
+			}
+			@media #{$md,$sm,$xs} {
+				max-width: 100%;
+				padding-inline-start: 0;
+				&::before {
+					display: none;
+				}
+			}
+		}
+		&_action {
+			margin-top: 20px;
+			display: flex;
+			gap: 30px;
+			flex-wrap: wrap;
+			align-items: center;
+			@media #{$sm,$xs} {
+				gap: 20px;
+			}
+		}
+	}
+}
+.h6_counter {
+	&_wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		border-top: 1px solid var(--tj-color-border-1);
+	}
+	&_item {
+		width: 25%;
+		position: relative;
+		z-index: 2;
+		background-color: var(--tj-color-theme-bg);
+		max-width: 100%;
+		color: var(--tj-color-heading-primary);
+		padding: 85px 60px 97px;
+		display: flex;
+		justify-content: center;
+		border-style: solid;
+		border-color: var(--tj-color-border-1);
+		border-width: 0;
+		&:not(:last-child) {
+			border-inline-end-width: 1px;
+		}
+		@media #{$xl} {
+			padding: 65px 20px 77px;
+		}
+		@media #{$lg} {
+			padding: 45px 20px 57px;
+		}
+		@media #{$md} {
+			padding: 45px 20px 57px;
+			width: 50%;
+			&:not(:nth-last-child(1), :nth-last-child(2)) {
+				border-bottom-width: 1px;
+			}
+			&:nth-child(2n) {
+				border-inline-end-width: 0;
+			}
+		}
+		@media #{$sm,$xs} {
+			width: 100%;
+			padding: 35px 20px 47px;
+			justify-content: flex-start;
+			&:not(:last-child) {
+				border-inline-end-width: 0;
+				border-bottom-width: 1px;
+			}
+		}
+		.counter {
+			font-size: 115px;
+			letter-spacing: -0.02em;
+			font-weight: var(--tj-fw-medium);
+			line-height: 1;
+			margin-bottom: 5px;
+			@media #{$xl} {
+				font-size: 100px;
+			}
+			@media #{$lg,$md} {
+				font-size: 90px;
+			}
+			@media #{$sm,$xs} {
+				font-size: 70px;
+			}
+		}
+		.text {
+			font-size: 18px;
+			letter-spacing: 0.01em;
+			line-height: 1.555;
+			margin-bottom: 0;
+			@media #{$xl} {
+				font-size: 17px;
+			}
+			@media #{$lg} {
+				font-size: 14px;
+			}
+			@media #{$sm,$xs} {
+				font-size: 16px;
+			}
+		}
+	}
+}
+/* !END: About CSS */

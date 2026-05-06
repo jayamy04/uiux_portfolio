@@ -1,0 +1,178 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Service CSS
+----------------------------------------*/
+
+.h4 {
+	&-service {
+		&-section {
+			padding-top: 140px;
+			padding-bottom: 140px;
+			background-color: var(--tj-color-theme-bg-dark);
+			@media #{$lg} {
+				padding-top: 110px;
+				padding-bottom: 110px;
+			}
+			@media #{$md} {
+				padding-top: 70px;
+				padding-bottom: 70px;
+			}
+			@media #{$sm, $xs} {
+				padding-top: 70px;
+				padding-bottom: 70px;
+			}
+		}
+		&-header {
+			.section_heading_center {
+				max-width: 580px;
+				margin-inline-start: auto;
+				margin-inline-end: auto;
+				margin-bottom: 65px;
+				@media #{$md} {
+					margin-bottom: 50px;
+				}
+				@media #{$sm,$xs} {
+					margin-bottom: 40px;
+				}
+				.sec_subtitle > span {
+					color: var(--tj-color-light-1);
+				}
+				.sec_title {
+					color: var(--tj-color-light-1);
+				}
+			}
+		}
+
+		&-wrap {
+			display: flex;
+			flex-wrap: nowrap;
+			align-items: center;
+			gap: 30px;
+
+			@media #{$xl,$lg,$md,$sm,$xs} {
+				flex-wrap: wrap;
+			}
+
+			@media #{$md,$sm,$xs} {
+				height: auto;
+			}
+			@media #{$sm,$xs} {
+				padding: 0 15px;
+			}
+		}
+		&-item {
+			background-color: var(--tj-color-grey-5);
+			padding: 30px;
+			position: relative;
+
+			&::after {
+				content: "";
+				width: 40px;
+				height: 40px;
+				position: absolute;
+				bottom: 0;
+				inset-inline-end: 0;
+				transform: translate(50%, 50%) rotate(45deg);
+				background-color: var(--tj-color-theme-bg-dark);
+				display: block;
+			}
+			@media #{$xl, $lg} {
+				width: calc((100% - 30px) / 2);
+			}
+			@media #{$md,$sm,$xs} {
+				width: 100%;
+			}
+			&:hover {
+				.service-icon {
+					i {
+						animation: inOut 0.4s ease-in-out;
+					}
+				}
+			}
+
+			@media #{$sm,$xs} {
+				padding: 30px 20px 30px;
+			}
+		}
+		&-top {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-between;
+			.service-icon {
+				width: 90px;
+				height: 90px;
+				font-size: 40px;
+				color: var(--tj-color-light-1);
+				background-color: var(--tj-color-theme-bg-dark);
+				border: 1px solid var(--tj-color-border-3);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: all 0.3s ease-in-out;
+				i {
+					display: inline-flex;
+					line-height: 1;
+				}
+				@media #{$xl,$lg,$md} {
+					width: 80px;
+					height: 80px;
+					font-size: 36px;
+				}
+
+				@media #{$sm,$xs} {
+					width: 70px;
+					height: 70px;
+					font-size: 30px;
+				}
+			}
+		}
+		&-content {
+			padding-top: 116px;
+			.service-title {
+				font-size: 28px;
+				margin-bottom: 18px;
+				color: var(--tj-color-light-1);
+
+				a {
+					&:hover {
+						opacity: 0.5;
+					}
+				}
+
+				@media #{$sm,$xs} {
+					margin-bottom: 10px;
+				}
+				@media #{$sm} {
+					font-size: 24px;
+				}
+				@media #{$xs} {
+					font-size: 22px;
+				}
+			}
+			.service-desc {
+				font-size: 18px;
+				margin-bottom: 28px;
+				color: var(--tj-color-light-2);
+				@media #{$sm,$xs} {
+					font-size: 16px;
+					margin-bottom: 20px;
+				}
+			}
+			@media #{$xxl} {
+				padding-top: 100px;
+			}
+			@media #{$xl,$lg} {
+				padding-top: 80px;
+			}
+
+			@media #{$sm,$xs} {
+				padding-top: 50px;
+			}
+		}
+	}
+}
+
+/* !END: Service CSS */

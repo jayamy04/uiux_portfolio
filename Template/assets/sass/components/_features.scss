@@ -1,0 +1,95 @@
+@use "../utilities" as *;
+
+// Counter
+.tj {
+	&_feature_item {
+		position: relative;
+		width: 100%;
+		background-color: var(--tj-color-theme-bg-2);
+		padding: 36px 35px 56px 35px;
+		min-height: 560px;
+		max-height: 565px;
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		justify-content: space-between;
+		z-index: 1;
+		overflow: hidden;
+
+		.bg_image {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			z-index: -1;
+			object-fit: cover;
+		}
+
+		&.video {
+			background-color: #bc001e;
+
+			.counter_number {
+				color: var(--tj-color-light-1);
+			}
+			.counter_label {
+				color: var(--tj-color-light-2);
+			}
+
+			.feature_text {
+				color: var(--tj-color-light-1);
+			}
+
+			.bg_image {
+				mix-blend-mode: multiply;
+				transform: scale(1.1);
+			}
+		}
+
+		&.image {
+			padding: 0;
+
+			> img {
+				width: 100%;
+			}
+		}
+
+		.feature_text {
+			color: var(--tj-color-heading-primary);
+			text-align: right;
+		}
+
+		@media #{$xxl} {
+			min-height: 430px;
+			max-height: 430px;
+		}
+		@media #{$xl} {
+			min-height: 400px;
+			max-height: 400px;
+			padding: 36px 20px;
+		}
+		@media #{$lg, $md} {
+			min-height: 400px;
+			max-height: 400px;
+			padding: 36px 20px;
+		}
+		@media #{$sm} {
+			min-height: 350px;
+			max-height: 350px;
+			padding: 30px 20px;
+		}
+		@media #{$xs} {
+			min-height: 300px;
+			max-height: 300px;
+			padding: 30px 20px;
+			img {
+				height: 100%;
+				object-fit: cover;
+				transform: none !important;
+			}
+		}
+	}
+}

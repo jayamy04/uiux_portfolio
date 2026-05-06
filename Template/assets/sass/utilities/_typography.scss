@@ -1,0 +1,39 @@
+// Font URL
+$font-url: "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200..800&family=Spline+Sans:wght@300..700&display=swap";
+
+//Font Family
+$font-family: (
+	ff: (
+		body: "'Spline Sans', sans-serif",
+		heading: "'Bricolage Grotesque', sans-serif",
+		icons: "'agina-icons'",
+	),
+);
+
+// Font Weight
+$font-scale: (
+	fw: (
+		thin: 100,
+		elight: 200,
+		light: 300,
+		regular: 400,
+		medium: 500,
+		sbold: 600,
+		bold: 700,
+		ebold: 800,
+		black: 900,
+	),
+);
+
+// Font Size
+$font-size: (
+	fs: (
+		body: 16px,
+		h1: 90px,
+		h2: 72px,
+		h3: 48px,
+		h4: 32px,
+		h5: 28px,
+		h6: 20px,
+	),
+);

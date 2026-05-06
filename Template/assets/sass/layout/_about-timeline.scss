@@ -1,0 +1,225 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: About CSS
+----------------------------------------*/
+.tj-timeline-section {
+	padding-top: 140px;
+	padding-bottom: 160px;
+	.section_heading {
+		.sec_subtitle > span {
+			color: var(--tj-color-light-1);
+		}
+		.sec_title {
+			color: var(--tj-color-light-1);
+			@media #{$sm} {
+				font-size: 80px;
+			}
+		}
+	}
+	@media #{$lg} {
+		padding-top: 110px;
+		padding-bottom: 110px;
+	}
+	@media #{$md} {
+		padding-top: 90px;
+		padding-bottom: 90px;
+	}
+	@media #{$sm,$xs} {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+}
+
+.timeline {
+	&-content {
+		&-area {
+			max-width: 1250px;
+			width: 100%;
+			display: flex;
+			gap: 60px;
+			margin-inline-start: auto;
+			margin-inline-end: 0;
+			padding-top: 90px;
+			padding-bottom: 110px;
+			@media #{$xxl} {
+				max-width: 1020px;
+			}
+			@media #{$xl} {
+				max-width: 980px;
+				gap: 50px;
+			}
+			@media #{$lg} {
+				max-width: 100%;
+				gap: 40px;
+				padding-bottom: 90px;
+			}
+			@media #{$md,$sm,$xs} {
+				flex-wrap: wrap;
+				gap: 30px;
+				padding-top: 70px;
+				padding-bottom: 80px;
+			}
+			@media #{$sm,$xs} {
+				padding-top: 40px;
+				padding-bottom: 40px;
+			}
+		}
+		max-width: 885px;
+		width: 100%;
+		color: var(--tj-color-light-1);
+		text-transform: uppercase;
+		margin-bottom: 0;
+		@media #{$xxl} {
+			max-width: 720px;
+		}
+		@media #{$xl} {
+			max-width: 690px;
+		}
+		@media #{$lg} {
+			max-width: 650px;
+			font-size: 54px;
+		}
+	}
+	&-img {
+		max-width: 300px;
+		width: 100%;
+		margin-top: 13px;
+		@media #{$xxl} {
+			max-width: 250px;
+		}
+		@media #{$xl,$lg} {
+			max-width: 250px;
+			margin-top: 8px;
+		}
+		@media #{$md,$sm,$xs} {
+			margin-top: 0;
+		}
+		@media #{$xs} {
+			max-width: 100%;
+		}
+	}
+}
+
+.timeline-slider {
+	overflow: visible;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 65px;
+		left: -60px;
+		width: calc(100% + 120px);
+		border-bottom: 1px solid var(--tj-color-border-3);
+	}
+
+	.swiper-slide-active {
+		.timeline-year {
+			color: var(--tj-color-theme-primary);
+			span {
+				background-color: var(--tj-color-theme-primary);
+			}
+		}
+	}
+
+	&-wrapper {
+		position: relative;
+		.tj_swiper_nav_wrapper {
+			display: inline-flex;
+			justify-content: end;
+			gap: 15px;
+			width: 100%;
+			margin-bottom: 60px;
+			@media #{$md,$sm,$xs} {
+				margin-bottom: 40px;
+			}
+		}
+		.timeline {
+			&-prev,
+			&-next {
+				border: 1px solid var(--tj-color-light-1);
+				&:hover {
+					border-color: var(--tj-color-theme-primary);
+				}
+			}
+		}
+		.timeline-item {
+			max-width: 427px;
+			width: 100%;
+			margin: 0 auto;
+		}
+		.timeline-title {
+			color: var(--tj-color-light-1);
+			font-size: 24px;
+			margin-bottom: 130px;
+			@media #{$sm, $xs} {
+				margin-bottom: 80px;
+			}
+		}
+		.timeline-text {
+			color: var(--tj-color-light-2);
+			font-size: 18px;
+			p {
+				margin: 0;
+			}
+			@media #{$sm, $xs} {
+				font-size: 16px;
+			}
+		}
+		.timeline-inner {
+			background-color: var(--tj-color-theme-bg-dark-5);
+			padding: 36px 30px 34px 30px;
+			position: relative;
+			margin-top: 50px;
+			&::before {
+				content: "";
+				position: absolute;
+				top: -11px;
+				left: 50%;
+				width: 0;
+				height: 0;
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				border-bottom: 11px solid var(--tj-color-theme-bg-dark-5);
+				transform: translateX(-50%);
+			}
+			@media #{$sm, $xs} {
+				padding: 30px 20px;
+				margin-top: 30px;
+			}
+		}
+		.timeline-year {
+			color: var(--tj-color-light-3);
+			font-family: var(--tj-ff-heading);
+			font-weight: var(--tj-fw-sbold);
+			font-size: 32px;
+			line-height: 1;
+			letter-spacing: -0.015;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			span {
+				width: 24px;
+				height: 24px;
+				border-radius: 50%;
+				background-color: var(--tj-color-light-3);
+				position: relative;
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+				margin: 20px 0 10px 0;
+				&::before {
+					content: "";
+					position: absolute;
+					width: 16px;
+					height: 16px;
+					border-radius: 50%;
+					background-color: var(--tj-color-theme-bg-dark);
+				}
+			}
+			@media #{$xs} {
+				font-size: 28px;
+			}
+		}
+	}
+}
+/* !END: About CSS */

@@ -1,0 +1,196 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: About CSS
+----------------------------------------*/
+.h4 {
+	&-about {
+		&-section {
+			padding-top: 142px;
+			padding-bottom: 140px;
+			background-color: var(--tj-color-grey-2);
+			position: relative;
+			z-index: 2;
+			margin-top: -2px;
+			@media #{$lg} {
+				padding-top: 120px;
+				padding-bottom: 120px;
+			}
+			@media #{$md} {
+				padding-top: 90px;
+				padding-bottom: 90px;
+			}
+			@media #{$sm, $xs} {
+				padding-top: 70px;
+				padding-bottom: 70px;
+			}
+		}
+		&-header {
+			.section_heading {
+				max-width: 1038px;
+				margin-inline-start: auto;
+				margin-inline-end: auto;
+				margin-bottom: 80px;
+				@media #{$md} {
+					margin-bottom: 50px;
+				}
+				@media #{$sm,$xs} {
+					margin-bottom: 40px;
+				}
+				.sec_title {
+					color: var(--tj-color-light-1);
+				}
+
+				.sec_subtitle > span {
+					color: var(--tj-color-light-1);
+				}
+				.tj_icon_btn {
+					margin-top: 24px;
+				}
+			}
+		}
+		&-counter {
+			&-wrap {
+				display: flex;
+				gap: 30px;
+				@media #{$md,$sm,$xs} {
+					flex-wrap: wrap;
+				}
+			}
+			&-icon {
+				width: 100px;
+				aspect-ratio: 1/1;
+				margin-inline-start: auto;
+				margin-inline-end: auto;
+				background-color: var(--tj-color-grey-4);
+				border: 1px solid var(--tj-color-border-3);
+				border-radius: 50%;
+				position: relative;
+
+				img,
+				svg {
+					transition: 0.4s ease-in-out;
+					position: relative;
+					z-index: 1;
+					opacity: 0;
+					&:first-child {
+						position: absolute;
+						left: 0;
+						top: 0;
+						z-index: 2;
+						mix-blend-mode: luminosity;
+						opacity: 1;
+					}
+				}
+				@media #{$xl} {
+					width: 90px;
+				}
+				@media #{$lg} {
+					width: 80px;
+				}
+				@media #{$md,$xs} {
+					width: 90px;
+				}
+			}
+			&-text {
+				font-size: 28px;
+				line-height: 1;
+				letter-spacing: -0.015em;
+				color: var(--tj-color-light-1);
+				margin-top: 25px;
+				@media #{$lg,$md} {
+					font-size: 22px;
+				}
+				@media #{$md} {
+					font-size: 24px;
+				}
+				@media #{$sm,$xs} {
+					font-size: 26px;
+				}
+			}
+			color: var(--tj-color-light-1);
+			font-size: 120px;
+			line-height: 0.7;
+			margin-top: 60px;
+			margin-inline-end: 38px;
+			padding-top: 40px;
+			display: inline-block;
+			position: relative;
+
+			.counter {
+				letter-spacing: -0.04em;
+			}
+			sup {
+				font-size: 32px;
+				position: absolute;
+				inset-inline-start: 100%;
+				margin-inline-start: 5px;
+				top: 55px;
+			}
+			@media #{$xxl} {
+				font-size: 90px;
+			}
+			@media #{$xl} {
+				font-size: 80px;
+			}
+			@media #{$lg} {
+				font-size: 68px;
+			}
+			@media #{$md,$xs} {
+				font-size: 100px;
+			}
+
+			&::before {
+				content: "";
+				width: 1000%;
+				height: 1px;
+				background-color: var(--tj-color-border-3);
+				position: absolute;
+				left: -300%;
+				top: 0;
+			}
+			&-item {
+				width: 25%;
+				text-align: center;
+				background-color: var(--tj-color-theme-bg-dark);
+				padding: 40px 40px 40px;
+				position: relative;
+				overflow: hidden;
+				&::after {
+					content: "";
+					width: 40px;
+					height: 40px;
+					position: absolute;
+					bottom: 0;
+					inset-inline-end: 0;
+					transform: translate(50%, 50%) rotate(45deg);
+					background-color: var(--tj-color-grey-2);
+					display: block;
+				}
+				@media #{$md} {
+					width: calc(50% - 15px);
+				}
+				@media #{$sm,$xs} {
+					width: 100%;
+				}
+				&:hover {
+					.h4-about {
+						&-counter {
+							&-icon {
+								img,
+								svg {
+									opacity: 1;
+									&:first-child {
+										transform: scale(0);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* !END: About CSS */

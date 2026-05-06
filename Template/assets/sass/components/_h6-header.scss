@@ -1,0 +1,70 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Header CSS
+----------------------------------------*/
+
+// Other headers
+.header {
+	&-6 {
+		padding: 0 45px;
+		@media #{$xxl} {
+			padding: 0 25px;
+		}
+		@media #{$xl, $lg} {
+			padding: 0 15px;
+		}
+		@media #{$md} {
+			padding: 2px 15px;
+		}
+		@media #{$sm} {
+			padding: 2px 5px;
+		}
+		@media #{$xs} {
+			padding: 2px 0;
+		}
+		&.header-absolute {
+			background-color: var(--tj-color-border-5);
+			backdrop-filter: blur(30px);
+		}
+		.tj-header_wrap {
+			background-color: transparent;
+			backdrop-filter: inherit;
+			padding: 0;
+			border-radius: 0;
+			border: 0;
+		}
+
+		.tj-header {
+			&_right {
+				padding: 0;
+			}
+		}
+		.site_navigation {
+			nav {
+				background-color: transparent;
+				padding: 0;
+				ul {
+					&:not(.sub-menu) {
+						> li {
+							> a {
+								padding-top: 32px;
+								padding-bottom: 32px;
+							}
+							&.menu-item-has-children,
+							&.has-dropdown {
+								> a {
+									&::after {
+										top: 42px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* !END: Header CSS */

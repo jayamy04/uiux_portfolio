@@ -1,0 +1,131 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Skew showcase CSS
+----------------------------------------*/
+.skew-showcase-section {
+	position: relative;
+	@media #{$md,$sm,$xs} {
+		padding-top: 100px;
+	}
+}
+.skew-project-area {
+	perspective: 7000px;
+	transform-style: preserve-3d;
+	transition: transform 0.6s ease-out;
+	&-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		@media #{$md,$sm,$xs} {
+			height: auto;
+		}
+	}
+}
+.skew-project-wrap {
+	// height: 100vh;
+	flex-flow: column-reverse;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	perspective: none;
+	transform-style: preserve-3d;
+	transform: rotateX(70deg) rotateY(0) rotate(40deg);
+	transition: transform 0.6s ease-out;
+	will-change: transform;
+
+	.skew-project-item {
+		height: 28vh;
+		margin-top: -8vh;
+		margin-bottom: -8vh;
+		transform-style: preserve-3d;
+		transform: rotateX(-90deg) rotateY(0) rotate(0);
+		aspect-ratio: 16/9;
+		position: relative;
+		a {
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1);
+			transform-style: preserve-3d;
+			will-change: transform;
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			// object-fit: cover;
+		}
+		.title {
+			font-size: 28px;
+			position: relative;
+			top: -115%;
+			margin: 0;
+			opacity: 0;
+			transition: all 0.4s ease-in-out;
+			pointer-events: none;
+			@media #{$md,$sm,$xs} {
+				font-size: 26px;
+				top: 0;
+				opacity: 1;
+				margin-top: 10px;
+				pointer-events: auto;
+			}
+			@media #{$xs} {
+				font-size: 24px;
+			}
+		}
+		&:hover {
+			a {
+				transform: translate3d(0px, -50%, 0px) scale3d(1.1, 1.1, 1);
+				transform-style: preserve-3d;
+				@media #{$md,$sm,$xs} {
+					transform: none;
+				}
+			}
+			.title {
+				opacity: 1;
+				top: -165%;
+				@media #{$md,$sm,$xs} {
+					top: 0;
+				}
+			}
+		}
+		@media #{$md,$sm,$xs} {
+			margin: 15px 0;
+			height: auto;
+			transform: none;
+			aspect-ratio: auto;
+			img {
+				object-fit: cover;
+			}
+		}
+	}
+	@media #{$md,$sm,$xs} {
+		flex-flow: column;
+		height: auto;
+		transform: none !important;
+	}
+}
+.skew-footer {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	padding-top: 20px;
+	padding-bottom: 50px;
+	.tj_copyright {
+		color: var(--tj-color-text-body);
+		a {
+			color: var(--tj-color-heading-primary);
+			&:hover {
+				color: var(--tj-color-theme-primary);
+			}
+		}
+	}
+
+	@media #{$md,$sm,$xs} {
+		position: relative;
+		padding-bottom: 20px;
+	}
+}
+/* !END: Skew showcase CSS */

@@ -1,0 +1,200 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Team CSS
+----------------------------------------*/
+.h5 {
+	&-team-section {
+		padding-top: 160px;
+		padding-bottom: 140px;
+
+		@media #{$xl} {
+			padding-top: 130px;
+			padding-bottom: 130px;
+		}
+		@media #{$lg} {
+			padding-top: 100px;
+			padding-bottom: 100px;
+		}
+		@media #{$md} {
+			padding-top: 90px;
+			padding-bottom: 90px;
+		}
+		@media #{$sm, $xs} {
+			padding-top: 70px;
+			padding-bottom: 70px;
+		}
+	}
+
+	&_team_wrapper {
+		.section_heading {
+			max-width: 1340px;
+			width: 100%;
+			margin-bottom: 85px;
+			@media #{$lg} {
+				margin-bottom: 60px;
+			}
+			@media #{$md} {
+				margin-bottom: 50px;
+			}
+			@media #{$sm,$xs} {
+				margin-bottom: 40px;
+			}
+		}
+		.btn-area {
+			width: 50%;
+			margin-inline-start: auto;
+			margin-top: 30px;
+			@media #{$md} {
+				width: 55%;
+			}
+			@media #{$sm, $xs} {
+				width: 100%;
+				text-align: center;
+			}
+		}
+	}
+	&_team_member {
+		position: relative;
+		z-index: 2;
+		.tj_team_member {
+			border: 0;
+			padding: 0;
+			width: 50%;
+			margin-inline-start: auto;
+			.member {
+				&_image {
+					max-width: 426px;
+					width: 100%;
+					background-color: transparent;
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-position: center;
+					position: absolute;
+					top: 0;
+					inset-inline-start: 0;
+					opacity: 0;
+					z-index: -1;
+					transition: all 0.3s ease;
+					@media #{$xl} {
+						max-width: 380px;
+					}
+					@media #{$lg} {
+						max-width: 340px;
+					}
+					@media #{$md} {
+						max-width: 280px;
+					}
+					@media #{$sm,$xs} {
+						max-width: 100%;
+						position: relative;
+						opacity: 1;
+						z-index: 1;
+					}
+				}
+				&_info {
+					border-top: 1px solid var(--tj-color-border-3);
+					margin-top: 0;
+					padding: 30px 0;
+					overflow: hidden;
+					transition: min-height 0.3s ease-in-out;
+					position: relative;
+					.name_area {
+						display: flex;
+						justify-content: space-between;
+						gap: 10px;
+						transition: all 0.3s ease-in-out;
+						@media #{$sm,$xs} {
+							margin-bottom: 16px;
+						}
+					}
+					.name {
+						font-size: 24px;
+						@media #{$sm,$xs} {
+							font-size: 22px;
+						}
+					}
+					.designation {
+						color: var(--tj-color-theme-primary);
+						text-transform: uppercase;
+						font-size: 15px;
+						font-weight: var(--tj-fw-medium);
+						gap: 3px;
+						span {
+							color: var(--tj-color-heading-primary);
+						}
+					}
+					.desc {
+						font-size: 18px;
+						max-width: 470px;
+						width: 100%;
+						margin-bottom: 25px;
+
+						@media #{$md} {
+							max-width: 390px;
+						}
+						@media #{$sm, $xs} {
+							max-width: 100%;
+						}
+					}
+					@media #{$sm,$xs} {
+						border-top: 0;
+						border-bottom: 1px solid var(--tj-color-border-3);
+					}
+				}
+				&_content {
+					position: absolute;
+					top: inherit;
+					inset-inline-start: inherit;
+					bottom: 30px;
+					width: 100%;
+					opacity: 0;
+					visibility: hidden;
+					transition: all 0.15s ease-in-out;
+
+					@media #{$sm,$xs} {
+						position: unset;
+						visibility: visible;
+						opacity: 1;
+					}
+				}
+			}
+
+			&:last-child {
+				.member_info {
+					border-bottom: 1px solid var(--tj-color-border-3);
+				}
+			}
+			&.active {
+				.member_image {
+					opacity: 1;
+					z-index: 1;
+				}
+				.name_area {
+					margin-bottom: 158px;
+					@media #{$md} {
+						margin-bottom: 180px;
+					}
+					@media #{$sm,$xs} {
+						margin-bottom: 16px;
+					}
+				}
+				.member_content {
+					opacity: 1;
+					visibility: visible;
+					transition-delay: 0.2s;
+				}
+			}
+
+			@media #{$md} {
+				width: 55%;
+			}
+			@media #{$sm,$xs} {
+				width: 100%;
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
+
+/* !END: Team CSS */

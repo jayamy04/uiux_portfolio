@@ -1,0 +1,355 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Service details CSS
+----------------------------------------*/
+.service_details {
+	&_intro {
+		&_content {
+			&.project_information {
+				ul {
+					margin-top: 0;
+					li {
+						padding: 20px 0;
+						.project_label {
+							display: block;
+							color: var(--tj-color-theme-bg-dark-3);
+							font-size: 16px;
+							font-family: var(--tj-ff-body);
+							font-weight: var(--tj-fw-regular);
+							margin-bottom: 15px;
+							@media #{$lg,$md,$sm,$xs} {
+								margin-bottom: 10px;
+							}
+						}
+						span {
+							color: var(--tj-color-theme-bg-dark-3);
+						}
+						&::after {
+							display: none;
+						}
+					}
+				}
+			}
+
+			@media #{$xl,$lg,$md,$sm,$xs} {
+				padding-left: 0;
+			}
+		}
+	}
+}
+.project-details {
+	&-section {
+		padding-top: 120px;
+		@media #{$lg} {
+			padding-top: 110px;
+		}
+		@media #{$md} {
+			padding-top: 90px;
+		}
+		@media #{$sm,$xs} {
+			padding-top: 70px;
+		}
+	}
+	&-left {
+		.section_heading {
+			max-width: 730px;
+			width: 100%;
+		}
+	}
+	&-right {
+		margin-top: 50px;
+		.desc {
+			@media #{$md,$sm,$xs} {
+				font-size: 16px;
+			}
+		}
+		.tj_icon_list {
+			margin-top: 45px;
+			li {
+				gap: 12px;
+				.icon {
+					font-size: 16px;
+					color: var(--tj-color-heading-primary);
+					margin-top: 7px;
+				}
+				.text {
+					font-size: 20px;
+					@media #{$md,$sm,$xs} {
+						font-size: 18px;
+					}
+				}
+			}
+			@media #{$md,$sm,$xs} {
+				margin-top: 20px;
+			}
+		}
+		@media #{$md,$sm,$xs} {
+			margin-top: 20px;
+		}
+	}
+}
+.project-gallery {
+	&-wrap {
+		margin-top: 100px;
+		@media #{$lg} {
+			margin-top: 80px;
+		}
+		@media #{$md} {
+			margin-top: 60px;
+		}
+		@media #{$sm,$xs} {
+			margin-top: 40px;
+		}
+	}
+
+	&-item {
+		img {
+			width: 100%;
+		}
+	}
+}
+
+.tj-process-items-wrapper-2 {
+	padding: 90px 0 20px;
+	@media #{$lg} {
+		padding: 70px 0 20px;
+	}
+	@media #{$md} {
+		padding: 50px 0 20px;
+	}
+	@media #{$sm,$xs} {
+		padding: 30px 0 0 0;
+	}
+
+	.tj-process-item-3 {
+		max-width: 100%;
+		border: 1px solid var(--tj-color-border-1);
+		padding: 30px;
+		.process {
+			&-no {
+				width: 64px;
+				height: 64px;
+				border-radius: 100%;
+				border: 1px solid var(--tj-color-theme-primary);
+				background-color: var(--tj-color-theme-primary);
+				color: var(--tj-color-light-1);
+				margin-bottom: 70px;
+				@media #{$lg,$md,$sm,$xs} {
+					font-size: 20px;
+					width: 56px;
+					height: 56px;
+				}
+				@media #{$sm,$xs} {
+					margin-bottom: 50px;
+				}
+			}
+			&-title {
+				max-width: 250px;
+				font-size: 28px;
+				@media #{$xl,$lg,$md} {
+					font-size: 26px;
+				}
+				@media #{$sm,$xs} {
+					font-size: 24px;
+				}
+			}
+			&-desc {
+				max-width: 365px;
+				width: 100%;
+				@media #{$xl} {
+					max-width: 250px;
+					font-size: 16px;
+				}
+				@media #{$md} {
+					max-width: 330px;
+					font-size: 16px;
+				}
+				@media #{$sm,$xs} {
+					max-width: 100%;
+					font-size: 16px;
+				}
+			}
+		}
+
+		@media #{$xxl} {
+			padding: 30px 25px;
+		}
+		@media #{$xl,$lg,$md} {
+			padding: 30px 20px;
+		}
+		@media #{$sm,$xs} {
+			padding: 25px 15px;
+		}
+	}
+}
+
+.result-impact-section {
+	padding-top: 120px;
+	padding-bottom: 150px;
+	position: relative;
+	z-index: 1;
+	@media #{$lg} {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+	@media #{$md} {
+		padding-top: 90px;
+		padding-bottom: 90px;
+	}
+	@media #{$sm,$xs} {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+}
+
+.project-testimonial {
+	&-section {
+		padding-top: 100px;
+		padding-bottom: 40px;
+	}
+	&-marquee {
+		.marquee-text {
+			font-size: 139px;
+			span {
+				font-size: 0.6em;
+				i {
+					animation: rotateImg2 6s infinite linear;
+				}
+			}
+			@media #{$lg} {
+				font-size: 82px;
+			}
+			@media #{$md} {
+				font-size: 70px;
+			}
+			@media #{$sm,$xs} {
+				font-size: 50px;
+			}
+		}
+	}
+	&-wrap {
+		max-width: 1260px;
+		width: 100%;
+		margin: 0 auto;
+		padding-top: 100px;
+		padding-bottom: 120px;
+		@media #{$xl} {
+			max-width: 1180px;
+		}
+		@media #{$md} {
+			padding-top: 80px;
+			padding-bottom: 220px;
+		}
+		@media #{$sm,$xs} {
+			padding-top: 40px;
+			padding-bottom: 220px;
+		}
+	}
+}
+
+.project_testimonial_item {
+	&.tj_testimonial_item {
+		display: flex;
+		gap: 30px;
+		text-align: start;
+		padding: 0;
+		.author-img {
+			max-width: 333px;
+			width: 100%;
+			flex-shrink: 0;
+			overflow: hidden;
+			img {
+				width: 100%;
+			}
+			@media #{$xl,$lg} {
+				max-width: 300px;
+			}
+			@media #{$xs} {
+				max-width: 100%;
+			}
+		}
+		.rating {
+			margin-bottom: 50px;
+			@media #{$lg,$md} {
+				margin-bottom: 35px;
+			}
+			@media #{$sm,$xs} {
+				margin-bottom: 25px;
+			}
+		}
+		.testimonial_content_wrapper {
+			background-color: var(--tj-color-theme-bg);
+			padding: 70px 40px;
+			@media #{$lg,$md} {
+				padding: 60px 30px;
+			}
+			@media #{$sm,$xs} {
+				padding: 40px 15px;
+			}
+		}
+		.review_text {
+			font-size: 32px;
+			font-family: var(--tj-ff-heading);
+			font-weight: var(--tj-fw-regular);
+			letter-spacing: -0.015em;
+			text-align: start;
+			@media #{$xl} {
+				font-size: 30px;
+			}
+			@media #{$lg,$md} {
+				font-size: 26px;
+			}
+			@media #{$sm,$xs} {
+				font-size: 20px;
+			}
+		}
+		.tj-author-profile {
+			text-align: start;
+			align-items: start;
+			margin-top: 35px;
+			.author-info {
+				.name {
+					@media #{$lg,$md} {
+						font-size: 20px;
+					}
+					@media #{$sm,$xs} {
+						font-size: 18px;
+					}
+				}
+			}
+			@media #{$lg,$md} {
+				margin-top: 20px;
+			}
+			@media #{$sm,$xs} {
+				margin-top: 15px;
+			}
+		}
+		@media #{$md,$sm,$xs} {
+			flex-wrap: wrap;
+		}
+	}
+}
+
+.final-conclusion-section {
+	padding-top: 120px;
+	padding-bottom: 120px;
+	position: relative;
+	.social-share {
+		margin-top: 30px;
+	}
+	@media #{$lg} {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+	@media #{$md} {
+		padding-top: 90px;
+		padding-bottom: 90px;
+	}
+	@media #{$sm,$xs} {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+}
+
+/* !END: Service details CSS */

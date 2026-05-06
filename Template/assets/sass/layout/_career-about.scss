@@ -1,0 +1,121 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: About CSS
+----------------------------------------*/
+.career_about {
+	.section_heading {
+		.sec_title {
+			max-width: 1036px;
+			width: 100%;
+			margin-top: -8px;
+
+			@media #{$xxl} {
+				max-width: 1030px;
+			}
+			@media #{$xl} {
+				max-width: 876px;
+			}
+			@media #{$lg} {
+				max-width: 736px;
+				font-size: 50px;
+			}
+			@media #{$md,$sm,$xs} {
+				max-width: 100%;
+				margin-top: 0;
+			}
+		}
+	}
+	&_action {
+		&_wrapper {
+			display: flex;
+			align-items: flex-end;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			gap: 30px;
+			margin-bottom: 100px;
+			margin-top: 5px;
+			.trusted_features {
+				max-width: 200px;
+				margin-bottom: -8px;
+				@media #{$sm,$xs} {
+					max-width: 190px;
+					margin-bottom: 0;
+				}
+			}
+			.tj_users_list li {
+				width: 64px;
+				height: 64px;
+				padding: 2px;
+				span {
+					width: 100%;
+					height: 100%;
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					font-size: 15px;
+					line-height: 1;
+					font-weight: var(--tj-fw-medium);
+					color: var(--tj-color-light-1);
+					background-color: var(--tj-color-theme-primary);
+					border-radius: 100%;
+				}
+			}
+			.trusted_text {
+				color: var(--tj-color-heading-primary);
+				font-weight: var(--tj-fw-medium);
+				font-family: var(--tj-ff-body);
+				line-height: 1.42;
+				letter-spacing: 0.01em;
+				margin-top: 18px;
+			}
+			@media #{$md} {
+				margin-top: 30px;
+				margin-bottom: 90px;
+			}
+			@media #{$sm,$xs} {
+				margin-top: 30px;
+				margin-bottom: 70px;
+			}
+		}
+	}
+	&_banner {
+		width: 100%;
+		height: 869px;
+		overflow: hidden;
+		@media #{$xxxl} {
+			height: 750px;
+		}
+		@media #{$xxl} {
+			height: 660px;
+		}
+		@media #{$xl} {
+			height: 570px;
+		}
+		@media #{$lg} {
+			height: 480px;
+			img {
+				height: 145%;
+				object-fit: cover;
+			}
+		}
+		@media #{$md} {
+			height: 400px;
+			img {
+				width: 100%;
+				height: 155%;
+				object-fit: cover;
+			}
+		}
+		@media #{$sm,$xs} {
+			height: 300px;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transform: none !important;
+			}
+		}
+	}
+}
+/* !END: About CSS */

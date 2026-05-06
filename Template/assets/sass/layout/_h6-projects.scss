@@ -1,0 +1,257 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Projects CSS
+----------------------------------------*/
+.h6 {
+	&_project {
+		&_section {
+			padding-top: 120px;
+			padding-bottom: 150px;
+			overflow: hidden;
+			@media #{$lg} {
+				padding-top: 110px;
+				padding-bottom: 110px;
+			}
+			@media #{$md} {
+				padding-top: 90px;
+				padding-bottom: 90px;
+			}
+			@media #{$sm, $xs} {
+				padding-top: 70px;
+				padding-bottom: 70px;
+			}
+		}
+		&_header {
+			.section_heading {
+				max-width: 772px;
+				margin-inline-start: auto;
+				margin-inline-end: auto;
+				margin-bottom: 40px;
+				@media #{$md} {
+					margin-bottom: 30px;
+				}
+				@media #{$sm,$xs} {
+					margin-bottom: 20px;
+				}
+				.sec_title {
+					font-size: 120px;
+					line-height: 1;
+					margin-top: 10px;
+					@media #{$xxl} {
+						font-size: 90px;
+					}
+					@media #{$xl} {
+						font-size: 80px;
+					}
+					@media #{$lg} {
+						font-size: 68px;
+					}
+					@media #{$md} {
+						font-size: 56px;
+					}
+					@media #{$sm} {
+						font-size: 42px;
+					}
+					@media #{$xs} {
+						font-size: 34px;
+					}
+				}
+				@media #{$md} {
+					margin-bottom: 50px;
+				}
+				@media #{$sm,$xs} {
+					margin-bottom: 40px;
+				}
+			}
+			.tj_icon_btn {
+				margin-top: 20px;
+			}
+		}
+
+		&_nav_wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 30px;
+		}
+		&_item {
+			&_wrapper {
+				display: flex;
+				flex-direction: column;
+				gap: 60px;
+				align-items: flex-end;
+				@media #{$sm,$xs} {
+					gap: 30px;
+				}
+			}
+			width: 100%;
+			border-collapse: collapse;
+			position: relative;
+			overflow: hidden;
+			.project {
+				&_image {
+					aspect-ratio: 560/500;
+					overflow: hidden;
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+					a {
+						width: 100%;
+						height: 100%;
+						overflow: hidden;
+						display: block;
+					}
+					img {
+						transition:
+							transform 0.8s cubic-bezier(0.785, 0.135, 0.15, 0.86),
+							-webkit-transform 0.8s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+					}
+				}
+				&_content {
+					max-width: 396px;
+					width: auto;
+					margin-top: 10px;
+					align-items: flex-end;
+					position: absolute;
+					inset-inline-start: 0;
+					margin: 30px;
+					bottom: -30px;
+					padding: 30px;
+					padding-bottom: 25px;
+					background-color: var(--tj-color-grey-6);
+					backdrop-filter: blur(30px);
+					opacity: 0;
+					transition: all 0.3s ease-in-out;
+					z-index: 1;
+					@media #{$md,$sm,$xs} {
+						margin: 15px;
+					}
+					@media #{$sm,$xs} {
+						padding: 20px;
+						padding-bottom: 17px;
+						bottom: -15px;
+					}
+
+					.project {
+						&_title {
+							color: var(--tj-color-light-1);
+							margin-top: 14px;
+							text-transform: uppercase;
+							@media #{$sm,$xs} {
+								margin-top: 10px;
+							}
+						}
+						&_year {
+							font-weight: var(--tj-fw-medium);
+							font-size: 15px;
+							gap: 3px;
+							color: var(--tj-color-light-1);
+							text-transform: uppercase;
+							> span {
+								color: var(--tj-color-light-1);
+							}
+						}
+					}
+				}
+			}
+			.icon_btn {
+				background-color: var(--tj-color-theme-bg-dark);
+				margin-bottom: 5px;
+			}
+			&:hover {
+				.project {
+					&_image {
+						img {
+							transform: scale(1.1);
+						}
+					}
+					&_content {
+						bottom: 0;
+						opacity: 1;
+					}
+				}
+			}
+			&_wrap {
+				padding: 30px;
+				border-style: solid;
+				border-color: var(--tj-color-border-1);
+				border-width: 0;
+				border-inline-start-width: 1px;
+				border-inline-end-width: 1px;
+				&:not(:first-child) {
+					border-inline-start-width: 0;
+				}
+				@media #{$sm,$xs} {
+					padding: 15px;
+				}
+			}
+		}
+		&_slider {
+			overflow: visible;
+			&_prev,
+			&_next {
+				background-color: transparent;
+				border: 1px solid var(--tj-color-theme-bg-dark);
+				flex-shrink: 0;
+				> span {
+					i {
+						color: var(--tj-color-theme-bg-dark);
+					}
+				}
+				&:hover {
+					border-color: var(--tj-color-theme-primary);
+					background-color: var(--tj-color-theme-primary);
+					> span {
+						i {
+							color: var(--tj-color-light-1);
+						}
+					}
+				}
+			}
+			&_wrapper {
+				padding-inline-start: 30px;
+				padding-inline-end: 30px;
+				border-style: solid;
+				border-color: var(--tj-color-border-1);
+				border-width: 0;
+				border-top-width: 1px;
+				border-bottom-width: 1px;
+				@media #{$sm,$xs} {
+					padding-inline-start: 15px;
+					padding-inline-end: 15px;
+				}
+			}
+		}
+	}
+}
+.swiper-pagination {
+	position: static;
+	&-wrapper {
+		padding-top: 60px;
+		@media #{$md} {
+			padding-top: 40px;
+		}
+		@media #{$sm,$xs} {
+			padding-top: 30px;
+		}
+	}
+	&-bullet {
+		width: var(
+			--swiper-pagination-bullet-width,
+			var(--swiper-pagination-bullet-size, 10px)
+		);
+		height: var(
+			--swiper-pagination-bullet-height,
+			var(--swiper-pagination-bullet-size, 10px)
+		);
+		background: var(--swiper-pagination-color, var(--tj-color-light-2));
+		border-radius: var(--swiper-pagination-bullet-border-radius, 0);
+		&-active {
+			background: var(--swiper-pagination-color, var(--tj-color-theme-primary));
+		}
+	}
+}
+/* !END: Projects CSS */

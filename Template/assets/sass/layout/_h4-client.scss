@@ -1,0 +1,128 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Client CSS
+----------------------------------------*/
+.h4 {
+	&_client {
+		&_section {
+			padding-top: 140px;
+			padding-bottom: 120px;
+			@media #{$lg} {
+				padding-top: 120px;
+			}
+			@media #{$md} {
+				padding-top: 90px;
+				padding-bottom: 90px;
+			}
+			@media #{$sm, $xs} {
+				padding-top: 70px;
+				padding-bottom: 70px;
+			}
+		}
+		&_header {
+			margin-bottom: 60px;
+			@media #{$md} {
+				margin-bottom: 50px;
+			}
+			@media #{$sm,$xs} {
+				margin-bottom: 40px;
+			}
+			.section_heading {
+				max-width: 790px;
+				width: 100%;
+				@media #{$xxl,$xl} {
+					max-width: 670px;
+				}
+				@media #{$lg,$md} {
+					max-width: 620px;
+				}
+				@media #{$sm,$xs} {
+					max-width: 500px;
+				}
+			}
+			.sec_heading_right {
+				margin-bottom: 15px;
+				@media #{$md,$sm,$xs} {
+					margin-bottom: 0;
+				}
+			}
+		}
+		&_item {
+			width: calc((100% - 90px) / 4);
+			background-color: var(--tj-color-theme-bg-2);
+			position: relative;
+			padding: 44px 30px;
+			@media #{$lg} {
+				padding: 30px 20px;
+			}
+			@media #{$md} {
+				width: calc((100% - 60px) / 4);
+				padding: 15px 5px;
+			}
+			@media #{$sm,$xs} {
+				width: calc((100% - 15px) / 2);
+				padding: 15px 5px;
+			}
+			> span {
+				max-width: inherit;
+				opacity: 30%;
+				transition: 0.3s ease-in-out;
+			}
+
+			&::before,
+			&::after {
+				content: "";
+				width: 34px;
+				height: 34px;
+				position: absolute;
+				background-color: var(--tj-color-theme-bg);
+				display: block;
+				transition: 0.3s ease-in-out;
+				@media #{$md,$sm,$xs} {
+					width: 20px;
+					height: 20px;
+				}
+			}
+			&::before {
+				bottom: 100%;
+				inset-inline-end: 100%;
+				transform: translate(0, 0) rotate(45deg);
+			}
+			&::after {
+				bottom: 0;
+				inset-inline-end: 0;
+				transform: translate(50%, 50%) rotate(45deg);
+			}
+			&:hover {
+				background-color: var(--tj-color-theme-bg-2);
+				> span {
+					opacity: 100%;
+				}
+				&::after {
+					transform: translate(100%, 100%) rotate(45deg);
+				}
+				&::before {
+					height: 34px;
+					transform: translate(50%, 50%) rotate(45deg);
+					@media #{$md,$sm,$xs} {
+						height: 20px;
+					}
+				}
+			}
+		}
+		&_wrapper {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 30px;
+			@media #{$md} {
+				gap: 20px;
+			}
+			@media #{$sm,$xs} {
+				gap: 15px;
+			}
+		}
+	}
+}
+
+/* !END: Client CSS */

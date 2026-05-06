@@ -1,0 +1,162 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Service CSS
+----------------------------------------*/
+.service-work {
+	&-section {
+		padding-top: 150px;
+		.section_heading {
+			.sec_subtitle {
+				> span {
+					color: var(--tj-color-light-1);
+				}
+			}
+			.sec_title {
+				max-width: 780px;
+				width: 100%;
+				margin-bottom: 15px;
+				@media #{$xl} {
+					font-size: 54px;
+				}
+				@media #{$lg} {
+					max-width: 736px;
+					font-size: 50px;
+				}
+				@media #{$md,$sm,$xs} {
+					max-width: 100%;
+				}
+			}
+		}
+		@media #{$lg} {
+			padding-top: 110px;
+		}
+		@media #{$md} {
+			padding-top: 90px;
+		}
+		@media #{$sm,$xs} {
+			padding-top: 70px;
+		}
+	}
+
+	&-wrap {
+		display: flex;
+		gap: 120px;
+		max-width: 1784px;
+		width: 100%;
+		margin: 0 auto;
+		@media #{$xxl} {
+			gap: 60px;
+		}
+		@media #{$xl} {
+			gap: 50px;
+		}
+		@media #{$lg,$md,$sm,$xs} {
+			flex-direction: column-reverse;
+			gap: 0;
+		}
+	}
+	&-left {
+		display: flex;
+		align-items: end;
+		@media #{$lg,$md} {
+			justify-content: center;
+			margin: 0 auto;
+		}
+		@media #{$sm,$xs} {
+			display: block;
+			position: relative;
+			margin: 0 -20px;
+		}
+		@media #{$xs} {
+			margin: 0 -15px;
+		}
+	}
+	&-img {
+		max-width: 525px;
+		width: 100%;
+		height: 717px;
+		overflow: hidden;
+		margin-top: 5px;
+		@media #{$xxl} {
+			max-width: 400px;
+			height: 520px;
+		}
+		@media #{$xl} {
+			max-width: 350px;
+			height: 440px;
+		}
+		@media #{$lg} {
+			height: 580px;
+		}
+		@media #{$md} {
+			height: 450px;
+			margin-top: 30px;
+			img {
+				width: 100%;
+				height: 140%;
+				object-fit: cover;
+			}
+		}
+		@media #{$sm,$xs} {
+			max-width: 100%;
+			height: 580px;
+			margin-top: 30px;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transform: none !important;
+			}
+		}
+	}
+	&-content {
+		max-width: 475px;
+		width: 100%;
+		padding-bottom: 30px;
+		.desc {
+			margin-bottom: 25px;
+		}
+		.tj_icon_btn {
+			color: var(--tj-color-light-1);
+			border-color: var(--tj-color-light-1);
+			.icon_btn {
+				background-color: var(--tj-color-theme-primary);
+				color: var(--tj-color-light-1);
+			}
+		}
+	}
+}
+.work_client_card {
+	background-color: var(--tj-color-theme-primary);
+	max-width: 270px;
+	width: 100%;
+	padding: 44px 30px;
+	.trusted_text {
+		color: var(--tj-color-light-1);
+		margin-top: 25px;
+		span {
+			color: var(--tj-color-light-1);
+		}
+		@media #{$sm,$xs} {
+			font-size: 16px;
+		}
+	}
+	@media #{$xxl} {
+		max-width: 260px;
+		padding: 40px 25px;
+	}
+	@media #{$xl} {
+		max-width: 250px;
+		padding: 35px 20px;
+	}
+	@media #{$sm,$xs} {
+		max-width: 255;
+		padding: 30px 20px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+}
+
+/* !END: Service CSS */

@@ -1,0 +1,143 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Blog CSS
+----------------------------------------*/
+.h5 {
+	&-blog-section {
+		padding-top: 160px;
+		padding-bottom: 160px;
+
+		@media #{$xl} {
+			padding-top: 130px;
+			padding-bottom: 130px;
+		}
+		@media #{$lg} {
+			padding-top: 110px;
+			padding-bottom: 110px;
+		}
+		@media #{$md} {
+			padding-top: 90px;
+			padding-bottom: 90px;
+		}
+		@media #{$sm,$xs} {
+			padding-top: 70px;
+			padding-bottom: 70px;
+		}
+	}
+	&_blog {
+		&_header {
+			margin-bottom: 54px;
+			.section_heading {
+				max-width: 750px;
+				width: 100%;
+				@media #{$xl,$lg} {
+					max-width: 600px;
+				}
+			}
+			.sec_heading_right {
+				margin-bottom: 40px;
+				@media #{$xl,$lg} {
+					margin-bottom: 30px;
+				}
+				@media #{$md,$sm,$xs} {
+					margin-top: 10px;
+					margin-bottom: 0;
+				}
+			}
+		}
+		&_wrap {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 30px;
+			@media #{$lg,$md,$sm,$xs} {
+				grid-template-columns: 100%;
+			}
+		}
+		&_item {
+			&.tj_blog_item {
+				flex-direction: row;
+				align-items: stretch;
+				padding: 0;
+				border: 0;
+				@media #{$sm,$xs} {
+					flex-wrap: wrap;
+				}
+				.blog {
+					&_meta_item {
+						a {
+							padding: 0;
+							border: 0;
+							&:hover {
+								background-color: transparent;
+							}
+						}
+					}
+					&_image {
+						width: 49%;
+						height: 470px;
+						margin-bottom: 0;
+						img {
+							object-fit: cover;
+						}
+						@media #{$xxl,$lg,$md} {
+							height: 370px;
+						}
+						@media #{$xl} {
+							height: 350px;
+						}
+						@media #{$sm,$xs} {
+							width: 100%;
+							height: 300px;
+						}
+					}
+					&_title {
+						font-size: 40px;
+						line-height: 1.25;
+						max-width: 370px;
+						a {
+							text-decoration: underline;
+							&:hover {
+								text-decoration: none;
+							}
+						}
+						@media #{$xxl,$xl,$md} {
+							font-size: 30px;
+						}
+						@media #{$lg} {
+							font-size: 32px;
+						}
+						@media #{$sm,$xs} {
+							font-size: 28px;
+						}
+					}
+					&_btn {
+						margin-top: 27px;
+					}
+
+					&_content {
+						width: 51.4%;
+						padding: 30px;
+						background-color: var(--tj-color-theme-bg-2);
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						@media #{$xl} {
+							padding: 30px 25px;
+						}
+						@media #{$sm,$xs} {
+							padding: 30px 20px;
+						}
+						@media #{$sm,$xs} {
+							border-inline-start-width: 1px;
+							border-top-width: 0;
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// END: Blog CSS

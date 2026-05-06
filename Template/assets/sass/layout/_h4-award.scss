@@ -1,0 +1,32 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Award CSS
+----------------------------------------*/
+.h2-award {
+	&-section {
+		padding-top: 120px;
+		padding-bottom: 120px;
+
+		@media #{$md} {
+			padding-top: 90px;
+			padding-bottom: 90px;
+		}
+		@media #{$sm, $xs} {
+			padding-top: 70px;
+			padding-bottom: 70px;
+		}
+	}
+	&-header {
+		margin-inline-start: 0;
+
+		@media #{$xxl} {
+			margin-inline-start: 0;
+		}
+		@media #{$xl} {
+			margin-inline-start: 0;
+		}
+	}
+}
+
+// END: Award CSS

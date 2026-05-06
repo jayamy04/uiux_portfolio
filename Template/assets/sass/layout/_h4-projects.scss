@@ -1,0 +1,117 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Projects CSS
+----------------------------------------*/
+.h4 {
+	&_project {
+		&_section {
+			padding-top: 140px;
+			padding-bottom: 140px;
+			@media #{$lg} {
+				padding-top: 110px;
+				padding-bottom: 110px;
+			}
+			@media #{$md} {
+				padding-top: 90px;
+				padding-bottom: 90px;
+			}
+			@media #{$sm, $xs} {
+				padding-top: 70px;
+				padding-bottom: 70px;
+			}
+		}
+		&_header {
+			.section_heading {
+				.sec_title {
+					font-size: 120px;
+					line-height: 1;
+					margin-top: 10px;
+					@media #{$xxl} {
+						font-size: 90px;
+					}
+					@media #{$xl} {
+						font-size: 80px;
+					}
+					@media #{$lg} {
+						font-size: 68px;
+					}
+					@media #{$md} {
+						font-size: 56px;
+					}
+					@media #{$sm} {
+						font-size: 42px;
+					}
+					@media #{$xs} {
+						font-size: 34px;
+					}
+				}
+				@media #{$md} {
+					margin-bottom: 50px;
+				}
+				@media #{$sm,$xs} {
+					margin-bottom: 40px;
+				}
+			}
+			.tj_icon_btn {
+				margin-top: 20px;
+			}
+		}
+		&_item {
+			&_wrapper {
+				display: flex;
+				flex-direction: column;
+				gap: 60px;
+				align-items: flex-end;
+				@media #{$sm,$xs} {
+					gap: 30px;
+				}
+			}
+			max-width: 885px;
+			background-color: var(--tj-color-theme-bg);
+			.project {
+				&_image {
+					a {
+						overflow: hidden;
+					}
+					img {
+						transition:
+							transform 0.8s cubic-bezier(0.785, 0.135, 0.15, 0.86),
+							-webkit-transform 0.8s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+					}
+				}
+				&_content {
+					margin-top: 10px;
+					align-items: flex-end;
+					.project {
+						&_title {
+							margin-bottom: 5px;
+						}
+						&_year {
+							font-weight: var(--tj-fw-medium);
+							font-size: 15px;
+							gap: 3px;
+						}
+					}
+				}
+			}
+			.icon_btn {
+				background-color: var(--tj-color-theme-bg-dark);
+				margin-bottom: 5px;
+			}
+			&:hover {
+				.project {
+					&_image {
+						img {
+							transform: scale(1.1);
+						}
+					}
+				}
+				.icon_btn {
+					background-color: var(--tj-color-theme-primary);
+				}
+			}
+		}
+	}
+}
+/* !END: Projects CSS */

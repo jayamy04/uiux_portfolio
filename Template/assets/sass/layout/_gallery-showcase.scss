@@ -1,0 +1,130 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Gallery showcase CSS
+----------------------------------------*/
+:root {
+	--gallery-gap-x: 80px;
+	--gallery-gap-y: 80px;
+	@media #{$md} {
+		--gallery-gap-x: 50px;
+		--gallery-gap-y: 50px;
+	}
+	@media #{$sm,$xs} {
+		--gallery-gap-x: 30px;
+		--gallery-gap-y: 30px;
+	}
+}
+.gallery-showcase-section {
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(12, 12, 12, 0.12);
+		z-index: 1;
+		pointer-events: none;
+	}
+}
+.gallery-showcase-wrapper {
+	--gap: 80px;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+	gap: var(--gap);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0);
+	will-change: transform;
+	width: 100%;
+	height: 100%;
+	mask-image: linear-gradient(
+		0deg,
+		rgba(0, 0, 0, 0) 0%,
+		rgb(0, 0, 0) 20%,
+		rgb(0, 0, 0) 80%,
+		rgba(0, 0, 0, 0) 100%
+	);
+	cursor: grab;
+	::selection {
+		background: transparent;
+		color: transparent;
+		text-shadow: none;
+	}
+
+	@media #{$md} {
+		--gap: 50px;
+	}
+	@media #{$sm,$xs} {
+		--gap: 30px;
+	}
+}
+.gallery-showcase-wrapper:active {
+	cursor: grabbing;
+}
+.gallery-project-wrap {
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	gap: var(--gap);
+	will-change: transform;
+
+	.gallery-project-item {
+		width: 312px;
+		height: 332px;
+		flex: 0 0 auto;
+		filter: grayscale(1);
+		transition: all 0.3s ease-in-out;
+		transform-origin: center;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			pointer-events: none;
+		}
+		&:hover {
+			filter: none;
+		}
+		@media #{$md} {
+			width: 210px;
+			height: 220px;
+		}
+		@media #{$sm,$xs} {
+			width: 150px;
+			height: 160px;
+		}
+		.title {
+			display: none;
+		}
+	}
+}
+
+.showcase-title {
+	font-size: 72px;
+	color: var(--tj-color-light-1);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 3;
+	pointer-events: none;
+	text-transform: uppercase;
+	margin: 0;
+	sup {
+		top: -1.3em;
+		font-size: 0.4em;
+	}
+	@media #{$md} {
+		font-size: 60px;
+	}
+	@media #{$sm,$xs} {
+		font-size: 50px;
+	}
+}
+/* !END: Gallery showcase CSS */

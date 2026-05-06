@@ -1,0 +1,284 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Testimonial CSS
+----------------------------------------*/
+.h6 {
+	&_testimonial {
+		&_section {
+			background-color: var(--tj-color-theme-bg-dark);
+			padding-top: 150px;
+			padding-bottom: 195px;
+			overflow: hidden;
+			position: relative;
+			z-index: 0;
+			@media #{$lg} {
+				padding-top: 120px;
+				padding-bottom: 120px;
+			}
+			@media #{$md} {
+				padding-top: 90px;
+				padding-bottom: 90px;
+			}
+			@media #{$sm,$xs} {
+				padding-top: 70px;
+				padding-bottom: 70px;
+			}
+		}
+		&_shape {
+			top: 100%;
+			inset-inline-start: 50%;
+			transform: translate(-50%, -50%);
+		}
+		&_nav {
+			&_wrapper {
+				width: 100%;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				inset-inline-start: 0;
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 0;
+				@media #{$md,$sm,$xs} {
+					position: relative;
+					transform: translateY(0);
+					top: 0;
+					margin-top: 40px;
+				}
+				@media #{$sm,$xs} {
+					margin-top: 30px;
+				}
+			}
+			&_prev,
+			&_next {
+				border: 1px solid var(--tj-color-light-1);
+
+				&:hover {
+					border-color: var(--tj-color-theme-primary);
+				}
+			}
+		}
+		&_header {
+			margin-bottom: 65px;
+			@media #{$md} {
+				margin-bottom: 32px;
+			}
+			@media #{$sm,$xs} {
+				margin-bottom: 22px;
+			}
+			.section_heading {
+				max-width: 700px;
+				width: 100%;
+				margin-inline-start: auto;
+				margin-inline-end: auto;
+				@media #{$md} {
+					max-width: 550px;
+				}
+				.sec {
+					&_subtitle {
+						& > span {
+							color: var(--tj-color-light-1);
+						}
+					}
+					&_title {
+						color: var(--tj-color-light-1);
+					}
+				}
+			}
+		}
+		&_slider {
+			overflow: hidden;
+			&_wrap {
+				background-color: var(--tj-color-grey-6);
+				backdrop-filter: blur(30px);
+				padding: 30px;
+				@media #{$md} {
+					padding: 20px;
+				}
+				@media #{$sm,$xs} {
+					padding: 15px 0;
+				}
+			}
+			&_wrapper {
+				padding-inline-start: 90px;
+				padding-inline-end: 90px;
+				position: relative;
+				max-width: 1190px;
+				margin-inline-start: auto;
+				margin-inline-end: auto;
+				overflow: hidden;
+				@media #{$lg} {
+					padding-inline-start: 70px;
+					padding-inline-end: 70px;
+				}
+				@media #{$md,$sm,$xs} {
+					padding-inline-start: 0;
+					padding-inline-end: 0;
+				}
+			}
+			&_thumb {
+				&_wrapper {
+					margin-bottom: 100px;
+
+					@media #{$md} {
+						margin-bottom: 60px;
+					}
+					@media #{$sm,$xs} {
+						margin-bottom: 40px;
+					}
+				}
+				&_item {
+					padding-bottom: 8px;
+					border-bottom: 3px solid var(--tj-color-light-1);
+					opacity: 0.2;
+					display: flex;
+					justify-content: center;
+					transition: all 0.3s ease-in-out;
+					overflow: hidden;
+					cursor: pointer;
+					.thumb-img {
+						max-width: 180px;
+					}
+					&.swiper-slide-thumb-active,
+					&:hover {
+						opacity: 1;
+					}
+					@media #{$sm,$xs} {
+						padding-bottom: 0;
+						border-bottom-width: 1px;
+						img {
+							width: 107%;
+							max-width: 107%;
+						}
+					}
+				}
+			}
+		}
+		&_item {
+			&.tj_testimonial_item {
+				padding: 0;
+				display: flex;
+				gap: 30px;
+				@media #{$md,$sm,$xs} {
+					gap: 20px;
+				}
+				@media #{$sm,$xs} {
+					flex-wrap: wrap;
+					padding-inline-start: 15px;
+					padding-inline-end: 15px;
+					gap: 0;
+				}
+				.rating {
+					margin-bottom: 22px;
+				}
+
+				.review_text {
+					font-size: 30px;
+					line-height: 1.333;
+					text-align: start;
+					font-family: var(--tj-ff-heading);
+					font-weight: var(--tj-fw-regular);
+
+					& > span {
+						color: var(--tj-color-light-2);
+					}
+					@media #{$lg} {
+						font-size: 24px;
+					}
+					@media #{$md} {
+						font-size: 22px;
+					}
+					@media #{$sm,$xs} {
+						font-size: 20px;
+					}
+				}
+				.author {
+					&-img {
+						width: 356px;
+						flex-shrink: 0;
+						overflow: hidden;
+						img {
+							width: 100%;
+							aspect-ratio: 356 / 446;
+							object-fit: cover;
+							transition: transform 0.8s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+						}
+						@media #{$sm,$xs} {
+							width: 100%;
+							max-width: 100%;
+							height: auto;
+							flex-shrink: 1;
+							img {
+								aspect-ratio: 1 / 1;
+								width: 100%;
+							}
+						}
+					}
+					&-info {
+						.name {
+							color: var(--tj-color-light-1);
+							@media #{$md} {
+								font-size: 20px;
+							}
+						}
+						.designation {
+							color: var(--tj-color-light-3);
+						}
+					}
+				}
+				.testimonial {
+					&_content {
+						&_wrapper {
+							padding: 30px 0 25px;
+							display: flex;
+							flex-direction: column;
+							justify-content: space-between;
+							@media #{$sm,$xs} {
+								padding: 25px 0 15px;
+							}
+						}
+						text-align: start;
+						padding: 0;
+						margin-bottom: 0;
+						background-color: transparent;
+					}
+					&_bottom {
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+						margin-top: 24px;
+						padding-top: 15px;
+						border-top: 1px solid var(--tj-color-border-6);
+						.tj-author-profile {
+							flex-direction: row;
+							justify-content: start;
+							text-align: start;
+							gap: 15px;
+						}
+					}
+					&_client_img {
+						@media #{$lg} {
+							max-width: 150px;
+						}
+						@media #{$md,$sm,$xs} {
+							max-width: 115px;
+						}
+					}
+				}
+				&:hover {
+					.author {
+						&-img {
+							max-width: 356px;
+							flex-shrink: 0;
+							img {
+								transform: scale(1.1);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* !END: Testimonial CSS */

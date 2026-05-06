@@ -1,0 +1,165 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Service CSS
+----------------------------------------*/
+
+.h5 {
+	&-service {
+		&-section {
+			padding-top: 140px;
+			padding-bottom: 140px;
+			@media #{$lg} {
+				padding-top: 110px;
+				padding-bottom: 110px;
+			}
+			@media #{$md} {
+				padding-top: 90px;
+				padding-bottom: 90px;
+			}
+			@media #{$sm, $xs} {
+				padding-top: 70px;
+				padding-bottom: 70px;
+			}
+		}
+		&-area {
+			display: flex;
+			justify-content: space-between;
+			gap: 30px;
+			@media #{$md,$sm,$xs} {
+				flex-wrap: wrap;
+			}
+		}
+		&-left {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			gap: 50px;
+			height: 80vh;
+			max-width: 485px;
+			width: 100%;
+			.section_heading {
+				.sec_title {
+					margin-bottom: 14px;
+				}
+			}
+
+			@media #{$xxl} {
+				max-width: 420px;
+			}
+			@media #{$xl} {
+				max-width: 385px;
+			}
+			@media #{$md,$sm,$xs} {
+				height: auto;
+				gap: 10px;
+			}
+		}
+
+		&-wrap {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 30px;
+			max-width: 885px;
+			width: 100%;
+
+			@media #{$xxl} {
+				max-width: 820px;
+			}
+			@media #{$xl} {
+				max-width: 800px;
+			}
+			@media #{$lg,$sm,$xs} {
+				grid-template-columns: 100%;
+			}
+		}
+		&-item {
+			border: 1px solid var(--tj-color-border-1);
+			padding: 45px 30px 50px 30px;
+			position: relative;
+			.service-title-wrap {
+				display: flex;
+				.service-title {
+					width: calc(100% - 35px);
+					margin-bottom: 0;
+					a {
+						&:hover {
+							opacity: 0.5;
+						}
+					}
+				}
+			}
+			.service-sl {
+				font-size: 20px;
+				font-weight: var(--tj-fw-sbold);
+				font-family: var(--tj-ff-heading);
+				color: var(--tj-color-heading-primary);
+				transition: all 0.4s ease-in-out;
+			}
+			.service_list {
+				padding: 24px 0;
+				margin: 30px 0;
+				border-top: 1px solid var(--tj-color-border-1);
+				border-bottom: 1px solid var(--tj-color-border-1);
+				.tj_list li {
+					&::before {
+						background-color: var(--tj-color-theme-primary);
+					}
+				}
+				@media #{$sm,$xs} {
+					margin: 20px 0 25px;
+				}
+			}
+			.tj_icon_btn.text-underline-btn .icon_btn {
+				width: 44px;
+				height: 44px;
+				font-size: 20px;
+				> span {
+					overflow: hidden;
+				}
+			}
+			&:hover {
+				.service-sl {
+					color: var(--tj-color-theme-primary);
+				}
+				.tj_icon_btn.text-underline-btn .icon_btn {
+					background-color: var(--tj-color-theme-primary);
+				}
+			}
+			&.hover-bg {
+				position: relative;
+				overflow: hidden;
+				z-index: 1;
+				&::before {
+					content: "";
+					position: absolute;
+					top: 0;
+					inset-inline-start: auto;
+					inset-inline-end: 0;
+					width: 0;
+					height: 100%;
+					background-color: var(--tj-color-theme-bg-2);
+					border-color: var(--tj-color-theme-bg-2);
+					@include transition(all 0.3s ease-in-out 0s);
+					z-index: -1;
+				}
+				&:hover {
+					&::before {
+						width: 100%;
+						inset-inline-start: 0;
+						inset-inline-end: auto;
+					}
+				}
+			}
+
+			@media #{$xl,$md} {
+				padding: 45px 22px 50px 22px;
+			}
+			@media #{$sm,$xs} {
+				padding: 25px 15px 30px 15px;
+			}
+		}
+	}
+}
+
+/* !END: Service CSS */

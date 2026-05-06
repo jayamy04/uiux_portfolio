@@ -1,0 +1,58 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Window Shape CSS
+----------------------------------------*/
+.window {
+	&-shape {
+		&-wrapper {
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			overflow: hidden;
+		}
+		&-img {
+			display: block;
+			z-index: 2;
+			position: relative;
+			@media #{$md,$sm,$xs} {
+				display: none;
+			}
+			img {
+				transform: scale(0) rotate(0);
+				z-index: -1;
+				position: relative;
+			}
+		}
+		@media #{$md,$sm,$xs} {
+			&-wrapper {
+				height: inherit;
+				flex-direction: column;
+				opacity: 1 !important;
+			}
+			&-img {
+				img {
+					display: none;
+				}
+			}
+		}
+		&-screen {
+			position: absolute;
+			inset: 0;
+
+			&-1 {
+				z-index: 0;
+			}
+
+			&-2 {
+				z-index: 3;
+				pointer-events: none;
+			}
+			@media #{$md,$sm,$xs} {
+				position: relative;
+			}
+		}
+	}
+}
+/* !END: Window Shape CSS */

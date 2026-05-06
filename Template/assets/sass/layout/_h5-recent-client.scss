@@ -1,0 +1,124 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Projects CSS
+----------------------------------------*/
+.recent-client {
+	&-section {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	&-wrapper {
+		display: flex;
+		align-items: center;
+
+		.section_heading {
+			overflow: hidden;
+			height: calc(100vh - 120px);
+			display: flex;
+			align-items: center;
+			flex: 1;
+			@media #{$md,$sm,$xs} {
+				height: auto;
+				flex: auto;
+				margin-bottom: 30px;
+			}
+		}
+		.sec_subtitle {
+			> span {
+				color: var(--tj-color-light-1);
+			}
+		}
+		@media #{$md,$sm,$xs} {
+			flex-wrap: wrap;
+		}
+	}
+	&-lists {
+		width: 66.66%;
+		margin-inline-start: auto;
+		@media #{$xxl,$lg} {
+			width: 70%;
+		}
+		@media #{$xl} {
+			width: 74%;
+		}
+		@media #{$md,$sm,$xs} {
+			width: 100%;
+		}
+	}
+	&-item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 25px;
+
+		@media #{$sm} {
+			margin-bottom: 18px;
+		}
+		@media #{$xs} {
+			margin-bottom: 10px;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+		.client {
+			&-name {
+				font-size: 120px;
+				line-height: 0.8;
+				text-transform: uppercase;
+				color: var(--tj-color-common-white);
+				margin-bottom: 0;
+				flex: 1;
+				a {
+					display: block;
+					&:hover {
+						color: var(--tj-color-theme-primary);
+					}
+				}
+				@media #{$xxl} {
+					font-size: 100px;
+				}
+				@media #{$xl} {
+					font-size: 86px;
+				}
+				@media #{$lg,$md} {
+					font-size: 70px;
+				}
+				@media #{$sm} {
+					font-size: 50px;
+				}
+				@media #{$xs} {
+					font-size: 36px;
+				}
+			}
+			&-img {
+				max-width: 190px;
+				opacity: 0;
+				visibility: hidden;
+				transition: all 0.4s ease-in-out;
+				@media #{$lg} {
+					max-width: 170px;
+				}
+				@media #{$md} {
+					max-width: 150px;
+				}
+				@media #{$sm} {
+					max-width: 130px;
+				}
+				@media #{$xs} {
+					max-width: 100px;
+				}
+			}
+		}
+		&:hover {
+			a {
+				color: var(--tj-color-theme-primary);
+			}
+			.client-img {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+}
+/* !END: Projects CSS */

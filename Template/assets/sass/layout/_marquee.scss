@@ -1,0 +1,212 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Marquee CSS
+----------------------------------------*/
+.marquee {
+	&-item {
+		width: auto;
+		display: flex;
+		align-items: center;
+		gap: var(--gap);
+		@media #{$md, $sm} {
+			--gap: 25px;
+		}
+		@media #{$xs} {
+			--gap: 20px;
+		}
+	}
+	&-text {
+		font-size: 72px;
+		font-weight: var(--tj-fw-sbold);
+		font-family: var(--tj-ff-heading);
+		line-height: 1;
+		letter-spacing: -0.02em;
+		text-transform: uppercase;
+		margin: 0;
+		display: inline-flex;
+		align-items: center;
+		span {
+			display: inline-flex;
+			margin-inline-start: var(--gap);
+			@media #{$md, $sm} {
+				margin-inline-start: var(--gap);
+			}
+			@media #{$xs} {
+				margin-inline-start: var(--gap);
+			}
+		}
+		@media #{$lg, $md} {
+			font-size: 60px;
+		}
+		@media #{$sm, $xs} {
+			font-size: 40px;
+		}
+	}
+	&-icon {
+		i {
+			position: relative;
+			top: 4px;
+			font-size: 40px;
+			line-height: 1;
+		}
+
+		i,
+		svg {
+			display: inline-flex;
+			line-height: 1;
+		}
+		svg {
+			max-width: 27px;
+			height: auto;
+		}
+		img {
+			height: 100%;
+		}
+		@media #{$xl, $lg} {
+			font-size: 35px;
+		}
+		@media #{$md} {
+			font-size: 30px;
+		}
+		@media #{$sm, $xs} {
+			font-size: 22px;
+		}
+	}
+}
+
+.scroll {
+	&-slider {
+		position: relative;
+		user-select: none;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: var(--gap, 30px);
+
+		@media #{$md, $sm} {
+			gap: 25px;
+		}
+		@media #{$xs} {
+			gap: 20px;
+		}
+	}
+	&-wrapper {
+		flex-shrink: 0;
+		display: flex;
+		gap: var(--gap);
+		animation: scroll var(--duration, 30s) linear infinite;
+		@media #{$md, $sm} {
+			--gap: 25px;
+		}
+		@media #{$xs} {
+			--gap: 20px;
+		}
+	}
+}
+
+/* RTL */
+[dir="rtl"] .scroll-wrapper {
+	direction: ltr;
+	animation-name: scroll-rtl;
+}
+
+.h2-marquee-section {
+	min-height: 385px;
+	@media #{$lg} {
+		min-height: 350px;
+	}
+	@media #{$md} {
+		min-height: 300px;
+	}
+	@media #{$sm,$xs} {
+		min-height: 210px;
+	}
+}
+.h2-marquee-slider {
+	position: relative;
+	padding-top: 28px;
+	padding-bottom: 28px;
+	@media #{$md, $sm} {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	@media #{$xs} {
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+}
+.h3-marquee-slider {
+	.scroll {
+		&-slider {
+			@media #{$lg} {
+				gap: 30px;
+			}
+			@media #{$md} {
+				gap: 24px;
+			}
+			@media #{$sm,$xs} {
+				gap: 16px;
+			}
+		}
+		&-wrapper {
+			@media #{$lg} {
+				gap: 30px;
+			}
+			@media #{$md} {
+				gap: 24px;
+			}
+			@media #{$sm,$xs} {
+				gap: 16px;
+			}
+		}
+	}
+	.marquee-text {
+		font-size: 140px;
+		font-weight: var(--tj-fw-medium);
+		color: var(--tj-color-light-1);
+		align-items: center;
+		span {
+			@media #{$lg} {
+				margin-inline-start: 30px;
+			}
+			@media #{$md} {
+				margin-inline-start: 24px;
+			}
+			@media #{$sm,$xs} {
+				margin-inline-start: 16px;
+			}
+		}
+		i {
+			font-size: 80px;
+			animation: rotateImg2 6s infinite linear;
+		}
+		@media #{$lg} {
+			font-size: 82px;
+			i {
+				font-size: 50px;
+			}
+		}
+		@media #{$md} {
+			font-size: 70px;
+			i {
+				font-size: 38px;
+			}
+		}
+		@media #{$sm,$xs} {
+			font-size: 50px;
+			i {
+				font-size: 24px;
+			}
+		}
+	}
+	&:nth-child(2) {
+		.marquee-text {
+			i {
+				animation: rotateImg 6s infinite linear;
+			}
+		}
+	}
+}
+/* !END: Theme Marquee CSS */

@@ -1,0 +1,31 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Client CSS
+----------------------------------------*/
+.h5 {
+	&_client {
+		&_wrapper {
+			.section_heading {
+				margin-bottom: 52px;
+				@media #{$sm,$xs} {
+					margin-bottom: 40px;
+				}
+			}
+		}
+		&_slider_wrap {
+			border-top: 1px solid var(--tj-color-border-3);
+			border-bottom: 1px solid var(--tj-color-border-3);
+			margin-bottom: 1px;
+			.tj_client_item {
+				background-color: transparent;
+				padding: 15px 10px;
+				&::before {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+/* !END: Client CSS */

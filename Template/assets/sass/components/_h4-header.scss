@@ -1,0 +1,139 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Header CSS
+----------------------------------------*/
+
+// Other headers
+.header {
+	&-4 {
+		.tj-header_wrap {
+			align-items: flex-start;
+			@media #{$md,$sm,$xs} {
+				align-items: center;
+			}
+		}
+		.tj-header {
+			&-desig {
+				display: flex;
+				color: var(--tj-color-theme-bg);
+				max-width: 206px;
+				position: relative;
+				gap: 10px;
+				margin-top: 2px;
+				&::before {
+					content: "";
+					width: 10px;
+					height: 2px;
+					background-color: var(--tj-color-theme-bg);
+					margin-top: 10px;
+				}
+			}
+			&_right {
+				align-items: center;
+				gap: 30px;
+			}
+		}
+		.site_navigation nav ul:not(.sub-menu) {
+			flex-direction: column;
+			gap: 2px;
+			align-items: flex-start;
+			> li {
+				> a {
+					padding: 0;
+					color: var(--tj-color-light-5);
+					overflow: hidden;
+					display: flex;
+					align-items: center;
+					gap: 4px;
+					.tj-nav-text-2 {
+						text-shadow: 0 24px 0 var(--tj-color-theme-primary);
+						transition: all 0.4s ease-in-out 0s;
+					}
+					&::after {
+						display: none;
+					}
+					&::before {
+						content: "";
+						width: 4px;
+						height: 4px;
+						border-radius: 100%;
+						background-color: var(--tj-color-theme-primary);
+						transform: scale(0);
+						position: relative;
+						left: 2px;
+					}
+				}
+				&.active,
+				&:hover {
+					> a {
+						&::before {
+							transform: scale(1);
+							left: 0;
+						}
+						.tj-nav-text-2 {
+							transform: translateY(-24px);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.tj-language {
+	.nice-select {
+		min-height: inherit;
+		padding: 0;
+		border: 0;
+		border-radius: 0;
+		line-height: 1;
+		width: 41px;
+		display: flex;
+		flex-direction: row-reverse;
+		gap: 5px;
+		.current {
+			color: var(--tj-color-light-1);
+			font-weight: var(--tj-fw-medium);
+			line-height: 1;
+			transition: 0.3s;
+		}
+		&::after {
+			content: "\e912";
+			font-family: var(--tj-ff-icons);
+			border: 0;
+			width: 15px;
+			height: 15px;
+			position: static;
+			margin-top: 0;
+			transform: none;
+			color: var(--tj-color-light-1);
+			font-size: 15px;
+			transition: 0.3s;
+		}
+		.list {
+			background-color: var(--tj-color-theme-bg-dark-2);
+			border-radius: 0;
+		}
+		.option {
+			color: var(--tj-color-light-1);
+
+			&:hover,
+			&.focus,
+			&.selected.focus {
+				background-color: rgba(112, 112, 112, 0.5);
+				font-weight: var(--tj-fw-medium);
+			}
+		}
+		&.open,
+		&:hover {
+			.current {
+				color: var(--tj-color-theme-primary);
+			}
+			&::after {
+				transform: none;
+				color: var(--tj-color-theme-primary);
+			}
+		}
+	}
+}
+/* !END: Header CSS */

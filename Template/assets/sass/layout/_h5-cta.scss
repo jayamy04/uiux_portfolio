@@ -1,0 +1,97 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: CTA CSS
+----------------------------------------*/
+.h5 {
+	&-cta-section {
+		padding-bottom: 120px;
+		position: relative;
+
+		@media #{$lg} {
+			padding-bottom: 110px;
+		}
+		@media #{$md} {
+			padding-bottom: 90px;
+		}
+		@media #{$sm,$xs} {
+			padding-bottom: 70px;
+		}
+	}
+
+	&_cta_wrapper {
+		max-width: 900px;
+		margin: 0 auto;
+		text-align: center;
+
+		.cta_title {
+			text-transform: uppercase;
+			word-break: break-word;
+			margin-top: 25px;
+			img {
+				max-width: 100px;
+				margin: 0 10px 0;
+				transform: translateY(-10px);
+				@media #{$xxl} {
+					max-width: 90px;
+				}
+				@media #{$xl,$lg} {
+					max-width: 70px;
+					transform: translateY(-5px);
+				}
+				@media #{$md} {
+					max-width: 60px;
+					transform: translateY(-5px);
+				}
+				@media #{$sm} {
+					max-width: 55px;
+					transform: translateY(-5px);
+				}
+				@media #{$xs} {
+					max-width: 50px;
+					transform: translateY(-5px);
+				}
+			}
+
+			@media #{lg} {
+				font-size: 80px;
+			}
+			@media #{$md} {
+				font-size: 72px;
+			}
+			@media #{$sm} {
+				font-size: 70px;
+			}
+			@media #{$xs} {
+				font-size: 60px;
+			}
+		}
+		.cta_text {
+			font-size: 22px;
+			text-transform: uppercase;
+			font-family: var(--tj-ff-heading);
+			font-weight: var(--tj-fw-sbold);
+			margin-bottom: 30px;
+			@media #{$xl,$lg,$md} {
+				font-size: 20px;
+				margin-bottom: 25px;
+			}
+			@media #{$sm,$xs} {
+				font-size: 18px;
+				margin-bottom: 20px;
+			}
+		}
+
+		.cta_buttons {
+			gap: 10px;
+		}
+
+		@media #{$xl,$lg} {
+			max-width: 640px;
+		}
+		@media #{$md} {
+			max-width: 550px;
+		}
+	}
+}
+/* !END: CTA CSS */

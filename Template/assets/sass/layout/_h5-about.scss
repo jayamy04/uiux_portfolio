@@ -1,0 +1,123 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: About CSS
+----------------------------------------*/
+.h5 {
+	&-about {
+		&-section {
+			padding-top: 164px;
+			padding-bottom: 164px;
+			background-color: var(--tj-color-theme-bg-2);
+			position: relative;
+			z-index: 2;
+			@media #{$xl} {
+				padding-top: 130px;
+				padding-bottom: 130px;
+			}
+			@media #{$lg} {
+				padding-top: 110px;
+				padding-bottom: 110px;
+			}
+			@media #{$md} {
+				padding-top: 90px;
+				padding-bottom: 90px;
+			}
+			@media #{$sm, $xs} {
+				padding-top: 70px;
+				padding-bottom: 70px;
+			}
+		}
+		&-header {
+			.section_heading {
+				max-width: 1300px;
+				margin-inline-start: auto;
+				margin-inline-end: auto;
+				.sec_title {
+					font-size: 100px;
+					margin-bottom: 45px;
+					span {
+						color: var(--tj-color-theme-primary);
+					}
+					img {
+						display: inline-block;
+						height: 106px;
+						margin-top: -12px;
+						@media #{$xl} {
+							height: 88px;
+						}
+						@media #{$lg} {
+							height: 76px;
+						}
+						@media #{$md} {
+							height: 60px;
+							margin-top: -8px;
+						}
+						@media #{$sm,$xs} {
+							height: 50px;
+							margin-top: -6px;
+						}
+					}
+					@media #{$xxl} {
+						font-size: 90px;
+					}
+					@media #{$xl} {
+						font-size: 80px;
+					}
+					@media #{$lg} {
+						font-size: 70px;
+					}
+					@media #{$md} {
+						font-size: 54px;
+						margin-bottom: 35px;
+					}
+					@media #{$sm,$xs} {
+						font-size: 46px;
+						margin-bottom: 30px;
+					}
+				}
+
+				@media #{$xxl} {
+					max-width: 1150px;
+				}
+				@media #{$xl} {
+					max-width: 1050px;
+				}
+				@media #{$lg} {
+					max-width: 900px;
+				}
+				@media #{$md} {
+					max-width: 710px;
+				}
+			}
+		}
+	}
+}
+
+.section-separator {
+	position: absolute;
+	width: 100%;
+	bottom: -15px;
+	inset-inline-start: 0;
+	display: flex;
+	--gap: 0px;
+	overflow: hidden;
+	img {
+		animation: scroll 40s linear infinite;
+		max-width: 1860px;
+		@media #{$md} {
+			max-width: 1600px;
+		}
+		@media #{$sm,$xs} {
+			max-width: 1200px;
+		}
+	}
+
+	@media #{$md} {
+		bottom: -12px;
+	}
+	@media #{$sm,$xs} {
+		bottom: -9px;
+	}
+}
+/* !END: About CSS */
