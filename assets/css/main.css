@@ -11102,17 +11102,18 @@ body.page-projects .project-filter-section {
 .project-page-tagline {
   font-family: var(--tj-ff-heading);
   font-weight: var(--tj-fw-bold);
-  font-size: clamp(26px, 3.6vw, 44px);
-  line-height: 1.15;
+  font-size: clamp(20px, 2.4vw, 34px);
+  line-height: 1.25;
   letter-spacing: -0.02em;
   color: var(--tj-color-heading-primary);
-  margin: 0 0 28px;
-  padding: 0 12px;
+  margin: 0 auto 28px;
+  padding: 0 20px;
+  max-width: 52rem;
 }
 @media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   .project-page-tagline {
     margin-bottom: 22px;
-    font-size: clamp(22px, 5.5vw, 32px);
+    font-size: clamp(18px, 4.2vw, 26px);
   }
 }
 
