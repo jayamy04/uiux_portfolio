@@ -10405,13 +10405,20 @@ START: Projects CSS
   font-size: 16px;
   position: relative;
   top: -1px;
-  background-color: var(--tj-color-theme-primary);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #1f2937;
+  border: 1px solid rgba(15, 23, 42, 0.15);
   -webkit-transform: scale(0);
       -ms-transform: scale(0);
           transform: scale(0);
   -webkit-transform-origin: center;
       -ms-transform-origin: center;
           transform-origin: center;
+}
+.tj_project_item .project_content .project_title .icon_btn > span i,
+.tj_project_item .project_content .project_title .icon_btn > span i:last-child {
+  color: #f8fafc;
 }
 .tj_project_item .project_content .project_title a:hover {
   color: var(--tj-color-text-body-2);
