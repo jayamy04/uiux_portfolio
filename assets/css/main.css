@@ -3878,18 +3878,26 @@ START: Navigation CSS
   display: none;
 }
 
-/* Project page: disable magic cursor red follower */
-body.about .cb-cursor {
+/* Project & contact pages: disable magic cursor red follower */
+body.about .cb-cursor,
+body.page-contact .cb-cursor {
   display: none !important;
 }
 
 body.about [data-cursor],
+body.page-contact [data-cursor],
 body.about [data-cursor-text],
+body.page-contact [data-cursor-text],
 body.about [data-cursor-text-service],
+body.page-contact [data-cursor-text-service],
 body.about [data-cursor-text-service-2],
+body.page-contact [data-cursor-text-service-2],
 body.about [data-cursor-text-service-3],
+body.page-contact [data-cursor-text-service-3],
 body.about [data-cursor-text-project],
-body.about [data-cursor-text-cta] {
+body.page-contact [data-cursor-text-project],
+body.about [data-cursor-text-cta],
+body.page-contact [data-cursor-text-cta] {
   cursor: auto !important;
 }
 
