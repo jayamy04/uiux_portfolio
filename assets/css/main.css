@@ -31460,13 +31460,6 @@ START: Hero CSS
   transform: translateY(0);
 }
 
-.schedgo-preview .preview-window img,
-.makeability-preview .preview-window img {
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .sachacks-card:hover .sachacks-preview {
   opacity: 1;
   transform: translate3d(-100%, 0, 0) scale(1);
@@ -31528,7 +31521,8 @@ START: Hero CSS
 }
 
 .ibm-preview .preview-window img,
-.inclusive-design-lab-preview .preview-window img {
+.inclusive-design-lab-preview .preview-window img,
+.makeability-preview .preview-window img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
@@ -31537,7 +31531,8 @@ START: Hero CSS
 }
 
 .ibm-preview .preview-window,
-.inclusive-design-lab-preview .preview-window {
+.inclusive-design-lab-preview .preview-window,
+.makeability-preview .preview-window {
   background: var(--tj-color-theme-bg);
 }
 
@@ -31584,7 +31579,6 @@ START: Hero CSS
 .schedgo-preview .preview-window video,
 .breaking-barriers-preview .preview-window video,
 .bloomandvine-preview .preview-window video,
-.makeability-preview .preview-window video,
 .fitted-preview .preview-window video,
 .rulemate-preview .preview-window video {
   width: 100%;
@@ -31599,7 +31593,6 @@ START: Hero CSS
 .schedgo-preview .preview-window,
 .breaking-barriers-preview .preview-window,
 .bloomandvine-preview .preview-window,
-.makeability-preview .preview-window,
 .fitted-preview .preview-window,
 .rulemate-preview .preview-window {
   background: var(--tj-color-theme-bg);
