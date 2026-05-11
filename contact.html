@@ -191,18 +191,25 @@
               </div>
               <div class="col-lg-6">
                 <div class="contact-form style-3 tj-fade">
-                  <form id="contact-form-3">
+                  <div id="contact-form-sent" class="alert alert-success mb-4" role="status" style="display: none;">
+                    Thanks — your message was sent. I will get back to you soon.
+                  </div>
+                  <form id="contact-form-3" action="https://formsubmit.co/slee45@uw.edu" method="POST">
+                    <input type="hidden" name="_subject" value="Message from portfolio (seunghyun-lee.com)">
+                    <input type="hidden" name="_next" value="https://seunghyun-lee.com/contact.html?sent=1">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-5000px;height:0;width:0;opacity:0;pointer-events:none;">
                     <div class="form-input">
                       <label class="cf-label">Your Full Name<span>*</span></label>
-                      <input type="text" name="cfName2" required>
+                      <input type="text" name="name" required autocomplete="name">
                     </div>
                     <div class="form-input">
                       <label class="cf-label">Your Email Address<span>*</span></label>
-                      <input type="email" name="cfEmail2" required>
+                      <input type="email" name="email" required autocomplete="email">
                     </div>
                     <div class="form-input">
                       <label class="cf-label">Your Phone Number<span>*</span></label>
-                      <input type="tel" name="cfPhone" required>
+                      <input type="tel" name="phone" required autocomplete="tel">
                     </div>
                     <!-- <div class="form-input">
                       <label class="cf-label">Your Company / Brand</label>
@@ -238,7 +245,7 @@
                     </div> -->
                     <div class="form-input">
                       <label class="cf-label">Your Message<span>*</span></label>
-                      <textarea name="message"></textarea>
+                      <textarea name="message" required rows="6"></textarea>
                     </div>
                     <div class="submit-area tj-fade">
                       <!-- <label for="agree"><input id="agree" type="checkbox">I agree with the <a
@@ -286,6 +293,17 @@
   <script src="assets/js/preloader.js"></script>
   <script src="assets/js/gsap-custom-animations.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      if (new URLSearchParams(window.location.search).get("sent") === "1") {
+        var el = document.getElementById("contact-form-sent");
+        if (el) el.style.display = "block";
+        try {
+          history.replaceState(null, "", "contact.html");
+        } catch (e) {}
+      }
+    })();
+  </script>
 </body>
 
 </html>
