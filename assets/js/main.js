@@ -1481,7 +1481,7 @@
 
 const initVideoPopupControls = () => {
   const videoCards = document.querySelectorAll(
-    ".schedgo-card, .breaking-barriers-card, .bloomandvine-card, .fitted-card, .rulemate-card"
+    ".schedgo-card, .breaking-barriers-card, .bloomandvine-card, .makeability-card, .fitted-card, .rulemate-card"
   );
 
   const clamp01 = (value) => Math.min(1, Math.max(0, value));

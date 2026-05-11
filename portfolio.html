@@ -22,6 +22,7 @@
   <link rel="preload" as="image" href="./assets/images/projects/ibm_console_popup.png">
   <link rel="preload" as="image" href="./assets/images/projects/inclusive_design_lab_popup.png">
   <link rel="preload" as="video" href="./assets/videos/schedgo_video.mp4" type="video/mp4">
+  <link rel="preload" as="video" href="./assets/videos/makeability_video.mp4" type="video/mp4">
   <link rel="preload" as="video" href="./assets/videos/breaking_barriers_video.mov">
   <link rel="preload" as="video" href="./assets/videos/bloomandvine_video.mov">
   <link rel="preload" as="video" href="./assets/videos/fitted_video.mov" type="video/quicktime">
@@ -555,12 +556,22 @@
                         <img src="./assets/images/projects/makeabilitylab_logo.png" alt="Makeability Lab">
                       </a>
 
-                      <div class="makeability-preview project-interactive-popup">
+                      <div class="makeability-preview project-video-popup project-interactive-popup">
                         <div class="preview-window">
-                          <img src="./assets/images/projects/makeabilitylab_logo.png"
-                            alt="Makeability Lab at University of Washington — CHI 2023 research">
                           <a target="_blank" rel="noopener noreferrer" class="project-preview-link" href="https://dl.acm.org/doi/epdf/10.1145/3586182.3615815"
                             aria-label="Open Makeability Lab paper (PDF)"></a>
+                          <video muted loop autoplay playsinline preload="metadata">
+                            <source src="./assets/videos/makeability_video.mp4" type="video/mp4">
+                          </video>
+                          <button class="video-sound-toggle" type="button" aria-label="Toggle video sound"
+                            aria-pressed="false">
+                            <span class="sound-icon" aria-hidden="true">🔇</span>
+                          </button>
+                          <div class="video-scrub" aria-hidden="true">
+                            <div class="video-scrub__track">
+                              <div class="video-scrub__fill"></div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
