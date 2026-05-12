@@ -17,13 +17,14 @@
 /**----------------------------------------
 START: Theme Default CSS
 ----------------------------------------*/
-@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200..800&family=Spline+Sans:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,wght@0,500;0,600;0,700;0,800;1,400&display=swap");
 :root {
   /**
      @Font-Family Declaration
    */
-  --tj-ff-body: 'Spline Sans', sans-serif;
-  --tj-ff-heading: 'Bricolage Grotesque', sans-serif;
+  --tj-ff-body: "DM Sans", system-ui, -apple-system, sans-serif;
+  --tj-ff-heading: "Fraunces", Georgia, "Times New Roman", serif;
+  --tj-ff-text-body: "DM Sans", system-ui, -apple-system, sans-serif;
   --tj-ff-icons: 'agina-icons';
   /**
      @Font-weight Declaration
@@ -11096,25 +11097,6 @@ body.page-projects .inner_top_gap {
 body.page-projects .project-filter-section {
   padding-top: 44px;
 }
-
-/* Portfolio: ScrollSmoother breaks CSS sticky — pin handled in GSAP; allow overflow for hovers */
-body.page-projects .project-filter-section.fix {
-  overflow: visible;
-}
-
-body.page-projects .project-filter-header {
-  position: relative;
-  z-index: 25;
-  background-color: var(--tj-color-theme-bg);
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-left: -4px;
-  margin-right: -4px;
-  padding-left: 4px;
-  padding-right: 4px;
-  -webkit-box-shadow: 0 1px 0 rgba(15, 23, 42, 0.06);
-          box-shadow: 0 1px 0 rgba(15, 23, 42, 0.06);
-}
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   body.page-projects .project-filter-section {
     padding-top: 36px;
@@ -11133,14 +11115,13 @@ body.page-projects .project-filter-header {
   line-height: 1.25;
   letter-spacing: -0.02em;
   color: var(--tj-color-heading-primary);
-  margin: 36px auto 48px;
-  padding: 12px 32px;
+  margin: 0 auto 28px;
+  padding: 0 20px;
   max-width: 52rem;
 }
 @media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   .project-page-tagline {
-    margin: 24px auto 32px;
-    padding: 10px 22px;
+    margin-bottom: 22px;
     font-size: clamp(18px, 4.2vw, 26px);
   }
 }
