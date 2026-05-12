@@ -1014,6 +1014,12 @@
 					filter: ".selected_work",
 				});
 
+				$grid.on("layoutComplete", function () {
+					if (typeof ScrollTrigger !== "undefined") {
+						ScrollTrigger.refresh();
+					}
+				});
+
 				// filter items on button click
 				$(".tj_filter_btn_group").on("click", "button", function () {
 					$(".tj_filter_btn_group button").removeClass("active");

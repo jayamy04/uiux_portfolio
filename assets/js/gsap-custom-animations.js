@@ -55,6 +55,7 @@
 		init: function () {
 			// Initialize smooth scrolling FIRST
 			initSmoothScrolling();
+			this.pinPortfolioFilterBar();
 
 			// Start animations immediately (no delay)
 			this.fadeElements();
@@ -1608,6 +1609,31 @@
 				});
 			}
 		},
+		pinPortfolioFilterBar: function () {
+			if (!document.body.classList.contains("page-projects")) return;
+			const header = document.querySelector(".project-filter-header");
+			const grid = document.querySelector(".tj_project_grid");
+			if (!header || !grid || typeof ScrollTrigger === "undefined") return;
+
+			const st = ScrollTrigger.create({
+				trigger: header,
+				start: "top top+=14",
+				endTrigger: grid,
+				end: "bottom top+=14",
+				pin: true,
+				pinSpacing: true,
+				anticipatePin: 1,
+				invalidateOnRefresh: true,
+			});
+			if (this.scrollTriggers) this.scrollTriggers.push(st);
+			requestAnimationFrame(function () {
+				if (typeof ScrollTrigger !== "undefined") ScrollTrigger.refresh();
+			});
+			setTimeout(function () {
+				if (typeof ScrollTrigger !== "undefined") ScrollTrigger.refresh();
+			}, 400);
+		},
+
 		// Home 6 Star Animation
 		h6HeroStarAnimation: function () {
 			if ($(".tj-scroll-spin").length > 0) {
