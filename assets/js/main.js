@@ -37,6 +37,31 @@
 (function ($) {
 	"use strict";
 
+	function initPortfolioFilterCounts() {
+		const group = document.querySelector(".tj_filter_btn_group");
+		const grid = document.querySelector(".tj_filter_item_wrapper");
+		if (!group || !grid) return;
+		const items = grid.querySelectorAll(".tj_filter_item");
+		group.querySelectorAll("button[data-filter]").forEach(btn => {
+			const filter = btn.getAttribute("data-filter");
+			if (!filter) return;
+			const flip = btn.querySelector(".flip-text");
+			if (!flip) return;
+			const base = flip.textContent.replace(/\s*\(\d+\)\s*$/, "").trim();
+			let count = 0;
+			if (filter === ".all") {
+				count = items.length;
+			} else {
+				const cls = filter.startsWith(".") ? filter.slice(1) : filter;
+				items.forEach(el => {
+					if (el.classList.contains(cls)) count += 1;
+				});
+			}
+			flip.textContent = `${base} (${count})`;
+			btn.setAttribute("aria-label", `${base}, ${count} projects`);
+		});
+	}
+
 	const mainCustomJs = () => {
 		/* 
   **********************************
@@ -232,6 +257,8 @@
 	`;
 			});
 		}
+
+		initPortfolioFilterCounts();
 
 		/* 
   **********************************
