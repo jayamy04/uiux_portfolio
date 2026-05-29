@@ -3879,25 +3879,66 @@ START: Navigation CSS
   display: none;
 }
 
-/* Project & contact pages: disable magic cursor red follower */
+/* Editorial & project pages: disable magic cursor red follower */
+body.site-editorial .cb-cursor,
 body.about .cb-cursor,
-body.page-contact .cb-cursor {
+body.page-contact .cb-cursor,
+body.page-home .cb-cursor,
+body.page-about .cb-cursor,
+body.page-playground .cb-cursor,
+body.page-dance .cb-cursor {
   display: none !important;
 }
 
+body.site-editorial [data-cursor],
 body.about [data-cursor],
 body.page-contact [data-cursor],
+body.page-home [data-cursor],
+body.page-about [data-cursor],
+body.page-playground [data-cursor],
+body.page-dance [data-cursor],
 body.about [data-cursor-text],
 body.page-contact [data-cursor-text],
+body.site-editorial [data-cursor-text],
+body.page-home [data-cursor-text],
+body.page-about [data-cursor-text],
+body.page-playground [data-cursor-text],
+body.page-dance [data-cursor-text],
 body.about [data-cursor-text-service],
 body.page-contact [data-cursor-text-service],
+body.site-editorial [data-cursor-text-service],
+body.page-home [data-cursor-text-service],
+body.page-about [data-cursor-text-service],
+body.page-playground [data-cursor-text-service],
+body.page-dance [data-cursor-text-service],
 body.about [data-cursor-text-service-2],
 body.page-contact [data-cursor-text-service-2],
+body.site-editorial [data-cursor-text-service-2],
+body.page-home [data-cursor-text-service-2],
+body.page-about [data-cursor-text-service-2],
+body.page-playground [data-cursor-text-service-2],
+body.page-dance [data-cursor-text-service-2],
 body.about [data-cursor-text-service-3],
 body.page-contact [data-cursor-text-service-3],
+body.site-editorial [data-cursor-text-service-3],
+body.page-home [data-cursor-text-service-3],
+body.page-about [data-cursor-text-service-3],
+body.page-playground [data-cursor-text-service-3],
+body.page-dance [data-cursor-text-service-3],
 body.about [data-cursor-text-project],
 body.page-contact [data-cursor-text-project],
+body.site-editorial [data-cursor-text-project],
+body.page-home [data-cursor-text-project],
+body.page-about [data-cursor-text-project],
+body.page-playground [data-cursor-text-project],
+body.page-dance [data-cursor-text-project],
 body.about [data-cursor-text-cta],
+body.page-contact [data-cursor-text-cta],
+body.site-editorial [data-cursor-text-cta],
+body.page-home [data-cursor-text-cta],
+body.page-about [data-cursor-text-cta],
+body.page-playground [data-cursor-text-cta],
+body.page-dance [data-cursor-text-cta],
 body.page-contact [data-cursor-text-cta] {
   cursor: auto !important;
 }
@@ -11123,6 +11164,177 @@ body.page-projects .project-filter-section {
   .project-page-tagline {
     margin-bottom: 30px;
     font-size: clamp(18px, 4.2vw, 26px);
+  }
+}
+
+/* Home, about & playground landing pages */
+body.page-home .inner_top_gap,
+body.page-about .inner_top_gap,
+body.page-playground .inner_top_gap,
+body.page-dance .inner_top_gap {
+  padding-top: 104px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  body.page-home .inner_top_gap,
+  body.page-about .inner_top_gap,
+  body.page-playground .inner_top_gap,
+  body.page-dance .inner_top_gap {
+    padding-top: 96px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  body.page-home .inner_top_gap,
+  body.page-about .inner_top_gap,
+  body.page-playground .inner_top_gap,
+  body.page-dance .inner_top_gap {
+    padding-top: 92px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  body.page-home .inner_top_gap,
+  body.page-about .inner_top_gap,
+  body.page-playground .inner_top_gap,
+  body.page-dance .inner_top_gap {
+    padding-top: 88px;
+  }
+}
+
+.home-landing__title.site-page__title {
+  font-size: clamp(48px, 9vw, 112px);
+  margin-bottom: 28px;
+}
+
+/* Home with portfolio grid below intro */
+body.page-home.page-projects .home-landing-section {
+  min-height: auto;
+  align-items: flex-start;
+  padding-top: 48px;
+  padding-bottom: 32px;
+}
+
+body.page-home.page-projects .project-filter-section {
+  padding-top: 24px;
+}
+
+body.page-home.page-projects .tj_project_grid {
+  padding-top: 48px;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  body.page-home.page-projects .home-landing-section {
+    padding-top: 32px;
+    padding-bottom: 24px;
+  }
+  body.page-home.page-projects .tj_project_grid {
+    padding-top: 32px;
+  }
+}
+
+.home-landing-section {
+  display: block;
+  min-height: calc(100vh - 120px);
+  padding-top: 48px;
+  padding-bottom: 80px;
+  text-align: left;
+}
+
+.home-landing-section .container-fluid {
+  width: 100%;
+  max-width: 100%;
+}
+
+.home-landing__inner {
+  width: 100%;
+  max-width: 40rem;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+@media only screen and (min-width: 1200px) {
+  .home-landing__inner {
+    max-width: 44rem;
+  }
+}
+
+.home-landing__title {
+  font-family: var(--tj-ff-heading);
+  font-weight: var(--tj-fw-bold);
+  font-size: clamp(56px, 12vw, 140px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: var(--tj-color-heading-primary);
+  margin: 0 0 28px;
+  text-align: left;
+}
+
+.home-landing__copy {
+  font-family: var(--tj-ff-heading);
+  font-weight: var(--tj-fw-bold);
+  font-size: clamp(17px, 1.85vw, 28px);
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+  color: var(--tj-color-heading-primary);
+  max-width: 100%;
+  text-wrap: pretty;
+}
+
+.home-landing__copy + .home-landing__copy {
+  margin-top: 1.35em;
+}
+
+.home-landing__copy p {
+  margin: 0;
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+.home-landing__copy--secondary {
+  color: var(--tj-color-text-body-2);
+  font-weight: var(--tj-fw-sbold);
+}
+
+.home-landing__copy a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--tj-color-theme-primary);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.15em;
+  transition: color 0.25s ease;
+}
+
+.home-landing__copy a:hover {
+  color: var(--tj-color-theme-primary);
+}
+
+.home-landing__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px 24px;
+  margin-top: 40px;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .home-landing-section {
+    min-height: auto;
+    padding-top: 32px;
+    padding-bottom: 60px;
+  }
+  .home-landing__inner {
+    max-width: 100%;
+  }
+  .home-landing__title {
+    margin-bottom: 20px;
+    font-size: clamp(48px, 16vw, 88px);
+  }
+  .home-landing__copy {
+    font-size: clamp(16px, 4.5vw, 22px);
+    line-height: 1.5;
+  }
+  .home-landing__actions {
+    margin-top: 28px;
   }
 }
 
@@ -31315,6 +31527,7 @@ START: Hero CSS
 .sachacks-card,
 .ibm-card,
 .inclusive-design-lab-card,
+.soundtransit-card,
 .nordstrom-rack-card,
 .schedgo-card,
 .breaking-barriers-card,
@@ -31334,7 +31547,8 @@ START: Hero CSS
   z-index: 10000;
 }
 
-.inclusive-design-lab-card:hover {
+.inclusive-design-lab-card:hover,
+.soundtransit-card:hover {
   z-index: 10000;
 }
 
@@ -31373,6 +31587,7 @@ START: Hero CSS
 .sachacks-card .project_image,
 .ibm-card .project_image,
 .inclusive-design-lab-card .project_image,
+.soundtransit-card .project_image,
 .nordstrom-rack-card .project_image,
 .schedgo-card .project_image,
 .breaking-barriers-card .project_image,
@@ -31390,6 +31605,7 @@ START: Hero CSS
 .sachacks-card .project_image > a,
 .ibm-card .project_image > a,
 .inclusive-design-lab-card .project_image > a,
+.soundtransit-card .project_image > a,
 .nordstrom-rack-card .project_image > a,
 .schedgo-card .project_image > a,
 .breaking-barriers-card .project_image > a,
@@ -31406,6 +31622,7 @@ START: Hero CSS
 .sachacks-preview,
 .ibm-preview,
 .inclusive-design-lab-preview,
+.soundtransit-preview,
 .nordstrom-rack-preview,
 .schedgo-preview,
 .breaking-barriers-preview,
@@ -31413,7 +31630,9 @@ START: Hero CSS
 .makeability-preview,
 .fitted-preview,
 .rulemate-preview,
-.wics-social-preview {
+.wics-social-preview,
+.cogsci-citation-preview,
+.cs-conference-preview {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -31435,13 +31654,16 @@ START: Hero CSS
 
 .ibm-preview,
 .inclusive-design-lab-preview,
+.soundtransit-preview,
 .nordstrom-rack-preview,
 .schedgo-preview,
 .breaking-barriers-preview,
 .bloomandvine-preview,
 .makeability-preview,
 .fitted-preview,
-.rulemate-preview {
+.rulemate-preview,
+.cogsci-citation-preview,
+.cs-conference-preview {
   left: 0;
 }
 
@@ -31492,6 +31714,17 @@ START: Hero CSS
   transform: translate3d(0, 0, 0) scale(1);
 }
 
+.soundtransit-card:hover .soundtransit-preview {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.cogsci-citation-card:hover .cogsci-citation-preview,
+.cs-conference-card:hover .cs-conference-preview {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
 .nordstrom-rack-card:hover .nordstrom-rack-preview {
   opacity: 1;
   transform: translate3d(0, 0, 0) scale(1);
@@ -31538,7 +31771,8 @@ START: Hero CSS
 }
 
 .ibm-preview .preview-window img,
-.inclusive-design-lab-preview .preview-window img {
+.inclusive-design-lab-preview .preview-window img,
+.soundtransit-preview .preview-window--brand img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
@@ -31547,7 +31781,8 @@ START: Hero CSS
 }
 
 .ibm-preview .preview-window,
-.inclusive-design-lab-preview .preview-window {
+.inclusive-design-lab-preview .preview-window,
+.soundtransit-preview .preview-window {
   background: var(--tj-color-theme-bg);
 }
 
@@ -31555,7 +31790,7 @@ START: Hero CSS
   background: var(--tj-color-theme-bg);
 }
 
-.nordstrom-rack-preview .preview-window iframe.nordstrom-deck-embed {
+.nordstrom-rack-preview .preview-window iframe.nordstrom-pdf-embed {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -31565,10 +31800,6 @@ START: Hero CSS
   z-index: 0;
   background: var(--tj-color-theme-bg);
   pointer-events: none;
-}
-
-.nordstrom-rack-preview .preview-window iframe.nordstrom-deck-embed.nordstrom-deck-embed--hidden {
-  display: none;
 }
 
 .nordstrom-rack-preview .preview-window img.nordstrom-slide {
@@ -31889,12 +32120,15 @@ START: Hero CSS
   .sachacks-preview,
   .ibm-preview,
   .inclusive-design-lab-preview,
+.soundtransit-preview,
   .nordstrom-rack-preview,
   .schedgo-preview,
   .makeability-preview,
   .fitted-preview,
   .rulemate-preview,
-  .wics-social-preview {
+  .wics-social-preview,
+  .cogsci-citation-preview,
+  .cs-conference-preview {
     border-radius: 12px;
   }
   .preview-window {
@@ -31906,12 +32140,15 @@ START: Hero CSS
   .sachacks-preview,
   .ibm-preview,
   .inclusive-design-lab-preview,
+.soundtransit-preview,
   .nordstrom-rack-preview,
   .schedgo-preview,
   .makeability-preview,
   .fitted-preview,
   .rulemate-preview,
-  .wics-social-preview {
+  .wics-social-preview,
+  .cogsci-citation-preview,
+  .cs-conference-preview {
     border-radius: 12px;
   }
   .preview-window {
@@ -31923,12 +32160,15 @@ START: Hero CSS
   .sachacks-preview,
   .ibm-preview,
   .inclusive-design-lab-preview,
+.soundtransit-preview,
   .nordstrom-rack-preview,
   .schedgo-preview,
   .makeability-preview,
   .fitted-preview,
   .rulemate-preview,
-  .wics-social-preview {
+  .wics-social-preview,
+  .cogsci-citation-preview,
+  .cs-conference-preview {
     border-radius: 12px;
   }
 }

@@ -1,0 +1,417 @@
+/* One-page resume — Fraunces + DM Sans, letter PDF
+   Fills letter height: airy type/spacing + print flex distribution */
+
+:root {
+  --ink: #14141c;
+  --muted: #3d3d48;
+  --line: #d4d4dc;
+  --accent: #c42d8a;
+  --bg: #ffffff;
+  --font-body: "DM Sans", system-ui, -apple-system, sans-serif;
+  --font-heading: "Fraunces", Georgia, "Times New Roman", serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10pt;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body.resume-print {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.62;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+.resume-print__page {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(11in - 0.64in);
+}
+
+/* ── Header ── */
+
+.resume-print__header {
+  flex: 0 0 auto;
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.85rem;
+  border-bottom: none;
+  background:
+    linear-gradient(var(--accent), var(--accent)) bottom left / 2.5rem 2px no-repeat;
+}
+
+.resume-print__name {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 2.35rem;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+.resume-print__name span {
+  color: var(--accent);
+}
+
+.resume-print__contact {
+  margin-top: 0.55rem;
+}
+
+.resume-print__contact-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  gap: 0 0.5rem;
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.resume-print__contact-row span:not(:last-child)::after {
+  content: "·";
+  margin-left: 0.5rem;
+  color: #888;
+}
+
+.resume-print__contact-note {
+  color: var(--muted);
+}
+
+.resume-print__contact-row--personal {
+  margin-top: 0.12rem;
+  font-size: 0.86rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.resume-print__contact-row--personal span:not(:last-child)::after {
+  content: none;
+}
+
+.resume-print__contact-row a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+/* ── Grid (reference ~59 / 41 split) ── */
+
+.resume-print__grid {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: 1.08fr 0.78fr;
+  gap: 0 1.45rem;
+  align-items: stretch;
+  min-height: 0;
+}
+
+.resume-print__main,
+.resume-print__aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+}
+
+.resume-print__aside {
+  border-left: 1px solid var(--line);
+  padding-left: 1.25rem;
+  background:
+    linear-gradient(var(--accent), var(--accent)) top left / 2px 1.5rem no-repeat,
+    linear-gradient(var(--line), var(--line)) top left / 1px 100% no-repeat;
+}
+
+/* ── Sections ── */
+
+.resume-print__block {
+  margin-bottom: 0.95rem;
+}
+
+.resume-print__block:last-child {
+  margin-bottom: 0;
+}
+
+.resume-print__main .resume-print__block,
+.resume-print__aside .resume-print__block {
+  margin-bottom: 0;
+}
+
+.resume-print__main .resume-print__block + .resume-print__block {
+  margin-top: 0;
+}
+
+.resume-print__aside .resume-print__block + .resume-print__block {
+  margin-top: 0;
+}
+
+.resume-print__aside .resume-print__label {
+  margin-bottom: 0.42rem;
+}
+
+.resume-print__aside .resume-print__item-title {
+  font-size: 0.88rem;
+  line-height: 1.32;
+}
+
+.resume-print__aside .resume-print__item-sub {
+  font-size: 0.82rem;
+  line-height: 1.38;
+  margin-top: 0.1rem;
+}
+
+.resume-print__aside .resume-print__skill dt {
+  margin-bottom: 0.06rem;
+}
+
+.resume-print__aside .resume-print__skill dd {
+  font-size: 0.84rem;
+  line-height: 1.38;
+}
+
+.resume-print__label {
+  margin: 0 0 0.62rem;
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.resume-print__accent {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ── Community (main column, compact) ── */
+
+.resume-print__community-line {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.44;
+  color: var(--muted);
+}
+
+.resume-print__community-line strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.resume-print__list--compact .resume-print__item--compact {
+  margin-bottom: 0.32rem;
+  padding-bottom: 0.32rem;
+  border-bottom: none;
+}
+
+.resume-print__list--compact .resume-print__item--compact:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.resume-print__block--community .resume-print__item-title {
+  font-size: 0.92rem;
+  line-height: 1.32;
+}
+
+.resume-print__block--community .resume-print__item-sub {
+  font-size: 0.86rem;
+  line-height: 1.4;
+  margin-top: 0.08rem;
+}
+
+/* ── Beyond the screen (sidebar footer) ── */
+
+.resume-print__block--beyond {
+  margin-top: 0.15rem;
+  padding-top: 0.48rem;
+  border-top: 1px solid var(--line);
+}
+
+.resume-print__beyond {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* ── Experience (reference: org+role line, date below, airy blocks) ── */
+
+.resume-print__timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+}
+
+.resume-print__exp {
+  position: relative;
+  margin-bottom: 0.52rem;
+}
+
+.resume-print__exp:last-child {
+  margin-bottom: 0;
+}
+
+.resume-print__exp-org {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.resume-print__exp-when {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+
+.resume-print__exp-text {
+  margin: 0.26rem 0 0;
+  font-size: 0.92rem;
+  line-height: 1.52;
+  color: var(--muted);
+}
+
+/* ── Sidebar lists ── */
+
+.resume-print__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.resume-print__item {
+  margin-bottom: 0.42rem;
+  padding-bottom: 0.42rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.resume-print__item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.resume-print__item-top {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+}
+
+.resume-print__item-title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 0.94rem;
+  font-weight: 600;
+  line-height: 1.38;
+}
+
+.resume-print__item-when {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.resume-print__item-sub {
+  margin: 0.2rem 0 0;
+  font-size: 0.89rem;
+  line-height: 1.52;
+  color: var(--muted);
+}
+
+/* ── Skills ── */
+
+.resume-print__skills {
+  margin: 0;
+}
+
+.resume-print__skill {
+  margin-bottom: 0.3rem;
+}
+
+.resume-print__skill:last-child {
+  margin-bottom: 0;
+}
+
+.resume-print__skill dt {
+  margin: 0 0 0.12rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.resume-print__skill dd {
+  margin: 0;
+  font-size: 0.91rem;
+  line-height: 1.52;
+  color: var(--ink);
+}
+
+/* ── Print ── */
+
+@page {
+  size: letter;
+  margin: 0.32in 0.36in;
+}
+
+@media print {
+  body.resume-print {
+    background: #fff;
+  }
+
+  .resume-print__page {
+    width: 100%;
+    max-width: none;
+    min-height: calc(11in - 0.64in);
+  }
+
+  .resume-print__grid {
+    display: grid;
+    grid-template-columns: 1.08fr 0.78fr;
+    align-items: stretch;
+  }
+
+  .resume-print__main,
+  .resume-print__aside {
+    justify-content: space-between;
+  }
+
+  a {
+    color: var(--ink) !important;
+  }
+
+  .resume-print__contact-row {
+    flex-wrap: nowrap;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 36rem) {
+  .resume-print__contact-row {
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "uxui-portfolio",
+  "private": true,
+  "description": "Amy Lee UX portfolio — static site",
+  "scripts": {
+    "resume:pdf": "node scripts/generate-resume-pdf.mjs",
+    "resume:docx": "node scripts/generate-resume-docx.mjs",
+    "resume:all": "npm run resume:pdf && npm run resume:docx"
+  },
+  "devDependencies": {
+    "cheerio": "^1.2.0",
+    "docx": "^9.7.1",
+    "puppeteer": "^24.2.0"
+  }
+}

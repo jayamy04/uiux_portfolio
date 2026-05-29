@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Temp / build artifacts
+.tmp-*/
+tmp-*.json
+
+# Restore / codegen (local only)
+_restored_from_transcript/
+_gen_case_studies.py
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*~
+.vscode/
+.idea/

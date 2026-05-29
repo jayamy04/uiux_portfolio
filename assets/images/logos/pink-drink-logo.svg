@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="Amy Lee">
+  <defs>
+    <linearGradient id="cupGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff0f8"/>
+      <stop offset="100%" stop-color="#ffd0ec"/>
+    </linearGradient>
+    <linearGradient id="matchaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffb8e8"/>
+      <stop offset="45%" stop-color="#ff6ecf"/>
+      <stop offset="100%" stop-color="#ff4db8"/>
+    </linearGradient>
+    <linearGradient id="foamGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ffe8f5"/>
+    </linearGradient>
+    <linearGradient id="whiskGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffc8e8"/>
+      <stop offset="100%" stop-color="#ff8ae0"/>
+    </linearGradient>
+  </defs>
+  <!-- chasen whisk (subtle, behind cup) -->
+  <g fill="none" stroke="url(#whiskGrad)" stroke-width="0.9" stroke-linecap="round" opacity="0.85">
+    <path d="M30 8v6"/>
+    <path d="M28.2 8.8l1.2 5.8"/>
+    <path d="M31.8 8.8l-1.2 5.8"/>
+    <path d="M26.8 10.2l2.2 5"/>
+    <path d="M33.2 10.2l-2.2 5"/>
+    <ellipse cx="30" cy="15.5" rx="3.2" ry="1.1" fill="#ffc8e8" stroke="#ffb8e0" stroke-width="0.6"/>
+  </g>
+  <!-- latte cup -->
+  <path d="M11 13h18l-2.2 19c-.25 2-1.9 3.5-3.8 3.5h-6c-1.9 0-3.55-1.5-3.8-3.5L11 13z" fill="url(#cupGrad)" stroke="#ffb8e0" stroke-width="1"/>
+  <!-- pink matcha -->
+  <path d="M12.5 15h15l-1.8 15.5c-.15 1.3-1.2 2.2-2.4 2.2h-6.6c-1.2 0-2.25-.9-2.4-2.2L12.5 15z" fill="url(#matchaGrad)" opacity="0.92"/>
+  <!-- matcha swirl in drink -->
+  <path d="M16 22c2.5-1.2 5-1 7.5.3" fill="none" stroke="#ff9ee6" stroke-width="1.1" stroke-linecap="round" opacity="0.55"/>
+  <path d="M15 25.5c3-.8 6-.5 9 1" fill="none" stroke="#ffa8eb" stroke-width="0.9" stroke-linecap="round" opacity="0.4"/>
+  <!-- foam cap -->
+  <ellipse cx="20" cy="15.2" rx="8.2" ry="2.4" fill="url(#foamGrad)" stroke="#ffd8f0" stroke-width="0.7"/>
+  <path d="M12.5 15.5c2.2-.9 4.5-1.1 7.5-.4s5 1.2 7.5.1" fill="none" stroke="#ffffff" stroke-width="0.8" stroke-linecap="round" opacity="0.7"/>
+  <!-- foam art swirl -->
+  <path d="M17.5 14.2c1.8.6 3.2 1.8 4.2 3.2" fill="none" stroke="#ff8ae0" stroke-width="1" stroke-linecap="round"/>
+  <path d="M22 14c1.2 1 2 2.4 2.2 4" fill="none" stroke="#ff6ecf" stroke-width="0.85" stroke-linecap="round" opacity="0.75"/>
+  <!-- cup rim highlight -->
+  <path d="M11.5 13.2h17" fill="none" stroke="#ffffff" stroke-width="0.6" stroke-linecap="round" opacity="0.5"/>
+  <!-- cute sparkle -->
+  <path d="M7 9l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z" fill="#ff8ae0" opacity="0.9"/>
+  <!-- soft blush on cup -->
+  <ellipse cx="14.5" cy="24" rx="2.2" ry="1" fill="#ff4db8" opacity="0.12"/>
+</svg>

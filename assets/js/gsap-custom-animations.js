@@ -81,6 +81,7 @@
 			this.imageGalleryAnimation();
 			this.perspectiveShowcase();
 			this.stickyPanelAnimation();
+			this.danceStickyIntroAnimation();
 			this.onpageNavAnimation();
 			this.scrollProgressAnimation();
 			this.h6HeroStarAnimation();
@@ -1509,6 +1510,35 @@
 			});
 		},
 		// sticky Pannels
+		// Dance page — pin intro copy while reels scroll (ScrollSmoother breaks CSS sticky)
+		danceStickyIntroAnimation: function () {
+			const layout = document.querySelector(
+				"body.page-dance .dance-page-layout",
+			);
+			const intro = document.querySelector(
+				"body.page-dance .dance-page-layout__intro",
+			);
+			if (!layout || !intro) return;
+
+			mediaMatch.add("(min-width: 992px)", () => {
+				const startOffset = 84;
+				const trigger = ScrollTrigger.create({
+					trigger: layout,
+					start: `top top+=${startOffset}`,
+					endTrigger: layout,
+					end: "bottom bottom",
+					pin: intro,
+					pinSpacing: false,
+					anticipatePin: 1,
+					invalidateOnRefresh: true,
+				});
+
+				this.scrollTriggers.push(trigger);
+
+				return () => trigger.kill();
+			});
+		},
+
 		stickyPanelAnimation: function () {
 			const container = document.querySelector(".tj-sticky-panel-container");
 			const panels = document.querySelectorAll(".tj-sticky-panel");
