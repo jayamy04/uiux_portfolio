@@ -111,7 +111,23 @@
   ********************************** 
   */
 		const mobileMenus = $("#mobile-menu");
-		if (mobileMenus.length && !$("body.site-editorial").length) {
+		const isSiteEditorial = $("body.site-editorial").length > 0;
+		const mobileToggleSpans =
+			"<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>";
+
+		if (isSiteEditorial && $(".tj-header_wrap").length) {
+			$(".tj-header_wrap").each(function () {
+				if (!$(this).find(".tj-header_mobile_toggle").length) {
+					$(this).append(
+						'<button type="button" class="tj-header_mobile_toggle tj_sidebar_toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-offcanvas-nav">' +
+							mobileToggleSpans +
+							"</button>",
+					);
+				}
+			});
+		}
+
+		if (mobileMenus.length) {
 			$("#mobile-menu").meanmenu({
 				meanMenuContainer: ".mobile_menu",
 				meanScreenWidth: "991",
@@ -124,20 +140,30 @@
   Sidebar Js
   ********************************** 
   */
+		const closeOffcanvas = () => {
+			$(".tj-offcanvas").removeClass("opened");
+			$(".tj-offcanvas-overlay").removeClass("opened");
+			$(".tj-header_mobile_toggle").attr("aria-expanded", "false");
+		};
+
 		if ($(".tj-offcanvas").length) {
-			$(".tj_sidebar_toggle").on("click", function () {
+			$(".tj-offcanvas").attr("id", "site-offcanvas-nav");
+
+			$(document).on("click", ".tj-header_mobile_toggle", function (e) {
+				e.preventDefault();
 				$(".tj-offcanvas").addClass("opened");
 				$(".tj-offcanvas-overlay").addClass("opened");
+				$(this).attr("aria-expanded", "true");
 			});
 
-			$(".offcanvas_close").on("click", function () {
-				$(".tj-offcanvas").removeClass("opened");
-				$(".tj-offcanvas-overlay").removeClass("opened");
-			});
-			$(".tj-offcanvas-overlay").on("click", function () {
-				$(".tj-offcanvas").removeClass("opened");
-				$(this).removeClass("opened");
-			});
+			$(".offcanvas_close").on("click", closeOffcanvas);
+			$(".tj-offcanvas-overlay").on("click", closeOffcanvas);
+
+			$(document).on(
+				"click",
+				".offcanvas_menu .mean-nav a:not(.mean-expand)",
+				closeOffcanvas,
+			);
 		}
 
 		/* 
