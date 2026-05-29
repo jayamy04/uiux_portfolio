@@ -8088,17 +8088,12 @@ body.page-inclusive-lab .work-detail__cta--ghost:hover {
 
 body.page-sachacks .work-detail__section,
 body.page-schedgo .work-detail__section,
+body.page-ibm-saas-console .work-detail__section,
 body.page-breaking-barriers .work-detail__section,
 body.page-bloom-and-vine .work-detail__section,
 body.page-makeability-lab .work-detail__section,
+body.page-nordstrom-rack .work-detail__section,
 body.page-inclusive-lab .work-detail__section {
-  padding: clamp(36px, 6vh, 56px) 0 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* IBM + Nordstrom case studies — continuous flow, no section hairlines */
-body.page-ibm-saas-console .work-detail__section,
-body.page-nordstrom-rack .work-detail__section {
   padding: clamp(36px, 6vh, 56px) 0 0;
   border-top: none;
   border-bottom: none;
