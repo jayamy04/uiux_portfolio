@@ -32,6 +32,14 @@
   <link rel="preload" href="./assets/videos/nordstrom_rack_v.mp4" as="fetch" type="video/mp4" crossorigin>
   <link rel="preload" as="image" href="./assets/images/projects/nordstrom_rack_video_poster.jpg">
 
+  <script>
+    (function () {
+      if (window.location.hash === "#work") return;
+      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+      window.scrollTo(0, 0);
+    })();
+  </script>
+
 </head>
 
 <body class="site-editorial page-home page-projects about">

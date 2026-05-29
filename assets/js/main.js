@@ -2283,6 +2283,56 @@ const initCaseStudyPreviewVideos = () => {
 };
 
 const HOME_HERO_CAROUSEL_INTERVAL_MS = 10000;
+const HOME_WORK_HASH = "#work";
+
+const scrollHomePageToTop = () => {
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+
+  const smoother =
+    typeof ScrollSmoother !== "undefined" ? ScrollSmoother.get() : null;
+  if (smoother && typeof smoother.scrollTop === "function") {
+    smoother.scrollTop(0);
+  }
+};
+
+const scrollHomePageToWork = () => {
+  const target = document.getElementById("work");
+  if (!target) return;
+
+  const smoother =
+    typeof ScrollSmoother !== "undefined" ? ScrollSmoother.get() : null;
+  if (smoother && typeof smoother.scrollTo === "function") {
+    smoother.scrollTo(target, true, "top top");
+    return;
+  }
+
+  target.scrollIntoView({ block: "start" });
+};
+
+const initHomeLandingScroll = () => {
+  if (!document.body.classList.contains("page-home")) return;
+
+  const hasWorkHash = window.location.hash === HOME_WORK_HASH;
+
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+
+  if (!hasWorkHash) {
+    scrollHomePageToTop();
+    requestAnimationFrame(scrollHomePageToTop);
+    window.addEventListener("load", scrollHomePageToTop, { once: true });
+    // ScrollSmoother initializes ~2s after load; keep fresh visits at the hero.
+    window.setTimeout(scrollHomePageToTop, 2300);
+    return;
+  }
+
+  const syncWorkAnchor = () => scrollHomePageToWork();
+  window.addEventListener("load", syncWorkAnchor, { once: true });
+  window.setTimeout(syncWorkAnchor, 2300);
+};
 
 const initHomeHeroProjectCarousel = () => {
   const root = document.querySelector("[data-home-hero-carousel]");
@@ -2758,6 +2808,7 @@ const initCommunityGalleries = () => {
 };
 
 const initProjectPageEnhancements = () => {
+  initHomeLandingScroll();
   initVideoPopupControls();
   initWicsSocialSlideshow();
   initProjectPreviewLightbox();
