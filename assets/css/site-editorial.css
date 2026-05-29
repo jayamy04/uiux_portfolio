@@ -4221,6 +4221,13 @@ body.site-editorial .tj-offcanvas.tj-offcanvas-2 .tj_socials > li > a:hover {
   border-color: #ffffff;
 }
 
+body.site-editorial .tj_socials > li > a .tj_socials__resume-icon {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
 body.site-editorial .tj-offcanvas .offcanvas_menu .mean-nav ul:not(.sub-menu) > li,
 body.site-editorial .tj-offcanvas.tj-offcanvas-2 .offcanvas_menu .mean-nav ul:not(.sub-menu) > li {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
