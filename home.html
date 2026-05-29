@@ -34,7 +34,14 @@
 
   <script>
     (function () {
-      if (window.location.hash === "#work") return;
+      var scrollToWork = false;
+      try {
+        scrollToWork = sessionStorage.getItem("homeScrollToWork") === "1";
+      } catch (e) {}
+      if (window.location.hash === "#work" && !scrollToWork) {
+        history.replaceState(null, "", location.pathname + location.search);
+      }
+      if (window.location.hash === "#work" && scrollToWork) return;
       if ("scrollRestoration" in history) history.scrollRestoration = "manual";
       window.scrollTo(0, 0);
     })();

@@ -2284,6 +2284,44 @@ const initCaseStudyPreviewVideos = () => {
 
 const HOME_HERO_CAROUSEL_INTERVAL_MS = 10000;
 const HOME_WORK_HASH = "#work";
+const HOME_SCROLL_TO_WORK_SESSION_KEY = "homeScrollToWork";
+
+const shouldScrollHomeToWork = () => {
+  try {
+    return sessionStorage.getItem(HOME_SCROLL_TO_WORK_SESSION_KEY) === "1";
+  } catch (_err) {
+    return false;
+  }
+};
+
+const clearHomeScrollToWorkIntent = () => {
+  try {
+    sessionStorage.removeItem(HOME_SCROLL_TO_WORK_SESSION_KEY);
+  } catch (_err) {
+    /* ignore */
+  }
+};
+
+const stripHomeWorkHashFromUrl = () => {
+  const url = new URL(window.location.href);
+  if (url.hash !== HOME_WORK_HASH) return;
+  history.replaceState(null, "", url.pathname + url.search);
+};
+
+const initHomeScrollToWorkLinkIntent = () => {
+  if (document.documentElement.dataset.homeWorkIntentInit === "true") return;
+  document.documentElement.dataset.homeWorkIntentInit = "true";
+
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest('a[href*="home.html#work"]');
+    if (!link) return;
+    try {
+      sessionStorage.setItem(HOME_SCROLL_TO_WORK_SESSION_KEY, "1");
+    } catch (_err) {
+      /* ignore */
+    }
+  });
+};
 
 const scrollHomePageToTop = () => {
   window.scrollTo(0, 0);
@@ -2315,23 +2353,29 @@ const initHomeLandingScroll = () => {
   if (!document.body.classList.contains("page-home")) return;
 
   const hasWorkHash = window.location.hash === HOME_WORK_HASH;
+  const scrollToWork = hasWorkHash && shouldScrollHomeToWork();
 
   if ("scrollRestoration" in history) {
     history.scrollRestoration = "manual";
   }
 
-  if (!hasWorkHash) {
-    scrollHomePageToTop();
-    requestAnimationFrame(scrollHomePageToTop);
-    window.addEventListener("load", scrollHomePageToTop, { once: true });
-    // ScrollSmoother initializes ~2s after load; keep fresh visits at the hero.
-    window.setTimeout(scrollHomePageToTop, 2300);
+  if (hasWorkHash && !scrollToWork) {
+    stripHomeWorkHashFromUrl();
+  }
+
+  if (scrollToWork) {
+    clearHomeScrollToWorkIntent();
+    const syncWorkAnchor = () => scrollHomePageToWork();
+    window.addEventListener("load", syncWorkAnchor, { once: true });
+    window.setTimeout(syncWorkAnchor, 2300);
     return;
   }
 
-  const syncWorkAnchor = () => scrollHomePageToWork();
-  window.addEventListener("load", syncWorkAnchor, { once: true });
-  window.setTimeout(syncWorkAnchor, 2300);
+  scrollHomePageToTop();
+  requestAnimationFrame(scrollHomePageToTop);
+  window.addEventListener("load", scrollHomePageToTop, { once: true });
+  // ScrollSmoother initializes ~2s after load; keep fresh visits at the hero.
+  window.setTimeout(scrollHomePageToTop, 2300);
 };
 
 const initHomeHeroProjectCarousel = () => {
@@ -2808,6 +2852,7 @@ const initCommunityGalleries = () => {
 };
 
 const initProjectPageEnhancements = () => {
+  initHomeScrollToWorkLinkIntent();
   initHomeLandingScroll();
   initVideoPopupControls();
   initWicsSocialSlideshow();
