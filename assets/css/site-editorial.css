@@ -2437,32 +2437,21 @@ body.page-ideas .ideas-page__title-word {
 }
 
 body.page-ideas .ideas-page__title-word--accent {
-  color: var(--site-accent);
-}
-
-body.page-ideas .ideas-page__title-word + .ideas-page__title-word {
   padding-left: clamp(0.28em, 5vw, 0.7em);
-  color: #ffffff;
+  color: var(--site-accent);
 }
 
 body.page-ideas .ideas-page__lead {
   margin: 0;
+  font-size: clamp(0.9375rem, 1.05vw, 1.0625rem);
+  font-weight: var(--tj-fw-medium);
   line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
   text-wrap: pretty;
 }
 
-body.page-ideas .ideas-page__lead--primary {
-  font-size: clamp(1.0625rem, 1.2vw, 1.1875rem);
-  font-weight: var(--tj-fw-bold);
-  line-height: 1.45;
-  color: rgba(255, 255, 255, 0.92);
-}
-
-body.page-ideas .ideas-page__lead--secondary {
+body.page-ideas .ideas-page__lead + .ideas-page__lead {
   margin-top: clamp(12px, 1.5vh, 16px);
-  font-size: clamp(0.8125rem, 0.95vw, 0.9375rem);
-  font-weight: var(--tj-fw-regular);
-  color: rgba(255, 255, 255, 0.58);
 }
 
 body.page-ideas .ideas-page__link {
