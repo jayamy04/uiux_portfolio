@@ -1503,13 +1503,77 @@ const prefersReducedMotionMedia = () =>
 
 const prefersReducedMotion = () => prefersReducedMotionMedia().matches;
 
+const managedLoopVideos = new Set();
+
 const isVideoInViewport = (video) => {
   const rect = video.getBoundingClientRect();
   return rect.bottom > 0 && rect.top < window.innerHeight;
 };
 
+const shouldPlayLoopVideo = (video) => {
+  if (!video || prefersReducedMotion() || document.hidden) return false;
+  if (video.closest(".is-filter-hidden")) return false;
+  if (video.hasAttribute("controls")) return false;
+  if (video.closest(".project-preview-lightbox:not([hidden])")) return false;
+  return true;
+};
+
+const registerLoopVideo = (video) => {
+  if (!video) return;
+  managedLoopVideos.add(video);
+};
+
+const playLoopVideo = (video) => {
+  if (!shouldPlayLoopVideo(video)) return;
+  video.play().catch(() => {
+    window.setTimeout(() => {
+      if (!shouldPlayLoopVideo(video)) return;
+      video.play().catch(() => {});
+    }, 300);
+  });
+};
+
+const resumeAllLoopVideos = () => {
+  if (prefersReducedMotion() || document.hidden) return;
+  managedLoopVideos.forEach((video) => {
+    if (video.paused && shouldPlayLoopVideo(video)) {
+      ensureLoopingVideo(video);
+    }
+  });
+};
+
+let loopVideoLifecycleInit = false;
+
+const initLoopVideoLifecycle = () => {
+  if (loopVideoLifecycleInit) return;
+  loopVideoLifecycleInit = true;
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      managedLoopVideos.forEach((video) => video.pause());
+      return;
+    }
+    resumeAllLoopVideos();
+  });
+
+  window.addEventListener("pageshow", () => {
+    resumeAllLoopVideos();
+  });
+
+  window.addEventListener("focus", () => {
+    resumeAllLoopVideos();
+  });
+
+  window.setInterval(() => {
+    if (document.hidden || prefersReducedMotion()) return;
+    resumeAllLoopVideos();
+  }, 8000);
+};
+
 const ensureLoopingVideo = (video, { play = true } = {}) => {
   if (!video) return;
+
+  registerLoopVideo(video);
 
   if (prefersReducedMotion()) {
     video.pause();
@@ -1533,8 +1597,8 @@ const ensureLoopingVideo = (video, { play = true } = {}) => {
   if (!play) return;
 
   const attemptPlay = () => {
-    if (prefersReducedMotion() || document.hidden) return;
-    video.play().catch(() => {});
+    if (!shouldPlayLoopVideo(video)) return;
+    playLoopVideo(video);
   };
 
   if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
@@ -1546,22 +1610,24 @@ const ensureLoopingVideo = (video, { play = true } = {}) => {
   video.addEventListener("canplay", attemptPlay, { once: true });
 };
 
-const bindContinuousLoopVideos = (videos, { pauseOffscreen = true } = {}) => {
+const bindContinuousLoopVideos = (videos, { pauseOffscreen = false } = {}) => {
   const list = Array.from(videos).filter(Boolean);
   if (!list.length) return;
 
+  initLoopVideoLifecycle();
   list.forEach((video) => ensureLoopingVideo(video));
 
   if (prefersReducedMotion()) return;
 
-  const resumeIfVisible = (video) => {
-    if (document.hidden || prefersReducedMotion() || !isVideoInViewport(video)) return;
+  const resumeIfEligible = (video) => {
+    if (!shouldPlayLoopVideo(video)) return;
+    if (pauseOffscreen && !isVideoInViewport(video)) return;
     ensureLoopingVideo(video);
   };
 
   list.forEach((video) => {
     video.addEventListener("pause", () => {
-      window.requestAnimationFrame(() => resumeIfVisible(video));
+      window.requestAnimationFrame(() => resumeIfEligible(video));
     });
   });
 
@@ -1578,14 +1644,6 @@ const bindContinuousLoopVideos = (videos, { pauseOffscreen = true } = {}) => {
     );
     list.forEach((video) => observer.observe(video));
   }
-
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
-      list.forEach((video) => video.pause());
-      return;
-    }
-    list.forEach((video) => resumeIfVisible(video));
-  });
 };
 
 const initVideoPopupControls = () => {
@@ -1679,8 +1737,11 @@ const initVideoPopupControls = () => {
     }
 
     const isHomeLiveGrid = Boolean(card.closest(".home-project-grid--live"));
+    const isAlwaysPlayingGrid = Boolean(
+      isHomeLiveGrid || card.closest(".playground-carousel-stage--live, .ideas-scatter-stage--live")
+    );
 
-    if (!isHomeLiveGrid) {
+    if (!isAlwaysPlayingGrid) {
       card.addEventListener("mouseenter", () => {
         video.muted = true;
         syncSoundToggle();
@@ -2032,12 +2093,7 @@ const initPortfolioCardVideo = (gridSelector, cardSelector, sources) => {
       };
 
       const tryPlay = () => {
-        video.muted = true;
-        video.defaultMuted = true;
-        video.setAttribute("muted", "");
-        video.setAttribute("playsinline", "");
-        video.setAttribute("webkit-playsinline", "");
-        video.play().catch(() => {});
+        ensureLoopingVideo(video);
       };
 
       const tryNextSource = () => {
@@ -2180,38 +2236,8 @@ const initPlaygroundProjectGridMedia = () => {
     RULEMATE_PORTFOLIO_VIDEO,
   ]);
 
-  const playVideo = (video) => {
-    video.muted = true;
-    const attemptPlay = () => video.play().catch(() => {});
-    if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
-      attemptPlay();
-      return;
-    }
-    video.addEventListener("loadeddata", attemptPlay, { once: true });
-    video.addEventListener("canplay", attemptPlay, { once: true });
-  };
-
-  grid.querySelectorAll("video").forEach((video) => {
-    video.setAttribute("autoplay", "");
-    video.setAttribute("muted", "");
-    video.setAttribute("playsinline", "");
-    video.controls = false;
-    video.removeAttribute("controls");
-    playVideo(video);
-  });
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        const video = entry.target;
-        if (entry.isIntersecting) playVideo(video);
-        else video.pause();
-      });
-    },
-    { threshold: 0.12, rootMargin: "48px 0px" }
-  );
-
-  grid.querySelectorAll("video").forEach((video) => observer.observe(video));
+  const videos = Array.from(grid.querySelectorAll("video"));
+  bindContinuousLoopVideos(videos, { pauseOffscreen: false });
 
   const filmPiece = grid.querySelector(
     ".playground-piece--film, .ideas-piece--film"
@@ -2259,7 +2285,7 @@ const initHomeProjectGridMedia = () => {
     });
   });
 
-  bindContinuousLoopVideos(videos, { pauseOffscreen: true });
+  bindContinuousLoopVideos(videos, { pauseOffscreen: false });
 
   const canFineHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   if (canFineHover) {
@@ -2299,7 +2325,7 @@ const initCaseStudyPreviewVideos = () => {
   const videos = document.querySelectorAll(
     ".work-detail__figure-frame--video video, .case-study-figure__frame--video video, .work-detail__hero__media video, .case-study-hero__media video"
   );
-  bindContinuousLoopVideos(videos, { pauseOffscreen: true });
+  bindContinuousLoopVideos(videos, { pauseOffscreen: false });
 
   if (prefersReducedMotion()) return;
 
@@ -2483,6 +2509,10 @@ const initHomeHeroProjectCarousel = () => {
     progressAnimation?.cancel();
     progressAnimation = null;
     resetAllProgressFills();
+
+    root.querySelectorAll(".home-hero-projects__thumb video").forEach((video) => {
+      ensureLoopingVideo(video);
+    });
 
     if (restartTimer) {
       interactionPaused = false;
@@ -2742,13 +2772,6 @@ const initDanceReels = () => {
   const videos = document.querySelectorAll(".page-dance .dance-reel-card__video");
   if (!videos.length) return;
 
-  const playAll = () => {
-    videos.forEach((video) => {
-      video.muted = true;
-      video.play().catch(() => {});
-    });
-  };
-
   videos.forEach((video) => {
     const frame = video.closest(".dance-reel-card__frame");
     const showPosterFallback = () => {
@@ -2767,21 +2790,7 @@ const initDanceReels = () => {
     video.addEventListener("error", showPosterFallback, { once: true });
   });
 
-  playAll();
-
-  videos.forEach((video) => {
-    video.addEventListener("loadeddata", () => {
-      if (!document.hidden) video.play().catch(() => {});
-    }, { once: true });
-  });
-
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
-      videos.forEach((video) => video.pause());
-    } else {
-      playAll();
-    }
-  });
+  bindContinuousLoopVideos(videos, { pauseOffscreen: false });
 
   const refreshDanceScroll = () => {
     if (typeof ScrollTrigger !== "undefined") {
@@ -2878,6 +2887,7 @@ const initCommunityGalleries = () => {
 };
 
 const initProjectPageEnhancements = () => {
+  initLoopVideoLifecycle();
   initHomeScrollToWorkLinkIntent();
   initHomeLandingScroll();
   initVideoPopupControls();
