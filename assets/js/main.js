@@ -1953,6 +1953,25 @@ const initProjectPreviewLightbox = () => {
     };
   };
 
+  const buildVideoFromSrc = (src, label = "") => {
+    const wrap = document.createElement("div");
+    wrap.className = "project-lightbox-media project-lightbox-media--video";
+    const v = document.createElement("video");
+    v.setAttribute("controls", "");
+    v.setAttribute("playsinline", "");
+    v.controls = true;
+    v.src = src;
+    if (label) v.setAttribute("aria-label", label);
+    wrap.appendChild(v);
+    v.play().catch(() => {});
+    return {
+      el: wrap,
+      teardown: () => {
+        v.pause();
+      },
+    };
+  };
+
   const buildImage = (orig) => {
     const wrap = document.createElement("div");
     wrap.className = "project-lightbox-media project-lightbox-media--image";
@@ -2057,6 +2076,22 @@ const initProjectPreviewLightbox = () => {
       e.preventDefault();
       e.stopPropagation();
       openFromPreviewWindow(pw);
+    });
+  });
+
+  document.querySelectorAll("[data-case-study-video]").forEach((trigger) => {
+    trigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      const src = trigger.getAttribute("data-case-study-video");
+      if (!src) return;
+      content.innerHTML = "";
+      const built = buildVideoFromSrc(
+        src,
+        trigger.getAttribute("aria-label") || "Case study video",
+      );
+      content.appendChild(built.el);
+      mediaTeardown = built.teardown;
+      open();
     });
   });
 };
