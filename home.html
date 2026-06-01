@@ -31,6 +31,8 @@
   <link rel="preload" as="image" href="./assets/images/projects/schedgo_video_poster.jpg">
   <link rel="preload" href="./assets/videos/nordstrom_rack_v.mp4" as="fetch" type="video/mp4" crossorigin>
   <link rel="preload" as="image" href="./assets/images/projects/nordstrom_rack_video_poster.jpg">
+  <link rel="preload" href="./assets/videos/sound_transit_video.mp4" as="fetch" type="video/mp4" crossorigin>
+  <link rel="preload" as="image" href="./assets/images/projects/sound_transit_video_poster.jpg">
 
   <script>
     (function () {
@@ -244,8 +246,10 @@
                                 <div class="home-hero-projects__progress-fill" data-hero-carousel-progress-fill></div>
                               </div>
                             </div>
-                            <span class="home-hero-projects__thumb home-hero-projects__thumb--logo">
-                              <img src="./assets/images/projects/soundtransit_logo.png" alt="" width="705" height="383" loading="lazy" decoding="async">
+                            <span class="home-hero-projects__thumb">
+                              <video poster="./assets/images/projects/sound_transit_video_poster.jpg" muted loop autoplay playsinline webkit-playsinline preload="auto" aria-hidden="true">
+                                <source src="./assets/videos/sound_transit_video.mp4" type="video/mp4">
+                              </video>
                             </span>
                             <div class="home-hero-projects__card-body">
                               <h2 class="home-hero-projects__card-title">Sound Transit</h2>
