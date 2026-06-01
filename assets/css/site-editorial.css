@@ -7924,6 +7924,10 @@ body.page-sound-transit .work-detail__title-logo {
   object-position: left center;
 }
 
+body.page-sound-transit .work-detail__title-logo {
+  filter: brightness(0) invert(1);
+}
+
 body.page-sachacks .work-detail__subtitle,
 body.page-schedgo .work-detail__subtitle,
 body.page-ibm-saas-console .work-detail__subtitle,
