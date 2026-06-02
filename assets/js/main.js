@@ -2312,6 +2312,7 @@ const initCaseStudyPreviewVideos = () => {
   });
 };
 
+const HOME_HERO_CAROUSEL_INTERVAL_MS = 10000;
 const HOME_WORK_HASH = "#work";
 const HOME_SCROLL_TO_WORK_SESSION_KEY = "homeScrollToWork";
 
@@ -2407,17 +2408,169 @@ const initHomeLandingScroll = () => {
   window.setTimeout(scrollHomePageToTop, 2300);
 };
 
-const initHomeHeroProjects = () => {
+const initHomeHeroProjectCarousel = () => {
   const root = document.querySelector("[data-home-hero-carousel]");
-  if (!root || root.dataset.heroProjectsInit === "true") return;
-  root.dataset.heroProjectsInit = "true";
+  if (!root || root.dataset.carouselInit === "true") return;
+  root.dataset.carouselInit = "true";
 
   const slides = Array.from(root.querySelectorAll("[data-hero-carousel-slide]"));
   if (!slides.length) return;
 
-  root.querySelectorAll(".home-hero-projects__thumb video").forEach((video) => {
-    ensureLoopingVideo(video);
-  });
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+  const progressBars = slides.map((slide) =>
+    slide.querySelector("[data-hero-carousel-progress]")
+  );
+  const progressFills = slides.map((slide) =>
+    slide.querySelector("[data-hero-carousel-progress-fill]")
+  );
+  const getActiveProgressFill = () =>
+    slides[activeIndex]?.querySelector("[data-hero-carousel-progress-fill]") ??
+    null;
+  const progressEnabled =
+    !prefersReducedMotion &&
+    slides.length > 1 &&
+    progressFills.every(Boolean);
+  let activeIndex = 0;
+  let timerId = null;
+  let progressAnimation = null;
+  let pausedRemainingMs = HOME_HERO_CAROUSEL_INTERVAL_MS;
+  let interactionPaused = false;
+
+  const resetAllProgressFills = () => {
+    progressFills.forEach((fill) => {
+      if (!fill) return;
+      fill.style.transform = "scaleX(0)";
+    });
+  };
+
+  if (progressEnabled) {
+    resetAllProgressFills();
+  } else {
+    progressBars.forEach((bar) => {
+      if (bar) bar.hidden = true;
+    });
+  }
+
+  const getProgressRemainingMs = () => {
+    if (!progressAnimation) return pausedRemainingMs;
+    const timing = progressAnimation.effect?.getTiming?.();
+    const duration =
+      typeof timing?.duration === "number"
+        ? timing.duration
+        : HOME_HERO_CAROUSEL_INTERVAL_MS;
+    const currentTime = progressAnimation.currentTime ?? 0;
+    return Math.max(0, Math.round(duration - currentTime));
+  };
+
+  const pauseProgress = () => {
+    if (!progressEnabled) return;
+    pausedRemainingMs = getProgressRemainingMs();
+    progressAnimation?.pause();
+  };
+
+  const goTo = (nextIndex, { restartTimer = false } = {}) => {
+    const count = slides.length;
+    activeIndex = ((nextIndex % count) + count) % count;
+
+    slides.forEach((slide, index) => {
+      const isActive = index === activeIndex;
+      slide.classList.toggle("is-active", isActive);
+      if (isActive) {
+        slide.setAttribute("aria-current", "true");
+      } else {
+        slide.removeAttribute("aria-current");
+      }
+    });
+
+    progressAnimation?.cancel();
+    progressAnimation = null;
+    resetAllProgressFills();
+
+    root.querySelectorAll(".home-hero-projects__thumb video").forEach((video) => {
+      ensureLoopingVideo(video);
+    });
+
+    if (restartTimer) {
+      interactionPaused = false;
+      pausedRemainingMs = HOME_HERO_CAROUSEL_INTERVAL_MS;
+      start(HOME_HERO_CAROUSEL_INTERVAL_MS);
+    }
+  };
+
+  const pauseCarousel = () => {
+    if (interactionPaused) return;
+    interactionPaused = true;
+    stop();
+  };
+
+  const resumeCarousel = () => {
+    if (!interactionPaused) return;
+    interactionPaused = false;
+    start();
+  };
+
+  const stop = () => {
+    if (timerId !== null) {
+      window.clearTimeout(timerId);
+      timerId = null;
+    }
+    pauseProgress();
+  };
+
+  const start = (delayMs) => {
+    if (timerId !== null) {
+      window.clearTimeout(timerId);
+      timerId = null;
+    }
+    if (prefersReducedMotion || slides.length < 2) return;
+
+    const duration =
+      typeof delayMs === "number" ? delayMs : pausedRemainingMs;
+    const remaining = Math.min(
+      HOME_HERO_CAROUSEL_INTERVAL_MS,
+      Math.max(50, duration)
+    );
+
+    if (progressEnabled) {
+      const progressFill = getActiveProgressFill();
+      if (progressFill) {
+        const ratio = 1 - remaining / HOME_HERO_CAROUSEL_INTERVAL_MS;
+        progressAnimation?.cancel();
+        progressAnimation = progressFill.animate(
+          [{ transform: "scaleX(0)" }, { transform: "scaleX(1)" }],
+          {
+            duration: HOME_HERO_CAROUSEL_INTERVAL_MS,
+            fill: "forwards",
+            easing: "linear",
+          }
+        );
+        if (ratio > 0 && ratio < 1) {
+          progressAnimation.currentTime =
+            HOME_HERO_CAROUSEL_INTERVAL_MS * ratio;
+        }
+        pausedRemainingMs = remaining;
+      }
+    }
+
+    timerId = window.setTimeout(() => {
+      timerId = null;
+      goTo(activeIndex + 1);
+      pausedRemainingMs = HOME_HERO_CAROUSEL_INTERVAL_MS;
+      start(HOME_HERO_CAROUSEL_INTERVAL_MS);
+    }, remaining);
+  };
+
+  const selectSlide = (index) => {
+    if (activeIndex === index) {
+      interactionPaused = false;
+      pausedRemainingMs = HOME_HERO_CAROUSEL_INTERVAL_MS;
+      start();
+      return;
+    }
+    goTo(index, { restartTimer: true });
+  };
 
   const navigateFromSlide = (slide, event) => {
     if (event.target.closest("a[href]")) return false;
@@ -2427,18 +2580,50 @@ const initHomeHeroProjects = () => {
     return true;
   };
 
-  slides.forEach((slide) => {
+  slides.forEach((slide, index) => {
     slide.addEventListener("click", (event) => {
-      navigateFromSlide(slide, event);
+      if (navigateFromSlide(slide, event)) return;
+      selectSlide(index);
     });
 
     slide.addEventListener("keydown", (event) => {
       if (event.key !== "Enter" && event.key !== " ") return;
       if (navigateFromSlide(slide, event)) {
         event.preventDefault();
+        return;
       }
+      event.preventDefault();
+      selectSlide(index);
+    });
+
+    slide.addEventListener("mouseenter", () => {
+      if (slide.classList.contains("is-active")) pauseCarousel();
+    });
+
+    slide.addEventListener("mouseleave", (event) => {
+      if (!slide.classList.contains("is-active")) return;
+      if (slide.contains(event.relatedTarget)) return;
+      resumeCarousel();
+    });
+
+    slide.addEventListener("focusin", () => {
+      if (slide.classList.contains("is-active")) pauseCarousel();
+    });
+
+    slide.addEventListener("focusout", (event) => {
+      if (!slide.classList.contains("is-active")) return;
+      if (slide.contains(event.relatedTarget)) return;
+      resumeCarousel();
     });
   });
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) stop();
+    else start();
+  });
+
+  goTo(0);
+  start(HOME_HERO_CAROUSEL_INTERVAL_MS);
 };
 
 const initHomeWorkSectionMotion = () => {
@@ -2688,7 +2873,7 @@ const initProjectPageEnhancements = () => {
   initProjectPreviewLightbox();
   initHomeProjectGridMedia();
   initHomeHeroProjectVideos();
-  initHomeHeroProjects();
+  initHomeHeroProjectCarousel();
   initHomeWorkSectionMotion();
   initCaseStudyPreviewVideos();
   initPlaygroundProjectGridMedia();
