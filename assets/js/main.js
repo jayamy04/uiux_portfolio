@@ -2312,7 +2312,6 @@ const initCaseStudyPreviewVideos = () => {
   });
 };
 
-const HOME_HERO_CAROUSEL_INTERVAL_MS = 10000;
 const HOME_WORK_HASH = "#work";
 const HOME_SCROLL_TO_WORK_SESSION_KEY = "homeScrollToWork";
 
@@ -2408,104 +2407,17 @@ const initHomeLandingScroll = () => {
   window.setTimeout(scrollHomePageToTop, 2300);
 };
 
-const initHomeHeroProjectCarousel = () => {
+const initHomeHeroProjects = () => {
   const root = document.querySelector("[data-home-hero-carousel]");
-  if (!root || root.dataset.carouselInit === "true") return;
-  root.dataset.carouselInit = "true";
+  if (!root || root.dataset.heroProjectsInit === "true") return;
+  root.dataset.heroProjectsInit = "true";
 
   const slides = Array.from(root.querySelectorAll("[data-hero-carousel-slide]"));
   if (!slides.length) return;
 
-  const prefersReducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
-  let activeIndex = 0;
-  let timerId = null;
-  let timerEndsAt = null;
-  let pausedRemainingMs = HOME_HERO_CAROUSEL_INTERVAL_MS;
-  let interactionPaused = false;
-
-  const goTo = (nextIndex, { restartTimer = false } = {}) => {
-    const count = slides.length;
-    activeIndex = ((nextIndex % count) + count) % count;
-
-    slides.forEach((slide, index) => {
-      const isActive = index === activeIndex;
-      slide.classList.toggle("is-active", isActive);
-      if (isActive) {
-        slide.setAttribute("aria-current", "true");
-      } else {
-        slide.removeAttribute("aria-current");
-      }
-    });
-
-    root.querySelectorAll(".home-hero-projects__thumb video").forEach((video) => {
-      ensureLoopingVideo(video);
-    });
-
-    if (restartTimer) {
-      interactionPaused = false;
-      pausedRemainingMs = HOME_HERO_CAROUSEL_INTERVAL_MS;
-      start(HOME_HERO_CAROUSEL_INTERVAL_MS);
-    }
-  };
-
-  const pauseCarousel = () => {
-    if (interactionPaused) return;
-    interactionPaused = true;
-    stop();
-  };
-
-  const resumeCarousel = () => {
-    if (!interactionPaused) return;
-    interactionPaused = false;
-    start();
-  };
-
-  const stop = () => {
-    if (timerId !== null) {
-      window.clearTimeout(timerId);
-      timerId = null;
-      if (timerEndsAt !== null) {
-        pausedRemainingMs = Math.max(0, timerEndsAt - Date.now());
-      }
-    }
-    timerEndsAt = null;
-  };
-
-  const start = (delayMs) => {
-    if (timerId !== null) {
-      window.clearTimeout(timerId);
-      timerId = null;
-    }
-    if (prefersReducedMotion || slides.length < 2) return;
-
-    const duration =
-      typeof delayMs === "number" ? delayMs : pausedRemainingMs;
-    const remaining = Math.min(
-      HOME_HERO_CAROUSEL_INTERVAL_MS,
-      Math.max(50, duration)
-    );
-
-    timerEndsAt = Date.now() + remaining;
-    timerId = window.setTimeout(() => {
-      timerId = null;
-      timerEndsAt = null;
-      goTo(activeIndex + 1);
-      pausedRemainingMs = HOME_HERO_CAROUSEL_INTERVAL_MS;
-      start(HOME_HERO_CAROUSEL_INTERVAL_MS);
-    }, remaining);
-  };
-
-  const selectSlide = (index) => {
-    if (activeIndex === index) {
-      interactionPaused = false;
-      pausedRemainingMs = HOME_HERO_CAROUSEL_INTERVAL_MS;
-      start();
-      return;
-    }
-    goTo(index, { restartTimer: true });
-  };
+  root.querySelectorAll(".home-hero-projects__thumb video").forEach((video) => {
+    ensureLoopingVideo(video);
+  });
 
   const navigateFromSlide = (slide, event) => {
     if (event.target.closest("a[href]")) return false;
@@ -2515,50 +2427,18 @@ const initHomeHeroProjectCarousel = () => {
     return true;
   };
 
-  slides.forEach((slide, index) => {
+  slides.forEach((slide) => {
     slide.addEventListener("click", (event) => {
-      if (navigateFromSlide(slide, event)) return;
-      selectSlide(index);
+      navigateFromSlide(slide, event);
     });
 
     slide.addEventListener("keydown", (event) => {
       if (event.key !== "Enter" && event.key !== " ") return;
       if (navigateFromSlide(slide, event)) {
         event.preventDefault();
-        return;
       }
-      event.preventDefault();
-      selectSlide(index);
-    });
-
-    slide.addEventListener("mouseenter", () => {
-      if (slide.classList.contains("is-active")) pauseCarousel();
-    });
-
-    slide.addEventListener("mouseleave", (event) => {
-      if (!slide.classList.contains("is-active")) return;
-      if (slide.contains(event.relatedTarget)) return;
-      resumeCarousel();
-    });
-
-    slide.addEventListener("focusin", () => {
-      if (slide.classList.contains("is-active")) pauseCarousel();
-    });
-
-    slide.addEventListener("focusout", (event) => {
-      if (!slide.classList.contains("is-active")) return;
-      if (slide.contains(event.relatedTarget)) return;
-      resumeCarousel();
     });
   });
-
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) stop();
-    else start();
-  });
-
-  goTo(0);
-  start(HOME_HERO_CAROUSEL_INTERVAL_MS);
 };
 
 const initHomeWorkSectionMotion = () => {
@@ -2808,7 +2688,7 @@ const initProjectPageEnhancements = () => {
   initProjectPreviewLightbox();
   initHomeProjectGridMedia();
   initHomeHeroProjectVideos();
-  initHomeHeroProjectCarousel();
+  initHomeHeroProjects();
   initHomeWorkSectionMotion();
   initCaseStudyPreviewVideos();
   initPlaygroundProjectGridMedia();

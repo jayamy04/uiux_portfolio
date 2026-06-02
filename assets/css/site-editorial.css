@@ -1167,16 +1167,19 @@ body.page-home .home-hero-projects__card:focus-visible {
   outline-offset: 3px;
 }
 
-body.page-home .home-hero-projects__card:not(.is-active) {
-  opacity: 0.55;
-}
-
-body.page-home .home-hero-projects__card:not(.is-active):hover,
-body.page-home .home-hero-projects__card:not(.is-active):focus-visible {
+body.page-home .home-hero-projects__card {
   opacity: 0.72;
 }
 
-body.page-home .home-hero-projects__card.is-active {
+body.page-home .home-hero-projects__grid:hover .home-hero-projects__card,
+body.page-home
+  .home-hero-projects__grid:has(.home-hero-projects__card:focus-visible)
+  .home-hero-projects__card {
+  opacity: 0.55;
+}
+
+body.page-home .home-hero-projects__card:hover,
+body.page-home .home-hero-projects__card:focus-visible {
   opacity: 1;
   border-color: rgba(255, 77, 184, 0.62);
   background: rgba(255, 77, 184, 0.1);
@@ -1247,16 +1250,11 @@ body.page-home .home-hero-projects__thumb--ibm img {
   max-height: 92%;
 }
 
-body.page-home .home-hero-projects__card.is-active .home-hero-projects__thumb img,
-body.page-home .home-hero-projects__card.is-active .home-hero-projects__thumb video {
+body.page-home .home-hero-projects__card:hover .home-hero-projects__thumb img,
+body.page-home .home-hero-projects__card:focus-visible .home-hero-projects__thumb img,
+body.page-home .home-hero-projects__card:hover .home-hero-projects__thumb video,
+body.page-home .home-hero-projects__card:focus-visible .home-hero-projects__thumb video {
   opacity: 1;
-}
-
-body.page-home .home-hero-projects__card:not(.is-active):hover .home-hero-projects__thumb img,
-body.page-home .home-hero-projects__card:not(.is-active):focus-visible .home-hero-projects__thumb img,
-body.page-home .home-hero-projects__card:not(.is-active):hover .home-hero-projects__thumb video,
-body.page-home .home-hero-projects__card:not(.is-active):focus-visible .home-hero-projects__thumb video {
-  opacity: 0.95;
 }
 
 body.page-home .home-hero-projects__card-body {
@@ -1280,7 +1278,8 @@ body.page-home .home-hero-projects__card-title {
   transition: color 0.35s ease;
 }
 
-body.page-home .home-hero-projects__card.is-active .home-hero-projects__card-title {
+body.page-home .home-hero-projects__card:hover .home-hero-projects__card-title,
+body.page-home .home-hero-projects__card:focus-visible .home-hero-projects__card-title {
   margin-bottom: clamp(8px, 1vh, 10px);
   font-size: clamp(0.9375rem, 1.1vw, 1.0625rem);
   color: #ffffff;
@@ -1298,7 +1297,8 @@ body.page-home .home-hero-projects__card-desc {
   transition: color 0.35s ease;
 }
 
-body.page-home .home-hero-projects__card.is-active .home-hero-projects__card-desc {
+body.page-home .home-hero-projects__card:hover .home-hero-projects__card-desc,
+body.page-home .home-hero-projects__card:focus-visible .home-hero-projects__card-desc {
   color: rgba(255, 255, 255, 0.9);
 }
 
@@ -1307,7 +1307,10 @@ body.page-home .home-hero-projects__card.is-active .home-hero-projects__card-des
     transition: none;
   }
 
-  body.page-home .home-hero-projects__card:not(.is-active) {
+  body.page-home .home-hero-projects__grid:hover .home-hero-projects__card,
+  body.page-home
+    .home-hero-projects__grid:has(.home-hero-projects__card:focus-visible)
+    .home-hero-projects__card {
     opacity: 0.72;
   }
 
