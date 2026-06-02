@@ -1154,8 +1154,7 @@ body.page-home .home-hero-projects__card {
   transition:
     border-color 0.35s ease,
     background-color 0.35s ease,
-    box-shadow 0.35s ease,
-    transform 0.35s ease;
+    box-shadow 0.35s ease;
 }
 
 body.page-home .home-hero-projects__card:focus {
@@ -1213,6 +1212,14 @@ body.page-home .home-hero-projects__thumb video {
   object-position: center center;
   opacity: 1;
   filter: none;
+  transition: filter 0.35s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.page-home .home-hero-projects__card:hover .home-hero-projects__thumb img,
+  body.page-home .home-hero-projects__card:hover .home-hero-projects__thumb video {
+    filter: brightness(1.04);
+  }
 }
 
 body.page-home .home-hero-projects__thumb img.home-hero-projects__thumb-scroll {
@@ -1271,19 +1278,6 @@ body.page-home .home-hero-projects__card-title {
   line-height: 1.25;
   color: #ffffff;
   text-transform: none;
-  transition: color 0.35s ease, font-size 0.35s ease, margin 0.35s ease;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  body.page-home .home-hero-projects__card:hover .home-hero-projects__card-title {
-    margin-bottom: clamp(8px, 1vh, 10px);
-    font-size: clamp(0.9375rem, 1.1vw, 1.0625rem);
-  }
-}
-
-body.page-home .home-hero-projects__card:focus-visible .home-hero-projects__card-title {
-  margin-bottom: clamp(8px, 1vh, 10px);
-  font-size: clamp(0.9375rem, 1.1vw, 1.0625rem);
 }
 
 body.page-home .home-hero-projects__card-desc {
@@ -1302,7 +1296,8 @@ body.page-home .home-hero-projects__card-desc {
     transition: none;
   }
 
-  body.page-home .home-hero-projects__card-title {
+  body.page-home .home-hero-projects__thumb img,
+  body.page-home .home-hero-projects__thumb video {
     transition: none;
   }
 
@@ -1322,13 +1317,12 @@ body.page-home .home-hero-projects__case-study {
   text-transform: uppercase;
   color: var(--site-accent);
   text-decoration: none;
-  transition: color 0.2s ease, gap 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 body.page-home .home-hero-projects__case-study:hover,
 body.page-home .home-hero-projects__case-study:focus-visible {
   color: #ff8fd4;
-  gap: 0.5rem;
 }
 
 body.page-home .home-hero-projects__case-study:focus-visible {
