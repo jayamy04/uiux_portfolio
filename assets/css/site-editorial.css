@@ -1102,6 +1102,13 @@ body.page-home .home-landing__hero-meta-personal {
 
 /* Home — hero project showcase grid */
 body.page-home .home-hero-projects {
+  --hero-card-bg: rgba(255, 255, 255, 0.07);
+  --hero-card-border: rgba(255, 255, 255, 0.14);
+  --hero-card-hover-bg: rgba(255, 255, 255, 0.09);
+  --hero-card-accent: var(--site-accent);
+  --hero-card-glow:
+    0 0 0 1px rgba(255, 77, 184, 0.34),
+    0 0 36px rgba(255, 77, 184, 0.26);
   margin-top: 0;
   width: 100%;
   max-width: 100%;
@@ -1119,7 +1126,7 @@ body.page-home .home-hero-projects__showcase {
 body.page-home .home-hero-projects__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(10px, 1.4vw, 14px);
+  gap: clamp(14px, 2vw, 18px);
   width: 100%;
 }
 
@@ -1131,30 +1138,32 @@ body.page-home .home-hero-projects__grid {
 
 @media only screen and (min-width: 992px) {
   body.page-home .home-hero-projects__grid {
-    gap: clamp(12px, 1.2vw, 16px);
+    gap: clamp(16px, 1.6vw, 20px);
   }
 }
 
+/* Card — bright glass surface at rest; pink accent on hover only */
 body.page-home .home-hero-projects__card {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: clamp(8px, 1vh, 10px);
+  gap: clamp(10px, 1.2vh, 12px);
   margin: 0;
-  padding: clamp(8px, 1vw, 10px);
+  padding: clamp(10px, 1.2vw, 14px);
   width: 100%;
   text-align: left;
   font: inherit;
-  color: inherit;
+  color: #ffffff;
   cursor: pointer;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  border: 1px solid var(--hero-card-border);
+  background: var(--hero-card-bg);
+  box-shadow: none;
   opacity: 1;
   transition:
-    border-color 0.35s ease,
-    background-color 0.35s ease,
-    box-shadow 0.35s ease;
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 body.page-home .home-hero-projects__card:focus {
@@ -1162,22 +1171,18 @@ body.page-home .home-hero-projects__card:focus {
 }
 
 body.page-home .home-hero-projects__card:focus-visible {
-  outline: 2px solid var(--site-accent);
+  outline: 2px solid var(--hero-card-accent);
   outline-offset: 3px;
-  border-color: rgba(255, 77, 184, 0.72);
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow:
-    0 0 0 1px rgba(255, 77, 184, 0.28),
-    0 0 28px rgba(255, 77, 184, 0.22);
+  border-color: var(--hero-card-accent);
+  background: var(--hero-card-hover-bg);
+  box-shadow: var(--hero-card-glow);
 }
 
 @media (hover: hover) and (pointer: fine) {
   body.page-home .home-hero-projects__card:hover {
-    border-color: rgba(255, 77, 184, 0.72);
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow:
-      0 0 0 1px rgba(255, 77, 184, 0.28),
-      0 0 28px rgba(255, 77, 184, 0.22);
+    border-color: var(--hero-card-accent);
+    background: var(--hero-card-hover-bg);
+    box-shadow: var(--hero-card-glow);
   }
 }
 
@@ -1190,14 +1195,15 @@ body.page-home .home-hero-projects__card--soon {
   cursor: default;
 }
 
+/* Thumbnail — full brightness, cover fill, neutral fallback only */
 body.page-home .home-hero-projects__thumb {
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 10px;
   aspect-ratio: 16 / 10;
-  background: #16141f;
+  background: rgba(255, 255, 255, 0.05);
   isolation: isolate;
 }
 
@@ -1206,19 +1212,17 @@ body.page-home .home-hero-projects__thumb video {
   display: block;
   width: 100%;
   height: 100%;
-  max-width: 100%;
-  max-height: 100%;
   object-fit: cover;
   object-position: center center;
   opacity: 1;
   filter: none;
-  transition: filter 0.35s ease;
+  transition: filter 0.3s ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
   body.page-home .home-hero-projects__card:hover .home-hero-projects__thumb img,
   body.page-home .home-hero-projects__card:hover .home-hero-projects__thumb video {
-    filter: brightness(1.04);
+    filter: brightness(1.05);
   }
 }
 
@@ -1254,8 +1258,6 @@ body.page-home .home-hero-projects__thumb--ibm {
 body.page-home .home-hero-projects__thumb--ibm img {
   width: 100%;
   height: 100%;
-  max-width: 100%;
-  max-height: 100%;
   object-fit: contain;
   object-position: center center;
 }
@@ -1265,30 +1267,43 @@ body.page-home .home-hero-projects__card-body {
   flex-direction: column;
   align-items: flex-start;
   gap: 0;
-  padding: 0 0.1rem 0.05rem;
+  padding: 0 2px 2px;
   min-width: 0;
 }
 
 body.page-home .home-hero-projects__card-title {
   margin: 0 0 clamp(6px, 0.8vh, 8px);
   font-family: var(--tj-ff-body);
-  font-size: clamp(0.8125rem, 0.95vw, 0.9375rem);
+  font-size: clamp(0.9375rem, 1.1vw, 1.0625rem);
   font-weight: var(--tj-fw-bold);
   letter-spacing: -0.02em;
-  line-height: 1.25;
+  line-height: 1.3;
   color: #ffffff;
   text-transform: none;
 }
 
 body.page-home .home-hero-projects__card-desc {
-  margin: 0 0 clamp(10px, 1.2vh, 12px);
+  margin: 0 0 clamp(10px, 1.2vh, 14px);
   font-family: var(--tj-ff-body);
-  font-size: clamp(0.75rem, 0.88vw, 0.8125rem);
+  font-size: clamp(0.8125rem, 0.95vw, 0.875rem);
   font-weight: var(--tj-fw-regular);
-  line-height: 1.5;
+  line-height: 1.55;
   letter-spacing: -0.01em;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(255, 255, 255, 0.82);
   text-wrap: pretty;
+}
+
+body.page-home .home-hero-projects__card-desc a {
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 77, 184, 0.55);
+  text-underline-offset: 0.18em;
+}
+
+body.page-home .home-hero-projects__card-desc a:hover,
+body.page-home .home-hero-projects__card-desc a:focus-visible {
+  color: #ffffff;
+  text-decoration-color: var(--site-accent);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1311,18 +1326,18 @@ body.page-home .home-hero-projects__case-study {
   align-items: center;
   gap: 0.35rem;
   font-family: var(--tj-ff-body);
-  font-size: clamp(0.875rem, 1.05vw, 0.9375rem);
-  font-weight: var(--tj-fw-bold);
-  letter-spacing: 0.02em;
+  font-size: clamp(0.75rem, 0.88vw, 0.8125rem);
+  font-weight: var(--tj-fw-sbold);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--site-accent);
+  color: rgba(255, 107, 200, 0.95);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 body.page-home .home-hero-projects__case-study:hover,
 body.page-home .home-hero-projects__case-study:focus-visible {
-  color: #ff8fd4;
+  color: var(--site-accent);
 }
 
 body.page-home .home-hero-projects__case-study:focus-visible {
