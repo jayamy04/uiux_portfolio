@@ -83,7 +83,6 @@
 			this.stickyPanelAnimation();
 			this.danceStickyIntroAnimation();
 			this.onpageNavAnimation();
-			this.scrollProgressAnimation();
 			this.h6HeroStarAnimation();
 		},
 
@@ -907,9 +906,8 @@
 
 				mediaMatch.add("(min-width: 992px)", () => {
 					const track = h1ProjectsWrap.querySelector(".h1_projects_items");
-					const bar = h1ProjectsWrap.querySelector(".projects-progress span");
 
-					if (!h1ProjectsWrap || !track || !bar) return;
+					if (!h1ProjectsWrap || !track) return;
 
 					const getMaxScroll = () =>
 						track.scrollWidth - h1ProjectsWrap.clientWidth;
@@ -924,19 +922,6 @@
 							end: () => "+=" + getMaxScroll(),
 							pin: true,
 							scrub: 1,
-							invalidateOnRefresh: true,
-						},
-					});
-
-					// progress bar
-					gsap.to(bar, {
-						scaleX: 1,
-						ease: "none",
-						scrollTrigger: {
-							trigger: h1ProjectsWrap,
-							start: "top top",
-							end: () => "+=" + getMaxScroll(),
-							scrub: 0.3,
 							invalidateOnRefresh: true,
 						},
 					});
@@ -1595,48 +1580,6 @@
 					scrollTo: { y: sectionTarget, offsetY: 0 },
 				});
 			});
-		},
-		// Scroll Progress Animation
-		scrollProgressAnimation: function () {
-			if ($(".tj-progress-item-2").length > 0) {
-				let mediaMatch = gsap.matchMedia();
-				mediaMatch.add("(min-width: 992px)", () => {
-					const slider = document.querySelector(".tj-progress-wrapper-2");
-					if (slider?.children?.length) {
-						let panels = gsap.utils.toArray(".tj-progress-item-2");
-						let mockupItems = gsap.utils.toArray(
-							".tj-progress-mockup-item-wrapper .tj-progress-mockup-item",
-						);
-						let totalPanels = panels.length;
-
-						// Extended scroll for slower mockup animations
-						const extendedScroll = window.innerHeight * 2;
-
-						gsap.to(panels, {
-							ease: "none",
-							scrollTrigger: {
-								trigger: slider,
-								start: "top+=92 top",
-								pin: true,
-								scrub: 1,
-								end: `+=${extendedScroll}`,
-								onUpdate: self => {
-									let progress = self.progress;
-									let progressModified = progress * (totalPanels - 1);
-									let activeIndex = Math.round(progressModified);
-
-									panels.forEach((panel, index) => {
-										panel.classList.toggle("active", index === activeIndex);
-									});
-									mockupItems.forEach((panel, index) => {
-										panel.classList.toggle("active", index === activeIndex);
-									});
-								},
-							},
-						});
-					}
-				});
-			}
 		},
 		// Home 6 Star Animation
 		h6HeroStarAnimation: function () {

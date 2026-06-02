@@ -2100,7 +2100,7 @@ const MAKEABILITY_PORTFOLIO_VIDEO = "./assets/videos/makeability_final.mp4";
 const MAKEABILITY_PORTFOLIO_VIDEO_FALLBACK =
   "./assets/videos/makeability_v.mp4";
 const SCHEDGO_PORTFOLIO_VIDEO = "./assets/videos/schedgo_v.mp4";
-const SCHEDGO_PORTFOLIO_VIDEO_FALLBACK = "./assets/videos/schedgo_video.mp4";
+const SCHEDGO_PORTFOLIO_VIDEO_FALLBACK = "./assets/videos/schedgo_video.mov";
 const BREAKING_BARRIERS_PORTFOLIO_VIDEO =
   "./assets/videos/breaking_barriers_video.mp4";
 const BREAKING_BARRIERS_PORTFOLIO_VIDEO_FALLBACK =
