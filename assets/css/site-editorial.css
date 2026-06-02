@@ -1153,7 +1153,6 @@ body.page-home .home-hero-projects__card {
   transition:
     border-color 0.35s ease,
     background-color 0.35s ease,
-    opacity 0.35s ease,
     box-shadow 0.35s ease,
     transform 0.35s ease;
 }
@@ -1165,27 +1164,21 @@ body.page-home .home-hero-projects__card:focus {
 body.page-home .home-hero-projects__card:focus-visible {
   outline: 2px solid var(--site-accent);
   outline-offset: 3px;
-}
-
-body.page-home .home-hero-projects__card {
-  opacity: 0.72;
-}
-
-body.page-home .home-hero-projects__grid:hover .home-hero-projects__card,
-body.page-home
-  .home-hero-projects__grid:has(.home-hero-projects__card:focus-visible)
-  .home-hero-projects__card {
-  opacity: 0.55;
-}
-
-body.page-home .home-hero-projects__card:hover,
-body.page-home .home-hero-projects__card:focus-visible {
-  opacity: 1;
   border-color: rgba(255, 77, 184, 0.62);
   background: rgba(255, 77, 184, 0.1);
   box-shadow:
     0 0 0 1px rgba(255, 77, 184, 0.18),
     0 0 24px rgba(255, 77, 184, 0.14);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.page-home .home-hero-projects__card:hover {
+    border-color: rgba(255, 77, 184, 0.62);
+    background: rgba(255, 77, 184, 0.1);
+    box-shadow:
+      0 0 0 1px rgba(255, 77, 184, 0.18),
+      0 0 24px rgba(255, 77, 184, 0.14);
+  }
 }
 
 body.page-home .home-hero-projects__card[data-work-href],
@@ -1216,8 +1209,6 @@ body.page-home .home-hero-projects__thumb video {
   max-height: 100%;
   object-fit: contain;
   object-position: center center;
-  opacity: 0.88;
-  transition: opacity 0.35s ease;
 }
 
 body.page-home .home-hero-projects__thumb img.home-hero-projects__thumb-scroll {
@@ -1250,13 +1241,6 @@ body.page-home .home-hero-projects__thumb--ibm img {
   max-height: 92%;
 }
 
-body.page-home .home-hero-projects__card:hover .home-hero-projects__thumb img,
-body.page-home .home-hero-projects__card:focus-visible .home-hero-projects__thumb img,
-body.page-home .home-hero-projects__card:hover .home-hero-projects__thumb video,
-body.page-home .home-hero-projects__card:focus-visible .home-hero-projects__thumb video {
-  opacity: 1;
-}
-
 body.page-home .home-hero-projects__card-body {
   display: flex;
   flex-direction: column;
@@ -1273,16 +1257,21 @@ body.page-home .home-hero-projects__card-title {
   font-weight: var(--tj-fw-bold);
   letter-spacing: -0.02em;
   line-height: 1.25;
-  color: rgba(255, 255, 255, 0.72);
+  color: #ffffff;
   text-transform: none;
-  transition: color 0.35s ease;
+  transition: color 0.35s ease, font-size 0.35s ease, margin 0.35s ease;
 }
 
-body.page-home .home-hero-projects__card:hover .home-hero-projects__card-title,
+@media (hover: hover) and (pointer: fine) {
+  body.page-home .home-hero-projects__card:hover .home-hero-projects__card-title {
+    margin-bottom: clamp(8px, 1vh, 10px);
+    font-size: clamp(0.9375rem, 1.1vw, 1.0625rem);
+  }
+}
+
 body.page-home .home-hero-projects__card:focus-visible .home-hero-projects__card-title {
   margin-bottom: clamp(8px, 1vh, 10px);
   font-size: clamp(0.9375rem, 1.1vw, 1.0625rem);
-  color: #ffffff;
 }
 
 body.page-home .home-hero-projects__card-desc {
@@ -1292,14 +1281,8 @@ body.page-home .home-hero-projects__card-desc {
   font-weight: var(--tj-fw-regular);
   line-height: 1.5;
   letter-spacing: -0.01em;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.88);
   text-wrap: pretty;
-  transition: color 0.35s ease;
-}
-
-body.page-home .home-hero-projects__card:hover .home-hero-projects__card-desc,
-body.page-home .home-hero-projects__card:focus-visible .home-hero-projects__card-desc {
-  color: rgba(255, 255, 255, 0.9);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1307,24 +1290,12 @@ body.page-home .home-hero-projects__card:focus-visible .home-hero-projects__card
     transition: none;
   }
 
-  body.page-home .home-hero-projects__grid:hover .home-hero-projects__card,
-  body.page-home
-    .home-hero-projects__grid:has(.home-hero-projects__card:focus-visible)
-    .home-hero-projects__card {
-    opacity: 0.72;
-  }
-
-  body.page-home .home-hero-projects__thumb img,
-  body.page-home .home-hero-projects__thumb video {
+  body.page-home .home-hero-projects__card-title {
     transition: none;
   }
 
   body.page-home .home-hero-projects__thumb img.home-hero-projects__thumb-scroll {
     animation: none;
-  }
-
-  body.page-home .home-hero-projects__card-desc {
-    transition: none;
   }
 }
 
