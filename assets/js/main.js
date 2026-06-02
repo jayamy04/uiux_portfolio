@@ -1104,63 +1104,6 @@
 		}
 		pricingFilterAnimation();
 
-		/* 
-  **********************************
-  Circle Progress Js
-  ********************************** 
-  */
-		function circleProgress() {
-			const circles = document.querySelectorAll(".circle-big");
-			if (circles?.length) {
-				// Intersection Observer to trigger when in viewport
-				const observer = new IntersectionObserver(
-					(entries, observer) => {
-						entries.forEach(entry => {
-							if (entry.isIntersecting) {
-								const circle = entry.target;
-								const percent = parseInt(
-									circle.getAttribute("data-percent", 10),
-								);
-								const progress = circle.querySelector(".progress");
-								const text = circle.querySelector("span");
-
-								const circumference = 2 * Math.PI * 55;
-								progress.style.strokeDasharray = circumference;
-								progress.style.transition = "stroke-dashoffset 1.5s ease-out";
-
-								const dashOffset =
-									circumference - (percent / 100) * circumference;
-								progress.style.strokeDashoffset = dashOffset;
-
-								// Animate number counting
-								let current = 0;
-								const duration = 1200; // ms
-								const stepTime = 15; // update interval
-								const increment = percent / (duration / stepTime);
-
-								const counter = setInterval(() => {
-									current += increment;
-									if (current >= percent) {
-										current = percent;
-										clearInterval(counter);
-									}
-									text.textContent = Math.floor(current) + "%";
-								}, stepTime);
-
-								observer.unobserve(circle); // Run only once
-							}
-						});
-					},
-					{ threshold: 0.5 },
-				); // 50% visible
-
-				circles.forEach(circle => {
-					observer.observe(circle);
-				});
-			}
-		}
-		circleProgress();
-
 		/* --------------------------------------------
 		Contact map Js
 	-------------------------------------------- */
@@ -2476,56 +2419,11 @@ const initHomeHeroProjectCarousel = () => {
   const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   ).matches;
-  const progressBars = slides.map((slide) =>
-    slide.querySelector("[data-hero-carousel-progress]")
-  );
-  const progressFills = slides.map((slide) =>
-    slide.querySelector("[data-hero-carousel-progress-fill]")
-  );
-  const getActiveProgressFill = () =>
-    slides[activeIndex]?.querySelector("[data-hero-carousel-progress-fill]") ??
-    null;
-  const progressEnabled =
-    !prefersReducedMotion &&
-    slides.length > 1 &&
-    progressFills.every(Boolean);
   let activeIndex = 0;
   let timerId = null;
-  let progressAnimation = null;
+  let timerEndsAt = null;
   let pausedRemainingMs = HOME_HERO_CAROUSEL_INTERVAL_MS;
   let interactionPaused = false;
-
-  const resetAllProgressFills = () => {
-    progressFills.forEach((fill) => {
-      if (!fill) return;
-      fill.style.transform = "scaleX(0)";
-    });
-  };
-
-  if (progressEnabled) {
-    resetAllProgressFills();
-  } else {
-    progressBars.forEach((bar) => {
-      if (bar) bar.hidden = true;
-    });
-  }
-
-  const getProgressRemainingMs = () => {
-    if (!progressAnimation) return pausedRemainingMs;
-    const timing = progressAnimation.effect?.getTiming?.();
-    const duration =
-      typeof timing?.duration === "number"
-        ? timing.duration
-        : HOME_HERO_CAROUSEL_INTERVAL_MS;
-    const currentTime = progressAnimation.currentTime ?? 0;
-    return Math.max(0, Math.round(duration - currentTime));
-  };
-
-  const pauseProgress = () => {
-    if (!progressEnabled) return;
-    pausedRemainingMs = getProgressRemainingMs();
-    progressAnimation?.pause();
-  };
 
   const goTo = (nextIndex, { restartTimer = false } = {}) => {
     const count = slides.length;
@@ -2540,10 +2438,6 @@ const initHomeHeroProjectCarousel = () => {
         slide.removeAttribute("aria-current");
       }
     });
-
-    progressAnimation?.cancel();
-    progressAnimation = null;
-    resetAllProgressFills();
 
     root.querySelectorAll(".home-hero-projects__thumb video").forEach((video) => {
       ensureLoopingVideo(video);
@@ -2572,8 +2466,11 @@ const initHomeHeroProjectCarousel = () => {
     if (timerId !== null) {
       window.clearTimeout(timerId);
       timerId = null;
+      if (timerEndsAt !== null) {
+        pausedRemainingMs = Math.max(0, timerEndsAt - Date.now());
+      }
     }
-    pauseProgress();
+    timerEndsAt = null;
   };
 
   const start = (delayMs) => {
@@ -2590,29 +2487,10 @@ const initHomeHeroProjectCarousel = () => {
       Math.max(50, duration)
     );
 
-    if (progressEnabled) {
-      const progressFill = getActiveProgressFill();
-      if (progressFill) {
-        const ratio = 1 - remaining / HOME_HERO_CAROUSEL_INTERVAL_MS;
-        progressAnimation?.cancel();
-        progressAnimation = progressFill.animate(
-          [{ transform: "scaleX(0)" }, { transform: "scaleX(1)" }],
-          {
-            duration: HOME_HERO_CAROUSEL_INTERVAL_MS,
-            fill: "forwards",
-            easing: "linear",
-          }
-        );
-        if (ratio > 0 && ratio < 1) {
-          progressAnimation.currentTime =
-            HOME_HERO_CAROUSEL_INTERVAL_MS * ratio;
-        }
-        pausedRemainingMs = remaining;
-      }
-    }
-
+    timerEndsAt = Date.now() + remaining;
     timerId = window.setTimeout(() => {
       timerId = null;
+      timerEndsAt = null;
       goTo(activeIndex + 1);
       pausedRemainingMs = HOME_HERO_CAROUSEL_INTERVAL_MS;
       start(HOME_HERO_CAROUSEL_INTERVAL_MS);
