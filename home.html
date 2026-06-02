@@ -26,7 +26,8 @@
   <link rel="preload" as="image" href="./assets/images/projects/bloomandvine_video_poster.jpg">
   <link rel="preload" as="image" href="./assets/images/projects/ibm_console_popup.png">
   <link rel="preload" as="image" href="./assets/images/projects/inclusive_design_lab_popup.png">
-  <link rel="preload" as="image" href="./assets/images/projects/sachacks-hover.jpg">
+  <link rel="preload" href="./assets/videos/sachacks_video.mp4" as="fetch" type="video/mp4" crossorigin>
+  <link rel="preload" as="image" href="./assets/images/projects/sachacks_video_poster.jpg">
   <link rel="preload" href="./assets/videos/schedgo_v.mp4" as="fetch" type="video/mp4" crossorigin>
   <link rel="preload" as="image" href="./assets/images/projects/schedgo_video_poster.jpg">
   <link rel="preload" href="./assets/videos/nordstrom_rack_v.mp4" as="fetch" type="video/mp4" crossorigin>
@@ -313,7 +314,10 @@
                               </div>
                             </div>
                             <span class="home-hero-projects__thumb">
-                              <img class="home-hero-projects__thumb-scroll" src="./assets/images/projects/sachacks-hover.jpg" alt="" width="1200" height="5860" loading="lazy" decoding="async">
+                              <video poster="./assets/images/projects/sachacks_video_poster.jpg" muted loop autoplay playsinline webkit-playsinline preload="auto" aria-hidden="true">
+                                <source src="./assets/videos/sachacks_video.mp4" type="video/mp4">
+                                <source src="./assets/videos/sachacks_video.mov" type="video/quicktime">
+                              </video>
                             </span>
                             <div class="home-hero-projects__card-body">
                               <h2 class="home-hero-projects__card-title">SacHacks</h2>
