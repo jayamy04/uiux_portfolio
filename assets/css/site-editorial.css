@@ -1437,7 +1437,7 @@ body.page-home .home-hero-projects__card--bento-feature .home-hero-projects__thu
 
 body.page-home .home-hero-projects__card--bento-tall .home-hero-projects__thumb,
 body.page-home .home-hero-projects__card--bento-compact .home-hero-projects__thumb,
-body.page-home .home-hero-projects__card--bento-half .home-hero-projects__thumb {
+body.page-home .home-hero-projects__card--bento-half .home-hero-projects__thumb:not(.home-hero-projects__thumb--ibm) {
   position: relative;
   aspect-ratio: 16 / 10;
   min-height: clamp(120px, 22vw, 200px);
@@ -1492,12 +1492,16 @@ body.page-home .home-hero-projects__card--bento-half .home-hero-projects__case-s
   body.page-home .home-hero-projects__card--bento-feature {
     grid-column: 1 / -1;
   }
+
+  body.page-home .home-hero-projects__card--bento-half {
+    grid-column: span 1;
+  }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 991px) {
   body.page-home .home-hero-projects__card--bento-tall .home-hero-projects__thumb,
   body.page-home .home-hero-projects__card--bento-compact .home-hero-projects__thumb,
-  body.page-home .home-hero-projects__card--bento-half .home-hero-projects__thumb {
+  body.page-home .home-hero-projects__card--bento-half .home-hero-projects__thumb:not(.home-hero-projects__thumb--ibm) {
     aspect-ratio: 16 / 10;
     min-height: clamp(140px, 20vw, 200px);
   }
@@ -1506,7 +1510,7 @@ body.page-home .home-hero-projects__card--bento-half .home-hero-projects__case-s
 @media only screen and (min-width: 992px) {
   body.page-home .home-hero-projects__grid--bento {
     grid-template-columns: repeat(6, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(clamp(148px, 14vw, 210px), auto)) auto;
+    grid-template-rows: repeat(2, minmax(clamp(148px, 14vw, 210px), 1fr)) auto;
     gap: clamp(12px, 1.2vw, 16px);
   }
 
@@ -1518,6 +1522,7 @@ body.page-home .home-hero-projects__card--bento-half .home-hero-projects__case-s
   body.page-home .home-hero-projects__card--bento-tall {
     grid-column: 5 / 7;
     grid-row: 1;
+    align-self: stretch;
     min-height: 0;
     overflow: hidden;
   }
@@ -1525,6 +1530,7 @@ body.page-home .home-hero-projects__card--bento-half .home-hero-projects__case-s
   body.page-home .home-hero-projects__card--bento-compact {
     grid-column: 5 / 7;
     grid-row: 2;
+    align-self: stretch;
     min-height: 0;
     overflow: hidden;
   }
@@ -1557,7 +1563,7 @@ body.page-home .home-hero-projects__card--bento-half .home-hero-projects__case-s
   body.page-home .home-hero-projects__card--bento-tall .home-hero-projects__thumb,
   body.page-home .home-hero-projects__card--bento-compact .home-hero-projects__thumb {
     flex: 1 1 0;
-    min-height: clamp(108px, 10vw, 152px);
+    min-height: 0;
     max-height: none;
     aspect-ratio: auto;
     align-self: stretch;
