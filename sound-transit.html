@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Sound Transit website redesign — 2026 capstone reimagining soundtransit.org information architecture around five real rider and community journeys.">
+  <meta name="description" content="Sound Transit information architecture redesign — GA4 analytics, card sorting, heuristic evaluation, usability testing, and tree testing with the Digital Web Team. Jan 2026 capstone.">
 
   <title>Sound Transit — Amy Seunghyun Lee</title>
 
@@ -139,10 +139,31 @@
                 >
               </h1>
               <p class="work-detail__subtitle tj-fade" data-on-scroll="0" data-delay=".08">
-                Information Architecture Redesign · 2026<br>
-                Aashika Ashok, Amy Lee, Catherine Pan, Jane Guo
+                Information Architecture Redesign · UX Researcher &amp; Designer · Jan 2026 – Present
               </p>
-              <div class="work-detail__actions tj-fade" data-on-scroll="0" data-delay=".12">
+              <dl class="work-detail__meta tj-fade" data-on-scroll="0" data-delay=".12">
+                <div class="work-detail__meta-item">
+                  <dt>Role</dt>
+                  <dd>UX Researcher &amp; Designer</dd>
+                </div>
+                <div class="work-detail__meta-item">
+                  <dt>Team</dt>
+                  <dd>Aashika Ashok, Amy Lee, Catherine Pan, Jane Guo</dd>
+                </div>
+                <div class="work-detail__meta-item">
+                  <dt>Client</dt>
+                  <dd>Sound Transit Digital Web Team</dd>
+                </div>
+                <div class="work-detail__meta-item">
+                  <dt>Methods</dt>
+                  <dd>Card sorting, heuristic evaluation, moderated usability testing, competitive analysis, GA4 behavioral analytics, tree testing</dd>
+                </div>
+                <div class="work-detail__meta-item">
+                  <dt>Duration</dt>
+                  <dd>Jan 2026 – Present</dd>
+                </div>
+              </dl>
+              <div class="work-detail__actions tj-fade" data-on-scroll="0" data-delay=".16">
                 <a class="work-detail__cta" href="https://www.soundtransit.org/" target="_blank" rel="noopener noreferrer">
                   <span class="work-detail__cta-label">soundtransit.org</span>
                   <span class="work-detail__cta-arrow" aria-hidden="true">↗</span>
@@ -160,22 +181,89 @@
             </div>
           </header>
 
-          <section class="work-detail__section" aria-labelledby="sound-transit-intro-heading">
+          <section class="work-detail__section" aria-labelledby="sound-transit-problem-heading">
             <div class="work-detail__inner">
-              <h2 id="sound-transit-intro-heading" class="visually-hidden">Introduction</h2>
+              <h2 id="sound-transit-problem-heading" class="work-detail__heading tj-fade" data-on-scroll="0">The Problem</h2>
               <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
-                <p>Sound Transit runs Link light rail, Sounder trains, and ST Express buses across the Seattle region — moving hundreds of thousands of people every day. But soundtransit.org wasn't built around any of them. It was built around departments.</p>
-                <p>In 2026, our team — Aashika, Catherine, Jane, and me — partnered with Sound Transit to rethink the site's information architecture. Not a visual refresh. A structural one. We mapped five real journeys — a first-time rider, an airport arrival, a daily commuter, a game-night fan, a contractor and a neighbor — and redesigned the site so each person could find what they needed without already knowing how transit websites work.</p>
+                <p>soundtransit.org is a critical public resource — riders rely on it to plan trips, find schedules, and navigate emergencies.</p>
+              </div>
+              <figure class="work-detail__quote tj-fade" data-on-scroll="0" data-delay=".06">
+                <blockquote>
+                  <p>The site's information architecture was built by transit people, not by people who don't know transit.</p>
+                </blockquote>
+                <figcaption class="work-detail__quote-caption">Internal Sound Transit stakeholder</figcaption>
+              </figure>
+              <figure class="work-detail__quote tj-fade" data-on-scroll="0" data-delay=".08">
+                <blockquote>
+                  <p>Everything to do with how do I pay — that's spread throughout the whole entire website.</p>
+                </blockquote>
+                <figcaption class="work-detail__quote-caption">Passenger Care team</figcaption>
+              </figure>
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".1">
+                <p>The problem wasn't missing content. It was that the structure didn't match how riders think about getting around.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="work-detail__section" aria-labelledby="sound-transit-found-heading">
+            <div class="work-detail__inner">
+              <h2 id="sound-transit-found-heading" class="work-detail__heading tj-fade" data-on-scroll="0">What We Found</h2>
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
+                <p>Six research methods, and they all pointed to the same breakdown.</p>
+                <p><strong>GA4 behavioral analytics</strong> gave us the scale of the problem:</p>
+                <ul>
+                  <li><strong>618K internal search sessions</strong> — the top terms were "Fares," "Cost," "Schedule," "Map," "Airport," "Tacoma Dome." All of this content existed on the site. Users were searching for it because navigation wasn't getting them there. "Ride with us" and "Get to know us" — the actual nav section names — appeared zero times across 56 card sort participants. Nobody thinks in those terms.</li>
+                  <li><strong>144K users</strong> navigated from Rider pages to Maps — meaning Maps was a core rider need, but riders had to leave the Rider section entirely to find it.</li>
+                  <li><strong>70% of users are on mobile</strong>, but the site was built for desktop. GA4 showed looping behavior — users navigating back and forth repeatedly — which matched the absence of breadcrumbs flagged in our heuristic evaluation.</li>
+                  <li>Several pages had a <strong>100% bounce rate</strong>: new-to-sound-transit, ticket-machines, the Mariners popular-destinations page, and bringing-your-bike. Complete dead ends with no onward paths.</li>
+                </ul>
+                <p><strong>Heuristic evaluation</strong> surfaced severity 4 issues — the highest — on service alerts. Alert icons were invisible on mobile. The system expansion map had a scroll trap (scrolling got captured by map zoom instead of the page). Users lost their trip planning state when navigating away. ORCA and transit jargon throughout the site assumed prior knowledge, especially a problem for tourists and first-time riders.</p>
+                <p><strong>Card sorting (56 participants)</strong> revealed how riders actually group information — and it didn't map to the existing nav structure. "Ride with us" and "Get to know us" as categories had zero recognition.</p>
+                <p><strong>Moderated usability testing (3 participants)</strong> showed "Plan a Trip" was consistently misread — users expected a journey planner tool, not general rider guidance. Emergency contact information was nearly unfindable, which is a safety issue, not just a UX one.</p>
+                <p><strong>Tree testing (two rounds)</strong> let us validate the redesigned IA before presenting to stakeholders. Each round surfaced label mismatches we incorporated into revisions.</p>
+                <p><strong>Competitive analysis across 8+ transit platforms</strong> benchmarked what functional transit IA looks like and identified patterns riders from other systems already know.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="work-detail__section" aria-labelledby="sound-transit-personas-heading">
+            <div class="work-detail__inner">
+              <h2 id="sound-transit-personas-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Who We Were Designing For</h2>
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
+                <p>We developed five user personas across the project: first-time rider, SeaTac traveler, frequent commuter, event rider, and business/community user. These shaped which navigation failures were highest priority — a first-time rider hitting a dead-end page with no onward path is a much more critical failure than the same thing happening to a commuter who already knows the system.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="work-detail__section" aria-labelledby="sound-transit-changed-heading">
+            <div class="work-detail__inner">
+              <h2 id="sound-transit-changed-heading" class="work-detail__heading tj-fade" data-on-scroll="0">What We Changed</h2>
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
+                <p>We restructured the site around three clear audiences: <strong>Riders</strong>, <strong>Get Involved</strong>, and <strong>About Sound Transit</strong>.</p>
+                <p>Key structural decisions:</p>
+                <ul>
+                  <li><strong>Alerts</strong> became a dedicated nav section — previously buried, now a top-level item given it's safety-critical information</li>
+                  <li><strong>Fares</strong> surfaced as its own nav item and linked directly from the Rider Guide, addressing the single most-searched content category</li>
+                  <li><strong>Maps</strong> moved to be accessible directly from the Rider section</li>
+                  <li><strong>"Plan a Trip" relabeled</strong> — testing showed the label set the wrong expectation</li>
+                  <li><strong>Rider Guide created</strong> — consolidated new-to-transit content that previously existed in scattered dead-end pages; includes getting an ORCA card, planning a trip, and rules and safety</li>
+                  <li><strong>Newsroom</strong> — Blog and News merged, Media Inquiries added</li>
+                  <li><strong>Doing Business With Us</strong> moved under About</li>
+                  <li><strong>Community Participation</strong> added under Get Involved, with Sounding Board and Event Calendar</li>
+                  <li><strong>Help</strong> moved to footer utility nav, consistent with how users expect support content to live</li>
+                  <li><strong>ST Shop renamed</strong> to Sound Transit Shop to reduce jargon</li>
+                  <li><strong>Emergency contacts surfaced</strong> — this one had real stakes</li>
+                </ul>
+                <p>We also ran a <strong>co-design workshop with Sound Transit staff</strong> to pressure-test the taxonomy with the people who maintain the site — making sure our changes were implementable, not just conceptually clean.</p>
               </div>
             </div>
           </section>
 
           <section class="work-detail__section work-detail__section--visual" aria-labelledby="sound-transit-rider-guide-heading">
             <div class="work-detail__inner">
-              <h2 id="sound-transit-rider-guide-heading" class="work-detail__heading tj-fade" data-on-scroll="0">The first ride shouldn't require a scavenger hunt</h2>
+              <h2 id="sound-transit-rider-guide-heading" class="work-detail__heading tj-fade" data-on-scroll="0">First-time rider — Rider Guide</h2>
               <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
-                <p>Picture someone who just moved to Seattle. They want to take light rail for the first time — but the basics are scattered. How to plan a trip lives on one page. ORCA card info on another. Where and how to tap? Good luck finding it. Fares, arguably the first thing a new rider needs, had no clear home in the navigation.</p>
-                <p>We built a Rider Guide that walks someone through the whole journey in order: plan your trip, get an ORCA card, tap on and off. Fares earned its own place in the nav — because if you can't figure out what it costs, you probably won't ride.</p>
+                <p>Fares was the most-searched content on the site — yet had no clear home in the navigation. We built a Rider Guide that walks someone through the whole journey in order: plan your trip, get an ORCA card, tap on and off. Scattered dead-end pages became one path for people who don't already know transit.</p>
               </div>
               <figure class="work-detail__figure tj-fade" data-on-scroll="0" data-delay=".08">
                 <div class="work-detail__figure-frame work-detail__figure-frame--video">
@@ -190,10 +278,9 @@
 
           <section class="work-detail__section" aria-labelledby="sound-transit-seatac-heading">
             <div class="work-detail__inner">
-              <h2 id="sound-transit-seatac-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Land at SeaTac. Train in minutes.</h2>
+              <h2 id="sound-transit-seatac-heading" class="work-detail__heading tj-fade" data-on-scroll="0">SeaTac traveler</h2>
               <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
-                <p>A traveler steps off a long flight at SeaTac. They have luggage, no ORCA card, and one question: when is the next train? The old airport page buried that answer under general transit information — the same layout you'd use for someone planning a trip next week.</p>
-                <p>We redesigned the SeaTac page for urgency. Next train up top. Popular destinations one tap away. Quick links to buy a ticket or find the station. A "know before you travel" section for the things that actually trip people up — where to tap, how long it takes, what to do with bags.</p>
+                <p>"Airport" was among the top GA4 search terms — content that existed but wasn't reachable through navigation. We redesigned the SeaTac page for urgency: next train up top, popular destinations one tap away, and a "know before you travel" section for the things that actually trip people up.</p>
               </div>
               <figure class="work-detail__figure tj-fade" data-on-scroll="0" data-delay=".08">
                 <div class="work-detail__figure-frame work-detail__figure-frame--video">
@@ -208,10 +295,9 @@
 
           <section class="work-detail__section" aria-labelledby="sound-transit-alerts-heading">
             <div class="work-detail__inner">
-              <h2 id="sound-transit-alerts-heading" class="work-detail__heading tj-fade" data-on-scroll="0">The commute check that couldn't wait</h2>
+              <h2 id="sound-transit-alerts-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Frequent commuter — Alerts</h2>
               <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
-                <p>Every morning, the same ritual: open the site, check if your line is running, decide whether to leave now or wait. For daily commuters, service alerts aren't a nice-to-have — they're the reason you trust the system or start driving.</p>
-                <p>On the current site, alerts live deep in the hierarchy — easy to miss when you're in a hurry. We pulled Alerts into its own dedicated navigation section, so the first thing a commuter sees is exactly what they came for: is my train on time?</p>
+                <p>Heuristic evaluation flagged severity 4 issues on service alerts — icons invisible on mobile, information buried deep in the hierarchy. We pulled Alerts into its own dedicated navigation section so the first thing a commuter sees is exactly what they came for: is my train on time?</p>
               </div>
               <figure class="work-detail__figure tj-fade" data-on-scroll="0" data-delay=".08">
                 <div class="work-detail__figure-frame work-detail__figure-frame--video">
@@ -226,10 +312,9 @@
 
           <section class="work-detail__section" aria-labelledby="sound-transit-games-heading">
             <div class="work-detail__inner">
-              <h2 id="sound-transit-games-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Mariners game tonight. Last train when?</h2>
+              <h2 id="sound-transit-games-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Event rider — Games and Events</h2>
               <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
-                <p>It's a Friday. You're heading to T-Mobile Park for a Mariners game. You need to know which station to use, how long the walk is, when the last train leaves, and whether there's extended service after the final out. That's four separate questions — and on the old site, four separate searches.</p>
-                <p>We designed a Games and Events experience that puts tonight's game front and center: station options with walk times, train schedules, and extended service details — all reachable in one tap. Because missing the last train home shouldn't be part of the ballpark experience.</p>
+                <p>The Mariners popular-destinations page had a 100% bounce rate — a complete dead end. We designed a Games and Events experience that puts tonight's game front and center: station options with walk times, train schedules, and extended service details in one tap.</p>
               </div>
               <figure class="work-detail__figure tj-fade" data-on-scroll="0" data-delay=".08">
                 <div class="work-detail__figure-frame work-detail__figure-frame--video">
@@ -244,10 +329,9 @@
 
           <section class="work-detail__section" aria-labelledby="sound-transit-business-heading">
             <div class="work-detail__inner">
-              <h2 id="sound-transit-business-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Two visitors, one agency</h2>
+              <h2 id="sound-transit-business-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Business and community</h2>
               <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
-                <p>Not everyone on soundtransit.org is catching a train. A contractor needs to find open bids and figure out how to do business with the agency. A community member wants to attend a public meeting or join the Sounding Board. Both are legitimate users — and both were getting lost in pages built for someone else.</p>
-                <p>We consolidated contracting under Doing Business With Us — one front door for vendors and partners. Community Participation got its own home, with the Sounding Board and Event Calendar surfaced together. Same agency, different needs — each with a clear path in.</p>
+                <p>Not everyone on soundtransit.org is catching a train. We consolidated contracting under Doing Business With Us and gave Community Participation its own home under Get Involved — with the Sounding Board and Event Calendar surfaced together.</p>
               </div>
               <figure class="work-detail__figure tj-fade" data-on-scroll="0" data-delay=".08">
                 <div class="work-detail__figure-frame work-detail__figure-frame--video">
@@ -260,12 +344,28 @@
             </div>
           </section>
 
+          <section class="work-detail__section" aria-labelledby="sound-transit-contributions-heading">
+            <div class="work-detail__inner">
+              <h2 id="sound-transit-contributions-heading" class="work-detail__heading tj-fade" data-on-scroll="0">What I Did</h2>
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
+                <p>I contributed across the full research arc. Specifically:</p>
+                <ul>
+                  <li>Led analysis on two rounds of tree testing data, tracking label failures across IA versions</li>
+                  <li>Synthesized usability testing transcripts into a pin-up evaluation</li>
+                  <li>Built the implementation roadmap, organizing research-backed changes into three tiers by effort and impact</li>
+                  <li>Drafted rider-facing content for the Rider Guide (ORCA card steps, trip planning, safety and etiquette)</li>
+                  <li>Presented findings to Sound Transit stakeholders and fielded Q&amp;A at the UW HCDE capstone showcase</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
           <section class="work-detail__section work-detail__section--extra" aria-labelledby="sound-transit-closing-heading">
             <div class="work-detail__inner">
-              <h2 id="sound-transit-closing-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Built around the people it serves</h2>
+              <h2 id="sound-transit-closing-heading" class="work-detail__heading tj-fade" data-on-scroll="0">What It Taught Me</h2>
               <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
-                <p>Sound Transit connects the region — light rail from the airport to downtown, buses across counties, Sounder up and down the corridor. The website should do the same kind of work: get riders where they're going, help contractors find opportunities, give neighbors a seat at the table, and welcome first-time visitors without making them feel like outsiders.</p>
-                <p>We reorganized soundtransit.org around the people who actually use it — not the departments that built it.</p>
+                <p>The stat that landed hardest with stakeholders wasn't a usability quote — it was 618,000 search sessions. Quantitative evidence opened the door; qualitative testing gave us the story to walk through it.</p>
+                <p>Co-designing with internal stakeholders also isn't optional for this kind of work. The taxonomy decisions that felt obvious to us as researchers weren't always implementable without buy-in from the people managing the CMS. Getting that alignment early meant our recommendations had a real path to shipping.</p>
               </div>
             </div>
           </section>
