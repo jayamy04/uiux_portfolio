@@ -305,7 +305,7 @@ body.page-resume.site-editorial .inner_top_gap {
 }
 
 body.page-sachacks.site-editorial .inner_top_gap,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack.site-editorial .inner_top_gap,
 body.page-sound-transit.site-editorial .inner_top_gap,
 body.page-inclusive-lab.site-editorial .inner_top_gap,
 body.page-inclusive-design-lab.site-editorial .inner_top_gap,
@@ -336,7 +336,7 @@ body.page-ideas.site-editorial .inner_top_gap {
   }
 
   body.page-sachacks.site-editorial .inner_top_gap,
-  body.page-nordstrom-rack,
+  body.page-nordstrom-rack.site-editorial .inner_top_gap,
 body.page-sound-transit.site-editorial .inner_top_gap,
   body.page-inclusive-lab.site-editorial .inner_top_gap,
 body.page-inclusive-design-lab.site-editorial .inner_top_gap,
@@ -7729,7 +7729,7 @@ body.page-ibm-saas-console .work-detail,
 body.page-breaking-barriers .work-detail,
 body.page-bloom-and-vine .work-detail,
 body.page-makeability-lab .work-detail,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail,
 body.page-sound-transit .work-detail,
 body.page-inclusive-lab .work-detail {
   position: relative;
@@ -7743,7 +7743,7 @@ body.page-ibm-saas-console .work-detail__hero,
 body.page-breaking-barriers .work-detail__hero,
 body.page-bloom-and-vine .work-detail__hero,
 body.page-makeability-lab .work-detail__hero,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__hero,
 body.page-sound-transit .work-detail__hero,
 body.page-inclusive-lab .work-detail__hero {
   padding: clamp(8px, 1.5vh, 20px) 0 clamp(40px, 6vh, 64px);
@@ -7765,9 +7765,9 @@ body.page-bloom-and-vine .work-detail__hero::before,
 body.page-bloom-and-vine .work-detail__hero::after,
 body.page-makeability-lab .work-detail__hero::before,
 body.page-makeability-lab .work-detail__hero::after,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__hero::before,
 body.page-sound-transit .work-detail__hero::before,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__hero::after,
 body.page-sound-transit .work-detail__hero::after,
 body.page-inclusive-lab .work-detail__hero::before,
 body.page-inclusive-lab .work-detail__hero::after {
@@ -7781,7 +7781,7 @@ body.page-ibm-saas-console .work-detail__hero-inner,
 body.page-breaking-barriers .work-detail__hero-inner,
 body.page-bloom-and-vine .work-detail__hero-inner,
 body.page-makeability-lab .work-detail__hero-inner,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__hero-inner,
 body.page-sound-transit .work-detail__hero-inner,
 body.page-inclusive-lab .work-detail__hero-inner,
 body.page-sachacks .work-detail__inner,
@@ -7790,7 +7790,7 @@ body.page-ibm-saas-console .work-detail__inner,
 body.page-breaking-barriers .work-detail__inner,
 body.page-bloom-and-vine .work-detail__inner,
 body.page-makeability-lab .work-detail__inner,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__inner,
 body.page-sound-transit .work-detail__inner,
 body.page-inclusive-lab .work-detail__inner {
   width: 100%;
@@ -7804,7 +7804,7 @@ body.page-ibm-saas-console .work-detail__back,
 body.page-breaking-barriers .work-detail__back,
 body.page-bloom-and-vine .work-detail__back,
 body.page-makeability-lab .work-detail__back,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__back,
 body.page-sound-transit .work-detail__back,
 body.page-inclusive-lab .work-detail__back {
   display: inline-flex;
@@ -7827,7 +7827,7 @@ body.page-ibm-saas-console .work-detail__back:hover,
 body.page-breaking-barriers .work-detail__back:hover,
 body.page-bloom-and-vine .work-detail__back:hover,
 body.page-makeability-lab .work-detail__back:hover,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__back:hover,
 body.page-sound-transit .work-detail__back:hover,
 body.page-inclusive-lab .work-detail__back:hover,
 body.page-inclusive-lab .work-detail__back:hover {
@@ -7840,7 +7840,7 @@ body.page-ibm-saas-console .work-detail__eyebrow,
 body.page-breaking-barriers .work-detail__eyebrow,
 body.page-bloom-and-vine .work-detail__eyebrow,
 body.page-makeability-lab .work-detail__eyebrow,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__eyebrow,
 body.page-sound-transit .work-detail__eyebrow,
 body.page-inclusive-lab .work-detail__eyebrow {
   margin: 0 0 10px;
@@ -7858,7 +7858,7 @@ body.page-ibm-saas-console .work-detail__title,
 body.page-breaking-barriers .work-detail__title,
 body.page-bloom-and-vine .work-detail__title,
 body.page-makeability-lab .work-detail__title,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__title,
 body.page-sound-transit .work-detail__title,
 body.page-inclusive-lab .work-detail__title {
   margin: 0;
@@ -7875,7 +7875,7 @@ body.page-ibm-saas-console .work-detail__title-line,
 body.page-breaking-barriers .work-detail__title-line,
 body.page-bloom-and-vine .work-detail__title-line,
 body.page-makeability-lab .work-detail__title-line,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__title-line,
 body.page-sound-transit .work-detail__title-line,
 body.page-inclusive-lab .work-detail__title-line {
   display: block;
@@ -7889,7 +7889,7 @@ body.page-ibm-saas-console .work-detail__title-line--accent,
 body.page-breaking-barriers .work-detail__title-line--accent,
 body.page-bloom-and-vine .work-detail__title-line--accent,
 body.page-makeability-lab .work-detail__title-line--accent,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__title-line--accent,
 body.page-sound-transit .work-detail__title-line--accent,
 body.page-inclusive-lab .work-detail__title-line--accent {
   padding-left: clamp(0.35em, 8vw, 1em);
@@ -7909,12 +7909,12 @@ body.page-ibm-saas-console .work-detail__title-logo {
   object-position: left center;
 }
 
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__title,
 body.page-sound-transit .work-detail__title {
   line-height: 1;
 }
 
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__title-logo,
 body.page-sound-transit .work-detail__title-logo {
   display: block;
   width: auto;
@@ -7930,7 +7930,7 @@ body.page-ibm-saas-console .work-detail__subtitle,
 body.page-breaking-barriers .work-detail__subtitle,
 body.page-bloom-and-vine .work-detail__subtitle,
 body.page-makeability-lab .work-detail__subtitle,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__subtitle,
 body.page-sound-transit .work-detail__subtitle,
 body.page-inclusive-lab .work-detail__subtitle {
   margin: clamp(16px, 2.5vh, 24px) 0 0;
@@ -7949,7 +7949,7 @@ body.page-ibm-saas-console .work-detail__meta,
 body.page-breaking-barriers .work-detail__meta,
 body.page-bloom-and-vine .work-detail__meta,
 body.page-makeability-lab .work-detail__meta,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__meta,
 body.page-sound-transit .work-detail__meta,
 body.page-inclusive-lab .work-detail__meta {
   display: grid;
@@ -7965,7 +7965,7 @@ body.page-ibm-saas-console .work-detail__meta-item,
 body.page-breaking-barriers .work-detail__meta-item,
 body.page-bloom-and-vine .work-detail__meta-item,
 body.page-makeability-lab .work-detail__meta-item,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__meta-item,
 body.page-sound-transit .work-detail__meta-item,
 body.page-inclusive-lab .work-detail__meta-item {
   margin: 0;
@@ -7977,7 +7977,7 @@ body.page-ibm-saas-console .work-detail__meta dt,
 body.page-breaking-barriers .work-detail__meta dt,
 body.page-bloom-and-vine .work-detail__meta dt,
 body.page-makeability-lab .work-detail__meta dt,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__meta dt,
 body.page-sound-transit .work-detail__meta dt,
 body.page-inclusive-lab .work-detail__meta dt {
   margin: 0 0 4px;
@@ -7995,7 +7995,7 @@ body.page-ibm-saas-console .work-detail__meta dd,
 body.page-breaking-barriers .work-detail__meta dd,
 body.page-bloom-and-vine .work-detail__meta dd,
 body.page-makeability-lab .work-detail__meta dd,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__meta dd,
 body.page-sound-transit .work-detail__meta dd,
 body.page-inclusive-lab .work-detail__meta dd {
   margin: 0;
@@ -8011,7 +8011,7 @@ body.page-ibm-saas-console .work-detail__actions,
 body.page-breaking-barriers .work-detail__actions,
 body.page-bloom-and-vine .work-detail__actions,
 body.page-makeability-lab .work-detail__actions,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__actions,
 body.page-sound-transit .work-detail__actions,
 body.page-inclusive-lab .work-detail__actions,
 body.page-sachacks .work-detail__footer-actions,
@@ -8020,7 +8020,7 @@ body.page-ibm-saas-console .work-detail__footer-actions,
 body.page-breaking-barriers .work-detail__footer-actions,
 body.page-bloom-and-vine .work-detail__footer-actions,
 body.page-makeability-lab .work-detail__footer-actions,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__footer-actions,
 body.page-sound-transit .work-detail__footer-actions,
 body.page-inclusive-lab .work-detail__footer-actions,
 body.page-inclusive-lab .work-detail__actions {
@@ -8037,7 +8037,7 @@ body.page-ibm-saas-console .work-detail__cta,
 body.page-breaking-barriers .work-detail__cta,
 body.page-bloom-and-vine .work-detail__cta,
 body.page-makeability-lab .work-detail__cta,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__cta,
 body.page-sound-transit .work-detail__cta,
 body.page-inclusive-lab .work-detail__cta {
   display: inline-flex;
@@ -8063,7 +8063,7 @@ body.page-ibm-saas-console .work-detail__cta:hover,
 body.page-breaking-barriers .work-detail__cta:hover,
 body.page-bloom-and-vine .work-detail__cta:hover,
 body.page-makeability-lab .work-detail__cta:hover,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__cta:hover,
 body.page-sound-transit .work-detail__cta:hover,
 body.page-inclusive-lab .work-detail__cta:hover,
 body.page-inclusive-lab .work-detail__cta:hover {
@@ -8079,7 +8079,7 @@ body.page-ibm-saas-console .work-detail__cta--ghost,
 body.page-breaking-barriers .work-detail__cta--ghost,
 body.page-bloom-and-vine .work-detail__cta--ghost,
 body.page-makeability-lab .work-detail__cta--ghost,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__cta--ghost,
 body.page-sound-transit .work-detail__cta--ghost,
 body.page-inclusive-lab .work-detail__cta--ghost {
   background: transparent;
@@ -8093,7 +8093,7 @@ body.page-ibm-saas-console .work-detail__cta--ghost:hover,
 body.page-breaking-barriers .work-detail__cta--ghost:hover,
 body.page-bloom-and-vine .work-detail__cta--ghost:hover,
 body.page-makeability-lab .work-detail__cta--ghost:hover,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__cta--ghost:hover,
 body.page-sound-transit .work-detail__cta--ghost:hover,
 body.page-inclusive-lab .work-detail__cta--ghost:hover,
 body.page-inclusive-lab .work-detail__cta--ghost:hover {
@@ -8108,7 +8108,7 @@ body.page-ibm-saas-console .work-detail__section,
 body.page-breaking-barriers .work-detail__section,
 body.page-bloom-and-vine .work-detail__section,
 body.page-makeability-lab .work-detail__section,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__section,
 body.page-sound-transit .work-detail__section,
 body.page-inclusive-lab .work-detail__section {
   padding: clamp(36px, 6vh, 56px) 0 0;
@@ -8122,7 +8122,7 @@ body.page-ibm-saas-console .work-detail__heading,
 body.page-breaking-barriers .work-detail__heading,
 body.page-bloom-and-vine .work-detail__heading,
 body.page-makeability-lab .work-detail__heading,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__heading,
 body.page-sound-transit .work-detail__heading,
 body.page-inclusive-lab .work-detail__heading {
   margin: 0;
@@ -8140,7 +8140,7 @@ body.page-ibm-saas-console .work-detail__kicker,
 body.page-breaking-barriers .work-detail__kicker,
 body.page-bloom-and-vine .work-detail__kicker,
 body.page-makeability-lab .work-detail__kicker,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__kicker,
 body.page-sound-transit .work-detail__kicker,
 body.page-inclusive-lab .work-detail__kicker {
   margin: clamp(12px, 2vh, 18px) 0 0;
@@ -8158,7 +8158,7 @@ body.page-ibm-saas-console .work-detail__lead,
 body.page-breaking-barriers .work-detail__lead,
 body.page-bloom-and-vine .work-detail__lead,
 body.page-makeability-lab .work-detail__lead,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__lead,
 body.page-sound-transit .work-detail__lead,
 body.page-inclusive-lab .work-detail__lead {
   margin: clamp(12px, 2vh, 16px) 0 0;
@@ -8176,7 +8176,7 @@ body.page-ibm-saas-console .work-detail__prose,
 body.page-breaking-barriers .work-detail__prose,
 body.page-bloom-and-vine .work-detail__prose,
 body.page-makeability-lab .work-detail__prose,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__prose,
 body.page-sound-transit .work-detail__prose,
 body.page-inclusive-lab .work-detail__prose {
   display: flex;
@@ -8192,7 +8192,7 @@ body.page-ibm-saas-console .work-detail__prose p,
 body.page-breaking-barriers .work-detail__prose p,
 body.page-bloom-and-vine .work-detail__prose p,
 body.page-makeability-lab .work-detail__prose p,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__prose p,
 body.page-sound-transit .work-detail__prose p,
 body.page-inclusive-lab .work-detail__prose p {
   margin: 0;
@@ -8203,7 +8203,7 @@ body.page-inclusive-lab .work-detail__prose p {
   text-wrap: pretty;
 }
 
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__prose ul ,
 body.page-sound-transit .work-detail__prose ul {
   margin: 0;
   padding-left: 1.25em;
@@ -8212,7 +8212,7 @@ body.page-sound-transit .work-detail__prose ul {
   gap: clamp(8px, 1.2vh, 12px);
 }
 
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__prose li ,
 body.page-sound-transit .work-detail__prose li {
   font-family: var(--tj-ff-body);
   font-size: clamp(1.0625rem, 1.1vw, 1.125rem);
@@ -8227,7 +8227,7 @@ body.page-ibm-saas-console .work-detail__stats,
 body.page-breaking-barriers .work-detail__stats,
 body.page-bloom-and-vine .work-detail__stats,
 body.page-makeability-lab .work-detail__stats,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__stats,
 body.page-sound-transit .work-detail__stats,
 body.page-inclusive-lab .work-detail__stats {
   display: grid;
@@ -8245,7 +8245,7 @@ body.page-inclusive-lab .work-detail__stats {
   body.page-breaking-barriers .work-detail__stats,
   body.page-bloom-and-vine .work-detail__stats,
   body.page-makeability-lab .work-detail__stats,
-  body.page-nordstrom-rack,
+  body.page-nordstrom-rack .work-detail__stats,
 body.page-sound-transit .work-detail__stats,
   body.page-inclusive-lab .work-detail__stats,
   body.page-inclusive-design-lab .work-detail__stats {
@@ -8258,7 +8258,7 @@ body.page-sound-transit .work-detail__stats,
   body.page-breaking-barriers .work-detail__stats--outcome,
   body.page-bloom-and-vine .work-detail__stats--outcome,
   body.page-makeability-lab .work-detail__stats--outcome,
-  body.page-nordstrom-rack,
+  body.page-nordstrom-rack .work-detail__stats--outcome,
 body.page-sound-transit .work-detail__stats--outcome,
   body.page-inclusive-lab .work-detail__stats--outcome,
   body.page-inclusive-design-lab .work-detail__stats--outcome {
@@ -8272,7 +8272,7 @@ body.page-ibm-saas-console .work-detail__stats-item,
 body.page-breaking-barriers .work-detail__stats-item,
 body.page-bloom-and-vine .work-detail__stats-item,
 body.page-makeability-lab .work-detail__stats-item,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__stats-item,
 body.page-sound-transit .work-detail__stats-item,
 body.page-inclusive-lab .work-detail__stats-item {
   padding: clamp(14px, 2vw, 18px);
@@ -8289,7 +8289,7 @@ body.page-ibm-saas-console .work-detail__stats-value,
 body.page-breaking-barriers .work-detail__stats-value,
 body.page-bloom-and-vine .work-detail__stats-value,
 body.page-makeability-lab .work-detail__stats-value,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__stats-value,
 body.page-sound-transit .work-detail__stats-value,
 body.page-inclusive-lab .work-detail__stats-value {
   display: block;
@@ -8307,7 +8307,7 @@ body.page-ibm-saas-console .work-detail__stats-label,
 body.page-breaking-barriers .work-detail__stats-label,
 body.page-bloom-and-vine .work-detail__stats-label,
 body.page-makeability-lab .work-detail__stats-label,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__stats-label,
 body.page-sound-transit .work-detail__stats-label,
 body.page-inclusive-lab .work-detail__stats-label {
   display: block;
@@ -8325,7 +8325,7 @@ body.page-ibm-saas-console .work-detail__highlights,
 body.page-breaking-barriers .work-detail__highlights,
 body.page-bloom-and-vine .work-detail__highlights,
 body.page-makeability-lab .work-detail__highlights,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__highlights,
 body.page-sound-transit .work-detail__highlights,
 body.page-inclusive-lab .work-detail__highlights {
   margin: clamp(20px, 3vh, 28px) 0 0;
@@ -8342,7 +8342,7 @@ body.page-ibm-saas-console .work-detail__highlight,
 body.page-breaking-barriers .work-detail__highlight,
 body.page-bloom-and-vine .work-detail__highlight,
 body.page-makeability-lab .work-detail__highlight,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__highlight,
 body.page-sound-transit .work-detail__highlight,
 body.page-inclusive-lab .work-detail__highlight {
   display: grid;
@@ -8361,7 +8361,7 @@ body.page-ibm-saas-console .work-detail__highlight-index,
 body.page-breaking-barriers .work-detail__highlight-index,
 body.page-bloom-and-vine .work-detail__highlight-index,
 body.page-makeability-lab .work-detail__highlight-index,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__highlight-index,
 body.page-sound-transit .work-detail__highlight-index,
 body.page-inclusive-lab .work-detail__highlight-index {
   font-family: var(--tj-ff-body);
@@ -8377,7 +8377,7 @@ body.page-ibm-saas-console .work-detail__highlight-title,
 body.page-breaking-barriers .work-detail__highlight-title,
 body.page-bloom-and-vine .work-detail__highlight-title,
 body.page-makeability-lab .work-detail__highlight-title,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__highlight-title,
 body.page-sound-transit .work-detail__highlight-title,
 body.page-inclusive-lab .work-detail__highlight-title {
   margin: 0 0 6px;
@@ -8393,7 +8393,7 @@ body.page-ibm-saas-console .work-detail__highlight-body p,
 body.page-breaking-barriers .work-detail__highlight-body p,
 body.page-bloom-and-vine .work-detail__highlight-body p,
 body.page-makeability-lab .work-detail__highlight-body p,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__highlight-body p,
 body.page-sound-transit .work-detail__highlight-body p,
 body.page-inclusive-lab .work-detail__highlight-body p {
   margin: 0;
@@ -8409,7 +8409,7 @@ body.page-ibm-saas-console .work-detail__figure,
 body.page-breaking-barriers .work-detail__figure,
 body.page-bloom-and-vine .work-detail__figure,
 body.page-makeability-lab .work-detail__figure,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__figure,
 body.page-sound-transit .work-detail__figure,
 body.page-inclusive-lab .work-detail__figure {
   margin: clamp(20px, 3vh, 28px) 0 0;
@@ -8421,7 +8421,7 @@ body.page-ibm-saas-console .work-detail__figure-frame,
 body.page-breaking-barriers .work-detail__figure-frame,
 body.page-bloom-and-vine .work-detail__figure-frame,
 body.page-makeability-lab .work-detail__figure-frame,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__figure-frame,
 body.page-sound-transit .work-detail__figure-frame,
 body.page-inclusive-lab .work-detail__figure-frame {
   border-radius: clamp(14px, 2vw, 20px);
@@ -8441,7 +8441,7 @@ body.page-ibm-saas-console .work-detail__figure-frame video,
 body.page-breaking-barriers .work-detail__figure-frame video,
 body.page-bloom-and-vine .work-detail__figure-frame video,
 body.page-makeability-lab .work-detail__figure-frame video,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__figure-frame video,
 body.page-sound-transit .work-detail__figure-frame video,
 body.page-inclusive-lab .work-detail__figure-frame video {
   display: block;
@@ -8457,7 +8457,7 @@ body.page-ibm-saas-console .work-detail__figure-frame--video,
 body.page-breaking-barriers .work-detail__figure-frame--video,
 body.page-bloom-and-vine .work-detail__figure-frame--video,
 body.page-makeability-lab .work-detail__figure-frame--video,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__figure-frame--video,
 body.page-sound-transit .work-detail__figure-frame--video,
 body.page-inclusive-lab .work-detail__figure-frame--video {
   max-height: none;
@@ -8518,7 +8518,7 @@ body.page-ibm-saas-console .work-detail__figure-frame img,
 body.page-breaking-barriers .work-detail__figure-frame img,
 body.page-bloom-and-vine .work-detail__figure-frame img,
 body.page-makeability-lab .work-detail__figure-frame img,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__figure-frame img,
 body.page-sound-transit .work-detail__figure-frame img,
 body.page-inclusive-lab .work-detail__figure-frame img {
   display: block;
@@ -8526,13 +8526,13 @@ body.page-inclusive-lab .work-detail__figure-frame img {
   height: auto;
 }
 
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__meta--line ,
 body.page-sound-transit .work-detail__meta--line {
   grid-template-columns: minmax(0, 1fr);
   margin-top: clamp(12px, 2vh, 18px);
 }
 
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__compare ,
 body.page-sound-transit .work-detail__compare {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -8540,12 +8540,12 @@ body.page-sound-transit .work-detail__compare {
   margin: clamp(20px, 3vh, 28px) 0 0;
 }
 
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__figure--caption-only ,
 body.page-sound-transit .work-detail__figure--caption-only {
   margin: 0;
 }
 
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__figure--caption-only .work-detail__figure-caption ,
 body.page-sound-transit .work-detail__figure--caption-only .work-detail__figure-caption {
   margin: 0;
   padding-top: clamp(14px, 2vh, 18px);
@@ -8558,7 +8558,7 @@ body.page-ibm-saas-console .work-detail__figure-caption,
 body.page-breaking-barriers .work-detail__figure-caption,
 body.page-bloom-and-vine .work-detail__figure-caption,
 body.page-makeability-lab .work-detail__figure-caption,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__figure-caption,
 body.page-sound-transit .work-detail__figure-caption,
 body.page-inclusive-lab .work-detail__figure-caption {
   margin: 10px 0 0;
@@ -8574,7 +8574,7 @@ body.page-ibm-saas-console .work-detail__gallery,
 body.page-breaking-barriers .work-detail__gallery,
 body.page-bloom-and-vine .work-detail__gallery,
 body.page-makeability-lab .work-detail__gallery,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__gallery,
 body.page-sound-transit .work-detail__gallery,
 body.page-inclusive-lab .work-detail__gallery {
   display: grid;
@@ -8591,7 +8591,7 @@ body.page-ibm-saas-console .work-detail__gallery a,
 body.page-breaking-barriers .work-detail__gallery a,
 body.page-bloom-and-vine .work-detail__gallery a,
 body.page-makeability-lab .work-detail__gallery a,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__gallery a,
 body.page-sound-transit .work-detail__gallery a,
 body.page-inclusive-lab .work-detail__gallery a {
   display: block;
@@ -8608,7 +8608,7 @@ body.page-ibm-saas-console .work-detail__gallery a:hover,
 body.page-breaking-barriers .work-detail__gallery a:hover,
 body.page-bloom-and-vine .work-detail__gallery a:hover,
 body.page-makeability-lab .work-detail__gallery a:hover,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__gallery a:hover,
 body.page-sound-transit .work-detail__gallery a:hover,
 body.page-inclusive-lab .work-detail__gallery a:hover {
   border-color: rgba(255, 77, 184, 0.45);
@@ -8621,7 +8621,7 @@ body.page-ibm-saas-console .work-detail__gallery img,
 body.page-breaking-barriers .work-detail__gallery img,
 body.page-bloom-and-vine .work-detail__gallery img,
 body.page-makeability-lab .work-detail__gallery img,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__gallery img,
 body.page-sound-transit .work-detail__gallery img,
 body.page-inclusive-lab .work-detail__gallery img {
   width: 100%;
@@ -8749,7 +8749,7 @@ body.page-ibm-saas-console .work-detail__note,
 body.page-breaking-barriers .work-detail__note,
 body.page-bloom-and-vine .work-detail__note,
 body.page-makeability-lab .work-detail__note,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__note,
 body.page-sound-transit .work-detail__note,
 body.page-inclusive-lab .work-detail__note,
 body.page-inclusive-design-lab .work-detail__note {
@@ -8764,7 +8764,7 @@ body.page-ibm-saas-console .work-detail__note a,
 body.page-breaking-barriers .work-detail__note a,
 body.page-bloom-and-vine .work-detail__note a,
 body.page-makeability-lab .work-detail__note a,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__note a,
 body.page-sound-transit .work-detail__note a,
 body.page-inclusive-lab .work-detail__note a,
 body.page-inclusive-design-lab .work-detail__note a {
@@ -8779,7 +8779,7 @@ body.page-ibm-saas-console .work-detail__section--footer,
 body.page-breaking-barriers .work-detail__section--footer,
 body.page-bloom-and-vine .work-detail__section--footer,
 body.page-makeability-lab .work-detail__section--footer,
-body.page-nordstrom-rack,
+body.page-nordstrom-rack .work-detail__section--footer,
 body.page-sound-transit .work-detail__section--footer,
 body.page-inclusive-lab .work-detail__section--footer {
   padding-bottom: clamp(16px, 3vh, 24px);
@@ -8809,7 +8809,7 @@ body.page-ibm-saas-console .work-detail__section--extra {
   body.page-breaking-barriers .work-detail__meta,
   body.page-bloom-and-vine .work-detail__meta,
   body.page-makeability-lab .work-detail__meta,
-  body.page-nordstrom-rack,
+  body.page-nordstrom-rack .work-detail__meta,
 body.page-sound-transit .work-detail__meta,
   body.page-inclusive-lab .work-detail__meta,
   body.page-inclusive-design-lab .work-detail__meta {
@@ -8822,7 +8822,7 @@ body.page-sound-transit .work-detail__meta,
   body.page-breaking-barriers .work-detail__gallery,
   body.page-bloom-and-vine .work-detail__gallery,
   body.page-makeability-lab .work-detail__gallery,
-  body.page-nordstrom-rack,
+  body.page-nordstrom-rack .work-detail__gallery,
 body.page-sound-transit .work-detail__gallery,
   body.page-inclusive-lab .work-detail__gallery {
     grid-template-columns: 1fr;
