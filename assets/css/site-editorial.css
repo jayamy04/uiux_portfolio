@@ -8480,6 +8480,96 @@ body.page-inclusive-design-lab .work-detail__figure-frame--poster img {
   object-position: center center;
 }
 
+/* Inclusive Design Lab — poster + showcase bento */
+body.page-inclusive-lab .work-detail__bento--poster,
+body.page-inclusive-design-lab .work-detail__bento--poster {
+  display: grid;
+  gap: clamp(14px, 2vw, 18px);
+  margin: clamp(20px, 3vh, 28px) 0 0;
+}
+
+body.page-inclusive-lab .work-detail__bento-item,
+body.page-inclusive-design-lab .work-detail__bento-item {
+  margin: 0;
+  min-width: 0;
+}
+
+body.page-inclusive-lab .work-detail__bento-frame,
+body.page-inclusive-design-lab .work-detail__bento-frame {
+  border-radius: clamp(14px, 2vw, 20px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.4);
+}
+
+body.page-inclusive-lab .work-detail__bento-frame--poster,
+body.page-inclusive-design-lab .work-detail__bento-frame--poster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(12px, 2vw, 20px);
+  max-height: none;
+  overflow: visible;
+}
+
+body.page-inclusive-lab .work-detail__bento-frame--poster img,
+body.page-inclusive-design-lab .work-detail__bento-frame--poster img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(78vh, 960px);
+  object-fit: contain;
+  object-position: center center;
+}
+
+body.page-inclusive-lab .work-detail__bento-item--poster .work-detail__figure-caption,
+body.page-inclusive-design-lab .work-detail__bento-item--poster .work-detail__figure-caption {
+  margin-top: 10px;
+}
+
+body.page-inclusive-lab .work-detail__bento-item--photo .work-detail__bento-frame,
+body.page-inclusive-design-lab .work-detail__bento-item--photo .work-detail__bento-frame {
+  aspect-ratio: 3 / 4;
+  max-height: min(42vh, 420px);
+}
+
+body.page-inclusive-lab .work-detail__bento-item--photo img,
+body.page-inclusive-design-lab .work-detail__bento-item--photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+@media only screen and (min-width: 768px) {
+  body.page-inclusive-lab .work-detail__bento--poster,
+  body.page-inclusive-design-lab .work-detail__bento--poster {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto auto;
+    align-items: start;
+  }
+
+  body.page-inclusive-lab .work-detail__bento-item--poster,
+  body.page-inclusive-design-lab .work-detail__bento-item--poster {
+    grid-column: 1 / -1;
+  }
+
+  body.page-inclusive-lab .work-detail__bento-frame--poster img,
+  body.page-inclusive-design-lab .work-detail__bento-frame--poster img {
+    max-height: min(82vh, 1024px);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body.page-inclusive-lab .work-detail__bento-item--photo .work-detail__bento-frame,
+  body.page-inclusive-design-lab .work-detail__bento-item--photo .work-detail__bento-frame {
+    aspect-ratio: 4 / 5;
+    max-height: none;
+  }
+}
+
 body.page-schedgo .work-detail__figure-video {
   display: block;
   width: 100%;
