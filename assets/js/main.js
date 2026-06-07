@@ -2626,6 +2626,42 @@ const initHomeHeroProjectCarousel = () => {
   start(HOME_HERO_CAROUSEL_INTERVAL_MS);
 };
 
+const initHomeHeroProjectBento = () => {
+  const root = document.querySelector("[data-home-hero-bento]");
+  if (!root || root.dataset.bentoInit === "true") return;
+  root.dataset.bentoInit = "true";
+
+  const cards = Array.from(
+    root.querySelectorAll("[data-work-href], [data-case-study-href]")
+  );
+  if (!cards.length) return;
+
+  const navigateFromCard = (card, event) => {
+    if (event.target.closest("a[href]")) return false;
+    const href = card.dataset.workHref || card.dataset.caseStudyHref;
+    if (!href) return false;
+    window.location.assign(href);
+    return true;
+  };
+
+  cards.forEach((card) => {
+    card.addEventListener("click", (event) => {
+      navigateFromCard(card, event);
+    });
+
+    card.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      if (navigateFromCard(card, event)) {
+        event.preventDefault();
+      }
+    });
+  });
+
+  root.querySelectorAll(".home-hero-projects__thumb video").forEach((video) => {
+    ensureLoopingVideo(video);
+  });
+};
+
 const initHomeWorkSectionMotion = () => {
   const section = document.querySelector("#work.home-work-section");
   if (!section || typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
@@ -2873,6 +2909,7 @@ const initProjectPageEnhancements = () => {
   initProjectPreviewLightbox();
   initHomeProjectGridMedia();
   initHomeHeroProjectVideos();
+  initHomeHeroProjectBento();
   initHomeHeroProjectCarousel();
   initHomeWorkSectionMotion();
   initCaseStudyPreviewVideos();
