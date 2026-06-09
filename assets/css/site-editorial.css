@@ -1397,7 +1397,7 @@ body.page-home .home-hero-projects__case-study--soon {
   cursor: default;
 }
 
-/* Home — hero project showcase grid (5 projects, aspect-aware) */
+/* Home — hero project showcase grid (5 projects, mosaic + native ratios) */
 body.page-home .home-hero-projects__grid--showcase {
   grid-template-columns: 1fr;
   grid-auto-rows: auto;
@@ -1459,202 +1459,181 @@ body.page-home .home-hero-projects__grid--showcase .home-hero-projects__card-bod
   min-width: 0;
 }
 
+body.page-home .home-hero-projects__grid--showcase .home-hero-projects__card-desc {
+  margin-bottom: clamp(6px, 0.8vh, 8px);
+}
+
+/* Thumb surface — gradient fill instead of flat letterbox black */
 body.page-home .home-hero-projects__grid--showcase .home-hero-projects__thumb {
   flex: 0 0 auto;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(155deg, #14101c 0%, var(--project-preview-surface, #0c0a14) 100%);
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 38%, rgba(255, 77, 184, 0.07) 0%, transparent 62%),
+    linear-gradient(160deg, #181222 0%, #0e0b16 48%, #0a0812 100%);
 }
 
 body.page-home .home-hero-projects__grid--showcase .home-hero-projects__thumb img,
 body.page-home .home-hero-projects__grid--showcase .home-hero-projects__thumb video {
   display: block;
-  position: static;
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  object-position: center center;
+  max-width: none;
+  max-height: none;
   opacity: 1;
 }
 
-/* Featured — Sound Transit (16:9 video) */
-body.page-home .home-hero-projects__card--featured .home-hero-projects__thumb {
+/* Per-card native aspect ratios — container matches media, no forced 16:10 box */
+body.page-home .home-hero-projects__thumb--ratio-16x9 {
   aspect-ratio: 16 / 9;
-  width: 100%;
-  height: auto;
-  max-height: clamp(200px, 48vw, 300px);
-  min-height: 0;
 }
 
-/* Standard video cards — Nordstrom Rack (~1486×926), Makeability Lab (16:9) */
-body.page-home .home-hero-projects__card--video .home-hero-projects__thumb {
-  aspect-ratio: 16 / 9;
-  width: 100%;
-  height: auto;
-  max-height: clamp(160px, 38vw, 240px);
-  min-height: 0;
+body.page-home .home-hero-projects__thumb--ratio-st {
+  aspect-ratio: 5 / 4;
 }
 
-body.page-home #hero-project-nordstrom-rack .home-hero-projects__thumb {
+body.page-home .home-hero-projects__thumb--ratio-nordstrom {
   aspect-ratio: 1486 / 926;
-  max-height: clamp(150px, 36vw, 220px);
 }
 
-body.page-home .home-hero-projects__card--video .home-hero-projects__thumb video {
-  object-fit: contain;
-}
-
-/* Portrait poster — Inclusive Design Lab (3:4) */
-body.page-home .home-hero-projects__card--portrait .home-hero-projects__thumb {
+body.page-home .home-hero-projects__thumb--ratio-portrait {
   aspect-ratio: 3 / 4;
-  width: 100%;
-  height: auto;
-  max-height: clamp(240px, 62vw, 360px);
-  min-height: clamp(200px, 52vw, 280px);
-  background: linear-gradient(155deg, #1a1224 0%, #0e0a16 100%);
 }
 
-body.page-home .home-hero-projects__card--portrait .home-hero-projects__thumb img {
-  object-fit: contain;
-  object-position: center center;
-}
-
-/* Landscape screenshot — IBM SaaS Console (~1024×413) */
-body.page-home .home-hero-projects__card--landscape .home-hero-projects__thumb {
+body.page-home .home-hero-projects__thumb--ratio-ibm {
   aspect-ratio: 1024 / 413;
-  width: 100%;
-  height: auto;
-  max-height: clamp(120px, 26vw, 175px);
-  min-height: 0;
 }
 
-body.page-home .home-hero-projects__card--landscape .home-hero-projects__thumb--ibm img {
-  object-fit: contain;
+/* Cover — crops in-source letterboxing on videos */
+body.page-home .home-hero-projects__thumb--cover img,
+body.page-home .home-hero-projects__thumb--cover video {
+  object-fit: cover;
   object-position: center center;
-  max-width: 96%;
-  max-height: 96%;
 }
 
-/* Tablet — featured full width; left stack + portrait span (tighter, no row dead space) */
+body.page-home #hero-project-sound-transit .home-hero-projects__thumb--cover video {
+  object-position: right center;
+  transform: scale(1.45);
+  transform-origin: 100% 50%;
+}
+
+body.page-home #hero-project-nordstrom-rack .home-hero-projects__thumb--cover video {
+  object-position: center 48%;
+}
+
+body.page-home #hero-project-makeability .home-hero-projects__thumb--cover video {
+  object-position: center 45%;
+}
+
+/* Native — images at exact ratio fill frame with no bars */
+body.page-home .home-hero-projects__thumb--native img {
+  object-fit: cover;
+  object-position: center top;
+}
+
+body.page-home #hero-project-inclusive-design-lab .home-hero-projects__thumb--native img {
+  object-fit: cover;
+  object-position: center 12%;
+}
+
+body.page-home #hero-project-ibm .home-hero-projects__thumb--native img {
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Featured — Sound Transit edge-bleed thumb */
+body.page-home .home-hero-projects__card--featured.home-hero-projects__card--wide {
+  padding-top: clamp(5px, 0.6vw, 7px);
+  padding-inline: clamp(5px, 0.6vw, 7px);
+}
+
+body.page-home .home-hero-projects__card--featured .home-hero-projects__thumb {
+  border-radius: 4px;
+}
+
+/* Mosaic layout — mobile: stacked, content-hugging thumbs */
+body.page-home .home-hero-projects__grid--mosaic .home-hero-projects__thumb--ratio-portrait {
+  max-height: clamp(280px, 72vw, 420px);
+}
+
+/* Tablet+ — top split: ST wide left + IDL portrait pillar right; row 2 pair + IBM */
 @media only screen and (min-width: 576px) {
-  body.page-home .home-hero-projects__grid--showcase {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  body.page-home .home-hero-projects__grid--mosaic {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: clamp(8px, 1vw, 11px);
   }
 
-  body.page-home .home-hero-projects__grid--showcase #hero-project-sound-transit {
-    grid-column: 1 / -1;
+  body.page-home .home-hero-projects__grid--mosaic #hero-project-sound-transit {
+    grid-column: 1 / 9;
     grid-row: 1;
-    order: 1;
   }
 
-  body.page-home .home-hero-projects__grid--showcase #hero-project-nordstrom-rack {
-    grid-column: 1;
-    grid-row: 2;
-    order: 2;
-  }
-
-  body.page-home .home-hero-projects__grid--showcase #hero-project-inclusive-design-lab {
-    grid-column: 2;
-    grid-row: 2 / 5;
-    order: 3;
+  body.page-home .home-hero-projects__grid--mosaic #hero-project-inclusive-design-lab {
+    grid-column: 9 / 13;
+    grid-row: 1 / 4;
     align-self: stretch;
-    height: 100%;
-  }
-
-  body.page-home .home-hero-projects__grid--showcase #hero-project-makeability {
-    grid-column: 1;
-    grid-row: 3;
-    order: 4;
-  }
-
-  body.page-home .home-hero-projects__grid--showcase #hero-project-ibm {
-    grid-column: 1;
-    grid-row: 4;
-    order: 5;
-  }
-
-  body.page-home .home-hero-projects__grid--showcase #hero-project-inclusive-design-lab.home-hero-projects__card {
     display: flex;
     flex-direction: column;
   }
 
-  body.page-home .home-hero-projects__grid--showcase #hero-project-inclusive-design-lab .home-hero-projects__thumb {
+  body.page-home .home-hero-projects__grid--mosaic #hero-project-nordstrom-rack {
+    grid-column: 1 / 5;
+    grid-row: 2;
+  }
+
+  body.page-home .home-hero-projects__grid--mosaic #hero-project-makeability {
+    grid-column: 5 / 9;
+    grid-row: 2;
+  }
+
+  body.page-home .home-hero-projects__grid--mosaic #hero-project-ibm {
+    grid-column: 1 / 9;
+    grid-row: 3;
+  }
+
+  body.page-home .home-hero-projects__grid--mosaic #hero-project-inclusive-design-lab .home-hero-projects__thumb {
     flex: 1 1 auto;
     max-height: none;
-    min-height: clamp(260px, 34vw, 340px);
-    height: auto;
+    min-height: clamp(220px, 28vw, 320px);
   }
 
-  body.page-home .home-hero-projects__card--featured .home-hero-projects__thumb {
-    max-height: clamp(220px, 30vw, 280px);
-    min-height: 0;
-  }
-
-  body.page-home .home-hero-projects__card--video .home-hero-projects__thumb {
-    max-height: clamp(150px, 20vw, 200px);
-    min-height: 0;
-  }
-
-  body.page-home #hero-project-nordstrom-rack .home-hero-projects__thumb {
-    max-height: clamp(145px, 19vw, 195px);
-  }
-
-  body.page-home .home-hero-projects__card--landscape .home-hero-projects__thumb {
-    max-height: clamp(120px, 13vw, 165px);
-    min-height: 0;
+  body.page-home .home-hero-projects__grid--mosaic #hero-project-inclusive-design-lab .home-hero-projects__card-body {
+    flex-shrink: 0;
   }
 }
 
-/* Desktop — featured top row, 2×2 below; content-hugging thumbs */
+/* Desktop — tighter mosaic, slightly taller featured */
 @media only screen and (min-width: 992px) {
-  body.page-home .home-hero-projects__grid--showcase {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(10px, 1.1vw, 14px);
+  body.page-home .home-hero-projects__grid--mosaic {
+    gap: clamp(9px, 1vw, 12px);
   }
 
-  body.page-home .home-hero-projects__card--featured .home-hero-projects__thumb {
-    aspect-ratio: 16 / 9;
-    max-height: clamp(260px, 28vw, 340px);
-    min-height: 0;
+  body.page-home .home-hero-projects__grid--mosaic .home-hero-projects__card {
+    gap: clamp(5px, 0.6vh, 7px);
+    padding: clamp(6px, 0.7vw, 8px);
   }
 
-  body.page-home .home-hero-projects__card--video .home-hero-projects__thumb {
-    aspect-ratio: 16 / 9;
-    max-height: clamp(170px, 15vw, 230px);
-    min-height: 0;
+  body.page-home .home-hero-projects__grid--mosaic #hero-project-sound-transit .home-hero-projects__thumb--ratio-st {
+    max-height: clamp(240px, 22vw, 300px);
   }
 
-  body.page-home #hero-project-nordstrom-rack .home-hero-projects__thumb {
-    aspect-ratio: 1486 / 926;
-    max-height: clamp(165px, 14.5vw, 220px);
+  body.page-home .home-hero-projects__grid--mosaic #hero-project-nordstrom-rack .home-hero-projects__thumb--ratio-nordstrom,
+  body.page-home .home-hero-projects__grid--mosaic #hero-project-makeability .home-hero-projects__thumb--ratio-16x9 {
+    max-height: clamp(130px, 11vw, 165px);
   }
 
-  body.page-home .home-hero-projects__card--portrait .home-hero-projects__thumb {
-    aspect-ratio: 3 / 4;
-    max-height: clamp(300px, 26vw, 380px);
-    min-height: clamp(260px, 22vw, 320px);
+  body.page-home .home-hero-projects__grid--mosaic #hero-project-ibm .home-hero-projects__thumb--ratio-ibm {
+    max-height: clamp(110px, 9vw, 140px);
   }
 
-  body.page-home .home-hero-projects__grid--showcase #hero-project-inclusive-design-lab .home-hero-projects__thumb {
-    max-height: none;
-    min-height: clamp(280px, 24vw, 360px);
-  }
-
-  body.page-home .home-hero-projects__card--landscape .home-hero-projects__thumb {
-    aspect-ratio: 1024 / 413;
-    max-height: clamp(130px, 11vw, 170px);
-    min-height: 0;
-  }
-
-  body.page-home .home-hero-projects__grid--showcase .home-hero-projects__card {
-    gap: clamp(6px, 0.7vh, 8px);
-    padding: clamp(7px, 0.8vw, 9px);
-  }
-
-  body.page-home .home-hero-projects__grid--showcase .home-hero-projects__card-desc {
-    margin-bottom: clamp(6px, 0.8vh, 8px);
+  body.page-home .home-hero-projects__grid--mosaic #hero-project-inclusive-design-lab .home-hero-projects__thumb {
+    min-height: clamp(260px, 22vw, 340px);
   }
 }
 
