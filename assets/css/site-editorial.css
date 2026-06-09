@@ -8755,6 +8755,22 @@ body.page-inclusive-design-lab .work-detail__figure-frame--poster img {
   object-position: center center;
 }
 
+body.page-inclusive-lab .work-detail__figure-frame--logo,
+body.page-inclusive-design-lab .work-detail__figure-frame--logo {
+  max-width: min(280px, 62vw);
+  margin-inline: auto;
+  max-height: none;
+  overflow: hidden;
+  background: #000;
+}
+
+body.page-inclusive-lab .work-detail__figure-frame--logo img,
+body.page-inclusive-design-lab .work-detail__figure-frame--logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 body.page-schedgo .work-detail__figure-video {
   display: block;
   width: 100%;
