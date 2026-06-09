@@ -1433,6 +1433,18 @@ body.page-home .home-hero-projects__grid--bento .home-hero-projects__thumb video
 
 body.page-home .home-hero-projects__card--bento-feature .home-hero-projects__thumb {
   aspect-ratio: 3 / 4;
+  position: relative;
+}
+
+body.page-home .home-hero-projects__grid--bento .home-hero-projects__card--bento-feature .home-hero-projects__thumb video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: center center;
 }
 
 body.page-home .home-hero-projects__card--bento-tall .home-hero-projects__thumb,
@@ -1545,7 +1557,7 @@ body.page-home .home-hero-projects__card--bento-half .home-hero-projects__case-s
     grid-row: 3;
   }
 
-  body.page-home #hero-project-sound-transit {
+  body.page-home #hero-project-inclusive-design-lab {
     grid-column: 4 / 7;
     grid-row: 3;
   }
@@ -1579,6 +1591,12 @@ body.page-home .home-hero-projects__card--bento-half .home-hero-projects__case-s
     object-fit: contain;
     max-width: 92%;
     max-height: 92%;
+  }
+
+  body.page-home #hero-project-inclusive-design-lab .home-hero-projects__thumb img {
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
   }
 
   body.page-home .home-hero-projects__card--bento-tall .home-hero-projects__card-body,
