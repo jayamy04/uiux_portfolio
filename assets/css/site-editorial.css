@@ -1404,19 +1404,19 @@ body.page-home .home-hero-projects__grid--bento #hero-project-sound-transit {
   order: 1;
 }
 
-body.page-home .home-hero-projects__grid--bento #hero-project-makeability {
+body.page-home .home-hero-projects__grid--bento #hero-project-nordstrom-rack {
   order: 2;
 }
 
-body.page-home .home-hero-projects__grid--bento #hero-project-nordstrom-rack {
+body.page-home .home-hero-projects__grid--bento #hero-project-inclusive-design-lab {
   order: 3;
 }
 
-body.page-home .home-hero-projects__grid--bento #hero-project-ibm {
+body.page-home .home-hero-projects__grid--bento #hero-project-makeability {
   order: 4;
 }
 
-body.page-home .home-hero-projects__grid--bento #hero-project-inclusive-design-lab {
+body.page-home .home-hero-projects__grid--bento #hero-project-ibm {
   order: 5;
 }
 
@@ -1565,12 +1565,16 @@ body.page-home .home-hero-projects__card--bento-half .home-hero-projects__case-s
     order: 1;
   }
 
-  body.page-home #hero-project-makeability {
+  body.page-home #hero-project-nordstrom-rack {
     order: 2;
   }
 
-  body.page-home #hero-project-nordstrom-rack {
+  body.page-home #hero-project-inclusive-design-lab {
     order: 3;
+  }
+
+  body.page-home #hero-project-makeability {
+    order: 4;
   }
 
   body.page-home .home-hero-projects__card--bento-tall {
@@ -1594,13 +1598,12 @@ body.page-home .home-hero-projects__card--bento-half .home-hero-projects__case-s
     overflow: hidden;
   }
 
-  body.page-home #hero-project-ibm {
+  body.page-home #hero-project-makeability {
     grid-column: 1 / 4;
     grid-row: 3;
-    order: 4;
   }
 
-  body.page-home #hero-project-inclusive-design-lab {
+  body.page-home #hero-project-ibm {
     grid-column: 4 / 7;
     grid-row: 3;
     order: 5;
