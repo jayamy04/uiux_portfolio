@@ -1515,6 +1515,7 @@ const initLoopVideoLifecycle = () => {
 
 const ensureLoopingVideo = (video, { play = true } = {}) => {
   if (!video) return;
+  if (video.hasAttribute("controls")) return;
 
   registerLoopVideo(video);
 
@@ -1554,7 +1555,7 @@ const ensureLoopingVideo = (video, { play = true } = {}) => {
 };
 
 const bindContinuousLoopVideos = (videos, { pauseOffscreen = false } = {}) => {
-  const list = Array.from(videos).filter(Boolean);
+  const list = Array.from(videos).filter(Boolean).filter((video) => !video.hasAttribute("controls"));
   if (!list.length) return;
 
   initLoopVideoLifecycle();
