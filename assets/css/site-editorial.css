@@ -1389,14 +1389,17 @@ body.page-home .home-hero-projects__case-study--soon {
 body.page-home .home-hero-projects__grid--grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
+  align-items: stretch;
   gap: clamp(20px, 2.4vw, 34px);
   padding-block: clamp(4px, 0.6vw, 8px);
 }
 
 body.page-home .home-hero-projects__grid--grid .home-hero-projects__card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   opacity: 1;
-  height: auto;
+  height: 100%;
   min-height: 0;
   overflow: visible;
   align-self: stretch;
@@ -1469,7 +1472,9 @@ body.page-home .home-hero-projects__grid--grid .home-hero-projects__card-desc a:
 }
 
 body.page-home .home-hero-projects__grid--grid .home-hero-projects__card-body {
-  flex-shrink: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
   min-width: 0;
   width: 100%;
   max-width: min(100%, 52rem);
@@ -1486,6 +1491,7 @@ body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb {
   max-width: min(100%, 52rem);
   margin-inline: auto;
   height: auto;
+  aspect-ratio: 16 / 10;
   border-radius: 10px;
   background:
     radial-gradient(ellipse 72% 58% at 50% 28%, rgba(255, 77, 184, 0.11) 0%, transparent 58%),
@@ -1515,8 +1521,8 @@ body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb video 
 }
 
 body.page-home .home-hero-projects__grid--grid .home-hero-projects__case-study {
-  margin-top: clamp(2px, 0.4vh, 4px);
-  padding: 0.2rem 0;
+  margin-top: auto;
+  padding: clamp(2px, 0.4vh, 4px) 0 0.2rem;
   font-size: clamp(0.75rem, 0.88vw, 0.8125rem);
   font-weight: var(--tj-fw-bold);
   letter-spacing: 0.08em;
@@ -1538,7 +1544,7 @@ body.page-home .home-hero-projects__grid--grid .home-hero-projects__card:focus-w
   transform: translateX(4px);
 }
 
-/* Per-card native aspect ratios — container matches media, minimal letterboxing */
+/* Per-card native aspect ratios — carousel/showcase only; grid uses unified 16/10 */
 body.page-home .home-hero-projects__thumb--ratio-16x9 {
   aspect-ratio: 16 / 9;
 }
@@ -1554,6 +1560,14 @@ body.page-home .home-hero-projects__thumb--ratio-idl {
 
 body.page-home .home-hero-projects__thumb--ratio-ibm {
   aspect-ratio: 3 / 2;
+}
+
+body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb--ratio-16x9,
+body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb--ratio-nordstrom,
+body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb--ratio-idl,
+body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb--ratio-ibm {
+  aspect-ratio: 16 / 10;
+  max-width: 100%;
 }
 
 /* Cover — crops in-source letterboxing on videos */
@@ -1593,17 +1607,7 @@ body.page-home #hero-project-ibm .home-hero-projects__thumb--native img {
   object-position: center center;
 }
 
-/* Lead — Sound Transit subtle accent (same grid cell as other cards) */
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__card--lead {
-  border-color: rgba(255, 77, 184, 0.22);
-  background:
-    linear-gradient(168deg, rgba(255, 77, 184, 0.07) 0%, rgba(255, 255, 255, 0.02) 52%, rgba(255, 255, 255, 0.01) 100%);
-  box-shadow:
-    0 1px 0 rgba(255, 77, 184, 0.12) inset,
-    0 6px 28px rgba(255, 77, 184, 0.08),
-    0 4px 20px rgba(0, 0, 0, 0.22);
-}
-
+/* Lead — Sound Transit: order only; same shell/typography as sibling cards */
 body.page-home .home-hero-projects__grid--grid .home-hero-projects__card--lead::before {
   content: "";
   position: absolute;
@@ -1614,29 +1618,12 @@ body.page-home .home-hero-projects__grid--grid .home-hero-projects__card--lead::
   border-radius: 2px;
   background: linear-gradient(
     90deg,
-    var(--site-accent) 0%,
-    rgba(180, 122, 255, 0.65) 55%,
+    rgba(255, 77, 184, 0.55) 0%,
+    rgba(180, 122, 255, 0.35) 55%,
     transparent 100%
   );
+  opacity: 0.65;
   pointer-events: none;
-}
-
-body.page-home .home-hero-projects__card--lead .home-hero-projects__thumb {
-  max-width: 100%;
-}
-
-body.page-home .home-hero-projects__card--lead .home-hero-projects__card-body {
-  max-width: 100%;
-}
-
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__card--lead .home-hero-projects__card-title {
-  font-size: clamp(1.0625rem, 1.28vw, 1.1875rem);
-  letter-spacing: -0.03em;
-}
-
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__card--lead .home-hero-projects__card-desc {
-  font-size: clamp(0.8125rem, 0.96vw, 0.9rem);
-  color: rgba(255, 255, 255, 0.84);
 }
 
 @media only screen and (min-width: 768px) {
