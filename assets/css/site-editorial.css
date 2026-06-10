@@ -1156,22 +1156,10 @@ body.page-home .home-hero-projects__progress-fill {
 }
 
 body.page-home .home-hero-projects__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(10px, 1.4vw, 14px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.4vw, 16px);
   width: 100%;
-}
-
-@media only screen and (min-width: 576px) {
-  body.page-home .home-hero-projects__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  body.page-home .home-hero-projects__grid {
-    gap: clamp(12px, 1.2vw, 16px);
-  }
 }
 
 body.page-home .home-hero-projects__card {
@@ -1397,39 +1385,23 @@ body.page-home .home-hero-projects__case-study--soon {
   cursor: default;
 }
 
-/* Home — hero project showcase (vertical list: featured + 2-col grid) */
-body.page-home .home-hero-projects__grid--editorial {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  grid-auto-rows: auto;
-  align-items: start;
-  gap: clamp(10px, 1.2vw, 14px);
-  width: 100%;
+/* Home — hero project stack (single column, one after another) */
+body.page-home .home-hero-projects__grid--stack {
+  gap: clamp(14px, 1.6vw, 20px);
 }
 
-@media only screen and (min-width: 768px) {
-  body.page-home .home-hero-projects__grid--editorial {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(11px, 1.1vw, 15px);
-  }
-
-  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit {
-    grid-column: 1 / -1;
-  }
-}
-
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card {
   opacity: 1;
   height: auto;
   min-height: 0;
   overflow: visible;
-  align-self: start;
+  align-self: stretch;
 }
 
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:not(.is-active):hover,
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:not(.is-active):focus-visible,
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:hover,
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:focus-visible {
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:not(.is-active):hover,
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:not(.is-active):focus-visible,
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:hover,
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:focus-visible {
   opacity: 1;
   border-color: rgba(255, 77, 184, 0.62);
   background: rgba(255, 77, 184, 0.1);
@@ -1438,49 +1410,47 @@ body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:fo
     0 0 24px rgba(255, 77, 184, 0.14);
 }
 
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-title {
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-title {
   color: #ffffff;
+  font-size: clamp(0.9375rem, 1.1vw, 1.0625rem);
 }
 
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-desc {
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-desc {
   color: rgba(255, 255, 255, 0.9);
   overflow: visible;
   display: block;
   -webkit-line-clamp: unset;
   line-clamp: unset;
   -webkit-box-orient: unset;
-}
-
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-body {
-  flex-shrink: 0;
-  min-width: 0;
-}
-
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-desc {
   margin-bottom: clamp(6px, 0.8vh, 8px);
 }
 
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb {
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-body {
+  flex-shrink: 0;
+  min-width: 0;
+  width: 100%;
+  max-width: min(100%, 52rem);
+  margin-inline: auto;
+}
+
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb {
   flex: 0 0 auto;
   position: relative;
   overflow: hidden;
   display: block;
   width: 100%;
+  max-width: min(100%, 52rem);
+  margin-inline: auto;
+  height: auto;
   border-radius: 5px;
   background:
     radial-gradient(ellipse 80% 70% at 50% 38%, rgba(255, 77, 184, 0.07) 0%, transparent 62%),
     linear-gradient(160deg, #181222 0%, #0e0b16 48%, #0a0812 100%);
 }
 
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb:not(.home-hero-projects__thumb--ratio-featured) {
-  height: auto;
-}
-
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb img,
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb video {
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb img,
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb video {
   display: block;
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
   max-width: none;
@@ -1488,13 +1458,7 @@ body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb v
   opacity: 1;
 }
 
-/* Per-card native aspect ratios — container matches media, no forced letterbox box */
-body.page-home .home-hero-projects__thumb--ratio-featured {
-  aspect-ratio: unset;
-  width: 100%;
-  height: clamp(200px, 28vw, 320px);
-}
-
+/* Per-card native aspect ratios — container matches media, minimal letterboxing */
 body.page-home .home-hero-projects__thumb--ratio-16x9 {
   aspect-ratio: 16 / 9;
 }
@@ -1505,6 +1469,7 @@ body.page-home .home-hero-projects__thumb--ratio-nordstrom {
 
 body.page-home .home-hero-projects__thumb--ratio-idl {
   aspect-ratio: 768 / 1024;
+  max-width: min(100%, 22rem);
 }
 
 body.page-home .home-hero-projects__thumb--ratio-ibm {
@@ -1548,38 +1513,33 @@ body.page-home #hero-project-ibm .home-hero-projects__thumb--native img {
   object-position: center center;
 }
 
-/* Featured — Sound Transit prominence */
-body.page-home .home-hero-projects__card--featured {
-  padding-top: clamp(5px, 0.6vw, 7px);
-  padding-inline: clamp(5px, 0.6vw, 7px);
+/* Lead — Sound Transit first in stack, slightly larger media */
+body.page-home .home-hero-projects__card--lead .home-hero-projects__thumb {
+  max-width: 100%;
 }
 
-body.page-home .home-hero-projects__card--featured .home-hero-projects__thumb {
-  border-radius: 4px;
+body.page-home .home-hero-projects__card--lead .home-hero-projects__card-body {
+  max-width: 100%;
 }
 
-body.page-home .home-hero-projects__card--featured .home-hero-projects__card-title {
-  font-size: clamp(0.9375rem, 1.15vw, 1.125rem);
+body.page-home .home-hero-projects__card--lead .home-hero-projects__card-title {
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
 }
 
 @media only screen and (min-width: 768px) {
-  body.page-home .home-hero-projects__thumb--ratio-featured {
-    height: clamp(220px, 26vw, 340px);
-  }
-
-  body.page-home #hero-project-inclusive-design-lab .home-hero-projects__thumb--ratio-idl {
-    min-height: clamp(260px, 34vw, 380px);
+  body.page-home .home-hero-projects__card--lead .home-hero-projects__thumb--ratio-16x9 {
+    max-width: min(100%, 58rem);
   }
 }
 
 @media only screen and (min-width: 992px) {
-  body.page-home .home-hero-projects__grid--editorial {
-    gap: clamp(12px, 1vw, 16px);
+  body.page-home .home-hero-projects__grid--stack {
+    gap: clamp(16px, 1.4vw, 22px);
   }
 
-  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {
-    gap: clamp(6px, 0.7vh, 8px);
-    padding: clamp(7px, 0.8vw, 9px);
+  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card {
+    gap: clamp(8px, 0.9vh, 10px);
+    padding: clamp(8px, 0.9vw, 10px);
   }
 }
 
