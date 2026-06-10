@@ -7353,6 +7353,26 @@ body.page-about.site-editorial .about-portrait__img {
   backface-visibility: hidden;
 }
 
+body.page-about.site-editorial .about-portrait__img--primary {
+  opacity: 1;
+  transition: opacity 0.45s ease;
+}
+
+body.page-about.site-editorial .about-portrait__img--hover {
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.page-about.site-editorial .about-portrait__frame--hover-swap:hover .about-portrait__img--primary {
+    opacity: 0;
+  }
+
+  body.page-about.site-editorial .about-portrait__frame--hover-swap:hover .about-portrait__img--hover {
+    opacity: 1;
+  }
+}
+
 body.page-about.site-editorial .about-portrait__frame:has(.about-portrait__img) .about-portrait__placeholder {
   display: none;
 }
