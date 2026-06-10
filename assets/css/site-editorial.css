@@ -1385,7 +1385,7 @@ body.page-home .home-hero-projects__case-study--soon {
   cursor: default;
 }
 
-/* Home — hero project grid (single col mobile; 2-col + lead span at tablet+) */
+/* Home — hero project grid (single col mobile; 2-col at tablet+) */
 body.page-home .home-hero-projects__grid--grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -1593,7 +1593,7 @@ body.page-home #hero-project-ibm .home-hero-projects__thumb--native img {
   object-position: center center;
 }
 
-/* Lead — Sound Transit spans full width, slightly larger media */
+/* Lead — Sound Transit subtle accent (same grid cell as other cards) */
 body.page-home .home-hero-projects__grid--grid .home-hero-projects__card--lead {
   border-color: rgba(255, 77, 184, 0.22);
   background:
@@ -1646,12 +1646,8 @@ body.page-home .home-hero-projects__grid--grid .home-hero-projects__card--lead .
     row-gap: clamp(22px, 2.2vw, 32px);
   }
 
-  body.page-home .home-hero-projects__grid--grid .home-hero-projects__card--lead {
-    grid-column: 1 / -1;
-  }
-
-  body.page-home .home-hero-projects__grid--grid .home-hero-projects__card:not(.home-hero-projects__card--lead) .home-hero-projects__thumb,
-  body.page-home .home-hero-projects__grid--grid .home-hero-projects__card:not(.home-hero-projects__card--lead) .home-hero-projects__card-body {
+  body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb,
+  body.page-home .home-hero-projects__grid--grid .home-hero-projects__card-body {
     max-width: 100%;
     margin-inline: 0;
   }
@@ -1660,12 +1656,8 @@ body.page-home .home-hero-projects__grid--grid .home-hero-projects__card--lead .
     max-width: 100%;
   }
 
-  body.page-home .home-hero-projects__grid--grid .home-hero-projects__card:not(.home-hero-projects__card--lead) .home-hero-projects__card-desc {
+  body.page-home .home-hero-projects__grid--grid .home-hero-projects__card-desc {
     max-width: none;
-  }
-
-  body.page-home .home-hero-projects__card--lead .home-hero-projects__thumb--ratio-16x9 {
-    max-width: min(100%, 58rem);
   }
 }
 
