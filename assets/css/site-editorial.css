@@ -1486,7 +1486,9 @@ body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb {
   flex: 0 0 auto;
   position: relative;
   overflow: hidden;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   max-width: min(100%, 52rem);
   margin-inline: auto;
@@ -1513,10 +1515,13 @@ body.page-home .home-hero-projects__grid--grid .home-hero-projects__card:focus-v
 body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb img,
 body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb video {
   display: block;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  max-height: none;
+  flex: 0 1 auto;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center center;
   opacity: 1;
 }
 
@@ -1570,7 +1575,7 @@ body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb--ratio
   max-width: 100%;
 }
 
-/* Cover — crops in-source letterboxing on videos */
+/* Cover — carousel/showcase only; grid uses centered contain below */
 body.page-home .home-hero-projects__thumb--cover img,
 body.page-home .home-hero-projects__thumb--cover video {
   object-fit: cover;
@@ -1578,33 +1583,75 @@ body.page-home .home-hero-projects__thumb--cover video {
 }
 
 body.page-home #hero-project-sound-transit .home-hero-projects__thumb--cover video {
-  object-position: 68% center;
-  transform: scale(2.1);
-  transform-origin: 68% 50%;
+  object-position: center center;
 }
 
 body.page-home #hero-project-nordstrom-rack .home-hero-projects__thumb--cover video {
-  object-position: center 48%;
+  object-position: center center;
 }
 
 body.page-home #hero-project-makeability .home-hero-projects__thumb--cover video {
-  object-position: center 45%;
+  object-position: center center;
 }
 
-/* Native — images fill frame at exact ratio (no bars) */
+/* Native — carousel/showcase only; grid uses centered contain below */
 body.page-home .home-hero-projects__thumb--native img {
-  object-fit: cover;
-  object-position: center top;
+  object-fit: contain;
+  object-position: center center;
 }
 
 body.page-home #hero-project-inclusive-design-lab .home-hero-projects__thumb--native img {
-  object-fit: cover;
-  object-position: center 8%;
+  object-fit: contain;
+  object-position: center center;
 }
 
 body.page-home #hero-project-ibm .home-hero-projects__thumb--native img {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
+}
+
+/* Grid — unified centered contain; gradient bg fills letterbox areas */
+body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb--cover img,
+body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb--cover video,
+body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb--native img {
+  object-fit: contain;
+  object-position: center center;
+  transform: none;
+}
+
+/* Sound Transit — phone mockup centered contain (full mockup visible) */
+body.page-home .home-hero-projects__grid--grid #hero-project-sound-transit .home-hero-projects__thumb video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  transform: none;
+}
+
+/* Nordstrom Rack — native UI video, centered contain */
+body.page-home .home-hero-projects__grid--grid #hero-project-nordstrom-rack .home-hero-projects__thumb video {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Inclusive Design Lab — portrait poster, fill thumb height for readability */
+body.page-home .home-hero-projects__grid--grid #hero-project-inclusive-design-lab .home-hero-projects__thumb img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+/* Makeability Lab — demo video, centered contain */
+body.page-home .home-hero-projects__grid--grid #hero-project-makeability .home-hero-projects__thumb video {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* IBM — landscape console screenshot, centered contain */
+body.page-home .home-hero-projects__grid--grid #hero-project-ibm .home-hero-projects__thumb img {
+  max-width: min(94%, 100%);
+  max-height: 92%;
 }
 
 /* Lead — Sound Transit: order only; same shell/typography as sibling cards */
@@ -1631,6 +1678,11 @@ body.page-home .home-hero-projects__grid--grid .home-hero-projects__card--lead::
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: clamp(18px, 2vw, 28px);
     row-gap: clamp(22px, 2.2vw, 32px);
+  }
+
+  body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb {
+    min-height: clamp(168px, 24vw, 240px);
+    aspect-ratio: 16 / 10;
   }
 
   body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb,
