@@ -1347,11 +1347,6 @@ body.page-home .home-hero-projects__card.is-active .home-hero-projects__card-des
     animation: none;
   }
 
-  body.page-home .home-hero-projects__grid--grid #hero-project-inclusive-design-lab .home-hero-projects__thumb img.home-hero-projects__thumb-scroll {
-    transform: scale(1.05) translateY(-12%);
-    object-position: top center;
-  }
-
   body.page-home .home-hero-projects__card-desc {
     transition: none;
   }
@@ -1639,27 +1634,16 @@ body.page-home .home-hero-projects__grid--grid #hero-project-nordstrom-rack .hom
   max-height: 100%;
 }
 
-/* Inclusive Design Lab — portrait poster: zoomed cover + slow vertical pan */
-body.page-home .home-hero-projects__grid--grid #hero-project-inclusive-design-lab .home-hero-projects__thumb img.home-hero-projects__thumb-scroll {
-  width: 100%;
+/* Inclusive Design Lab — portrait poster: sharp centered contain (matches grid defaults) */
+body.page-home .home-hero-projects__grid--grid #hero-project-inclusive-design-lab .home-hero-projects__thumb img {
+  width: auto;
   height: auto;
-  min-height: 100%;
-  max-width: none;
-  max-height: none;
-  object-fit: cover;
-  object-position: top center;
-  transform: scale(1.05) translateY(0);
-  animation: idlPosterPan 14s ease-in-out infinite alternate;
-  animation-play-state: running;
-}
-
-@keyframes idlPosterPan {
-  from {
-    transform: scale(1.05) translateY(0);
-  }
-  to {
-    transform: scale(1.05) translateY(-28%);
-  }
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  transform: none;
+  animation: none;
 }
 
 /* Makeability Lab — demo video, centered contain */
