@@ -854,7 +854,7 @@ body.page-home .home-hero-band__ambient {
   display: none;
 }
 
-/* Home — hero circular text rings (inline label + circle pairs, flex-wrap) */
+/* Home — hero circular text rings (grid/wrap circles with centered labels) */
 body.page-home .home-hero-band__text-rings {
   --home-hero-text-ring-font-size: 22px;
   --home-hero-text-ring-letter-spacing: 0.09em;
@@ -875,10 +875,7 @@ body.page-home .home-hero-band__text-rings {
 }
 
 body.page-home .home-hero-band__text-ring-item {
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  gap: clamp(10px, 1.2vw, 14px);
+  display: block;
   flex: 0 0 auto;
   min-width: 0;
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
@@ -887,38 +884,6 @@ body.page-home .home-hero-band__text-ring-item {
 body.page-home .home-hero-band__text-ring-item:hover,
 body.page-home .home-hero-band__text-ring-item:focus-within {
   transform: translateY(-3px);
-}
-
-body.page-home .home-hero-band__text-ring-label {
-  margin: 0;
-  padding: 0.38rem 0.85rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 77, 184, 0.14);
-  background: rgba(255, 255, 255, 0.035);
-  box-shadow: 0 0 18px rgba(255, 77, 184, 0.04);
-  color: rgba(255, 255, 255, 0.46);
-  font-family: var(--tj-ff-body);
-  font-size: clamp(0.58rem, 0.55rem + 0.18vw, 0.68rem);
-  font-weight: 600;
-  font-variant: all-small-caps;
-  letter-spacing: 0.2em;
-  line-height: 1.2;
-  text-align: left;
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition:
-    color 0.3s ease,
-    border-color 0.3s ease,
-    background-color 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-body.page-home .home-hero-band__text-ring-item:hover .home-hero-band__text-ring-label,
-body.page-home .home-hero-band__text-ring-item:focus-within .home-hero-band__text-ring-label {
-  color: rgba(255, 77, 184, 0.92);
-  border-color: rgba(255, 77, 184, 0.38);
-  background: rgba(255, 77, 184, 0.07);
-  box-shadow: 0 0 22px rgba(255, 77, 184, 0.12);
 }
 
 body.page-home .home-landing__split-col--headline,
@@ -947,6 +912,46 @@ body.page-home .home-hero-text-ring__svg {
   transform-origin: center center;
 }
 
+body.page-home .home-hero-text-ring__label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.38rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 77, 184, 0.14);
+  background: rgba(8, 8, 12, 0.72);
+  box-shadow: 0 0 18px rgba(255, 77, 184, 0.04);
+  color: rgba(255, 255, 255, 0.46);
+  font-family: var(--tj-ff-body);
+  font-size: clamp(0.58rem, 0.55rem + 0.18vw, 0.68rem);
+  font-weight: 600;
+  font-variant: all-small-caps;
+  letter-spacing: 0.2em;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+body.page-home .home-hero-band__text-ring-item:hover .home-hero-text-ring__label,
+body.page-home .home-hero-band__text-ring-item:focus-within .home-hero-text-ring__label {
+  color: rgba(255, 77, 184, 0.92);
+  border-color: rgba(255, 77, 184, 0.38);
+  background: rgba(255, 77, 184, 0.07);
+  box-shadow: 0 0 22px rgba(255, 77, 184, 0.12);
+}
+
 body.page-home .home-hero-text-ring__text {
   fill: rgba(255, 255, 255, 0.78);
   font-family: var(--tj-ff-body);
@@ -968,31 +973,6 @@ body.page-home .home-hero-text-ring__word--playful {
 body.page-home .home-hero-text-ring__sep {
   fill: rgba(255, 255, 255, 0.52);
   letter-spacing: inherit;
-}
-
-body.page-home .home-hero-text-ring--research .home-hero-text-ring__center {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0 clamp(14px, 18%, 28px);
-  color: rgba(255, 77, 184, 0.9);
-  font-family: var(--tj-ff-body);
-  font-size: clamp(0.54rem, 0.5rem + 0.18vw, 0.64rem);
-  font-weight: 600;
-  font-variant: all-small-caps;
-  letter-spacing: 0.18em;
-  line-height: 1.3;
-  text-align: center;
-  pointer-events: none;
-}
-
-body.page-home .home-hero-band__text-ring-item:hover .home-hero-text-ring--research .home-hero-text-ring__center,
-body.page-home .home-hero-band__text-ring-item:focus-within .home-hero-text-ring--research .home-hero-text-ring__center {
-  color: rgba(255, 255, 255, 0.92);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -8840,23 +8820,25 @@ body.page-nordstrom-rack .work-detail__survey-options {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: clamp(4px, 0.8vh, 8px);
+  gap: 2px;
+  font-size: clamp(0.8125rem, 1.05vw, 0.875rem);
+  line-height: 1.35;
 }
 
 body.page-nordstrom-rack .work-detail__survey-options li {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  padding: 4px 0;
+  gap: 10px;
+  padding: 1px 0;
   margin: 0;
 }
 
 body.page-nordstrom-rack .work-detail__survey-options li::before {
   content: "";
   flex-shrink: 0;
-  width: 15px;
-  height: 15px;
-  margin-top: 0.32em;
+  width: 13px;
+  height: 13px;
+  margin-top: 0.28em;
   border: 1.5px solid rgba(255, 255, 255, 0.42);
   background: rgba(255, 255, 255, 0.04);
   box-sizing: border-box;
@@ -8876,228 +8858,214 @@ body.page-nordstrom-rack .work-detail__survey-options li:hover::before {
   background: rgba(255, 77, 184, 0.08);
 }
 
-/* Survey Content — journey rail, subsection cards, invite block */
+/* Survey Content — compact accordion layout */
 body.page-nordstrom-rack .work-detail__prose--survey {
-  gap: clamp(20px, 3vh, 28px);
-}
-
-body.page-nordstrom-rack .work-detail__survey-journey {
-  margin: 0 0 clamp(4px, 1vh, 8px);
-  padding: clamp(14px, 2.2vh, 18px) clamp(16px, 2.5vw, 22px);
-  border-radius: 14px;
-  border: 1px solid rgba(255, 77, 184, 0.22);
-  background: linear-gradient(
-    135deg,
-    rgba(255, 77, 184, 0.1) 0%,
-    rgba(255, 255, 255, 0.03) 55%,
-    rgba(180, 122, 255, 0.06) 100%
-  );
-}
-
-body.page-nordstrom-rack .work-detail__survey-journey-list {
-  display: flex;
-  align-items: stretch;
-  gap: 0;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-
-body.page-nordstrom-rack .work-detail__survey-journey-list::-webkit-scrollbar {
-  display: none;
-}
-
-body.page-nordstrom-rack .work-detail__survey-journey-step {
-  position: relative;
-  flex: 1 1 0;
-  min-width: max(5.5rem, 18%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-body.page-nordstrom-rack .work-detail__survey-journey-step:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: -1px;
-  width: clamp(10px, 2vw, 18px);
-  height: 2px;
-  transform: translateY(-50%);
-  background: linear-gradient(90deg, rgba(255, 77, 184, 0.55), rgba(255, 77, 184, 0.15));
-  pointer-events: none;
-}
-
-body.page-nordstrom-rack .work-detail__survey-journey-step a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  width: 100%;
-  padding: 6px 8px;
-  font-family: var(--tj-ff-body);
-  font-size: clamp(0.6875rem, 1.6vw, 0.8125rem);
-  font-weight: var(--tj-fw-sbold);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-align: center;
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.72);
-  transition: color 0.2s ease;
-}
-
-body.page-nordstrom-rack .work-detail__survey-journey-step a::before {
-  content: "";
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 77, 184, 0.45);
-  background: rgba(255, 77, 184, 0.12);
-  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
-}
-
-body.page-nordstrom-rack .work-detail__survey-journey-step a:hover,
-body.page-nordstrom-rack .work-detail__survey-journey-step a:focus-visible {
-  color: #ffffff;
-}
-
-body.page-nordstrom-rack .work-detail__survey-journey-step a:hover::before,
-body.page-nordstrom-rack .work-detail__survey-journey-step a:focus-visible::before {
-  border-color: var(--site-accent);
-  background: rgba(255, 77, 184, 0.35);
-  transform: scale(1.15);
+  gap: clamp(10px, 1.6vh, 16px);
 }
 
 body.page-nordstrom-rack .work-detail__survey-part {
+  position: relative;
   margin: 0;
-  padding: clamp(18px, 2.8vh, 26px) clamp(16px, 2.5vw, 24px);
-  border-radius: 16px;
+  padding: clamp(12px, 1.8vh, 18px) clamp(14px, 2vw, 20px);
+  border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-top: 3px solid var(--site-accent);
+  border-top: none;
   background: rgba(255, 255, 255, 0.025);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+}
+
+body.page-nordstrom-rack .work-detail__survey-part::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 14px 14px 0 0;
+  background: var(--site-accent);
 }
 
 body.page-nordstrom-rack .work-detail__survey-part--intro {
-  border-top-color: rgba(255, 77, 184, 0.85);
-  background: linear-gradient(180deg, rgba(255, 77, 184, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%);
+  background: linear-gradient(180deg, rgba(255, 77, 184, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
 }
 
-body.page-nordstrom-rack .work-detail__survey-part--concluding {
-  border-top-color: rgba(180, 122, 255, 0.9);
+body.page-nordstrom-rack .work-detail__survey-part--intro::before {
+  background: rgba(255, 77, 184, 0.85);
+}
+
+body.page-nordstrom-rack .work-detail__survey-part--concluding::before {
+  background: rgba(180, 122, 255, 0.9);
 }
 
 body.page-nordstrom-rack .work-detail__survey-part-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 8px 14px;
-  margin-bottom: clamp(14px, 2vh, 20px);
-  padding-bottom: clamp(10px, 1.6vh, 14px);
+  margin-bottom: clamp(6px, 1vh, 10px);
+  padding-bottom: clamp(6px, 0.8vh, 8px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.page-nordstrom-rack .work-detail__survey-part-header--intro {
+  margin-bottom: clamp(6px, 1vh, 10px);
 }
 
 body.page-nordstrom-rack .work-detail__survey-part-header .work-detail__kicker {
   margin: 0;
 }
 
-body.page-nordstrom-rack .work-detail__survey-part-count {
-  display: inline-flex;
+body.page-nordstrom-rack .work-detail__survey-accordion {
+  padding: 0;
+  overflow: hidden;
+}
+
+body.page-nordstrom-rack .work-detail__survey-accordion-trigger {
+  display: flex;
   align-items: center;
-  padding: 4px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 77, 184, 0.35);
-  background: rgba(255, 77, 184, 0.1);
-  font-family: var(--tj-ff-body);
-  font-size: clamp(0.6875rem, 1.4vw, 0.75rem);
-  font-weight: var(--tj-fw-sbold);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--site-accent);
-  white-space: nowrap;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+  padding: clamp(12px, 1.8vh, 16px) clamp(14px, 2vw, 20px);
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+body.page-nordstrom-rack .work-detail__survey-accordion-trigger::-webkit-details-marker {
+  display: none;
+}
+
+body.page-nordstrom-rack .work-detail__survey-accordion-trigger::marker {
+  content: "";
+}
+
+body.page-nordstrom-rack .work-detail__survey-accordion-trigger:hover,
+body.page-nordstrom-rack .work-detail__survey-accordion-trigger:focus-visible {
+  background: rgba(255, 77, 184, 0.06);
+  outline: none;
+}
+
+body.page-nordstrom-rack .work-detail__survey-accordion-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 12px;
+  min-width: 0;
+}
+
+body.page-nordstrom-rack .work-detail__survey-accordion-heading .work-detail__kicker {
+  margin: 0;
+}
+
+body.page-nordstrom-rack .work-detail__survey-accordion-chevron {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid rgba(255, 77, 184, 0.75);
+  border-bottom: 2px solid rgba(255, 77, 184, 0.75);
+  transform: rotate(45deg);
+  margin-top: -4px;
+  transition: transform 0.22s ease, border-color 0.2s ease;
+}
+
+body.page-nordstrom-rack .work-detail__survey-accordion[open] .work-detail__survey-accordion-chevron {
+  transform: rotate(-135deg);
+  margin-top: 2px;
+}
+
+body.page-nordstrom-rack .work-detail__survey-accordion[open] .work-detail__survey-accordion-trigger {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 body.page-nordstrom-rack .work-detail__survey-part-body {
   display: flex;
   flex-direction: column;
-  gap: clamp(16px, 2.4vh, 22px);
+  gap: clamp(8px, 1.2vh, 12px);
+  padding: clamp(10px, 1.4vh, 14px) clamp(14px, 2vw, 20px) clamp(12px, 1.8vh, 16px);
 }
 
-body.page-nordstrom-rack .work-detail__survey-invite {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(12px, 1.8vh, 16px);
-  padding: clamp(16px, 2.4vh, 22px);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 77, 184, 0.2);
-  background: rgba(255, 255, 255, 0.04);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+body.page-nordstrom-rack .work-detail__survey-part-body--intro {
+  gap: clamp(8px, 1.1vh, 11px);
+  padding: 0;
+}
+
+body.page-nordstrom-rack .work-detail__survey-part-body--intro > p {
+  margin: 0;
+}
+
+body.page-nordstrom-rack .work-detail__survey-part-body--grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(8px, 1.2vh, 12px);
+}
+
+@media (min-width: 768px) {
+  body.page-nordstrom-rack .work-detail__survey-part-body--grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(10px, 1.6vw, 16px);
+    row-gap: clamp(8px, 1.2vh, 12px);
+  }
 }
 
 body.page-nordstrom-rack .work-detail__survey-invite-title {
-  margin: 0;
-  font-size: clamp(1.125rem, 1.5vw, 1.3125rem);
-  line-height: 1.45;
+  margin: 0 0 2px;
+  font-size: clamp(1.0625rem, 1.35vw, 1.1875rem);
+  line-height: 1.4;
   color: #ffffff;
 }
 
 body.page-nordstrom-rack .work-detail__survey-question {
   display: flex;
   flex-direction: column;
-  gap: clamp(8px, 1.2vh, 12px);
-  padding: clamp(12px, 1.8vh, 16px) clamp(12px, 1.8vw, 16px);
-  border-left: 3px solid rgba(255, 77, 184, 0.35);
-  border-radius: 0 10px 10px 0;
-  background: rgba(255, 255, 255, 0.02);
+  gap: clamp(4px, 0.7vh, 7px);
+  padding: clamp(8px, 1.1vh, 10px) clamp(10px, 1.4vw, 12px);
+  border-left: 2px solid rgba(255, 77, 184, 0.32);
+  border-radius: 0 8px 8px 0;
+  background: rgba(255, 255, 255, 0.018);
 }
 
 body.page-nordstrom-rack .work-detail__survey-question > p:first-child {
+  margin: 0;
   font-weight: var(--tj-fw-sbold);
+  font-size: clamp(0.9375rem, 1.1vw, 1rem);
+  line-height: 1.45;
   color: rgba(255, 255, 255, 0.96);
 }
 
-body.page-nordstrom-rack .work-detail__survey-blank-line {
-  margin: 0;
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(0, 0, 0, 0.2);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.55);
+body.page-nordstrom-rack .work-detail__survey-question--optional {
+  border-left-color: rgba(255, 255, 255, 0.14);
+  background: transparent;
+}
+
+body.page-nordstrom-rack .work-detail__survey-question--optional > p:first-child {
+  font-weight: var(--tj-fw-medium, 500);
+  color: rgba(255, 255, 255, 0.68);
 }
 
 body.page-nordstrom-rack .work-detail__survey-closing {
-  margin: clamp(6px, 1vh, 10px) 0 0;
-  padding: clamp(14px, 2vh, 18px);
-  border-radius: 12px;
+  margin: clamp(4px, 0.6vh, 6px) 0 0;
+  padding: clamp(10px, 1.4vh, 14px);
+  border-radius: 10px;
   border: 1px solid rgba(255, 77, 184, 0.28);
-  background: linear-gradient(135deg, rgba(255, 77, 184, 0.14), rgba(180, 122, 255, 0.08));
-  font-size: clamp(1rem, 1.1vw, 1.0625rem);
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.94);
+  background: linear-gradient(135deg, rgba(255, 77, 184, 0.12), rgba(180, 122, 255, 0.07));
+  font-size: clamp(0.9375rem, 1.05vw, 1rem);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.92);
 }
 
 @media (max-width: 640px) {
-  body.page-nordstrom-rack .work-detail__survey-journey-step {
-    min-width: 5.25rem;
-  }
-
-  body.page-nordstrom-rack .work-detail__survey-journey-step a {
-    font-size: 0.625rem;
-    letter-spacing: 0.06em;
-  }
-
   body.page-nordstrom-rack .work-detail__survey-part {
-    padding: 16px 14px;
+    padding: 12px;
+  }
+
+  body.page-nordstrom-rack .work-detail__survey-accordion-trigger {
+    padding: 12px;
+  }
+
+  body.page-nordstrom-rack .work-detail__survey-part-body {
+    padding: 10px 12px 12px;
   }
 
   body.page-nordstrom-rack .work-detail__survey-question {
-    padding: 12px 10px 12px 12px;
+    padding: 8px 8px 8px 10px;
   }
 }
 
@@ -10740,22 +10708,23 @@ body.site-editorial .work-detail__toc-item.is-active .work-detail__toc-link {
 
 /* Nordstrom Rack — survey findings bar charts */
 .work-detail__survey-viz {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(28px, 4vh, 40px);
-  margin-top: clamp(8px, 1.2vh, 12px);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(12px, 1.8vh, 16px);
+  margin-top: clamp(6px, 1vh, 10px);
 }
 
 .work-detail__survey-viz-intro {
-  margin: 0;
-  font-size: clamp(1.0625rem, 1.15vw, 1.1875rem);
-  line-height: 1.65;
+  grid-column: 1 / -1;
+  margin: 0 0 clamp(2px, 0.4vh, 4px);
+  font-size: clamp(0.9375rem, 1.05vw, 1.0625rem);
+  line-height: 1.5;
   color: rgba(255, 255, 255, 0.88);
 }
 
 .work-detail__survey-viz-chart {
-  padding: clamp(18px, 2.6vw, 26px);
-  border-radius: 14px;
+  padding: clamp(10px, 1.5vw, 14px);
+  border-radius: 10px;
   border: 1px solid rgba(255, 77, 184, 0.22);
   background: rgba(255, 255, 255, 0.03);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
@@ -10763,11 +10732,14 @@ body.site-editorial .work-detail__toc-item.is-active .work-detail__toc-link {
 
 .work-detail__survey-viz-chart .work-detail__kicker {
   margin: 0;
+  font-size: clamp(0.6875rem, 0.82vw, 0.75rem);
+  letter-spacing: 0.1em;
+  line-height: 1.35;
 }
 
 .work-detail__survey-viz-note {
-  margin: clamp(6px, 1vh, 10px) 0 clamp(14px, 2vh, 20px);
-  font-size: clamp(0.8125rem, 1vw, 0.875rem);
+  margin: 3px 0 6px;
+  font-size: clamp(0.6875rem, 0.82vw, 0.75rem);
   letter-spacing: 0.04em;
   color: rgba(255, 255, 255, 0.52);
 }
@@ -10775,23 +10747,23 @@ body.site-editorial .work-detail__toc-item.is-active .work-detail__toc-link {
 .work-detail__survey-viz-bars {
   display: flex;
   flex-direction: column;
-  gap: clamp(8px, 1.2vh, 11px);
+  gap: clamp(4px, 0.55vh, 6px);
 }
 
 .work-detail__survey-viz-row {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   grid-template-rows: auto auto;
-  column-gap: clamp(10px, 1.6vw, 16px);
-  row-gap: 6px;
+  column-gap: clamp(8px, 1.2vw, 12px);
+  row-gap: 3px;
   align-items: center;
 }
 
 .work-detail__survey-viz-label {
   grid-column: 1;
   grid-row: 1;
-  font-size: clamp(0.9375rem, 1.05vw, 1rem);
-  line-height: 1.4;
+  font-size: clamp(0.8125rem, 0.92vw, 0.875rem);
+  line-height: 1.3;
   color: rgba(255, 255, 255, 0.9);
 }
 
@@ -10799,7 +10771,7 @@ body.site-editorial .work-detail__toc-item.is-active .work-detail__toc-link {
   grid-column: 2;
   grid-row: 1;
   font-family: var(--tj-ff-body);
-  font-size: clamp(0.9375rem, 1.1vw, 1.0625rem);
+  font-size: clamp(0.6875rem, 0.82vw, 0.75rem);
   font-weight: var(--tj-fw-sbold);
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.02em;
@@ -10811,7 +10783,7 @@ body.site-editorial .work-detail__toc-item.is-active .work-detail__toc-link {
   grid-column: 1 / -1;
   grid-row: 2;
   display: block;
-  height: 10px;
+  height: 6px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.08);
   overflow: hidden;
@@ -10824,8 +10796,25 @@ body.site-editorial .work-detail__toc-item.is-active .work-detail__toc-link {
   min-width: 0;
   border-radius: inherit;
   background: linear-gradient(90deg, rgba(255, 77, 184, 0.85) 0%, var(--site-accent) 100%);
-  box-shadow: 0 0 12px rgba(255, 77, 184, 0.35);
+  box-shadow: 0 0 8px rgba(255, 77, 184, 0.28);
   transition: width 0.4s ease;
+}
+
+.work-detail__survey-viz-chart--dense .work-detail__survey-viz-bars {
+  gap: 3px;
+}
+
+.work-detail__survey-viz-chart--dense .work-detail__survey-viz-row {
+  row-gap: 2px;
+}
+
+.work-detail__survey-viz-chart--dense .work-detail__survey-viz-label {
+  font-size: clamp(0.75rem, 0.86vw, 0.8125rem);
+  line-height: 1.25;
+}
+
+.work-detail__survey-viz-chart--dense .work-detail__survey-viz-bar {
+  height: 5px;
 }
 
 .work-detail__survey-viz-row--zero .work-detail__survey-viz-label,
@@ -10844,9 +10833,9 @@ body.site-editorial .work-detail__toc-item.is-active .work-detail__toc-link {
 
 @media only screen and (min-width: 640px) {
   .work-detail__survey-viz-row {
-    grid-template-columns: minmax(140px, 34%) auto minmax(0, 1fr);
+    grid-template-columns: minmax(108px, 34%) auto minmax(0, 1fr);
     grid-template-rows: auto;
-    column-gap: clamp(12px, 1.8vw, 18px);
+    column-gap: clamp(8px, 1.2vw, 12px);
     row-gap: 0;
   }
 
@@ -10858,14 +10847,39 @@ body.site-editorial .work-detail__toc-item.is-active .work-detail__toc-link {
   .work-detail__survey-viz-count {
     grid-column: 2;
     grid-row: 1;
-    min-width: 3.25rem;
+    min-width: 2.35rem;
     text-align: right;
   }
 
   .work-detail__survey-viz-bar {
     grid-column: 3;
     grid-row: 1;
-    height: 12px;
+    height: 7px;
+  }
+
+  .work-detail__survey-viz-chart--dense .work-detail__survey-viz-bar {
+    height: 5px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .work-detail__survey-viz {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(12px, 1.6vw, 16px);
+    row-gap: clamp(12px, 1.6vh, 14px);
+  }
+
+  .work-detail__survey-viz-chart--wide {
+    grid-column: 1 / -1;
+  }
+
+  .work-detail__survey-viz-chart--half .work-detail__survey-viz-row {
+    grid-template-columns: minmax(72px, 38%) auto minmax(0, 1fr);
+    column-gap: clamp(6px, 0.9vw, 8px);
+  }
+
+  .work-detail__survey-viz-chart--half .work-detail__survey-viz-count {
+    min-width: 2.1rem;
   }
 }
 

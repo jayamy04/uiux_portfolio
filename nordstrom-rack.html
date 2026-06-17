@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/css/agina-icons.css">
   <link rel="stylesheet" href="assets/css/meanmenu.css">
   <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/site-editorial.css?v=20260617goals">
+  <link rel="stylesheet" href="assets/css/site-editorial.css?v=20260617survey">
 </head>
 
 <body class="site-editorial page-nordstrom-rack">
@@ -270,21 +270,11 @@
             <div class="work-detail__inner">
               <h2 id="nordstrom-survey-content-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Survey Content</h2>
               <div class="work-detail__prose work-detail__prose--survey tj-fade" data-on-scroll="0" data-delay=".04">
-                <nav class="work-detail__survey-journey" aria-label="Survey sections">
-                  <ol class="work-detail__survey-journey-list">
-                    <li class="work-detail__survey-journey-step"><a href="#nordstrom-survey-intro-heading">Introduction</a></li>
-                    <li class="work-detail__survey-journey-step"><a href="#nordstrom-screener-heading">Screener</a></li>
-                    <li class="work-detail__survey-journey-step"><a href="#nordstrom-questions-heading">Questions</a></li>
-                    <li class="work-detail__survey-journey-step"><a href="#nordstrom-demographics-heading">Demographics</a></li>
-                    <li class="work-detail__survey-journey-step"><a href="#nordstrom-concluding-heading">Concluding</a></li>
-                  </ol>
-                </nav>
-
                 <article class="work-detail__survey-part work-detail__survey-part--intro">
-                  <header class="work-detail__survey-part-header">
+                  <header class="work-detail__survey-part-header work-detail__survey-part-header--intro">
                     <h3 class="work-detail__kicker" id="nordstrom-survey-intro-heading">Introduction</h3>
                   </header>
-                  <div class="work-detail__survey-invite">
+                  <div class="work-detail__survey-part-body work-detail__survey-part-body--intro">
                     <p class="work-detail__survey-invite-title"><strong>Tell Us About Your In-Person Shopping Experience!</strong></p>
                     <p>Hi there!</p>
                     <p>I am a Master's student in Human Computer Design and Engineering (HCDE) at the University of Washington. I am currently working on a student project focused on improving the shopping experience and personal style discovery!</p>
@@ -294,11 +284,13 @@
                   </div>
                 </article>
 
-                <article class="work-detail__survey-part" aria-labelledby="nordstrom-screener-heading">
-                  <header class="work-detail__survey-part-header">
-                    <h3 class="work-detail__kicker" id="nordstrom-screener-heading">Screener</h3>
-                    <span class="work-detail__survey-part-count">4 questions</span>
-                  </header>
+                <details class="work-detail__survey-part work-detail__survey-accordion" aria-labelledby="nordstrom-screener-heading">
+                  <summary class="work-detail__survey-accordion-trigger">
+                    <span class="work-detail__survey-accordion-heading">
+                      <h3 class="work-detail__kicker" id="nordstrom-screener-heading">Screener</h3>
+                    </span>
+                    <span class="work-detail__survey-accordion-chevron" aria-hidden="true"></span>
+                  </summary>
                   <div class="work-detail__survey-part-body">
                 <div class="work-detail__survey-question">
                 <p>1. Have you ever been employed or currently work in any of the following areas?</p>
@@ -343,14 +335,16 @@
                 </ul>
                 </div>
                   </div>
-                </article>
+                </details>
 
-                <article class="work-detail__survey-part" aria-labelledby="nordstrom-questions-heading">
-                  <header class="work-detail__survey-part-header">
-                    <h3 class="work-detail__kicker" id="nordstrom-questions-heading">Questions</h3>
-                    <span class="work-detail__survey-part-count">17 questions</span>
-                  </header>
-                  <div class="work-detail__survey-part-body">
+                <details class="work-detail__survey-part work-detail__survey-accordion" aria-labelledby="nordstrom-questions-heading">
+                  <summary class="work-detail__survey-accordion-trigger">
+                    <span class="work-detail__survey-accordion-heading">
+                      <h3 class="work-detail__kicker" id="nordstrom-questions-heading">Questions</h3>
+                    </span>
+                    <span class="work-detail__survey-accordion-chevron" aria-hidden="true"></span>
+                  </summary>
+                  <div class="work-detail__survey-part-body work-detail__survey-part-body--grid">
                 <div class="work-detail__survey-question">
                 <p>5. Name feelings you have when visiting a store. Select all that apply.</p>
                 <ul class="work-detail__survey-options work-detail__survey-options--checkbox">
@@ -474,7 +468,7 @@
                   <li>Other</li>
                 </ul>
                 </div>
-                <div class="work-detail__survey-question">
+                <div class="work-detail__survey-question work-detail__survey-question--optional">
                 <p>12. Optional: What could make in-person shopping experience better for you?</p>
                 </div>
                 <div class="work-detail__survey-question">
@@ -493,7 +487,7 @@
                   <li>Other</li>
                 </ul>
                 </div>
-                <div class="work-detail__survey-question">
+                <div class="work-detail__survey-question work-detail__survey-question--optional">
                 <p>14. Optional: can you tell me anything else about your experience with shopping in-person?</p>
                 </div>
                 <div class="work-detail__survey-question">
@@ -516,7 +510,7 @@
                   <li>No</li>
                 </ul>
                 </div>
-                <div class="work-detail__survey-question">
+                <div class="work-detail__survey-question work-detail__survey-question--optional">
                 <p>18. Optional: What could make personal style discovery easier for you, if any?</p>
                 </div>
                 <div class="work-detail__survey-question">
@@ -558,17 +552,19 @@
                   <li>Other</li>
                 </ul>
                 </div>
-                <div class="work-detail__survey-question">
+                <div class="work-detail__survey-question work-detail__survey-question--optional">
                 <p>21. Optional: can you tell me anything else about your experience with finding your personal style?     </p>
                 </div>
                   </div>
-                </article>
+                </details>
 
-                <article class="work-detail__survey-part" aria-labelledby="nordstrom-demographics-heading">
-                  <header class="work-detail__survey-part-header">
-                    <h3 class="work-detail__kicker" id="nordstrom-demographics-heading">Demographics to Ensure Diversity</h3>
-                    <span class="work-detail__survey-part-count">3 questions</span>
-                  </header>
+                <details class="work-detail__survey-part work-detail__survey-accordion" aria-labelledby="nordstrom-demographics-heading">
+                  <summary class="work-detail__survey-accordion-trigger">
+                    <span class="work-detail__survey-accordion-heading">
+                      <h3 class="work-detail__kicker" id="nordstrom-demographics-heading">Demographics to Ensure Diversity</h3>
+                    </span>
+                    <span class="work-detail__survey-accordion-chevron" aria-hidden="true"></span>
+                  </summary>
                   <div class="work-detail__survey-part-body">
                 <div class="work-detail__survey-question">
                 <p>22. What is your gender?</p>
@@ -609,13 +605,15 @@
                 </ul>
                 </div>
                   </div>
-                </article>
+                </details>
 
-                <article class="work-detail__survey-part work-detail__survey-part--concluding" aria-labelledby="nordstrom-concluding-heading">
-                  <header class="work-detail__survey-part-header">
-                    <h3 class="work-detail__kicker" id="nordstrom-concluding-heading">Concluding Questions</h3>
-                    <span class="work-detail__survey-part-count">3 questions</span>
-                  </header>
+                <details class="work-detail__survey-part work-detail__survey-part--concluding work-detail__survey-accordion" aria-labelledby="nordstrom-concluding-heading">
+                  <summary class="work-detail__survey-accordion-trigger">
+                    <span class="work-detail__survey-accordion-heading">
+                      <h3 class="work-detail__kicker" id="nordstrom-concluding-heading">Concluding Questions</h3>
+                    </span>
+                    <span class="work-detail__survey-accordion-chevron" aria-hidden="true"></span>
+                  </summary>
                   <div class="work-detail__survey-part-body">
                 <div class="work-detail__survey-question">
                 <p>25. Do you have anything else you would like to add?</p>
@@ -633,7 +631,7 @@
                 </div>
                 <p class="work-detail__survey-closing">If you have any questions or concerns, please reach out at slee45@uw.edu. If you’d like to stay updated on the project, feel free to follow my Medium Seunghyun Lee. Thank you so much for taking your time to complete this survey 😊🌻✨!</p>
                   </div>
-                </article>
+                </details>
               </div>
             </div>
           </section>
@@ -645,7 +643,7 @@
               <div class="work-detail__survey-viz">
                 <p class="work-detail__survey-viz-intro">7 participants completed the survey.</p>
 
-                <article class="work-detail__survey-viz-chart" id="nordstrom-survey-viz-q5">
+                <article class="work-detail__survey-viz-chart work-detail__survey-viz-chart--wide work-detail__survey-viz-chart--dense" id="nordstrom-survey-viz-q5">
                   <h3 class="work-detail__kicker">5. Name feelings you have when visiting a store</h3>
                   <p class="work-detail__survey-viz-note">Select all that apply · n=7</p>
                   <div class="work-detail__survey-viz-bars" role="list">
@@ -737,7 +735,7 @@
                   </div>
                 </article>
 
-                <article class="work-detail__survey-viz-chart" id="nordstrom-survey-viz-q6">
+                <article class="work-detail__survey-viz-chart work-detail__survey-viz-chart--half" id="nordstrom-survey-viz-q6">
                   <h3 class="work-detail__kicker">6. Rate your most recent in-person shopping trip</h3>
                   <p class="work-detail__survey-viz-note">Single choice · n=7</p>
                   <div class="work-detail__survey-viz-bars" role="list">
