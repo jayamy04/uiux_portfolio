@@ -9624,6 +9624,60 @@ body.page-nordstrom-rack .work-detail__research-question-text,
   color: rgba(255, 255, 255, 0.86);
 }
 
+/* Work detail — numbered circle list (reusable; Nordstrom target user groups) */
+body.page-nordstrom-rack .work-detail__numbered-list,
+.work-detail__numbered-list {
+  margin: clamp(12px, 2vh, 18px) 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 2vw, 18px);
+}
+
+body.page-nordstrom-rack .work-detail__numbered-list + .work-detail__kicker,
+.work-detail__numbered-list + .work-detail__kicker {
+  margin-top: clamp(24px, 3.5vh, 32px);
+}
+
+body.page-nordstrom-rack .work-detail__numbered-list-item,
+.work-detail__numbered-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(12px, 1.6vw, 16px);
+  margin: 0;
+}
+
+body.page-nordstrom-rack .work-detail__numbered-list-num,
+.work-detail__numbered-list-num {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(28px, 3vw, 32px);
+  height: clamp(28px, 3vw, 32px);
+  border-radius: 50%;
+  border: 2px solid var(--site-accent);
+  background: var(--site-accent);
+  box-shadow: 0 0 0 1px rgba(255, 77, 184, 0.2), 0 4px 12px rgba(255, 77, 184, 0.18);
+  font-family: var(--tj-ff-body);
+  font-size: clamp(0.8125rem, 0.9vw, 0.875rem);
+  font-weight: var(--tj-fw-sbold);
+  line-height: 1;
+  color: #fff;
+}
+
+body.page-nordstrom-rack .work-detail__numbered-list-text,
+.work-detail__numbered-list-text {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--tj-ff-body);
+  font-size: clamp(1.0625rem, 1.1vw, 1.125rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+  text-wrap: pretty;
+}
+
 /* Work detail — shared tiles, timeline, quote (neutral, no per-page skins) */
 .work-detail__tiles {
   display: grid;
