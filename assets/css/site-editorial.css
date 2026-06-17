@@ -1006,7 +1006,6 @@ body.page-home .home-hero-text-ring--innermost {
 @media (prefers-reduced-motion: reduce) {
   body.page-home .home-hero-text-ring--outermost .home-hero-text-ring__svg,
   body.page-home .home-hero-text-ring--outer .home-hero-text-ring__svg,
-  body.page-home .home-hero-text-ring--middle .home-hero-text-ring__svg,
   body.page-home .home-hero-text-ring--inner .home-hero-text-ring__svg,
   body.page-home .home-hero-text-ring--innermost .home-hero-text-ring__svg {
     animation: none;
@@ -1501,7 +1500,7 @@ body.page-home .home-hero-projects__card.is-active .home-hero-projects__card-des
     animation: none;
   }
 
-  body.page-home .home-hero-projects__grid--grid #hero-project-inclusive-design-lab .home-hero-projects__thumb img.home-hero-projects__thumb-scroll {
+  body.page-home .home-hero-projects__grid--stack #hero-project-inclusive-design-lab .home-hero-projects__thumb img.home-hero-projects__thumb-scroll {
     transform: scale(1.18) translateY(-13%);
     object-position: top center;
   }
@@ -1545,7 +1544,7 @@ body.page-home .home-hero-projects__case-study--soon {
 }
 
 /* Home — hero project grid (single col mobile; 2-col at tablet+) */
-body.page-home .home-hero-projects__grid--grid {
+body.page-home .home-hero-projects__grid--stack {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   align-items: stretch;
@@ -1553,7 +1552,7 @@ body.page-home .home-hero-projects__grid--grid {
   padding-block: clamp(4px, 0.6vw, 8px);
 }
 
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__card {
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1578,10 +1577,10 @@ body.page-home .home-hero-projects__grid--grid .home-hero-projects__card {
     transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__card:not(.is-active):hover,
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__card:not(.is-active):focus-visible,
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__card:hover,
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__card:focus-visible {
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:not(.is-active):hover,
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:not(.is-active):focus-visible,
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:hover,
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:focus-visible {
   opacity: 1;
   transform: translateY(-4px);
   border-color: rgba(255, 77, 184, 0.5);
@@ -1593,7 +1592,7 @@ body.page-home .home-hero-projects__grid--grid .home-hero-projects__card:focus-v
     0 16px 48px rgba(0, 0, 0, 0.28);
 }
 
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__card-title {
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-title {
   margin: 0 0 clamp(7px, 0.9vh, 10px);
   color: #ffffff;
   font-size: clamp(0.9375rem, 1.1vw, 1.0625rem);
@@ -1602,7 +1601,7 @@ body.page-home .home-hero-projects__grid--grid .home-hero-projects__card-title {
   line-height: 1.2;
 }
 
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__card-desc {
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-desc {
   color: rgba(255, 255, 255, 0.78);
   overflow: visible;
   display: block;
@@ -1616,7 +1615,7 @@ body.page-home .home-hero-projects__grid--grid .home-hero-projects__card-desc {
   letter-spacing: -0.012em;
 }
 
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__card-desc a {
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-desc a {
   color: var(--editorial-project-accent);
   text-decoration: underline;
   text-decoration-color: rgba(255, 138, 224, 0.35);
@@ -1624,13 +1623,13 @@ body.page-home .home-hero-projects__grid--grid .home-hero-projects__card-desc a 
   transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__card-desc a:hover,
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__card-desc a:focus-visible {
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-desc a:hover,
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-desc a:focus-visible {
   color: #ffb8ef;
   text-decoration-color: rgba(255, 184, 239, 0.6);
 }
 
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__card-body {
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-body {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
@@ -1641,7 +1640,7 @@ body.page-home .home-hero-projects__grid--grid .home-hero-projects__card-body {
   padding: 0 clamp(2px, 0.3vw, 4px);
 }
 
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb {
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb {
   flex: 0 0 auto;
   position: relative;
   overflow: hidden;
@@ -1664,15 +1663,15 @@ body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb {
   transition: box-shadow 0.4s ease;
 }
 
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__card:hover .home-hero-projects__thumb,
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__card:focus-visible .home-hero-projects__thumb {
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:hover .home-hero-projects__thumb,
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:focus-visible .home-hero-projects__thumb {
   box-shadow:
     0 0 0 1px rgba(255, 77, 184, 0.28),
     0 8px 32px rgba(0, 0, 0, 0.38);
 }
 
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb img,
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb video {
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb img,
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb video {
   display: block;
   flex: 0 1 auto;
   width: auto;
@@ -1684,7 +1683,7 @@ body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb video 
   opacity: 1;
 }
 
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__case-study {
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__case-study {
   margin-top: auto;
   padding: clamp(2px, 0.4vh, 4px) 0 0.2rem;
   font-size: clamp(0.75rem, 0.88vw, 0.8125rem);
@@ -1693,18 +1692,18 @@ body.page-home .home-hero-projects__grid--grid .home-hero-projects__case-study {
   color: var(--site-accent);
 }
 
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__case-study:hover,
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__case-study:focus-visible {
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__case-study:hover,
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__case-study:focus-visible {
   color: var(--editorial-project-accent);
 }
 
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__case-study-arrow {
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__case-study-arrow {
   display: inline-block;
   transition: transform 0.25s ease;
 }
 
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__card:hover .home-hero-projects__case-study-arrow,
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__card:focus-within .home-hero-projects__case-study-arrow {
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:hover .home-hero-projects__case-study-arrow,
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:focus-within .home-hero-projects__case-study-arrow {
   transform: translateX(4px);
 }
 
@@ -1726,10 +1725,10 @@ body.page-home .home-hero-projects__thumb--ratio-ibm {
   aspect-ratio: 3 / 2;
 }
 
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb--ratio-16x9,
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb--ratio-nordstrom,
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb--ratio-idl,
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb--ratio-ibm {
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb--ratio-16x9,
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb--ratio-nordstrom,
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb--ratio-idl,
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb--ratio-ibm {
   aspect-ratio: 16 / 10;
   max-width: 100%;
 }
@@ -1770,16 +1769,16 @@ body.page-home #hero-project-ibm .home-hero-projects__thumb--native img {
 }
 
 /* Grid — unified centered contain; gradient bg fills letterbox areas */
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb--cover img,
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb--cover video,
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb--native img {
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb--cover img,
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb--cover video,
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb--native img {
   object-fit: contain;
   object-position: center center;
   transform: none;
 }
 
 /* Sound Transit — phone mockup centered contain (full mockup visible) */
-body.page-home .home-hero-projects__grid--grid #hero-project-sound-transit .home-hero-projects__thumb video {
+body.page-home .home-hero-projects__grid--stack #hero-project-sound-transit .home-hero-projects__thumb video {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -1788,13 +1787,13 @@ body.page-home .home-hero-projects__grid--grid #hero-project-sound-transit .home
 }
 
 /* Nordstrom Rack — native UI video, centered contain */
-body.page-home .home-hero-projects__grid--grid #hero-project-nordstrom-rack .home-hero-projects__thumb video {
+body.page-home .home-hero-projects__grid--stack #hero-project-nordstrom-rack .home-hero-projects__thumb video {
   max-width: 100%;
   max-height: 100%;
 }
 
 /* Inclusive Design Lab — portrait poster: moderate cover zoom + slow vertical pan */
-body.page-home .home-hero-projects__grid--grid #hero-project-inclusive-design-lab .home-hero-projects__thumb img.home-hero-projects__thumb-scroll {
+body.page-home .home-hero-projects__grid--stack #hero-project-inclusive-design-lab .home-hero-projects__thumb img.home-hero-projects__thumb-scroll {
   width: 100%;
   height: auto;
   min-height: 100%;
@@ -1817,19 +1816,19 @@ body.page-home .home-hero-projects__grid--grid #hero-project-inclusive-design-la
 }
 
 /* Makeability Lab — demo video, centered contain */
-body.page-home .home-hero-projects__grid--grid #hero-project-makeability .home-hero-projects__thumb video {
+body.page-home .home-hero-projects__grid--stack #hero-project-makeability .home-hero-projects__thumb video {
   max-width: 100%;
   max-height: 100%;
 }
 
 /* IBM — landscape console screenshot, centered contain */
-body.page-home .home-hero-projects__grid--grid #hero-project-ibm .home-hero-projects__thumb img {
+body.page-home .home-hero-projects__grid--stack #hero-project-ibm .home-hero-projects__thumb img {
   max-width: min(94%, 100%);
   max-height: 92%;
 }
 
 /* Lead — Sound Transit: order only; same shell/typography as sibling cards */
-body.page-home .home-hero-projects__grid--grid .home-hero-projects__card--lead::before {
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card--lead::before {
   content: "";
   position: absolute;
   top: 0;
@@ -1848,43 +1847,43 @@ body.page-home .home-hero-projects__grid--grid .home-hero-projects__card--lead::
 }
 
 @media only screen and (min-width: 768px) {
-  body.page-home .home-hero-projects__grid--grid {
+  body.page-home .home-hero-projects__grid--stack {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: clamp(18px, 2vw, 28px);
     row-gap: clamp(22px, 2.2vw, 32px);
   }
 
-  body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb {
+  body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb {
     min-height: clamp(168px, 24vw, 240px);
     aspect-ratio: 16 / 10;
   }
 
-  body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb,
-  body.page-home .home-hero-projects__grid--grid .home-hero-projects__card-body {
+  body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb,
+  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-body {
     max-width: 100%;
     margin-inline: 0;
   }
 
-  body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb--ratio-idl {
+  body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb--ratio-idl {
     max-width: 100%;
   }
 
-  body.page-home .home-hero-projects__grid--grid .home-hero-projects__card-desc {
+  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-desc {
     max-width: none;
   }
 }
 
 @media only screen and (max-width: 767px) {
-  body.page-home .home-hero-projects__grid--grid {
+  body.page-home .home-hero-projects__grid--stack {
     gap: clamp(18px, 5vw, 26px);
   }
 
-  body.page-home .home-hero-projects__grid--grid .home-hero-projects__card {
+  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card {
     padding: clamp(14px, 4.2vw, 18px);
     border-radius: 12px;
   }
 
-  body.page-home .home-hero-projects__grid--grid .home-hero-projects__thumb {
+  body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb {
     border-radius: 8px;
   }
 
@@ -1892,36 +1891,36 @@ body.page-home .home-hero-projects__grid--grid .home-hero-projects__card--lead::
     max-width: 100%;
   }
 
-  body.page-home .home-hero-projects__grid--grid .home-hero-projects__card:not(.is-active):hover,
-  body.page-home .home-hero-projects__grid--grid .home-hero-projects__card:not(.is-active):focus-visible,
-  body.page-home .home-hero-projects__grid--grid .home-hero-projects__card:hover,
-  body.page-home .home-hero-projects__grid--grid .home-hero-projects__card:focus-visible {
+  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:not(.is-active):hover,
+  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:not(.is-active):focus-visible,
+  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:hover,
+  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:focus-visible {
     transform: translateY(-2px);
   }
 }
 
 @media only screen and (min-width: 992px) {
-  body.page-home .home-hero-projects__grid--grid {
+  body.page-home .home-hero-projects__grid--stack {
     gap: clamp(24px, 2vw, 36px);
   }
 
-  body.page-home .home-hero-projects__grid--grid .home-hero-projects__card {
+  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card {
     gap: clamp(12px, 1.1vh, 16px);
     padding: clamp(16px, 1.4vw, 22px);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body.page-home .home-hero-projects__grid--grid .home-hero-projects__card {
+  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card {
     transition: border-color 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
   }
 
-  body.page-home .home-hero-projects__grid--grid .home-hero-projects__card:hover,
-  body.page-home .home-hero-projects__grid--grid .home-hero-projects__card:focus-visible {
+  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:hover,
+  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:focus-visible {
     transform: none;
   }
 
-  body.page-home .home-hero-projects__grid--grid .home-hero-projects__case-study-arrow {
+  body.page-home .home-hero-projects__grid--stack .home-hero-projects__case-study-arrow {
     transition: none;
   }
 }
