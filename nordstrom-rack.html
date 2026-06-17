@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/css/agina-icons.css">
   <link rel="stylesheet" href="assets/css/meanmenu.css">
   <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/site-editorial.css?v=20260617n12targetuser">
+  <link rel="stylesheet" href="assets/css/site-editorial.css?v=20260617tocsticky">
 </head>
 
 <body class="site-editorial page-nordstrom-rack">
@@ -268,16 +268,38 @@
           <section class="work-detail__section" aria-labelledby="nordstrom-survey-content-heading">
             <div class="work-detail__inner">
               <h2 id="nordstrom-survey-content-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Survey Content</h2>
-              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
-                <h3 class="work-detail__kicker" id="nordstrom-survey-intro-heading">Introduction</h3>
-                <p><strong>Tell Us About Your In-Person Shopping Experience!</strong></p>
-                <p>Hi there!</p>
-                <p>I am a Master's student in Human Computer Design and Engineering (HCDE) at the University of Washington. I am currently working on a student project focused on improving the shopping experience and personal style discovery!</p>
-                <p>I'm not an expert in this topic—this project is all about learning from your experiences. There are no right or wrong answers, so please feel free to share whatever you're comfortable with.</p>
-                <p>All responses will be used for research purposes only and no data will be linked to your name. This survey should take about 5-7 minutes.</p>
-                <p>Thank you so much for your time!</p>
+              <div class="work-detail__prose work-detail__prose--survey tj-fade" data-on-scroll="0" data-delay=".04">
+                <nav class="work-detail__survey-journey" aria-label="Survey sections">
+                  <ol class="work-detail__survey-journey-list">
+                    <li class="work-detail__survey-journey-step"><a href="#nordstrom-survey-intro-heading">Introduction</a></li>
+                    <li class="work-detail__survey-journey-step"><a href="#nordstrom-screener-heading">Screener</a></li>
+                    <li class="work-detail__survey-journey-step"><a href="#nordstrom-questions-heading">Questions</a></li>
+                    <li class="work-detail__survey-journey-step"><a href="#nordstrom-demographics-heading">Demographics</a></li>
+                    <li class="work-detail__survey-journey-step"><a href="#nordstrom-concluding-heading">Concluding</a></li>
+                  </ol>
+                </nav>
 
-                <h3 class="work-detail__kicker" id="nordstrom-screener-heading">Screener</h3>
+                <article class="work-detail__survey-part work-detail__survey-part--intro">
+                  <header class="work-detail__survey-part-header">
+                    <h3 class="work-detail__kicker" id="nordstrom-survey-intro-heading">Introduction</h3>
+                  </header>
+                  <div class="work-detail__survey-invite">
+                    <p class="work-detail__survey-invite-title"><strong>Tell Us About Your In-Person Shopping Experience!</strong></p>
+                    <p>Hi there!</p>
+                    <p>I am a Master's student in Human Computer Design and Engineering (HCDE) at the University of Washington. I am currently working on a student project focused on improving the shopping experience and personal style discovery!</p>
+                    <p>I'm not an expert in this topic—this project is all about learning from your experiences. There are no right or wrong answers, so please feel free to share whatever you're comfortable with.</p>
+                    <p>All responses will be used for research purposes only and no data will be linked to your name. This survey should take about 5-7 minutes.</p>
+                    <p>Thank you so much for your time!</p>
+                  </div>
+                </article>
+
+                <article class="work-detail__survey-part" aria-labelledby="nordstrom-screener-heading">
+                  <header class="work-detail__survey-part-header">
+                    <h3 class="work-detail__kicker" id="nordstrom-screener-heading">Screener</h3>
+                    <span class="work-detail__survey-part-count">4 questions</span>
+                  </header>
+                  <div class="work-detail__survey-part-body">
+                <div class="work-detail__survey-question">
                 <p>1. Have you ever been employed or currently work in any of the following areas?</p>
                 <ul class="work-detail__survey-options work-detail__survey-options--radio">
                   <li>Clothing retailer</li>
@@ -285,6 +307,8 @@
                   <li>UX <span class="work-detail__accept-tag">[accept]</span></li>
                   <li>I have not / do not work in these areas <span class="work-detail__accept-tag">[accept]</span></li>
                 </ul>
+                </div>
+                <div class="work-detail__survey-question">
                 <p>2. When was the last time you shopped for clothes in-store (browsed or purchased)?</p>
                 <ul class="work-detail__survey-options work-detail__survey-options--radio">
                   <li>Within the past week <span class="work-detail__accept-tag">[accept]</span></li>
@@ -293,6 +317,8 @@
                   <li>Within the past year</li>
                   <li>None of the above</li>
                 </ul>
+                </div>
+                <div class="work-detail__survey-question">
                 <p>3. Which of the following best describes your experience with in-person shopping (browsed or purchased)?</p>
                 <ul class="work-detail__survey-options work-detail__survey-options--radio">
                   <li>I always enjoy in-person shopping</li>
@@ -302,6 +328,8 @@
                   <li>I do not find in-person shopping enjoyable; I prefer shopping online or in other ways <span class="work-detail__accept-tag">[accept]</span></li>
                   <li>None of the above</li>
                 </ul>
+                </div>
+                <div class="work-detail__survey-question">
                 <p>4. Which of the following best describes your experience with figuring out your personal style? Please select what best describes you.</p>
                 <ul class="work-detail__survey-options work-detail__survey-options--radio">
                   <li>I know my personal style and love it <span class="work-detail__accept-tag">[accept]</span></li>
@@ -312,8 +340,17 @@
                   <li>I do not care about having a personal style</li>
                   <li>I am not sure</li>
                 </ul>
+                </div>
+                  </div>
+                </article>
 
-                <h3 class="work-detail__kicker" id="nordstrom-questions-heading">Questions</h3>
+                <article class="work-detail__survey-part" aria-labelledby="nordstrom-questions-heading">
+                  <header class="work-detail__survey-part-header">
+                    <h3 class="work-detail__kicker" id="nordstrom-questions-heading">Questions</h3>
+                    <span class="work-detail__survey-part-count">17 questions</span>
+                  </header>
+                  <div class="work-detail__survey-part-body">
+                <div class="work-detail__survey-question">
                 <p>5. Name feelings you have when visiting a store. Select all that apply.</p>
                 <ul class="work-detail__survey-options work-detail__survey-options--checkbox">
                   <li>Excited</li>
@@ -335,6 +372,8 @@
                   <li>Nothing</li>
                   <li>Other</li>
                 </ul>
+                </div>
+                <div class="work-detail__survey-question">
                 <p>6. Rate your most recent in-person shopping trip to a store (browsed or purchased).</p>
                 <ul class="work-detail__survey-options work-detail__survey-options--radio">
                   <li>Excellent</li>
@@ -343,6 +382,8 @@
                   <li>Poor</li>
                   <li>Very poor</li>
                 </ul>
+                </div>
+                <div class="work-detail__survey-question">
                 <p>7. Rate how important is having a positive in-person shopping experience for you (browsed or purchased).</p>
                 <ul class="work-detail__survey-options work-detail__survey-options--radio">
                   <li>Not important at all</li>
@@ -351,6 +392,8 @@
                   <li>Very important</li>
                   <li>Extremely important</li>
                 </ul>
+                </div>
+                <div class="work-detail__survey-question">
                 <p>8. Do you have stores you frequently visit in-person to shop for clothes? (select all that apply)</p>
                 <ul class="work-detail__survey-options work-detail__survey-options--checkbox">
                   <li>Nordstrom</li>
@@ -375,6 +418,8 @@
                   <li>I do not shop in-person frequently anywhere</li>
                   <li>Other</li>
                 </ul>
+                </div>
+                <div class="work-detail__survey-question">
                 <p>9. Which of the following have you done at a store visit? (select all that apply)</p>
                 <ul class="work-detail__survey-options work-detail__survey-options--checkbox">
                   <li>Browsed without a specific item in mind</li>
@@ -389,6 +434,8 @@
                   <li>None of the above</li>
                   <li>Other</li>
                 </ul>
+                </div>
+                <div class="work-detail__survey-question">
                 <p>10. What factors make shopping in-person easy for you? (select all that apply)</p>
                 <ul class="work-detail__survey-options work-detail__survey-options--checkbox">
                   <li>Store layout and organization</li>
@@ -407,6 +454,8 @@
                   <li>I don’t find shopping in-person easy at all</li>
                   <li>Other</li>
                 </ul>
+                </div>
+                <div class="work-detail__survey-question">
                 <p>11. Which of the following can contribute to a difficult in-person shopping experience for you? (select all that apply)</p>
                 <ul class="work-detail__survey-options work-detail__survey-options--checkbox">
                   <li>Not finding items that meet my needs</li>
@@ -423,7 +472,11 @@
                   <li>I always find in-person shopping enjoyable</li>
                   <li>Other</li>
                 </ul>
+                </div>
+                <div class="work-detail__survey-question">
                 <p>12. Optional: What could make in-person shopping experience better for you?</p>
+                </div>
+                <div class="work-detail__survey-question">
                 <p>13. Have you used any tools, apps, or services to help you shop in-person? (select all that apply)</p>
                 <ul class="work-detail__survey-options work-detail__survey-options--checkbox">
                   <li>Store mobile apps (e.g., to check stock, find locations, or get coupons)</li>
@@ -438,8 +491,14 @@
                   <li>I have not used any tools, apps, or services to help me shop in-person</li>
                   <li>Other</li>
                 </ul>
+                </div>
+                <div class="work-detail__survey-question">
                 <p>14. Optional: can you tell me anything else about your experience with shopping in-person?</p>
+                </div>
+                <div class="work-detail__survey-question">
                 <p>15. Briefly tell me what does personal style mean to you?</p>
+                </div>
+                <div class="work-detail__survey-question">
                 <p>16. Rate how important finding your personal style is to you</p>
                 <ul class="work-detail__survey-options work-detail__survey-options--radio">
                   <li>Not important at all</li>
@@ -448,12 +507,18 @@
                   <li>Very important</li>
                   <li>Extremely important</li>
                 </ul>
+                </div>
+                <div class="work-detail__survey-question">
                 <p>17. Would you say you found your personal style?</p>
                 <ul class="work-detail__survey-options work-detail__survey-options--radio">
                   <li>Yes</li>
                   <li>No</li>
                 </ul>
+                </div>
+                <div class="work-detail__survey-question">
                 <p>18. Optional: What could make personal style discovery easier for you, if any?</p>
+                </div>
+                <div class="work-detail__survey-question">
                 <p>19. What challenges, if any, do you experience when trying to find your personal style? (select all that apply)</p>
                 <ul class="work-detail__survey-options work-detail__survey-options--checkbox">
                   <li>Not sure what styles suit me</li>
@@ -474,6 +539,8 @@
                   <li>I do not face any challenges when I am trying to find my personal style</li>
                   <li>Other</li>
                 </ul>
+                </div>
+                <div class="work-detail__survey-question">
                 <p>20. What tools, apps, or services, if any, have you found helpful in discovering your personal style? (select all that apply)</p>
                 <ul class="work-detail__survey-options work-detail__survey-options--checkbox">
                   <li>Browsed fashion magazines or blogs</li>
@@ -489,9 +556,20 @@
                   <li>I have not used anything to help me find my personal style</li>
                   <li>Other</li>
                 </ul>
+                </div>
+                <div class="work-detail__survey-question">
                 <p>21. Optional: can you tell me anything else about your experience with finding your personal style?     </p>
+                </div>
+                  </div>
+                </article>
 
-                <h3 class="work-detail__kicker" id="nordstrom-demographics-heading">Demographics to Ensure Diversity</h3>
+                <article class="work-detail__survey-part" aria-labelledby="nordstrom-demographics-heading">
+                  <header class="work-detail__survey-part-header">
+                    <h3 class="work-detail__kicker" id="nordstrom-demographics-heading">Demographics to Ensure Diversity</h3>
+                    <span class="work-detail__survey-part-count">3 questions</span>
+                  </header>
+                  <div class="work-detail__survey-part-body">
+                <div class="work-detail__survey-question">
                 <p>22. What is your gender?</p>
                 <ul class="work-detail__survey-options work-detail__survey-options--radio">
                   <li>Woman</li>
@@ -501,6 +579,8 @@
                   <li>Other</li>
                   <li>Prefer not to say</li>
                 </ul>
+                </div>
+                <div class="work-detail__survey-question">
                 <p>23. What is your age?</p>
                 <ul class="work-detail__survey-options work-detail__survey-options--radio">
                   <li>Under 18</li>
@@ -512,6 +592,8 @@
                   <li>65 or older</li>
                   <li>Prefer not to say</li>
                 </ul>
+                </div>
+                <div class="work-detail__survey-question">
                 <p>24. What is your race?</p>
                 <ul class="work-detail__survey-options work-detail__survey-options--radio">
                   <li>American Indian or Alaska Native</li>
@@ -524,17 +606,33 @@
                   <li>Other</li>
                   <li>Prefer not to say</li>
                 </ul>
+                </div>
+                  </div>
+                </article>
 
-                <h3 class="work-detail__kicker" id="nordstrom-concluding-heading">Concluding Questions</h3>
+                <article class="work-detail__survey-part work-detail__survey-part--concluding" aria-labelledby="nordstrom-concluding-heading">
+                  <header class="work-detail__survey-part-header">
+                    <h3 class="work-detail__kicker" id="nordstrom-concluding-heading">Concluding Questions</h3>
+                    <span class="work-detail__survey-part-count">3 questions</span>
+                  </header>
+                  <div class="work-detail__survey-part-body">
+                <div class="work-detail__survey-question">
                 <p>25. Do you have anything else you would like to add?</p>
+                </div>
+                <div class="work-detail__survey-question">
                 <p>26. Would you be interested in being in a 45 minute call to share more about your shopping experiences and personal style?</p>
                 <ul class="work-detail__survey-options work-detail__survey-options--radio">
                   <li>Yes</li>
                   <li>No</li>
                 </ul>
+                </div>
+                <div class="work-detail__survey-question">
                 <p>27. If you are interested in being in a 45 minute call, please provide your name and email:</p>
-                <p>_____________</p>
-                <p>If you have any questions or concerns, please reach out at slee45@uw.edu. If you’d like to stay updated on the project, feel free to follow my Medium Seunghyun Lee. Thank you so much for taking your time to complete this survey 😊🌻✨!</p>
+                <p class="work-detail__survey-blank-line">_____________</p>
+                </div>
+                <p class="work-detail__survey-closing">If you have any questions or concerns, please reach out at slee45@uw.edu. If you’d like to stay updated on the project, feel free to follow my Medium Seunghyun Lee. Thank you so much for taking your time to complete this survey 😊🌻✨!</p>
+                  </div>
+                </article>
               </div>
             </div>
           </section>
@@ -630,7 +728,7 @@
   <script src="assets/js/window-shape-animation.js"></script>
   <script src="assets/js/preloader.js"></script>
   <script src="assets/js/gsap-custom-animations.js"></script>
-  <script src="assets/js/main.js?v=20260617n11researchq"></script>
+  <script src="assets/js/main.js?v=20260617tocsticky"></script>
 </body>
 
 </html>
