@@ -854,83 +854,81 @@ body.page-home .home-hero-band__ambient {
   display: none;
 }
 
-/* Home — hero circular text rings (labeled grid below tagline) */
-body.page-home .home-hero-band__text-rings {
-  --home-hero-text-ring-font-size: 22px;
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: clamp(12px, 1.8vw, 24px);
-  row-gap: clamp(20px, 2.4vh, 32px);
+/* Home — hero tag rows (labeled chips below tagline) */
+body.page-home .home-hero-band__tag-rows {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.42rem, 0.9vh, 0.58rem);
   width: 100%;
-  max-width: min(100%, 980px);
-  margin: clamp(16px, 2.4vh, 32px) auto 0;
-  padding: clamp(8px, 1.2vh, 14px) clamp(4px, 1vw, 8px);
+  max-width: min(100%, 680px);
+  margin: clamp(12px, 1.6vh, 20px) 0 0;
+  padding: 0;
   pointer-events: auto;
   z-index: 1;
   flex-shrink: 0;
-  overflow: visible;
 }
 
-body.page-home .home-hero-band__text-ring-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: clamp(8px, 1vh, 12px);
+body.page-home .home-hero-band__tag-row {
+  display: grid;
+  grid-template-columns: minmax(6.75rem, 8.25rem) minmax(0, 1fr);
+  gap: clamp(0.45rem, 1vw, 0.75rem);
+  align-items: baseline;
   min-width: 0;
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-body.page-home .home-hero-band__text-ring-item:nth-child(-n + 4) {
-  grid-column: span 3;
-}
-
-body.page-home .home-hero-band__text-ring-item:nth-child(5) {
-  grid-column: 1 / span 4;
-}
-
-body.page-home .home-hero-band__text-ring-item:nth-child(6) {
-  grid-column: 5 / span 4;
-}
-
-body.page-home .home-hero-band__text-ring-item:nth-child(7) {
-  grid-column: 9 / span 4;
-}
-
-body.page-home .home-hero-band__text-ring-item:hover,
-body.page-home .home-hero-band__text-ring-item:focus-within {
-  transform: translateY(-4px);
-}
-
-body.page-home .home-hero-band__text-ring-label {
+body.page-home .home-hero-band__tag-row-label {
   margin: 0;
-  padding: 0.38rem 0.85rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 77, 184, 0.14);
-  background: rgba(255, 255, 255, 0.035);
-  box-shadow: 0 0 18px rgba(255, 77, 184, 0.04);
-  color: rgba(255, 255, 255, 0.46);
+  padding: 0;
+  color: rgba(255, 255, 255, 0.42);
   font-family: var(--tj-ff-body);
-  font-size: clamp(0.58rem, 0.55rem + 0.18vw, 0.68rem);
+  font-size: clamp(0.56rem, 0.52rem + 0.16vw, 0.64rem);
   font-weight: 600;
   font-variant: all-small-caps;
-  letter-spacing: 0.2em;
-  line-height: 1.2;
-  text-align: center;
+  letter-spacing: 0.18em;
+  line-height: 1.35;
   white-space: nowrap;
-  transition:
-    color 0.3s ease,
-    border-color 0.3s ease,
-    background-color 0.3s ease,
-    box-shadow 0.3s ease;
 }
 
-body.page-home .home-hero-band__text-ring-item:hover .home-hero-band__text-ring-label,
-body.page-home .home-hero-band__text-ring-item:focus-within .home-hero-band__text-ring-label {
-  color: rgba(255, 77, 184, 0.92);
-  border-color: rgba(255, 77, 184, 0.38);
+body.page-home .home-hero-band__tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.32rem 0.42rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body.page-home .home-hero-band__tag-list li {
+  display: contents;
+}
+
+body.page-home .home-hero-band__tag {
+  display: inline-block;
+  padding: 0.18rem 0.52rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.74);
+  font-family: var(--tj-ff-body);
+  font-size: clamp(0.68rem, 0.64rem + 0.14vw, 0.76rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  white-space: nowrap;
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+body.page-home .home-hero-band__tag--accent {
+  color: var(--site-accent);
+  border-color: rgba(255, 77, 184, 0.28);
   background: rgba(255, 77, 184, 0.07);
-  box-shadow: 0 0 22px rgba(255, 77, 184, 0.12);
+}
+
+body.page-home .home-hero-band__tag-row:hover .home-hero-band__tag-row-label {
+  color: rgba(255, 77, 184, 0.72);
 }
 
 body.page-home .home-landing__split-col--headline,
@@ -938,224 +936,20 @@ body.page-home .home-landing__split-head--spread {
   overflow: visible;
 }
 
-body.page-home .home-hero-text-ring {
-  position: relative;
-  flex: 0 0 auto;
-  width: var(--home-hero-text-ring-size, clamp(160px, 14.5vw, 192px));
-  height: var(--home-hero-text-ring-size, clamp(160px, 14.5vw, 192px));
-  aspect-ratio: 1;
-  margin: 0;
-  padding: clamp(6px, 0.8vw, 10px);
-  overflow: visible;
-  border-radius: 50%;
-  background: radial-gradient(circle at 50% 42%, rgba(255, 77, 184, 0.05) 0%, rgba(255, 77, 184, 0) 62%);
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.06),
-    0 0 0 1px rgba(255, 77, 184, 0.1) inset,
-    0 0 28px rgba(255, 77, 184, 0.06);
-  transform-origin: 50% 50%;
-  transition:
-    box-shadow 0.35s ease,
-    background 0.35s ease;
-}
-
-body.page-home .home-hero-band__text-ring-item:hover .home-hero-text-ring,
-body.page-home .home-hero-band__text-ring-item:focus-within .home-hero-text-ring {
-  box-shadow:
-    0 0 0 1px rgba(255, 77, 184, 0.22),
-    0 0 0 1px rgba(255, 77, 184, 0.14) inset,
-    0 0 36px rgba(255, 77, 184, 0.14);
-  background: radial-gradient(circle at 50% 42%, rgba(255, 77, 184, 0.09) 0%, rgba(255, 77, 184, 0) 68%);
-}
-
-body.page-home .home-hero-text-ring--education {
-  --home-hero-text-ring-size: clamp(192px, 18vw, 232px);
-}
-
-body.page-home .home-hero-text-ring--research {
-  --home-hero-text-ring-size: clamp(180px, 16.5vw, 216px);
-}
-
-body.page-home .home-hero-text-ring--design {
-  --home-hero-text-ring-size: clamp(168px, 15.5vw, 200px);
-}
-
-body.page-home .home-hero-text-ring--focus {
-  --home-hero-text-ring-size: clamp(164px, 15vw, 196px);
-}
-
-body.page-home .home-hero-text-ring--soft-skills {
-  --home-hero-text-ring-size: clamp(156px, 14.5vw, 188px);
-}
-
-body.page-home .home-hero-text-ring--hobbies {
-  --home-hero-text-ring-size: clamp(152px, 14vw, 180px);
-}
-
-body.page-home .home-hero-text-ring--companies {
-  --home-hero-text-ring-size: clamp(140px, 12.5vw, 168px);
-}
-
-body.page-home .home-hero-text-ring__svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  transform-origin: center center;
-}
-
-body.page-home .home-hero-text-ring__text {
-  fill: rgba(255, 255, 255, 0.78);
-  font-family: var(--tj-ff-body);
-  font-size: var(--home-hero-text-ring-font-size, 22px);
-  font-weight: 500;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-}
-
-body.page-home .home-hero-text-ring--hobbies .home-hero-text-ring__text {
-  font-weight: 600;
-}
-
-body.page-home .home-hero-text-ring__word--accent {
-  fill: var(--site-accent);
-  fill-opacity: 0.95;
-}
-
-body.page-home .home-hero-text-ring__word--playful {
-  fill-opacity: 1;
-}
-
-body.page-home .home-hero-text-ring__sep {
-  fill: rgba(255, 255, 255, 0.52);
-  letter-spacing: 0.06em;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  body.page-home .home-hero-band__text-ring-item:nth-child(odd) .home-hero-text-ring__svg {
-    animation: site-text-ring-rotate 88s linear infinite;
+@media (max-width: 575px) {
+  body.page-home .home-hero-band__tag-row {
+    grid-template-columns: 1fr;
+    gap: 0.28rem;
   }
 
-  body.page-home .home-hero-band__text-ring-item:nth-child(even) .home-hero-text-ring__svg {
-    animation: site-text-ring-rotate 72s linear infinite reverse;
-  }
-}
-
-@media (max-width: 991px) {
-  body.page-home .home-hero-band__text-rings {
-    --home-hero-text-ring-font-size: 20px;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    max-width: 100%;
-    column-gap: clamp(10px, 2vw, 18px);
-    row-gap: clamp(18px, 2.2vh, 28px);
-  }
-
-  body.page-home .home-hero-band__text-ring-item:nth-child(-n + 4) {
-    grid-column: span 2;
-  }
-
-  body.page-home .home-hero-band__text-ring-item:nth-child(5) {
-    grid-column: 1 / span 2;
-  }
-
-  body.page-home .home-hero-band__text-ring-item:nth-child(6) {
-    grid-column: 3 / span 2;
-  }
-
-  body.page-home .home-hero-band__text-ring-item:nth-child(7) {
-    grid-column: 5 / span 2;
-  }
-
-  body.page-home .home-hero-text-ring--education {
-    --home-hero-text-ring-size: clamp(168px, 20vw, 204px);
-  }
-
-  body.page-home .home-hero-text-ring--research {
-    --home-hero-text-ring-size: clamp(160px, 18.5vw, 192px);
-  }
-
-  body.page-home .home-hero-text-ring--design {
-    --home-hero-text-ring-size: clamp(152px, 17.5vw, 180px);
-  }
-
-  body.page-home .home-hero-text-ring--focus {
-    --home-hero-text-ring-size: clamp(148px, 17vw, 176px);
-  }
-
-  body.page-home .home-hero-text-ring--soft-skills {
-    --home-hero-text-ring-size: clamp(144px, 16.5vw, 168px);
-  }
-
-  body.page-home .home-hero-text-ring--hobbies {
-    --home-hero-text-ring-size: clamp(140px, 16vw, 164px);
-  }
-
-  body.page-home .home-hero-text-ring--companies {
-    --home-hero-text-ring-size: clamp(132px, 15vw, 156px);
-  }
-}
-
-@media (max-width: 767px) {
-  body.page-home .home-hero-band__text-rings {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: clamp(16px, 4vw, 24px);
-    max-width: 100%;
-    padding-inline: clamp(8px, 3vw, 16px);
-    margin-top: clamp(12px, 1.8vh, 22px);
-  }
-
-  body.page-home .home-hero-band__text-ring-item {
-    flex: 0 1 calc(50% - clamp(8px, 2vw, 12px));
-    max-width: calc(50% - clamp(8px, 2vw, 12px));
-  }
-
-  body.page-home .home-hero-band__text-ring-item:nth-child(7) {
-    flex: 0 1 100%;
-    max-width: min(100%, 240px);
-  }
-
-  body.page-home .home-hero-band__text-rings {
-    --home-hero-text-ring-font-size: 20px;
-  }
-
-  body.page-home .home-hero-text-ring--education {
-    --home-hero-text-ring-size: clamp(148px, 40vw, 184px);
-  }
-
-  body.page-home .home-hero-text-ring--research {
-    --home-hero-text-ring-size: clamp(140px, 38vw, 172px);
-  }
-
-  body.page-home .home-hero-text-ring--design {
-    --home-hero-text-ring-size: clamp(136px, 36vw, 164px);
-  }
-
-  body.page-home .home-hero-text-ring--focus {
-    --home-hero-text-ring-size: clamp(132px, 35vw, 160px);
-  }
-
-  body.page-home .home-hero-text-ring--soft-skills {
-    --home-hero-text-ring-size: clamp(128px, 34vw, 156px);
-  }
-
-  body.page-home .home-hero-text-ring--hobbies {
-    --home-hero-text-ring-size: clamp(124px, 33vw, 152px);
-  }
-
-  body.page-home .home-hero-text-ring--companies {
-    --home-hero-text-ring-size: clamp(120px, 32vw, 148px);
+  body.page-home .home-hero-band__tag-row-label {
+    white-space: normal;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body.page-home .home-hero-band__text-ring-item {
+  body.page-home .home-hero-band__tag {
     transition: none;
-  }
-
-  body.page-home .home-hero-text-ring .home-hero-text-ring__svg {
-    animation: none;
   }
 }
 
@@ -1362,11 +1156,11 @@ body.page-home .home-landing__hero-landing {
   max-width: 100%;
 }
 
-body.page-home .home-landing__hero-statement + .home-hero-band__text-rings {
+body.page-home .home-landing__hero-statement + .home-hero-band__tag-rows {
   margin-top: clamp(10px, 1.8vh, 24px);
 }
 
-body.page-home .home-hero-band__text-rings + .home-landing__hero-landing,
+body.page-home .home-hero-band__tag-rows + .home-landing__hero-landing,
 body.page-home .home-landing__hero-statement + .home-landing__hero-landing {
   margin-top: clamp(16px, 2.4vh, 24px);
 }
