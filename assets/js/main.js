@@ -3004,6 +3004,142 @@ const initHomeHeroTextRings = () => {
   window.addEventListener("resize", runFit, { passive: true });
 };
 
+const WORK_DETAIL_TOC_MIN_SECTIONS = 2;
+const WORK_DETAIL_TOC_SCROLL_OFFSET = "top 112px";
+
+const slugifyWorkDetailHeading = (text) =>
+  text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+
+const getWorkDetailHeadingLabel = (heading) =>
+  heading.textContent.replace(/\s+/g, " ").trim();
+
+const initWorkDetailToc = () => {
+  const article = document.querySelector(".work-detail");
+  if (!article || article.dataset.tocInit === "true") return;
+
+  const headings = Array.from(
+    article.querySelectorAll(
+      ".work-detail__section .work-detail__inner > h2.work-detail__heading"
+    )
+  );
+
+  headings.forEach((heading, index) => {
+    if (!heading.id) {
+      const slug =
+        slugifyWorkDetailHeading(getWorkDetailHeadingLabel(heading)) ||
+        `section-${index + 1}`;
+      heading.id = slug;
+    }
+  });
+
+  if (headings.length < WORK_DETAIL_TOC_MIN_SECTIONS) return;
+
+  article.dataset.tocInit = "true";
+  article.classList.add("work-detail--has-toc");
+
+  const nav = document.createElement("nav");
+  nav.className = "work-detail__toc";
+  nav.setAttribute("aria-label", "On this page");
+
+  const label = document.createElement("p");
+  label.className = "work-detail__toc-label";
+  label.textContent = "On this page";
+
+  const list = document.createElement("ol");
+  list.className = "work-detail__toc-list";
+
+  headings.forEach((heading) => {
+    const item = document.createElement("li");
+    item.className = "work-detail__toc-item";
+
+    const link = document.createElement("a");
+    link.className = "work-detail__toc-link";
+    link.href = `#${heading.id}`;
+    link.dataset.tocTarget = heading.id;
+    link.textContent = getWorkDetailHeadingLabel(heading);
+
+    item.appendChild(link);
+    list.appendChild(item);
+  });
+
+  nav.append(label, list);
+
+  const hero = article.querySelector(".work-detail__hero");
+  if (hero) {
+    hero.insertAdjacentElement("afterend", nav);
+  } else {
+    article.prepend(nav);
+  }
+
+  const links = nav.querySelectorAll(".work-detail__toc-link");
+  let activeId = null;
+
+  const setActiveLink = (id) => {
+    if (!id || id === activeId) return;
+    activeId = id;
+    links.forEach((link) => {
+      const isActive = link.dataset.tocTarget === id;
+      link.classList.toggle("is-active", isActive);
+      link.closest(".work-detail__toc-item")?.classList.toggle("is-active", isActive);
+    });
+  };
+
+  const scrollToHeading = (target) => {
+    const smoother =
+      typeof ScrollSmoother !== "undefined" ? ScrollSmoother.get() : null;
+    if (smoother) {
+      smoother.scrollTo(target, true, WORK_DETAIL_TOC_SCROLL_OFFSET);
+      return;
+    }
+    target.scrollIntoView({
+      behavior: prefersReducedMotion() ? "auto" : "smooth",
+      block: "start",
+    });
+  };
+
+  nav.addEventListener("click", (event) => {
+    const link = event.target.closest(".work-detail__toc-link");
+    if (!link) return;
+    event.preventDefault();
+
+    const id = link.dataset.tocTarget;
+    const target = id ? document.getElementById(id) : null;
+    if (!target) return;
+
+    scrollToHeading(target);
+    history.replaceState(null, "", `#${id}`);
+    setActiveLink(id);
+  });
+
+  if (!prefersReducedMotion()) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort(
+            (a, b) => a.boundingClientRect.top - b.boundingClientRect.top
+          );
+        if (!visible.length) return;
+        setActiveLink(visible[0].target.id);
+      },
+      { rootMargin: "-18% 0px -62% 0px", threshold: 0 }
+    );
+    headings.forEach((heading) => observer.observe(heading));
+  }
+
+  if (window.location.hash) {
+    const hashId = window.location.hash.slice(1);
+    if (headings.some((heading) => heading.id === hashId)) {
+      setActiveLink(hashId);
+    }
+  } else if (headings[0]?.id) {
+    setActiveLink(headings[0].id);
+  }
+};
+
 const initProjectPageEnhancements = () => {
   initLoopVideoLifecycle();
   initHomeScrollToWorkLinkIntent();
@@ -3018,6 +3154,7 @@ const initProjectPageEnhancements = () => {
   initHomeHeroTextRings();
   initHomeWorkSectionMotion();
   initCaseStudyPreviewVideos();
+  initWorkDetailToc();
   initPlaygroundProjectGridMedia();
   initPlaygroundCarousel();
   initEditorialProjectFilter();
