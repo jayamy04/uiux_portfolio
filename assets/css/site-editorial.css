@@ -1625,6 +1625,32 @@ body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-title 
   line-height: 1.2;
 }
 
+body.page-home .home-hero-projects__card-title--split {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(2px, 0.35vh, 4px);
+  line-height: 1.22;
+}
+
+body.page-home .home-hero-projects__card-title-main {
+  display: block;
+  color: #ffffff;
+  font-weight: var(--tj-fw-bold);
+  letter-spacing: -0.028em;
+  line-height: 1.22;
+  text-wrap: balance;
+}
+
+body.page-home .home-hero-projects__card-title-context {
+  display: block;
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 0.88em;
+  font-weight: var(--tj-fw-medium);
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+
 body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-desc {
   color: rgba(255, 255, 255, 0.78);
   overflow: visible;
@@ -1775,7 +1801,7 @@ body.page-home #hero-project-nordstrom-rack .home-hero-projects__thumb--cover vi
   object-position: center center;
 }
 
-body.page-home #hero-project-makeability .home-hero-projects__thumb--cover video {
+body.page-home #hero-project-dancers-survey .home-hero-projects__thumb--cover video {
   object-position: center center;
 }
 
@@ -1790,7 +1816,7 @@ body.page-home #hero-project-inclusive-design-lab .home-hero-projects__thumb--na
   object-position: center center;
 }
 
-body.page-home #hero-project-ibm .home-hero-projects__thumb--native img {
+body.page-home #hero-project-ai-healthcare .home-hero-projects__thumb--native img {
   object-fit: contain;
   object-position: center center;
 }
@@ -1819,6 +1845,22 @@ body.page-home .home-hero-projects__grid--stack #hero-project-nordstrom-rack .ho
   max-height: 100%;
 }
 
+/* Dancers Survey — dance reel video, centered contain */
+body.page-home .home-hero-projects__grid--stack #hero-project-dancers-survey .home-hero-projects__thumb video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* AI Healthcare — HCDE showcase photo, centered contain */
+body.page-home .home-hero-projects__grid--stack #hero-project-ai-healthcare .home-hero-projects__thumb img {
+  max-width: min(88%, 100%);
+  max-height: 92%;
+  object-fit: contain;
+  object-position: center center;
+}
+
 /* Inclusive Design Lab — portrait poster: moderate cover zoom + slow vertical pan */
 body.page-home .home-hero-projects__grid--stack #hero-project-inclusive-design-lab .home-hero-projects__thumb img.home-hero-projects__thumb-scroll {
   width: 100%;
@@ -1842,18 +1884,6 @@ body.page-home .home-hero-projects__grid--stack #hero-project-inclusive-design-l
   }
 }
 
-/* Makeability Lab — demo video, centered contain */
-body.page-home .home-hero-projects__grid--stack #hero-project-makeability .home-hero-projects__thumb video {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-/* IBM — landscape console screenshot, centered contain */
-body.page-home .home-hero-projects__grid--stack #hero-project-ibm .home-hero-projects__thumb img {
-  max-width: min(94%, 100%);
-  max-height: 92%;
-}
-
 @media only screen and (min-width: 768px) {
   body.page-home .home-hero-projects__grid--stack .home-hero-projects__card {
     grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
@@ -1871,6 +1901,20 @@ body.page-home .home-hero-projects__grid--stack #hero-project-ibm .home-hero-pro
   body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-title {
     font-size: clamp(1rem, 1.15vw, 1.125rem);
     margin-bottom: clamp(8px, 1vh, 12px);
+  }
+
+  body.page-home .home-hero-projects__card-title--split {
+    gap: clamp(3px, 0.45vh, 5px);
+  }
+
+  body.page-home .home-hero-projects__card-title-main {
+    line-height: 1.24;
+    max-width: 28ch;
+  }
+
+  body.page-home .home-hero-projects__card-title-context {
+    font-size: 0.86em;
+    max-width: 32ch;
   }
 
   body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-desc {
