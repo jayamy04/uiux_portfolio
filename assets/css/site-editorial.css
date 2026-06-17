@@ -8870,7 +8870,7 @@ body.page-nordstrom-rack .work-detail__survey-options li:hover::before {
   background: rgba(255, 77, 184, 0.08);
 }
 
-/* Survey Content — compact accordion layout */
+/* Survey Content — compact flat layout */
 body.page-nordstrom-rack .work-detail__prose--survey {
   gap: clamp(10px, 1.6vh, 16px);
 }
@@ -8923,75 +8923,11 @@ body.page-nordstrom-rack .work-detail__survey-part-header .work-detail__kicker {
   margin: 0;
 }
 
-body.page-nordstrom-rack .work-detail__survey-accordion {
-  padding: 0;
-  overflow: hidden;
-}
-
-body.page-nordstrom-rack .work-detail__survey-accordion-trigger {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin: 0;
-  padding: clamp(12px, 1.8vh, 16px) clamp(14px, 2vw, 20px);
-  list-style: none;
-  cursor: pointer;
-  user-select: none;
-  transition: background-color 0.2s ease;
-}
-
-body.page-nordstrom-rack .work-detail__survey-accordion-trigger::-webkit-details-marker {
-  display: none;
-}
-
-body.page-nordstrom-rack .work-detail__survey-accordion-trigger::marker {
-  content: "";
-}
-
-body.page-nordstrom-rack .work-detail__survey-accordion-trigger:hover,
-body.page-nordstrom-rack .work-detail__survey-accordion-trigger:focus-visible {
-  background: rgba(255, 77, 184, 0.06);
-  outline: none;
-}
-
-body.page-nordstrom-rack .work-detail__survey-accordion-heading {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 6px 12px;
-  min-width: 0;
-}
-
-body.page-nordstrom-rack .work-detail__survey-accordion-heading .work-detail__kicker {
-  margin: 0;
-}
-
-body.page-nordstrom-rack .work-detail__survey-accordion-chevron {
-  flex-shrink: 0;
-  width: 10px;
-  height: 10px;
-  border-right: 2px solid rgba(255, 77, 184, 0.75);
-  border-bottom: 2px solid rgba(255, 77, 184, 0.75);
-  transform: rotate(45deg);
-  margin-top: -4px;
-  transition: transform 0.22s ease, border-color 0.2s ease;
-}
-
-body.page-nordstrom-rack .work-detail__survey-accordion[open] .work-detail__survey-accordion-chevron {
-  transform: rotate(-135deg);
-  margin-top: 2px;
-}
-
-body.page-nordstrom-rack .work-detail__survey-accordion[open] .work-detail__survey-accordion-trigger {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
 body.page-nordstrom-rack .work-detail__survey-part-body {
   display: flex;
   flex-direction: column;
   gap: clamp(8px, 1.2vh, 12px);
-  padding: clamp(10px, 1.4vh, 14px) clamp(14px, 2vw, 20px) clamp(12px, 1.8vh, 16px);
+  padding: 0;
 }
 
 body.page-nordstrom-rack .work-detail__survey-part-body--intro {
@@ -9066,14 +9002,6 @@ body.page-nordstrom-rack .work-detail__survey-closing {
 @media (max-width: 640px) {
   body.page-nordstrom-rack .work-detail__survey-part {
     padding: 12px;
-  }
-
-  body.page-nordstrom-rack .work-detail__survey-accordion-trigger {
-    padding: 12px;
-  }
-
-  body.page-nordstrom-rack .work-detail__survey-part-body {
-    padding: 10px 12px 12px;
   }
 
   body.page-nordstrom-rack .work-detail__survey-question {
