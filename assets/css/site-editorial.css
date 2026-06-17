@@ -912,9 +912,19 @@ body.page-home .home-hero-text-ring--inner .home-hero-text-ring__label {
   letter-spacing: 0.18em;
 }
 
+body.page-home .home-hero-text-ring--innermost .home-hero-text-ring__label {
+  font-size: 6.5px;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+}
+
 body.page-home .home-hero-text-ring__word--accent {
   fill: var(--site-accent);
   fill-opacity: 0.72;
+}
+
+body.page-home .home-hero-text-ring__word--playful {
+  fill-opacity: 0.88;
 }
 
 body.page-home .home-hero-text-ring__sep {
@@ -936,6 +946,13 @@ body.page-home .home-hero-text-ring--inner {
   left: 22.15%;
 }
 
+body.page-home .home-hero-text-ring--innermost {
+  width: 40.5%;
+  height: 40.5%;
+  top: 29.75%;
+  left: 29.75%;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   body.page-home .home-hero-text-ring--outermost .home-hero-text-ring__svg {
     animation: site-text-ring-rotate 96s linear infinite;
@@ -947,6 +964,10 @@ body.page-home .home-hero-text-ring--inner {
 
   body.page-home .home-hero-text-ring--inner .home-hero-text-ring__svg {
     animation: site-text-ring-rotate 80s linear infinite reverse;
+  }
+
+  body.page-home .home-hero-text-ring--innermost .home-hero-text-ring__svg {
+    animation: site-text-ring-rotate 60s linear infinite;
   }
 }
 
@@ -975,12 +996,19 @@ body.page-home .home-hero-text-ring--inner {
   body.page-home .home-hero-text-ring--inner .home-hero-text-ring__label {
     font-size: 7.5px;
   }
+
+  body.page-home .home-hero-text-ring--innermost .home-hero-text-ring__label {
+    font-size: 6px;
+    letter-spacing: 0.14em;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   body.page-home .home-hero-text-ring--outermost .home-hero-text-ring__svg,
   body.page-home .home-hero-text-ring--outer .home-hero-text-ring__svg,
-  body.page-home .home-hero-text-ring--inner .home-hero-text-ring__svg {
+  body.page-home .home-hero-text-ring--middle .home-hero-text-ring__svg,
+  body.page-home .home-hero-text-ring--inner .home-hero-text-ring__svg,
+  body.page-home .home-hero-text-ring--innermost .home-hero-text-ring__svg {
     animation: none;
   }
 }
