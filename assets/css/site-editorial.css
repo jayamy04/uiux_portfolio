@@ -939,30 +939,6 @@ body.page-home .home-hero-text-ring {
   transform-origin: 50% 50%;
 }
 
-body.page-home .home-hero-text-ring--education {
-  --home-hero-text-ring-size: clamp(192px, 18vw, 232px);
-}
-
-body.page-home .home-hero-text-ring--research {
-  --home-hero-text-ring-size: clamp(180px, 16.5vw, 216px);
-}
-
-body.page-home .home-hero-text-ring--focus {
-  --home-hero-text-ring-size: clamp(164px, 15vw, 196px);
-}
-
-body.page-home .home-hero-text-ring--soft-skills {
-  --home-hero-text-ring-size: clamp(156px, 14.5vw, 188px);
-}
-
-body.page-home .home-hero-text-ring--hobbies {
-  --home-hero-text-ring-size: clamp(152px, 14vw, 180px);
-}
-
-body.page-home .home-hero-text-ring--companies {
-  --home-hero-text-ring-size: clamp(140px, 12.5vw, 168px);
-}
-
 body.page-home .home-hero-text-ring__svg {
   display: block;
   width: 100%;
@@ -1033,60 +1009,12 @@ body.page-home .home-hero-band__text-ring-item:focus-within .home-hero-text-ring
   body.page-home .home-hero-band__text-rings {
     gap: clamp(12px, 2vh, 18px) clamp(14px, 2.2vw, 24px);
   }
-
-  body.page-home .home-hero-text-ring--education {
-    --home-hero-text-ring-size: clamp(168px, 20vw, 204px);
-  }
-
-  body.page-home .home-hero-text-ring--research {
-    --home-hero-text-ring-size: clamp(160px, 18.5vw, 192px);
-  }
-
-  body.page-home .home-hero-text-ring--focus {
-    --home-hero-text-ring-size: clamp(148px, 17vw, 176px);
-  }
-
-  body.page-home .home-hero-text-ring--soft-skills {
-    --home-hero-text-ring-size: clamp(144px, 16.5vw, 168px);
-  }
-
-  body.page-home .home-hero-text-ring--hobbies {
-    --home-hero-text-ring-size: clamp(140px, 16vw, 164px);
-  }
-
-  body.page-home .home-hero-text-ring--companies {
-    --home-hero-text-ring-size: clamp(132px, 15vw, 156px);
-  }
 }
 
 @media (max-width: 767px) {
   body.page-home .home-hero-band__text-rings {
     gap: clamp(12px, 3vw, 18px) clamp(12px, 3.5vw, 20px);
     margin-top: clamp(12px, 1.8vh, 22px);
-  }
-
-  body.page-home .home-hero-text-ring--education {
-    --home-hero-text-ring-size: clamp(148px, 40vw, 184px);
-  }
-
-  body.page-home .home-hero-text-ring--research {
-    --home-hero-text-ring-size: clamp(140px, 38vw, 172px);
-  }
-
-  body.page-home .home-hero-text-ring--focus {
-    --home-hero-text-ring-size: clamp(132px, 35vw, 160px);
-  }
-
-  body.page-home .home-hero-text-ring--soft-skills {
-    --home-hero-text-ring-size: clamp(128px, 34vw, 156px);
-  }
-
-  body.page-home .home-hero-text-ring--hobbies {
-    --home-hero-text-ring-size: clamp(124px, 33vw, 152px);
-  }
-
-  body.page-home .home-hero-text-ring--companies {
-    --home-hero-text-ring-size: clamp(120px, 32vw, 148px);
   }
 }
 

@@ -2902,6 +2902,7 @@ const initCommunityGalleries = () => {
 };
 
 const HOME_HERO_TEXT_RING_BASE_LETTER_SPACING_EM = 0.09;
+const HOME_HERO_TEXT_RING_SPACING_MICRO_DELTA_EM = 0.008;
 
 const fitHomeHeroTextRings = () => {
   if (!document.body.classList.contains("page-home")) {
@@ -2916,6 +2917,8 @@ const fitHomeHeroTextRings = () => {
   const sharedBaseSpacingEm = Number.isFinite(baseSpacingFromVar)
     ? baseSpacingFromVar
     : HOME_HERO_TEXT_RING_BASE_LETTER_SPACING_EM;
+  const minSpacingEm = Math.max(0, sharedBaseSpacingEm - HOME_HERO_TEXT_RING_SPACING_MICRO_DELTA_EM);
+  const maxSpacingEm = sharedBaseSpacingEm + HOME_HERO_TEXT_RING_SPACING_MICRO_DELTA_EM;
 
   document.querySelectorAll(".home-hero-text-ring").forEach((ring) => {
     const textEl = ring.querySelector(".home-hero-text-ring__text");
@@ -2938,20 +2941,17 @@ const fitHomeHeroTextRings = () => {
     const measuredLength = () => textPath.getSubStringLength(0, charCount);
     const targetLength = pathLength;
     const tolerance = 0.75;
-    let naturalLength = measuredLength();
+    const naturalLength = measuredLength();
 
     if (!naturalLength || Math.abs(naturalLength - targetLength) <= tolerance) {
       return;
     }
 
-    const stretchRatio = targetLength / naturalLength;
-    let lo = 0;
-    let hi = naturalLength < targetLength
-      ? Math.max(0.75, sharedBaseSpacingEm * stretchRatio * 2)
-      : Math.max(sharedBaseSpacingEm * 4, 0.28);
+    let lo = minSpacingEm;
+    let hi = maxSpacingEm;
     let bestEm = sharedBaseSpacingEm;
 
-    for (let i = 0; i < 24; i += 1) {
+    for (let i = 0; i < 12; i += 1) {
       const mid = (lo + hi) / 2;
       textEl.style.letterSpacing = `${mid}em`;
       const len = measuredLength();
@@ -2965,6 +2965,13 @@ const fitHomeHeroTextRings = () => {
     }
 
     textEl.style.letterSpacing = `${bestEm}em`;
+
+    const finalLength = measuredLength();
+    if (finalLength < targetLength - tolerance) {
+      textEl.style.letterSpacing = `${maxSpacingEm}em`;
+    } else if (finalLength > targetLength + tolerance) {
+      textEl.style.letterSpacing = `${minSpacingEm}em`;
+    }
   });
 };
 
