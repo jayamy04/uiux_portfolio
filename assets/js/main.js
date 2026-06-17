@@ -2903,6 +2903,100 @@ const initCommunityGalleries = () => {
 
 const HOME_HERO_TEXT_RING_BASE_LETTER_SPACING_EM = 0.09;
 
+const fitHomeHeroTextRings = () => {
+  if (!document.body.classList.contains("page-home")) {
+    return;
+  }
+
+  const ringsRoot = document.querySelector(".home-hero-band__text-rings");
+  const rootStyles = ringsRoot ? getComputedStyle(ringsRoot) : null;
+  const baseSpacingFromVar = rootStyles
+    ? parseFloat(rootStyles.getPropertyValue("--home-hero-text-ring-letter-spacing"))
+    : NaN;
+  const sharedBaseSpacingEm = Number.isFinite(baseSpacingFromVar)
+    ? baseSpacingFromVar
+    : HOME_HERO_TEXT_RING_BASE_LETTER_SPACING_EM;
+
+  document.querySelectorAll(".home-hero-text-ring").forEach((ring) => {
+    const textEl = ring.querySelector(".home-hero-text-ring__text");
+    const textPath = ring.querySelector("textPath");
+    const pathEl = ring.querySelector("path");
+
+    if (!textEl || !textPath || !pathEl) {
+      return;
+    }
+
+    textEl.style.letterSpacing = `${sharedBaseSpacingEm}em`;
+
+    const pathLength = pathEl.getTotalLength();
+    const charCount = textPath.getNumberOfChars();
+
+    if (!charCount || !pathLength) {
+      return;
+    }
+
+    const measuredLength = () => textPath.getSubStringLength(0, charCount);
+    const targetLength = pathLength;
+    const tolerance = 0.75;
+    let naturalLength = measuredLength();
+
+    if (!naturalLength || Math.abs(naturalLength - targetLength) <= tolerance) {
+      return;
+    }
+
+    const stretchRatio = targetLength / naturalLength;
+    let lo = 0;
+    let hi = naturalLength < targetLength
+      ? Math.max(0.75, sharedBaseSpacingEm * stretchRatio * 2)
+      : Math.max(sharedBaseSpacingEm * 4, 0.28);
+    let bestEm = sharedBaseSpacingEm;
+
+    for (let i = 0; i < 24; i += 1) {
+      const mid = (lo + hi) / 2;
+      textEl.style.letterSpacing = `${mid}em`;
+      const len = measuredLength();
+
+      if (len < targetLength - tolerance) {
+        lo = mid;
+      } else {
+        hi = mid;
+        bestEm = mid;
+      }
+    }
+
+    textEl.style.letterSpacing = `${bestEm}em`;
+  });
+};
+
+let homeHeroTextRingFitFrame = 0;
+
+const scheduleHomeHeroTextRingFit = () => {
+  if (!document.body.classList.contains("page-home")) {
+    return;
+  }
+
+  cancelAnimationFrame(homeHeroTextRingFitFrame);
+  homeHeroTextRingFitFrame = requestAnimationFrame(() => {
+    fitHomeHeroTextRings();
+  });
+};
+
+const initHomeHeroTextRings = () => {
+  if (!document.body.classList.contains("page-home")) {
+    return;
+  }
+
+  const runFit = () => scheduleHomeHeroTextRingFit();
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(runFit).catch(runFit);
+  } else {
+    runFit();
+  }
+
+  window.addEventListener("resize", runFit, { passive: true });
+};
+
 const initProjectPageEnhancements = () => {
   initLoopVideoLifecycle();
   initHomeScrollToWorkLinkIntent();
@@ -2914,6 +3008,7 @@ const initProjectPageEnhancements = () => {
   initHomeHeroProjectVideos();
   initHomeHeroProjectBento();
   initHomeHeroProjectCarousel();
+  initHomeHeroTextRings();
   initHomeWorkSectionMotion();
   initCaseStudyPreviewVideos();
   initPlaygroundProjectGridMedia();
