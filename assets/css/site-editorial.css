@@ -8818,6 +8818,49 @@ body.page-nordstrom-rack .work-detail__accept-tag {
   color: var(--site-accent);
 }
 
+/* Survey option lists — Google Forms–style checkbox / radio indicators */
+body.page-nordstrom-rack .work-detail__survey-options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, 0.8vh, 8px);
+}
+
+body.page-nordstrom-rack .work-detail__survey-options li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 4px 0;
+  margin: 0;
+}
+
+body.page-nordstrom-rack .work-detail__survey-options li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  margin-top: 0.32em;
+  border: 1.5px solid rgba(255, 255, 255, 0.42);
+  background: rgba(255, 255, 255, 0.04);
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+body.page-nordstrom-rack .work-detail__survey-options--checkbox li::before {
+  border-radius: 3px;
+}
+
+body.page-nordstrom-rack .work-detail__survey-options--radio li::before {
+  border-radius: 50%;
+}
+
+body.page-nordstrom-rack .work-detail__survey-options li:hover::before {
+  border-color: rgba(255, 77, 184, 0.7);
+  background: rgba(255, 77, 184, 0.08);
+}
+
 body.page-sachacks .work-detail__lead,
 body.page-schedgo .work-detail__lead,
 body.page-ibm-saas-console .work-detail__lead,
