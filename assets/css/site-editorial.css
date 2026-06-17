@@ -9796,23 +9796,29 @@ body.page-nordstrom-rack .work-detail__goal {
   flex-direction: column;
   gap: clamp(10px, 1.5vw, 14px);
   margin: 0;
-  padding: clamp(18px, 2.5vw, 24px) clamp(18px, 2.5vw, 24px) clamp(18px, 2.5vw, 24px) clamp(22px, 2.8vw, 28px);
+  padding: clamp(18px, 2.5vw, 24px);
   border-radius: clamp(12px, 1.5vw, 18px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-left: 3px solid var(--site-accent);
   background:
     linear-gradient(145deg, rgba(255, 77, 184, 0.08) 0%, rgba(255, 255, 255, 0.02) 42%, rgba(255, 255, 255, 0.015) 100%);
-  box-shadow:
-    0 0 0 1px rgba(255, 77, 184, 0.04),
-    0 12px 32px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+body.page-nordstrom-rack .work-detail__goal::before {
+  content: "";
+  position: absolute;
+  top: clamp(10px, 1.2vw, 14px);
+  bottom: clamp(10px, 1.2vw, 14px);
+  left: 0;
+  width: 3px;
+  border-radius: 0 2px 2px 0;
+  background: var(--site-accent);
 }
 
 body.page-nordstrom-rack .work-detail__goal:hover {
   border-color: rgba(255, 77, 184, 0.22);
-  border-left-color: var(--site-accent);
   box-shadow:
-    0 0 0 1px rgba(255, 77, 184, 0.12),
     0 0 24px rgba(255, 77, 184, 0.08),
     0 12px 32px rgba(0, 0, 0, 0.22);
 }
