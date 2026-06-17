@@ -8886,6 +8886,10 @@ body.page-inclusive-lab .work-detail__kicker {
   color: var(--site-accent);
 }
 
+body.page-nordstrom-rack .work-detail__accept-tag {
+  color: var(--site-accent);
+}
+
 body.page-sachacks .work-detail__lead,
 body.page-schedgo .work-detail__lead,
 body.page-ibm-saas-console .work-detail__lead,
