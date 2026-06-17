@@ -859,15 +859,20 @@ body.page-home .home-hero-band__ambient {
   display: none;
 }
 
-/* Home — hero circular text rings (below tagline, centered) */
+/* Home — hero circular text rings (below tagline, side-by-side) */
 body.page-home .home-hero-band__text-rings {
-  --home-hero-text-ring-size: clamp(280px, 40vw, 480px);
-  position: relative;
-  display: block;
+  --home-hero-text-ring-size: clamp(120px, 13vw, 156px);
+  --home-hero-text-ring-size-wide: clamp(140px, 15vw, 176px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   align-self: center;
-  width: var(--home-hero-text-ring-size);
-  height: var(--home-hero-text-ring-size);
+  gap: clamp(24px, 3vw, 40px);
+  width: 100%;
+  max-width: 100%;
   margin: clamp(12px, 2vh, 28px) auto 0;
+  padding: 0 clamp(8px, 2vw, 16px);
   pointer-events: none;
   z-index: 1;
   flex-shrink: 0;
@@ -875,10 +880,17 @@ body.page-home .home-hero-band__text-rings {
 }
 
 body.page-home .home-hero-text-ring {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  flex: 0 0 auto;
+  width: var(--home-hero-text-ring-size);
+  height: var(--home-hero-text-ring-size);
   margin: 0;
   transform-origin: 50% 50%;
+}
+
+body.page-home .home-hero-text-ring--wide {
+  width: var(--home-hero-text-ring-size-wide);
+  height: var(--home-hero-text-ring-size-wide);
 }
 
 body.page-home .home-hero-text-ring__svg {
@@ -892,43 +904,38 @@ body.page-home .home-hero-text-ring__svg {
 body.page-home .home-hero-text-ring__label {
   fill: rgba(255, 255, 255, 0.44);
   font-family: var(--tj-ff-body);
-  font-size: 8.5px;
+  font-size: 6.5px;
   font-weight: 500;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
-body.page-home .home-hero-text-ring--outermost .home-hero-text-ring__label {
-  font-size: 5.5px;
-  letter-spacing: 0.1em;
-  fill: rgba(255, 255, 255, 0.34);
-}
-
+body.page-home .home-hero-text-ring--outermost .home-hero-text-ring__label,
 body.page-home .home-hero-text-ring--research .home-hero-text-ring__label {
-  font-size: 5px;
-  letter-spacing: 0.06em;
-  fill: rgba(255, 255, 255, 0.32);
+  font-size: 5.25px;
+  letter-spacing: 0.08em;
+  fill: rgba(255, 255, 255, 0.36);
 }
 
 body.page-home .home-hero-text-ring--outer .home-hero-text-ring__label {
-  font-size: 7px;
-  letter-spacing: 0.16em;
-}
-
-body.page-home .home-hero-text-ring--middle .home-hero-text-ring__label {
-  font-size: 6px;
-  letter-spacing: 0.1em;
-  fill: rgba(255, 255, 255, 0.38);
-}
-
-body.page-home .home-hero-text-ring--inner .home-hero-text-ring__label {
-  font-size: 6.25px;
+  font-size: 6.75px;
   letter-spacing: 0.14em;
 }
 
-body.page-home .home-hero-text-ring--innermost .home-hero-text-ring__label {
-  font-size: 5.5px;
+body.page-home .home-hero-text-ring--middle .home-hero-text-ring__label {
+  font-size: 6.25px;
+  letter-spacing: 0.1em;
+  fill: rgba(255, 255, 255, 0.4);
+}
+
+body.page-home .home-hero-text-ring--inner .home-hero-text-ring__label {
+  font-size: 6.5px;
   letter-spacing: 0.12em;
+}
+
+body.page-home .home-hero-text-ring--innermost .home-hero-text-ring__label {
+  font-size: 6px;
+  letter-spacing: 0.1em;
   font-weight: 600;
 }
 
@@ -946,83 +953,77 @@ body.page-home .home-hero-text-ring__sep {
   letter-spacing: 0.08em;
 }
 
-/* All home rings share one container; orbit radius set in SVG paths only */
-
 @media (prefers-reduced-motion: no-preference) {
-  body.page-home .home-hero-text-ring--outermost .home-hero-text-ring__svg {
-    animation: site-text-ring-rotate 96s linear infinite;
+  body.page-home .home-hero-text-ring:nth-child(odd) .home-hero-text-ring__svg {
+    animation: site-text-ring-rotate 88s linear infinite;
   }
 
-  body.page-home .home-hero-text-ring--research .home-hero-text-ring__svg {
-    animation: site-text-ring-rotate 80s linear infinite reverse;
+  body.page-home .home-hero-text-ring:nth-child(even) .home-hero-text-ring__svg {
+    animation: site-text-ring-rotate 72s linear infinite reverse;
   }
+}
 
-  body.page-home .home-hero-text-ring--outer .home-hero-text-ring__svg {
-    animation: site-text-ring-rotate 80s linear infinite;
-  }
-
-  body.page-home .home-hero-text-ring--middle .home-hero-text-ring__svg {
-    animation: site-text-ring-rotate 80s linear infinite reverse;
-  }
-
-  body.page-home .home-hero-text-ring--inner .home-hero-text-ring__svg {
-    animation: site-text-ring-rotate 80s linear infinite reverse;
-  }
-
-  body.page-home .home-hero-text-ring--innermost .home-hero-text-ring__svg {
-    animation: site-text-ring-rotate 60s linear infinite;
+@media (max-width: 991px) {
+  body.page-home .home-hero-band__text-rings {
+    --home-hero-text-ring-size: clamp(108px, 22vw, 140px);
+    --home-hero-text-ring-size-wide: clamp(124px, 26vw, 160px);
+    gap: clamp(20px, 4vw, 32px);
   }
 }
 
 @media (max-width: 767px) {
   body.page-home .home-hero-band__text-rings {
-    --home-hero-text-ring-size: clamp(240px, 88vw, 360px);
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    padding-inline: clamp(12px, 4vw, 20px);
     margin-top: clamp(10px, 1.6vh, 20px);
   }
 
+  body.page-home .home-hero-band__text-rings::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.page-home .home-hero-text-ring {
+    scroll-snap-align: center;
+    --home-hero-text-ring-size: clamp(100px, 28vw, 132px);
+    --home-hero-text-ring-size-wide: clamp(112px, 32vw, 148px);
+  }
+
   body.page-home .home-hero-text-ring__label {
-    font-size: 7px;
-    letter-spacing: 0.16em;
+    font-size: 6px;
+    letter-spacing: 0.12em;
   }
 
-  body.page-home .home-hero-text-ring--outermost .home-hero-text-ring__label {
-    font-size: 4.75px;
-    letter-spacing: 0.08em;
-  }
-
+  body.page-home .home-hero-text-ring--outermost .home-hero-text-ring__label,
   body.page-home .home-hero-text-ring--research .home-hero-text-ring__label {
-    font-size: 4.25px;
-    letter-spacing: 0.05em;
+    font-size: 4.75px;
+    letter-spacing: 0.06em;
   }
 
   body.page-home .home-hero-text-ring--outer .home-hero-text-ring__label {
     font-size: 6.25px;
-    letter-spacing: 0.12em;
   }
 
   body.page-home .home-hero-text-ring--middle .home-hero-text-ring__label {
-    font-size: 5.25px;
-    letter-spacing: 0.08em;
+    font-size: 5.75px;
   }
 
   body.page-home .home-hero-text-ring--inner .home-hero-text-ring__label {
-    font-size: 5.5px;
-    letter-spacing: 0.1em;
+    font-size: 6px;
   }
 
   body.page-home .home-hero-text-ring--innermost .home-hero-text-ring__label {
-    font-size: 5px;
-    letter-spacing: 0.1em;
+    font-size: 5.5px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body.page-home .home-hero-text-ring--outermost .home-hero-text-ring__svg,
-  body.page-home .home-hero-text-ring--research .home-hero-text-ring__svg,
-  body.page-home .home-hero-text-ring--outer .home-hero-text-ring__svg,
-  body.page-home .home-hero-text-ring--middle .home-hero-text-ring__svg,
-  body.page-home .home-hero-text-ring--inner .home-hero-text-ring__svg,
-  body.page-home .home-hero-text-ring--innermost .home-hero-text-ring__svg {
+  body.page-home .home-hero-text-ring .home-hero-text-ring__svg {
     animation: none;
   }
 }
@@ -1851,25 +1852,6 @@ body.page-home .home-hero-projects__grid--stack #hero-project-makeability .home-
 body.page-home .home-hero-projects__grid--stack #hero-project-ibm .home-hero-projects__thumb img {
   max-width: min(94%, 100%);
   max-height: 92%;
-}
-
-/* Lead — Sound Transit: order only; same shell/typography as sibling cards */
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__card--lead::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: clamp(14px, 1.5vw, 20px);
-  right: clamp(14px, 1.5vw, 20px);
-  height: 2px;
-  border-radius: 2px;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 77, 184, 0.55) 0%,
-    rgba(180, 122, 255, 0.35) 55%,
-    transparent 100%
-  );
-  opacity: 0.65;
-  pointer-events: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -7544,7 +7526,7 @@ body.page-about.site-editorial .about-portrait__frame {
   }
 }
 
-/* Circular decorative text rings — about portrait orbit */
+/* Circular decorative text ring — single orbit around about portrait */
 body.page-about.site-editorial .about-portrait__text-rings {
   --about-portrait-text-ring-size: min(150%, 560px);
   position: absolute;
@@ -7560,12 +7542,10 @@ body.page-about.site-editorial .about-portrait__text-rings {
 }
 
 body.page-about.site-editorial .about-portrait__text-rings .site-text-ring {
-  position: absolute;
-  inset: 0;
-  margin: 0;
+  position: relative;
   width: 100%;
   height: 100%;
-  transform: none;
+  margin: 0;
   transform-origin: 50% 50%;
 }
 
@@ -7579,44 +7559,17 @@ body.site-editorial .site-text-ring__svg {
 
 body.site-editorial .site-text-ring__text {
   font-family: var(--tj-ff-body);
-  font-size: 8.5px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
+  font-size: 6.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   fill: currentColor;
 }
 
-body.page-about.site-editorial .site-text-ring--outermost .site-text-ring__text {
-  font-size: 5.5px;
-  letter-spacing: 0.1em;
-  fill: rgba(255, 255, 255, 0.28);
-}
-
-body.page-about.site-editorial .site-text-ring--research .site-text-ring__text {
-  font-size: 5px;
-  letter-spacing: 0.06em;
-  fill: rgba(255, 255, 255, 0.34);
-}
-
-body.page-about.site-editorial .site-text-ring--outer .site-text-ring__text {
-  font-size: 7px;
-  letter-spacing: 0.16em;
-}
-
-body.page-about.site-editorial .site-text-ring--middle .site-text-ring__text {
+body.page-about.site-editorial .site-text-ring--solo .site-text-ring__text {
   font-size: 6px;
   letter-spacing: 0.1em;
-}
-
-body.page-about.site-editorial .site-text-ring--inner .site-text-ring__text {
-  font-size: 6.25px;
-  letter-spacing: 0.14em;
-}
-
-body.page-about.site-editorial .site-text-ring--innermost .site-text-ring__text {
-  font-size: 5.5px;
-  letter-spacing: 0.12em;
-  font-weight: 600;
+  fill: rgba(255, 255, 255, 0.34);
 }
 
 body.site-editorial .site-text-ring__word--accent {
@@ -7633,31 +7586,9 @@ body.site-editorial .site-text-ring__sep {
   letter-spacing: 0.08em;
 }
 
-/* All about portrait rings share one container; orbit radius set in SVG paths only */
-
 @media (prefers-reduced-motion: no-preference) {
-  body.page-about.site-editorial .site-text-ring--outermost .site-text-ring__svg {
-    animation: site-text-ring-rotate 96s linear infinite;
-  }
-
-  body.page-about.site-editorial .site-text-ring--research .site-text-ring__svg {
-    animation: site-text-ring-rotate 80s linear infinite reverse;
-  }
-
-  body.page-about.site-editorial .site-text-ring--outer .site-text-ring__svg {
-    animation: site-text-ring-rotate 80s linear infinite;
-  }
-
-  body.page-about.site-editorial .site-text-ring--middle .site-text-ring__svg {
-    animation: site-text-ring-rotate 80s linear infinite reverse;
-  }
-
-  body.page-about.site-editorial .site-text-ring--inner .site-text-ring__svg {
-    animation: site-text-ring-rotate 80s linear infinite reverse;
-  }
-
-  body.page-about.site-editorial .site-text-ring--innermost .site-text-ring__svg {
-    animation: site-text-ring-rotate 60s linear infinite;
+  body.page-about.site-editorial .site-text-ring--solo .site-text-ring__svg {
+    animation: site-text-ring-rotate 72s linear infinite;
   }
 }
 
@@ -7678,34 +7609,9 @@ body.site-editorial .site-text-ring__sep {
     --about-portrait-text-ring-size: min(158%, 460px);
   }
 
-  body.page-about.site-editorial .site-text-ring--outermost .site-text-ring__text {
-    font-size: 4.75px;
-    letter-spacing: 0.08em;
-  }
-
-  body.page-about.site-editorial .site-text-ring--research .site-text-ring__text {
-    font-size: 4.25px;
-    letter-spacing: 0.05em;
-  }
-
-  body.page-about.site-editorial .site-text-ring--outer .site-text-ring__text {
-    font-size: 6.25px;
-    letter-spacing: 0.12em;
-  }
-
-  body.page-about.site-editorial .site-text-ring--middle .site-text-ring__text {
+  body.page-about.site-editorial .site-text-ring--solo .site-text-ring__text {
     font-size: 5.25px;
     letter-spacing: 0.08em;
-  }
-
-  body.page-about.site-editorial .site-text-ring--inner .site-text-ring__text {
-    font-size: 5.5px;
-    letter-spacing: 0.1em;
-  }
-
-  body.page-about.site-editorial .site-text-ring--innermost .site-text-ring__text {
-    font-size: 5px;
-    letter-spacing: 0.1em;
   }
 }
 
