@@ -2903,6 +2903,48 @@ const initCommunityGalleries = () => {
 
 const HOME_HERO_TEXT_RING_BASE_LETTER_SPACING_EM = 0.09;
 const HOME_HERO_TEXT_RING_SPACING_MICRO_DELTA_EM = 0.008;
+const HOME_HERO_TEXT_RING_RESEARCH_SPACING_DELTA_EM = 0.08;
+const HOME_HERO_TEXT_RING_RESEARCH_SPACING_MAX_EM = 0.18;
+
+const fitHomeHeroTextRingSpacing = (
+  textEl,
+  textPath,
+  targetLength,
+  tolerance,
+  minSpacingEm,
+  maxSpacingEm
+) => {
+  const charCount = textPath.getNumberOfChars();
+  const measuredLength = () => textPath.getSubStringLength(0, charCount);
+
+  let lo = minSpacingEm;
+  let hi = maxSpacingEm;
+  let bestEm = (minSpacingEm + maxSpacingEm) / 2;
+
+  for (let i = 0; i < 14; i += 1) {
+    const mid = (lo + hi) / 2;
+    textEl.style.letterSpacing = `${mid}em`;
+    const len = measuredLength();
+
+    if (len < targetLength - tolerance) {
+      lo = mid;
+    } else {
+      hi = mid;
+      bestEm = mid;
+    }
+  }
+
+  textEl.style.letterSpacing = `${bestEm}em`;
+
+  const finalLength = measuredLength();
+  if (finalLength < targetLength - tolerance) {
+    textEl.style.letterSpacing = `${maxSpacingEm}em`;
+  } else if (finalLength > targetLength + tolerance) {
+    textEl.style.letterSpacing = `${minSpacingEm}em`;
+  }
+
+  return measuredLength();
+};
 
 const fitHomeHeroTextRings = () => {
   if (!document.body.classList.contains("page-home")) {
@@ -2917,8 +2959,6 @@ const fitHomeHeroTextRings = () => {
   const sharedBaseSpacingEm = Number.isFinite(baseSpacingFromVar)
     ? baseSpacingFromVar
     : HOME_HERO_TEXT_RING_BASE_LETTER_SPACING_EM;
-  const minSpacingEm = Math.max(0, sharedBaseSpacingEm - HOME_HERO_TEXT_RING_SPACING_MICRO_DELTA_EM);
-  const maxSpacingEm = sharedBaseSpacingEm + HOME_HERO_TEXT_RING_SPACING_MICRO_DELTA_EM;
 
   document.querySelectorAll(".home-hero-text-ring").forEach((ring) => {
     const textEl = ring.querySelector(".home-hero-text-ring__text");
@@ -2928,6 +2968,13 @@ const fitHomeHeroTextRings = () => {
     if (!textEl || !textPath || !pathEl) {
       return;
     }
+
+    const isResearch = ring.classList.contains("home-hero-text-ring--research");
+    const spacingDelta = isResearch
+      ? HOME_HERO_TEXT_RING_RESEARCH_SPACING_DELTA_EM
+      : HOME_HERO_TEXT_RING_SPACING_MICRO_DELTA_EM;
+    const minSpacingEm = Math.max(0, sharedBaseSpacingEm - spacingDelta);
+    const maxSpacingEm = sharedBaseSpacingEm + spacingDelta;
 
     textEl.style.letterSpacing = `${sharedBaseSpacingEm}em`;
 
@@ -2966,11 +3013,28 @@ const fitHomeHeroTextRings = () => {
 
     textEl.style.letterSpacing = `${bestEm}em`;
 
-    const finalLength = measuredLength();
+    let finalLength = measuredLength();
     if (finalLength < targetLength - tolerance) {
       textEl.style.letterSpacing = `${maxSpacingEm}em`;
+      finalLength = measuredLength();
     } else if (finalLength > targetLength + tolerance) {
       textEl.style.letterSpacing = `${minSpacingEm}em`;
+      finalLength = measuredLength();
+    }
+
+    if (
+      isResearch &&
+      finalLength &&
+      Math.abs(finalLength - targetLength) > tolerance
+    ) {
+      finalLength = fitHomeHeroTextRingSpacing(
+        textEl,
+        textPath,
+        targetLength,
+        tolerance,
+        0,
+        HOME_HERO_TEXT_RING_RESEARCH_SPACING_MAX_EM
+      );
     }
   });
 };
