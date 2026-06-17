@@ -7325,12 +7325,19 @@ body.page-about.site-editorial .about-portrait {
   margin: 0;
 }
 
+body.page-about.site-editorial .about-portrait__wrap {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
 body.page-about.site-editorial .about-portrait__frame {
   position: relative;
   aspect-ratio: 9 / 16;
   width: 100%;
-  max-width: 360px;
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
   border-radius: clamp(16px, 2vw, 24px);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.14);
@@ -7344,15 +7351,87 @@ body.page-about.site-editorial .about-portrait__frame {
 }
 
 @media only screen and (min-width: 992px) {
-  body.page-about.site-editorial .about-portrait__frame {
+  body.page-about.site-editorial .about-portrait__wrap {
     margin: 0;
     max-width: none;
+    transform: rotate(-2deg);
+    transform-origin: center center;
+  }
+
+  body.page-about.site-editorial .about-portrait__frame {
     width: 100%;
     max-height: min(72vh, 560px);
     height: auto;
     aspect-ratio: 9 / 16;
-    transform: rotate(-2deg);
-    transform-origin: center center;
+  }
+}
+
+/* Circular decorative text ring — portrait orbit */
+body.site-editorial .site-text-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(118%, 420px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 3;
+  color: rgba(255, 255, 255, 0.36);
+}
+
+body.site-editorial .site-text-ring__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transform-origin: center center;
+}
+
+body.site-editorial .site-text-ring__text {
+  font-family: var(--tj-ff-body);
+  font-size: 8.5px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  fill: currentColor;
+}
+
+body.site-editorial .site-text-ring__word--accent {
+  fill: var(--site-accent);
+  fill-opacity: 0.72;
+}
+
+body.site-editorial .site-text-ring__sep {
+  fill: rgba(255, 255, 255, 0.22);
+  letter-spacing: 0.08em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body.site-editorial .site-text-ring__svg {
+    animation: site-text-ring-rotate 80s linear infinite;
+  }
+}
+
+@keyframes site-text-ring-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.site-editorial .site-text-ring__svg {
+    animation: none;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  body.page-about.site-editorial .site-text-ring {
+    width: 124%;
+  }
+
+  body.site-editorial .site-text-ring__text {
+    font-size: 7.5px;
+    letter-spacing: 0.16em;
   }
 }
 
