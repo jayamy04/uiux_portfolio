@@ -939,13 +939,6 @@ body.page-home .home-hero-text-ring--outer {
   left: 7.95%;
 }
 
-body.page-home .home-hero-text-ring--middle {
-  width: 69.9%;
-  height: 69.9%;
-  top: 15.05%;
-  left: 15.05%;
-}
-
 body.page-home .home-hero-text-ring--inner {
   width: 55.7%;
   height: 55.7%;
@@ -966,10 +959,6 @@ body.page-home .home-hero-text-ring--innermost {
   }
 
   body.page-home .home-hero-text-ring--outer .home-hero-text-ring__svg {
-    animation: site-text-ring-rotate 80s linear infinite;
-  }
-
-  body.page-home .home-hero-text-ring--middle .home-hero-text-ring__svg {
     animation: site-text-ring-rotate 80s linear infinite;
   }
 
@@ -1004,11 +993,6 @@ body.page-home .home-hero-text-ring--innermost {
     font-size: 8.5px;
   }
 
-  body.page-home .home-hero-text-ring--middle .home-hero-text-ring__label {
-    font-size: 6.75px;
-    letter-spacing: 0.1em;
-  }
-
   body.page-home .home-hero-text-ring--inner .home-hero-text-ring__label {
     font-size: 7.5px;
   }
@@ -1022,7 +1006,6 @@ body.page-home .home-hero-text-ring--innermost {
 @media (prefers-reduced-motion: reduce) {
   body.page-home .home-hero-text-ring--outermost .home-hero-text-ring__svg,
   body.page-home .home-hero-text-ring--outer .home-hero-text-ring__svg,
-  body.page-home .home-hero-text-ring--middle .home-hero-text-ring__svg,
   body.page-home .home-hero-text-ring--inner .home-hero-text-ring__svg,
   body.page-home .home-hero-text-ring--innermost .home-hero-text-ring__svg {
     animation: none;
@@ -1921,12 +1904,12 @@ body.page-home .home-hero-projects__grid--stack .home-hero-projects__card--lead:
 
 @media only screen and (min-width: 992px) {
   body.page-home .home-hero-projects__grid--stack {
-    gap: clamp(24px, 2vw, 36px);
+    gap: clamp(32px, 2.8vw, 52px);
   }
 
   body.page-home .home-hero-projects__grid--stack .home-hero-projects__card {
-    gap: clamp(12px, 1.1vh, 16px);
-    padding: clamp(16px, 1.4vw, 22px);
+    gap: clamp(24px, 2.2vw, 40px);
+    padding: clamp(20px, 1.6vw, 28px);
   }
 }
 
