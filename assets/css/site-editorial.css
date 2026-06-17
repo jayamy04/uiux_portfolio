@@ -8818,6 +8818,13 @@ body.page-nordstrom-rack .work-detail__accept-tag {
   color: var(--site-accent);
 }
 
+body.page-nordstrom-rack .work-detail__heading-note {
+  font-size: 0.55em;
+  font-weight: var(--tj-fw-sbold);
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.52);
+}
+
 /* Survey option lists — Google Forms–style checkbox / radio indicators */
 body.page-nordstrom-rack .work-detail__survey-options {
   list-style: none;
