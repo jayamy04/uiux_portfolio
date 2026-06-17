@@ -9562,6 +9562,68 @@ body.page-sound-transit .work-detail__gallery,
   }
 }
 
+/* Work detail — research question cards (reusable; Nordstrom Rack uses 2-col grid) */
+body.page-nordstrom-rack .work-detail__research-questions,
+.work-detail__research-questions {
+  margin: clamp(20px, 3vh, 28px) 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: clamp(14px, 2vw, 18px);
+}
+
+@media only screen and (min-width: 768px) {
+  body.page-nordstrom-rack .work-detail__research-questions,
+  .work-detail__research-questions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+body.page-nordstrom-rack .work-detail__research-question,
+.work-detail__research-question {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.5vw, 14px);
+  margin: 0;
+  padding: clamp(18px, 2.5vw, 24px);
+  border-radius: clamp(12px, 1.5vw, 18px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    linear-gradient(145deg, rgba(255, 77, 184, 0.06) 0%, rgba(255, 255, 255, 0.02) 42%, rgba(255, 255, 255, 0.015) 100%);
+  box-shadow:
+    0 0 0 1px rgba(255, 77, 184, 0.04),
+    0 12px 32px rgba(0, 0, 0, 0.18);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+body.page-nordstrom-rack .work-detail__research-question:hover,
+.work-detail__research-question:hover {
+  border-color: rgba(255, 77, 184, 0.22);
+  box-shadow:
+    0 0 0 1px rgba(255, 77, 184, 0.12),
+    0 0 24px rgba(255, 77, 184, 0.08),
+    0 12px 32px rgba(0, 0, 0, 0.22);
+}
+
+body.page-nordstrom-rack .work-detail__research-question-num,
+.work-detail__research-question-num {
+  font-family: var(--tj-ff-body);
+  font-size: clamp(0.8125rem, 0.9vw, 0.875rem);
+  font-weight: var(--tj-fw-sbold);
+  letter-spacing: 0.14em;
+  line-height: 1;
+  color: var(--site-accent);
+}
+
+body.page-nordstrom-rack .work-detail__research-question-text,
+.work-detail__research-question-text {
+  margin: 0;
+  font-family: var(--tj-ff-body);
+  font-size: clamp(1rem, 1.05vw, 1.0625rem);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.86);
+}
+
 /* Work detail — shared tiles, timeline, quote (neutral, no per-page skins) */
 .work-detail__tiles {
   display: grid;
