@@ -8880,19 +8880,39 @@ body.page-nordstrom-rack .work-detail__survey-part {
   margin: 0;
   padding: clamp(12px, 1.8vh, 18px) clamp(14px, 2vw, 20px);
   border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-top: 3px solid var(--site-accent);
-  background: rgba(255, 255, 255, 0.025);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  border: none;
+  background: linear-gradient(
+    180deg,
+    var(--site-accent) 0,
+    var(--site-accent) 3px,
+    rgba(255, 255, 255, 0.025) 3px,
+    rgba(255, 255, 255, 0.025) 100%
+  );
+  box-shadow:
+    inset 1px 0 0 rgba(255, 255, 255, 0.1),
+    inset -1px 0 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    0 8px 24px rgba(0, 0, 0, 0.14);
 }
 
 body.page-nordstrom-rack .work-detail__survey-part--intro {
-  border-top-color: rgba(255, 77, 184, 0.85);
-  background: linear-gradient(180deg, rgba(255, 77, 184, 0.06) 4px, rgba(255, 255, 255, 0.02) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 77, 184, 0.85) 0,
+    rgba(255, 77, 184, 0.85) 3px,
+    rgba(255, 77, 184, 0.06) 3px,
+    rgba(255, 255, 255, 0.02) 100%
+  );
 }
 
 body.page-nordstrom-rack .work-detail__survey-part--concluding {
-  border-top-color: rgba(180, 122, 255, 0.9);
+  background: linear-gradient(
+    180deg,
+    rgba(180, 122, 255, 0.9) 0,
+    rgba(180, 122, 255, 0.9) 3px,
+    rgba(255, 255, 255, 0.025) 3px,
+    rgba(255, 255, 255, 0.025) 100%
+  );
 }
 
 body.page-nordstrom-rack .work-detail__survey-part-header {
