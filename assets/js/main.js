@@ -2939,7 +2939,9 @@ const fitHomeHeroTextRings = () => {
     const baseSpacingEm = baseSpacingPx / fontSize || 0.08;
     const stretchRatio = targetLength / naturalLength;
     let lo = 0;
-    let hi = Math.max(baseSpacingEm * 4, 0.28);
+    let hi = naturalLength < targetLength
+      ? Math.max(0.75, baseSpacingEm * stretchRatio * 2)
+      : Math.max(baseSpacingEm * 4, 0.28);
     let bestEm = baseSpacingEm;
 
     for (let i = 0; i < 24; i += 1) {

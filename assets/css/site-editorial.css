@@ -856,8 +856,7 @@ body.page-home .home-hero-band__ambient {
 
 /* Home — hero circular text rings (labeled grid below tagline) */
 body.page-home .home-hero-band__text-rings {
-  --home-hero-text-ring-size: clamp(148px, 14vw, 188px);
-  --home-hero-text-ring-size-wide: clamp(168px, 16vw, 208px);
+  --home-hero-text-ring-font-size: 22px;
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: clamp(12px, 1.8vw, 24px);
@@ -942,8 +941,8 @@ body.page-home .home-landing__split-head--spread {
 body.page-home .home-hero-text-ring {
   position: relative;
   flex: 0 0 auto;
-  width: var(--home-hero-text-ring-size);
-  height: var(--home-hero-text-ring-size);
+  width: var(--home-hero-text-ring-size, clamp(160px, 14.5vw, 192px));
+  height: var(--home-hero-text-ring-size, clamp(160px, 14.5vw, 192px));
   aspect-ratio: 1;
   margin: 0;
   padding: clamp(6px, 0.8vw, 10px);
@@ -969,9 +968,32 @@ body.page-home .home-hero-band__text-ring-item:focus-within .home-hero-text-ring
   background: radial-gradient(circle at 50% 42%, rgba(255, 77, 184, 0.09) 0%, rgba(255, 77, 184, 0) 68%);
 }
 
-body.page-home .home-hero-text-ring--wide {
-  width: var(--home-hero-text-ring-size-wide);
-  height: var(--home-hero-text-ring-size-wide);
+body.page-home .home-hero-text-ring--education {
+  --home-hero-text-ring-size: clamp(192px, 18vw, 232px);
+}
+
+body.page-home .home-hero-text-ring--research {
+  --home-hero-text-ring-size: clamp(180px, 16.5vw, 216px);
+}
+
+body.page-home .home-hero-text-ring--design {
+  --home-hero-text-ring-size: clamp(168px, 15.5vw, 200px);
+}
+
+body.page-home .home-hero-text-ring--focus {
+  --home-hero-text-ring-size: clamp(164px, 15vw, 196px);
+}
+
+body.page-home .home-hero-text-ring--soft-skills {
+  --home-hero-text-ring-size: clamp(156px, 14.5vw, 188px);
+}
+
+body.page-home .home-hero-text-ring--hobbies {
+  --home-hero-text-ring-size: clamp(152px, 14vw, 180px);
+}
+
+body.page-home .home-hero-text-ring--companies {
+  --home-hero-text-ring-size: clamp(140px, 12.5vw, 168px);
 }
 
 body.page-home .home-hero-text-ring__svg {
@@ -985,49 +1007,13 @@ body.page-home .home-hero-text-ring__svg {
 body.page-home .home-hero-text-ring__text {
   fill: rgba(255, 255, 255, 0.78);
   font-family: var(--tj-ff-body);
-  font-size: 24px;
+  font-size: var(--home-hero-text-ring-font-size, 22px);
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
 }
 
-body.page-home .home-hero-text-ring--education .home-hero-text-ring__text,
-body.page-home .home-hero-text-ring--research .home-hero-text-ring__text,
-body.page-home .home-hero-text-ring--companies .home-hero-text-ring__text {
-  font-size: 20px;
-  letter-spacing: 0.07em;
-  fill: rgba(255, 255, 255, 0.72);
-}
-
-body.page-home .home-hero-text-ring--education .home-hero-text-ring__text {
-  font-size: 14px;
-  letter-spacing: 0.06em;
-}
-
-body.page-home .home-hero-text-ring--research .home-hero-text-ring__text {
-  font-size: 17px;
-  letter-spacing: 0.06em;
-}
-
-body.page-home .home-hero-text-ring--design .home-hero-text-ring__text {
-  font-size: 22px;
-  letter-spacing: 0.1em;
-}
-
-body.page-home .home-hero-text-ring--focus .home-hero-text-ring__text {
-  font-size: 23px;
-  letter-spacing: 0.09em;
-  fill: rgba(255, 255, 255, 0.76);
-}
-
-body.page-home .home-hero-text-ring--soft-skills .home-hero-text-ring__text {
-  font-size: 24px;
-  letter-spacing: 0.09em;
-}
-
 body.page-home .home-hero-text-ring--hobbies .home-hero-text-ring__text {
-  font-size: 19px;
-  letter-spacing: 0.08em;
   font-weight: 600;
 }
 
@@ -1057,8 +1043,7 @@ body.page-home .home-hero-text-ring__sep {
 
 @media (max-width: 991px) {
   body.page-home .home-hero-band__text-rings {
-    --home-hero-text-ring-size: clamp(136px, 18vw, 176px);
-    --home-hero-text-ring-size-wide: clamp(152px, 20vw, 192px);
+    --home-hero-text-ring-font-size: 20px;
     grid-template-columns: repeat(6, minmax(0, 1fr));
     max-width: 100%;
     column-gap: clamp(10px, 2vw, 18px);
@@ -1079,6 +1064,34 @@ body.page-home .home-hero-text-ring__sep {
 
   body.page-home .home-hero-band__text-ring-item:nth-child(7) {
     grid-column: 5 / span 2;
+  }
+
+  body.page-home .home-hero-text-ring--education {
+    --home-hero-text-ring-size: clamp(168px, 20vw, 204px);
+  }
+
+  body.page-home .home-hero-text-ring--research {
+    --home-hero-text-ring-size: clamp(160px, 18.5vw, 192px);
+  }
+
+  body.page-home .home-hero-text-ring--design {
+    --home-hero-text-ring-size: clamp(152px, 17.5vw, 180px);
+  }
+
+  body.page-home .home-hero-text-ring--focus {
+    --home-hero-text-ring-size: clamp(148px, 17vw, 176px);
+  }
+
+  body.page-home .home-hero-text-ring--soft-skills {
+    --home-hero-text-ring-size: clamp(144px, 16.5vw, 168px);
+  }
+
+  body.page-home .home-hero-text-ring--hobbies {
+    --home-hero-text-ring-size: clamp(140px, 16vw, 164px);
+  }
+
+  body.page-home .home-hero-text-ring--companies {
+    --home-hero-text-ring-size: clamp(132px, 15vw, 156px);
   }
 }
 
@@ -1103,37 +1116,36 @@ body.page-home .home-hero-text-ring__sep {
     max-width: min(100%, 240px);
   }
 
-  body.page-home .home-hero-text-ring {
-    --home-hero-text-ring-size: clamp(132px, 38vw, 168px);
-    --home-hero-text-ring-size-wide: clamp(148px, 42vw, 184px);
+  body.page-home .home-hero-band__text-rings {
+    --home-hero-text-ring-font-size: 20px;
   }
 
-  body.page-home .home-hero-text-ring__text {
-    font-size: 20px;
-    letter-spacing: 0.09em;
+  body.page-home .home-hero-text-ring--education {
+    --home-hero-text-ring-size: clamp(148px, 40vw, 184px);
   }
 
-  body.page-home .home-hero-text-ring--education .home-hero-text-ring__text,
-  body.page-home .home-hero-text-ring--research .home-hero-text-ring__text,
-  body.page-home .home-hero-text-ring--companies .home-hero-text-ring__text {
-    font-size: 18px;
-    letter-spacing: 0.06em;
+  body.page-home .home-hero-text-ring--research {
+    --home-hero-text-ring-size: clamp(140px, 38vw, 172px);
   }
 
-  body.page-home .home-hero-text-ring--design .home-hero-text-ring__text {
-    font-size: 20px;
+  body.page-home .home-hero-text-ring--design {
+    --home-hero-text-ring-size: clamp(136px, 36vw, 164px);
   }
 
-  body.page-home .home-hero-text-ring--focus .home-hero-text-ring__text {
-    font-size: 19px;
+  body.page-home .home-hero-text-ring--focus {
+    --home-hero-text-ring-size: clamp(132px, 35vw, 160px);
   }
 
-  body.page-home .home-hero-text-ring--soft-skills .home-hero-text-ring__text {
-    font-size: 20px;
+  body.page-home .home-hero-text-ring--soft-skills {
+    --home-hero-text-ring-size: clamp(128px, 34vw, 156px);
   }
 
-  body.page-home .home-hero-text-ring--hobbies .home-hero-text-ring__text {
-    font-size: 18px;
+  body.page-home .home-hero-text-ring--hobbies {
+    --home-hero-text-ring-size: clamp(124px, 33vw, 152px);
+  }
+
+  body.page-home .home-hero-text-ring--companies {
+    --home-hero-text-ring-size: clamp(120px, 32vw, 148px);
   }
 }
 
