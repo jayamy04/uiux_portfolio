@@ -2938,9 +2938,9 @@ const fitHomeHeroTextRings = () => {
     const baseSpacingPx = parseFloat(styles.letterSpacing) || 0;
     const baseSpacingEm = baseSpacingPx / fontSize || 0.08;
     const stretchRatio = targetLength / naturalLength;
-    let lo = baseSpacingEm * Math.min(0.55, stretchRatio * 0.75);
-    let hi = baseSpacingEm * Math.max(1.45, stretchRatio * 1.35);
-    let bestEm = baseSpacingEm * stretchRatio;
+    let lo = 0;
+    let hi = Math.max(baseSpacingEm * 4, 0.28);
+    let bestEm = baseSpacingEm;
 
     for (let i = 0; i < 24; i += 1) {
       const mid = (lo + hi) / 2;

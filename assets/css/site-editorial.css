@@ -999,6 +999,11 @@ body.page-home .home-hero-text-ring--companies .home-hero-text-ring__text {
   fill: rgba(255, 255, 255, 0.72);
 }
 
+body.page-home .home-hero-text-ring--education .home-hero-text-ring__text {
+  font-size: 14px;
+  letter-spacing: 0.06em;
+}
+
 body.page-home .home-hero-text-ring--research .home-hero-text-ring__text {
   font-size: 17px;
   letter-spacing: 0.06em;
