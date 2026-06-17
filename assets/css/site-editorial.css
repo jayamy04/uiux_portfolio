@@ -854,26 +854,84 @@ body.page-home .home-hero-band__ambient {
   display: none;
 }
 
-/* Home — hero circular text rings (below tagline, side-by-side) */
+/* Home — hero circular text rings (labeled grid below tagline) */
 body.page-home .home-hero-band__text-rings {
-  --home-hero-text-ring-size: clamp(180px, 17vw, 220px);
-  --home-hero-text-ring-size-wide: clamp(200px, 19vw, 240px);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  align-self: center;
-  gap: clamp(20px, 2.8vw, 36px);
+  --home-hero-text-ring-size: clamp(148px, 14vw, 188px);
+  --home-hero-text-ring-size-wide: clamp(168px, 16vw, 208px);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(12px, 1.8vw, 24px);
+  row-gap: clamp(20px, 2.4vh, 32px);
   width: 100%;
-  max-width: 100%;
-  min-height: var(--home-hero-text-ring-size-wide);
-  margin: clamp(12px, 2vh, 28px) auto 0;
-  padding: clamp(4px, 0.8vh, 10px) clamp(8px, 2vw, 16px);
-  pointer-events: none;
+  max-width: min(100%, 980px);
+  margin: clamp(16px, 2.4vh, 32px) auto 0;
+  padding: clamp(8px, 1.2vh, 14px) clamp(4px, 1vw, 8px);
+  pointer-events: auto;
   z-index: 1;
   flex-shrink: 0;
   overflow: visible;
+}
+
+body.page-home .home-hero-band__text-ring-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: clamp(8px, 1vh, 12px);
+  min-width: 0;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body.page-home .home-hero-band__text-ring-item:nth-child(-n + 4) {
+  grid-column: span 3;
+}
+
+body.page-home .home-hero-band__text-ring-item:nth-child(5) {
+  grid-column: 1 / span 4;
+}
+
+body.page-home .home-hero-band__text-ring-item:nth-child(6) {
+  grid-column: 5 / span 4;
+}
+
+body.page-home .home-hero-band__text-ring-item:nth-child(7) {
+  grid-column: 9 / span 4;
+}
+
+body.page-home .home-hero-band__text-ring-item:hover,
+body.page-home .home-hero-band__text-ring-item:focus-within {
+  transform: translateY(-4px);
+}
+
+body.page-home .home-hero-band__text-ring-label {
+  margin: 0;
+  padding: 0.38rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 77, 184, 0.14);
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow: 0 0 18px rgba(255, 77, 184, 0.04);
+  color: rgba(255, 255, 255, 0.46);
+  font-family: var(--tj-ff-body);
+  font-size: clamp(0.58rem, 0.55rem + 0.18vw, 0.68rem);
+  font-weight: 600;
+  font-variant: all-small-caps;
+  letter-spacing: 0.2em;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+body.page-home .home-hero-band__text-ring-item:hover .home-hero-band__text-ring-label,
+body.page-home .home-hero-band__text-ring-item:focus-within .home-hero-band__text-ring-label {
+  color: rgba(255, 77, 184, 0.92);
+  border-color: rgba(255, 77, 184, 0.38);
+  background: rgba(255, 77, 184, 0.07);
+  box-shadow: 0 0 22px rgba(255, 77, 184, 0.12);
 }
 
 body.page-home .home-landing__split-col--headline,
@@ -888,8 +946,27 @@ body.page-home .home-hero-text-ring {
   height: var(--home-hero-text-ring-size);
   aspect-ratio: 1;
   margin: 0;
+  padding: clamp(6px, 0.8vw, 10px);
   overflow: visible;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 42%, rgba(255, 77, 184, 0.05) 0%, rgba(255, 77, 184, 0) 62%);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 0 0 1px rgba(255, 77, 184, 0.1) inset,
+    0 0 28px rgba(255, 77, 184, 0.06);
   transform-origin: 50% 50%;
+  transition:
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+body.page-home .home-hero-band__text-ring-item:hover .home-hero-text-ring,
+body.page-home .home-hero-band__text-ring-item:focus-within .home-hero-text-ring {
+  box-shadow:
+    0 0 0 1px rgba(255, 77, 184, 0.22),
+    0 0 0 1px rgba(255, 77, 184, 0.14) inset,
+    0 0 36px rgba(255, 77, 184, 0.14);
+  background: radial-gradient(circle at 50% 42%, rgba(255, 77, 184, 0.09) 0%, rgba(255, 77, 184, 0) 68%);
 }
 
 body.page-home .home-hero-text-ring--wide {
@@ -905,7 +982,7 @@ body.page-home .home-hero-text-ring__svg {
   transform-origin: center center;
 }
 
-body.page-home .home-hero-text-ring__label {
+body.page-home .home-hero-text-ring__text {
   fill: rgba(255, 255, 255, 0.78);
   font-family: var(--tj-ff-body);
   font-size: 24px;
@@ -914,31 +991,37 @@ body.page-home .home-hero-text-ring__label {
   text-transform: uppercase;
 }
 
-body.page-home .home-hero-text-ring--outermost .home-hero-text-ring__label,
-body.page-home .home-hero-text-ring--research .home-hero-text-ring__label {
-  font-size: 22px;
+body.page-home .home-hero-text-ring--education .home-hero-text-ring__text,
+body.page-home .home-hero-text-ring--research .home-hero-text-ring__text,
+body.page-home .home-hero-text-ring--companies .home-hero-text-ring__text {
+  font-size: 20px;
   letter-spacing: 0.07em;
   fill: rgba(255, 255, 255, 0.72);
 }
 
-body.page-home .home-hero-text-ring--outer .home-hero-text-ring__label {
-  font-size: 24px;
+body.page-home .home-hero-text-ring--research .home-hero-text-ring__text {
+  font-size: 17px;
+  letter-spacing: 0.06em;
+}
+
+body.page-home .home-hero-text-ring--design .home-hero-text-ring__text {
+  font-size: 22px;
   letter-spacing: 0.1em;
 }
 
-body.page-home .home-hero-text-ring--middle .home-hero-text-ring__label {
+body.page-home .home-hero-text-ring--focus .home-hero-text-ring__text {
   font-size: 23px;
   letter-spacing: 0.09em;
   fill: rgba(255, 255, 255, 0.76);
 }
 
-body.page-home .home-hero-text-ring--inner .home-hero-text-ring__label {
+body.page-home .home-hero-text-ring--soft-skills .home-hero-text-ring__text {
   font-size: 24px;
   letter-spacing: 0.09em;
 }
 
-body.page-home .home-hero-text-ring--innermost .home-hero-text-ring__label {
-  font-size: 22px;
+body.page-home .home-hero-text-ring--hobbies .home-hero-text-ring__text {
+  font-size: 19px;
   letter-spacing: 0.08em;
   font-weight: 600;
 }
@@ -958,76 +1041,102 @@ body.page-home .home-hero-text-ring__sep {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  body.page-home .home-hero-text-ring:nth-child(odd) .home-hero-text-ring__svg {
+  body.page-home .home-hero-band__text-ring-item:nth-child(odd) .home-hero-text-ring__svg {
     animation: site-text-ring-rotate 88s linear infinite;
   }
 
-  body.page-home .home-hero-text-ring:nth-child(even) .home-hero-text-ring__svg {
+  body.page-home .home-hero-band__text-ring-item:nth-child(even) .home-hero-text-ring__svg {
     animation: site-text-ring-rotate 72s linear infinite reverse;
   }
 }
 
 @media (max-width: 991px) {
   body.page-home .home-hero-band__text-rings {
-    --home-hero-text-ring-size: clamp(170px, 22vw, 210px);
-    --home-hero-text-ring-size-wide: clamp(190px, 24vw, 230px);
-    gap: clamp(18px, 3.5vw, 28px);
+    --home-hero-text-ring-size: clamp(136px, 18vw, 176px);
+    --home-hero-text-ring-size-wide: clamp(152px, 20vw, 192px);
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    max-width: 100%;
+    column-gap: clamp(10px, 2vw, 18px);
+    row-gap: clamp(18px, 2.2vh, 28px);
+  }
+
+  body.page-home .home-hero-band__text-ring-item:nth-child(-n + 4) {
+    grid-column: span 2;
+  }
+
+  body.page-home .home-hero-band__text-ring-item:nth-child(5) {
+    grid-column: 1 / span 2;
+  }
+
+  body.page-home .home-hero-band__text-ring-item:nth-child(6) {
+    grid-column: 3 / span 2;
+  }
+
+  body.page-home .home-hero-band__text-ring-item:nth-child(7) {
+    grid-column: 5 / span 2;
   }
 }
 
 @media (max-width: 767px) {
   body.page-home .home-hero-band__text-rings {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    overflow-x: auto;
-    overflow-y: visible;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x proximity;
-    scrollbar-width: none;
-    padding-inline: clamp(12px, 4vw, 20px);
-    margin-top: clamp(10px, 1.6vh, 20px);
-    min-height: clamp(180px, 56vw, 215px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(16px, 4vw, 24px);
+    max-width: 100%;
+    padding-inline: clamp(8px, 3vw, 16px);
+    margin-top: clamp(12px, 1.8vh, 22px);
   }
 
-  body.page-home .home-hero-band__text-rings::-webkit-scrollbar {
-    display: none;
+  body.page-home .home-hero-band__text-ring-item {
+    flex: 0 1 calc(50% - clamp(8px, 2vw, 12px));
+    max-width: calc(50% - clamp(8px, 2vw, 12px));
+  }
+
+  body.page-home .home-hero-band__text-ring-item:nth-child(7) {
+    flex: 0 1 100%;
+    max-width: min(100%, 240px);
   }
 
   body.page-home .home-hero-text-ring {
-    scroll-snap-align: center;
-    --home-hero-text-ring-size: clamp(168px, 52vw, 200px);
-    --home-hero-text-ring-size-wide: clamp(180px, 56vw, 215px);
+    --home-hero-text-ring-size: clamp(132px, 38vw, 168px);
+    --home-hero-text-ring-size-wide: clamp(148px, 42vw, 184px);
   }
 
-  body.page-home .home-hero-text-ring__label {
-    font-size: 22px;
+  body.page-home .home-hero-text-ring__text {
+    font-size: 20px;
     letter-spacing: 0.09em;
   }
 
-  body.page-home .home-hero-text-ring--outermost .home-hero-text-ring__label,
-  body.page-home .home-hero-text-ring--research .home-hero-text-ring__label {
-    font-size: 20px;
+  body.page-home .home-hero-text-ring--education .home-hero-text-ring__text,
+  body.page-home .home-hero-text-ring--research .home-hero-text-ring__text,
+  body.page-home .home-hero-text-ring--companies .home-hero-text-ring__text {
+    font-size: 18px;
     letter-spacing: 0.06em;
   }
 
-  body.page-home .home-hero-text-ring--outer .home-hero-text-ring__label {
-    font-size: 22px;
-  }
-
-  body.page-home .home-hero-text-ring--middle .home-hero-text-ring__label {
-    font-size: 21px;
-  }
-
-  body.page-home .home-hero-text-ring--inner .home-hero-text-ring__label {
-    font-size: 22px;
-  }
-
-  body.page-home .home-hero-text-ring--innermost .home-hero-text-ring__label {
+  body.page-home .home-hero-text-ring--design .home-hero-text-ring__text {
     font-size: 20px;
+  }
+
+  body.page-home .home-hero-text-ring--focus .home-hero-text-ring__text {
+    font-size: 19px;
+  }
+
+  body.page-home .home-hero-text-ring--soft-skills .home-hero-text-ring__text {
+    font-size: 20px;
+  }
+
+  body.page-home .home-hero-text-ring--hobbies .home-hero-text-ring__text {
+    font-size: 18px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  body.page-home .home-hero-band__text-ring-item {
+    transition: none;
+  }
+
   body.page-home .home-hero-text-ring .home-hero-text-ring__svg {
     animation: none;
   }
