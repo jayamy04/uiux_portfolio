@@ -856,21 +856,28 @@ body.page-home .home-hero-band__ambient {
 
 /* Home — hero circular text rings (below tagline, side-by-side) */
 body.page-home .home-hero-band__text-rings {
-  --home-hero-text-ring-size: clamp(120px, 13vw, 156px);
-  --home-hero-text-ring-size-wide: clamp(140px, 15vw, 176px);
+  --home-hero-text-ring-size: clamp(180px, 17vw, 220px);
+  --home-hero-text-ring-size-wide: clamp(200px, 19vw, 240px);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  align-content: center;
   align-self: center;
-  gap: clamp(24px, 3vw, 40px);
+  gap: clamp(20px, 2.8vw, 36px);
   width: 100%;
   max-width: 100%;
+  min-height: var(--home-hero-text-ring-size-wide);
   margin: clamp(12px, 2vh, 28px) auto 0;
-  padding: 0 clamp(8px, 2vw, 16px);
+  padding: clamp(4px, 0.8vh, 10px) clamp(8px, 2vw, 16px);
   pointer-events: none;
   z-index: 1;
   flex-shrink: 0;
+  overflow: visible;
+}
+
+body.page-home .home-landing__split-col--headline,
+body.page-home .home-landing__split-head--spread {
   overflow: visible;
 }
 
@@ -879,7 +886,9 @@ body.page-home .home-hero-text-ring {
   flex: 0 0 auto;
   width: var(--home-hero-text-ring-size);
   height: var(--home-hero-text-ring-size);
+  aspect-ratio: 1;
   margin: 0;
+  overflow: visible;
   transform-origin: 50% 50%;
 }
 
@@ -897,55 +906,55 @@ body.page-home .home-hero-text-ring__svg {
 }
 
 body.page-home .home-hero-text-ring__label {
-  fill: rgba(255, 255, 255, 0.44);
+  fill: rgba(255, 255, 255, 0.78);
   font-family: var(--tj-ff-body);
-  font-size: 6.5px;
+  font-size: 24px;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 body.page-home .home-hero-text-ring--outermost .home-hero-text-ring__label,
 body.page-home .home-hero-text-ring--research .home-hero-text-ring__label {
-  font-size: 5.25px;
-  letter-spacing: 0.08em;
-  fill: rgba(255, 255, 255, 0.36);
+  font-size: 22px;
+  letter-spacing: 0.07em;
+  fill: rgba(255, 255, 255, 0.72);
 }
 
 body.page-home .home-hero-text-ring--outer .home-hero-text-ring__label {
-  font-size: 6.75px;
-  letter-spacing: 0.14em;
+  font-size: 24px;
+  letter-spacing: 0.1em;
 }
 
 body.page-home .home-hero-text-ring--middle .home-hero-text-ring__label {
-  font-size: 6.25px;
-  letter-spacing: 0.1em;
-  fill: rgba(255, 255, 255, 0.4);
+  font-size: 23px;
+  letter-spacing: 0.09em;
+  fill: rgba(255, 255, 255, 0.76);
 }
 
 body.page-home .home-hero-text-ring--inner .home-hero-text-ring__label {
-  font-size: 6.5px;
-  letter-spacing: 0.12em;
+  font-size: 24px;
+  letter-spacing: 0.09em;
 }
 
 body.page-home .home-hero-text-ring--innermost .home-hero-text-ring__label {
-  font-size: 6px;
-  letter-spacing: 0.1em;
+  font-size: 22px;
+  letter-spacing: 0.08em;
   font-weight: 600;
 }
 
 body.page-home .home-hero-text-ring__word--accent {
   fill: var(--site-accent);
-  fill-opacity: 0.82;
+  fill-opacity: 0.95;
 }
 
 body.page-home .home-hero-text-ring__word--playful {
-  fill-opacity: 0.92;
+  fill-opacity: 1;
 }
 
 body.page-home .home-hero-text-ring__sep {
-  fill: rgba(255, 255, 255, 0.28);
-  letter-spacing: 0.08em;
+  fill: rgba(255, 255, 255, 0.52);
+  letter-spacing: 0.06em;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -960,9 +969,9 @@ body.page-home .home-hero-text-ring__sep {
 
 @media (max-width: 991px) {
   body.page-home .home-hero-band__text-rings {
-    --home-hero-text-ring-size: clamp(108px, 22vw, 140px);
-    --home-hero-text-ring-size-wide: clamp(124px, 26vw, 160px);
-    gap: clamp(20px, 4vw, 32px);
+    --home-hero-text-ring-size: clamp(170px, 22vw, 210px);
+    --home-hero-text-ring-size-wide: clamp(190px, 24vw, 230px);
+    gap: clamp(18px, 3.5vw, 28px);
   }
 }
 
@@ -977,6 +986,7 @@ body.page-home .home-hero-text-ring__sep {
     scrollbar-width: none;
     padding-inline: clamp(12px, 4vw, 20px);
     margin-top: clamp(10px, 1.6vh, 20px);
+    min-height: clamp(180px, 56vw, 215px);
   }
 
   body.page-home .home-hero-band__text-rings::-webkit-scrollbar {
@@ -985,35 +995,35 @@ body.page-home .home-hero-text-ring__sep {
 
   body.page-home .home-hero-text-ring {
     scroll-snap-align: center;
-    --home-hero-text-ring-size: clamp(100px, 28vw, 132px);
-    --home-hero-text-ring-size-wide: clamp(112px, 32vw, 148px);
+    --home-hero-text-ring-size: clamp(168px, 52vw, 200px);
+    --home-hero-text-ring-size-wide: clamp(180px, 56vw, 215px);
   }
 
   body.page-home .home-hero-text-ring__label {
-    font-size: 6px;
-    letter-spacing: 0.12em;
+    font-size: 22px;
+    letter-spacing: 0.09em;
   }
 
   body.page-home .home-hero-text-ring--outermost .home-hero-text-ring__label,
   body.page-home .home-hero-text-ring--research .home-hero-text-ring__label {
-    font-size: 4.75px;
+    font-size: 20px;
     letter-spacing: 0.06em;
   }
 
   body.page-home .home-hero-text-ring--outer .home-hero-text-ring__label {
-    font-size: 6.25px;
+    font-size: 22px;
   }
 
   body.page-home .home-hero-text-ring--middle .home-hero-text-ring__label {
-    font-size: 5.75px;
+    font-size: 21px;
   }
 
   body.page-home .home-hero-text-ring--inner .home-hero-text-ring__label {
-    font-size: 6px;
+    font-size: 22px;
   }
 
   body.page-home .home-hero-text-ring--innermost .home-hero-text-ring__label {
-    font-size: 5.5px;
+    font-size: 20px;
   }
 }
 
