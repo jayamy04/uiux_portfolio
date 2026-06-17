@@ -825,17 +825,12 @@ body.page-home .home-landing-section--solo .home-landing__hero-statement {
 }
 
 body.page-home .home-landing__statement-kicker,
-body.page-home .home-landing__statement-title,
 body.page-home .home-landing__statement-tagline {
   display: inline;
   font: inherit;
   letter-spacing: inherit;
   text-transform: inherit;
   color: inherit;
-}
-
-body.page-home .home-landing__statement-title--accent {
-  color: var(--site-accent);
 }
 
 body.page-home .home-landing__statement-tagline {
@@ -1238,45 +1233,6 @@ body.page-home .home-landing__hero-statement + .home-hero-band__text-rings {
 body.page-home .home-hero-band__text-rings + .home-landing__hero-landing,
 body.page-home .home-landing__hero-statement + .home-landing__hero-landing {
   margin-top: clamp(16px, 2.4vh, 24px);
-}
-
-body.page-home .home-landing__hero-meta {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  max-width: 100%;
-  font-family: var(--tj-ff-body);
-  font-size: clamp(1rem, 1.35vw, 1.25rem);
-  font-weight: var(--tj-fw-medium);
-  line-height: 1.5;
-  letter-spacing: -0.01em;
-  color: rgba(255, 255, 255, 0.88);
-  text-wrap: pretty;
-}
-
-@media only screen and (min-width: 768px) {
-  body.page-home .home-landing__hero-meta {
-    white-space: nowrap;
-    text-wrap: nowrap;
-  }
-}
-
-body.page-home .home-landing__hero-meta .home-landing__statement-title {
-  display: inline;
-  font: inherit;
-  font-weight: var(--tj-fw-bold);
-  letter-spacing: inherit;
-  text-transform: inherit;
-  color: inherit;
-}
-
-body.page-home .home-landing__hero-meta .home-landing__statement-title--accent {
-  color: var(--site-accent);
-}
-
-body.page-home .home-landing__hero-meta-personal {
-  display: inline;
-  color: rgba(255, 255, 255, 0.6);
 }
 
 /* Home — hero project showcase grid */
