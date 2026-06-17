@@ -2929,7 +2929,26 @@ const fitHomeHeroTextRingSpacing = (
   maxSpacingEm
 ) => {
   const charCount = textPath.getNumberOfChars();
+  if (!charCount) {
+    return 0;
+  }
+
   const measuredLength = () => textPath.getSubStringLength(0, charCount);
+
+  textEl.style.letterSpacing = `${minSpacingEm}em`;
+  const lenAtMin = measuredLength();
+  textEl.style.letterSpacing = `${maxSpacingEm}em`;
+  const lenAtMax = measuredLength();
+
+  if (lenAtMax < targetLength - tolerance) {
+    textEl.style.letterSpacing = `${maxSpacingEm}em`;
+    return lenAtMax;
+  }
+
+  if (lenAtMin > targetLength + tolerance) {
+    textEl.style.letterSpacing = `${minSpacingEm}em`;
+    return lenAtMin;
+  }
 
   let lo = minSpacingEm;
   let hi = maxSpacingEm;
@@ -2949,14 +2968,6 @@ const fitHomeHeroTextRingSpacing = (
   }
 
   textEl.style.letterSpacing = `${bestEm}em`;
-
-  const finalLength = measuredLength();
-  if (finalLength < targetLength - tolerance) {
-    textEl.style.letterSpacing = `${maxSpacingEm}em`;
-  } else if (finalLength > targetLength + tolerance) {
-    textEl.style.letterSpacing = `${minSpacingEm}em`;
-  }
-
   return measuredLength();
 };
 
@@ -2974,7 +2985,7 @@ const fitHomeHeroTextRings = () => {
     ? baseSpacingFromVar
     : HOME_HERO_TEXT_RING_BASE_LETTER_SPACING_EM;
   const minSpacingEm = HOME_HERO_TEXT_RING_SPACING_MIN_EM;
-  const maxSpacingEm = HOME_HERO_TEXT_RING_SPACING_MAX_EM;
+  const maxSpacingCapEm = 0.55;
   const tolerance = HOME_HERO_TEXT_RING_FIT_TOLERANCE;
 
   document.querySelectorAll(".home-hero-text-ring").forEach((ring) => {
@@ -2999,46 +3010,49 @@ const fitHomeHeroTextRings = () => {
       return charCount ? textPath.getSubStringLength(0, charCount) : 0;
     };
 
-    let repeatCount = 1;
-    while (repeatCount <= HOME_HERO_TEXT_RING_MAX_REPEATS) {
+    let bestRepeatCount = 1;
+    let bestMaxSpacingEm = HOME_HERO_TEXT_RING_SPACING_MAX_EM;
+
+    for (let repeatCount = 1; repeatCount <= HOME_HERO_TEXT_RING_MAX_REPEATS; repeatCount += 1) {
       setHomeHeroTextPathRepeats(textPath, repeatCount);
+
+      let maxSpacingEm = HOME_HERO_TEXT_RING_SPACING_MAX_EM;
       textEl.style.letterSpacing = `${maxSpacingEm}em`;
-      if (measuredLength() >= targetLength - tolerance) {
+      let lenAtMax = measuredLength();
+
+      while (lenAtMax < targetLength - tolerance && maxSpacingEm < maxSpacingCapEm) {
+        maxSpacingEm += 0.03;
+        textEl.style.letterSpacing = `${maxSpacingEm}em`;
+        lenAtMax = measuredLength();
+      }
+
+      textEl.style.letterSpacing = `${minSpacingEm}em`;
+      const lenAtMin = measuredLength();
+
+      if (lenAtMax < targetLength - tolerance) {
+        continue;
+      }
+
+      if (lenAtMin > targetLength + tolerance) {
         break;
       }
-      repeatCount += 1;
+
+      bestRepeatCount = repeatCount;
+      bestMaxSpacingEm = maxSpacingEm;
     }
 
-    let finalLength = fitHomeHeroTextRingSpacing(
+    setHomeHeroTextPathRepeats(textPath, bestRepeatCount);
+    fitHomeHeroTextRingSpacing(
       textEl,
       textPath,
       targetLength,
       tolerance,
       minSpacingEm,
-      maxSpacingEm
+      bestMaxSpacingEm
     );
 
-    if (finalLength && Math.abs(finalLength - targetLength) <= tolerance) {
-      return;
-    }
-
-    if (finalLength < targetLength - tolerance && repeatCount < HOME_HERO_TEXT_RING_MAX_REPEATS) {
-      while (repeatCount < HOME_HERO_TEXT_RING_MAX_REPEATS) {
-        repeatCount += 1;
-        setHomeHeroTextPathRepeats(textPath, repeatCount);
-        finalLength = fitHomeHeroTextRingSpacing(
-          textEl,
-          textPath,
-          targetLength,
-          tolerance,
-          minSpacingEm,
-          maxSpacingEm
-        );
-        if (finalLength >= targetLength - tolerance) {
-          break;
-        }
-      }
-    }
+    textEl.style.letterSpacing =
+      textEl.style.letterSpacing || `${sharedBaseSpacingEm}em`;
   });
 };
 
@@ -3073,6 +3087,10 @@ const initHomeHeroTextRings = () => {
 
 const WORK_DETAIL_TOC_MIN_SECTIONS = 2;
 const WORK_DETAIL_TOC_SCROLL_OFFSET = "top 112px";
+const WORK_DETAIL_TOC_DESKTOP_MQ = "(min-width: 1320px)";
+const WORK_DETAIL_TOC_MOUNT_RETRY_MS = 100;
+const WORK_DETAIL_TOC_MOUNT_MAX_RETRIES = 60;
+const WORK_DETAIL_TOC_SMOOTHER_WAIT_MS = 5500;
 
 const slugifyWorkDetailHeading = (text) =>
   text
@@ -3082,6 +3100,294 @@ const slugifyWorkDetailHeading = (text) =>
 
 const getWorkDetailHeadingLabel = (heading) =>
   heading.textContent.replace(/\s+/g, " ").trim();
+
+const getScrollSmootherInstance = () =>
+  typeof ScrollSmoother !== "undefined" ? ScrollSmoother.get() : null;
+
+const pageUsesScrollSmoother = () =>
+  Boolean(document.querySelector("#has_smooth.has-smooth"));
+
+const waitForScrollSmootherReady = (callback) => {
+  if (!pageUsesScrollSmoother()) {
+    callback(null);
+    return;
+  }
+
+  const smootherNow = getScrollSmootherInstance();
+  if (smootherNow) {
+    callback(smootherNow);
+    return;
+  }
+
+  const startedAt = Date.now();
+  let settled = false;
+
+  const finish = (smoother) => {
+    if (settled) return;
+    settled = true;
+    window.removeEventListener("scrollsmoother:ready", onReady);
+    callback(smoother);
+  };
+
+  const onReady = (event) => {
+    finish(event.detail?.smoother || getScrollSmootherInstance());
+  };
+
+  window.addEventListener("scrollsmoother:ready", onReady, { once: true });
+
+  const tick = () => {
+    if (settled) return;
+    const smoother = getScrollSmootherInstance();
+    if (smoother) {
+      finish(smoother);
+      return;
+    }
+    if (Date.now() - startedAt >= WORK_DETAIL_TOC_SMOOTHER_WAIT_MS) {
+      finish(null);
+      return;
+    }
+    window.setTimeout(tick, WORK_DETAIL_TOC_MOUNT_RETRY_MS);
+  };
+
+  tick();
+};
+
+const scrollToWorkDetailHeading = (target) => {
+  const smoother = getScrollSmootherInstance();
+  if (smoother && typeof smoother.scrollTo === "function") {
+    smoother.scrollTo(target, true, WORK_DETAIL_TOC_SCROLL_OFFSET);
+    return;
+  }
+
+  if (typeof gsap !== "undefined" && typeof gsap.to === "function") {
+    gsap.to(window, {
+      duration: prefersReducedMotion() ? 0 : 0.55,
+      scrollTo: { y: target, offsetY: 112 },
+      ease: "power2.out",
+    });
+    return;
+  }
+
+  target.scrollIntoView({
+    behavior: prefersReducedMotion() ? "auto" : "smooth",
+    block: "start",
+  });
+};
+
+const createWorkDetailScrollSpy = (headings, setActiveLink) => {
+  if (prefersReducedMotion()) {
+    return { reconnect: () => {}, disconnect: () => {} };
+  }
+
+  let observer = null;
+  let trackedActiveId = null;
+
+  const connect = () => {
+    observer?.disconnect();
+    observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort(
+            (a, b) => a.boundingClientRect.top - b.boundingClientRect.top
+          );
+        if (!visible.length) return;
+
+        const id = visible[0].target.id;
+        if (!id || id === trackedActiveId) return;
+        trackedActiveId = id;
+        setActiveLink(id);
+      },
+      { rootMargin: "-18% 0px -62% 0px", threshold: 0 }
+    );
+    headings.forEach((heading) => observer.observe(heading));
+  };
+
+  connect();
+
+  return {
+    reconnect: connect,
+    disconnect: () => observer?.disconnect(),
+  };
+};
+
+const mountWorkDetailToc = (nav, article, state) => {
+  if (!nav || !article || nav.dataset.tocMounting === "true") return;
+
+  nav.dataset.tocMounting = "true";
+
+  const desktopMq = window.matchMedia(WORK_DETAIL_TOC_DESKTOP_MQ);
+  let mountRetries = 0;
+
+  const clearPin = () => {
+    state.pinTrigger?.kill();
+    state.pinTrigger = null;
+  };
+
+  const restoreToArticle = () => {
+    nav.classList.remove("work-detail__toc--detached");
+    if (state.mountPlaceholder?.parentNode) {
+      state.mountPlaceholder.parentNode.insertBefore(
+        nav,
+        state.mountPlaceholder.nextSibling
+      );
+      return;
+    }
+
+    const hero = article.querySelector(".work-detail__hero");
+    if (hero && nav.parentElement !== article) {
+      hero.insertAdjacentElement("afterend", nav);
+      return;
+    }
+
+    if (nav.parentElement !== article) {
+      article.prepend(nav);
+    }
+  };
+
+  const applyMount = () => {
+    clearPin();
+
+    const smoothWrapper = document.getElementById("smooth-wrapper");
+    const usesSmoother = pageUsesScrollSmoother();
+    const isDesktop = desktopMq.matches;
+
+    if (usesSmoother && !smoothWrapper) {
+      if (mountRetries < WORK_DETAIL_TOC_MOUNT_MAX_RETRIES) {
+        mountRetries += 1;
+        window.setTimeout(applyMount, WORK_DETAIL_TOC_MOUNT_RETRY_MS);
+        return;
+      }
+    }
+
+    mountRetries = 0;
+
+    if (isDesktop && smoothWrapper) {
+      if (!state.mountPlaceholder) {
+        state.mountPlaceholder = document.createComment("work-detail-toc");
+        nav.parentNode?.insertBefore(state.mountPlaceholder, nav);
+      }
+      if (nav.parentElement !== smoothWrapper) {
+        smoothWrapper.appendChild(nav);
+      }
+      nav.classList.add("work-detail__toc--detached");
+    } else {
+      restoreToArticle();
+      if (
+        !isDesktop &&
+        usesSmoother &&
+        getScrollSmootherInstance() &&
+        typeof ScrollTrigger !== "undefined"
+      ) {
+        state.pinTrigger = ScrollTrigger.create({
+          trigger: nav,
+          start: "top 88px",
+          endTrigger: article,
+          end: "bottom bottom",
+          pin: true,
+          pinSpacing: false,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+        });
+      }
+    }
+
+    nav.dataset.tocMounted = "true";
+    nav.dataset.tocMounting = "false";
+
+    if (typeof ScrollTrigger !== "undefined") {
+      ScrollTrigger.refresh();
+    }
+  };
+
+  applyMount();
+
+  if (!state.listenersBound) {
+    state.listenersBound = true;
+
+    let resizeTimer = null;
+    const scheduleRemount = () => {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(() => {
+        nav.dataset.tocMounted = "false";
+        applyMount();
+        state.scrollSpy?.reconnect();
+      }, 150);
+    };
+
+    desktopMq.addEventListener("change", scheduleRemount);
+    window.addEventListener("resize", scheduleRemount, { passive: true });
+
+    article.querySelectorAll("details").forEach((detailsEl) => {
+      detailsEl.addEventListener("toggle", () => {
+        window.setTimeout(() => {
+          if (typeof ScrollTrigger !== "undefined") {
+            ScrollTrigger.refresh();
+          }
+          state.scrollSpy?.reconnect();
+        }, 80);
+      });
+    });
+  }
+};
+
+const activateWorkDetailToc = (article, nav, headings) => {
+  if (article.dataset.tocActive === "true") return;
+  article.dataset.tocActive = "true";
+
+  const links = nav.querySelectorAll(".work-detail__toc-link");
+  let activeId = null;
+
+  const setActiveLink = (id) => {
+    if (!id || id === activeId) return;
+    activeId = id;
+    links.forEach((link) => {
+      const isActive = link.dataset.tocTarget === id;
+      link.classList.toggle("is-active", isActive);
+      link.closest(".work-detail__toc-item")?.classList.toggle("is-active", isActive);
+    });
+  };
+
+  const state = { pinTrigger: null, mountPlaceholder: null, scrollSpy: null };
+
+  if (!nav.dataset.tocClickBound) {
+    nav.dataset.tocClickBound = "true";
+    nav.addEventListener("click", (event) => {
+      const link = event.target.closest(".work-detail__toc-link");
+      if (!link) return;
+      event.preventDefault();
+
+      const id = link.dataset.tocTarget;
+      const target = id ? document.getElementById(id) : null;
+      if (!target) return;
+
+      const runScroll = () => {
+        scrollToWorkDetailHeading(target);
+        history.replaceState(null, "", `#${id}`);
+        setActiveLink(id);
+      };
+
+      if (pageUsesScrollSmoother() && !getScrollSmootherInstance()) {
+        waitForScrollSmootherReady(runScroll);
+        return;
+      }
+
+      runScroll();
+    });
+  }
+
+  state.scrollSpy = createWorkDetailScrollSpy(headings, setActiveLink);
+  mountWorkDetailToc(nav, article, state);
+
+  if (window.location.hash) {
+    const hashId = window.location.hash.slice(1);
+    if (headings.some((heading) => heading.id === hashId)) {
+      setActiveLink(hashId);
+    }
+  } else if (headings[0]?.id) {
+    setActiveLink(headings[0].id);
+  }
+};
 
 const initWorkDetailToc = () => {
   const article = document.querySelector(".work-detail");
@@ -3107,104 +3413,45 @@ const initWorkDetailToc = () => {
   article.dataset.tocInit = "true";
   article.classList.add("work-detail--has-toc");
 
-  const nav = document.createElement("nav");
-  nav.className = "work-detail__toc";
-  nav.setAttribute("aria-label", "On this page");
+  let nav = article.querySelector(".work-detail__toc");
+  if (!nav) {
+    nav = document.createElement("nav");
+    nav.className = "work-detail__toc";
+    nav.setAttribute("aria-label", "On this page");
 
-  const label = document.createElement("p");
-  label.className = "work-detail__toc-label";
-  label.textContent = "On this page";
+    const label = document.createElement("p");
+    label.className = "work-detail__toc-label";
+    label.textContent = "On this page";
 
-  const list = document.createElement("ol");
-  list.className = "work-detail__toc-list";
+    const list = document.createElement("ol");
+    list.className = "work-detail__toc-list";
 
-  headings.forEach((heading) => {
-    const item = document.createElement("li");
-    item.className = "work-detail__toc-item";
+    headings.forEach((heading) => {
+      const item = document.createElement("li");
+      item.className = "work-detail__toc-item";
 
-    const link = document.createElement("a");
-    link.className = "work-detail__toc-link";
-    link.href = `#${heading.id}`;
-    link.dataset.tocTarget = heading.id;
-    link.textContent = getWorkDetailHeadingLabel(heading);
+      const link = document.createElement("a");
+      link.className = "work-detail__toc-link";
+      link.href = `#${heading.id}`;
+      link.dataset.tocTarget = heading.id;
+      link.textContent = getWorkDetailHeadingLabel(heading);
 
-    item.appendChild(link);
-    list.appendChild(item);
-  });
-
-  nav.append(label, list);
-
-  const hero = article.querySelector(".work-detail__hero");
-  if (hero) {
-    hero.insertAdjacentElement("afterend", nav);
-  } else {
-    article.prepend(nav);
-  }
-
-  const links = nav.querySelectorAll(".work-detail__toc-link");
-  let activeId = null;
-
-  const setActiveLink = (id) => {
-    if (!id || id === activeId) return;
-    activeId = id;
-    links.forEach((link) => {
-      const isActive = link.dataset.tocTarget === id;
-      link.classList.toggle("is-active", isActive);
-      link.closest(".work-detail__toc-item")?.classList.toggle("is-active", isActive);
+      item.appendChild(link);
+      list.appendChild(item);
     });
-  };
 
-  const scrollToHeading = (target) => {
-    const smoother =
-      typeof ScrollSmoother !== "undefined" ? ScrollSmoother.get() : null;
-    if (smoother) {
-      smoother.scrollTo(target, true, WORK_DETAIL_TOC_SCROLL_OFFSET);
-      return;
+    nav.append(label, list);
+
+    const hero = article.querySelector(".work-detail__hero");
+    if (hero) {
+      hero.insertAdjacentElement("afterend", nav);
+    } else {
+      article.prepend(nav);
     }
-    target.scrollIntoView({
-      behavior: prefersReducedMotion() ? "auto" : "smooth",
-      block: "start",
-    });
-  };
-
-  nav.addEventListener("click", (event) => {
-    const link = event.target.closest(".work-detail__toc-link");
-    if (!link) return;
-    event.preventDefault();
-
-    const id = link.dataset.tocTarget;
-    const target = id ? document.getElementById(id) : null;
-    if (!target) return;
-
-    scrollToHeading(target);
-    history.replaceState(null, "", `#${id}`);
-    setActiveLink(id);
-  });
-
-  if (!prefersReducedMotion()) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort(
-            (a, b) => a.boundingClientRect.top - b.boundingClientRect.top
-          );
-        if (!visible.length) return;
-        setActiveLink(visible[0].target.id);
-      },
-      { rootMargin: "-18% 0px -62% 0px", threshold: 0 }
-    );
-    headings.forEach((heading) => observer.observe(heading));
   }
 
-  if (window.location.hash) {
-    const hashId = window.location.hash.slice(1);
-    if (headings.some((heading) => heading.id === hashId)) {
-      setActiveLink(hashId);
-    }
-  } else if (headings[0]?.id) {
-    setActiveLink(headings[0].id);
-  }
+  const boot = () => activateWorkDetailToc(article, nav, headings);
+  waitForScrollSmootherReady(boot);
 };
 
 const initProjectPageEnhancements = () => {

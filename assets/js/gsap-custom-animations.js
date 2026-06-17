@@ -44,6 +44,10 @@
 				// REMOVE onUpdate - causes performance issues
 			});
 
+			window.dispatchEvent(
+				new CustomEvent("scrollsmoother:ready", { detail: { smoother } }),
+			);
+
 			// CRITICAL: Make globally accessible
 		}
 	}
