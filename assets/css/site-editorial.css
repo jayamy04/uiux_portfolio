@@ -1905,8 +1905,7 @@ body.page-home .home-hero-projects__thumb--cover video {
   object-position: center center;
 }
 
-body.page-home #hero-project-sound-transit .home-hero-projects__thumb--cover video,
-body.page-home #hero-project-sound-transit-usability .home-hero-projects__thumb--cover video {
+body.page-home #hero-project-sound-transit-report .home-hero-projects__thumb--cover video {
   object-position: center center;
 }
 
