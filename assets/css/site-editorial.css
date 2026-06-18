@@ -8000,7 +8000,7 @@ body.page-about.site-editorial .about-page__cta:hover .about-page__cta-arrow {
   }
 }
 
-/* About page — dance reels + social links */
+/* About page — dance reels */
 body.page-about.site-editorial .about-dance {
   margin-top: clamp(56px, 8vh, 96px);
   padding-top: clamp(40px, 6vh, 64px);
@@ -8044,12 +8044,17 @@ body.page-about.site-editorial .about-dance__grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: clamp(16px, 2.5vw, 24px);
-  margin-bottom: clamp(24px, 3vh, 32px);
 }
 
 @media only screen and (min-width: 640px) {
   body.page-about.site-editorial .about-dance__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  body.page-about.site-editorial .about-dance__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -8129,113 +8134,9 @@ body.page-about.site-editorial .about-dance__reel-arrow {
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-body.page-about.site-editorial .about-dance__social {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(12px, 2vw, 16px);
-  margin-bottom: clamp(24px, 3vh, 32px);
-}
-
-@media only screen and (min-width: 640px) {
-  body.page-about.site-editorial .about-dance__social {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-body.page-about.site-editorial .about-dance__social-card {
-  display: flex;
-  align-items: center;
-  gap: clamp(12px, 2vw, 16px);
-  padding: clamp(14px, 2vw, 18px) clamp(16px, 2.2vw, 20px);
-  border-radius: clamp(14px, 1.6vw, 18px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background:
-    linear-gradient(135deg, rgba(255, 77, 184, 0.08) 0%, transparent 55%),
-    rgba(255, 255, 255, 0.03);
-  text-decoration: none;
-  color: inherit;
-  transition: border-color 0.35s ease, background 0.35s ease, transform 0.35s ease;
-}
-
-body.page-about.site-editorial .about-dance__social-card:focus-visible {
-  outline: 2px solid var(--site-accent, #ff4db8);
-  outline-offset: 4px;
-}
-
-@media (hover: hover) {
-  body.page-about.site-editorial .about-dance__social-card:hover {
-    border-color: rgba(255, 77, 184, 0.4);
-    background:
-      linear-gradient(135deg, rgba(255, 77, 184, 0.14) 0%, transparent 55%),
-      rgba(255, 255, 255, 0.05);
-    transform: translateY(-2px);
-  }
-
-  body.page-about.site-editorial .about-dance__social-card:hover .about-dance__social-arrow {
-    transform: translateX(3px);
-    color: var(--site-accent, #ff4db8);
-  }
-}
-
-body.page-about.site-editorial .about-dance__social-icon {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.06);
-  color: #ffffff;
-}
-
-body.page-about.site-editorial .about-dance__social-icon i {
-  font-size: 1rem;
-  line-height: 1;
-}
-
-body.page-about.site-editorial .about-dance__social-copy {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  min-width: 0;
-  flex: 1;
-}
-
-body.page-about.site-editorial .about-dance__social-handle {
-  font-family: var(--tj-ff-body);
-  font-size: 0.9375rem;
-  font-weight: var(--tj-fw-bold);
-  letter-spacing: -0.01em;
-  color: #ffffff;
-}
-
-body.page-about.site-editorial .about-dance__social-desc {
-  font-family: var(--tj-ff-body);
-  font-size: 0.8125rem;
-  line-height: 1.45;
-  color: rgba(255, 255, 255, 0.58);
-}
-
-body.page-about.site-editorial .about-dance__social-arrow {
-  flex-shrink: 0;
-  font-size: 0.9375rem;
-  color: rgba(255, 255, 255, 0.4);
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-body.page-about.site-editorial .about-dance__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
 @media (prefers-reduced-motion: reduce) {
   body.page-about.site-editorial .about-dance__reel,
-  body.page-about.site-editorial .about-dance__social-card,
-  body.page-about.site-editorial .about-dance__reel-arrow,
-  body.page-about.site-editorial .about-dance__social-arrow {
+  body.page-about.site-editorial .about-dance__reel-arrow {
     transition: none;
   }
 }
