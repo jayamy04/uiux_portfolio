@@ -8071,6 +8071,8 @@ body.page-about.site-editorial .about-dance__reel:focus-visible {
 }
 
 body.page-about.site-editorial .about-dance__reel-frame {
+  display: block;
+  width: 100%;
   position: relative;
   aspect-ratio: 9 / 16;
   border-radius: clamp(14px, 1.6vw, 18px);
@@ -9314,6 +9316,162 @@ body.page-nordstrom-rack .work-detail__survey-question--span-full , body.page-ai
 
 body.page-nordstrom-rack .work-detail__survey-part--concluding .work-detail__survey-part-body > p:not(.work-detail__survey-closing) , body.page-ai-healthcare .work-detail__survey-part--concluding .work-detail__survey-part-body > p:not(.work-detail__survey-closing) {
   margin: 0;
+}
+
+/* Nordstrom Rack — Interview Content (script/guide presentation) */
+body.page-nordstrom-rack .work-detail__interview-guide {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 2vh, 20px);
+  max-width: min(100%, 50rem);
+}
+
+body.page-nordstrom-rack .interview-guide__block {
+  margin: 0;
+  padding: clamp(16px, 2.2vh, 24px) clamp(16px, 2.4vw, 26px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-left: 3px solid rgba(120, 200, 255, 0.55);
+  background: rgba(120, 200, 255, 0.035);
+  box-shadow: none;
+}
+
+body.page-nordstrom-rack .interview-guide__block--intro,
+body.page-nordstrom-rack .interview-guide__block--closing {
+  border-left-color: rgba(180, 140, 255, 0.55);
+  background: rgba(180, 140, 255, 0.04);
+}
+
+body.page-nordstrom-rack .interview-guide__block-header {
+  margin: 0 0 clamp(10px, 1.4vh, 14px);
+  padding: 0 0 clamp(8px, 1.1vh, 10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.page-nordstrom-rack .interview-guide__block-header .work-detail__kicker {
+  margin: 0;
+}
+
+body.page-nordstrom-rack .interview-guide__block-body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.4vh, 14px);
+}
+
+body.page-nordstrom-rack .interview-guide__block-body > p {
+  margin: 0;
+  font-size: clamp(0.9375rem, 1.05vw, 1rem);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+body.page-nordstrom-rack .interview-guide__label {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: var(--tj-fw-sbold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(120, 200, 255, 0.72);
+}
+
+body.page-nordstrom-rack .work-detail__interview-guide .work-detail__interview-callout {
+  margin: 0;
+  padding: clamp(8px, 1.1vh, 10px) clamp(10px, 1.4vw, 12px);
+  border-radius: 6px;
+  border-left: 2px solid rgba(120, 200, 255, 0.45);
+  background: rgba(120, 200, 255, 0.04);
+  font-weight: var(--tj-fw-sbold);
+  font-size: clamp(0.9375rem, 1.05vw, 1rem);
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.page-nordstrom-rack .work-detail__interview-guide .work-detail__interview-guidelines {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+body.page-nordstrom-rack .work-detail__interview-guide .work-detail__interview-guidelines li {
+  position: relative;
+  margin: 0;
+  padding: clamp(7px, 1vh, 9px) clamp(10px, 1.3vw, 12px) clamp(7px, 1vh, 9px) clamp(24px, 2vw, 28px);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.02);
+  font-size: clamp(0.875rem, 1.02vw, 0.9375rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+body.page-nordstrom-rack .work-detail__interview-guide .work-detail__interview-guidelines li::before {
+  content: "·";
+  position: absolute;
+  left: clamp(10px, 1.2vw, 12px);
+  top: clamp(6px, 0.9vh, 8px);
+  font-weight: var(--tj-fw-sbold);
+  font-size: 1.1em;
+  color: rgba(120, 200, 255, 0.7);
+}
+
+body.page-nordstrom-rack .interview-guide__prompt {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, 0.6vh, 6px);
+  padding: clamp(10px, 1.3vh, 12px) clamp(12px, 1.6vw, 14px);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+body.page-nordstrom-rack .interview-guide__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.4vh, 14px);
+}
+
+body.page-nordstrom-rack .interview-guide__item {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3px, 0.5vh, 5px);
+  padding: clamp(10px, 1.3vh, 12px) clamp(12px, 1.6vw, 14px);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+body.page-nordstrom-rack .interview-guide__question {
+  margin: 0;
+  font-size: clamp(0.9375rem, 1.05vw, 1rem);
+  font-weight: var(--tj-fw-sbold);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+body.page-nordstrom-rack .interview-guide__note {
+  margin: 0;
+  font-size: clamp(0.8125rem, 0.98vw, 0.875rem);
+  font-style: italic;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.38);
+}
+
+body.page-nordstrom-rack .interview-guide__closing {
+  margin: clamp(4px, 0.8vh, 8px) 0 0;
+  padding-top: clamp(10px, 1.3vh, 12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: clamp(0.9375rem, 1.05vw, 1rem);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+@media (max-width: 640px) {
+  body.page-nordstrom-rack .interview-guide__block {
+    padding: 14px;
+  }
 }
 
 body.page-sachacks .work-detail__lead,
@@ -11006,6 +11164,10 @@ body.site-editorial .work-detail__toc-item.is-active .work-detail__toc-link {
   margin: 0;
   font-size: clamp(0.9375rem, 1.05vw, 1.0625rem);
   line-height: 1.55;
+}
+
+.work-detail__survey-finding > p + p {
+  margin-top: clamp(8px, 1.2vh, 12px);
 }
 
 .work-detail__survey-finding ul {
