@@ -7600,7 +7600,7 @@ body.page-about.site-editorial .about-page-section {
 
 body.page-about.site-editorial .about-page-layout {
   width: 100%;
-  max-width: 1180px;
+  max-width: 1240px;
   margin: 0 auto;
 }
 
@@ -7625,8 +7625,8 @@ body.page-about.site-editorial .about-page-grid {
   }
 
   body.page-about.site-editorial .about-page-grid:not(.about-page-grid--story-only) {
-    grid-template-columns: minmax(0, 0.38fr) minmax(0, 0.62fr);
-    gap: clamp(32px, 4vw, 52px);
+    grid-template-columns: minmax(0, 0.3fr) minmax(0, 0.7fr);
+    gap: clamp(28px, 3.5vw, 44px);
     align-items: center;
   }
 
@@ -7758,6 +7758,8 @@ body.page-about.site-editorial .about-page-main {
   flex-direction: column;
   gap: clamp(12px, 2vh, 18px);
   padding-top: 0;
+  min-width: 0;
+  width: 100%;
 }
 
 body.page-about.site-editorial .about-page__eyebrow {
@@ -7801,8 +7803,9 @@ body.page-about.site-editorial .about-page__title-word--accent:only-child {
 body.page-about.site-editorial .about-page-story {
   display: flex;
   flex-direction: column;
-  gap: clamp(14px, 2.2vh, 20px);
-  max-width: 34em;
+  gap: clamp(16px, 2.4vh, 24px);
+  max-width: none;
+  width: 100%;
   padding-left: 0;
   border-left: 0;
 }
@@ -7810,9 +7813,9 @@ body.page-about.site-editorial .about-page-story {
 body.page-about.site-editorial .about-page__lead {
   margin: 0;
   font-family: var(--tj-ff-body);
-  font-size: clamp(0.9375rem, 1.05vw, 1.0625rem);
+  font-size: clamp(1.125rem, 1.35vw, 1.375rem);
   font-weight: var(--tj-fw-medium);
-  line-height: 1.6;
+  line-height: 1.65;
   letter-spacing: -0.01em;
   color: #ffffff;
   text-wrap: pretty;
@@ -7821,8 +7824,8 @@ body.page-about.site-editorial .about-page__lead {
 body.page-about.site-editorial .about-page__text {
   margin: 0;
   font-family: var(--tj-ff-body);
-  font-size: clamp(0.875rem, 0.98vw, 0.9375rem);
-  line-height: 1.65;
+  font-size: clamp(1.0625rem, 1.2vw, 1.25rem);
+  line-height: 1.72;
   color: rgba(255, 255, 255, 0.92);
   text-wrap: pretty;
 }
@@ -7915,29 +7918,29 @@ body.page-about.site-editorial .site-meta-panel-section .site-meta-panel {
   }
 
   body.page-about.site-editorial .about-page-story {
-    gap: clamp(12px, 1.8vh, 16px);
+    gap: clamp(14px, 2vh, 20px);
   }
 
   body.page-about.site-editorial .about-page__lead {
-    line-height: 1.58;
+    line-height: 1.62;
   }
 
   body.page-about.site-editorial .about-page__text {
-    line-height: 1.62;
+    line-height: 1.68;
   }
 }
 
 @media only screen and (max-width: 991px) {
   body.page-about.site-editorial .about-page-story {
-    gap: clamp(16px, 3vh, 22px);
+    gap: clamp(18px, 3vh, 26px);
   }
 
   body.page-about.site-editorial .about-page__lead {
-    line-height: 1.65;
+    line-height: 1.68;
   }
 
   body.page-about.site-editorial .about-page__text {
-    line-height: 1.7;
+    line-height: 1.74;
   }
 }
 
