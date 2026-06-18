@@ -1780,27 +1780,6 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
     gap: clamp(20px, 2.2vw, 28px) clamp(24px, 2.6vw, 36px);
   }
 
-  /* Editorial pairing: 2 + 1 + 2 */
-  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack {
-    grid-column: 1;
-  }
-
-  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey {
-    grid-column: 2;
-  }
-
-  body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare {
-    grid-column: 1 / -1;
-  }
-
-  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab {
-    grid-column: 1;
-  }
-
-  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit {
-    grid-column: 2;
-  }
-
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-body {
     padding: clamp(18px, 1.8vw, 26px);
   }
