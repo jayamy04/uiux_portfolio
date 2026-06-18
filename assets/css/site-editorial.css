@@ -11721,3 +11721,147 @@ body.page-inclusive-design-lab .work-detail__table--probes td {
   }
 }
 
+/* Sound Transit — card sorting screener & card list */
+body.page-sound-transit .work-detail__prose--survey {
+  gap: clamp(10px, 1.6vh, 16px);
+}
+
+body.page-sound-transit .work-detail__screener-tag {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.82em;
+  font-weight: var(--tj-fw-sbold);
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.52);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+body.page-sound-transit .work-detail__survey-options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: clamp(0.8125rem, 1.05vw, 0.875rem);
+  line-height: 1.35;
+}
+
+body.page-sound-transit .work-detail__survey-options li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 1px 0;
+  margin: 0;
+}
+
+body.page-sound-transit .work-detail__survey-options li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 13px;
+  height: 13px;
+  margin-top: 0.28em;
+  border: 1.5px solid rgba(255, 255, 255, 0.42);
+  background: rgba(255, 255, 255, 0.04);
+  box-sizing: border-box;
+}
+
+body.page-sound-transit .work-detail__survey-options--checkbox li::before {
+  border-radius: 3px;
+}
+
+body.page-sound-transit .work-detail__survey-options--radio li::before {
+  border-radius: 50%;
+}
+
+body.page-sound-transit .work-detail__survey-part {
+  position: relative;
+  margin: 0;
+  padding: clamp(12px, 1.8vh, 18px) clamp(14px, 2vw, 20px);
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(
+    180deg,
+    var(--site-accent) 0,
+    var(--site-accent) 3px,
+    rgba(255, 255, 255, 0.025) 3px,
+    rgba(255, 255, 255, 0.025) 100%
+  );
+  box-shadow:
+    inset 1px 0 0 rgba(255, 255, 255, 0.1),
+    inset -1px 0 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    0 8px 24px rgba(0, 0, 0, 0.14);
+}
+
+body.page-sound-transit .work-detail__survey-part-header {
+  margin-bottom: clamp(6px, 1vh, 10px);
+  padding-bottom: clamp(6px, 0.8vh, 8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.page-sound-transit .work-detail__survey-part-header .work-detail__kicker {
+  margin: 0;
+}
+
+body.page-sound-transit .work-detail__survey-part-body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.2vh, 12px);
+  padding: 0;
+}
+
+body.page-sound-transit .work-detail__survey-question {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, 0.7vh, 7px);
+  padding: clamp(8px, 1.1vh, 10px) clamp(10px, 1.4vw, 12px);
+  border-left: 2px solid rgba(255, 77, 184, 0.32);
+  border-radius: 0 8px 8px 0;
+  background: rgba(255, 255, 255, 0.018);
+}
+
+body.page-sound-transit .work-detail__survey-question > p:first-child {
+  margin: 0;
+  font-weight: var(--tj-fw-sbold);
+  font-size: clamp(0.9375rem, 1.1vw, 1rem);
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.96);
+}
+
+body.page-sound-transit .work-detail__card-sort-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: clamp(6px, 1vh, 10px);
+}
+
+body.page-sound-transit .work-detail__card-sort-list li {
+  margin: 0;
+  padding: clamp(8px, 1.1vh, 10px) clamp(10px, 1.4vw, 12px);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  font-size: clamp(0.8125rem, 1.05vw, 0.875rem);
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 640px) {
+  body.page-sound-transit .work-detail__survey-part {
+    padding: 12px;
+  }
+
+  body.page-sound-transit .work-detail__survey-question {
+    padding: 8px 8px 8px 10px;
+  }
+
+  body.page-sound-transit .work-detail__card-sort-list {
+    grid-template-columns: 1fr;
+  }
+}
+
