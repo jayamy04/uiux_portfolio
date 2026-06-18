@@ -907,6 +907,13 @@ body.page-home .home-hero-band {
   z-index: 1;
   overflow: visible;
   background: transparent;
+  padding-bottom: 88px;
+}
+
+@media only screen and (min-width: 992px) {
+  body.page-home .home-hero-band {
+    padding-bottom: 96px;
+  }
 }
 
 body.page-home.site-editorial .home-hero-band > .inner_top_gap {
@@ -1651,49 +1658,19 @@ body.page-home .home-hero-projects__case-study:focus-visible {
   outline-offset: 3px;
 }
 
-/* Home — hero project editorial grid (two independent columns) */
+/* Home — hero project editorial grid (independent flex columns) */
 body.page-home .home-hero-projects__grid--editorial {
-  --home-projects-gap: clamp(18px, 5vw, 26px);
   display: flex;
   flex-direction: column;
-  gap: var(--home-projects-gap);
+  gap: clamp(20px, 2.8vw, 32px);
   padding-block: clamp(4px, 0.6vw, 8px);
 }
 
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__column {
-  display: contents;
-}
-
-body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack {
-  order: 1;
-}
-
-body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey {
-  order: 2;
-}
-
-body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare {
-  order: 3;
-}
-
-body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab {
-  order: 4;
-}
-
-body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit {
-  order: 5;
-}
-
-body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-usability {
-  order: 6;
-}
-
-body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-stakeholder-interviews {
-  order: 7;
-}
-
-body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-report {
-  order: 8;
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__col {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 2.8vw, 32px);
+  min-width: 0;
 }
 
 body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {
@@ -2053,22 +2030,14 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
 
 @media only screen and (min-width: 768px) {
   body.page-home .home-hero-projects__grid--editorial {
-    --home-projects-gap: clamp(24px, 2.6vw, 36px);
     flex-direction: row;
     align-items: flex-start;
-    gap: var(--home-projects-gap);
+    gap: clamp(24px, 2.6vw, 36px);
   }
 
-  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__column {
-    display: flex;
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__col {
     flex: 1 1 0;
-    flex-direction: column;
-    gap: var(--home-projects-gap);
-    min-width: 0;
-  }
-
-  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {
-    order: initial;
+    gap: clamp(20px, 2.2vw, 28px);
   }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-body {
@@ -2096,7 +2065,43 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
 
 @media only screen and (max-width: 767px) {
   body.page-home .home-hero-projects__grid--editorial {
-    gap: var(--home-projects-gap);
+    gap: clamp(18px, 5vw, 26px);
+  }
+
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__col {
+    display: contents;
+  }
+
+  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack {
+    order: 1;
+  }
+
+  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey {
+    order: 2;
+  }
+
+  body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare {
+    order: 3;
+  }
+
+  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab {
+    order: 4;
+  }
+
+  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit {
+    order: 5;
+  }
+
+  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-usability {
+    order: 6;
+  }
+
+  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-stakeholder-interviews {
+    order: 7;
+  }
+
+  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-report {
+    order: 8;
   }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {
@@ -2133,8 +2138,11 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
 
 @media only screen and (min-width: 992px) {
   body.page-home .home-hero-projects__grid--editorial {
-    --home-projects-gap: clamp(28px, 2.8vw, 44px);
-    gap: var(--home-projects-gap);
+    gap: clamp(28px, 2.8vw, 44px);
+  }
+
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__col {
+    gap: clamp(24px, 2.4vw, 36px);
   }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-body {
