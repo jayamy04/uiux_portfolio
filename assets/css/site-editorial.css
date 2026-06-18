@@ -1662,17 +1662,20 @@ body.page-home .home-hero-projects__case-study:focus-visible {
 
 /* Home — hero project editorial grid (independent flex columns) */
 body.page-home .home-hero-projects__grid--editorial {
+  --home-projects-gap: clamp(18px, 5vw, 26px);
   display: flex;
   flex-direction: column;
-  gap: clamp(20px, 2.8vw, 32px);
+  gap: var(--home-projects-gap);
   padding-block: clamp(4px, 0.6vw, 8px);
 }
 
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__col {
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__col,
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__column {
   display: flex;
   flex-direction: column;
-  gap: clamp(20px, 2.8vw, 32px);
+  gap: var(--home-projects-gap);
   min-width: 0;
+  margin: 0;
 }
 
 body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {
@@ -1685,6 +1688,7 @@ body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {
   height: auto;
   overflow: hidden;
   gap: 0;
+  margin: 0;
   padding: 0;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.09);
@@ -1723,6 +1727,11 @@ body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card--n
 
 body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card--lead .home-hero-projects__card-title {
   font-size: clamp(1rem, 1.15vw, 1.125rem);
+}
+
+/* Scroll-in offset must not affect column gap — layout spacing is gap-only */
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card.tj-fade {
+  transform: none !important;
 }
 
 body.page-home .home-hero-projects__card-logo {
@@ -1992,14 +2001,16 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
 
 @media only screen and (min-width: 768px) {
   body.page-home .home-hero-projects__grid--editorial {
+    --home-projects-gap: clamp(20px, 2.2vw, 28px);
     flex-direction: row;
     align-items: flex-start;
     gap: clamp(24px, 2.6vw, 36px);
   }
 
-  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__col {
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__col,
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__column {
     flex: 1 1 0;
-    gap: clamp(20px, 2.2vw, 28px);
+    gap: var(--home-projects-gap);
   }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-body {
@@ -2026,10 +2037,11 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
 
 @media only screen and (max-width: 767px) {
   body.page-home .home-hero-projects__grid--editorial {
-    gap: clamp(18px, 5vw, 26px);
+    gap: var(--home-projects-gap);
   }
 
-  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__col {
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__col,
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__column {
     display: contents;
   }
 
@@ -2099,11 +2111,13 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
 
 @media only screen and (min-width: 992px) {
   body.page-home .home-hero-projects__grid--editorial {
+    --home-projects-gap: clamp(24px, 2.4vw, 36px);
     gap: clamp(28px, 2.8vw, 44px);
   }
 
-  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__col {
-    gap: clamp(24px, 2.4vw, 36px);
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__col,
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__column {
+    gap: var(--home-projects-gap);
   }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-body {
