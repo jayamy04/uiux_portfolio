@@ -9185,6 +9185,19 @@ body.page-inclusive-lab .work-detail__highlight-body p {
   color: rgba(255, 255, 255, 0.82);
 }
 
+body.page-sound-transit .work-detail__highlight-body ul {
+  margin: clamp(12px, 1.8vh, 16px) 0 0;
+  padding-left: 1.25em;
+}
+
+body.page-sound-transit .work-detail__highlight-body li + li {
+  margin-top: 0.45em;
+}
+
+body.page-sound-transit .work-detail__prose ul ul {
+  margin-top: 0.5em;
+}
+
 body.page-sachacks .work-detail__figure,
 body.page-schedgo .work-detail__figure,
 body.page-ibm-saas-console .work-detail__figure,
@@ -9629,7 +9642,7 @@ body.page-sound-transit .work-detail__gallery,
 }
 
 /* Work detail — goal cards (Nordstrom Rack; 2-col side-by-side) */
-body.page-nordstrom-rack .work-detail__goals , body.page-ai-healthcare .work-detail__goals {
+body.page-nordstrom-rack .work-detail__goals , body.page-ai-healthcare .work-detail__goals , body.page-sound-transit .work-detail__goals {
   margin: clamp(20px, 3vh, 28px) 0 0;
   padding: 0;
   list-style: none;
@@ -9638,12 +9651,12 @@ body.page-nordstrom-rack .work-detail__goals , body.page-ai-healthcare .work-det
 }
 
 @media only screen and (min-width: 768px) {
-  body.page-nordstrom-rack .work-detail__goals , body.page-ai-healthcare .work-detail__goals {
+  body.page-nordstrom-rack .work-detail__goals , body.page-ai-healthcare .work-detail__goals , body.page-sound-transit .work-detail__goals {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-body.page-nordstrom-rack .work-detail__goal , body.page-ai-healthcare .work-detail__goal {
+body.page-nordstrom-rack .work-detail__goal , body.page-ai-healthcare .work-detail__goal , body.page-sound-transit .work-detail__goal {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -9658,7 +9671,7 @@ body.page-nordstrom-rack .work-detail__goal , body.page-ai-healthcare .work-deta
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-body.page-nordstrom-rack .work-detail__goal::before , body.page-ai-healthcare .work-detail__goal::before {
+body.page-nordstrom-rack .work-detail__goal::before , body.page-ai-healthcare .work-detail__goal::before , body.page-sound-transit .work-detail__goal::before {
   content: "";
   position: absolute;
   top: clamp(10px, 1.2vw, 14px);
@@ -9669,14 +9682,14 @@ body.page-nordstrom-rack .work-detail__goal::before , body.page-ai-healthcare .w
   background: var(--site-accent);
 }
 
-body.page-nordstrom-rack .work-detail__goal:hover , body.page-ai-healthcare .work-detail__goal:hover {
+body.page-nordstrom-rack .work-detail__goal:hover , body.page-ai-healthcare .work-detail__goal:hover , body.page-sound-transit .work-detail__goal:hover {
   border-color: rgba(255, 77, 184, 0.22);
   box-shadow:
     0 0 24px rgba(255, 77, 184, 0.08),
     0 12px 32px rgba(0, 0, 0, 0.22);
 }
 
-body.page-nordstrom-rack .work-detail__goal-badge , body.page-ai-healthcare .work-detail__goal-badge {
+body.page-nordstrom-rack .work-detail__goal-badge , body.page-ai-healthcare .work-detail__goal-badge , body.page-sound-transit .work-detail__goal-badge {
   display: inline-flex;
   align-self: flex-start;
   padding: 0.35em 0.75em;
@@ -9692,7 +9705,7 @@ body.page-nordstrom-rack .work-detail__goal-badge , body.page-ai-healthcare .wor
   color: var(--site-accent);
 }
 
-body.page-nordstrom-rack .work-detail__goal-text , body.page-ai-healthcare .work-detail__goal-text {
+body.page-nordstrom-rack .work-detail__goal-text , body.page-ai-healthcare .work-detail__goal-text , body.page-sound-transit .work-detail__goal-text {
   margin: 0;
   font-family: var(--tj-ff-body);
   font-size: clamp(1rem, 1.05vw, 1.0625rem);
