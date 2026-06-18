@@ -11180,3 +11180,72 @@ body.page-inclusive-design-lab .work-detail__interview-guidelines li::before {
   }
 }
 
+body.page-inclusive-lab .work-detail__accept-tag,
+body.page-inclusive-design-lab .work-detail__accept-tag {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.82em;
+  font-weight: var(--tj-fw-sbold);
+  letter-spacing: 0.04em;
+  color: var(--site-accent);
+  background: rgba(255, 77, 184, 0.14);
+}
+
+body.page-inclusive-lab .work-detail__exclude-tag,
+body.page-inclusive-design-lab .work-detail__exclude-tag {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.82em;
+  font-weight: var(--tj-fw-sbold);
+  letter-spacing: 0.04em;
+  color: rgba(255, 140, 140, 0.95);
+  background: rgba(255, 100, 100, 0.12);
+}
+
+body.page-inclusive-lab .work-detail__screening-criteria,
+body.page-inclusive-design-lab .work-detail__screening-criteria {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+body.page-inclusive-lab .work-detail__screening-criteria li,
+body.page-inclusive-design-lab .work-detail__screening-criteria li {
+  position: relative;
+  margin: 0;
+  padding: clamp(8px, 1vh, 10px) clamp(10px, 1.4vw, 12px) clamp(8px, 1vh, 10px) clamp(26px, 2.2vw, 30px);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.028);
+  font-size: clamp(0.875rem, 1.05vw, 0.9375rem);
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+body.page-inclusive-lab .work-detail__screening-criteria--include li::before,
+body.page-inclusive-design-lab .work-detail__screening-criteria--include li::before {
+  content: "✓";
+  position: absolute;
+  left: clamp(10px, 1.2vw, 12px);
+  top: clamp(8px, 1vh, 10px);
+  font-weight: var(--tj-fw-sbold);
+  color: var(--site-accent);
+}
+
+body.page-inclusive-lab .work-detail__screening-criteria--exclude li::before,
+body.page-inclusive-design-lab .work-detail__screening-criteria--exclude li::before {
+  content: "✕";
+  position: absolute;
+  left: clamp(10px, 1.2vw, 12px);
+  top: clamp(8px, 1vh, 10px);
+  font-weight: var(--tj-fw-sbold);
+  color: rgba(255, 140, 140, 0.95);
+}
+
