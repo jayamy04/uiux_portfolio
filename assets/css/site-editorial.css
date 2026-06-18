@@ -1668,6 +1668,23 @@ body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-body {
   padding: 0 clamp(2px, 0.3vw, 4px);
 }
 
+/* Stack — text-only cards (no media thumb) */
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card--no-media {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "body";
+  align-items: start;
+}
+
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card--no-media .home-hero-projects__card-body {
+  flex: 1 1 auto;
+  padding: clamp(2px, 0.4vw, 6px) clamp(2px, 0.3vw, 4px);
+}
+
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card--no-media .home-hero-projects__case-study,
+body.page-home .home-hero-projects__grid--stack .home-hero-projects__card--no-media .home-hero-projects__case-study--soon {
+  margin-top: auto;
+}
+
 body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb {
   grid-area: thumb;
   flex: 0 0 auto;
@@ -1889,6 +1906,20 @@ body.page-home .home-hero-projects__grid--stack #hero-project-inclusive-design-l
   body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-desc {
     max-width: 48ch;
     font-size: clamp(0.8125rem, 0.95vw, 0.9375rem);
+  }
+
+  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card--no-media {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "body";
+    align-items: start;
+  }
+
+  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card--no-media .home-hero-projects__card-title {
+    max-width: 36ch;
+  }
+
+  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card--no-media .home-hero-projects__card-desc {
+    max-width: 56ch;
   }
 }
 
