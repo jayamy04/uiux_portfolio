@@ -856,7 +856,7 @@ body.page-home .home-hero-band__ambient {
 
 /* Home — hero circular text rings (single row, centered, scroll on narrow) */
 body.page-home .home-hero-band__text-rings {
-  --home-hero-text-ring-font-size: 22px;
+  --home-hero-text-ring-font-size: 23px;
   --home-hero-text-ring-letter-spacing: 0.085em;
   --home-hero-text-ring-size: clamp(132px, 10.5vw, 160px);
   --home-hero-text-ring-bleed: clamp(10px, 1.1vw, 14px);
@@ -938,7 +938,7 @@ body.page-home .home-hero-text-ring__label {
   padding: 0;
   color: rgba(255, 255, 255, 0.72);
   font-family: var(--tj-ff-body);
-  font-size: clamp(0.62rem, 0.58rem + 0.22vw, 0.74rem);
+  font-size: clamp(0.66rem, 0.62rem + 0.24vw, 0.78rem);
   font-weight: 600;
   font-variant: all-small-caps;
   letter-spacing: 0.2em;
@@ -996,7 +996,7 @@ body.page-home .home-hero-text-ring__sep {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1199px) {
   body.page-home .home-hero-band__text-rings {
     --home-hero-text-ring-size: clamp(112px, 24vw, 140px);
     flex-wrap: wrap;
