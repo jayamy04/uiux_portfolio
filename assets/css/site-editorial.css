@@ -7860,14 +7860,6 @@ body.page-about.site-editorial .about-page__lead a:hover {
   color: #ffffff;
 }
 
-body.page-about.site-editorial .about-page-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px 16px;
-  margin-top: clamp(16px, 2.5vh, 24px);
-}
-
 body.page-about.site-editorial .site-meta-panel {
   margin-top: clamp(40px, 5vh, 56px);
 }
@@ -7905,53 +7897,6 @@ body.page-about.site-editorial .site-meta-panel {
   }
 }
 
-body.page-about.site-editorial .about-page__cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 9px 16px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  background: #ffffff;
-  color: var(--site-bg-deep);
-  font-family: var(--tj-ff-body);
-  font-size: 0.8125rem;
-  font-weight: var(--tj-fw-sbold);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-
-body.page-about.site-editorial .about-page__cta:hover {
-  background: var(--site-accent);
-  border-color: var(--site-accent);
-  color: #ffffff;
-  transform: translateY(-1px);
-}
-
-body.page-about.site-editorial .about-page__cta--ghost {
-  background: transparent;
-  color: rgba(255, 255, 255, 0.88);
-  border-color: rgba(255, 255, 255, 0.22);
-}
-
-body.page-about.site-editorial .about-page__cta--ghost:hover {
-  background: rgba(255, 77, 184, 0.1);
-  border-color: rgba(255, 77, 184, 0.45);
-  color: #ffffff;
-}
-
-body.page-about.site-editorial .about-page__cta-arrow {
-  font-size: 1.125rem;
-  line-height: 1;
-  transition: transform 0.2s ease;
-}
-
-body.page-about.site-editorial .about-page__cta:hover .about-page__cta-arrow {
-  transform: translateX(3px);
-}
-
 @media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   body.page-about.site-editorial .about-page-section {
     padding-bottom: 72px;
@@ -7986,10 +7931,6 @@ body.page-about.site-editorial .about-page__cta:hover .about-page__cta-arrow {
 
   body.page-about.site-editorial .about-page__text {
     line-height: 1.62;
-  }
-
-  body.page-about.site-editorial .about-page-actions {
-    padding-top: 2px;
   }
 }
 
