@@ -11180,6 +11180,76 @@ body.page-inclusive-design-lab .work-detail__interview-guidelines li::before {
   }
 }
 
+body.page-inclusive-lab .work-detail__survey-part-body--screening,
+body.page-inclusive-design-lab .work-detail__survey-part-body--screening {
+  gap: clamp(14px, 2vh, 20px);
+}
+
+body.page-inclusive-lab .work-detail__screening-grid,
+body.page-inclusive-design-lab .work-detail__screening-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 2.8vh, 28px);
+}
+
+@media (min-width: 768px) {
+  body.page-inclusive-lab .work-detail__screening-grid,
+  body.page-inclusive-design-lab .work-detail__screening-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(24px, 3.5vw, 40px);
+    row-gap: clamp(20px, 2.8vh, 28px);
+  }
+}
+
+body.page-inclusive-lab .work-detail__screening-block,
+body.page-inclusive-design-lab .work-detail__screening-block {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.4vh, 14px);
+  padding: clamp(14px, 2vh, 18px) clamp(16px, 2vw, 20px);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.018);
+}
+
+body.page-inclusive-lab .work-detail__screening-block--include,
+body.page-inclusive-design-lab .work-detail__screening-block--include {
+  border-left: 2px solid rgba(255, 77, 184, 0.32);
+}
+
+body.page-inclusive-lab .work-detail__screening-block--exclude,
+body.page-inclusive-design-lab .work-detail__screening-block--exclude {
+  border-left: 2px solid rgba(255, 255, 255, 0.14);
+}
+
+body.page-inclusive-lab .work-detail__screening-block .work-detail__split-label,
+body.page-inclusive-design-lab .work-detail__screening-block .work-detail__split-label {
+  margin: 0;
+}
+
+body.page-inclusive-lab .work-detail__screening-list,
+body.page-inclusive-design-lab .work-detail__screening-list {
+  margin: 0;
+  padding: 0 0 0 1.15em;
+  list-style: disc;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.4vh, 14px);
+}
+
+body.page-inclusive-lab .work-detail__screening-list li,
+body.page-inclusive-design-lab .work-detail__screening-list li {
+  margin: 0;
+  padding: 0;
+  font-size: clamp(0.875rem, 1.05vw, 0.9375rem);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+body.page-inclusive-lab .work-detail__screening-list li::marker,
+body.page-inclusive-design-lab .work-detail__screening-list li::marker {
+  color: rgba(255, 255, 255, 0.45);
+}
+
 body.page-inclusive-lab .work-detail__accept-tag,
 body.page-inclusive-design-lab .work-detail__accept-tag {
   display: inline-block;
