@@ -1044,8 +1044,8 @@ body.page-about .site-meta-panel__label::before {
 body.page-about .site-meta-panel__items {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px 9px;
-  align-items: center;
+  gap: 8px;
+  align-items: flex-start;
   margin: 0;
   color: rgba(255, 255, 255, 0.88);
   font-family: var(--tj-ff-body);
@@ -1059,12 +1059,26 @@ body.page-about .site-meta-panel__items {
 body.page-about .site-meta-panel__item {
   display: inline-flex;
   align-items: center;
-  padding: 4px 10px;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 1.875rem;
+  max-width: 100%;
+  padding: 5px 12px;
   border-radius: 999px;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
   background: rgba(255, 255, 255, 0.045);
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.86);
   transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+body.page-about .site-meta-panel__item--long {
+  max-width: min(100%, 12.75rem);
+  font-size: clamp(0.75rem, 0.72rem + 0.16vw, 0.8125rem);
+  letter-spacing: 0.005em;
 }
 
 body.page-about .site-meta-panel__item--accent {
@@ -1077,9 +1091,12 @@ body.page-about .site-meta-panel__item--accent {
       rgba(180, 122, 255, 0.12) 52%,
       rgba(255, 77, 184, 0.16) 100%
     );
+  background-clip: padding-box;
   background-size: 220% 220%;
   border-color: rgba(255, 77, 184, 0.32);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 0 0 1px rgba(255, 77, 184, 0.06);
 }
 
 body.page-about .site-meta-panel__sep {
@@ -1132,8 +1149,14 @@ body.page-about .site-meta-panel__sep {
   }
 
   body.page-about .site-meta-panel__item {
-    padding: 3px 9px;
+    min-height: 1.75rem;
+    padding: 4px 10px;
     font-size: clamp(0.75rem, 3.2vw, 0.875rem);
+  }
+
+  body.page-about .site-meta-panel__item--long {
+    max-width: min(100%, 11.5rem);
+    font-size: clamp(0.6875rem, 3vw, 0.8125rem);
   }
 }
 
@@ -7860,8 +7883,23 @@ body.page-about.site-editorial .about-page__lead a:hover {
   color: #ffffff;
 }
 
-body.page-about.site-editorial .site-meta-panel {
+body.page-about.site-editorial .site-meta-panel-section {
   margin-top: clamp(40px, 5vh, 56px);
+}
+
+body.page-about.site-editorial .site-meta-panel__heading {
+  margin: 0 0 clamp(12px, 1.6vh, 16px);
+  font-family: var(--tj-ff-body);
+  font-size: clamp(0.6875rem, 0.66rem + 0.18vw, 0.75rem);
+  font-weight: 600;
+  font-variant: all-small-caps;
+  letter-spacing: 0.14em;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.52);
+}
+
+body.page-about.site-editorial .site-meta-panel-section .site-meta-panel {
+  margin-top: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
