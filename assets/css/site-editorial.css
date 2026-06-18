@@ -9476,6 +9476,115 @@ body.page-nordstrom-rack .interview-guide__closing {
   }
 }
 
+/* Sound Transit — Usability testing protocol (interview guide presentation) */
+body.page-sound-transit .work-detail__interview-guide {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 2vh, 20px);
+  max-width: min(100%, 50rem);
+}
+
+body.page-sound-transit .interview-guide__block {
+  margin: 0;
+  padding: clamp(16px, 2.2vh, 24px) clamp(16px, 2.4vw, 26px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-left: 3px solid rgba(120, 200, 255, 0.55);
+  background: rgba(120, 200, 255, 0.035);
+  box-shadow: none;
+}
+
+body.page-sound-transit .interview-guide__block--intro,
+body.page-sound-transit .interview-guide__block--closing {
+  border-left-color: rgba(180, 140, 255, 0.55);
+  background: rgba(180, 140, 255, 0.04);
+}
+
+body.page-sound-transit .interview-guide__block-header {
+  margin: 0 0 clamp(10px, 1.4vh, 14px);
+  padding: 0 0 clamp(8px, 1.1vh, 10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.page-sound-transit .interview-guide__block-header .work-detail__kicker {
+  margin: 0;
+}
+
+body.page-sound-transit .interview-guide__block-body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.4vh, 14px);
+}
+
+body.page-sound-transit .interview-guide__block-body > p {
+  margin: 0;
+  font-size: clamp(0.9375rem, 1.05vw, 1rem);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+body.page-sound-transit .interview-guide__block-body > .work-detail__kicker {
+  margin: clamp(6px, 1vh, 10px) 0 0;
+}
+
+body.page-sound-transit .interview-guide__label {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: var(--tj-fw-sbold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(120, 200, 255, 0.72);
+}
+
+body.page-sound-transit .interview-guide__prompt {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, 0.6vh, 6px);
+  padding: clamp(10px, 1.3vh, 12px) clamp(12px, 1.6vw, 14px);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+body.page-sound-transit .interview-guide__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.4vh, 14px);
+}
+
+body.page-sound-transit .interview-guide__item {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3px, 0.5vh, 5px);
+  padding: clamp(10px, 1.3vh, 12px) clamp(12px, 1.6vw, 14px);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+body.page-sound-transit .interview-guide__question {
+  margin: 0;
+  font-size: clamp(0.9375rem, 1.05vw, 1rem);
+  font-weight: var(--tj-fw-sbold);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+body.page-sound-transit .interview-guide__note {
+  margin: 0;
+  font-size: clamp(0.8125rem, 0.98vw, 0.875rem);
+  font-style: italic;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.38);
+}
+
+@media (max-width: 640px) {
+  body.page-sound-transit .interview-guide__block {
+    padding: 14px;
+  }
+}
+
 body.page-sachacks .work-detail__lead,
 body.page-schedgo .work-detail__lead,
 body.page-ibm-saas-console .work-detail__lead,
