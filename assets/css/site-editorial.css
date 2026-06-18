@@ -1997,27 +1997,27 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
     display: contents;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit {
     order: 1;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack-pickup {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-usability {
     order: 2;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-stakeholder-interviews {
     order: 3;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-usability {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-report {
     order: 4;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-stakeholder-interviews {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack {
     order: 5;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-report {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack-pickup {
     order: 6;
   }
 
@@ -11994,5 +11994,283 @@ body.page-sound-transit .work-detail__card-sort-list li {
   body.page-sound-transit .work-detail__card-sort-list {
     grid-template-columns: 1fr;
   }
+}
+
+/* Case study pages — editorial spacing & prose cleanup */
+body.page-nordstrom-rack .work-detail__section,
+body.page-nordstrom-rack-pickup .work-detail__section,
+body.page-sound-transit .work-detail__section,
+body.page-ai-healthcare .work-detail__section,
+body.page-inclusive-lab .work-detail__section,
+body.page-inclusive-design-lab .work-detail__section {
+  padding: clamp(52px, 8vh, 88px) 0 0;
+}
+
+body.page-nordstrom-rack .work-detail__inner,
+body.page-nordstrom-rack-pickup .work-detail__inner,
+body.page-sound-transit .work-detail__inner,
+body.page-ai-healthcare .work-detail__inner,
+body.page-inclusive-lab .work-detail__inner,
+body.page-inclusive-design-lab .work-detail__inner {
+  max-width: 44rem;
+}
+
+body.page-nordstrom-rack .work-detail__hero-inner,
+body.page-nordstrom-rack-pickup .work-detail__hero-inner,
+body.page-sound-transit .work-detail__hero-inner,
+body.page-ai-healthcare .work-detail__hero-inner,
+body.page-inclusive-lab .work-detail__hero-inner,
+body.page-inclusive-design-lab .work-detail__hero-inner {
+  max-width: 44rem;
+}
+
+body.page-nordstrom-rack .work-detail__prose,
+body.page-nordstrom-rack-pickup .work-detail__prose,
+body.page-sound-transit .work-detail__prose,
+body.page-ai-healthcare .work-detail__prose,
+body.page-inclusive-lab .work-detail__prose,
+body.page-inclusive-design-lab .work-detail__prose {
+  gap: clamp(18px, 2.8vh, 28px);
+  margin-top: clamp(16px, 2.5vh, 24px);
+}
+
+body.page-nordstrom-rack .work-detail__prose p,
+body.page-nordstrom-rack-pickup .work-detail__prose p,
+body.page-sound-transit .work-detail__prose p,
+body.page-ai-healthcare .work-detail__prose p,
+body.page-inclusive-lab .work-detail__prose p,
+body.page-inclusive-design-lab .work-detail__prose p {
+  line-height: 1.78;
+}
+
+body.page-nordstrom-rack .work-detail__heading,
+body.page-nordstrom-rack-pickup .work-detail__heading,
+body.page-sound-transit .work-detail__heading,
+body.page-ai-healthcare .work-detail__heading,
+body.page-inclusive-lab .work-detail__heading,
+body.page-inclusive-design-lab .work-detail__heading {
+  margin-bottom: clamp(4px, 0.8vh, 8px);
+}
+
+body.page-nordstrom-rack .work-detail__kicker,
+body.page-nordstrom-rack-pickup .work-detail__kicker,
+body.page-sound-transit .work-detail__kicker,
+body.page-ai-healthcare .work-detail__kicker,
+body.page-inclusive-lab .work-detail__kicker,
+body.page-inclusive-design-lab .work-detail__kicker {
+  margin-top: clamp(28px, 4vh, 40px);
+}
+
+/* Flatten decorative finding/theme cards on case study pages */
+body.page-nordstrom-rack .work-detail__survey-finding,
+body.page-nordstrom-rack-pickup .work-detail__survey-finding,
+body.page-inclusive-lab .work-detail__survey-finding,
+body.page-inclusive-design-lab .work-detail__survey-finding {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+body.page-nordstrom-rack .work-detail__survey-findings,
+body.page-nordstrom-rack-pickup .work-detail__survey-findings,
+body.page-inclusive-lab .work-detail__survey-findings,
+body.page-inclusive-design-lab .work-detail__survey-findings {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 4vh, 40px);
+  margin-top: clamp(16px, 2.5vh, 24px);
+}
+
+body.page-ai-healthcare .work-detail__theme {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+body.page-ai-healthcare .work-detail__theme-badge {
+  display: none;
+}
+
+body.page-ai-healthcare .work-detail__theme-header {
+  margin-bottom: clamp(8px, 1.2vh, 12px);
+}
+
+body.page-ai-healthcare .work-detail__theme-title {
+  display: none;
+}
+
+body.page-ai-healthcare .work-detail__themes {
+  gap: clamp(36px, 5vh, 52px);
+}
+
+body.page-ai-healthcare .work-detail__tile {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+}
+
+body.page-ai-healthcare .work-detail__tiles {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 4vh, 40px);
+  margin-top: clamp(16px, 2.5vh, 24px);
+}
+
+body.page-ai-healthcare .work-detail__split-panel {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+}
+
+body.page-ai-healthcare .work-detail__split {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3.5vh, 36px);
+  margin-top: clamp(12px, 2vh, 18px);
+}
+
+body.page-ai-healthcare .work-detail__survey-part {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+body.page-ai-healthcare .work-detail__survey-part-header {
+  margin-bottom: clamp(8px, 1.2vh, 12px);
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+/* IDL — interview guide (match Nordstrom Rack / Sound Transit) */
+body.page-inclusive-lab .work-detail__interview-guide,
+body.page-inclusive-design-lab .work-detail__interview-guide {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 4vh, 40px);
+  margin-top: clamp(16px, 2.5vh, 24px);
+}
+
+body.page-inclusive-lab .interview-guide__block,
+body.page-inclusive-design-lab .interview-guide__block {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.8vh, 18px);
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+body.page-inclusive-lab .interview-guide__block-header,
+body.page-inclusive-design-lab .interview-guide__block-header {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+body.page-inclusive-lab .interview-guide__block-body,
+body.page-inclusive-design-lab .interview-guide__block-body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 2vh, 20px);
+}
+
+body.page-inclusive-lab .interview-guide__block-body > p,
+body.page-inclusive-design-lab .interview-guide__block-body > p {
+  margin: 0;
+  font-size: clamp(1.0625rem, 1.1vw, 1.125rem);
+  line-height: 1.78;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+body.page-inclusive-lab .interview-guide__label,
+body.page-inclusive-design-lab .interview-guide__label {
+  margin: clamp(8px, 1.2vh, 12px) 0 0;
+  font-size: 0.6875rem;
+  font-weight: var(--tj-fw-sbold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--site-accent);
+}
+
+body.page-inclusive-lab .interview-guide__list,
+body.page-inclusive-design-lab .interview-guide__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 2vh, 20px);
+}
+
+body.page-inclusive-lab .interview-guide__item,
+body.page-inclusive-design-lab .interview-guide__item {
+  margin: 0;
+  padding: 0;
+}
+
+body.page-inclusive-lab .interview-guide__question,
+body.page-inclusive-design-lab .interview-guide__question {
+  margin: 0;
+  font-size: clamp(1.0625rem, 1.1vw, 1.125rem);
+  line-height: 1.78;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+body.page-inclusive-lab .interview-guide__prompt,
+body.page-inclusive-design-lab .interview-guide__prompt {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, 1vh, 10px);
+  margin: clamp(8px, 1.2vh, 12px) 0 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+body.page-inclusive-lab .work-detail__interview-callout,
+body.page-inclusive-design-lab .work-detail__interview-callout {
+  margin: 0;
+  font-weight: var(--tj-fw-sbold);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+body.page-inclusive-lab .work-detail__interview-branch,
+body.page-inclusive-design-lab .work-detail__interview-branch {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+}
+
+body.page-inclusive-lab .work-detail__probe-card,
+body.page-inclusive-design-lab .work-detail__probe-card {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  margin-top: clamp(20px, 3vh, 28px);
+}
+
+/* Hide decorative stat pills on case study pages */
+body.page-nordstrom-rack-pickup .work-detail__stats,
+body.page-sound-transit .work-detail__stats,
+body.page-inclusive-lab .work-detail__stats,
+body.page-inclusive-design-lab .work-detail__stats {
+  display: none;
+}
+
+/* Sound Transit presentation — wider layout for slides */
+body.page-sound-transit .work-detail__section--visual .work-detail__inner {
+  max-width: 920px;
 }
 
