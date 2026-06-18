@@ -929,8 +929,8 @@ body.page-home .home-hero-band__ambient {
   overflow: hidden;
 }
 
-/* Home — hero meta panel (compact résumé-style chips under tagline) */
-body.page-home .home-hero-meta {
+/* About — meta panel (compact résumé-style chips) */
+body.page-about .site-meta-panel {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(14px, 1.8vh, 18px) clamp(36px, 5vw, 64px);
@@ -8023,12 +8023,52 @@ body.page-about.site-editorial .about-dance__eyebrow {
 }
 
 body.page-about.site-editorial .about-dance__title {
-  margin: 0 0 clamp(14px, 2vh, 18px);
+  margin: 0;
   font-family: var(--tj-ff-body);
   font-size: clamp(1.75rem, 3.2vw, 2.25rem);
   font-weight: var(--tj-fw-bold);
   letter-spacing: -0.03em;
   line-height: 1.15;
+  color: #ffffff;
+}
+
+body.page-about.site-editorial .about-dance .community-page__links {
+  margin: clamp(14px, 2vh, 18px) 0 0;
+  font-family: var(--tj-ff-body);
+  font-size: clamp(0.875rem, 1vw, 0.9375rem);
+  font-weight: var(--tj-fw-medium);
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.52);
+}
+
+body.page-about.site-editorial .about-dance .community-page__links a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.22);
+  text-underline-offset: 0.2em;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+body.page-about.site-editorial .about-dance .community-page__links a:hover {
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration-color: rgba(255, 77, 184, 0.55);
+}
+
+body.page-about.site-editorial .about-dance .community-page__links-sep {
+  margin: 0 0.35em;
+  opacity: 0.45;
+}
+
+body.page-about.site-editorial .about-dance__case {
+  margin: clamp(24px, 3vh, 32px) 0 0;
+}
+
+body.page-about.site-editorial .about-dance .community-subsection__case-link {
+  color: var(--site-accent);
+  text-decoration-color: rgba(255, 77, 184, 0.4);
+}
+
+body.page-about.site-editorial .about-dance .community-subsection__case-link:hover {
   color: #ffffff;
 }
 
