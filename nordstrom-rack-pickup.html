@@ -349,6 +349,161 @@
             </div>
           </section>
 
+          <section class="work-detail__section" aria-labelledby="nordstrom-findings-heading">
+            <div class="work-detail__inner">
+              <h2 id="nordstrom-findings-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Findings</h2>
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
+                <p>We identified one area where the experience performed well and five distinct usability issues across three themes: filtering accuracy, multi-store checkout behavior, and pickup logistics discoverability.</p>
+
+                <h3 class="work-detail__kicker" id="nordstrom-working-heading">What's Working Well</h3>
+                <p><strong>Ease of changing store location.</strong> Store names appear as hyperlinks wherever they're shown on the site, making it easy for shoppers to quickly switch locations. Participants noticed and appreciated this pattern.</p>
+              </div>
+              <figure class="work-detail__quote tj-fade" data-on-scroll="0" data-delay=".06">
+                <blockquote>
+                  <p>"I think it's nice that every time the store name was shown it was linked, so you could quickly change the store location if you wanted to."</p>
+                </blockquote>
+                <figcaption class="work-detail__quote-caption">Participant 2</figcaption>
+              </figure>
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".08">
+                <p><strong>Familiar, clear site layout.</strong> The overall site architecture matched participants' existing e-commerce mental models. Navigation to product categories, adding items to the bag, and proceeding to checkout felt intuitive. The study's overall task success rate was 82%.</p>
+              </div>
+              <figure class="work-detail__quote tj-fade" data-on-scroll="0" data-delay=".1">
+                <blockquote>
+                  <p>"The website is clear and easy for me to understand, and the process of buying these things is familiar. I'm very familiar with this process because it works similarly to other retail websites."</p>
+                </blockquote>
+                <figcaption class="work-detail__quote-caption">Participant 3</figcaption>
+              </figure>
+
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".12">
+                <h3 class="work-detail__kicker" id="nordstrom-issues-heading">Issues &amp; Evidence</h3>
+
+                <p><strong>"Available Today" filter doesn't accurately reflect size-level availability</strong> · Severity: High</p>
+                <p>The filter operates at the product level, not the size level. A shoe appears in results as long as any size or color variation is available for same-day pickup — even if the shopper's selected size is entirely unavailable. Participants wasted significant effort clicking through products only to discover nothing in their size was actually eligible.</p>
+                <p>A compounding issue: when "Available Today" and a size filter are applied together, some results appear that have no colors available in that size for same or next-day pickup — a direct contradiction of what the filter implies.</p>
+                <ul>
+                  <li>7 of 8 participants applied the "Available today" filter</li>
+                  <li>4 of 8 also applied a size filter</li>
+                  <li>Participants checked an average of 10.6 size/color combinations before finding an eligible shoe</li>
+                  <li>3 of 8 participants tried to give up on the task 1–3 times due to the filters appearing broken</li>
+                </ul>
+              </div>
+              <figure class="work-detail__quote tj-fade" data-on-scroll="0" data-delay=".14">
+                <blockquote>
+                  <p>"I did filter by 'available today' and the size, but the filters did not work."</p>
+                </blockquote>
+                <figcaption class="work-detail__quote-caption">Participant 7</figcaption>
+              </figure>
+              <figure class="work-detail__quote tj-fade" data-on-scroll="0" data-delay=".16">
+                <blockquote>
+                  <p>"Oh I finally got it, so only the size with the 'Pick up tmr' label is truly available?"</p>
+                </blockquote>
+                <figcaption class="work-detail__quote-caption">Participant 1, after spending several minutes clicking through results</figcaption>
+              </figure>
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".2">
+                <p><strong>Participants miss when fulfillment silently switches from "pickup" to "ship to store"</strong> · Severity: High</p>
+                <p>On the product detail page, selecting a size or color that isn't available for same-day pickup causes the fulfillment method to change from "Free pickup" to "Free ship to store." This UI change is subtle and easy to miss, especially when a participant is focused on selecting their size.</p>
+                <ul>
+                  <li>4 of 8 participants added a "ship to store" item to their bag believing it was available for same-day pickup</li>
+                </ul>
+              </div>
+              <figure class="work-detail__quote tj-fade" data-on-scroll="0" data-delay=".22">
+                <blockquote>
+                  <p>"It says 'free pick up', but as soon as I select a size, it changes to 'free ship to store'. That's a little annoying."</p>
+                </blockquote>
+                <figcaption class="work-detail__quote-caption">Participant 6</figcaption>
+              </figure>
+              <figure class="work-detail__quote tj-fade" data-on-scroll="0" data-delay=".24">
+                <blockquote>
+                  <p>"Well, the filter says 'available today' so I thought all the items here would be available for pickup by today or tomorrow. I guess 'available today' means it's just purchasable today. Then how can I filter for items that are available for pickup today or tomorrow? I don't think there's a filter for that."</p>
+                </blockquote>
+                <figcaption class="work-detail__quote-caption">Participant 8, after accidentally adding a "ship to store" item</figcaption>
+              </figure>
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".28">
+                <p><strong>Adding pickup items from multiple stores causes silent, confusing reassignment at checkout</strong> · Severity: Medium</p>
+                <p>When a shopper adds pickup items from Store A, switches store location, then adds items from Store B, the system consolidates all items under Store B at checkout. If Store A items aren't available for same-day pickup at Store B, their fulfillment method changes — but this happens without a clear, proactive notification.</p>
+                <ul>
+                  <li>5 of 8 participants expected to check out from multiple stores in a single transaction</li>
+                  <li>All 8 participants expressed confusion or annoyance when "Available Today" items became unavailable at checkout</li>
+                  <li>5 of 8 noticed the store switch on their own at checkout; 3 of 8 did not notice and had to be prompted</li>
+                </ul>
+                <p class="work-detail__note">When both items are available at Store B, the consolidation behavior is actually well-received — participants appreciated not having to make multiple trips. The problem is specifically the silent fulfillment downgrade with no warning.</p>
+              </div>
+              <figure class="work-detail__quote tj-fade" data-on-scroll="0" data-delay=".3">
+                <blockquote>
+                  <p>"Oh no! The bag cannot be picked up by tomorrow anymore. I didn't notice that!"</p>
+                </blockquote>
+                <figcaption class="work-detail__quote-caption">Participant 4</figcaption>
+              </figure>
+              <figure class="work-detail__quote tj-fade" data-on-scroll="0" data-delay=".32">
+                <blockquote>
+                  <p>"Oh...so it says I am picking both of these items up at the NR in Bellevue. They have different arrival times at the store, which is really annoying. I can actually only get [the shoes] tomorrow now."</p>
+                </blockquote>
+                <figcaption class="work-detail__quote-caption">Participant 5</figcaption>
+              </figure>
+
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".34">
+                <p><strong>"Sold Out" message appears for items that are available at nearby stores</strong> · Severity: Medium</p>
+                <p>One participant's item was moved to "Saved for Later" at checkout, with a notification reading "We moved your sold-out items to Saved for Later." While a popup mentioned the item was "available nearby," the "sold-out" label was genuinely confusing — participants couldn't determine if the item was globally out of stock or simply unavailable at their selected store.</p>
+              </div>
+              <figure class="work-detail__quote tj-fade" data-on-scroll="0" data-delay=".36">
+                <blockquote>
+                  <p>"I'm kind of confused why it says 'sold-out'...I'm not sure if that means that the item is actually sold out, like someone bought it already, or more like, oh, you just can't check out from two different locations."</p>
+                </blockquote>
+                <figcaption class="work-detail__quote-caption">Participant 4</figcaption>
+              </figure>
+
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".38">
+                <p><strong>The "Available Today" filter is hard to notice, and pickup logistics info is buried</strong> · Severity: Medium (filter visibility) / Low (logistics discoverability)</p>
+                <p>Two related issues surfaced in this category. First, 2 of 8 participants didn't notice the "Available Today" filter when tasked with finding a same-day pickup item. One gave up on the task entirely; the other got lucky selecting a pickup item on the first try. A third participant found the filter only after struggling without it.</p>
+                <p>Second, when tasked with finding how long Nordstrom Rack holds pickup orders, participants instinctively looked at the checkout page and shopping bag — both of which lack this information. The information required an average of 7 clicks to locate; one participant gave up and searched Google.</p>
+                <ul>
+                  <li>2 of 8 participants missed the "Available Today" filter entirely</li>
+                  <li>6 of 8 first looked for hold policy on the checkout or bag page</li>
+                  <li>7 average clicks to find the order hold duration</li>
+                  <li>1 participant gave up and Googled the answer</li>
+                </ul>
+              </div>
+              <figure class="work-detail__quote tj-fade" data-on-scroll="0" data-delay=".4">
+                <blockquote>
+                  <p>"I can't find the hold policy anywhere. I'll just Google it."</p>
+                </blockquote>
+                <figcaption class="work-detail__quote-caption">Participant 2</figcaption>
+              </figure>
+              <figure class="work-detail__quote tj-fade" data-on-scroll="0" data-delay=".42">
+                <blockquote>
+                  <p>"It would have been nice to have this on the FAQ page...my main criticism is having to navigate to this extra screen."</p>
+                </blockquote>
+                <figcaption class="work-detail__quote-caption">Participant 2, after eventually finding the information</figcaption>
+              </figure>
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".44">
+                <h3 class="work-detail__kicker" id="nordstrom-questionnaire-heading">Post-Test Questionnaire Results</h3>
+                <p>Participants rated their experience across five dimensions on a 5-point scale.</p>
+              </div>
+              <ul class="work-detail__stats tj-fade" data-on-scroll="0" data-delay=".48" role="list" aria-label="Post-test questionnaire averages">
+                <li class="work-detail__stats-item">
+                  <span class="work-detail__stats-value">3.6</span>
+                  <span class="work-detail__stats-label">Navigation ease — generally acceptable; familiar patterns helped</span>
+                </li>
+                <li class="work-detail__stats-item">
+                  <span class="work-detail__stats-value">3.1</span>
+                  <span class="work-detail__stats-label">Finding pickup items — lowest rated; filter issues directly impacted this</span>
+                </li>
+                <li class="work-detail__stats-item">
+                  <span class="work-detail__stats-value">3.8</span>
+                  <span class="work-detail__stats-label">Purchase process — checkout mechanics felt straightforward when working</span>
+                </li>
+                <li class="work-detail__stats-item">
+                  <span class="work-detail__stats-value">3.5</span>
+                  <span class="work-detail__stats-label">Information clarity — pickup-specific info often ambiguous</span>
+                </li>
+                <li class="work-detail__stats-item">
+                  <span class="work-detail__stats-value">3.1</span>
+                  <span class="work-detail__stats-label">Overall satisfaction — dragged down by filter and multi-store frustrations</span>
+                </li>
+              </ul>
+            </div>
+          </section>
+
           <section class="work-detail__section work-detail__section--footer" aria-labelledby="nordstrom-credits-heading">
             <div class="work-detail__inner">
               <p id="nordstrom-credits-heading" class="work-detail__note tj-fade" data-on-scroll="0">
