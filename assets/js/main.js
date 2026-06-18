@@ -2862,7 +2862,10 @@ const COMMUNITY_MARQUEE_SPEED_PX_S = 48;
 const COMMUNITY_MARQUEE_SPEED_SINGLE_PX_S = 18;
 
 const initCommunityGalleries = () => {
-  if (!document.body.classList.contains("page-community")) return;
+  const hasCommunityGalleries =
+    document.body.classList.contains("page-community") ||
+    document.body.classList.contains("page-about");
+  if (!hasCommunityGalleries) return;
 
   const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -2924,6 +2927,13 @@ const initCommunityGalleries = () => {
     refreshDuration();
     window.addEventListener("resize", refreshDuration, { passive: true });
   });
+
+  if (
+    document.body.classList.contains("page-about") &&
+    typeof ScrollTrigger !== "undefined"
+  ) {
+    ScrollTrigger.refresh();
+  }
 };
 
 const WORK_DETAIL_TOC_MIN_SECTIONS = 2;
