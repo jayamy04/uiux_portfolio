@@ -3246,7 +3246,7 @@ const initWorkDetailToc = () => {
 
   const headings = Array.from(
     article.querySelectorAll(
-      ".work-detail__section .work-detail__inner > h2.work-detail__heading"
+      ".work-detail__section .work-detail__inner > h2.work-detail__heading, .work-detail__section .work-detail__inner > h3.work-detail__kicker"
     )
   );
 
