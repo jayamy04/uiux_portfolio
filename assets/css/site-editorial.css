@@ -1655,7 +1655,7 @@ body.page-home .home-hero-projects__case-study:focus-visible {
 body.page-home .home-hero-projects__grid--editorial {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  align-items: stretch;
+  align-items: start;
   gap: clamp(20px, 2.8vw, 32px);
   padding-block: clamp(4px, 0.6vw, 8px);
 }
@@ -1667,7 +1667,7 @@ body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {
   align-items: stretch;
   opacity: 1;
   min-height: 0;
-  height: 100%;
+  height: auto;
   overflow: hidden;
   gap: 0;
   padding: 0;
@@ -1766,7 +1766,6 @@ body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-ti
 }
 
 body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-desc {
-  flex: 1 1 auto;
   color: rgba(255, 255, 255, 0.78);
   overflow: visible;
   display: block;
@@ -1795,7 +1794,7 @@ body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-de
 }
 
 body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-body {
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1815,7 +1814,7 @@ body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card--n
 }
 
 body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card--no-media .home-hero-projects__card-body {
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   min-height: 0;
 }
 
@@ -1866,7 +1865,7 @@ body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb v
 }
 
 body.page-home .home-hero-projects__grid--editorial .home-hero-projects__case-study {
-  margin-top: auto;
+  margin-top: clamp(12px, 1.35vh, 16px);
   padding: clamp(10px, 1.2vh, 14px) 0 clamp(2px, 0.35vh, 4px);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   font-size: clamp(0.75rem, 0.88vw, 0.8125rem);
