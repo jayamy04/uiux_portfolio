@@ -7800,6 +7800,25 @@ body.page-about.site-editorial .about-page__title-word--accent:only-child {
   padding-left: 0;
 }
 
+body.page-about.site-editorial .about-page__text--lead {
+  line-height: 1.55;
+}
+
+body.page-about.site-editorial .about-page__text--lead .about-page__title-word {
+  display: inline;
+  margin-right: 0.18em;
+  font-size: clamp(2.75rem, 10vw, 6.5rem);
+  font-weight: var(--tj-fw-bold);
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  text-transform: none;
+  vertical-align: baseline;
+}
+
+body.page-about.site-editorial .about-page__text--lead .about-page__title-word--accent {
+  padding-left: 0;
+}
+
 body.page-about.site-editorial .about-page-story {
   display: flex;
   flex-direction: column;
