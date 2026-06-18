@@ -1759,8 +1759,6 @@ body.page-home .home-hero-projects__card:focus-within .home-hero-projects__card-
 body.page-home .home-hero-projects__card-eyebrow {
   display: block;
   margin: clamp(8px, 1vh, 12px) 0 0;
-  padding-bottom: clamp(10px, 1.15vh, 14px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   font-family: var(--tj-ff-body);
   font-size: clamp(0.625rem, 0.75vw, 0.6875rem);
   font-weight: var(--tj-fw-medium);
@@ -2015,7 +2013,6 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
 
   body.page-home .home-hero-projects__card-eyebrow {
     margin-top: clamp(10px, 1.15vh, 14px);
-    padding-bottom: clamp(11px, 1.25vh, 15px);
     max-width: none;
   }
 
