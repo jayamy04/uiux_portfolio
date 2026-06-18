@@ -2832,6 +2832,31 @@ const initDanceReels = () => {
   window.addEventListener("load", refreshDanceScroll, { once: true });
 };
 
+const initAboutDanceReels = () => {
+  const videos = document.querySelectorAll(".page-about .about-dance__reel-video");
+  if (!videos.length) return;
+
+  videos.forEach((video) => {
+    const frame = video.closest(".about-dance__reel-frame");
+    const showPosterFallback = () => {
+      const poster = video.getAttribute("poster");
+      if (!poster || frame?.querySelector(".about-dance__reel-poster")) return;
+      const img = document.createElement("img");
+      img.className = "about-dance__reel-poster";
+      img.src = poster;
+      img.alt = "";
+      img.setAttribute("aria-hidden", "true");
+      img.decoding = "async";
+      frame?.prepend(img);
+      video.style.display = "none";
+    };
+
+    video.addEventListener("error", showPosterFallback, { once: true });
+  });
+
+  bindContinuousLoopVideos(videos, { pauseOffscreen: true });
+};
+
 /** Continuous community marquee speed (px/s). */
 const COMMUNITY_MARQUEE_SPEED_PX_S = 48;
 const COMMUNITY_MARQUEE_SPEED_SINGLE_PX_S = 18;
@@ -3288,6 +3313,7 @@ const initProjectPageEnhancements = () => {
   initPlaygroundCarousel();
   initEditorialProjectFilter();
   initDanceReels();
+  initAboutDanceReels();
   if (typeof initDanceOutletWall === "function") {
     initDanceOutletWall();
   }
