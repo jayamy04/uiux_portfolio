@@ -1653,9 +1653,10 @@ body.page-home .home-hero-projects__case-study:focus-visible {
 
 /* Home — hero project editorial grid (two independent columns) */
 body.page-home .home-hero-projects__grid--editorial {
+  --home-projects-gap: clamp(18px, 5vw, 26px);
   display: flex;
   flex-direction: column;
-  gap: clamp(18px, 5vw, 26px);
+  gap: var(--home-projects-gap);
   padding-block: clamp(4px, 0.6vw, 8px);
 }
 
@@ -2052,16 +2053,17 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
 
 @media only screen and (min-width: 768px) {
   body.page-home .home-hero-projects__grid--editorial {
+    --home-projects-gap: clamp(24px, 2.6vw, 36px);
     flex-direction: row;
     align-items: flex-start;
-    gap: clamp(24px, 2.6vw, 36px);
+    gap: var(--home-projects-gap);
   }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__column {
     display: flex;
     flex: 1 1 0;
     flex-direction: column;
-    gap: clamp(20px, 2.2vw, 28px);
+    gap: var(--home-projects-gap);
     min-width: 0;
   }
 
@@ -2094,7 +2096,7 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
 
 @media only screen and (max-width: 767px) {
   body.page-home .home-hero-projects__grid--editorial {
-    gap: clamp(18px, 5vw, 26px);
+    gap: var(--home-projects-gap);
   }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {
@@ -2131,11 +2133,8 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
 
 @media only screen and (min-width: 992px) {
   body.page-home .home-hero-projects__grid--editorial {
-    gap: clamp(28px, 2.8vw, 44px);
-  }
-
-  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__column {
-    gap: clamp(24px, 2.4vw, 36px);
+    --home-projects-gap: clamp(28px, 2.8vw, 44px);
+    gap: var(--home-projects-gap);
   }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-body {
