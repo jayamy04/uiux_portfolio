@@ -11080,3 +11080,103 @@ body.site-editorial .work-detail__toc-item.is-active .work-detail__toc-link {
   border-bottom: 0;
 }
 
+/* Inclusive Design Lab — method cards (reuse Nordstrom / AI healthcare survey-part layout) */
+body.page-inclusive-lab .work-detail__prose--survey,
+body.page-inclusive-design-lab .work-detail__prose--survey {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.6vh, 16px);
+}
+
+body.page-inclusive-lab .work-detail__survey-part,
+body.page-inclusive-design-lab .work-detail__survey-part {
+  position: relative;
+  margin: 0;
+  padding: clamp(12px, 1.8vh, 18px) clamp(14px, 2vw, 20px);
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(
+    180deg,
+    var(--site-accent) 0,
+    var(--site-accent) 3px,
+    rgba(255, 255, 255, 0.025) 3px,
+    rgba(255, 255, 255, 0.025) 100%
+  );
+  box-shadow:
+    inset 1px 0 0 rgba(255, 255, 255, 0.1),
+    inset -1px 0 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    0 8px 24px rgba(0, 0, 0, 0.14);
+}
+
+body.page-inclusive-lab .work-detail__survey-part-header,
+body.page-inclusive-design-lab .work-detail__survey-part-header {
+  margin-bottom: clamp(6px, 1vh, 10px);
+  padding-bottom: clamp(6px, 1vh, 8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.page-inclusive-lab .work-detail__survey-part-header .work-detail__kicker,
+body.page-inclusive-design-lab .work-detail__survey-part-header .work-detail__kicker {
+  margin: 0;
+}
+
+body.page-inclusive-lab .work-detail__survey-part-body,
+body.page-inclusive-design-lab .work-detail__survey-part-body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.2vh, 12px);
+  padding: 0;
+}
+
+body.page-inclusive-lab .work-detail__survey-part-body > p,
+body.page-inclusive-design-lab .work-detail__survey-part-body > p {
+  margin: 0;
+}
+
+body.page-inclusive-lab .work-detail__survey-part-body ul:not(.work-detail__interview-guidelines),
+body.page-inclusive-design-lab .work-detail__survey-part-body ul:not(.work-detail__interview-guidelines) {
+  margin: 0;
+  padding-left: 1.15em;
+}
+
+body.page-inclusive-lab .work-detail__interview-guidelines,
+body.page-inclusive-design-lab .work-detail__interview-guidelines {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+body.page-inclusive-lab .work-detail__interview-guidelines li,
+body.page-inclusive-design-lab .work-detail__interview-guidelines li {
+  position: relative;
+  margin: 0;
+  padding: clamp(8px, 1vh, 10px) clamp(10px, 1.4vw, 12px) clamp(8px, 1vh, 10px) clamp(26px, 2.2vw, 30px);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.028);
+  font-size: clamp(0.875rem, 1.05vw, 0.9375rem);
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+body.page-inclusive-lab .work-detail__interview-guidelines li::before,
+body.page-inclusive-design-lab .work-detail__interview-guidelines li::before {
+  content: "→";
+  position: absolute;
+  left: clamp(10px, 1.2vw, 12px);
+  top: clamp(8px, 1vh, 10px);
+  font-weight: var(--tj-fw-sbold);
+  color: var(--site-accent);
+}
+
+@media (max-width: 640px) {
+  body.page-inclusive-lab .work-detail__survey-part,
+  body.page-inclusive-design-lab .work-detail__survey-part {
+    padding: 12px;
+  }
+}
+
