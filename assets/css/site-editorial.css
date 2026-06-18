@@ -9986,6 +9986,22 @@ body.page-sound-transit .work-detail__compare {
   margin: clamp(20px, 3vh, 28px) 0 0;
 }
 
+body.page-sound-transit .work-detail__presentation-stack {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.5vw, 28px);
+}
+
+body.page-sound-transit .work-detail__presentation-stack .work-detail__figure {
+  margin: 0;
+}
+
+body.page-sound-transit .work-detail__figure-frame--slide {
+  max-height: none;
+  overflow: visible;
+  overflow-y: visible;
+}
+
 body.page-nordstrom-rack .work-detail__figure--caption-only , body.page-ai-healthcare .work-detail__figure--caption-only ,
 body.page-sound-transit .work-detail__figure--caption-only {
   margin: 0;
