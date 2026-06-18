@@ -1481,7 +1481,7 @@ body.page-home .home-hero-projects__card.is-active .home-hero-projects__card-des
     animation: none;
   }
 
-  body.page-home .home-hero-projects__grid--stack #hero-project-inclusive-design-lab .home-hero-projects__thumb img.home-hero-projects__thumb-scroll {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab .home-hero-projects__thumb img.home-hero-projects__thumb-scroll {
     transform: scale(1.18) translateY(-13%);
     object-position: top center;
   }
@@ -1533,21 +1533,21 @@ body.page-home .home-hero-projects__case-study--soon {
   cursor: default;
 }
 
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__case-study--soon {
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__case-study--soon {
   border-top: none;
   margin-top: auto;
 }
 
-/* Home — hero project stack (one per row; media left / text right at tablet+) */
-body.page-home .home-hero-projects__grid--stack {
-  display: flex;
-  flex-direction: column;
+/* Home — hero project editorial grid (Medium-inspired; text pairs + featured media rows) */
+body.page-home .home-hero-projects__grid--editorial {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   align-items: stretch;
-  gap: clamp(24px, 3vw, 44px);
+  gap: clamp(20px, 2.8vw, 32px);
   padding-block: clamp(4px, 0.6vw, 8px);
 }
 
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__card {
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -1559,14 +1559,11 @@ body.page-home .home-hero-projects__grid--stack .home-hero-projects__card {
   overflow: visible;
   align-items: stretch;
   gap: clamp(14px, 1.6vh, 18px);
-  padding: clamp(14px, 1.5vw, 20px);
-  border-radius: 14px;
+  padding: clamp(16px, 1.6vw, 22px);
+  border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.09);
-  background:
-    linear-gradient(168deg, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.012) 100%);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.04) inset,
-    0 4px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset;
   transition:
     border-color 0.4s ease,
     background 0.4s ease,
@@ -1574,10 +1571,10 @@ body.page-home .home-hero-projects__grid--stack .home-hero-projects__card {
     transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:not(.is-active):hover,
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:not(.is-active):focus-visible,
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:hover,
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:focus-visible {
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:not(.is-active):hover,
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:not(.is-active):focus-visible,
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:hover,
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:focus-visible {
   opacity: 1;
   transform: translateY(-4px);
   border-color: rgba(255, 77, 184, 0.5);
@@ -1587,6 +1584,19 @@ body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:focus-
     0 0 0 1px rgba(255, 77, 184, 0.22),
     0 10px 36px rgba(255, 77, 184, 0.14),
     0 16px 48px rgba(0, 0, 0, 0.28);
+}
+
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card--no-media:hover,
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card--no-media:focus-visible {
+  transform: translateY(-2px);
+  border-top-color: rgba(255, 77, 184, 0.55);
+  box-shadow:
+    0 0 0 1px rgba(255, 77, 184, 0.16),
+    0 6px 24px rgba(0, 0, 0, 0.22);
+}
+
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card--lead .home-hero-projects__card-title {
+  font-size: clamp(1rem, 1.15vw, 1.125rem);
 }
 
 body.page-home .home-hero-projects__card-logo {
@@ -1638,7 +1648,7 @@ body.page-home .home-hero-projects__card-eyebrow {
   min-width: 0;
 }
 
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-title {
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-title {
   margin: clamp(12px, 1.35vh, 16px) 0 clamp(8px, 0.95vh, 11px);
   color: #ffffff;
   font-size: clamp(0.9375rem, 1.1vw, 1.0625rem);
@@ -1648,7 +1658,7 @@ body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-title 
   text-wrap: balance;
 }
 
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-desc {
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-desc {
   flex: 1 1 auto;
   color: rgba(255, 255, 255, 0.78);
   overflow: visible;
@@ -1663,7 +1673,7 @@ body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-desc {
   letter-spacing: -0.012em;
 }
 
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-desc a {
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-desc a {
   color: var(--editorial-project-accent);
   text-decoration: underline;
   text-decoration-color: rgba(255, 138, 224, 0.35);
@@ -1671,13 +1681,13 @@ body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-desc a
   transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-desc a:hover,
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-desc a:focus-visible {
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-desc a:hover,
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-desc a:focus-visible {
   color: #ffb8ef;
   text-decoration-color: rgba(255, 184, 239, 0.6);
 }
 
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-body {
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-body {
   grid-area: body;
   flex: 1 1 auto;
   display: flex;
@@ -1692,23 +1702,27 @@ body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-body {
   padding: clamp(2px, 0.35vw, 6px) clamp(2px, 0.3vw, 4px);
 }
 
-/* Stack — text-only cards (no media thumb) */
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__card--no-media {
+/* Editorial — text-only cards (clean typography; no placeholder media) */
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card--no-media {
   grid-template-columns: minmax(0, 1fr);
   grid-template-areas: "body";
   align-items: stretch;
+  border-top: 2px solid rgba(255, 77, 184, 0.32);
+  background: rgba(255, 255, 255, 0.018);
 }
 
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__card--no-media .home-hero-projects__card-body {
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card--no-media .home-hero-projects__card-body {
   flex: 1 1 auto;
+  min-height: 0;
   padding: clamp(2px, 0.4vw, 6px) clamp(2px, 0.3vw, 4px);
 }
 
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__card--no-media::before {
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card--no-media::before {
   content: none;
+  display: none;
 }
 
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb {
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb {
   grid-area: thumb;
   flex: 0 0 auto;
   position: relative;
@@ -1732,15 +1746,15 @@ body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb {
   transition: box-shadow 0.4s ease;
 }
 
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:hover .home-hero-projects__thumb,
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:focus-visible .home-hero-projects__thumb {
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:hover .home-hero-projects__thumb,
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:focus-visible .home-hero-projects__thumb {
   box-shadow:
     0 0 0 1px rgba(255, 77, 184, 0.28),
     0 8px 32px rgba(0, 0, 0, 0.38);
 }
 
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb img,
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb video {
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb img,
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb video {
   display: block;
   flex: 0 1 auto;
   width: auto;
@@ -1752,7 +1766,7 @@ body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb video
   opacity: 1;
 }
 
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__case-study {
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__case-study {
   margin-top: auto;
   padding: clamp(10px, 1.2vh, 14px) 0 clamp(2px, 0.35vh, 4px);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -1762,18 +1776,18 @@ body.page-home .home-hero-projects__grid--stack .home-hero-projects__case-study 
   color: var(--site-accent);
 }
 
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__case-study:hover,
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__case-study:focus-visible {
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__case-study:hover,
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__case-study:focus-visible {
   color: var(--editorial-project-accent);
 }
 
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__case-study-arrow {
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__case-study-arrow {
   display: inline-block;
   transition: transform 0.25s ease;
 }
 
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:hover .home-hero-projects__case-study-arrow,
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:focus-within .home-hero-projects__case-study-arrow {
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:hover .home-hero-projects__case-study-arrow,
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:focus-within .home-hero-projects__case-study-arrow {
   transform: translateX(4px);
 }
 
@@ -1795,10 +1809,10 @@ body.page-home .home-hero-projects__thumb--ratio-ibm {
   aspect-ratio: 3 / 2;
 }
 
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb--ratio-16x9,
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb--ratio-nordstrom,
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb--ratio-idl,
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb--ratio-ibm {
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb--ratio-16x9,
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb--ratio-nordstrom,
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb--ratio-idl,
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb--ratio-ibm {
   aspect-ratio: 16 / 10;
   max-width: 100%;
 }
@@ -1839,16 +1853,16 @@ body.page-home #hero-project-ai-healthcare .home-hero-projects__thumb--native im
 }
 
 /* Stack — unified centered contain; gradient bg fills letterbox areas */
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb--cover img,
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb--cover video,
-body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb--native img {
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb--cover img,
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb--cover video,
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb--native img {
   object-fit: contain;
   object-position: center center;
   transform: none;
 }
 
 /* Sound Transit — phone mockup centered contain (full mockup visible) */
-body.page-home .home-hero-projects__grid--stack #hero-project-sound-transit .home-hero-projects__thumb video {
+body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit .home-hero-projects__thumb video {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -1857,13 +1871,13 @@ body.page-home .home-hero-projects__grid--stack #hero-project-sound-transit .hom
 }
 
 /* Nordstrom Rack — native UI video, centered contain */
-body.page-home .home-hero-projects__grid--stack #hero-project-nordstrom-rack .home-hero-projects__thumb video {
+body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack .home-hero-projects__thumb video {
   max-width: 100%;
   max-height: 100%;
 }
 
 /* Dancers Survey — dance reel video, centered contain */
-body.page-home .home-hero-projects__grid--stack #hero-project-dancers-survey .home-hero-projects__thumb video {
+body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey .home-hero-projects__thumb video {
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
@@ -1871,7 +1885,7 @@ body.page-home .home-hero-projects__grid--stack #hero-project-dancers-survey .ho
 }
 
 /* AI Healthcare — HCDE showcase photo, centered contain */
-body.page-home .home-hero-projects__grid--stack #hero-project-ai-healthcare .home-hero-projects__thumb img {
+body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare .home-hero-projects__thumb img {
   max-width: min(88%, 100%);
   max-height: 92%;
   object-fit: contain;
@@ -1879,7 +1893,7 @@ body.page-home .home-hero-projects__grid--stack #hero-project-ai-healthcare .hom
 }
 
 /* Inclusive Design Lab — portrait poster: moderate cover zoom + slow vertical pan */
-body.page-home .home-hero-projects__grid--stack #hero-project-inclusive-design-lab .home-hero-projects__thumb img.home-hero-projects__thumb-scroll {
+body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab .home-hero-projects__thumb img.home-hero-projects__thumb-scroll {
   width: 100%;
   height: auto;
   min-height: 100%;
@@ -1902,29 +1916,56 @@ body.page-home .home-hero-projects__grid--stack #hero-project-inclusive-design-l
 }
 
 @media only screen and (min-width: 768px) {
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card {
-    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  body.page-home .home-hero-projects__grid--editorial {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(20px, 2.2vw, 28px) clamp(24px, 2.6vw, 36px);
+  }
+
+  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack {
+    grid-column: 1;
+  }
+
+  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey {
+    grid-column: 2;
+  }
+
+  body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare {
+    grid-column: 1 / -1;
+  }
+
+  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab,
+  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit {
+    grid-column: 1 / -1;
+  }
+
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:not(.home-hero-projects__card--no-media) {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
     grid-template-areas: "thumb body";
     align-items: center;
     gap: clamp(20px, 2.4vw, 36px);
     padding: clamp(18px, 1.8vw, 26px);
   }
 
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    grid-template-areas: "body thumb";
+  }
+
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb {
     align-self: center;
     flex-shrink: 0;
     width: 100%;
-    min-height: clamp(168px, 18vw, 260px);
-    max-height: clamp(168px, 18vw, 260px);
+    min-height: clamp(160px, 16vw, 240px);
+    max-height: clamp(160px, 16vw, 240px);
     height: auto;
     aspect-ratio: 16 / 10;
   }
 
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-title {
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-title {
     font-size: clamp(1rem, 1.15vw, 1.125rem);
     margin: clamp(14px, 1.5vh, 18px) 0 clamp(8px, 1vh, 12px);
     line-height: 1.24;
-    max-width: 30ch;
+    max-width: 32ch;
   }
 
   body.page-home .home-hero-projects__card-eyebrow {
@@ -1933,84 +1974,69 @@ body.page-home .home-hero-projects__grid--stack #hero-project-inclusive-design-l
     max-width: 34ch;
   }
 
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-desc {
-    max-width: 50ch;
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-desc {
+    max-width: 52ch;
     font-size: clamp(0.8125rem, 0.95vw, 0.9375rem);
   }
 
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-body {
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:not(.home-hero-projects__card--no-media) .home-hero-projects__card-body {
     align-self: stretch;
-    min-height: clamp(168px, 18vw, 260px);
+    min-height: clamp(160px, 16vw, 240px);
   }
 
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card--no-media {
-    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-    grid-template-areas: "accent body";
-    align-items: center;
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card--no-media {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "body";
+    align-items: stretch;
+    height: 100%;
   }
 
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card--no-media::before {
-    content: "";
-    display: block;
-    grid-area: accent;
-    align-self: center;
-    width: 100%;
-    min-height: clamp(168px, 18vw, 260px);
-    max-height: clamp(168px, 18vw, 260px);
-    aspect-ratio: 16 / 10;
-    border-radius: 10px;
-    background:
-      radial-gradient(ellipse 72% 58% at 50% 28%, rgba(255, 77, 184, 0.11) 0%, transparent 58%),
-      radial-gradient(ellipse 48% 42% at 82% 72%, rgba(180, 122, 255, 0.07) 0%, transparent 52%),
-      linear-gradient(165deg, #1a1428 0%, #120f1c 42%, #0a0812 100%);
-    box-shadow:
-      inset 3px 0 0 rgba(255, 77, 184, 0.38),
-      0 0 0 1px rgba(255, 255, 255, 0.07),
-      0 6px 28px rgba(0, 0, 0, 0.32);
-    transition: box-shadow 0.4s ease;
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card--no-media::before {
+    content: none;
+    display: none;
   }
 
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card--no-media:hover::before,
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card--no-media:focus-visible::before {
-    box-shadow:
-      inset 3px 0 0 rgba(255, 77, 184, 0.55),
-      0 0 0 1px rgba(255, 77, 184, 0.28),
-      0 8px 32px rgba(0, 0, 0, 0.38);
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card--no-media .home-hero-projects__card-body {
+    min-height: 0;
   }
 
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card--no-media .home-hero-projects__card-title {
-    max-width: 34ch;
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card--no-media .home-hero-projects__card-title {
+    max-width: none;
   }
 
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card--no-media .home-hero-projects__card-desc {
-    max-width: 54ch;
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card--no-media .home-hero-projects__card-desc {
+    max-width: none;
   }
 
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card--soon {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare .home-hero-projects__card-body {
+    max-width: 68ch;
+  }
+
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card--soon {
     border-style: dashed;
   }
 }
 
 @media only screen and (max-width: 767px) {
-  body.page-home .home-hero-projects__grid--stack {
+  body.page-home .home-hero-projects__grid--editorial {
     gap: clamp(18px, 5vw, 26px);
   }
 
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card {
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {
     padding: clamp(16px, 4.2vw, 20px);
     border-radius: 12px;
     min-height: 0;
   }
 
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-body {
-    min-height: clamp(168px, 42vw, 220px);
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-body {
+    min-height: 0;
   }
 
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card-desc {
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-desc {
     max-width: none;
   }
 
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__thumb {
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb {
     border-radius: 8px;
     aspect-ratio: 16 / 10;
     min-height: 0;
@@ -2021,36 +2047,40 @@ body.page-home .home-hero-projects__grid--stack #hero-project-inclusive-design-l
     max-width: 100%;
   }
 
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:not(.is-active):hover,
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:not(.is-active):focus-visible,
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:hover,
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:focus-visible {
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:not(.is-active):hover,
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:not(.is-active):focus-visible,
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:hover,
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:focus-visible {
     transform: translateY(-2px);
   }
 }
 
 @media only screen and (min-width: 992px) {
-  body.page-home .home-hero-projects__grid--stack {
-    gap: clamp(32px, 2.8vw, 52px);
+  body.page-home .home-hero-projects__grid--editorial {
+    gap: clamp(24px, 2.4vw, 36px) clamp(28px, 2.8vw, 44px);
   }
 
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card {
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:not(.home-hero-projects__card--no-media) {
     gap: clamp(24px, 2.2vw, 40px);
     padding: clamp(20px, 1.6vw, 28px);
+  }
+
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card--no-media {
+    padding: clamp(20px, 1.8vw, 28px);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card {
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {
     transition: border-color 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
   }
 
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:hover,
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__card:focus-visible {
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:hover,
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:focus-visible {
     transform: none;
   }
 
-  body.page-home .home-hero-projects__grid--stack .home-hero-projects__case-study-arrow {
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__case-study-arrow {
     transition: none;
   }
 }
