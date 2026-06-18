@@ -1651,13 +1651,48 @@ body.page-home .home-hero-projects__case-study:focus-visible {
   outline-offset: 3px;
 }
 
-/* Home — hero project editorial grid (two-column vertical cards) */
+/* Home — hero project editorial grid (two independent columns) */
 body.page-home .home-hero-projects__grid--editorial {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  align-items: start;
-  gap: clamp(20px, 2.8vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 5vw, 26px);
   padding-block: clamp(4px, 0.6vw, 8px);
+}
+
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__column {
+  display: contents;
+}
+
+body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack {
+  order: 1;
+}
+
+body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey {
+  order: 2;
+}
+
+body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare {
+  order: 3;
+}
+
+body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab {
+  order: 4;
+}
+
+body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit {
+  order: 5;
+}
+
+body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-usability {
+  order: 6;
+}
+
+body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-stakeholder-interviews {
+  order: 7;
+}
+
+body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-report {
+  order: 8;
 }
 
 body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {
@@ -2017,8 +2052,21 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
 
 @media only screen and (min-width: 768px) {
   body.page-home .home-hero-projects__grid--editorial {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(20px, 2.2vw, 28px) clamp(24px, 2.6vw, 36px);
+    flex-direction: row;
+    align-items: flex-start;
+    gap: clamp(24px, 2.6vw, 36px);
+  }
+
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__column {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    gap: clamp(20px, 2.2vw, 28px);
+    min-width: 0;
+  }
+
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {
+    order: initial;
   }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-body {
@@ -2083,7 +2131,11 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
 
 @media only screen and (min-width: 992px) {
   body.page-home .home-hero-projects__grid--editorial {
-    gap: clamp(24px, 2.4vw, 36px) clamp(28px, 2.8vw, 44px);
+    gap: clamp(28px, 2.8vw, 44px);
+  }
+
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__column {
+    gap: clamp(24px, 2.4vw, 36px);
   }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-body {
