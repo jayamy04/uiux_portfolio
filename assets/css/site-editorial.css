@@ -1873,7 +1873,8 @@ body.page-home #hero-project-sound-transit-report .home-hero-projects__thumb--co
   object-position: center center;
 }
 
-body.page-home #hero-project-nordstrom-rack .home-hero-projects__thumb--cover video {
+body.page-home #hero-project-nordstrom-rack .home-hero-projects__thumb--cover video,
+body.page-home #hero-project-nordstrom-rack-pickup .home-hero-projects__thumb--cover video {
   object-position: center center;
 }
 
@@ -1916,7 +1917,8 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-
 }
 
 /* Nordstrom Rack — native UI video, centered contain */
-body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack .home-hero-projects__thumb video {
+body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack .home-hero-projects__thumb video,
+body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack-pickup .home-hero-projects__thumb video {
   max-width: 100%;
   max-height: 100%;
 }
