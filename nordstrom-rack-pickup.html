@@ -9,10 +9,10 @@
 
   <title>Nordstrom Rack Pickup Experience User Testing (Nordstrom Rack) — Amy Seunghyun Lee</title>
 
-  <link rel="icon" href="./favicon.ico?v=20260618pickup" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32.png?v=20260618pickup">
-  <link rel="icon" type="image/png" sizes="120x120" href="./assets/images/favicon.png?v=20260618pickup">
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png?v=20260618pickup">
+  <link rel="icon" href="./favicon.ico?v=20260609k" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32.png?v=20260609k">
+  <link rel="icon" type="image/png" sizes="120x120" href="./assets/images/favicon.png?v=20260609k">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png?v=20260609k">
 
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/agina-icons.css">
@@ -127,6 +127,9 @@
                 <span class="work-detail__title-line">Nordstrom Rack Pickup Experience User Testing</span>
                 <span class="work-detail__title-line work-detail__title-line--accent">(Nordstrom Rack)</span>
               </h1>
+              <p class="work-detail__subtitle tj-fade" data-on-scroll="0" data-delay=".08">
+                Buy Online, Pick Up in Store · University of Washington HCDE 517 · January – April 2025
+              </p>
               <dl class="work-detail__meta tj-fade" data-on-scroll="0" data-delay=".12">
                 <div class="work-detail__meta-item">
                   <dt>Role</dt>
@@ -138,7 +141,7 @@
                 </div>
                 <div class="work-detail__meta-item">
                   <dt>Client</dt>
-                  <dd>Nordstrom Rack · UW HCDE 517</dd>
+                  <dd>Nordstrom Rack</dd>
                 </div>
                 <div class="work-detail__meta-item">
                   <dt>Methods</dt>
@@ -244,12 +247,6 @@
                 <p>6 of 8 participants had previously used Buy Online, Pick Up in Store at some retailer. Only 1 had used Nordstrom Rack's specific BOPIS service. Top stated reasons for using BOPIS generally: getting items faster than shipping, convenience of reserving products without searching in-store, discounts exclusive to in-store pickup, and added security for expensive purchases.</p>
                 <p>This context mattered: participants arrived with established BOPIS mental models from other retailers, which shaped their expectations — and their confusion — throughout sessions.</p>
               </div>
-              <figure class="work-detail__figure tj-fade" data-on-scroll="0" data-delay=".08">
-                <div class="work-detail__figure-frame">
-                  <img src="./assets/images/projects/nordstrom-rack-portfolio.png" alt="Nordstrom Rack desktop product listing with pickup filters in the sidebar" width="1200" height="800" loading="lazy" decoding="async">
-                </div>
-                <figcaption class="work-detail__figure-caption">Nordstrom Rack desktop BOPIS experience — the site studied in moderated sessions.</figcaption>
-              </figure>
             </div>
           </section>
 
@@ -279,7 +276,7 @@
               </figure>
 
               <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".12">
-                <h3 class="work-detail__kicker" id="nordstrom-issues-heading">Issues &amp; evidence</h3>
+                <h3 class="work-detail__kicker" id="nordstrom-issues-heading">Issues</h3>
 
                 <p><strong>"Available Today" filter doesn't accurately reflect size-level availability</strong> · Severity: High</p>
                 <p>The filter operates at the product level, not the size level. A shoe appears in results as long as any size or color variation is available for same-day pickup — even if the shopper's selected size is entirely unavailable. Participants wasted significant effort clicking through products only to discover nothing in their size was actually eligible.</p>
@@ -303,13 +300,6 @@
                 </blockquote>
                 <figcaption class="work-detail__quote-caption">Participant 1, after spending several minutes clicking through results</figcaption>
               </figure>
-              <figure class="work-detail__figure tj-fade" data-on-scroll="0" data-delay=".18">
-                <div class="work-detail__figure-frame">
-                  <img src="./assets/images/projects/nordstrom_available_today_before.png" alt="Available Today filter in the Nordstrom Rack sidebar filter panel" width="800" height="600" loading="lazy" decoding="async">
-                </div>
-                <figcaption class="work-detail__figure-caption">"Available Today" filter in the sidebar — 2 of 8 participants missed it entirely.</figcaption>
-              </figure>
-
               <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".2">
                 <p><strong>Participants miss when fulfillment silently switches from "pickup" to "ship to store"</strong> · Severity: High</p>
                 <p>On the product detail page, selecting a size or color that isn't available for same-day pickup causes the fulfillment method to change from "Free pickup" to "Free ship to store." This UI change is subtle and easy to miss, especially when a participant is focused on selecting their size.</p>
@@ -329,15 +319,6 @@
                 </blockquote>
                 <figcaption class="work-detail__quote-caption">Participant 8, after accidentally adding a "ship to store" item</figcaption>
               </figure>
-              <figure class="work-detail__figure tj-fade" data-on-scroll="0" data-delay=".26">
-                <div class="work-detail__figure-frame work-detail__figure-frame--video">
-                  <video muted loop autoplay playsinline webkit-playsinline preload="metadata" poster="./assets/images/projects/nordstrom_rack_video_poster.jpg" aria-label="Nordstrom Rack product detail page showing pickup and size selection">
-                    <source src="./assets/videos/nordstrom_rack_v.mp4" type="video/mp4">
-                  </video>
-                </div>
-                <figcaption class="work-detail__figure-caption">Product detail page — fulfillment method changes when size or color selection changes.</figcaption>
-              </figure>
-
               <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".28">
                 <p><strong>Adding pickup items from multiple stores causes silent, confusing reassignment at checkout</strong> · Severity: Medium</p>
                 <p>When a shopper adds pickup items from Store A, switches store location, then adds items from Store B, the system consolidates all items under Store B at checkout. If Store A items aren't available for same-day pickup at Store B, their fulfillment method changes — but this happens without a clear, proactive notification.</p>
@@ -395,16 +376,7 @@
                 </blockquote>
                 <figcaption class="work-detail__quote-caption">Participant 2, after eventually finding the information</figcaption>
               </figure>
-              <figure class="work-detail__figure tj-fade" data-on-scroll="0" data-delay=".44">
-                <div class="work-detail__figure-frame work-detail__figure-frame--video">
-                  <video muted loop autoplay playsinline webkit-playsinline preload="metadata" poster="./assets/images/projects/nordstrom_pickup_info_poster.jpg" aria-label="Nordstrom Rack pickup logistics information page">
-                    <source src="./assets/videos/nordstrom_pickup_info_v.mp4" type="video/mp4">
-                  </video>
-                </div>
-                <figcaption class="work-detail__figure-caption">Pickup hold policy — required an average of 7 clicks to locate during the study.</figcaption>
-              </figure>
-
-              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".46">
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".44">
                 <h3 class="work-detail__kicker" id="nordstrom-questionnaire-heading">Post-test questionnaire results</h3>
                 <p>Participants rated their experience across five dimensions on a 5-point scale.</p>
               </div>
@@ -438,7 +410,14 @@
               <h2 id="nordstrom-recommendations-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Recommendations</h2>
               <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
                 <p>Recommendations are organized by theme and prioritized by severity. Each maps directly to observed behavior and a specific friction point in the current experience.</p>
-
+              </div>
+              <figure class="work-detail__figure tj-fade" data-on-scroll="0" data-delay=".06">
+                <div class="work-detail__figure-frame">
+                  <img src="./assets/images/projects/nordstrom-rack-portfolio.png" alt="Summary of recommendations slide covering filtering, store switching, and pickup logistics" width="2000" height="1125" loading="lazy" decoding="async">
+                </div>
+                <figcaption class="work-detail__figure-caption">Summary of recommendations — filtering, store switching, and pickup logistics.</figcaption>
+              </figure>
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".08">
                 <h3 class="work-detail__kicker" id="nordstrom-rec-filter-heading">Theme 1: Filtering accuracy &amp; visibility (High priority)</h3>
                 <ol>
                   <li><strong>Fix filter logic at the size level.</strong> Audit how "Available Today" interacts with the size filter. A product should only appear in filtered results if the selected size is available for same or next-day pickup at the selected store. A size 7 shoe that is only shippable should not appear when a shopper filters "Available today" + size 7.</li>
@@ -493,14 +472,13 @@
 
                 <h3 class="work-detail__kicker" id="nordstrom-again-heading">What we'd do again</h3>
                 <ul>
-                  <li>Using Think Aloud Protocol: it surfaced mental model mismatches (like "available today" meaning "purchasable" vs. "pickup-eligible") that behavioral data alone wouldn't have revealed.</li>
+                  <li>Using Think Aloud Protocol, participants narrated their reasoning in real time. This is how we caught the filter bug's actual impact — when P8 added a ship-to-store item by accident, she didn't blame the website. She revised her own understanding of the feature, concluding that 'available today' must just mean the item is orderable online, not that it's ready for pickup. Without Think Aloud, we'd only know she failed the task. We wouldn't know she blamed herself for it.</li>
                   <li>Adopting the client's own severity rating framework so findings immediately mapped to their existing prioritization language.</li>
-                  <li>Recruiting genuine BOPIS users, not just general online shoppers — specificity in recruitment paid off in ecological validity.</li>
                 </ul>
 
                 <h3 class="work-detail__kicker" id="nordstrom-change-heading">What we'd change</h3>
                 <ul>
-                  <li>Recruit more diverse demographics — all 8 participants were young students, which may have underrepresented older shoppers' friction points and accessibility needs.</li>
+                  <li>Recruit more diverse demographics — all 8 participants were young adults, which may have underrepresented older shoppers' friction points and accessibility needs.</li>
                   <li>Standardize data collection format across the team (survey vs. verbal feedback) before sessions begin, to enable cleaner cross-participant comparison.</li>
                   <li>Ask participants what logistics details they expect to see in advance of the scenario — rather than after — to capture unprompted expectations without priming.</li>
                   <li>Track quantitative metrics (time on task, error rate, click count) systematically from session one rather than reconstructing from recordings after the fact.</li>
@@ -520,10 +498,45 @@
             </div>
           </section>
 
+          <section class="work-detail__section" aria-labelledby="nordstrom-site-today-heading">
+            <div class="work-detail__inner">
+              <h2 id="nordstrom-site-today-heading" class="work-detail__heading tj-fade" data-on-scroll="0">On the site today</h2>
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
+                <p>Screen recordings from the live site — a brief look at BOPIS-related updates since the study, not research evidence from our sessions.</p>
+              </div>
+              <div class="work-detail__split tj-fade" data-on-scroll="0" data-delay=".06">
+                <figure class="work-detail__figure">
+                  <div class="work-detail__figure-frame work-detail__figure-frame--video">
+                    <video muted loop autoplay playsinline webkit-playsinline preload="metadata" poster="./assets/images/projects/nordstrom_homepage_poster.jpg" aria-label="Nordstrom Rack homepage with Ready today pickup entry point">
+                      <source src="./assets/videos/nordstrom_homepage_v.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <figcaption class="work-detail__figure-caption">Homepage — "Ready today" pickup entry point.</figcaption>
+                </figure>
+                <figure class="work-detail__figure">
+                  <div class="work-detail__figure-frame work-detail__figure-frame--video">
+                    <video muted loop autoplay playsinline webkit-playsinline preload="metadata" poster="./assets/images/projects/nordstrom_rack_video_poster.jpg" aria-label="Nordstrom Rack product listing and detail with Ready today filter">
+                      <source src="./assets/videos/nordstrom_rack_v.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <figcaption class="work-detail__figure-caption">Browse &amp; product detail — Ready today filter, size selection, add to bag.</figcaption>
+                </figure>
+              </div>
+              <figure class="work-detail__figure tj-fade" data-on-scroll="0" data-delay=".08">
+                <div class="work-detail__figure-frame work-detail__figure-frame--video">
+                  <video muted loop autoplay playsinline webkit-playsinline preload="metadata" poster="./assets/images/projects/nordstrom_pickup_info_poster.jpg" aria-label="Nordstrom Rack pickup hold policy in help navigation">
+                    <source src="./assets/videos/nordstrom_pickup_info_v.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <figcaption class="work-detail__figure-caption">Help — pickup hold policy in the site navigation.</figcaption>
+              </figure>
+            </div>
+          </section>
+
           <section class="work-detail__section work-detail__section--footer" aria-labelledby="nordstrom-credits-heading">
             <div class="work-detail__inner">
               <p id="nordstrom-credits-heading" class="work-detail__note tj-fade" data-on-scroll="0">
-                Case study prepared by Shay Duan, Khadijah Ingawa, Tess Matthews &amp; Amy Lee · UW HCDE 517 · April 2025 · Special thanks to Angela Sharer and Annelise Schuler for their mentorship.
+                Case study prepared by Shay Duan, Khadijah Ingawa, Tess Matthews &amp; Amy Lee · April 2025 · Special thanks to Angela Sharer and Annelise Schuler for their mentorship.
               </p>
             </div>
           </section>
