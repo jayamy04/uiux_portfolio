@@ -1489,11 +1489,11 @@ body.page-home .home-hero-projects__card-logo {
 body.page-home .home-hero-projects__card-logo--mark {
   height: clamp(24px, 2.5vw, 30px);
   min-height: clamp(24px, 2.5vw, 30px);
-  max-width: clamp(24px, 2.5vw, 30px);
+  max-width: clamp(36px, 3.8vw, 44px);
 }
 
 body.page-home .home-hero-projects__card-logo--wide {
-  max-width: clamp(96px, 11vw, 132px);
+  max-width: clamp(104px, 12vw, 148px);
 }
 
 body.page-home .home-hero-projects__card:hover .home-hero-projects__card-logo,
