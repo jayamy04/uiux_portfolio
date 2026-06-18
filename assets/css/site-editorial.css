@@ -1007,6 +1007,13 @@ body.page-home .home-hero-meta__row:last-child {
   border-bottom: 0;
 }
 
+@media only screen and (min-width: 992px) {
+  body.page-home .home-hero-meta--editorial .home-hero-meta__row:nth-child(5) {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+}
+
 body.page-home .home-hero-meta__label {
   display: flex;
   align-items: center;
