@@ -1623,11 +1623,6 @@ body.page-home .home-hero-projects__card.is-active .home-hero-projects__card-des
     animation: none;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab .home-hero-projects__thumb img.home-hero-projects__thumb-scroll {
-    transform: scale(1.18) translateY(-13%);
-    object-position: top center;
-  }
-
   body.page-home .home-hero-projects__card-desc {
     transition: none;
   }
@@ -1877,31 +1872,6 @@ body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb v
   opacity: 1;
 }
 
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__case-study {
-  margin-top: clamp(12px, 1.35vh, 16px);
-  padding: clamp(10px, 1.2vh, 14px) 0 clamp(2px, 0.35vh, 4px);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  font-size: clamp(0.75rem, 0.88vw, 0.8125rem);
-  font-weight: var(--tj-fw-bold);
-  letter-spacing: 0.08em;
-  color: var(--site-accent);
-}
-
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__case-study:hover,
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__case-study:focus-visible {
-  color: var(--editorial-project-accent);
-}
-
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__case-study-arrow {
-  display: inline-block;
-  transition: transform 0.25s ease;
-}
-
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:hover .home-hero-projects__case-study-arrow,
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:focus-within .home-hero-projects__case-study-arrow {
-  transform: translateX(4px);
-}
-
 /* Per-card native aspect ratios — carousel/showcase only; stack uses unified 16/10 */
 body.page-home .home-hero-projects__thumb--ratio-16x9 {
   aspect-ratio: 16 / 9;
@@ -2005,27 +1975,14 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare 
   object-position: center center;
 }
 
-/* Inclusive Design Lab — portrait poster: moderate cover zoom + slow vertical pan */
-body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab .home-hero-projects__thumb img.home-hero-projects__thumb-scroll {
-  width: 100%;
-  height: auto;
-  min-height: 100%;
-  max-width: none;
-  max-height: none;
-  object-fit: cover;
-  object-position: top center;
-  transform: scale(1.18) translateY(0);
-  animation: idlPosterPan 14s ease-in-out infinite alternate;
-  animation-play-state: running;
-}
-
-@keyframes idlPosterPan {
-  from {
-    transform: scale(1.18) translateY(0);
-  }
-  to {
-    transform: scale(1.18) translateY(-31%);
-  }
+/* Inclusive Design Lab — static centered showcase photo */
+body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab .home-hero-projects__thumb img {
+  max-width: min(88%, 100%);
+  max-height: 92%;
+  object-fit: contain;
+  object-position: center center;
+  transform: none;
+  animation: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -2158,10 +2115,6 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:hover,
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:focus-visible {
     transform: none;
-  }
-
-  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__case-study-arrow {
-    transition: none;
   }
 }
 
