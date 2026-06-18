@@ -11319,3 +11319,139 @@ body.page-inclusive-design-lab .work-detail__screening-criteria--exclude li::bef
   color: rgba(255, 140, 140, 0.95);
 }
 
+/* Inclusive Design Lab — Interview Content */
+body.page-inclusive-lab .work-detail__prose--interview,
+body.page-inclusive-design-lab .work-detail__prose--interview {
+  max-width: min(100%, 52rem);
+  gap: clamp(16px, 2.2vh, 24px);
+}
+
+body.page-inclusive-lab .work-detail__prose--interview .work-detail__survey-part,
+body.page-inclusive-design-lab .work-detail__prose--interview .work-detail__survey-part {
+  padding: clamp(18px, 2.4vh, 26px) clamp(18px, 2.5vw, 28px);
+}
+
+body.page-inclusive-lab .work-detail__prose--interview .work-detail__survey-part-body,
+body.page-inclusive-design-lab .work-detail__prose--interview .work-detail__survey-part-body {
+  gap: clamp(12px, 1.6vh, 18px);
+}
+
+body.page-inclusive-lab .work-detail__survey-part--section,
+body.page-inclusive-design-lab .work-detail__survey-part--section {
+  padding-bottom: clamp(10px, 1.4vh, 14px);
+}
+
+body.page-inclusive-lab .work-detail__survey-part--section .work-detail__survey-part-header,
+body.page-inclusive-design-lab .work-detail__survey-part--section .work-detail__survey-part-header {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+body.page-inclusive-lab .work-detail__interview-callout,
+body.page-inclusive-design-lab .work-detail__interview-callout {
+  margin: 0;
+  padding: clamp(10px, 1.4vh, 14px) clamp(12px, 1.6vw, 16px);
+  border-radius: 8px;
+  border-left: 3px solid var(--site-accent);
+  background: rgba(255, 255, 255, 0.03);
+  font-weight: var(--tj-fw-sbold);
+  font-size: clamp(0.9375rem, 1.05vw, 1rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.page-inclusive-lab .work-detail__interview-branch,
+body.page-inclusive-design-lab .work-detail__interview-branch {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.2vh, 12px);
+  margin: clamp(4px, 0.8vh, 8px) 0 0;
+  padding: clamp(14px, 1.8vh, 18px) clamp(14px, 2vw, 18px);
+  border-left: 2px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0 10px 10px 0;
+  background: rgba(255, 255, 255, 0.018);
+}
+
+body.page-inclusive-lab .work-detail__interview-branch .work-detail__split-label,
+body.page-inclusive-design-lab .work-detail__interview-branch .work-detail__split-label {
+  margin: 0;
+}
+
+body.page-inclusive-lab .work-detail__survey-question,
+body.page-inclusive-design-lab .work-detail__survey-question {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, 0.7vh, 7px);
+  padding: clamp(10px, 1.3vh, 12px) clamp(12px, 1.6vw, 14px);
+  border-left: 2px solid rgba(255, 77, 184, 0.32);
+  border-radius: 0 8px 8px 0;
+  background: rgba(255, 255, 255, 0.018);
+}
+
+body.page-inclusive-lab .work-detail__survey-question > p:first-child,
+body.page-inclusive-design-lab .work-detail__survey-question > p:first-child {
+  margin: 0;
+  font-weight: var(--tj-fw-sbold);
+  font-size: clamp(0.9375rem, 1.05vw, 1rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.96);
+}
+
+body.page-inclusive-lab .work-detail__probe-card,
+body.page-inclusive-design-lab .work-detail__probe-card {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.2vh, 12px);
+  margin: clamp(8px, 1.2vh, 12px) 0 0;
+  padding: clamp(16px, 2vh, 20px) clamp(16px, 2.2vw, 22px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+body.page-inclusive-lab .work-detail__probe-title,
+body.page-inclusive-design-lab .work-detail__probe-title {
+  margin: 0;
+  font-size: clamp(0.9375rem, 1.05vw, 1rem);
+  font-weight: var(--tj-fw-sbold);
+  letter-spacing: 0.04em;
+  color: var(--site-accent);
+}
+
+body.page-inclusive-lab .work-detail__probe-label,
+body.page-inclusive-design-lab .work-detail__probe-label {
+  margin: clamp(4px, 0.6vh, 6px) 0 0;
+  font-size: 0.6875rem;
+  font-weight: var(--tj-fw-sbold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+body.page-inclusive-lab .work-detail__probe-card > p:not(.work-detail__probe-label),
+body.page-inclusive-design-lab .work-detail__probe-card > p:not(.work-detail__probe-label) {
+  margin: 0;
+  max-width: 42rem;
+  font-size: clamp(0.9375rem, 1vw, 1rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+body.page-inclusive-lab .work-detail__table--probes,
+body.page-inclusive-design-lab .work-detail__table--probes {
+  min-width: 640px;
+}
+
+body.page-inclusive-lab .work-detail__table--probes td,
+body.page-inclusive-design-lab .work-detail__table--probes td {
+  line-height: 1.65;
+}
+
+@media (max-width: 640px) {
+  body.page-inclusive-lab .work-detail__prose--interview .work-detail__survey-part,
+  body.page-inclusive-design-lab .work-detail__prose--interview .work-detail__survey-part {
+    padding: 14px;
+  }
+}
+
