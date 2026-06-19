@@ -9371,15 +9371,6 @@ body.page-nordstrom-rack .interview-guide__block-body > p {
   color: rgba(255, 255, 255, 0.86);
 }
 
-body.page-nordstrom-rack .interview-guide__label {
-  margin: 0;
-  font-size: 0.6875rem;
-  font-weight: var(--tj-fw-sbold);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(120, 200, 255, 0.72);
-}
-
 body.page-nordstrom-rack .work-detail__interview-guide .work-detail__interview-callout {
   margin: 0;
   padding: clamp(8px, 1.1vh, 10px) clamp(10px, 1.4vw, 12px);
@@ -9529,15 +9520,6 @@ body.page-sound-transit .interview-guide__block-body > p {
 
 body.page-sound-transit .interview-guide__block-body > .work-detail__kicker {
   margin: clamp(6px, 1vh, 10px) 0 0;
-}
-
-body.page-sound-transit .interview-guide__label {
-  margin: 0;
-  font-size: 0.6875rem;
-  font-weight: var(--tj-fw-sbold);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(120, 200, 255, 0.72);
 }
 
 body.page-sound-transit .interview-guide__prompt {
@@ -12190,16 +12172,6 @@ body.page-inclusive-design-lab .interview-guide__block-body > p {
   font-size: clamp(1.0625rem, 1.1vw, 1.125rem);
   line-height: 1.78;
   color: rgba(255, 255, 255, 0.88);
-}
-
-body.page-inclusive-lab .interview-guide__label,
-body.page-inclusive-design-lab .interview-guide__label {
-  margin: clamp(8px, 1.2vh, 12px) 0 0;
-  font-size: 0.6875rem;
-  font-weight: var(--tj-fw-sbold);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--site-accent);
 }
 
 body.page-inclusive-lab .interview-guide__list,
