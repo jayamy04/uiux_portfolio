@@ -12220,3 +12220,192 @@ body.page-sound-transit .work-detail__section--visual .work-detail__inner {
   max-width: 920px;
 }
 
+/* Nordstrom Rack Pickup — usability study visual polish */
+body.page-nordstrom-rack-pickup .work-detail__subtitle {
+  margin: clamp(14px, 2.2vh, 20px) 0 0;
+  font-size: clamp(1rem, 1.08vw, 1.0625rem);
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+body.page-nordstrom-rack-pickup .work-detail__meta--extended {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: clamp(28px, 4.5vh, 40px);
+  padding-top: clamp(24px, 3.5vh, 32px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media only screen and (max-width: 767px) {
+  body.page-nordstrom-rack-pickup .work-detail__meta--extended {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+body.page-nordstrom-rack-pickup .work-detail__research-questions {
+  margin-top: clamp(16px, 2.5vh, 24px);
+}
+
+body.page-nordstrom-rack-pickup .work-detail__prose--criteria {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 2.8vh, 28px);
+}
+
+body.page-nordstrom-rack-pickup .work-detail__criteria-card {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.8vh, 18px);
+  padding: clamp(18px, 2.5vw, 24px);
+  border-radius: clamp(12px, 1.5vw, 16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.025);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+body.page-nordstrom-rack-pickup .work-detail__criteria-card-header .work-detail__kicker,
+body.page-nordstrom-rack-pickup .work-detail__method-note .work-detail__kicker,
+body.page-nordstrom-rack-pickup .work-detail__scenario-intro > .work-detail__kicker:first-child,
+body.page-nordstrom-rack-pickup .work-detail__usability-findings-group > .work-detail__kicker,
+body.page-nordstrom-rack-pickup .work-detail__usability-finding--results .work-detail__kicker {
+  margin-top: 0;
+}
+
+body.page-nordstrom-rack-pickup .work-detail__criteria-card-body ul {
+  margin: 0;
+  padding-left: 1.15em;
+}
+
+body.page-nordstrom-rack-pickup .work-detail__method-note {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.8vh, 18px);
+  margin-top: clamp(8px, 1.2vh, 12px);
+  padding: clamp(18px, 2.5vw, 24px);
+  border-radius: clamp(12px, 1.5vw, 16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 3px solid var(--site-accent);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+body.page-nordstrom-rack-pickup .work-detail__scenario-block {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.5vh, 24px);
+  margin-top: clamp(28px, 4vh, 40px);
+  padding: clamp(20px, 3vw, 28px);
+  border-radius: clamp(12px, 1.5vw, 16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+body.page-nordstrom-rack-pickup .work-detail__scenario-block:first-of-type {
+  margin-top: clamp(16px, 2.5vh, 24px);
+}
+
+body.page-nordstrom-rack-pickup .work-detail__scenario-intro.work-detail__prose {
+  margin-top: 0;
+  gap: clamp(14px, 2vh, 20px);
+}
+
+body.page-nordstrom-rack-pickup .work-detail__scenario-block .work-detail__table-wrap {
+  margin: 0;
+}
+
+body.page-nordstrom-rack-pickup .work-detail__table-wrap {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+body.page-nordstrom-rack-pickup .work-detail__usability-findings {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 6vh, 56px);
+  margin-top: clamp(16px, 2.5vh, 24px);
+}
+
+body.page-nordstrom-rack-pickup .work-detail__usability-findings-group {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3.5vh, 36px);
+}
+
+body.page-nordstrom-rack-pickup .work-detail__usability-findings-group > .work-detail__kicker {
+  margin-bottom: clamp(4px, 0.8vh, 8px);
+  padding-bottom: clamp(10px, 1.5vh, 14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.page-nordstrom-rack-pickup .work-detail__usability-finding {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.5vh, 24px);
+  padding: clamp(20px, 3vw, 28px) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+body.page-nordstrom-rack-pickup .work-detail__usability-finding:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+body.page-nordstrom-rack-pickup .work-detail__usability-finding--positive {
+  padding: clamp(18px, 2.5vw, 24px);
+  border: 1px solid rgba(255, 77, 184, 0.14);
+  border-radius: clamp(12px, 1.5vw, 16px);
+  background: rgba(255, 77, 184, 0.04);
+  border-bottom: 1px solid rgba(255, 77, 184, 0.14);
+}
+
+body.page-nordstrom-rack-pickup .work-detail__usability-finding--results {
+  padding: clamp(20px, 3vw, 28px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: clamp(12px, 1.5vw, 16px);
+  background: rgba(255, 255, 255, 0.025);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.page-nordstrom-rack-pickup .work-detail__usability-finding .work-detail__prose {
+  margin-top: 0;
+  gap: clamp(14px, 2vh, 20px);
+}
+
+body.page-nordstrom-rack-pickup .work-detail__usability-quotes {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 2vh, 20px);
+}
+
+body.page-nordstrom-rack-pickup .work-detail__usability-finding .work-detail__quote,
+body.page-nordstrom-rack-pickup .work-detail__usability-finding > .work-detail__quote {
+  margin: 0;
+}
+
+body.page-nordstrom-rack-pickup .work-detail__quote-caption {
+  margin: clamp(10px, 1.5vh, 14px) 0 0;
+  padding-left: clamp(20px, 3vw, 28px);
+  font-size: clamp(0.8125rem, 0.9vw, 0.875rem);
+  font-weight: var(--tj-fw-medium);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.52);
+}
+
+body.page-nordstrom-rack-pickup .work-detail__usability-finding .work-detail__note {
+  margin-top: clamp(8px, 1.2vh, 12px);
+  padding: clamp(12px, 1.8vh, 16px) clamp(14px, 2vw, 18px);
+  border-radius: 8px;
+  border-left: 2px solid rgba(255, 77, 184, 0.35);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+@media only screen and (max-width: 640px) {
+  body.page-nordstrom-rack-pickup .work-detail__scenario-block,
+  body.page-nordstrom-rack-pickup .work-detail__criteria-card,
+  body.page-nordstrom-rack-pickup .work-detail__method-note {
+    padding: 16px;
+  }
+}
+
