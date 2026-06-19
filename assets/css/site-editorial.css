@@ -1997,35 +1997,35 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
     display: contents;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack {
     order: 1;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-usability {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack-pickup {
     order: 2;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-stakeholder-interviews {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab {
     order: 3;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-report {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare {
     order: 4;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit {
     order: 5;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack-pickup {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-usability {
     order: 6;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-stakeholder-interviews {
     order: 7;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-report {
     order: 8;
   }
 
