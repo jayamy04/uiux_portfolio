@@ -2409,8 +2409,20 @@ const initHomeLandingScroll = () => {
   window.setTimeout(scrollHomePageToTop, 2300);
 };
 
+const SOUND_TRANSIT_CASE_STUDY_PATH = "sound-transit.html";
+
+const normalizeHomeCaseStudyHref = (href) => {
+  if (!href) return href;
+  const [path] = href.split("#");
+  const normalizedPath = path.replace(/^\.\//, "");
+  if (normalizedPath === SOUND_TRANSIT_CASE_STUDY_PATH) {
+    return path;
+  }
+  return href;
+};
+
 const openHomeCaseStudyInNewTab = (href) => {
-  window.open(href, "_blank", "noopener,noreferrer");
+  window.open(normalizeHomeCaseStudyHref(href), "_blank", "noopener,noreferrer");
 };
 
 const initHomeHeroProjectCarousel = () => {
