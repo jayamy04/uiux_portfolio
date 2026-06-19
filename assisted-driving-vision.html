@@ -1,0 +1,314 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Assisted Driving for Vision Challenges — co-design research on how visual impairments affect driving safety, participant needs, and feedback from inclusive design sessions.">
+
+  <title>Assisted Driving for Vision Challenges — Amy Seunghyun Lee</title>
+
+  <link rel="icon" href="./favicon.ico?v=20260619adv" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32.png?v=20260619adv">
+  <link rel="icon" type="image/png" sizes="120x120" href="./assets/images/favicon.png?v=20260619adv">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png?v=20260619adv">
+
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/agina-icons.css">
+  <link rel="stylesheet" href="assets/css/meanmenu.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/site-editorial.css?v=20260619adv">
+
+  <script>
+    (function () {
+      if (window.location.hash) return;
+      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+      window.scrollTo(0, 0);
+    })();
+  </script>
+</head>
+
+<body class="site-editorial page-assisted-driving-vision">
+  <div class="tj-preloader">
+    <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+      <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+    </svg>
+    <div class="loading_marquee">
+      <span class="marquee_text"></span>
+    </div>
+    <div class="tj-preloader_bottom">
+      <div class="loading_text">
+        <span>Loading Please wait...</span>
+      </div>
+      <div class="copyright_text">
+        <span>©2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tj-offcanvas-overlay"></div>
+  <div class="tj-offcanvas tj-offcanvas-2">
+    <div class="offcanvas_bg"></div>
+    <div class="offcanvas_wrapper">
+      <div class="offcanvas_top d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div class="offcanvas_logo">
+          <a href="home.html" class="logo">Amy Lee</a>
+        </div>
+        <button data-filter="*" class="offcanvas_close">
+          <span class="close-text">Close</span>
+          <span class="tj_sidebar_toggle">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+      </div>
+      <div class="offcanvas_action d-none d-lg-block">
+        <h5 class="greetings">Thank You for Visiting!<img src="./assets/images/icons/start.svg" alt=""></h5>
+      </div>
+      <div class="offcanvas_menu mobile_menu d-lg-none"></div>
+      <div class="offcanvas_contact tj_contact address">
+        <div class="sec_subtitle contact_title"><span>Location</span></div>
+        <div class="contact_info">Seattle, WA, USA</div>
+      </div>
+      <div class="offcanvas_contact tj_contact contact">
+        <div class="sec_subtitle contact_title"><span>Contact</span></div>
+        <a href="tel:+19257855578" class="contact_info">+1 925 785 5578</a>
+        <a href="mailto:slee45@uw.edu" class="contact_info">slee45@uw.edu</a>
+      </div>
+      <ul class="offcanvas_socials tj_socials">
+        <li>
+          <a href="https://www.linkedin.com/in/seunghyun-amy-lee/" target="_blank" rel="noopener noreferrer"><i class="tji-linkedin"></i></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/amysleedance/" target="_blank" rel="noopener noreferrer"><i class="tji-instagram"></i></a>
+        </li>
+        <li>
+          <a href="./assets/documents/Amy_Lee_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume PDF">
+            <svg class="tj_socials__resume-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="8" y1="13" x2="16" y2="13"></line>
+              <line x1="8" y1="17" x2="16" y2="17"></line>
+              <line x1="8" y1="9" x2="10" y2="9"></line>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tj_navigation_wrap_overlay"></div>
+  <header class="tj-header header-1 header-inner header-absolute">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <div class="tj-header_wrap">
+            <div class="site_navigation site_navigation--always">
+              <nav id="mobile-menu">
+                <ul>
+                  <li><a href="home.html">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="./assets/documents/Amy_Lee_Resume.pdf" target="_blank" rel="noopener noreferrer">CV</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="has-smooth" id="has_smooth"></div>
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <main>
+        <div class="inner_top_gap"></div>
+
+        <article class="work-detail" aria-label="Assisted Driving for Vision Challenges">
+          <header class="work-detail__hero">
+            <div class="work-detail__hero-inner">
+              <a class="work-detail__back tj-fade" data-on-scroll="0" href="home.html#work">
+                <span class="work-detail__back-arrow" aria-hidden="true">←</span>
+                <span>Work</span>
+              </a>
+              <h1 class="work-detail__title tj-fade" data-on-scroll="0" data-delay=".04">
+                <span class="work-detail__title-line" data-work-detail-title>Assisted Driving for Vision Challenges</span>
+                <span class="work-detail__title-line work-detail__title-line--accent">Co-Design Research</span>
+              </h1>
+              <dl class="work-detail__meta tj-fade" data-on-scroll="0" data-delay=".12">
+                <div class="work-detail__meta-item">
+                  <dt>Role</dt>
+                  <dd>UX Researcher</dd>
+                </div>
+                <div class="work-detail__meta-item">
+                  <dt>Institution</dt>
+                  <dd>University of Washington</dd>
+                </div>
+                <div class="work-detail__meta-item">
+                  <dt>Focus</dt>
+                  <dd>Driving · Visual impairment · Assistive technology</dd>
+                </div>
+                <div class="work-detail__meta-item">
+                  <dt>Methods</dt>
+                  <dd>Co-design · Participant feedback</dd>
+                </div>
+              </dl>
+            </div>
+          </header>
+
+          <section class="work-detail__section" aria-labelledby="adv-intro-heading">
+            <div class="work-detail__inner">
+              <h2 id="adv-intro-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Introduction</h2>
+
+              <h3 class="work-detail__kicker tj-fade" data-on-scroll="0" data-delay=".04" id="adv-participant-heading">Participant overview</h3>
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
+                <p>Participant A lives with color weakness, astigmatism, and recent vision loss linked to dry eye. During driving and biking, they reported several dangerous and confusing situations:</p>
+                <ul>
+                  <li><strong>Color weakness:</strong> Difficulty distinguishing black and red under bright light, and uncertainty about whether a red traffic signal is active.</li>
+                  <li><strong>Astigmatism:</strong> Discomfort from oncoming headlights and difficulty telling whether an approaching vehicle’s high beam is on.</li>
+                  <li><strong>Dry eye:</strong> Progressive vision loss that has increased anxiety about daily driving and work routines.</li>
+                </ul>
+              </div>
+
+              <h3 class="work-detail__kicker tj-fade" data-on-scroll="0" data-delay=".06" id="adv-needs-heading">Participant needs</h3>
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".06">
+                <p>Participant A needs a comfortable driving experience that does not compromise safety. That experience should accommodate their vision impairments by:</p>
+                <ul>
+                  <li>Providing clear visibility of traffic signals and lights,</li>
+                  <li>Reducing glare and discomfort from oncoming headlights,</li>
+                  <li>Offering aids that help compensate for vision loss due to dry eyes, especially during daily driving tasks.</li>
+                </ul>
+              </div>
+
+              <h3 class="work-detail__kicker tj-fade" data-on-scroll="0" data-delay=".08" id="adv-goals-heading">Research goal</h3>
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".08">
+                <p>The goal of this research is to understand how people with difficulty seeing can read traffic signs and navigate road environments safely. Through co-design with Participant A, we sought to learn what support would relieve the issues faced by visually impaired drivers — and what constraints matter when assistive technology is considered.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="work-detail__section" aria-labelledby="adv-context-heading">
+            <div class="work-detail__inner">
+              <h2 id="adv-context-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Context</h2>
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
+                <p>Drivers living with color-vision deficiency (CVD), astigmatism, or dry-eye syndrome face dangerous situations where visual challenges — difficult color distinction, glare, or blur — reduce reaction time and decision accuracy. Older drivers and all drivers under poor environmental conditions (weather, poor road maintenance) face overlapping challenges. The opportunity scales beyond a single participant to populations who share similar visual and environmental constraints on the road.</p>
+
+                <h3 class="work-detail__kicker" id="adv-cvd-heading">Color-vision-deficiency drivers</h3>
+                <ul>
+                  <li>About 8% of males and 0.5% of females have some form of CVD, making it hard to distinguish red, yellow, and green traffic signals.</li>
+                  <li>Field studies of professional drivers find measurable CVD prevalence and call for compensatory road-signal designs.</li>
+                </ul>
+
+                <h3 class="work-detail__kicker" id="adv-astigmatism-heading">Astigmatism and glare-sensitive drivers</h3>
+                <ul>
+                  <li>Uncorrected astigmatism significantly degrades night-driving performance; correcting it or adding clarity cues improves lane-keeping.</li>
+                </ul>
+
+                <h3 class="work-detail__kicker" id="adv-dry-eye-heading">Drivers with dry-eye or screen-related visual fatigue</h3>
+                <ul>
+                  <li>Dry-eye disease slows target recognition at intersections and roundabouts, increasing miss rates and reaction times.</li>
+                  <li>Digital-eye-strain research shows glare and low contrast further worsen acuity.</li>
+                </ul>
+
+                <h3 class="work-detail__kicker" id="adv-older-heading">Older drivers</h3>
+                <ul>
+                  <li>Ageing eyes recover from glare more slowly and lose low-contrast sensitivity, increasing crash risk after dark.</li>
+                </ul>
+
+                <h3 class="work-detail__kicker" id="adv-weather-heading">All drivers in bad weather</h3>
+                <ul>
+                  <li>In the past 10 years, 70% of weather-related crashes occur on wet pavement; rain alone accounts for nearly half of all weather crashes.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="work-detail__section" aria-labelledby="adv-methods-heading">
+            <div class="work-detail__inner">
+              <h2 id="adv-methods-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Co-design sessions</h2>
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
+                <p>We invited Participant A to a series of co-design sessions on Zoom. Early sessions used low-fidelity sketches shared through FigJam so the participant could react to visuals rather than imagine concepts from verbal description alone. In the final 15-minute session, we shared prototype drawings through the chat feature, asked for initial feedback, and followed up with clarifying questions to deepen our understanding of what support would matter for safe driving.</p>
+              </div>
+
+              <h3 class="work-detail__kicker tj-fade" data-on-scroll="0" data-delay=".08" id="adv-findings-heading">Findings</h3>
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".08">
+                <p>Findings below synthesize Participant A’s feedback across co-design sessions — from early concept reactions through final prototype review.</p>
+
+                <div class="work-detail__survey-findings">
+                  <article class="work-detail__survey-finding work-detail__survey-finding--wide" id="adv-finding-signal-cue">
+                    <h3 class="work-detail__kicker">Traffic-signal information belongs in the primary field of view</h3>
+                    <p>Participant A valued traffic-signal cues that deliver useful information without occupying much space or requiring them to look at a separate device — which they felt could be distracting. During an earlier session, they raised similar concerns about a dashboard-mounted camera: its placement felt potentially distracting, and they worried it might fail to detect a signal when a tall vehicle blocked the view ahead. Information integrated into the driving view, rather than routed through a secondary screen, aligned better with how they wanted to stay oriented on the road.</p>
+                  </article>
+
+                  <article class="work-detail__survey-finding work-detail__survey-finding--wide" id="adv-finding-countdown">
+                    <h3 class="work-detail__kicker">Countdown timing carries a safety trade-off</h3>
+                    <p>Participant A found a textual countdown for signal changes useful for preparing to stop or go. At the same time, they expressed concern that a visible timer might encourage drivers to speed up in an attempt to beat the light — rather than slowing down as they might without a countdown — potentially leading to dangerous situations at intersections. The feedback surfaced a tension between clarity and behavior: timing cues that feel helpful to one driver may introduce risk if they nudge others toward rushing.</p>
+                  </article>
+
+                  <article class="work-detail__survey-finding work-detail__survey-finding--wide" id="adv-finding-lane-guidance">
+                    <h3 class="work-detail__kicker">Lane guidance matters most when visibility drops</h3>
+                    <p>During a later session, Participant A described difficulty identifying and differentiating lanes during rainy nights — a low-vision issue that has developed over several years and contributes to fear and reduced confidence while driving. They appreciated lane guidance paired with signal-distance cues, as long as the information is accurate. They also wanted the ability to adjust the transparency of lane indicators, reflecting a broader preference for controlling how much visual augmentation appears on screen rather than accepting fixed defaults.</p>
+                  </article>
+
+                  <article class="work-detail__survey-finding work-detail__survey-finding--wide" id="adv-finding-glare">
+                    <h3 class="work-detail__kicker">Glare reduction is welcome — with user control</h3>
+                    <p>Participant A appreciated approaches that reduce glare from oncoming headlights, which their astigmatism makes especially uncomfortable. Similar to lane guidance, they wanted control over the level of dimming applied — not a single preset. The preference for adjustable opacity and dimming appeared consistently across features: Participant A wanted assistive overlays to feel supportive without becoming visually overwhelming or opaque.</p>
+                  </article>
+
+                  <article class="work-detail__survey-finding work-detail__survey-finding--wide" id="adv-finding-wearables">
+                    <h3 class="work-detail__kicker">Wearables are a non-starter for this driver</h3>
+                    <p>Participant A does not prefer wearable devices. They already wear glasses and were reluctant to add another wearable layer — whether smart glasses for glare reduction or blink sensors for dry-eye monitoring. Non-wearable, in-vehicle approaches aligned better with their existing routine and comfort. This constraint shaped which concepts received further discussion and which were set aside early in co-design.</p>
+                  </article>
+
+                  <article class="work-detail__survey-finding work-detail__survey-finding--wide" id="adv-finding-dry-eye">
+                    <h3 class="work-detail__kicker">Dry-eye monitoring overlaps with existing vehicle alerts</h3>
+                    <p>Participant A found dry-eye monitoring somewhat redundant because their car already includes a similar driver-fatigue alert. They noted it would not be particularly useful on most days, since they typically drive under normal conditions. The feedback highlighted that assistive features perceived as duplicating capabilities already built into the vehicle may not feel worth the added complexity — even when the underlying symptom (vision loss from dry eye) remains a real concern.</p>
+                  </article>
+
+                  <article class="work-detail__survey-finding work-detail__survey-finding--wide" id="adv-finding-sun-glare">
+                    <h3 class="work-detail__kicker">Bright-day signal readability was an unanticipated pain point</h3>
+                    <p>One of the biggest surprises from co-design was learning that traffic signals without sun-shade visors can be hard to read on bright, sunny days — an issue the research team had not considered before the session. Once Participant A pointed it out, it made immediate sense and likely affects many more drivers than color weakness alone. The discovery extended the research scope beyond night driving and glare toward environmental conditions that wash out signal visibility during daylight hours.</p>
+                  </article>
+
+                  <article class="work-detail__survey-finding work-detail__survey-finding--wide" id="adv-finding-personalization">
+                    <h3 class="work-detail__kicker">Personalization emerged as a cross-cutting need</h3>
+                    <p>Across sessions, Participant A consistently preferred control over feature parameters — transparency of lane overlays, dimming intensity, and the ability to enable or disable individual aids — rather than fixed settings imposed on every driver. Countdown timing, lane guidance, and glare reduction each received positive reactions when described as adjustable. The pattern suggests that drivers managing multiple vision impairments may need fine-grained tuning to match daily conditions, comfort thresholds, and what their vehicle already provides.</p>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="work-detail__footer-actions tj-fade" data-on-scroll="0" data-delay=".12">
+            <a class="work-detail__cta" href="home.html#work">
+              <span class="work-detail__cta-label">More work</span>
+              <span class="work-detail__cta-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+      </main>
+    </div>
+  </div>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/gsap-scroll-trigger.min.js"></script>
+  <script src="assets/js/gsap-scroll-smoother.js"></script>
+  <script src="assets/js/gsap-scroll-to-plugin.min.js"></script>
+  <script src="assets/js/gsap-split-text.min.js"></script>
+  <script src="assets/js/gsap-custom-easc.min.js"></script>
+  <script src="assets/js/meanmenu.js"></script>
+  <script src="assets/js/magiccursor.js"></script>
+  <script src="assets/js/imagesloaded-pkgd.js"></script>
+  <script src="assets/js/isotope.pkgd.min.js"></script>
+  <script src="assets/js/window-shape-animation.js"></script>
+  <script src="assets/js/preloader.js"></script>
+  <script src="assets/js/gsap-custom-animations.js"></script>
+  <script src="assets/js/main.js?v=20260619tochierarchy"></script>
+</body>
+
+</html>
