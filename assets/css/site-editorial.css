@@ -4984,6 +4984,8 @@ body.page-contact.site-editorial .contact-page-grid {
 
 body.page-contact.site-editorial .contact-page-aside {
   margin: 0;
+  width: 100%;
+  min-width: 0;
 }
 
 body.page-contact.site-editorial .contact-page-portrait {
@@ -5024,6 +5026,9 @@ body.page-contact.site-editorial .contact-page-portrait__img {
   object-fit: cover;
   object-position: center 42%;
   display: block;
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 body.page-contact.site-editorial .contact-page-main {
@@ -5087,10 +5092,6 @@ body.page-contact.site-editorial .contact-page-layout--editorial .contact-page-l
     max-width: 360px;
     margin: 0;
   }
-
-  body.page-contact.site-editorial .contact-page-aside {
-    justify-self: start;
-  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -5119,31 +5120,14 @@ body.page-contact.site-editorial .contact-page-layout--editorial .contact-page-l
   }
 
   body.page-contact.site-editorial .contact-page-portrait__frame {
+    width: 100%;
     max-height: min(72vh, 620px);
     height: auto;
+    aspect-ratio: 9 / 16;
   }
 
   body.page-contact.site-editorial .contact-page-main {
-    position: relative;
-    padding-left: clamp(20px, 2.5vw, 36px);
     gap: clamp(20px, 2.8vh, 32px);
-  }
-
-  body.page-contact.site-editorial .contact-page-main::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 1px;
-    background: linear-gradient(
-      180deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.1) 18%,
-      rgba(255, 77, 184, 0.28) 50%,
-      rgba(255, 255, 255, 0.1) 82%,
-      transparent 100%
-    );
   }
 
   body.page-contact.site-editorial .contact-page-layout--editorial .contact-page-layout__form {
