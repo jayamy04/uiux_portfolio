@@ -2019,8 +2019,12 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
     order: 9;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-onboarding {
     order: 10;
+  }
+
+  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey {
+    order: 11;
   }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {
