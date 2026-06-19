@@ -7942,22 +7942,26 @@ body.page-about.site-editorial .about-page__text a:hover {
   color: #ffffff;
 }
 
-body.page-about.site-editorial .site-meta-panel-section {
+body.page-about.site-editorial .about-overview {
   margin-top: clamp(40px, 5vh, 56px);
 }
 
-body.page-about.site-editorial .site-meta-panel__heading {
-  margin: 0 0 clamp(12px, 1.6vh, 16px);
-  font-family: var(--tj-ff-body);
-  font-size: clamp(0.6875rem, 0.66rem + 0.18vw, 0.75rem);
-  font-weight: 600;
-  font-variant: all-small-caps;
-  letter-spacing: 0.14em;
-  line-height: 1.35;
-  color: rgba(255, 255, 255, 0.52);
+body.page-about.site-editorial .about-overview__header {
+  max-width: 36rem;
+  margin-bottom: clamp(20px, 3vh, 32px);
 }
 
-body.page-about.site-editorial .site-meta-panel-section .site-meta-panel {
+body.page-about.site-editorial .about-overview__title {
+  margin: 0;
+  font-family: var(--tj-ff-body);
+  font-size: clamp(1.75rem, 3.2vw, 2.25rem);
+  font-weight: var(--tj-fw-bold);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: #ffffff;
+}
+
+body.page-about.site-editorial .about-overview .site-meta-panel {
   margin-top: 0;
 }
 
