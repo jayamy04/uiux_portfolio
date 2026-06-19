@@ -2409,6 +2409,10 @@ const initHomeLandingScroll = () => {
   window.setTimeout(scrollHomePageToTop, 2300);
 };
 
+const openHomeCaseStudyInNewTab = (href) => {
+  window.open(href, "_blank", "noopener,noreferrer");
+};
+
 const initHomeHeroProjectCarousel = () => {
   const root = document.querySelector("[data-home-hero-carousel]");
   if (!root || root.dataset.carouselInit === "true") return;
@@ -2577,7 +2581,7 @@ const initHomeHeroProjectCarousel = () => {
     if (event.target.closest("a[href]")) return false;
     const href = slide.dataset.workHref || slide.dataset.caseStudyHref;
     if (!href) return false;
-    window.location.assign(href);
+    openHomeCaseStudyInNewTab(href);
     return true;
   };
 
@@ -2641,7 +2645,7 @@ const initHomeHeroProjectBento = () => {
     if (event.target.closest("a[href]")) return false;
     const href = card.dataset.workHref || card.dataset.caseStudyHref;
     if (!href) return false;
-    window.location.assign(href);
+    openHomeCaseStudyInNewTab(href);
     return true;
   };
 
