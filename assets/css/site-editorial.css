@@ -9337,15 +9337,15 @@ body.page-nordstrom-rack .interview-guide__block {
   padding: clamp(16px, 2.2vh, 24px) clamp(16px, 2.4vw, 26px);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.07);
-  border-left: 3px solid rgba(120, 200, 255, 0.55);
-  background: rgba(120, 200, 255, 0.035);
+  border-left: 3px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.025);
   box-shadow: none;
 }
 
 body.page-nordstrom-rack .interview-guide__block--intro,
 body.page-nordstrom-rack .interview-guide__block--closing {
-  border-left-color: rgba(180, 140, 255, 0.55);
-  background: rgba(180, 140, 255, 0.04);
+  border-left-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 body.page-nordstrom-rack .interview-guide__block-header {
@@ -9373,10 +9373,8 @@ body.page-nordstrom-rack .interview-guide__block-body > p {
 
 body.page-nordstrom-rack .work-detail__interview-guide .work-detail__interview-callout {
   margin: 0;
-  padding: clamp(8px, 1.1vh, 10px) clamp(10px, 1.4vw, 12px);
-  border-radius: 6px;
-  border-left: 2px solid rgba(120, 200, 255, 0.45);
-  background: rgba(120, 200, 255, 0.04);
+  padding: 0 0 0 clamp(12px, 1.4vw, 14px);
+  border-left: 2px solid rgba(255, 255, 255, 0.14);
   font-weight: var(--tj-fw-sbold);
   font-size: clamp(0.9375rem, 1.05vw, 1rem);
   line-height: 1.45;
@@ -9384,33 +9382,24 @@ body.page-nordstrom-rack .work-detail__interview-guide .work-detail__interview-c
 }
 
 body.page-nordstrom-rack .work-detail__interview-guide .work-detail__interview-guidelines {
-  list-style: none;
+  list-style: disc;
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 1.15em;
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
 body.page-nordstrom-rack .work-detail__interview-guide .work-detail__interview-guidelines li {
-  position: relative;
   margin: 0;
-  padding: clamp(7px, 1vh, 9px) clamp(10px, 1.3vw, 12px) clamp(7px, 1vh, 9px) clamp(24px, 2vw, 28px);
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.02);
+  padding: 0;
   font-size: clamp(0.875rem, 1.02vw, 0.9375rem);
-  line-height: 1.5;
+  line-height: 1.55;
   color: rgba(255, 255, 255, 0.84);
 }
 
-body.page-nordstrom-rack .work-detail__interview-guide .work-detail__interview-guidelines li::before {
-  content: "·";
-  position: absolute;
-  left: clamp(10px, 1.2vw, 12px);
-  top: clamp(6px, 0.9vh, 8px);
-  font-weight: var(--tj-fw-sbold);
-  font-size: 1.1em;
-  color: rgba(120, 200, 255, 0.7);
+body.page-nordstrom-rack .work-detail__interview-guide .work-detail__interview-guidelines li::marker {
+  color: rgba(255, 255, 255, 0.45);
 }
 
 body.page-nordstrom-rack .interview-guide__prompt {
@@ -9484,15 +9473,15 @@ body.page-sound-transit .interview-guide__block {
   padding: clamp(16px, 2.2vh, 24px) clamp(16px, 2.4vw, 26px);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.07);
-  border-left: 3px solid rgba(120, 200, 255, 0.55);
-  background: rgba(120, 200, 255, 0.035);
+  border-left: 3px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.025);
   box-shadow: none;
 }
 
 body.page-sound-transit .interview-guide__block--intro,
 body.page-sound-transit .interview-guide__block--closing {
-  border-left-color: rgba(180, 140, 255, 0.55);
-  background: rgba(180, 140, 255, 0.04);
+  border-left-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 body.page-sound-transit .interview-guide__block-header {
