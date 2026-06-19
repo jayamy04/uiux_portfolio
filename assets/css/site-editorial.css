@@ -2001,44 +2001,48 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
     order: 4;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack-pickup {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare {
     order: 5;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack-pickup-recommendations {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack-pickup {
     order: 6;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack-pickup-recommendations {
     order: 7;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack {
     order: 8;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab {
     order: 9;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-survey {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-course-registration {
     order: 10;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-interviews {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-survey {
     order: 11;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-fly-on-wall {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-interviews {
     order: 12;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-course-registration {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-fly-on-wall {
     order: 13;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-assisted-driving-vision {
     order: 14;
+  }
+
+  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey {
+    order: 15;
   }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {
