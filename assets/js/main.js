@@ -2410,14 +2410,28 @@ const initHomeLandingScroll = () => {
 };
 
 const SOUND_TRANSIT_CASE_STUDY_PATH = "sound-transit.html";
+const NORDSTROM_PICKUP_CASE_STUDY_PATH = "nordstrom-rack-pickup.html";
+const NORDSTROM_PICKUP_RECOMMENDATIONS_HASH =
+  "nordstrom-pickup-recommendations-heading";
 
 const normalizeHomeCaseStudyHref = (href) => {
   if (!href) return href;
-  const [path] = href.split("#");
+  const hashIndex = href.indexOf("#");
+  const path = hashIndex === -1 ? href : href.slice(0, hashIndex);
+  const hash = hashIndex === -1 ? "" : href.slice(hashIndex + 1);
   const normalizedPath = path.replace(/^\.\//, "");
+
   if (normalizedPath === SOUND_TRANSIT_CASE_STUDY_PATH) {
     return path;
   }
+
+  if (normalizedPath === NORDSTROM_PICKUP_CASE_STUDY_PATH) {
+    if (hash === NORDSTROM_PICKUP_RECOMMENDATIONS_HASH) {
+      return href;
+    }
+    return path;
+  }
+
   return href;
 };
 
