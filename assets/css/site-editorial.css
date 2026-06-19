@@ -4963,32 +4963,47 @@ body.page-contact.site-editorial .contact-page-layout__form.tj-contact-section-3
   padding-top: 0;
 }
 
-/* Contact page — stacked portrait + title + form */
-body.page-contact.site-editorial .contact-page-section--stacked {
+/* Contact page — editorial portrait + intro / form split */
+body.page-contact.site-editorial .contact-page-section--editorial {
   padding: clamp(8px, 1.5vh, 16px) var(--site-content-inset) clamp(48px, 6vh, 72px);
 }
 
-body.page-contact.site-editorial .contact-page-layout--stacked {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: clamp(24px, 3.5vh, 36px);
-  max-width: min(560px, 100%);
+body.page-contact.site-editorial .contact-page-layout--editorial {
+  display: block;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 0;
+}
+
+body.page-contact.site-editorial .contact-page-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(28px, 4vh, 40px);
+  align-items: start;
+}
+
+body.page-contact.site-editorial .contact-page-aside {
+  margin: 0;
 }
 
 body.page-contact.site-editorial .contact-page-portrait {
   margin: 0;
   width: 100%;
-  max-width: 320px;
+  max-width: min(320px, 72vw);
+}
+
+body.page-contact.site-editorial .contact-page-portrait__wrap {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: visible;
 }
 
 body.page-contact.site-editorial .contact-page-portrait__frame {
   position: relative;
   aspect-ratio: 9 / 16;
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
   border-radius: clamp(16px, 2vw, 24px);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.14);
@@ -5011,36 +5026,158 @@ body.page-contact.site-editorial .contact-page-portrait__img {
   display: block;
 }
 
-body.page-contact.site-editorial .contact-page-layout__intro--stacked {
+body.page-contact.site-editorial .contact-page-main {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3.5vh, 36px);
+  min-width: 0;
+}
+
+body.page-contact.site-editorial .contact-page-layout--editorial .contact-page-layout__intro {
   max-width: none;
   width: 100%;
-  text-align: center;
+  text-align: left;
+  padding-top: 0;
 }
 
-body.page-contact.site-editorial .contact-page__title--stacked {
+body.page-contact.site-editorial .contact-page-layout--editorial .contact-page__title {
+  margin-bottom: clamp(14px, 2vh, 20px);
+}
+
+body.page-contact.site-editorial .contact-page-layout--editorial .contact-page__lead {
+  margin-bottom: clamp(16px, 2.2vh, 22px);
+  max-width: 26em;
+  font-size: clamp(1rem, 1.15vw, 1.125rem);
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+body.page-contact.site-editorial .contact-page-layout--editorial .contact-page__direct {
   margin: 0;
-  font-family: var(--tj-ff-body);
-  font-size: clamp(1.375rem, 4.2vw, 1.875rem);
-  font-weight: var(--tj-fw-bold);
-  letter-spacing: -0.02em;
-  line-height: 1.28;
-  color: #ffffff;
-  text-wrap: pretty;
 }
 
-body.page-contact.site-editorial .contact-page-layout--stacked .contact-page-layout__form {
+body.page-contact.site-editorial .contact-page__direct-link--static {
+  cursor: default;
+  pointer-events: none;
+}
+
+body.page-contact.site-editorial .contact-page-layout--editorial .contact-page-layout__form {
   width: 100%;
+  position: relative;
+  padding-top: clamp(20px, 2.5vh, 28px);
+}
+
+body.page-contact.site-editorial .contact-page-layout--editorial .contact-page-layout__form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(100%, 280px);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 77, 184, 0.55) 0%,
+    rgba(255, 255, 255, 0.12) 55%,
+    transparent 100%
+  );
+}
+
+@media only screen and (min-width: 768px) {
+  body.page-contact.site-editorial .contact-page-portrait {
+    max-width: 360px;
+    margin: 0;
+  }
+
+  body.page-contact.site-editorial .contact-page-aside {
+    justify-self: start;
+  }
 }
 
 @media only screen and (min-width: 992px) {
-  body.page-contact.site-editorial .contact-page-section--stacked {
-    display: block;
-    min-height: auto;
-    padding-top: clamp(16px, 2vh, 24px);
+  body.page-contact.site-editorial .contact-page-section--editorial {
+    display: flex;
+    align-items: center;
+    min-height: calc(100dvh - 84px);
+    padding-bottom: clamp(24px, 3vh, 40px);
+  }
+
+  body.page-contact.site-editorial .contact-page-grid {
+    grid-template-columns: minmax(0, 0.38fr) minmax(0, 0.62fr);
+    gap: clamp(28px, 3.5vw, 48px);
+    align-items: center;
   }
 
   body.page-contact.site-editorial .contact-page-portrait {
-    max-width: 280px;
+    max-width: none;
+  }
+
+  body.page-contact.site-editorial .contact-page-portrait__wrap {
+    margin: 0;
+    max-width: none;
+    transform: rotate(-2deg);
+    transform-origin: center center;
+  }
+
+  body.page-contact.site-editorial .contact-page-portrait__frame {
+    max-height: min(72vh, 620px);
+    height: auto;
+  }
+
+  body.page-contact.site-editorial .contact-page-main {
+    position: relative;
+    padding-left: clamp(20px, 2.5vw, 36px);
+    gap: clamp(20px, 2.8vh, 32px);
+  }
+
+  body.page-contact.site-editorial .contact-page-main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.1) 18%,
+      rgba(255, 77, 184, 0.28) 50%,
+      rgba(255, 255, 255, 0.1) 82%,
+      transparent 100%
+    );
+  }
+
+  body.page-contact.site-editorial .contact-page-layout--editorial .contact-page-layout__form {
+    padding-top: 0;
+  }
+
+  body.page-contact.site-editorial .contact-page-layout--editorial .contact-page-layout__form::before {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  body.page-contact.site-editorial .contact-page-aside {
+    display: flex;
+    justify-content: center;
+  }
+
+  body.page-contact.site-editorial .contact-page-layout--editorial .contact-page-layout__intro {
+    text-align: center;
+    align-items: center;
+  }
+
+  body.page-contact.site-editorial .contact-page-layout--editorial .contact-page__lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  body.page-contact.site-editorial .contact-page-layout--editorial .contact-page__direct {
+    justify-content: center;
+  }
+
+  body.page-contact.site-editorial .contact-page-layout--editorial .contact-page-layout__form::before {
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
