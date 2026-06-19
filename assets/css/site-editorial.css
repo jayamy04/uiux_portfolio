@@ -12421,3 +12421,441 @@ body.page-nordstrom-rack-pickup .work-detail__usability-finding .work-detail__no
   background: none;
 }
 
+/* Case study pages — global flatten (no decorative card chrome) */
+body.page-nordstrom-rack .work-detail__survey-part,
+body.page-nordstrom-rack-pickup .work-detail__survey-part,
+body.page-sound-transit .work-detail__survey-part,
+body.page-ai-healthcare .work-detail__survey-part,
+body.page-inclusive-lab .work-detail__survey-part,
+body.page-inclusive-design-lab .work-detail__survey-part,
+body.page-nordstrom-rack .work-detail__survey-part--intro,
+body.page-nordstrom-rack-pickup .work-detail__survey-part--intro,
+body.page-sound-transit .work-detail__survey-part--intro,
+body.page-ai-healthcare .work-detail__survey-part--intro,
+body.page-inclusive-lab .work-detail__survey-part--intro,
+body.page-inclusive-design-lab .work-detail__survey-part--intro,
+body.page-nordstrom-rack .work-detail__survey-part--concluding,
+body.page-nordstrom-rack-pickup .work-detail__survey-part--concluding,
+body.page-sound-transit .work-detail__survey-part--concluding,
+body.page-ai-healthcare .work-detail__survey-part--concluding,
+body.page-inclusive-lab .work-detail__survey-part--concluding,
+body.page-inclusive-design-lab .work-detail__survey-part--concluding,
+body.page-nordstrom-rack .work-detail__survey-finding,
+body.page-nordstrom-rack-pickup .work-detail__survey-finding,
+body.page-sound-transit .work-detail__survey-finding,
+body.page-ai-healthcare .work-detail__survey-finding,
+body.page-inclusive-lab .work-detail__survey-finding,
+body.page-inclusive-design-lab .work-detail__survey-finding,
+body.page-nordstrom-rack .work-detail__research-question,
+body.page-nordstrom-rack-pickup .work-detail__research-question,
+body.page-sound-transit .work-detail__research-question,
+body.page-ai-healthcare .work-detail__research-question,
+body.page-inclusive-lab .work-detail__research-question,
+body.page-inclusive-design-lab .work-detail__research-question,
+body.page-nordstrom-rack .work-detail__goal,
+body.page-nordstrom-rack-pickup .work-detail__goal,
+body.page-sound-transit .work-detail__goal,
+body.page-ai-healthcare .work-detail__goal,
+body.page-inclusive-lab .work-detail__goal,
+body.page-inclusive-design-lab .work-detail__goal,
+body.page-nordstrom-rack .work-detail__theme,
+body.page-nordstrom-rack-pickup .work-detail__theme,
+body.page-sound-transit .work-detail__theme,
+body.page-ai-healthcare .work-detail__theme,
+body.page-inclusive-lab .work-detail__theme,
+body.page-inclusive-design-lab .work-detail__theme,
+body.page-nordstrom-rack .work-detail__tile,
+body.page-nordstrom-rack-pickup .work-detail__tile,
+body.page-sound-transit .work-detail__tile,
+body.page-ai-healthcare .work-detail__tile,
+body.page-inclusive-lab .work-detail__tile,
+body.page-inclusive-design-lab .work-detail__tile,
+body.page-makeability-lab .work-detail__tile,
+body.page-breaking-barriers .work-detail__tile,
+body.page-sachacks .work-detail__tile,
+body.page-schedgo .work-detail__tile,
+body.page-bloom-and-vine .work-detail__tile,
+body.page-ibm-saas-console .work-detail__tile,
+body.page-nordstrom-rack .work-detail__split-panel,
+body.page-nordstrom-rack-pickup .work-detail__split-panel,
+body.page-sound-transit .work-detail__split-panel,
+body.page-ai-healthcare .work-detail__split-panel,
+body.page-inclusive-lab .work-detail__split-panel,
+body.page-inclusive-design-lab .work-detail__split-panel,
+body.page-makeability-lab .work-detail__split-panel,
+body.page-breaking-barriers .work-detail__split-panel,
+body.page-sachacks .work-detail__split-panel,
+body.page-schedgo .work-detail__split-panel,
+body.page-bloom-and-vine .work-detail__split-panel,
+body.page-ibm-saas-console .work-detail__split-panel,
+body.page-nordstrom-rack .work-detail__survey-closing,
+body.page-nordstrom-rack-pickup .work-detail__survey-closing,
+body.page-sound-transit .work-detail__survey-closing,
+body.page-ai-healthcare .work-detail__survey-closing,
+body.page-inclusive-lab .work-detail__survey-closing,
+body.page-inclusive-design-lab .work-detail__survey-closing,
+body.page-nordstrom-rack .work-detail__interview-guidelines li,
+body.page-nordstrom-rack-pickup .work-detail__interview-guidelines li,
+body.page-sound-transit .work-detail__interview-guidelines li,
+body.page-ai-healthcare .work-detail__interview-guidelines li,
+body.page-inclusive-lab .work-detail__interview-guidelines li,
+body.page-inclusive-design-lab .work-detail__interview-guidelines li,
+body.page-nordstrom-rack .work-detail__interview-response,
+body.page-nordstrom-rack-pickup .work-detail__interview-response,
+body.page-sound-transit .work-detail__interview-response,
+body.page-ai-healthcare .work-detail__interview-response,
+body.page-inclusive-lab .work-detail__interview-response,
+body.page-inclusive-design-lab .work-detail__interview-response,
+body.page-nordstrom-rack .interview-guide__block,
+body.page-nordstrom-rack-pickup .interview-guide__block,
+body.page-sound-transit .interview-guide__block,
+body.page-ai-healthcare .interview-guide__block,
+body.page-inclusive-lab .interview-guide__block,
+body.page-inclusive-design-lab .interview-guide__block,
+body.page-nordstrom-rack .work-detail__table-wrap,
+body.page-nordstrom-rack-pickup .work-detail__table-wrap,
+body.page-sound-transit .work-detail__table-wrap,
+body.page-ai-healthcare .work-detail__table-wrap,
+body.page-inclusive-lab .work-detail__table-wrap,
+body.page-inclusive-design-lab .work-detail__table-wrap,
+body.page-makeability-lab .work-detail__table-wrap,
+body.page-breaking-barriers .work-detail__table-wrap,
+body.page-sachacks .work-detail__table-wrap,
+body.page-schedgo .work-detail__table-wrap,
+body.page-bloom-and-vine .work-detail__table-wrap,
+body.page-ibm-saas-console .work-detail__table-wrap,
+body.page-nordstrom-rack .work-detail__stats-item,
+body.page-nordstrom-rack-pickup .work-detail__stats-item,
+body.page-sound-transit .work-detail__stats-item,
+body.page-ai-healthcare .work-detail__stats-item,
+body.page-inclusive-lab .work-detail__stats-item,
+body.page-inclusive-design-lab .work-detail__stats-item,
+body.page-makeability-lab .work-detail__stats-item,
+body.page-breaking-barriers .work-detail__stats-item,
+body.page-sachacks .work-detail__stats-item,
+body.page-schedgo .work-detail__stats-item,
+body.page-bloom-and-vine .work-detail__stats-item,
+body.page-ibm-saas-console .work-detail__stats-item,
+body.page-nordstrom-rack .work-detail__highlight,
+body.page-nordstrom-rack-pickup .work-detail__highlight,
+body.page-sound-transit .work-detail__highlight,
+body.page-ai-healthcare .work-detail__highlight,
+body.page-inclusive-lab .work-detail__highlight,
+body.page-inclusive-design-lab .work-detail__highlight,
+body.page-makeability-lab .work-detail__highlight,
+body.page-breaking-barriers .work-detail__highlight,
+body.page-sachacks .work-detail__highlight,
+body.page-schedgo .work-detail__highlight,
+body.page-bloom-and-vine .work-detail__highlight,
+body.page-ibm-saas-console .work-detail__highlight,
+body.page-sound-transit .work-detail__card-sort-list li,
+body.page-inclusive-lab .work-detail__screening-criteria li,
+body.page-inclusive-design-lab .work-detail__screening-criteria li,
+body.page-inclusive-lab .work-detail__probe-card,
+body.page-inclusive-design-lab .work-detail__probe-card,
+body.page-nordstrom-rack .work-detail__criteria-card,
+body.page-nordstrom-rack-pickup .work-detail__criteria-card,
+body.page-sound-transit .work-detail__criteria-card,
+body.page-ai-healthcare .work-detail__criteria-card,
+body.page-inclusive-lab .work-detail__criteria-card,
+body.page-inclusive-design-lab .work-detail__criteria-card,
+body.page-nordstrom-rack .work-detail__method-note,
+body.page-nordstrom-rack-pickup .work-detail__method-note,
+body.page-sound-transit .work-detail__method-note,
+body.page-ai-healthcare .work-detail__method-note,
+body.page-inclusive-lab .work-detail__method-note,
+body.page-inclusive-design-lab .work-detail__method-note,
+body.page-nordstrom-rack .work-detail__scenario-block,
+body.page-nordstrom-rack-pickup .work-detail__scenario-block,
+body.page-sound-transit .work-detail__scenario-block,
+body.page-ai-healthcare .work-detail__scenario-block,
+body.page-inclusive-lab .work-detail__scenario-block,
+body.page-inclusive-design-lab .work-detail__scenario-block,
+body.page-nordstrom-rack .work-detail__usability-finding,
+body.page-nordstrom-rack-pickup .work-detail__usability-finding,
+body.page-sound-transit .work-detail__usability-finding,
+body.page-ai-healthcare .work-detail__usability-finding,
+body.page-inclusive-lab .work-detail__usability-finding,
+body.page-inclusive-design-lab .work-detail__usability-finding,
+body.page-nordstrom-rack .work-detail__usability-finding--positive,
+body.page-nordstrom-rack-pickup .work-detail__usability-finding--positive,
+body.page-sound-transit .work-detail__usability-finding--positive,
+body.page-ai-healthcare .work-detail__usability-finding--positive,
+body.page-inclusive-lab .work-detail__usability-finding--positive,
+body.page-inclusive-design-lab .work-detail__usability-finding--positive,
+body.page-nordstrom-rack .work-detail__usability-finding--results,
+body.page-nordstrom-rack-pickup .work-detail__usability-finding--results,
+body.page-sound-transit .work-detail__usability-finding--results,
+body.page-ai-healthcare .work-detail__usability-finding--results,
+body.page-inclusive-lab .work-detail__usability-finding--results,
+body.page-inclusive-design-lab .work-detail__usability-finding--results {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  transition: none;
+}
+
+body.page-nordstrom-rack .work-detail__research-question:hover,
+body.page-nordstrom-rack-pickup .work-detail__research-question:hover,
+body.page-sound-transit .work-detail__research-question:hover,
+body.page-ai-healthcare .work-detail__research-question:hover,
+body.page-inclusive-lab .work-detail__research-question:hover,
+body.page-inclusive-design-lab .work-detail__research-question:hover,
+body.page-nordstrom-rack .work-detail__goal:hover,
+body.page-nordstrom-rack-pickup .work-detail__goal:hover,
+body.page-sound-transit .work-detail__goal:hover,
+body.page-ai-healthcare .work-detail__goal:hover,
+body.page-inclusive-lab .work-detail__goal:hover,
+body.page-inclusive-design-lab .work-detail__goal:hover {
+  border: none;
+  box-shadow: none;
+}
+
+body.page-nordstrom-rack .work-detail__survey-part-header,
+body.page-nordstrom-rack-pickup .work-detail__survey-part-header,
+body.page-sound-transit .work-detail__survey-part-header,
+body.page-ai-healthcare .work-detail__survey-part-header,
+body.page-inclusive-lab .work-detail__survey-part-header,
+body.page-inclusive-design-lab .work-detail__survey-part-header {
+  margin-bottom: clamp(8px, 1.2vh, 12px);
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+body.page-nordstrom-rack .work-detail__survey-question,
+body.page-nordstrom-rack-pickup .work-detail__survey-question,
+body.page-sound-transit .work-detail__survey-question,
+body.page-ai-healthcare .work-detail__survey-question,
+body.page-inclusive-lab .work-detail__survey-question,
+body.page-inclusive-design-lab .work-detail__survey-question {
+  padding: clamp(4px, 0.7vh, 7px) 0 clamp(4px, 0.7vh, 7px) clamp(10px, 1.4vw, 12px);
+  border: none;
+  border-left: 2px solid rgba(255, 77, 184, 0.32);
+  border-radius: 0;
+  background: none;
+}
+
+body.page-nordstrom-rack .work-detail__survey-question--optional,
+body.page-nordstrom-rack-pickup .work-detail__survey-question--optional,
+body.page-sound-transit .work-detail__survey-question--optional,
+body.page-ai-healthcare .work-detail__survey-question--optional,
+body.page-inclusive-lab .work-detail__survey-question--optional,
+body.page-inclusive-design-lab .work-detail__survey-question--optional {
+  border-left-color: rgba(255, 255, 255, 0.14);
+}
+
+body.page-nordstrom-rack .work-detail__survey-question--open,
+body.page-nordstrom-rack-pickup .work-detail__survey-question--open,
+body.page-sound-transit .work-detail__survey-question--open,
+body.page-ai-healthcare .work-detail__survey-question--open,
+body.page-inclusive-lab .work-detail__survey-question--open,
+body.page-inclusive-design-lab .work-detail__survey-question--open {
+  border-left-color: rgba(180, 122, 255, 0.38);
+}
+
+body.page-inclusive-lab .work-detail__screening-block,
+body.page-inclusive-design-lab .work-detail__screening-block {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+}
+
+body.page-inclusive-lab .work-detail__screening-block--include,
+body.page-inclusive-design-lab .work-detail__screening-block--include {
+  padding-left: clamp(10px, 1.4vw, 12px);
+  border-left: 2px solid rgba(255, 77, 184, 0.32);
+}
+
+body.page-inclusive-lab .work-detail__screening-block--exclude,
+body.page-inclusive-design-lab .work-detail__screening-block--exclude {
+  padding-left: clamp(10px, 1.4vw, 12px);
+  border-left: 2px solid rgba(255, 255, 255, 0.14);
+}
+
+body.page-inclusive-lab .work-detail__interview-branch,
+body.page-inclusive-design-lab .work-detail__interview-branch {
+  padding: 0 0 0 clamp(10px, 1.4vw, 12px);
+  border: none;
+  border-left: 2px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0;
+  background: none;
+}
+
+body.page-nordstrom-rack .work-detail__survey-findings,
+body.page-nordstrom-rack-pickup .work-detail__survey-findings,
+body.page-sound-transit .work-detail__survey-findings,
+body.page-ai-healthcare .work-detail__survey-findings,
+body.page-inclusive-lab .work-detail__survey-findings,
+body.page-inclusive-design-lab .work-detail__survey-findings {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 4vh, 40px);
+  margin-top: clamp(16px, 2.5vh, 24px);
+}
+
+body.page-nordstrom-rack .work-detail__research-questions,
+body.page-nordstrom-rack-pickup .work-detail__research-questions,
+body.page-sound-transit .work-detail__research-questions,
+body.page-ai-healthcare .work-detail__research-questions,
+body.page-inclusive-lab .work-detail__research-questions,
+body.page-inclusive-design-lab .work-detail__research-questions {
+  margin-top: clamp(16px, 2.5vh, 24px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 2.8vh, 28px);
+  grid-template-columns: unset;
+}
+
+body.page-nordstrom-rack .work-detail__goals,
+body.page-nordstrom-rack-pickup .work-detail__goals,
+body.page-sound-transit .work-detail__goals,
+body.page-ai-healthcare .work-detail__goals,
+body.page-inclusive-lab .work-detail__goals,
+body.page-inclusive-design-lab .work-detail__goals {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 2.8vh, 28px);
+  grid-template-columns: unset;
+}
+
+body.page-nordstrom-rack .work-detail__themes,
+body.page-nordstrom-rack-pickup .work-detail__themes,
+body.page-sound-transit .work-detail__themes,
+body.page-ai-healthcare .work-detail__themes,
+body.page-inclusive-lab .work-detail__themes,
+body.page-inclusive-design-lab .work-detail__themes {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(36px, 5vh, 52px);
+  margin-top: clamp(16px, 2.5vh, 24px);
+}
+
+body.page-nordstrom-rack .work-detail__tiles,
+body.page-nordstrom-rack-pickup .work-detail__tiles,
+body.page-sound-transit .work-detail__tiles,
+body.page-ai-healthcare .work-detail__tiles,
+body.page-inclusive-lab .work-detail__tiles,
+body.page-inclusive-design-lab .work-detail__tiles,
+body.page-makeability-lab .work-detail__tiles,
+body.page-breaking-barriers .work-detail__tiles,
+body.page-sachacks .work-detail__tiles,
+body.page-schedgo .work-detail__tiles,
+body.page-bloom-and-vine .work-detail__tiles,
+body.page-ibm-saas-console .work-detail__tiles {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 4vh, 40px);
+  margin-top: clamp(16px, 2.5vh, 24px);
+}
+
+body.page-nordstrom-rack .work-detail__prose--survey,
+body.page-nordstrom-rack-pickup .work-detail__prose--survey,
+body.page-sound-transit .work-detail__prose--survey,
+body.page-ai-healthcare .work-detail__prose--survey,
+body.page-inclusive-lab .work-detail__prose--survey,
+body.page-inclusive-design-lab .work-detail__prose--survey {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 4vh, 40px);
+}
+
+body.page-nordstrom-rack .work-detail__interview-guide,
+body.page-nordstrom-rack-pickup .work-detail__interview-guide,
+body.page-sound-transit .work-detail__interview-guide,
+body.page-ai-healthcare .work-detail__interview-guide,
+body.page-inclusive-lab .work-detail__interview-guide,
+body.page-inclusive-design-lab .work-detail__interview-guide {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 4vh, 40px);
+  margin-top: clamp(16px, 2.5vh, 24px);
+}
+
+body.page-nordstrom-rack .work-detail__prose--criteria,
+body.page-nordstrom-rack-pickup .work-detail__prose--criteria,
+body.page-sound-transit .work-detail__prose--criteria,
+body.page-ai-healthcare .work-detail__prose--criteria,
+body.page-inclusive-lab .work-detail__prose--criteria,
+body.page-inclusive-design-lab .work-detail__prose--criteria {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 2.8vh, 28px);
+}
+
+body.page-nordstrom-rack .work-detail__usability-findings,
+body.page-nordstrom-rack-pickup .work-detail__usability-findings,
+body.page-sound-transit .work-detail__usability-findings,
+body.page-ai-healthcare .work-detail__usability-findings,
+body.page-inclusive-lab .work-detail__usability-findings,
+body.page-inclusive-design-lab .work-detail__usability-findings {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 6vh, 56px);
+  margin-top: clamp(16px, 2.5vh, 24px);
+}
+
+body.page-nordstrom-rack .work-detail__usability-findings-group,
+body.page-nordstrom-rack-pickup .work-detail__usability-findings-group,
+body.page-sound-transit .work-detail__usability-findings-group,
+body.page-ai-healthcare .work-detail__usability-findings-group,
+body.page-inclusive-lab .work-detail__usability-findings-group,
+body.page-inclusive-design-lab .work-detail__usability-findings-group {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3.5vh, 36px);
+}
+
+body.page-nordstrom-rack .work-detail__theme-badge,
+body.page-nordstrom-rack-pickup .work-detail__theme-badge,
+body.page-sound-transit .work-detail__theme-badge,
+body.page-ai-healthcare .work-detail__theme-badge,
+body.page-inclusive-lab .work-detail__theme-badge,
+body.page-inclusive-design-lab .work-detail__theme-badge {
+  display: none;
+}
+
+body.page-nordstrom-rack .work-detail__theme-title,
+body.page-nordstrom-rack-pickup .work-detail__theme-title,
+body.page-sound-transit .work-detail__theme-title,
+body.page-ai-healthcare .work-detail__theme-title,
+body.page-inclusive-lab .work-detail__theme-title,
+body.page-inclusive-design-lab .work-detail__theme-title {
+  display: none;
+}
+
+body.page-nordstrom-rack .work-detail__criteria-card-header .work-detail__kicker,
+body.page-nordstrom-rack-pickup .work-detail__criteria-card-header .work-detail__kicker,
+body.page-sound-transit .work-detail__criteria-card-header .work-detail__kicker,
+body.page-ai-healthcare .work-detail__criteria-card-header .work-detail__kicker,
+body.page-inclusive-lab .work-detail__criteria-card-header .work-detail__kicker,
+body.page-inclusive-design-lab .work-detail__criteria-card-header .work-detail__kicker,
+body.page-nordstrom-rack .work-detail__method-note .work-detail__kicker,
+body.page-nordstrom-rack-pickup .work-detail__method-note .work-detail__kicker,
+body.page-sound-transit .work-detail__method-note .work-detail__kicker,
+body.page-ai-healthcare .work-detail__method-note .work-detail__kicker,
+body.page-inclusive-lab .work-detail__method-note .work-detail__kicker,
+body.page-inclusive-design-lab .work-detail__method-note .work-detail__kicker,
+body.page-nordstrom-rack .work-detail__scenario-intro > .work-detail__kicker:first-child,
+body.page-nordstrom-rack-pickup .work-detail__scenario-intro > .work-detail__kicker:first-child,
+body.page-sound-transit .work-detail__scenario-intro > .work-detail__kicker:first-child,
+body.page-ai-healthcare .work-detail__scenario-intro > .work-detail__kicker:first-child,
+body.page-inclusive-lab .work-detail__scenario-intro > .work-detail__kicker:first-child,
+body.page-inclusive-design-lab .work-detail__scenario-intro > .work-detail__kicker:first-child,
+body.page-nordstrom-rack .work-detail__usability-findings-group > .work-detail__kicker,
+body.page-nordstrom-rack-pickup .work-detail__usability-findings-group > .work-detail__kicker,
+body.page-sound-transit .work-detail__usability-findings-group > .work-detail__kicker,
+body.page-ai-healthcare .work-detail__usability-findings-group > .work-detail__kicker,
+body.page-inclusive-lab .work-detail__usability-findings-group > .work-detail__kicker,
+body.page-inclusive-design-lab .work-detail__usability-findings-group > .work-detail__kicker,
+body.page-nordstrom-rack .work-detail__usability-finding--results .work-detail__kicker,
+body.page-nordstrom-rack-pickup .work-detail__usability-finding--results .work-detail__kicker,
+body.page-sound-transit .work-detail__usability-finding--results .work-detail__kicker,
+body.page-ai-healthcare .work-detail__usability-finding--results .work-detail__kicker,
+body.page-inclusive-lab .work-detail__usability-finding--results .work-detail__kicker,
+body.page-inclusive-design-lab .work-detail__usability-finding--results .work-detail__kicker {
+  margin-top: 0;
+}
+
