@@ -8826,6 +8826,46 @@ body.site-editorial.site-redirect a:hover {
 }
 
 /* Work detail pages — shared chrome */
+/* Case study work-detail — main.css sets h1/h2 to near-black Fraunces on dark editorial backgrounds */
+body.site-editorial .work-detail .work-detail__title,
+body.site-editorial .work-detail .work-detail__title-line,
+body.site-editorial .work-detail [data-work-detail-title],
+body.site-editorial .work-detail .work-detail__heading,
+body.site-editorial .work-detail .work-detail__subtitle,
+body.site-editorial .work-detail .work-detail__meta dt,
+body.site-editorial .work-detail .work-detail__meta dd,
+body.site-editorial .work-detail .work-detail__prose p,
+body.site-editorial .work-detail .work-detail__prose li,
+body.site-editorial .work-detail .work-detail__lead {
+  font-family: var(--tj-ff-body);
+}
+
+body.site-editorial .work-detail .work-detail__title,
+body.site-editorial .work-detail .work-detail__title-line,
+body.site-editorial .work-detail [data-work-detail-title],
+body.site-editorial .work-detail .work-detail__heading {
+  color: #ffffff;
+}
+
+body.site-editorial .work-detail .work-detail__subtitle,
+body.site-editorial .work-detail [data-work-detail-title].work-detail__subtitle {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+body.site-editorial .work-detail .work-detail__meta dt {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+body.site-editorial .work-detail .work-detail__meta dd,
+body.site-editorial .work-detail .work-detail__lead {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.site-editorial .work-detail .work-detail__prose p,
+body.site-editorial .work-detail .work-detail__prose li {
+  color: rgba(255, 255, 255, 0.88);
+}
+
 body.page-sachacks .work-detail,
 body.page-schedgo .work-detail,
 body.page-ibm-saas-console .work-detail,
@@ -8833,6 +8873,7 @@ body.page-breaking-barriers .work-detail,
 body.page-bloom-and-vine .work-detail,
 body.page-makeability-lab .work-detail,
 body.page-nordstrom-rack .work-detail, body.page-ai-healthcare .work-detail,
+body.page-board-games-onboarding .work-detail,
 body.page-sound-transit .work-detail,
 body.page-inclusive-lab .work-detail {
   position: relative;
@@ -8937,6 +8978,7 @@ body.page-breaking-barriers .work-detail__back:hover,
 body.page-bloom-and-vine .work-detail__back:hover,
 body.page-makeability-lab .work-detail__back:hover,
 body.page-nordstrom-rack .work-detail__back:hover, body.page-ai-healthcare .work-detail__back:hover,
+body.page-board-games-onboarding .work-detail__back:hover,
 body.page-sound-transit .work-detail__back:hover,
 body.page-inclusive-lab .work-detail__back:hover,
 body.page-inclusive-lab .work-detail__back:hover {
@@ -8967,6 +9009,7 @@ body.page-breaking-barriers .work-detail__title,
 body.page-bloom-and-vine .work-detail__title,
 body.page-makeability-lab .work-detail__title,
 body.page-nordstrom-rack .work-detail__title, body.page-ai-healthcare .work-detail__title,
+body.page-board-games-onboarding .work-detail__title,
 body.page-sound-transit .work-detail__title,
 body.page-inclusive-lab .work-detail__title {
   margin: 0;
@@ -8984,6 +9027,7 @@ body.page-breaking-barriers .work-detail__title-line,
 body.page-bloom-and-vine .work-detail__title-line,
 body.page-makeability-lab .work-detail__title-line,
 body.page-nordstrom-rack .work-detail__title-line, body.page-ai-healthcare .work-detail__title-line,
+body.page-board-games-onboarding .work-detail__title-line,
 body.page-sound-transit .work-detail__title-line,
 body.page-inclusive-lab .work-detail__title-line {
   display: block;
@@ -8998,6 +9042,7 @@ body.page-breaking-barriers .work-detail__title-line--accent,
 body.page-bloom-and-vine .work-detail__title-line--accent,
 body.page-makeability-lab .work-detail__title-line--accent,
 body.page-nordstrom-rack .work-detail__title-line--accent, body.page-ai-healthcare .work-detail__title-line--accent,
+body.page-board-games-onboarding .work-detail__title-line--accent,
 body.page-sound-transit .work-detail__title-line--accent,
 body.page-inclusive-lab .work-detail__title-line--accent {
   padding-left: clamp(0.35em, 8vw, 1em);
@@ -9038,6 +9083,7 @@ body.page-breaking-barriers .work-detail__subtitle,
 body.page-bloom-and-vine .work-detail__subtitle,
 body.page-makeability-lab .work-detail__subtitle,
 body.page-nordstrom-rack .work-detail__subtitle, body.page-ai-healthcare .work-detail__subtitle,
+body.page-board-games-onboarding .work-detail__subtitle,
 body.page-sound-transit .work-detail__subtitle,
 body.page-inclusive-lab .work-detail__subtitle {
   margin: clamp(16px, 2.5vh, 24px) 0 0;
@@ -9057,6 +9103,7 @@ body.page-breaking-barriers .work-detail__meta,
 body.page-bloom-and-vine .work-detail__meta,
 body.page-makeability-lab .work-detail__meta,
 body.page-nordstrom-rack .work-detail__meta, body.page-ai-healthcare .work-detail__meta,
+body.page-board-games-onboarding .work-detail__meta,
 body.page-sound-transit .work-detail__meta,
 body.page-inclusive-lab .work-detail__meta {
   display: grid;
@@ -9073,6 +9120,7 @@ body.page-breaking-barriers .work-detail__meta-item,
 body.page-bloom-and-vine .work-detail__meta-item,
 body.page-makeability-lab .work-detail__meta-item,
 body.page-nordstrom-rack .work-detail__meta-item, body.page-ai-healthcare .work-detail__meta-item,
+body.page-board-games-onboarding .work-detail__meta-item,
 body.page-sound-transit .work-detail__meta-item,
 body.page-inclusive-lab .work-detail__meta-item {
   margin: 0;
@@ -9085,6 +9133,7 @@ body.page-breaking-barriers .work-detail__meta dt,
 body.page-bloom-and-vine .work-detail__meta dt,
 body.page-makeability-lab .work-detail__meta dt,
 body.page-nordstrom-rack .work-detail__meta dt, body.page-ai-healthcare .work-detail__meta dt,
+body.page-board-games-onboarding .work-detail__meta dt,
 body.page-sound-transit .work-detail__meta dt,
 body.page-inclusive-lab .work-detail__meta dt {
   margin: 0 0 4px;
@@ -9103,6 +9152,7 @@ body.page-breaking-barriers .work-detail__meta dd,
 body.page-bloom-and-vine .work-detail__meta dd,
 body.page-makeability-lab .work-detail__meta dd,
 body.page-nordstrom-rack .work-detail__meta dd, body.page-ai-healthcare .work-detail__meta dd,
+body.page-board-games-onboarding .work-detail__meta dd,
 body.page-sound-transit .work-detail__meta dd,
 body.page-inclusive-lab .work-detail__meta dd {
   margin: 0;
@@ -9119,6 +9169,7 @@ body.page-breaking-barriers .work-detail__actions,
 body.page-bloom-and-vine .work-detail__actions,
 body.page-makeability-lab .work-detail__actions,
 body.page-nordstrom-rack .work-detail__actions, body.page-ai-healthcare .work-detail__actions,
+body.page-board-games-onboarding .work-detail__actions,
 body.page-sound-transit .work-detail__actions,
 body.page-inclusive-lab .work-detail__actions,
 body.page-sachacks .work-detail__footer-actions,
@@ -9128,6 +9179,7 @@ body.page-breaking-barriers .work-detail__footer-actions,
 body.page-bloom-and-vine .work-detail__footer-actions,
 body.page-makeability-lab .work-detail__footer-actions,
 body.page-nordstrom-rack .work-detail__footer-actions, body.page-ai-healthcare .work-detail__footer-actions,
+body.page-board-games-onboarding .work-detail__footer-actions,
 body.page-sound-transit .work-detail__footer-actions,
 body.page-inclusive-lab .work-detail__footer-actions,
 body.page-inclusive-lab .work-detail__actions {
@@ -9145,6 +9197,7 @@ body.page-breaking-barriers .work-detail__cta,
 body.page-bloom-and-vine .work-detail__cta,
 body.page-makeability-lab .work-detail__cta,
 body.page-nordstrom-rack .work-detail__cta, body.page-ai-healthcare .work-detail__cta,
+body.page-board-games-onboarding .work-detail__cta,
 body.page-sound-transit .work-detail__cta,
 body.page-inclusive-lab .work-detail__cta {
   display: inline-flex;
@@ -9171,6 +9224,7 @@ body.page-breaking-barriers .work-detail__cta:hover,
 body.page-bloom-and-vine .work-detail__cta:hover,
 body.page-makeability-lab .work-detail__cta:hover,
 body.page-nordstrom-rack .work-detail__cta:hover, body.page-ai-healthcare .work-detail__cta:hover,
+body.page-board-games-onboarding .work-detail__cta:hover,
 body.page-sound-transit .work-detail__cta:hover,
 body.page-inclusive-lab .work-detail__cta:hover,
 body.page-inclusive-lab .work-detail__cta:hover {
@@ -9187,6 +9241,7 @@ body.page-breaking-barriers .work-detail__cta--ghost,
 body.page-bloom-and-vine .work-detail__cta--ghost,
 body.page-makeability-lab .work-detail__cta--ghost,
 body.page-nordstrom-rack .work-detail__cta--ghost, body.page-ai-healthcare .work-detail__cta--ghost,
+body.page-board-games-onboarding .work-detail__cta--ghost,
 body.page-sound-transit .work-detail__cta--ghost,
 body.page-inclusive-lab .work-detail__cta--ghost {
   background: transparent;
@@ -9201,6 +9256,7 @@ body.page-breaking-barriers .work-detail__cta--ghost:hover,
 body.page-bloom-and-vine .work-detail__cta--ghost:hover,
 body.page-makeability-lab .work-detail__cta--ghost:hover,
 body.page-nordstrom-rack .work-detail__cta--ghost:hover, body.page-ai-healthcare .work-detail__cta--ghost:hover,
+body.page-board-games-onboarding .work-detail__cta--ghost:hover,
 body.page-sound-transit .work-detail__cta--ghost:hover,
 body.page-inclusive-lab .work-detail__cta--ghost:hover,
 body.page-inclusive-lab .work-detail__cta--ghost:hover {
@@ -9216,6 +9272,7 @@ body.page-breaking-barriers .work-detail__section,
 body.page-bloom-and-vine .work-detail__section,
 body.page-makeability-lab .work-detail__section,
 body.page-nordstrom-rack .work-detail__section, body.page-ai-healthcare .work-detail__section,
+body.page-board-games-onboarding .work-detail__section,
 body.page-sound-transit .work-detail__section,
 body.page-inclusive-lab .work-detail__section {
   padding: clamp(36px, 6vh, 56px) 0 0;
@@ -9230,6 +9287,7 @@ body.page-breaking-barriers .work-detail__heading,
 body.page-bloom-and-vine .work-detail__heading,
 body.page-makeability-lab .work-detail__heading,
 body.page-nordstrom-rack .work-detail__heading, body.page-ai-healthcare .work-detail__heading,
+body.page-board-games-onboarding .work-detail__heading,
 body.page-sound-transit .work-detail__heading,
 body.page-inclusive-lab .work-detail__heading {
   margin: 0;
@@ -9248,6 +9306,7 @@ body.page-breaking-barriers .work-detail__kicker,
 body.page-bloom-and-vine .work-detail__kicker,
 body.page-makeability-lab .work-detail__kicker,
 body.page-nordstrom-rack .work-detail__kicker, body.page-ai-healthcare .work-detail__kicker,
+body.page-board-games-onboarding .work-detail__kicker,
 body.page-sound-transit .work-detail__kicker,
 body.page-inclusive-lab .work-detail__kicker {
   margin: clamp(12px, 2vh, 18px) 0 0;
@@ -9780,6 +9839,7 @@ body.page-breaking-barriers .work-detail__lead,
 body.page-bloom-and-vine .work-detail__lead,
 body.page-makeability-lab .work-detail__lead,
 body.page-nordstrom-rack .work-detail__lead, body.page-ai-healthcare .work-detail__lead,
+body.page-board-games-onboarding .work-detail__lead,
 body.page-sound-transit .work-detail__lead,
 body.page-inclusive-lab .work-detail__lead {
   margin: clamp(12px, 2vh, 16px) 0 0;
@@ -9798,6 +9858,7 @@ body.page-breaking-barriers .work-detail__prose,
 body.page-bloom-and-vine .work-detail__prose,
 body.page-makeability-lab .work-detail__prose,
 body.page-nordstrom-rack .work-detail__prose, body.page-ai-healthcare .work-detail__prose,
+body.page-board-games-onboarding .work-detail__prose,
 body.page-sound-transit .work-detail__prose,
 body.page-inclusive-lab .work-detail__prose {
   display: flex;
@@ -9814,6 +9875,7 @@ body.page-breaking-barriers .work-detail__prose p,
 body.page-bloom-and-vine .work-detail__prose p,
 body.page-makeability-lab .work-detail__prose p,
 body.page-nordstrom-rack .work-detail__prose p, body.page-ai-healthcare .work-detail__prose p,
+body.page-board-games-onboarding .work-detail__prose p,
 body.page-sound-transit .work-detail__prose p,
 body.page-inclusive-lab .work-detail__prose p {
   margin: 0;
@@ -9849,6 +9911,7 @@ body.page-breaking-barriers .work-detail__stats,
 body.page-bloom-and-vine .work-detail__stats,
 body.page-makeability-lab .work-detail__stats,
 body.page-nordstrom-rack .work-detail__stats, body.page-ai-healthcare .work-detail__stats,
+body.page-board-games-onboarding .work-detail__stats,
 body.page-sound-transit .work-detail__stats,
 body.page-inclusive-lab .work-detail__stats {
   display: grid;
