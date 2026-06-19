@@ -12239,11 +12239,55 @@ body.page-board-games-onboarding .work-detail__survey-question--optional > p:fir
   color: rgba(255, 255, 255, 0.68);
 }
 
+body.page-board-games-onboarding .work-detail__survey-part {
+  margin-top: clamp(28px, 4vh, 40px);
+  padding-top: clamp(20px, 3vh, 28px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.page-board-games-onboarding .work-detail__survey-part-header {
+  margin-bottom: clamp(12px, 1.8vh, 16px);
+}
+
+body.page-board-games-onboarding .work-detail__survey-part-header .work-detail__kicker {
+  margin: 0;
+}
+
+body.page-board-games-onboarding .work-detail__survey-part-body > p {
+  margin: 0 0 clamp(12px, 1.8vh, 16px);
+}
+
+body.page-board-games-onboarding .work-detail__figure {
+  margin: clamp(16px, 2.5vh, 24px) 0 0;
+}
+
+body.page-board-games-onboarding .work-detail__figure-frame {
+  border-radius: clamp(10px, 1.5vw, 14px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+body.page-board-games-onboarding .work-detail__figure-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body.page-board-games-onboarding .work-detail__survey-finding .work-detail__kicker {
+  margin: 0 0 clamp(8px, 1.2vh, 10px);
+}
+
+body.page-board-games-onboarding .work-detail__survey-finding > p {
+  margin: 0;
+}
+
 /* Flatten decorative finding/theme cards on case study pages */
 body.page-nordstrom-rack .work-detail__survey-finding,
 body.page-nordstrom-rack-pickup .work-detail__survey-finding,
 body.page-inclusive-lab .work-detail__survey-finding,
-body.page-inclusive-design-lab .work-detail__survey-finding {
+body.page-inclusive-design-lab .work-detail__survey-finding,
+body.page-board-games-onboarding .work-detail__survey-finding {
   padding: 0;
   border: none;
   border-radius: 0;
@@ -12254,7 +12298,8 @@ body.page-inclusive-design-lab .work-detail__survey-finding {
 body.page-nordstrom-rack .work-detail__survey-findings,
 body.page-nordstrom-rack-pickup .work-detail__survey-findings,
 body.page-inclusive-lab .work-detail__survey-findings,
-body.page-inclusive-design-lab .work-detail__survey-findings {
+body.page-inclusive-design-lab .work-detail__survey-findings,
+body.page-board-games-onboarding .work-detail__survey-findings {
   display: flex;
   flex-direction: column;
   gap: clamp(28px, 4vh, 40px);
@@ -12663,6 +12708,7 @@ body.page-sound-transit .work-detail__survey-finding,
 body.page-ai-healthcare .work-detail__survey-finding,
 body.page-inclusive-lab .work-detail__survey-finding,
 body.page-inclusive-design-lab .work-detail__survey-finding,
+body.page-board-games-onboarding .work-detail__survey-finding,
 body.page-nordstrom-rack .work-detail__research-question,
 body.page-nordstrom-rack-pickup .work-detail__research-question,
 body.page-sound-transit .work-detail__research-question,
@@ -12916,7 +12962,8 @@ body.page-nordstrom-rack-pickup .work-detail__survey-findings,
 body.page-sound-transit .work-detail__survey-findings,
 body.page-ai-healthcare .work-detail__survey-findings,
 body.page-inclusive-lab .work-detail__survey-findings,
-body.page-inclusive-design-lab .work-detail__survey-findings {
+body.page-inclusive-design-lab .work-detail__survey-findings,
+body.page-board-games-onboarding .work-detail__survey-findings {
   display: flex;
   flex-direction: column;
   gap: clamp(28px, 4vh, 40px);
