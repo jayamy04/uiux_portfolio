@@ -2006,20 +2006,24 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
     order: 5;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack-pickup-recommendations {
     order: 6;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack {
     order: 7;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab {
     order: 8;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare {
     order: 9;
+  }
+
+  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey {
+    order: 10;
   }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {
@@ -10030,17 +10034,20 @@ body.page-sound-transit .work-detail__compare {
   margin: clamp(20px, 3vh, 28px) 0 0;
 }
 
-body.page-sound-transit .work-detail__presentation-stack {
+body.page-sound-transit .work-detail__presentation-stack,
+body.page-nordstrom-rack-pickup .work-detail__presentation-stack {
   display: flex;
   flex-direction: column;
   gap: clamp(16px, 2.5vw, 28px);
 }
 
-body.page-sound-transit .work-detail__presentation-stack .work-detail__figure {
+body.page-sound-transit .work-detail__presentation-stack .work-detail__figure,
+body.page-nordstrom-rack-pickup .work-detail__presentation-stack .work-detail__figure {
   margin: 0;
 }
 
-body.page-sound-transit .work-detail__figure-frame--slide {
+body.page-sound-transit .work-detail__figure-frame--slide,
+body.page-nordstrom-rack-pickup .work-detail__figure-frame--slide {
   max-height: none;
   overflow: visible;
   overflow-y: visible;
