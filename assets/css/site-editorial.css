@@ -9437,14 +9437,6 @@ body.page-nordstrom-rack .interview-guide__question {
   color: rgba(255, 255, 255, 0.94);
 }
 
-body.page-nordstrom-rack .interview-guide__note {
-  margin: 0;
-  font-size: clamp(0.8125rem, 0.98vw, 0.875rem);
-  font-style: italic;
-  line-height: 1.4;
-  color: rgba(255, 255, 255, 0.38);
-}
-
 body.page-nordstrom-rack .interview-guide__closing {
   margin: clamp(4px, 0.8vh, 8px) 0 0;
   padding-top: clamp(10px, 1.3vh, 12px);
@@ -9544,14 +9536,6 @@ body.page-sound-transit .interview-guide__question {
   font-weight: var(--tj-fw-sbold);
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.94);
-}
-
-body.page-sound-transit .interview-guide__note {
-  margin: 0;
-  font-size: clamp(0.8125rem, 0.98vw, 0.875rem);
-  font-style: italic;
-  line-height: 1.4;
-  color: rgba(255, 255, 255, 0.38);
 }
 
 @media (max-width: 640px) {
