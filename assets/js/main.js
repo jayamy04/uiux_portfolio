@@ -2413,6 +2413,17 @@ const SOUND_TRANSIT_CASE_STUDY_PATH = "sound-transit.html";
 const NORDSTROM_PICKUP_CASE_STUDY_PATH = "nordstrom-rack-pickup.html";
 const NORDSTROM_PICKUP_RECOMMENDATIONS_HASH =
   "nordstrom-pickup-recommendations-heading";
+const SOUND_TRANSIT_SECTION_HASHES = new Set([
+  "sound-transit-card-sorting-heading",
+  "sound-transit-usability-heading",
+  "sound-transit-stakeholder-heading",
+  "sound-transit-research-report-heading",
+]);
+const CASE_STUDY_LANDING_HASHES = new Set([
+  ...SOUND_TRANSIT_SECTION_HASHES,
+  NORDSTROM_PICKUP_RECOMMENDATIONS_HASH,
+]);
+const CASE_STUDY_DOCUMENT_TITLE_SUFFIX = " — Amy Seunghyun Lee";
 
 const normalizeHomeCaseStudyHref = (href) => {
   if (!href) return href;
@@ -2422,6 +2433,9 @@ const normalizeHomeCaseStudyHref = (href) => {
   const normalizedPath = path.replace(/^\.\//, "");
 
   if (normalizedPath === SOUND_TRANSIT_CASE_STUDY_PATH) {
+    if (SOUND_TRANSIT_SECTION_HASHES.has(hash)) {
+      return href;
+    }
     return path;
   }
 
@@ -3335,6 +3349,71 @@ const initWorkDetailToc = () => {
   waitForScrollSmootherReady(boot);
 };
 
+const getCaseStudyTitleAccent = (article) => {
+  const accent = article?.querySelector("[data-work-detail-title-accent]");
+  return accent?.textContent?.trim() || "";
+};
+
+const formatCaseStudyDocumentTitle = (title, accent = "") => {
+  const base = accent ? `${title} ${accent}` : title;
+  return `${base}${CASE_STUDY_DOCUMENT_TITLE_SUFFIX}`;
+};
+
+const setCaseStudyHeroTitle = (article, title, { visible = true } = {}) => {
+  const titleEl = article.querySelector("[data-work-detail-title]");
+  if (!titleEl) return;
+  titleEl.textContent = title;
+  titleEl.hidden = !visible;
+};
+
+const initCaseStudyHashTitle = () => {
+  const article = document.querySelector(".work-detail");
+  if (!article) return;
+
+  const defaultTitleEl = article.querySelector("[data-work-detail-title]");
+  const defaultTitle = defaultTitleEl?.textContent?.trim() || "";
+  const titleAccent = getCaseStudyTitleAccent(article);
+  let scrolledToHash = false;
+
+  const scrollToCaseStudySection = (hashId) => {
+    if (!hashId || !CASE_STUDY_LANDING_HASHES.has(hashId)) return;
+    const target = document.getElementById(hashId);
+    if (!target) return;
+
+    waitForScrollSmootherReady(() => {
+      scrollToWorkDetailHeading(target);
+    });
+  };
+
+  const updateFromHash = () => {
+    const hashId = window.location.hash.slice(1);
+    let title = defaultTitle;
+    let fromHash = false;
+
+    if (hashId) {
+      const heading = document.getElementById(hashId);
+      if (heading?.classList.contains("work-detail__heading")) {
+        title = getWorkDetailHeadingLabel(heading);
+        fromHash = true;
+      }
+    }
+
+    if (!title) return;
+
+    document.title = formatCaseStudyDocumentTitle(title, titleAccent);
+    setCaseStudyHeroTitle(article, title, { visible: fromHash || Boolean(defaultTitle) });
+    article.setAttribute("aria-label", title);
+
+    if (fromHash && !scrolledToHash) {
+      scrolledToHash = true;
+      scrollToCaseStudySection(hashId);
+    }
+  };
+
+  updateFromHash();
+  window.addEventListener("hashchange", updateFromHash);
+};
+
 const initProjectPageEnhancements = () => {
   initLoopVideoLifecycle();
   initHomeScrollToWorkLinkIntent();
@@ -3348,6 +3427,7 @@ const initProjectPageEnhancements = () => {
   initHomeHeroProjectCarousel();
   initHomeWorkSectionMotion();
   initCaseStudyPreviewVideos();
+  initCaseStudyHashTitle();
   initWorkDetailToc();
   initPlaygroundProjectGridMedia();
   initPlaygroundCarousel();
