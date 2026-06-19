@@ -9550,6 +9550,19 @@ body.page-sound-transit .interview-guide__question {
   }
 }
 
+/* Sound Transit — stakeholder interview script subsection spacing */
+body.page-sound-transit #sound-transit-stakeholder-heading + .work-detail__kicker {
+  margin-top: clamp(28px, 4vh, 40px);
+}
+
+body.page-sound-transit .work-detail__interview-guide + .work-detail__kicker {
+  margin-top: clamp(28px, 4vh, 40px);
+}
+
+body.page-sound-transit #st-stakeholder-findings-heading {
+  margin-top: clamp(36px, 5vh, 52px);
+}
+
 body.page-sachacks .work-detail__lead,
 body.page-schedgo .work-detail__lead,
 body.page-ibm-saas-console .work-detail__lead,
