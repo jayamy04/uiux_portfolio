@@ -12168,6 +12168,77 @@ body.page-inclusive-design-lab .work-detail__kicker {
   margin-top: clamp(28px, 4vh, 40px);
 }
 
+/* Board Game Onboarding — survey content */
+body.page-board-games-onboarding .work-detail__prose--survey {
+  gap: clamp(10px, 1.6vh, 16px);
+}
+
+body.page-board-games-onboarding .work-detail__survey-options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: clamp(0.8125rem, 1.05vw, 0.875rem);
+  line-height: 1.35;
+}
+
+body.page-board-games-onboarding .work-detail__survey-options li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 1px 0;
+  margin: 0;
+}
+
+body.page-board-games-onboarding .work-detail__survey-options li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 13px;
+  height: 13px;
+  margin-top: 0.28em;
+  border: 1.5px solid rgba(255, 255, 255, 0.42);
+  background: rgba(255, 255, 255, 0.04);
+  box-sizing: border-box;
+}
+
+body.page-board-games-onboarding .work-detail__survey-options--checkbox li::before {
+  border-radius: 3px;
+}
+
+body.page-board-games-onboarding .work-detail__survey-options--radio li::before {
+  border-radius: 50%;
+}
+
+body.page-board-games-onboarding .work-detail__survey-question {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, 0.7vh, 7px);
+  padding: clamp(8px, 1.1vh, 10px) clamp(10px, 1.4vw, 12px);
+  border-left: 2px solid rgba(255, 77, 184, 0.32);
+  border-radius: 0 8px 8px 0;
+  background: rgba(255, 255, 255, 0.018);
+}
+
+body.page-board-games-onboarding .work-detail__survey-question > p:first-child {
+  margin: 0;
+  font-weight: var(--tj-fw-sbold);
+  font-size: clamp(0.9375rem, 1.1vw, 1rem);
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.96);
+}
+
+body.page-board-games-onboarding .work-detail__survey-question--optional {
+  border-left-color: rgba(255, 255, 255, 0.14);
+  background: transparent;
+}
+
+body.page-board-games-onboarding .work-detail__survey-question--optional > p:first-child {
+  font-weight: var(--tj-fw-medium, 500);
+  color: rgba(255, 255, 255, 0.68);
+}
+
 /* Flatten decorative finding/theme cards on case study pages */
 body.page-nordstrom-rack .work-detail__survey-finding,
 body.page-nordstrom-rack-pickup .work-detail__survey-finding,
