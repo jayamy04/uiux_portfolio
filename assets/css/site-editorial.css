@@ -308,6 +308,7 @@ body.page-resume.site-editorial .inner_top_gap {
 
 body.page-sachacks.site-editorial .inner_top_gap,
 body.page-nordstrom-rack.site-editorial .inner_top_gap, body.page-ai-healthcare.site-editorial .inner_top_gap,
+body.page-board-games-onboarding.site-editorial .inner_top_gap,
 body.page-sound-transit.site-editorial .inner_top_gap,
 body.page-inclusive-lab.site-editorial .inner_top_gap,
 body.page-inclusive-design-lab.site-editorial .inner_top_gap,
@@ -339,6 +340,7 @@ body.page-ideas.site-editorial .inner_top_gap {
 
   body.page-sachacks.site-editorial .inner_top_gap,
   body.page-nordstrom-rack.site-editorial .inner_top_gap, body.page-ai-healthcare.site-editorial .inner_top_gap,
+body.page-board-games-onboarding.site-editorial .inner_top_gap,
 body.page-sound-transit.site-editorial .inner_top_gap,
   body.page-inclusive-lab.site-editorial .inner_top_gap,
 body.page-inclusive-design-lab.site-editorial .inner_top_gap,
@@ -8708,6 +8710,7 @@ body.page-breaking-barriers .work-detail__hero,
 body.page-bloom-and-vine .work-detail__hero,
 body.page-makeability-lab .work-detail__hero,
 body.page-nordstrom-rack .work-detail__hero, body.page-ai-healthcare .work-detail__hero,
+body.page-board-games-onboarding .work-detail__hero,
 body.page-sound-transit .work-detail__hero,
 body.page-inclusive-lab .work-detail__hero {
   padding: clamp(8px, 1.5vh, 20px) 0 clamp(40px, 6vh, 64px);
@@ -8730,8 +8733,10 @@ body.page-bloom-and-vine .work-detail__hero::after,
 body.page-makeability-lab .work-detail__hero::before,
 body.page-makeability-lab .work-detail__hero::after,
 body.page-nordstrom-rack .work-detail__hero::before, body.page-ai-healthcare .work-detail__hero::before,
+body.page-board-games-onboarding .work-detail__hero::before,
 body.page-sound-transit .work-detail__hero::before,
 body.page-nordstrom-rack .work-detail__hero::after, body.page-ai-healthcare .work-detail__hero::after,
+body.page-board-games-onboarding .work-detail__hero::after,
 body.page-sound-transit .work-detail__hero::after,
 body.page-inclusive-lab .work-detail__hero::before,
 body.page-inclusive-lab .work-detail__hero::after {
@@ -8746,6 +8751,7 @@ body.page-breaking-barriers .work-detail__hero-inner,
 body.page-bloom-and-vine .work-detail__hero-inner,
 body.page-makeability-lab .work-detail__hero-inner,
 body.page-nordstrom-rack .work-detail__hero-inner, body.page-ai-healthcare .work-detail__hero-inner,
+body.page-board-games-onboarding .work-detail__hero-inner,
 body.page-sound-transit .work-detail__hero-inner,
 body.page-inclusive-lab .work-detail__hero-inner,
 body.page-sachacks .work-detail__inner,
@@ -8755,6 +8761,7 @@ body.page-breaking-barriers .work-detail__inner,
 body.page-bloom-and-vine .work-detail__inner,
 body.page-makeability-lab .work-detail__inner,
 body.page-nordstrom-rack .work-detail__inner, body.page-ai-healthcare .work-detail__inner,
+body.page-board-games-onboarding .work-detail__inner,
 body.page-sound-transit .work-detail__inner,
 body.page-inclusive-lab .work-detail__inner {
   width: 100%;
@@ -8769,6 +8776,7 @@ body.page-breaking-barriers .work-detail__back,
 body.page-bloom-and-vine .work-detail__back,
 body.page-makeability-lab .work-detail__back,
 body.page-nordstrom-rack .work-detail__back, body.page-ai-healthcare .work-detail__back,
+body.page-board-games-onboarding .work-detail__back,
 body.page-sound-transit .work-detail__back,
 body.page-inclusive-lab .work-detail__back {
   display: inline-flex;
@@ -11145,8 +11153,9 @@ body.page-resume.site-editorial .resume-page-section .resume-work-card__title a 
   text-decoration: none;
 }
 
-/* Work detail — sticky section nav (auto-built from h2 headings) */
-body.site-editorial .work-detail--has-toc .work-detail__section .work-detail__heading {
+/* Work detail — sticky section nav (auto-built from h2/h3 headings) */
+body.site-editorial .work-detail--has-toc .work-detail__section .work-detail__heading,
+body.site-editorial .work-detail--has-toc .work-detail__section .work-detail__inner > .work-detail__kicker {
   scroll-margin-top: 112px;
 }
 
@@ -11192,6 +11201,13 @@ body.site-editorial .work-detail__toc-list::-webkit-scrollbar {
 body.site-editorial .work-detail__toc-item {
   flex: 0 0 auto;
   margin: 0;
+}
+
+body.site-editorial .work-detail__toc-sublist {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 body.site-editorial .work-detail__toc-link {
@@ -11276,6 +11292,24 @@ body.site-editorial .work-detail__toc-item.is-active .work-detail__toc-link {
     flex: none;
   }
 
+  body.site-editorial .work-detail__toc-item--parent + .work-detail__toc-item--parent {
+    margin-top: 6px;
+  }
+
+  body.site-editorial .work-detail__toc-sublist {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0 0 2px;
+    padding: 0 0 0 10px;
+  }
+
+  body.site-editorial .work-detail__toc-item--parent > .work-detail__toc-link {
+    font-size: 0.8125rem;
+    font-weight: var(--tj-fw-sbold);
+    color: rgba(255, 255, 255, 0.88);
+  }
+
   body.site-editorial .work-detail__toc-link {
     display: block;
     min-height: 0;
@@ -11289,10 +11323,24 @@ body.site-editorial .work-detail__toc-item.is-active .work-detail__toc-link {
     white-space: normal;
   }
 
+  body.site-editorial .work-detail__toc-item--child .work-detail__toc-link {
+    padding: 4px 0 4px 10px;
+    border-left-color: rgba(255, 255, 255, 0.08);
+    font-size: 0.75rem;
+    font-weight: var(--tj-fw-regular);
+    color: rgba(255, 255, 255, 0.52);
+    line-height: 1.4;
+  }
+
   body.site-editorial .work-detail__toc-link:hover {
     background: transparent;
     border-left-color: rgba(255, 77, 184, 0.55);
     color: var(--site-accent);
+  }
+
+  body.site-editorial .work-detail__toc-item--child .work-detail__toc-link:hover {
+    border-left-color: rgba(255, 77, 184, 0.4);
+    color: rgba(255, 255, 255, 0.78);
   }
 
   body.site-editorial .work-detail__toc-link.is-active,
@@ -11300,6 +11348,11 @@ body.site-editorial .work-detail__toc-item.is-active .work-detail__toc-link {
     background: transparent;
     border-left-color: var(--site-accent);
     color: var(--site-accent);
+  }
+
+  body.site-editorial .work-detail__toc-item--child.is-active .work-detail__toc-link {
+    border-left-color: rgba(255, 77, 184, 0.65);
+    color: rgba(255, 255, 255, 0.88);
   }
 }
 
@@ -12044,6 +12097,7 @@ body.page-nordstrom-rack .work-detail__section,
 body.page-nordstrom-rack-pickup .work-detail__section,
 body.page-sound-transit .work-detail__section,
 body.page-ai-healthcare .work-detail__section,
+body.page-board-games-onboarding .work-detail__section,
 body.page-inclusive-lab .work-detail__section,
 body.page-inclusive-design-lab .work-detail__section {
   padding: clamp(52px, 8vh, 88px) 0 0;
@@ -12053,6 +12107,7 @@ body.page-nordstrom-rack .work-detail__inner,
 body.page-nordstrom-rack-pickup .work-detail__inner,
 body.page-sound-transit .work-detail__inner,
 body.page-ai-healthcare .work-detail__inner,
+body.page-board-games-onboarding .work-detail__inner,
 body.page-inclusive-lab .work-detail__inner,
 body.page-inclusive-design-lab .work-detail__inner {
   max-width: 44rem;
@@ -12062,6 +12117,7 @@ body.page-nordstrom-rack .work-detail__hero-inner,
 body.page-nordstrom-rack-pickup .work-detail__hero-inner,
 body.page-sound-transit .work-detail__hero-inner,
 body.page-ai-healthcare .work-detail__hero-inner,
+body.page-board-games-onboarding .work-detail__hero-inner,
 body.page-inclusive-lab .work-detail__hero-inner,
 body.page-inclusive-design-lab .work-detail__hero-inner {
   max-width: 44rem;
@@ -12071,6 +12127,7 @@ body.page-nordstrom-rack .work-detail__prose,
 body.page-nordstrom-rack-pickup .work-detail__prose,
 body.page-sound-transit .work-detail__prose,
 body.page-ai-healthcare .work-detail__prose,
+body.page-board-games-onboarding .work-detail__prose,
 body.page-inclusive-lab .work-detail__prose,
 body.page-inclusive-design-lab .work-detail__prose {
   gap: clamp(18px, 2.8vh, 28px);
@@ -12081,6 +12138,7 @@ body.page-nordstrom-rack .work-detail__prose p,
 body.page-nordstrom-rack-pickup .work-detail__prose p,
 body.page-sound-transit .work-detail__prose p,
 body.page-ai-healthcare .work-detail__prose p,
+body.page-board-games-onboarding .work-detail__prose p,
 body.page-inclusive-lab .work-detail__prose p,
 body.page-inclusive-design-lab .work-detail__prose p {
   line-height: 1.78;
@@ -12090,6 +12148,7 @@ body.page-nordstrom-rack .work-detail__heading,
 body.page-nordstrom-rack-pickup .work-detail__heading,
 body.page-sound-transit .work-detail__heading,
 body.page-ai-healthcare .work-detail__heading,
+body.page-board-games-onboarding .work-detail__heading,
 body.page-inclusive-lab .work-detail__heading,
 body.page-inclusive-design-lab .work-detail__heading {
   margin-bottom: clamp(4px, 0.8vh, 8px);
@@ -12099,6 +12158,7 @@ body.page-nordstrom-rack .work-detail__kicker,
 body.page-nordstrom-rack-pickup .work-detail__kicker,
 body.page-sound-transit .work-detail__kicker,
 body.page-ai-healthcare .work-detail__kicker,
+body.page-board-games-onboarding .work-detail__kicker,
 body.page-inclusive-lab .work-detail__kicker,
 body.page-inclusive-design-lab .work-detail__kicker {
   margin-top: clamp(28px, 4vh, 40px);

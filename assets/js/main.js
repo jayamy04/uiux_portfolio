@@ -3284,6 +3284,59 @@ const activateWorkDetailToc = (article, nav, headings) => {
   }
 };
 
+const createWorkDetailTocLink = (heading) => {
+  const link = document.createElement("a");
+  link.className = "work-detail__toc-link";
+  link.href = `#${heading.id}`;
+  link.dataset.tocTarget = heading.id;
+  link.textContent = getWorkDetailHeadingLabel(heading);
+  return link;
+};
+
+const createWorkDetailTocItem = (heading) => {
+  const isParent = heading.tagName === "H2";
+  const item = document.createElement("li");
+  item.className = isParent
+    ? "work-detail__toc-item work-detail__toc-item--parent"
+    : "work-detail__toc-item work-detail__toc-item--child";
+  item.dataset.tocLevel = isParent ? "2" : "3";
+  item.appendChild(createWorkDetailTocLink(heading));
+  return item;
+};
+
+const buildWorkDetailTocList = (headings) => {
+  const list = document.createElement("ol");
+  list.className = "work-detail__toc-list";
+
+  let currentParent = null;
+  let sublist = null;
+
+  headings.forEach((heading) => {
+    const item = createWorkDetailTocItem(heading);
+
+    if (heading.tagName === "H2") {
+      currentParent = item;
+      sublist = null;
+      list.appendChild(item);
+      return;
+    }
+
+    if (currentParent) {
+      if (!sublist) {
+        sublist = document.createElement("ol");
+        sublist.className = "work-detail__toc-sublist";
+        currentParent.appendChild(sublist);
+      }
+      sublist.appendChild(item);
+      return;
+    }
+
+    list.appendChild(item);
+  });
+
+  return list;
+};
+
 const initWorkDetailToc = () => {
   const article = document.querySelector(".work-detail");
   if (!article || article.dataset.tocInit === "true") return;
@@ -3318,22 +3371,7 @@ const initWorkDetailToc = () => {
     label.className = "work-detail__toc-label";
     label.textContent = "On this page";
 
-    const list = document.createElement("ol");
-    list.className = "work-detail__toc-list";
-
-    headings.forEach((heading) => {
-      const item = document.createElement("li");
-      item.className = "work-detail__toc-item";
-
-      const link = document.createElement("a");
-      link.className = "work-detail__toc-link";
-      link.href = `#${heading.id}`;
-      link.dataset.tocTarget = heading.id;
-      link.textContent = getWorkDetailHeadingLabel(heading);
-
-      item.appendChild(link);
-      list.appendChild(item);
-    });
+    const list = buildWorkDetailTocList(headings);
 
     nav.append(label, list);
 
