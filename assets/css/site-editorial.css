@@ -1719,20 +1719,8 @@ body.page-home .home-hero-projects__card:focus-within .home-hero-projects__card-
   opacity: 0.96;
 }
 
-body.page-home .home-hero-projects__card-eyebrow {
-  display: block;
-  margin: clamp(8px, 1vh, 12px) 0 0;
-  font-family: var(--tj-ff-body);
-  font-size: clamp(0.625rem, 0.75vw, 0.6875rem);
-  font-weight: var(--tj-fw-medium);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--site-accent);
-  min-width: 0;
-}
-
 body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-title {
-  margin: clamp(12px, 1.35vh, 16px) 0 clamp(8px, 0.95vh, 11px);
+  margin: clamp(8px, 1vh, 12px) 0 clamp(8px, 0.95vh, 11px);
   color: #ffffff;
   font-size: clamp(0.9375rem, 1.1vw, 1.0625rem);
   font-weight: var(--tj-fw-bold);
@@ -1976,13 +1964,8 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-title {
     font-size: clamp(1rem, 1.15vw, 1.125rem);
-    margin: clamp(14px, 1.5vh, 18px) 0 clamp(8px, 1vh, 12px);
+    margin: clamp(10px, 1.15vh, 14px) 0 clamp(8px, 1vh, 12px);
     line-height: 1.24;
-    max-width: none;
-  }
-
-  body.page-home .home-hero-projects__card-eyebrow {
-    margin-top: clamp(10px, 1.15vh, 14px);
     max-width: none;
   }
 
