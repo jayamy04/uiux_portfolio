@@ -12613,6 +12613,16 @@ body.page-inclusive-design-lab .work-detail__goal:hover {
   box-shadow: none;
 }
 
+body.page-nordstrom-rack .work-detail__goal::before,
+body.page-nordstrom-rack-pickup .work-detail__goal::before,
+body.page-sound-transit .work-detail__goal::before,
+body.page-ai-healthcare .work-detail__goal::before,
+body.page-inclusive-lab .work-detail__goal::before,
+body.page-inclusive-design-lab .work-detail__goal::before {
+  content: none;
+  display: none;
+}
+
 body.page-nordstrom-rack .work-detail__survey-part-header,
 body.page-nordstrom-rack-pickup .work-detail__survey-part-header,
 body.page-sound-transit .work-detail__survey-part-header,
