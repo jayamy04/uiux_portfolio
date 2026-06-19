@@ -2411,6 +2411,7 @@ const initHomeLandingScroll = () => {
 
 const SOUND_TRANSIT_CASE_STUDY_PATH = "sound-transit.html";
 const NORDSTROM_PICKUP_CASE_STUDY_PATH = "nordstrom-rack-pickup.html";
+const BOARD_GAMES_CASE_STUDY_PATH = "board-games-onboarding.html";
 const NORDSTROM_PICKUP_RECOMMENDATIONS_HASH =
   "nordstrom-pickup-recommendations-heading";
 const SOUND_TRANSIT_SECTION_HASHES = new Set([
@@ -2419,8 +2420,14 @@ const SOUND_TRANSIT_SECTION_HASHES = new Set([
   "sound-transit-stakeholder-heading",
   "sound-transit-research-report-heading",
 ]);
+const BOARD_GAMES_SECTION_HASHES = new Set([
+  "board-games-survey-heading",
+  "board-games-interview-heading",
+  "board-games-fly-on-wall-heading",
+]);
 const CASE_STUDY_LANDING_HASHES = new Set([
   ...SOUND_TRANSIT_SECTION_HASHES,
+  ...BOARD_GAMES_SECTION_HASHES,
   NORDSTROM_PICKUP_RECOMMENDATIONS_HASH,
 ]);
 const CASE_STUDY_DOCUMENT_TITLE_SUFFIX = " — Amy Seunghyun Lee";
@@ -2441,6 +2448,13 @@ const normalizeHomeCaseStudyHref = (href) => {
 
   if (normalizedPath === NORDSTROM_PICKUP_CASE_STUDY_PATH) {
     if (hash === NORDSTROM_PICKUP_RECOMMENDATIONS_HASH) {
+      return href;
+    }
+    return path;
+  }
+
+  if (normalizedPath === BOARD_GAMES_CASE_STUDY_PATH) {
+    if (BOARD_GAMES_SECTION_HASHES.has(hash)) {
       return href;
     }
     return path;
