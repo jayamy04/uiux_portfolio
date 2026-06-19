@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/css/agina-icons.css">
   <link rel="stylesheet" href="assets/css/meanmenu.css">
   <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/site-editorial.css?v=20260618interviewclean">
+  <link rel="stylesheet" href="assets/css/site-editorial.css?v=20260618cardborders">
 </head>
 
 <body class="site-editorial page-nordstrom-rack page-nordstrom-rack-pickup">
@@ -130,7 +130,7 @@
               <p class="work-detail__subtitle tj-fade" data-on-scroll="0" data-delay=".08">
                 Same-day pickup · Nordstrom Rack desktop website · April 2025
               </p>
-              <dl class="work-detail__meta tj-fade" data-on-scroll="0" data-delay=".12">
+              <dl class="work-detail__meta work-detail__meta--extended tj-fade" data-on-scroll="0" data-delay=".12">
                 <div class="work-detail__meta-item">
                   <dt>Team</dt>
                   <dd>Shay Duan, Khadijah Ingawa, Tess Matthews, Amy Lee</dd>
@@ -178,36 +178,55 @@
           <section class="work-detail__section" aria-labelledby="nordstrom-questions-heading">
             <div class="work-detail__inner">
               <h2 id="nordstrom-questions-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Research questions</h2>
-              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
-                <ul>
-                  <li>How easily and successfully can users navigate the Nordstrom Rack desktop website to find and purchase same-day pickup items?</li>
-                  <li>Do users understand the difference between pickup items and other fulfillment options (eg: shipping items)?</li>
-                  <li>How easily and successfully can users purchase same-day pickup items available at different store locations?</li>
-                  <li>What are the key pain points that are preventing users from successfully completing purchasing tasks without confusion?</li>
-                  <li>How clear and understandable is the communication around item availability and pickup locations?</li>
-                </ul>
-              </div>
+              <ol class="work-detail__research-questions tj-fade" data-on-scroll="0" data-delay=".04" role="list" aria-labelledby="nordstrom-questions-heading">
+                <li class="work-detail__research-question">
+                  <span class="work-detail__research-question-num" aria-hidden="true">01</span>
+                  <p class="work-detail__research-question-text">How easily and successfully can users navigate the Nordstrom Rack desktop website to find and purchase same-day pickup items?</p>
+                </li>
+                <li class="work-detail__research-question">
+                  <span class="work-detail__research-question-num" aria-hidden="true">02</span>
+                  <p class="work-detail__research-question-text">Do users understand the difference between pickup items and other fulfillment options (eg: shipping items)?</p>
+                </li>
+                <li class="work-detail__research-question">
+                  <span class="work-detail__research-question-num" aria-hidden="true">03</span>
+                  <p class="work-detail__research-question-text">How easily and successfully can users purchase same-day pickup items available at different store locations?</p>
+                </li>
+                <li class="work-detail__research-question">
+                  <span class="work-detail__research-question-num" aria-hidden="true">04</span>
+                  <p class="work-detail__research-question-text">What are the key pain points that are preventing users from successfully completing purchasing tasks without confusion?</p>
+                </li>
+                <li class="work-detail__research-question">
+                  <span class="work-detail__research-question-num" aria-hidden="true">05</span>
+                  <p class="work-detail__research-question-text">How clear and understandable is the communication around item availability and pickup locations?</p>
+                </li>
+              </ol>
             </div>
           </section>
 
           <section class="work-detail__section" aria-labelledby="nordstrom-participant-criteria-heading">
             <div class="work-detail__inner">
               <h2 id="nordstrom-participant-criteria-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Participant criteria</h2>
-              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
+              <div class="work-detail__prose work-detail__prose--criteria tj-fade" data-on-scroll="0" data-delay=".04">
                 <p><strong>Number of participants needed:</strong> 5-8</p>
-                <h3 class="work-detail__kicker" id="nordstrom-recruitment-criteria-heading">Recruitment Criteria:</h3>
-                <ul>
-                  <li>Participants must live within driving distance of a Nordstrom Rack store</li>
-                  <li>Participants must shop online for clothing, makeup, or home goods at least three times per year.</li>
-                  <li>Participants must not be researchers or work in retail to avoid potential biases</li>
-                  <li>Strive for a mix of:
+                <article class="work-detail__criteria-card">
+                  <header class="work-detail__criteria-card-header">
+                    <h3 class="work-detail__kicker" id="nordstrom-recruitment-criteria-heading">Recruitment Criteria:</h3>
+                  </header>
+                  <div class="work-detail__criteria-card-body">
                     <ul>
-                      <li>Key demographics (gender, age, ethnicity)</li>
-                      <li>Participants who have experience in purchasing pickup items and those who do not</li>
-                      <li>Extreme user (Hopefully): One participant who has purchased a pickup item within the past 6 months</li>
+                      <li>Participants must live within driving distance of a Nordstrom Rack store</li>
+                      <li>Participants must shop online for clothing, makeup, or home goods at least three times per year.</li>
+                      <li>Participants must not be researchers or work in retail to avoid potential biases</li>
+                      <li>Strive for a mix of:
+                        <ul>
+                          <li>Key demographics (gender, age, ethnicity)</li>
+                          <li>Participants who have experience in purchasing pickup items and those who do not</li>
+                          <li>Extreme user (Hopefully): One participant who has purchased a pickup item within the past 6 months</li>
+                        </ul>
+                      </li>
                     </ul>
-                  </li>
-                </ul>
+                  </div>
+                </article>
               </div>
             </div>
           </section>
@@ -218,8 +237,10 @@
               <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
                 <p>We will conduct a moderated usability test:<br>
                 We want to collect both qualitative and quantitative data regarding user behavior to inform the design. We will ask the participants to use Think Aloud protocol during the sessions.</p>
-                <h3 class="work-detail__kicker" id="nordstrom-method-reasoning-heading">Reasoning</h3>
-                <p>Moderated usability testing is an appropriate research method for this study because it allows for real-time observation and exploration of user behavior. Since the goal is to identify pain points in the pickup purchasing flow, having a moderator present will allow us to notice participant confusion and ask follow-up questions when necessary. Through moderated testing, we will capture participants' thought processes as they navigate the process of purchasing pickup items on the Nordstrom Rack website and provide insights into their expectations and decision-making. If unexpected issues arise, moderators can adapt the session to explore problem areas further, leading to richer insights.</p>
+                <article class="work-detail__method-note">
+                  <h3 class="work-detail__kicker" id="nordstrom-method-reasoning-heading">Reasoning</h3>
+                  <p>Moderated usability testing is an appropriate research method for this study because it allows for real-time observation and exploration of user behavior. Since the goal is to identify pain points in the pickup purchasing flow, having a moderator present will allow us to notice participant confusion and ask follow-up questions when necessary. Through moderated testing, we will capture participants' thought processes as they navigate the process of purchasing pickup items on the Nordstrom Rack website and provide insights into their expectations and decision-making. If unexpected issues arise, moderators can adapt the session to explore problem areas further, leading to richer insights.</p>
+                </article>
               </div>
             </div>
           </section>
@@ -228,13 +249,14 @@
             <div class="work-detail__inner">
               <h2 id="nordstrom-task-list-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Task list</h2>
 
-              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
-                <h3 class="work-detail__kicker" id="nordstrom-scenario-1-heading">Scenario 1</h3>
-                <p><strong>Testing Goal:</strong> Evaluate whether a user can successfully identify a pickup item available for purchase and initiate the checkout process for purchasing that item.</p>
-                <p>Testing will reveal how easily and successfully users can complete the goal, and any pain points or unexpected system behavior in the process.</p>
-                <p><strong>Scenario 1:</strong> You're having dinner with an old friend tomorrow and realize you need a new bag. Try to find a bag at a nearby Nordstrom Rack store on the website, purchase it, and pick it up by tomorrow.</p>
-              </div>
-              <div class="work-detail__table-wrap tj-fade" data-on-scroll="0" data-delay=".06">
+              <article class="work-detail__scenario-block tj-fade" data-on-scroll="0" data-delay=".04">
+                <div class="work-detail__scenario-intro work-detail__prose">
+                  <h3 class="work-detail__kicker" id="nordstrom-scenario-1-heading">Scenario 1</h3>
+                  <p><strong>Testing Goal:</strong> Evaluate whether a user can successfully identify a pickup item available for purchase and initiate the checkout process for purchasing that item.</p>
+                  <p>Testing will reveal how easily and successfully users can complete the goal, and any pain points or unexpected system behavior in the process.</p>
+                  <p><strong>Scenario 1:</strong> You're having dinner with an old friend tomorrow and realize you need a new bag. Try to find a bag at a nearby Nordstrom Rack store on the website, purchase it, and pick it up by tomorrow.</p>
+                </div>
+                <div class="work-detail__table-wrap">
                 <table class="work-detail__table">
                   <caption class="work-detail__table-caption">Scenario 1 — Tasks 1–4</caption>
                   <thead>
@@ -273,14 +295,16 @@
                   </tbody>
                 </table>
               </div>
+              </article>
 
-              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".08">
-                <h3 class="work-detail__kicker" id="nordstrom-scenario-2-heading">Scenario 2</h3>
-                <p><strong>Testing Goal:</strong> Evaluate whether purchasing pickup items from different stores simultaneously is smooth, error-free, and without confusion.</p>
-                <p>Testing will reveal how easily and successfully users can complete the goal, and any pain points or unexpected system behavior in the process.</p>
-                <p><strong>Scenario 2:</strong> You decide to get a new pair of shoes to go with the shirt. While browsing, you can't find the perfect pair at the store near your house. You decide to try your luck in another store. Try to find a pair of shoes at another store and make a purchase online.</p>
-              </div>
-              <div class="work-detail__table-wrap tj-fade" data-on-scroll="0" data-delay=".1">
+              <article class="work-detail__scenario-block tj-fade" data-on-scroll="0" data-delay=".08">
+                <div class="work-detail__scenario-intro work-detail__prose">
+                  <h3 class="work-detail__kicker" id="nordstrom-scenario-2-heading">Scenario 2</h3>
+                  <p><strong>Testing Goal:</strong> Evaluate whether purchasing pickup items from different stores simultaneously is smooth, error-free, and without confusion.</p>
+                  <p>Testing will reveal how easily and successfully users can complete the goal, and any pain points or unexpected system behavior in the process.</p>
+                  <p><strong>Scenario 2:</strong> You decide to get a new pair of shoes to go with the shirt. While browsing, you can't find the perfect pair at the store near your house. You decide to try your luck in another store. Try to find a pair of shoes at another store and make a purchase online.</p>
+                </div>
+                <div class="work-detail__table-wrap">
                 <table class="work-detail__table">
                   <caption class="work-detail__table-caption">Scenario 2 — Tasks 5–8</caption>
                   <thead>
@@ -319,13 +343,15 @@
                   </tbody>
                 </table>
               </div>
+              </article>
 
-              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".12">
-                <h3 class="work-detail__kicker" id="nordstrom-scenario-3-heading">Scenario 3</h3>
-                <p><strong>Testing Goal:</strong> Evaluate how easily customers can find information on pickup items before purchase. Determine what logistical information customers need about the pickup process before they feel confident completing the purchase of a pickup item.</p>
-                <p><strong>Scenario 3:</strong> You find a product you really want but you are not sure how long the item will be held once you purchase it. Try to find customer support or information on how long you have to pick up the item.</p>
-              </div>
-              <div class="work-detail__table-wrap tj-fade" data-on-scroll="0" data-delay=".14">
+              <article class="work-detail__scenario-block tj-fade" data-on-scroll="0" data-delay=".12">
+                <div class="work-detail__scenario-intro work-detail__prose">
+                  <h3 class="work-detail__kicker" id="nordstrom-scenario-3-heading">Scenario 3</h3>
+                  <p><strong>Testing Goal:</strong> Evaluate how easily customers can find information on pickup items before purchase. Determine what logistical information customers need about the pickup process before they feel confident completing the purchase of a pickup item.</p>
+                  <p><strong>Scenario 3:</strong> You find a product you really want but you are not sure how long the item will be held once you purchase it. Try to find customer support or information on how long you have to pick up the item.</p>
+                </div>
+                <div class="work-detail__table-wrap">
                 <table class="work-detail__table">
                   <caption class="work-detail__table-caption">Scenario 3 — Task 9</caption>
                   <thead>
@@ -346,10 +372,7 @@
                   </tbody>
                 </table>
               </div>
-            </div>
-          </section>
-
-          <section class="work-detail__section" aria-labelledby="nordstrom-findings-heading">
+              </article>
             <div class="work-detail__inner">
               <h2 id="nordstrom-findings-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Findings</h2>
               <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">

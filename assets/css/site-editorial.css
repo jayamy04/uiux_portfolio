@@ -39,6 +39,7 @@ body.site-editorial {
   --site-glow-violet: rgba(180, 122, 255, 0.2);
   --site-glow-cool: rgba(110, 231, 255, 0.07);
   --editorial-project-accent: #ff8ae0;
+  --editorial-project-card-border: rgba(230, 225, 242, 0.22);
   --tj-color-theme-primary: #ff4db8;
   background-color: transparent;
   color: #ffffff;
@@ -3740,7 +3741,7 @@ body.page-playground .playground-layout__cards .playground-float-stage .tj_proje
   border-radius: 14px;
   overflow: hidden;
   background: rgba(12, 10, 18, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--editorial-project-card-border);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.42);
   transform: rotate(var(--pg-rotate, 0deg));
   animation: playground-drift var(--pg-duration, 9s) ease-in-out infinite;
@@ -5092,7 +5093,7 @@ body.page-home.site-editorial .home-project-grid .tj_project_item {
   padding: 0;
   animation: none;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--editorial-project-card-border);
   background: rgba(10, 8, 18, 0.78);
   box-shadow:
     0 12px 32px rgba(0, 0, 0, 0.26),
@@ -5345,7 +5346,7 @@ body.page-home.site-editorial .home-project-card--coming-soon .home-project-card
   body.page-home.site-editorial .home-project-card--coming-soon:hover,
   body.page-home.site-editorial .home-project-card--coming-soon:focus-within {
     transform: none;
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--editorial-project-card-border);
     box-shadow:
       0 12px 32px rgba(0, 0, 0, 0.26),
       inset 0 1px 0 rgba(255, 255, 255, 0.04);
