@@ -1880,7 +1880,7 @@ body.page-home .home-hero-projects__thumb--native img {
 }
 
 body.page-home #hero-project-inclusive-design-lab-poster .home-hero-projects__thumb--native img {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
 }
 
@@ -1930,13 +1930,11 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare 
   object-position: center center;
 }
 
-/* Inclusive Design Lab poster — static showcase photo, cover to fill 16/10 thumb */
+/* Inclusive Design Lab poster — Amy+Lucy showcase photo, centered contain in 16/10 thumb */
 body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab-poster .home-hero-projects__thumb img {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
+  max-width: min(88%, 100%);
+  max-height: 92%;
+  object-fit: contain;
   object-position: center center;
   transform: none;
   animation: none;
@@ -9889,7 +9887,7 @@ body.page-breaking-barriers .work-detail__prose p,
 body.page-bloom-and-vine .work-detail__prose p,
 body.page-makeability-lab .work-detail__prose p,
 body.page-nordstrom-rack .work-detail__prose p, body.page-ai-healthcare .work-detail__prose p,
-body.page-board-games-onboarding .work-detail__prose, body.page-course-registration .work-detail__prose, body.page-assisted-driving-vision .work-detail__prose p,
+body.page-board-games-onboarding .work-detail__prose p, body.page-course-registration .work-detail__prose p, body.page-assisted-driving-vision .work-detail__prose p,
 body.page-sound-transit .work-detail__prose p,
 body.page-inclusive-lab .work-detail__prose p {
   margin: 0;
@@ -12374,7 +12372,7 @@ body.page-nordstrom-rack .work-detail__prose p,
 body.page-nordstrom-rack-pickup .work-detail__prose p,
 body.page-sound-transit .work-detail__prose p,
 body.page-ai-healthcare .work-detail__prose p,
-body.page-board-games-onboarding .work-detail__prose, body.page-course-registration .work-detail__prose, body.page-assisted-driving-vision .work-detail__prose p,
+body.page-board-games-onboarding .work-detail__prose p, body.page-course-registration .work-detail__prose p, body.page-assisted-driving-vision .work-detail__prose p,
 body.page-inclusive-lab .work-detail__prose p,
 body.page-inclusive-design-lab .work-detail__prose p {
   line-height: 1.78;
@@ -12400,12 +12398,18 @@ body.page-inclusive-design-lab .work-detail__kicker {
   margin-top: clamp(28px, 4vh, 40px);
 }
 
-/* Board Game Onboarding — survey content */
-body.page-board-games-onboarding .work-detail__prose--survey, body.page-course-registration .work-detail__prose--survey, body.page-assisted-driving-vision .work-detail__prose--survey {
+/* Board Game Onboarding — survey content (flat editorial layout) */
+body.page-board-games-onboarding .work-detail__prose--survey,
+body.page-course-registration .work-detail__prose--survey,
+body.page-assisted-driving-vision .work-detail__prose--survey {
+  display: flex;
+  flex-direction: column;
   gap: clamp(10px, 1.6vh, 16px);
 }
 
-body.page-board-games-onboarding .work-detail__survey-options, body.page-course-registration .work-detail__survey-options, body.page-assisted-driving-vision .work-detail__survey-options {
+body.page-board-games-onboarding .work-detail__survey-options,
+body.page-course-registration .work-detail__survey-options,
+body.page-assisted-driving-vision .work-detail__survey-options {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -12416,7 +12420,9 @@ body.page-board-games-onboarding .work-detail__survey-options, body.page-course-
   line-height: 1.35;
 }
 
-body.page-board-games-onboarding .work-detail__survey-options, body.page-course-registration .work-detail__survey-options, body.page-assisted-driving-vision .work-detail__survey-options li {
+body.page-board-games-onboarding .work-detail__survey-options li,
+body.page-course-registration .work-detail__survey-options li,
+body.page-assisted-driving-vision .work-detail__survey-options li {
   display: flex;
   align-items: flex-start;
   gap: 10px;
@@ -12424,7 +12430,9 @@ body.page-board-games-onboarding .work-detail__survey-options, body.page-course-
   margin: 0;
 }
 
-body.page-board-games-onboarding .work-detail__survey-options, body.page-course-registration .work-detail__survey-options, body.page-assisted-driving-vision .work-detail__survey-options li::before {
+body.page-board-games-onboarding .work-detail__survey-options li::before,
+body.page-course-registration .work-detail__survey-options li::before,
+body.page-assisted-driving-vision .work-detail__survey-options li::before {
   content: "";
   flex-shrink: 0;
   width: 13px;
@@ -12435,25 +12443,34 @@ body.page-board-games-onboarding .work-detail__survey-options, body.page-course-
   box-sizing: border-box;
 }
 
-body.page-board-games-onboarding .work-detail__survey-options--checkbox, body.page-course-registration .work-detail__survey-options--checkbox, body.page-assisted-driving-vision .work-detail__survey-options--checkbox li::before {
+body.page-board-games-onboarding .work-detail__survey-options--checkbox li::before,
+body.page-course-registration .work-detail__survey-options--checkbox li::before,
+body.page-assisted-driving-vision .work-detail__survey-options--checkbox li::before {
   border-radius: 3px;
 }
 
-body.page-board-games-onboarding .work-detail__survey-options--radio, body.page-course-registration .work-detail__survey-options--radio, body.page-assisted-driving-vision .work-detail__survey-options--radio li::before {
+body.page-board-games-onboarding .work-detail__survey-options--radio li::before,
+body.page-course-registration .work-detail__survey-options--radio li::before,
+body.page-assisted-driving-vision .work-detail__survey-options--radio li::before {
   border-radius: 50%;
 }
 
-body.page-board-games-onboarding .work-detail__survey-question, body.page-course-registration .work-detail__survey-question, body.page-assisted-driving-vision .work-detail__survey-question {
+body.page-board-games-onboarding .work-detail__survey-question,
+body.page-course-registration .work-detail__survey-question,
+body.page-assisted-driving-vision .work-detail__survey-question {
   display: flex;
   flex-direction: column;
   gap: clamp(4px, 0.7vh, 7px);
-  padding: clamp(8px, 1.1vh, 10px) clamp(10px, 1.4vw, 12px);
+  padding: clamp(4px, 0.7vh, 7px) 0 clamp(4px, 0.7vh, 7px) clamp(10px, 1.4vw, 12px);
+  border: none;
   border-left: 2px solid rgba(255, 77, 184, 0.32);
-  border-radius: 0 8px 8px 0;
-  background: rgba(255, 255, 255, 0.018);
+  border-radius: 0;
+  background: none;
 }
 
-body.page-board-games-onboarding .work-detail__survey-question, body.page-course-registration .work-detail__survey-question, body.page-assisted-driving-vision .work-detail__survey-question > p:first-child {
+body.page-board-games-onboarding .work-detail__survey-question > p:first-child,
+body.page-course-registration .work-detail__survey-question > p:first-child,
+body.page-assisted-driving-vision .work-detail__survey-question > p:first-child {
   margin: 0;
   font-weight: var(--tj-fw-sbold);
   font-size: clamp(0.9375rem, 1.1vw, 1rem);
@@ -12461,12 +12478,16 @@ body.page-board-games-onboarding .work-detail__survey-question, body.page-course
   color: rgba(255, 255, 255, 0.96);
 }
 
-body.page-board-games-onboarding .work-detail__survey-question--optional, body.page-course-registration .work-detail__survey-question--optional, body.page-assisted-driving-vision .work-detail__survey-question--optional {
+body.page-board-games-onboarding .work-detail__survey-question--optional,
+body.page-course-registration .work-detail__survey-question--optional,
+body.page-assisted-driving-vision .work-detail__survey-question--optional {
   border-left-color: rgba(255, 255, 255, 0.14);
-  background: transparent;
+  background: none;
 }
 
-body.page-board-games-onboarding .work-detail__survey-question--optional, body.page-course-registration .work-detail__survey-question--optional, body.page-assisted-driving-vision .work-detail__survey-question--optional > p:first-child {
+body.page-board-games-onboarding .work-detail__survey-question--optional > p:first-child,
+body.page-course-registration .work-detail__survey-question--optional > p:first-child,
+body.page-assisted-driving-vision .work-detail__survey-question--optional > p:first-child {
   font-weight: var(--tj-fw-medium, 500);
   color: rgba(255, 255, 255, 0.68);
 }
@@ -12481,11 +12502,15 @@ body.page-board-games-onboarding .work-detail__survey-part-header, body.page-cou
   margin-bottom: clamp(12px, 1.8vh, 16px);
 }
 
-body.page-board-games-onboarding .work-detail__survey-part-header, body.page-course-registration .work-detail__survey-part-header, body.page-assisted-driving-vision .work-detail__survey-part-header .work-detail__kicker {
+body.page-board-games-onboarding .work-detail__survey-part-header .work-detail__kicker,
+body.page-course-registration .work-detail__survey-part-header .work-detail__kicker,
+body.page-assisted-driving-vision .work-detail__survey-part-header .work-detail__kicker {
   margin: 0;
 }
 
-body.page-board-games-onboarding .work-detail__survey-part-body, body.page-course-registration .work-detail__survey-part-body, body.page-assisted-driving-vision .work-detail__survey-part-body > p {
+body.page-board-games-onboarding .work-detail__survey-part-body > p,
+body.page-course-registration .work-detail__survey-part-body > p,
+body.page-assisted-driving-vision .work-detail__survey-part-body > p {
   margin: 0 0 clamp(12px, 1.8vh, 16px);
 }
 
@@ -12500,17 +12525,23 @@ body.page-board-games-onboarding .work-detail__figure-frame, body.page-course-re
   background: rgba(255, 255, 255, 0.03);
 }
 
-body.page-board-games-onboarding .work-detail__figure-frame, body.page-course-registration .work-detail__figure-frame, body.page-assisted-driving-vision .work-detail__figure-frame img {
+body.page-board-games-onboarding .work-detail__figure-frame img,
+body.page-course-registration .work-detail__figure-frame img,
+body.page-assisted-driving-vision .work-detail__figure-frame img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-body.page-board-games-onboarding .work-detail__survey-finding, body.page-course-registration .work-detail__survey-finding, body.page-assisted-driving-vision .work-detail__survey-finding .work-detail__kicker {
+body.page-board-games-onboarding .work-detail__survey-finding .work-detail__kicker,
+body.page-course-registration .work-detail__survey-finding .work-detail__kicker,
+body.page-assisted-driving-vision .work-detail__survey-finding .work-detail__kicker {
   margin: 0 0 clamp(8px, 1.2vh, 10px);
 }
 
-body.page-board-games-onboarding .work-detail__survey-finding, body.page-course-registration .work-detail__survey-finding, body.page-assisted-driving-vision .work-detail__survey-finding > p {
+body.page-board-games-onboarding .work-detail__survey-finding > p,
+body.page-course-registration .work-detail__survey-finding > p,
+body.page-assisted-driving-vision .work-detail__survey-finding > p {
   margin: 0;
 }
 
@@ -13137,7 +13168,10 @@ body.page-nordstrom-rack-pickup .work-detail__survey-question,
 body.page-sound-transit .work-detail__survey-question,
 body.page-ai-healthcare .work-detail__survey-question,
 body.page-inclusive-lab .work-detail__survey-question,
-body.page-inclusive-design-lab .work-detail__survey-question {
+body.page-inclusive-design-lab .work-detail__survey-question,
+body.page-board-games-onboarding .work-detail__survey-question,
+body.page-course-registration .work-detail__survey-question,
+body.page-assisted-driving-vision .work-detail__survey-question {
   padding: clamp(4px, 0.7vh, 7px) 0 clamp(4px, 0.7vh, 7px) clamp(10px, 1.4vw, 12px);
   border: none;
   border-left: 2px solid rgba(255, 77, 184, 0.32);
@@ -13150,7 +13184,10 @@ body.page-nordstrom-rack-pickup .work-detail__survey-question--optional,
 body.page-sound-transit .work-detail__survey-question--optional,
 body.page-ai-healthcare .work-detail__survey-question--optional,
 body.page-inclusive-lab .work-detail__survey-question--optional,
-body.page-inclusive-design-lab .work-detail__survey-question--optional {
+body.page-inclusive-design-lab .work-detail__survey-question--optional,
+body.page-board-games-onboarding .work-detail__survey-question--optional,
+body.page-course-registration .work-detail__survey-question--optional,
+body.page-assisted-driving-vision .work-detail__survey-question--optional {
   border-left-color: rgba(255, 255, 255, 0.14);
 }
 
@@ -13266,7 +13303,10 @@ body.page-nordstrom-rack-pickup .work-detail__prose--survey,
 body.page-sound-transit .work-detail__prose--survey,
 body.page-ai-healthcare .work-detail__prose--survey,
 body.page-inclusive-lab .work-detail__prose--survey,
-body.page-inclusive-design-lab .work-detail__prose--survey {
+body.page-inclusive-design-lab .work-detail__prose--survey,
+body.page-board-games-onboarding .work-detail__prose--survey,
+body.page-course-registration .work-detail__prose--survey,
+body.page-assisted-driving-vision .work-detail__prose--survey {
   display: flex;
   flex-direction: column;
   gap: clamp(28px, 4vh, 40px);
