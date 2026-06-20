@@ -1880,8 +1880,8 @@ body.page-home .home-hero-projects__thumb--native img {
 }
 
 body.page-home #hero-project-inclusive-design-lab-poster .home-hero-projects__thumb--native img {
-  object-fit: contain;
-  object-position: center center;
+  object-fit: cover;
+  object-position: center 22%;
 }
 
 body.page-home #hero-project-ai-healthcare .home-hero-projects__thumb--native img {
@@ -1930,12 +1930,14 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare 
   object-position: center center;
 }
 
-/* Inclusive Design Lab poster — Amy+Lucy showcase photo, centered contain in 16/10 thumb */
+/* Inclusive Design Lab poster — Amy+Lucy showcase photo, cover to fill 16/10 thumb */
 body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab-poster .home-hero-projects__thumb img {
-  max-width: min(88%, 100%);
-  max-height: 92%;
-  object-fit: contain;
-  object-position: center center;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
   transform: none;
   animation: none;
 }
