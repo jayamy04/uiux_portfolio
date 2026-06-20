@@ -78,17 +78,22 @@ body.site-editorial main {
   }
 }
 
-/* Header */
+/* Header — sticky site nav on scroll */
 body.site-editorial .tj-header.header-inner.header-absolute {
-  background-color: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: rgba(8, 7, 15, 0.88);
   background-image: none;
-  box-shadow: none;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
   border: 0;
 }
 
-/* Home: header + hero share body::before only (no band/header bg seam) */
 body.page-home.site-editorial .tj-header.header-inner.header-absolute {
-  background: transparent;
+  background-color: rgba(8, 7, 15, 0.88);
 }
 
 body.site-editorial .tj-header.header-inner.header-absolute .site_navigation nav ul:not(.sub-menu) > li > a {
@@ -281,23 +286,23 @@ body.site-editorial .site_navigation--always nav ul:not(.sub-menu) {
 }
 
 body.site-editorial .inner_top_gap {
-  padding-top: 96px;
+  padding-top: clamp(12px, 2vh, 20px);
   background-color: transparent;
 }
 
 @media only screen and (min-width: 992px) {
   body.site-editorial .inner_top_gap {
-    padding-top: 108px;
+    padding-top: clamp(16px, 2.5vh, 24px);
   }
 }
 
 body.page-home.site-editorial .inner_top_gap {
-  padding-top: 88px;
+  padding-top: clamp(12px, 2vh, 20px);
 }
 
 @media only screen and (min-width: 992px) {
   body.page-home.site-editorial .inner_top_gap {
-    padding-top: 96px;
+    padding-top: clamp(16px, 2.5vh, 24px);
   }
 }
 
@@ -2126,7 +2131,6 @@ body.page-home.site-editorial .home-trailing__container {
 body.page-home.site-editorial .home-trailing__block {
   padding-top: clamp(40px, 6vh, 64px);
   padding-bottom: clamp(8px, 1.5vh, 16px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 body.page-home.site-editorial .home-trailing__block:first-child {
@@ -2354,14 +2358,12 @@ body.page-home.site-editorial .home-trailing .work-detail__cta--ghost:focus-visi
 /* Home — full about/contact sections inherit page-about / page-contact body classes */
 body.page-home.page-about.site-editorial .home-trailing #about.about-page-section {
   margin-top: clamp(24px, 4vh, 40px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: clamp(40px, 6vh, 64px);
 }
 
 body.page-home.page-contact.site-editorial .home-trailing #contact.contact-page-section {
   min-height: auto;
   display: block;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 @media only screen and (min-width: 992px) {
@@ -2371,12 +2373,7 @@ body.page-home.page-contact.site-editorial .home-trailing #contact.contact-page-
   }
 }
 
-body.page-home.site-editorial .home-trailing__container {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
 body.page-home.site-editorial .home-trailing__container .home-trailing__block--cv {
-  border-top: 0;
   margin-top: 0;
   padding-top: clamp(40px, 6vh, 64px);
 }
@@ -5128,7 +5125,7 @@ body.page-contact.site-editorial .alert-warning {
 
 @media (max-width: 575px) {
   body.site-editorial .inner_top_gap {
-    padding-top: 84px;
+    padding-top: clamp(12px, 2vh, 20px);
   }
 
   .home-landing-section--editorial {
@@ -8494,6 +8491,13 @@ body.page-about.site-editorial .about-startup {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Home — no section divider lines between Work / About / CV / Contact or subsections */
+body.page-home.page-about.site-editorial .about-dance,
+body.page-home.page-about.site-editorial .about-community,
+body.page-home.page-about.site-editorial .about-startup {
+  border-top: none;
+}
+
 body.page-about.site-editorial .about-community__header,
 body.page-about.site-editorial .about-startup__header,
 body.page-about.site-editorial .about-dance__header {
@@ -8503,7 +8507,9 @@ body.page-about.site-editorial .about-dance__header {
 
 body.page-about.site-editorial .about-community__title,
 body.page-about.site-editorial .about-startup__title,
-body.page-about.site-editorial .about-dance__title {
+body.page-about.site-editorial .about-dance__title,
+body.page-about.site-editorial .about-page__section-heading,
+body.page-home.site-editorial .about-page__section-heading {
   margin: 0;
   font-family: var(--tj-ff-body);
   font-size: clamp(1.75rem, 3.2vw, 2.25rem);
@@ -8511,6 +8517,15 @@ body.page-about.site-editorial .about-dance__title {
   letter-spacing: -0.03em;
   line-height: 1.15;
   color: #ffffff;
+}
+
+body.page-home.site-editorial .home-trailing .about-page-header:has(.about-page__section-heading) {
+  max-width: 36rem;
+  margin-bottom: clamp(20px, 3vh, 32px);
+}
+
+body.page-home.site-editorial .home-trailing .contact-page-layout__intro:has(.about-page__section-heading) {
+  max-width: 36rem;
 }
 
 body.page-about.site-editorial .about-community .community-page__links,
