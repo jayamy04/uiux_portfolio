@@ -2351,6 +2351,36 @@ body.page-home.site-editorial .home-trailing .work-detail__cta--ghost:focus-visi
   }
 }
 
+/* Home — full about/contact sections inherit page-about / page-contact body classes */
+body.page-home.page-about.site-editorial .home-trailing #about.about-page-section {
+  margin-top: clamp(24px, 4vh, 40px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: clamp(40px, 6vh, 64px);
+}
+
+body.page-home.page-contact.site-editorial .home-trailing #contact.contact-page-section {
+  min-height: auto;
+  display: block;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media only screen and (min-width: 992px) {
+  body.page-home.page-contact.site-editorial .home-trailing #contact.contact-page-section {
+    min-height: auto;
+    align-items: stretch;
+  }
+}
+
+body.page-home.site-editorial .home-trailing__container {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.page-home.site-editorial .home-trailing__container .home-trailing__block--cv {
+  border-top: 0;
+  margin-top: 0;
+  padding-top: clamp(40px, 6vh, 64px);
+}
+
 body.page-home.site-editorial .home-project-grid--live .ibm-logo {
   display: block;
   width: auto;
