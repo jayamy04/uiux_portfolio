@@ -1879,13 +1879,8 @@ body.page-home .home-hero-projects__thumb--native img {
   object-position: center center;
 }
 
-body.page-home #hero-project-inclusive-design-lab .home-hero-projects__thumb--native img {
-  object-fit: cover;
-  object-position: center center;
-}
-
 body.page-home #hero-project-inclusive-design-lab-poster .home-hero-projects__thumb--native img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center center;
 }
 
@@ -1935,23 +1930,13 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare 
   object-position: center center;
 }
 
-/* Inclusive Design Lab — static showcase photo, cover to fill 16/10 thumb */
-body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab .home-hero-projects__thumb img {
+/* Inclusive Design Lab poster — static showcase photo, cover to fill 16/10 thumb */
+body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab-poster .home-hero-projects__thumb img {
   width: 100%;
   height: 100%;
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
-  object-position: center center;
-  transform: none;
-  animation: none;
-}
-
-/* Inclusive Design Lab poster — research poster, centered contain */
-body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab-poster .home-hero-projects__thumb img {
-  max-width: min(88%, 100%);
-  max-height: 92%;
-  object-fit: contain;
   object-position: center center;
   transform: none;
   animation: none;
@@ -2032,35 +2017,35 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
     order: 8;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-course-registration {
     order: 9;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab-poster {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-survey {
     order: 10;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-survey {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab {
     order: 11;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-interviews {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab-poster {
     order: 12;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-fly-on-wall {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-interviews {
     order: 13;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-fly-on-wall {
     order: 14;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-course-registration {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-assisted-driving-vision {
     order: 15;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-assisted-driving-vision {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey {
     order: 16;
   }
 
@@ -13382,141 +13367,5 @@ body.page-ai-healthcare .work-detail__usability-finding--results .work-detail__k
 body.page-inclusive-lab .work-detail__usability-finding--results .work-detail__kicker,
 body.page-inclusive-design-lab .work-detail__usability-finding--results .work-detail__kicker {
   margin-top: 0;
-}
-
-/* Course Registration — editorial spacing & flat layout */
-body.page-course-registration .work-detail__meta {
-  margin-top: clamp(28px, 4.5vh, 40px);
-  padding-top: clamp(20px, 3vh, 28px);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-body.page-course-registration .work-detail__prose ul {
-  margin: 0;
-  padding-left: 1.25em;
-  display: flex;
-  flex-direction: column;
-  gap: clamp(10px, 1.6vh, 16px);
-}
-
-body.page-course-registration .work-detail__prose li {
-  font-family: var(--tj-ff-body);
-  font-size: clamp(1.0625rem, 1.1vw, 1.125rem);
-  line-height: 1.78;
-  color: rgba(255, 255, 255, 0.88);
-  text-wrap: pretty;
-}
-
-body.page-course-registration .work-detail__goals {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(20px, 3vh, 32px);
-  grid-template-columns: unset;
-}
-
-body.page-course-registration .work-detail__goal {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(8px, 1.2vh, 12px);
-  margin: 0;
-  padding: 0;
-  border: none;
-  border-radius: 0;
-  background: none;
-  box-shadow: none;
-}
-
-body.page-course-registration .work-detail__goal-badge {
-  font-family: var(--tj-ff-body);
-  font-size: clamp(0.8125rem, 0.9vw, 0.875rem);
-  font-weight: var(--tj-fw-sbold);
-  letter-spacing: 0.14em;
-  line-height: 1;
-  text-transform: uppercase;
-  color: var(--site-accent);
-}
-
-body.page-course-registration .work-detail__goal-text {
-  margin: 0;
-  line-height: 1.78;
-}
-
-body.page-course-registration .work-detail__research-questions {
-  margin-top: clamp(16px, 2.5vh, 24px);
-  display: flex;
-  flex-direction: column;
-  gap: clamp(20px, 3vh, 32px);
-  grid-template-columns: unset;
-}
-
-body.page-course-registration .work-detail__research-question {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(8px, 1.2vh, 12px);
-  margin: 0;
-  padding: 0;
-  border: none;
-  border-radius: 0;
-  background: none;
-  box-shadow: none;
-  transition: none;
-}
-
-body.page-course-registration .work-detail__research-question:hover {
-  border: none;
-  box-shadow: none;
-}
-
-body.page-course-registration .work-detail__numbered-list {
-  gap: clamp(16px, 2.4vh, 22px);
-}
-
-body.page-course-registration .work-detail__prose--survey {
-  gap: clamp(28px, 4vh, 40px);
-  margin-top: clamp(12px, 2vh, 16px);
-}
-
-body.page-course-registration .work-detail__survey-question {
-  padding: clamp(4px, 0.7vh, 7px) 0 clamp(4px, 0.7vh, 7px) clamp(10px, 1.4vw, 12px);
-  border: none;
-  border-left: 2px solid rgba(255, 77, 184, 0.32);
-  border-radius: 0;
-  background: none;
-}
-
-body.page-course-registration .work-detail__survey-question--optional {
-  border-left-color: rgba(255, 255, 255, 0.14);
-}
-
-body.page-course-registration .work-detail__survey-findings {
-  gap: clamp(32px, 4.5vh, 48px);
-  margin-top: clamp(20px, 3vh, 28px);
-}
-
-body.page-course-registration .work-detail__survey-finding .work-detail__kicker {
-  margin: 0 0 clamp(10px, 1.5vh, 14px);
-  font-size: clamp(0.8125rem, 0.95vw, 0.875rem);
-  letter-spacing: 0.08em;
-  line-height: 1.4;
-}
-
-body.page-course-registration .work-detail__survey-finding > p {
-  line-height: 1.78;
-}
-
-body.page-course-registration .work-detail__inner > .work-detail__kicker[id="course-reg-survey-findings-heading"] {
-  margin-top: clamp(36px, 5vh, 52px);
-}
-
-body.page-course-registration .work-detail__prose .work-detail__kicker {
-  margin-top: clamp(24px, 3.5vh, 36px);
-}
-
-body.page-course-registration .work-detail__prose .work-detail__kicker:first-child {
-  margin-top: 0;
-}
-
-body.page-course-registration .work-detail__prose .work-detail__numbered-list + .work-detail__kicker {
-  margin-top: clamp(32px, 4.5vh, 44px);
 }
 
