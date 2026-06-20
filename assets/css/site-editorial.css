@@ -4598,9 +4598,40 @@ body.page-contact.site-editorial .contact-page__social {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
+  gap: 10px 14px;
   margin: clamp(14px, 2vh, 18px) 0 0;
   padding: 0;
+}
+
+body.page-contact.site-editorial .contact-page__social-cta.work-detail__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: #ffffff;
+  color: var(--site-bg-deep);
+  font-family: var(--tj-ff-body);
+  font-size: 0.8125rem;
+  font-weight: var(--tj-fw-sbold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+body.page-contact.site-editorial .contact-page__social-cta.work-detail__cta:hover,
+body.page-contact.site-editorial .contact-page__social-cta.work-detail__cta:focus-visible {
+  background: var(--site-accent);
+  border-color: var(--site-accent);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+body.page-contact.site-editorial .contact-page__social-cta.work-detail__cta:focus-visible {
+  outline: 2px solid rgba(255, 77, 184, 0.55);
+  outline-offset: 3px;
 }
 
 body.page-contact.site-editorial .contact-page__form-panel {
