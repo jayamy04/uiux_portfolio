@@ -1884,6 +1884,11 @@ body.page-home #hero-project-inclusive-design-lab .home-hero-projects__thumb--na
   object-position: center center;
 }
 
+body.page-home #hero-project-inclusive-design-lab-poster .home-hero-projects__thumb--native img {
+  object-fit: contain;
+  object-position: center center;
+}
+
 body.page-home #hero-project-ai-healthcare .home-hero-projects__thumb--native img {
   object-fit: contain;
   object-position: center center;
@@ -1937,6 +1942,16 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
+  object-position: center center;
+  transform: none;
+  animation: none;
+}
+
+/* Inclusive Design Lab poster — research poster, centered contain */
+body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab-poster .home-hero-projects__thumb img {
+  max-width: min(88%, 100%);
+  max-height: 92%;
+  object-fit: contain;
   object-position: center center;
   transform: none;
   animation: none;
@@ -2021,7 +2036,7 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
     order: 9;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-survey {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-assisted-driving-vision {
     order: 10;
   }
 
@@ -2029,20 +2044,24 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
     order: 11;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-interviews {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab-poster {
     order: 12;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-fly-on-wall {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-survey {
     order: 13;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-assisted-driving-vision {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-interviews {
     order: 14;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-fly-on-wall {
     order: 15;
+  }
+
+  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey {
+    order: 16;
   }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {
@@ -10185,6 +10204,28 @@ body.page-inclusive-design-lab .work-detail__figure-frame--poster img {
   max-height: none;
   object-fit: contain;
   object-position: center center;
+}
+
+body.page-inclusive-lab .work-detail__section--poster .work-detail__figure > img,
+body.page-inclusive-design-lab .work-detail__section--poster .work-detail__figure > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body.page-inclusive-lab .work-detail__section--poster .work-detail__split,
+body.page-inclusive-design-lab .work-detail__section--poster .work-detail__split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 3vw, 28px);
+  margin-top: clamp(20px, 3vh, 28px);
+}
+
+@media only screen and (max-width: 767px) {
+  body.page-inclusive-lab .work-detail__section--poster .work-detail__split,
+  body.page-inclusive-design-lab .work-detail__section--poster .work-detail__split {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 body.page-schedgo .work-detail__figure-video {
