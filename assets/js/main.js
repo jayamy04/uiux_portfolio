@@ -2422,6 +2422,7 @@ const SOUND_TRANSIT_SECTION_HASHES = new Set([
   "sound-transit-usability-heading",
   "sound-transit-stakeholder-heading",
   "sound-transit-research-report-heading",
+  "sound-transit-research-presentation-video-heading",
 ]);
 const BOARD_GAMES_SECTION_HASHES = new Set([
   "board-games-survey-heading",

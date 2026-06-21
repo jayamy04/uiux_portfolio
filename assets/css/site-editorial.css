@@ -1895,7 +1895,7 @@ body.page-home .home-hero-projects__thumb--cover video {
   object-position: center center;
 }
 
-body.page-home #hero-project-sound-transit-report .home-hero-projects__thumb--cover video {
+body.page-home #hero-project-sound-transit-presentation-video .home-hero-projects__thumb--cover video {
   object-position: center center;
 }
 
@@ -1933,8 +1933,17 @@ body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb--
   transform: none;
 }
 
-/* Sound Transit — phone mockup centered contain (full mockup visible) */
-body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-report .home-hero-projects__thumb video {
+/* Sound Transit — presentation video, centered contain */
+body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-presentation-video .home-hero-projects__thumb video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  transform: none;
+}
+
+/* Sound Transit — research report slide thumbnail, centered contain */
+body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-report .home-hero-projects__thumb img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -2036,52 +2045,56 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
     order: 4;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-presentation-video {
     order: 5;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack-pickup {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare {
     order: 6;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack-pickup-recommendations {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack-pickup {
     order: 7;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack-pickup-recommendations {
     order: 8;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-course-registration {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack {
     order: 9;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-survey {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-course-registration {
     order: 10;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-survey {
     order: 11;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab-poster {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab {
     order: 12;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-interviews {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab-poster {
     order: 13;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-fly-on-wall {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-interviews {
     order: 14;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-assisted-driving-vision {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-fly-on-wall {
     order: 15;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-assisted-driving-vision {
     order: 16;
+  }
+
+  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey {
+    order: 17;
   }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {
@@ -8420,16 +8433,6 @@ body.page-about.site-editorial .about-overview__header {
   margin-bottom: clamp(20px, 3vh, 32px);
 }
 
-body.page-about.site-editorial .about-overview__title {
-  margin: 0;
-  font-family: var(--tj-ff-body);
-  font-size: clamp(1.75rem, 3.2vw, 2.25rem);
-  font-weight: var(--tj-fw-bold);
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-  color: #ffffff;
-}
-
 body.page-about.site-editorial .about-overview .site-meta-panel {
   margin-top: 0;
 }
@@ -8538,9 +8541,6 @@ body.page-about.site-editorial .about-dance__header {
   margin-bottom: clamp(20px, 3vh, 32px);
 }
 
-body.page-about.site-editorial .about-community__title,
-body.page-about.site-editorial .about-startup__title,
-body.page-about.site-editorial .about-dance__title,
 body.page-about.site-editorial .about-page__section-heading,
 body.page-home.site-editorial .about-page__section-heading {
   margin: 0;
@@ -8550,6 +8550,18 @@ body.page-home.site-editorial .about-page__section-heading {
   letter-spacing: -0.03em;
   line-height: 1.15;
   color: #ffffff;
+}
+
+body.page-about.site-editorial .about-page__subsection-heading,
+body.page-home.site-editorial .about-page__subsection-heading {
+  margin: 0;
+  font-family: var(--tj-ff-body);
+  font-size: clamp(0.8125rem, 1vw, 0.9375rem);
+  font-weight: var(--tj-fw-sbold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.52);
 }
 
 body.page-home.site-editorial .home-trailing .about-page-header:has(.about-page__section-heading) {
