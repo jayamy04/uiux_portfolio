@@ -78,22 +78,43 @@ body.site-editorial main {
   }
 }
 
-/* Header — sticky site nav on scroll (transparent glass, content shows through) */
+/* Header — sticky site nav on scroll (fully clear; content shows through) */
 body.site-editorial .tj-header.header-inner.header-absolute {
   position: sticky;
   top: 0;
   z-index: 100;
   width: 100%;
-  background-color: transparent;
-  background-image: none;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: none;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
   border: 0;
 }
 
+body.site-editorial .tj-header.header-inner.header-absolute::before,
+body.site-editorial .tj-header.header-inner.header-absolute::after {
+  content: none;
+  display: none;
+}
+
+body.site-editorial .tj-header.header-inner.header-absolute .container-fluid,
+body.site-editorial .tj-header.header-inner.header-absolute .container-fluid > .row,
+body.site-editorial .tj-header.header-inner.header-absolute .container-fluid > .row > .col,
+body.site-editorial .tj-header.header-inner.header-absolute .tj-header_wrap,
+body.site-editorial .tj-header.header-inner.header-absolute .site_navigation,
+body.site-editorial .tj-header.header-inner.header-absolute .site_navigation nav {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
 body.page-home.site-editorial .tj-header.header-inner.header-absolute {
-  background-color: transparent;
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
 body.site-editorial .tj-header.header-inner.header-absolute .site_navigation nav ul:not(.sub-menu) > li > a {
