@@ -2346,6 +2346,35 @@ const scrollHomePageToWork = () => {
   target.scrollIntoView({ block: "start" });
 };
 
+const HOME_NAV_SCROLL_OFFSET = "top 88px";
+const HOME_LANDING_SECTION_HASHES = new Set(["about", "cv", "contact"]);
+
+const scrollHomePageToSection = (sectionId) => {
+  const target = document.getElementById(sectionId);
+  if (!target) return;
+
+  const smoother =
+    typeof ScrollSmoother !== "undefined" ? ScrollSmoother.get() : null;
+  if (smoother && typeof smoother.scrollTo === "function") {
+    smoother.scrollTo(target, true, HOME_NAV_SCROLL_OFFSET);
+    return;
+  }
+
+  if (typeof gsap !== "undefined" && typeof gsap.to === "function") {
+    gsap.to(window, {
+      duration: prefersReducedMotion() ? 0 : 0.55,
+      scrollTo: { y: target, offsetY: 88 },
+      ease: "power2.out",
+    });
+    return;
+  }
+
+  target.scrollIntoView({
+    behavior: prefersReducedMotion() ? "auto" : "smooth",
+    block: "start",
+  });
+};
+
 const initHomeLandingScroll = () => {
   if (!document.body.classList.contains("page-home")) return;
 
@@ -2365,6 +2394,14 @@ const initHomeLandingScroll = () => {
     const syncWorkAnchor = () => scrollHomePageToWork();
     window.addEventListener("load", syncWorkAnchor, { once: true });
     window.setTimeout(syncWorkAnchor, 2300);
+    return;
+  }
+
+  const hashId = window.location.hash.slice(1);
+  if (HOME_LANDING_SECTION_HASHES.has(hashId)) {
+    const syncSectionAnchor = () => scrollHomePageToSection(hashId);
+    window.addEventListener("load", syncSectionAnchor, { once: true });
+    window.setTimeout(syncSectionAnchor, 2300);
     return;
   }
 
@@ -3418,10 +3455,173 @@ const initCaseStudyHashTitle = () => {
   window.addEventListener("hashchange", updateFromHash);
 };
 
+const getHomeNavKeyFromLink = (link) => {
+  if (!link) return null;
+  if (link.dataset.navSection) return link.dataset.navSection;
+
+  const href = link.getAttribute("href") || "";
+  if (href.includes("#about")) return "about";
+  if (href.includes("#cv")) return "cv";
+  if (href.includes("#contact")) return "contact";
+  if (href.includes("#work")) return "home";
+  if (/^(?:\.\/)?home\.html(?:[#?]|$)/.test(href) || href === "" || href === "#")
+    return "home";
+  return null;
+};
+
+const setHomeNavActive = (navKey) => {
+  if (!navKey) return;
+
+  document
+    .querySelectorAll(
+      "#mobile-menu ul:not(.sub-menu) > li, .offcanvas_menu .mean-nav ul:not(.sub-menu) > li"
+    )
+    .forEach((li) => {
+      const link = li.querySelector("a:not(.mean-expand)");
+      const key = getHomeNavKeyFromLink(link);
+      li.classList.toggle("current-menu-item", key === navKey);
+    });
+};
+
+const getHomeNavScrollSpyTargets = () => {
+  const targets = [];
+  const heroBand = document.querySelector(".home-hero-band");
+  if (heroBand) targets.push({ el: heroBand, navKey: "home" });
+
+  ["about", "cv", "contact"].forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) targets.push({ el, navKey: id });
+  });
+
+  return targets;
+};
+
+const createHomeNavScrollSpy = (targets, setActive) => {
+  let observer = null;
+  let trackedKey = null;
+
+  const connect = () => {
+    observer?.disconnect();
+    if (!targets.length) return;
+
+    observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort(
+            (a, b) => a.boundingClientRect.top - b.boundingClientRect.top
+          );
+        if (!visible.length) return;
+
+        const navKey = visible[0].target.dataset.navSpyKey;
+        if (!navKey || navKey === trackedKey) return;
+        trackedKey = navKey;
+        setActive(navKey);
+      },
+      { rootMargin: "-18% 0px -62% 0px", threshold: 0 }
+    );
+
+    targets.forEach(({ el, navKey }) => {
+      el.dataset.navSpyKey = navKey;
+      observer.observe(el);
+    });
+  };
+
+  connect();
+
+  return {
+    reconnect: connect,
+    disconnect: () => observer?.disconnect(),
+    setTrackedKey: (key) => {
+      trackedKey = key;
+    },
+  };
+};
+
+const initHomeNavScrollSpy = () => {
+  if (!document.body.classList.contains("page-home")) return;
+  if (document.documentElement.dataset.homeNavSpyInit === "true") return;
+  document.documentElement.dataset.homeNavSpyInit = "true";
+
+  const targets = getHomeNavScrollSpyTargets();
+  if (!targets.length) return;
+
+  let scrollSpy = null;
+
+  const applyHashNavState = () => {
+    const hashId = window.location.hash.slice(1);
+    if (HOME_LANDING_SECTION_HASHES.has(hashId)) {
+      setHomeNavActive(hashId);
+      scrollSpy?.setTrackedKey(hashId);
+      return;
+    }
+    if (window.location.hash === HOME_WORK_HASH && shouldScrollHomeToWork()) {
+      setHomeNavActive("home");
+      scrollSpy?.setTrackedKey("home");
+      return;
+    }
+    if (!window.location.hash) {
+      setHomeNavActive("home");
+      scrollSpy?.setTrackedKey("home");
+    }
+  };
+
+  applyHashNavState();
+
+  const boot = () => {
+    scrollSpy = createHomeNavScrollSpy(targets, setHomeNavActive);
+    applyHashNavState();
+  };
+
+  waitForScrollSmootherReady(() => {
+    boot();
+
+    if (typeof ScrollTrigger !== "undefined") {
+      ScrollTrigger.addEventListener("refreshInit", () => scrollSpy?.reconnect());
+    }
+  });
+
+  window.addEventListener("hashchange", applyHashNavState);
+
+  document.addEventListener("click", (event) => {
+    if (!document.body.classList.contains("page-home")) return;
+
+    const link = event.target.closest(
+      "#mobile-menu a[href], .offcanvas_menu .mean-nav a[href]"
+    );
+    if (!link || link.classList.contains("mean-expand")) return;
+
+    const navKey = getHomeNavKeyFromLink(link);
+    if (!navKey) return;
+
+    const href = link.getAttribute("href") || "";
+    const isInPageNav =
+      href.startsWith("#") ||
+      href.startsWith("home.html#") ||
+      href === "home.html" ||
+      href === "./home.html";
+    if (!isInPageNav) return;
+
+    event.preventDefault();
+
+    if (navKey === "home") {
+      scrollHomePageToTop();
+      history.replaceState(null, "", location.pathname + location.search);
+    } else {
+      scrollHomePageToSection(navKey);
+      history.replaceState(null, "", `#${navKey}`);
+    }
+
+    setHomeNavActive(navKey);
+    scrollSpy?.setTrackedKey(navKey);
+  });
+};
+
 const initProjectPageEnhancements = () => {
   initLoopVideoLifecycle();
   initHomeScrollToWorkLinkIntent();
   initHomeLandingScroll();
+  initHomeNavScrollSpy();
   initVideoPopupControls();
   initWicsSocialSlideshow();
   initProjectPreviewLightbox();

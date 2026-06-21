@@ -133,6 +133,13 @@ body.site-editorial .tj-header.header-inner.header-absolute .site_navigation nav
   opacity: 1;
 }
 
+body.page-home.site-editorial .tj-header.header-inner.header-absolute .site_navigation nav ul:not(.sub-menu) > li.current-menu-item > a {
+  text-decoration: underline;
+  text-decoration-color: var(--site-accent, #ff4db8);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.28em;
+}
+
 body.site-editorial .tj-header .tj-header_wrap > .site_logo,
 body.site-editorial .tj-header .site_logo,
 body.site-editorial .tj-offcanvas .offcanvas_logo {
@@ -2140,7 +2147,7 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
 body.page-home.site-editorial .home-trailing {
   position: relative;
   z-index: 1;
-  padding-bottom: clamp(48px, 8vh, 80px);
+  padding-bottom: clamp(20px, 3vh, 32px);
 }
 
 body.page-home.site-editorial .home-trailing__container {
@@ -2387,12 +2394,15 @@ body.page-home.page-about.site-editorial .home-trailing #about.about-page-sectio
 body.page-home.page-contact.site-editorial .home-trailing #contact.contact-page-section {
   min-height: auto;
   display: block;
+  padding-bottom: clamp(16px, 2.5vh, 24px);
 }
 
 @media only screen and (min-width: 992px) {
   body.page-home.page-contact.site-editorial .home-trailing #contact.contact-page-section {
     min-height: auto;
+    display: block;
     align-items: stretch;
+    padding-bottom: clamp(12px, 2vh, 20px);
   }
 }
 
