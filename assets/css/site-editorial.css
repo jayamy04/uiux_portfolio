@@ -2089,12 +2089,8 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
     order: 15;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-assisted-driving-vision {
-    order: 16;
-  }
-
   body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey {
-    order: 17;
+    order: 16;
   }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {
