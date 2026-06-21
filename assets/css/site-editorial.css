@@ -78,30 +78,31 @@ body.site-editorial main {
   }
 }
 
-/* Header — sticky site nav on scroll */
+/* Header — sticky site nav on scroll (transparent glass, content shows through) */
 body.site-editorial .tj-header.header-inner.header-absolute {
   position: sticky;
   top: 0;
   z-index: 100;
   width: 100%;
-  background-color: rgba(8, 7, 15, 0.88);
+  background-color: transparent;
   background-image: none;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: none;
   border: 0;
 }
 
 body.page-home.site-editorial .tj-header.header-inner.header-absolute {
-  background-color: rgba(8, 7, 15, 0.88);
+  background-color: transparent;
 }
 
 body.site-editorial .tj-header.header-inner.header-absolute .site_navigation nav ul:not(.sub-menu) > li > a {
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.92);
   font-size: clamp(11px, 1vw, 12px);
   font-weight: var(--tj-fw-medium);
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55), 0 0 1px rgba(0, 0, 0, 0.4);
   transition: color 0.25s ease, opacity 0.25s ease;
 }
 
@@ -132,6 +133,7 @@ body.site-editorial .tj-offcanvas.tj-offcanvas-2 .offcanvas_logo .logo {
   line-height: 1;
   text-decoration: none;
   text-transform: uppercase;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55), 0 0 1px rgba(0, 0, 0, 0.4);
   transition: color 0.25s ease;
 }
 
