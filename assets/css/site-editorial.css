@@ -454,6 +454,11 @@ body.page-home .home-landing-section--solo.home-landing-section--editorial .home
   width: 100%;
 }
 
+body.page-home .home-landing-section--solo.home-landing-section--editorial .home-landing__inner.home-landing__inner--split {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 /* Home — dance studio hero */
 @keyframes studio-marquee {
   from {
@@ -818,6 +823,9 @@ body.page-home .home-landing-section--solo .home-landing__container.container-fl
 
 body.page-home .home-landing-section--solo .home-landing__inner--split {
   width: 100%;
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 body.page-home .home-landing-section--solo .home-landing__split {
@@ -831,13 +839,6 @@ body.page-home .home-landing-section--solo .home-landing__split-col--headline {
   max-width: none;
 }
 
-body.page-home .home-landing-section--solo .home-landing__inner--split {
-  max-width: 100%;
-  width: 100%;
-  padding-left: var(--site-content-inset);
-  padding-right: var(--site-content-inset);
-}
-
 body.page-home .home-landing__split-head--spread {
   width: 100%;
   max-width: none;
@@ -848,6 +849,7 @@ body.page-home .home-landing__hero-statement {
   margin: 0;
   width: 100%;
   max-width: none;
+  box-sizing: border-box;
   font-family: var(--tj-ff-body);
   font-size: clamp(1.875rem, 3.4vw + 0.5rem, 4.75rem);
   font-weight: var(--tj-fw-bold);
