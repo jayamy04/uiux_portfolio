@@ -2370,9 +2370,97 @@ body.page-home.page-about.site-editorial .home-trailing #about.about-page-sectio
 }
 
 body.page-home.page-contact.site-editorial .home-trailing #contact.contact-page-section {
+  position: relative;
   min-height: auto;
   display: block;
-  padding-bottom: clamp(16px, 2.5vh, 24px);
+  margin-top: clamp(40px, 7vh, 72px);
+  padding-top: clamp(48px, 7vh, 80px);
+  padding-bottom: clamp(56px, 8vh, 96px);
+  overflow: hidden;
+}
+
+body.page-home.page-contact.site-editorial .home-trailing #contact.contact-page-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 90% 55% at 18% 12%, rgba(255, 77, 184, 0.1) 0%, transparent 68%),
+    radial-gradient(ellipse 70% 50% at 88% 78%, rgba(120, 90, 255, 0.08) 0%, transparent 72%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.025) 0%, transparent 42%, rgba(255, 77, 184, 0.03) 100%);
+}
+
+body.page-home.page-contact.site-editorial .home-trailing #contact .contact-page__ambient {
+  z-index: 0;
+}
+
+body.page-home.page-contact.site-editorial .home-trailing #contact .contact-page__glow {
+  opacity: 0.62;
+  filter: blur(88px);
+}
+
+body.page-home.page-contact.site-editorial .home-trailing #contact .contact-page-layout {
+  position: relative;
+  z-index: 1;
+}
+
+body.page-home.site-editorial .home-trailing .contact-page__section-heading {
+  margin: 0 0 clamp(10px, 1.5vh, 14px);
+  font-family: var(--tj-ff-body);
+  font-size: clamp(10px, 2.5vw, 11px);
+  font-weight: var(--tj-fw-medium);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  line-height: 1.3;
+  color: rgba(255, 77, 184, 0.88);
+}
+
+body.page-home.site-editorial .home-trailing #contact .contact-page__title {
+  margin-bottom: clamp(14px, 2vh, 20px);
+  max-width: 16ch;
+}
+
+body.page-home.site-editorial .home-trailing #contact .contact-page__title-word {
+  display: inline;
+  font-size: clamp(2.15rem, 7.5vw, 4.75rem);
+  line-height: 1.02;
+}
+
+body.page-home.site-editorial .home-trailing #contact .contact-page__title-word--accent {
+  display: inline;
+  padding-left: 0.22em;
+  color: #ffffff;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 77, 184, 0.65);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.12em;
+}
+
+body.page-home.site-editorial .home-trailing #contact .contact-page__lead {
+  margin-bottom: clamp(16px, 2.2vh, 22px);
+  max-width: 28em;
+  padding-left: clamp(14px, 2vw, 20px);
+  border-left: 2px solid rgba(255, 77, 184, 0.5);
+  font-size: clamp(1.05rem, 1.2vw, 1.2rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+body.page-home.site-editorial .home-trailing #contact .contact-page__direct-sep {
+  color: rgba(255, 77, 184, 0.45);
+}
+
+body.page-home.site-editorial .home-trailing #contact .contact-page-layout__form {
+  margin-top: clamp(4px, 1vh, 8px);
+  padding: clamp(24px, 3.2vh, 36px) clamp(20px, 2.8vw, 32px);
+  border-radius: clamp(16px, 2vw, 22px);
+  background:
+    linear-gradient(145deg, rgba(255, 77, 184, 0.06) 0%, rgba(255, 255, 255, 0.025) 48%, rgba(120, 90, 255, 0.06) 100%);
+}
+
+body.page-home.site-editorial .home-trailing #contact .contact-page-layout__form::before {
+  display: none;
 }
 
 @media only screen and (min-width: 992px) {
@@ -2380,7 +2468,35 @@ body.page-home.page-contact.site-editorial .home-trailing #contact.contact-page-
     min-height: auto;
     display: block;
     align-items: stretch;
-    padding-bottom: clamp(12px, 2vh, 20px);
+    padding-bottom: clamp(64px, 8vh, 96px);
+  }
+
+  body.page-home.site-editorial .home-trailing #contact .contact-page-grid {
+    grid-template-columns: minmax(0, 0.58fr) minmax(0, 0.42fr);
+    gap: clamp(32px, 4vw, 52px);
+    align-items: center;
+  }
+
+  body.page-home.site-editorial .home-trailing #contact .contact-page-aside {
+    order: 2;
+  }
+
+  body.page-home.site-editorial .home-trailing #contact .contact-page-main {
+    order: 1;
+  }
+
+  body.page-home.site-editorial .home-trailing #contact .contact-page-portrait__wrap {
+    transform: rotate(2.5deg);
+  }
+
+  body.page-home.site-editorial .home-trailing #contact .contact-page__title {
+    max-width: none;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  body.page-home.site-editorial .home-trailing #contact .contact-page__title-word {
+    font-size: clamp(1.85rem, 10vw, 2.75rem);
   }
 }
 
@@ -8545,8 +8661,9 @@ body.page-home.site-editorial .home-trailing .about-page-header:has(.about-page_
   margin-bottom: clamp(20px, 3vh, 32px);
 }
 
-body.page-home.site-editorial .home-trailing .contact-page-layout__intro:has(.about-page__section-heading) {
-  max-width: 36rem;
+body.page-home.site-editorial .home-trailing .contact-page-layout__intro:has(.contact-page__section-heading) {
+  max-width: none;
+  width: 100%;
 }
 
 body.page-about.site-editorial .about-community .community-page__links,
