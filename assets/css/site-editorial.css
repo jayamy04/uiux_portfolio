@@ -1367,16 +1367,16 @@ body.page-home .home-landing__org-logos-viewport {
 body.page-home .home-landing__org-logos-track {
   display: flex;
   align-items: center;
-  gap: clamp(36px, 5vw, 64px);
+  gap: clamp(48px, 7vw, 80px);
   width: max-content;
-  animation: home-org-logo-marquee 36s linear infinite;
+  animation: home-org-logo-marquee 28s linear infinite;
 }
 
 body.page-home .home-landing__org-logos-set {
   display: flex;
   align-items: center;
   flex: 0 0 auto;
-  gap: clamp(36px, 5vw, 64px);
+  gap: clamp(48px, 7vw, 80px);
   margin: 0;
   padding: 0;
   list-style: none;
