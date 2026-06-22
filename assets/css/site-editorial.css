@@ -2033,13 +2033,6 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey
 }
 
 /* Makeability Lab — ARTennis demo video, cover fill */
-body.page-home .home-hero-projects__grid--editorial #hero-project-fashionxai-research .home-hero-projects__thumb video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-}
-
 body.page-home .home-hero-projects__grid--editorial #hero-project-makeability .home-hero-projects__thumb video {
   width: 100%;
   height: 100%;
@@ -2114,7 +2107,6 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
 
   body.page-home .home-hero-projects__grid--editorial #hero-project-assisted-driving-vision { grid-column: 1; grid-row: 7; }
   body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey { grid-column: 2; grid-row: 7; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-fashionxai-research { grid-column: 3; grid-row: 7; }
   body.page-home .home-hero-projects__grid--editorial #hero-project-fashionxai-research { grid-column: 3; grid-row: 7; }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__col,
