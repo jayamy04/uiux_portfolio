@@ -2415,13 +2415,10 @@ const initHomeLandingScroll = () => {
 const SOUND_TRANSIT_CASE_STUDY_PATH = "sound-transit.html";
 const NORDSTROM_PICKUP_CASE_STUDY_PATH = "nordstrom-rack-pickup.html";
 const BOARD_GAMES_CASE_STUDY_PATH = "board-games-onboarding.html";
-const NORDSTROM_PICKUP_RECOMMENDATIONS_HASH =
-  "nordstrom-pickup-recommendations-heading";
 const SOUND_TRANSIT_SECTION_HASHES = new Set([
   "sound-transit-card-sorting-heading",
   "sound-transit-usability-heading",
   "sound-transit-stakeholder-heading",
-  "sound-transit-research-report-heading",
   "sound-transit-research-presentation-video-heading",
 ]);
 const BOARD_GAMES_SECTION_HASHES = new Set([
@@ -2433,7 +2430,6 @@ const NORDSTROM_RACK_INTERVIEWS_HASH = "nordstrom-interviews-heading";
 const CASE_STUDY_LANDING_HASHES = new Set([
   ...SOUND_TRANSIT_SECTION_HASHES,
   ...BOARD_GAMES_SECTION_HASHES,
-  NORDSTROM_PICKUP_RECOMMENDATIONS_HASH,
   NORDSTROM_RACK_INTERVIEWS_HASH,
 ]);
 const CASE_STUDY_DOCUMENT_TITLE_SUFFIX = " — Amy Seunghyun Lee";
