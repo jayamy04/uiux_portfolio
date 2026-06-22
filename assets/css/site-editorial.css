@@ -2086,18 +2086,18 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
 
   body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack { grid-column: 1; grid-row: 4; }
   body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-report { grid-column: 2; grid-row: 4; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-fly-on-wall { grid-column: 3; grid-row: 4; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-survey { grid-column: 3; grid-row: 4; }
 
   body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack-interviews { grid-column: 1; grid-row: 5; }
   body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-presentation-video { grid-column: 2; grid-row: 5; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-assisted-driving-vision { grid-column: 3; grid-row: 5; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-interviews { grid-column: 3; grid-row: 5; }
 
   body.page-home .home-hero-projects__grid--editorial #hero-project-course-registration { grid-column: 1; grid-row: 6; }
   body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare { grid-column: 2; grid-row: 6; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey { grid-column: 3; grid-row: 6; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-fly-on-wall { grid-column: 3; grid-row: 6; }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-survey { grid-column: 1; grid-row: 7; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-interviews { grid-column: 2; grid-row: 7; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-assisted-driving-vision { grid-column: 1; grid-row: 7; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey { grid-column: 2; grid-row: 7; }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__col,
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__column {
