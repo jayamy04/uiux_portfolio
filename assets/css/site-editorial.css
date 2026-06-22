@@ -2493,31 +2493,14 @@ body.page-home.page-contact.site-editorial .home-trailing #contact.contact-page-
   position: relative;
   min-height: auto;
   display: block;
-  margin-top: clamp(40px, 7vh, 72px);
-  padding-top: clamp(48px, 7vh, 80px);
-  padding-bottom: clamp(56px, 8vh, 96px);
-  overflow: hidden;
-}
-
-body.page-home.page-contact.site-editorial .home-trailing #contact.contact-page-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse 90% 55% at 18% 12%, rgba(255, 77, 184, 0.1) 0%, transparent 68%),
-    radial-gradient(ellipse 70% 50% at 88% 78%, rgba(120, 90, 255, 0.08) 0%, transparent 72%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.025) 0%, transparent 42%, rgba(255, 77, 184, 0.03) 100%);
+  margin-top: 0;
+  padding-top: clamp(40px, 6vh, 64px);
+  padding-bottom: clamp(8px, 1.5vh, 16px);
+  overflow: visible;
 }
 
 body.page-home.page-contact.site-editorial .home-trailing #contact .contact-page__ambient {
-  z-index: 0;
-}
-
-body.page-home.page-contact.site-editorial .home-trailing #contact .contact-page__glow {
-  opacity: 0.62;
-  filter: blur(88px);
+  display: none;
 }
 
 body.page-home.page-contact.site-editorial .home-trailing #contact .contact-page-layout {
@@ -2572,11 +2555,10 @@ body.page-home.site-editorial .home-trailing #contact .contact-page__direct-sep 
 }
 
 body.page-home.site-editorial .home-trailing #contact .contact-page-layout__form {
-  margin-top: clamp(4px, 1vh, 8px);
-  padding: clamp(24px, 3.2vh, 36px) clamp(20px, 2.8vw, 32px);
-  border-radius: clamp(16px, 2vw, 22px);
-  background:
-    linear-gradient(145deg, rgba(255, 77, 184, 0.06) 0%, rgba(255, 255, 255, 0.025) 48%, rgba(120, 90, 255, 0.06) 100%);
+  margin-top: clamp(20px, 3vh, 28px);
+  padding: 0;
+  border-radius: 0;
+  background: none;
 }
 
 body.page-home.site-editorial .home-trailing #contact .contact-page-layout__form::before {
@@ -2588,7 +2570,7 @@ body.page-home.site-editorial .home-trailing #contact .contact-page-layout__form
     min-height: auto;
     display: block;
     align-items: stretch;
-    padding-bottom: clamp(64px, 8vh, 96px);
+    padding-bottom: clamp(8px, 1.5vh, 16px);
   }
 
   body.page-home.site-editorial .home-trailing #contact .contact-page-grid {
