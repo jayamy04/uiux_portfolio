@@ -345,7 +345,8 @@ body.page-resume.site-editorial .inner_top_gap {
 body.page-sachacks.site-editorial .inner_top_gap,
 body.page-nordstrom-rack.site-editorial .inner_top_gap, body.page-ai-healthcare.site-editorial .inner_top_gap,
 body.page-board-games-onboarding.site-editorial .inner_top_gap,
-body.page-course-registration.site-editorial, body.page-assisted-driving-vision.site-editorial .inner_top_gap,
+body.page-course-registration.site-editorial .inner_top_gap,
+body.page-fashionxai-research.site-editorial .inner_top_gap, body.page-assisted-driving-vision.site-editorial .inner_top_gap,
 body.page-sound-transit.site-editorial .inner_top_gap,
 body.page-inclusive-lab.site-editorial .inner_top_gap,
 body.page-inclusive-design-lab.site-editorial .inner_top_gap,
@@ -378,7 +379,8 @@ body.page-ideas.site-editorial .inner_top_gap {
   body.page-sachacks.site-editorial .inner_top_gap,
   body.page-nordstrom-rack.site-editorial .inner_top_gap, body.page-ai-healthcare.site-editorial .inner_top_gap,
 body.page-board-games-onboarding.site-editorial .inner_top_gap,
-body.page-course-registration.site-editorial, body.page-assisted-driving-vision.site-editorial .inner_top_gap,
+body.page-course-registration.site-editorial .inner_top_gap,
+body.page-fashionxai-research.site-editorial .inner_top_gap, body.page-assisted-driving-vision.site-editorial .inner_top_gap,
 body.page-sound-transit.site-editorial .inner_top_gap,
   body.page-inclusive-lab.site-editorial .inner_top_gap,
 body.page-inclusive-design-lab.site-editorial .inner_top_gap,
@@ -2031,7 +2033,24 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey
 }
 
 /* Makeability Lab — ARTennis demo video, cover fill */
+body.page-home .home-hero-projects__grid--editorial #hero-project-fashionxai-research .home-hero-projects__thumb video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
 body.page-home .home-hero-projects__grid--editorial #hero-project-makeability .home-hero-projects__thumb video {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* FashionXAI — app demo video, cover fill */
+body.page-home .home-hero-projects__grid--editorial #hero-project-fashionxai-research .home-hero-projects__thumb video {
   width: 100%;
   height: 100%;
   max-width: 100%;
@@ -2095,6 +2114,8 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
 
   body.page-home .home-hero-projects__grid--editorial #hero-project-assisted-driving-vision { grid-column: 1; grid-row: 7; }
   body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey { grid-column: 2; grid-row: 7; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-fashionxai-research { grid-column: 3; grid-row: 7; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-fashionxai-research { grid-column: 3; grid-row: 7; }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__col,
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__column {
@@ -9432,7 +9453,7 @@ body.page-breaking-barriers .work-detail,
 body.page-bloom-and-vine .work-detail,
 body.page-makeability-lab .work-detail,
 body.page-nordstrom-rack .work-detail, body.page-ai-healthcare .work-detail,
-body.page-board-games-onboarding .work-detail, body.page-course-registration .work-detail, body.page-assisted-driving-vision .work-detail,
+body.page-board-games-onboarding .work-detail, body.page-course-registration .work-detail, body.page-fashionxai-research .work-detail, body.page-assisted-driving-vision .work-detail,
 body.page-sound-transit .work-detail,
 body.page-inclusive-lab .work-detail {
   position: relative;
@@ -9447,7 +9468,7 @@ body.page-breaking-barriers .work-detail__hero,
 body.page-bloom-and-vine .work-detail__hero,
 body.page-makeability-lab .work-detail__hero,
 body.page-nordstrom-rack .work-detail__hero, body.page-ai-healthcare .work-detail__hero,
-body.page-board-games-onboarding .work-detail__hero, body.page-course-registration .work-detail__hero, body.page-assisted-driving-vision .work-detail__hero,
+body.page-board-games-onboarding .work-detail__hero, body.page-course-registration .work-detail__hero, body.page-fashionxai-research .work-detail__hero, body.page-assisted-driving-vision .work-detail__hero,
 body.page-sound-transit .work-detail__hero,
 body.page-inclusive-lab .work-detail__hero {
   padding: clamp(8px, 1.5vh, 20px) 0 clamp(40px, 6vh, 64px);
@@ -9470,10 +9491,10 @@ body.page-bloom-and-vine .work-detail__hero::after,
 body.page-makeability-lab .work-detail__hero::before,
 body.page-makeability-lab .work-detail__hero::after,
 body.page-nordstrom-rack .work-detail__hero::before, body.page-ai-healthcare .work-detail__hero::before,
-body.page-board-games-onboarding .work-detail__hero::before, body.page-course-registration .work-detail__hero::before, body.page-assisted-driving-vision .work-detail__hero::before,
+body.page-board-games-onboarding .work-detail__hero::before, body.page-course-registration .work-detail__hero::before, body.page-fashionxai-research .work-detail__hero::before, body.page-assisted-driving-vision .work-detail__hero::before,
 body.page-sound-transit .work-detail__hero::before,
 body.page-nordstrom-rack .work-detail__hero::after, body.page-ai-healthcare .work-detail__hero::after,
-body.page-board-games-onboarding .work-detail__hero::after, body.page-course-registration .work-detail__hero::after, body.page-assisted-driving-vision .work-detail__hero::after,
+body.page-board-games-onboarding .work-detail__hero::after, body.page-course-registration .work-detail__hero::after, body.page-fashionxai-research .work-detail__hero::after, body.page-assisted-driving-vision .work-detail__hero::after,
 body.page-sound-transit .work-detail__hero::after,
 body.page-inclusive-lab .work-detail__hero::before,
 body.page-inclusive-lab .work-detail__hero::after {
@@ -9488,7 +9509,7 @@ body.page-breaking-barriers .work-detail__hero-inner,
 body.page-bloom-and-vine .work-detail__hero-inner,
 body.page-makeability-lab .work-detail__hero-inner,
 body.page-nordstrom-rack .work-detail__hero-inner, body.page-ai-healthcare .work-detail__hero-inner,
-body.page-board-games-onboarding .work-detail__hero-inner, body.page-course-registration .work-detail__hero-inner, body.page-assisted-driving-vision .work-detail__hero-inner,
+body.page-board-games-onboarding .work-detail__hero-inner, body.page-course-registration .work-detail__hero-inner, body.page-fashionxai-research .work-detail__hero-inner, body.page-assisted-driving-vision .work-detail__hero-inner,
 body.page-sound-transit .work-detail__hero-inner,
 body.page-inclusive-lab .work-detail__hero-inner,
 body.page-sachacks .work-detail__inner,
@@ -9498,7 +9519,7 @@ body.page-breaking-barriers .work-detail__inner,
 body.page-bloom-and-vine .work-detail__inner,
 body.page-makeability-lab .work-detail__inner,
 body.page-nordstrom-rack .work-detail__inner, body.page-ai-healthcare .work-detail__inner,
-body.page-board-games-onboarding .work-detail__inner, body.page-course-registration .work-detail__inner, body.page-assisted-driving-vision .work-detail__inner,
+body.page-board-games-onboarding .work-detail__inner, body.page-course-registration .work-detail__inner, body.page-fashionxai-research .work-detail__inner, body.page-assisted-driving-vision .work-detail__inner,
 body.page-sound-transit .work-detail__inner,
 body.page-inclusive-lab .work-detail__inner {
   width: 100%;
@@ -9513,7 +9534,7 @@ body.page-breaking-barriers .work-detail__back,
 body.page-bloom-and-vine .work-detail__back,
 body.page-makeability-lab .work-detail__back,
 body.page-nordstrom-rack .work-detail__back, body.page-ai-healthcare .work-detail__back,
-body.page-board-games-onboarding .work-detail__back, body.page-course-registration .work-detail__back, body.page-assisted-driving-vision .work-detail__back,
+body.page-board-games-onboarding .work-detail__back, body.page-course-registration .work-detail__back, body.page-fashionxai-research .work-detail__back, body.page-assisted-driving-vision .work-detail__back,
 body.page-sound-transit .work-detail__back,
 body.page-inclusive-lab .work-detail__back {
   display: inline-flex;
@@ -9537,7 +9558,7 @@ body.page-breaking-barriers .work-detail__back:hover,
 body.page-bloom-and-vine .work-detail__back:hover,
 body.page-makeability-lab .work-detail__back:hover,
 body.page-nordstrom-rack .work-detail__back:hover, body.page-ai-healthcare .work-detail__back:hover,
-body.page-board-games-onboarding .work-detail__back:hover, body.page-course-registration .work-detail__back, body.page-assisted-driving-vision .work-detail__back:hover,
+body.page-board-games-onboarding .work-detail__back:hover, body.page-course-registration .work-detail__back, body.page-fashionxai-research .work-detail__back, body.page-assisted-driving-vision .work-detail__back:hover,
 body.page-sound-transit .work-detail__back:hover,
 body.page-inclusive-lab .work-detail__back:hover,
 body.page-inclusive-lab .work-detail__back:hover {
@@ -9568,7 +9589,7 @@ body.page-breaking-barriers .work-detail__title,
 body.page-bloom-and-vine .work-detail__title,
 body.page-makeability-lab .work-detail__title,
 body.page-nordstrom-rack .work-detail__title, body.page-ai-healthcare .work-detail__title,
-body.page-board-games-onboarding .work-detail__title, body.page-course-registration .work-detail__title, body.page-assisted-driving-vision .work-detail__title,
+body.page-board-games-onboarding .work-detail__title, body.page-course-registration .work-detail__title, body.page-fashionxai-research .work-detail__title, body.page-assisted-driving-vision .work-detail__title,
 body.page-sound-transit .work-detail__title,
 body.page-inclusive-lab .work-detail__title {
   margin: 0;
@@ -9586,7 +9607,7 @@ body.page-breaking-barriers .work-detail__title-line,
 body.page-bloom-and-vine .work-detail__title-line,
 body.page-makeability-lab .work-detail__title-line,
 body.page-nordstrom-rack .work-detail__title-line, body.page-ai-healthcare .work-detail__title-line,
-body.page-board-games-onboarding .work-detail__title-line, body.page-course-registration .work-detail__title-line, body.page-assisted-driving-vision .work-detail__title-line,
+body.page-board-games-onboarding .work-detail__title-line, body.page-course-registration .work-detail__title-line, body.page-fashionxai-research .work-detail__title-line, body.page-assisted-driving-vision .work-detail__title-line,
 body.page-sound-transit .work-detail__title-line,
 body.page-inclusive-lab .work-detail__title-line {
   display: block;
@@ -9601,7 +9622,7 @@ body.page-breaking-barriers .work-detail__title-line--accent,
 body.page-bloom-and-vine .work-detail__title-line--accent,
 body.page-makeability-lab .work-detail__title-line--accent,
 body.page-nordstrom-rack .work-detail__title-line--accent, body.page-ai-healthcare .work-detail__title-line--accent,
-body.page-board-games-onboarding .work-detail__title-line--accent, body.page-course-registration .work-detail__title-line--accent, body.page-assisted-driving-vision .work-detail__title-line--accent,
+body.page-board-games-onboarding .work-detail__title-line--accent, body.page-course-registration .work-detail__title-line--accent, body.page-fashionxai-research .work-detail__title-line--accent, body.page-assisted-driving-vision .work-detail__title-line--accent,
 body.page-sound-transit .work-detail__title-line--accent,
 body.page-inclusive-lab .work-detail__title-line--accent {
   padding-left: clamp(0.35em, 8vw, 1em);
@@ -9642,7 +9663,7 @@ body.page-breaking-barriers .work-detail__subtitle,
 body.page-bloom-and-vine .work-detail__subtitle,
 body.page-makeability-lab .work-detail__subtitle,
 body.page-nordstrom-rack .work-detail__subtitle, body.page-ai-healthcare .work-detail__subtitle,
-body.page-board-games-onboarding .work-detail__subtitle, body.page-course-registration .work-detail__subtitle, body.page-assisted-driving-vision .work-detail__subtitle,
+body.page-board-games-onboarding .work-detail__subtitle, body.page-course-registration .work-detail__subtitle, body.page-fashionxai-research .work-detail__subtitle, body.page-assisted-driving-vision .work-detail__subtitle,
 body.page-sound-transit .work-detail__subtitle,
 body.page-inclusive-lab .work-detail__subtitle {
   margin: clamp(16px, 2.5vh, 24px) 0 0;
@@ -9662,7 +9683,7 @@ body.page-breaking-barriers .work-detail__meta,
 body.page-bloom-and-vine .work-detail__meta,
 body.page-makeability-lab .work-detail__meta,
 body.page-nordstrom-rack .work-detail__meta, body.page-ai-healthcare .work-detail__meta,
-body.page-board-games-onboarding .work-detail__meta, body.page-course-registration .work-detail__meta, body.page-assisted-driving-vision .work-detail__meta,
+body.page-board-games-onboarding .work-detail__meta, body.page-course-registration .work-detail__meta, body.page-fashionxai-research .work-detail__meta, body.page-assisted-driving-vision .work-detail__meta,
 body.page-sound-transit .work-detail__meta,
 body.page-inclusive-lab .work-detail__meta {
   display: grid;
@@ -9679,7 +9700,7 @@ body.page-breaking-barriers .work-detail__meta-item,
 body.page-bloom-and-vine .work-detail__meta-item,
 body.page-makeability-lab .work-detail__meta-item,
 body.page-nordstrom-rack .work-detail__meta-item, body.page-ai-healthcare .work-detail__meta-item,
-body.page-board-games-onboarding .work-detail__meta-item, body.page-course-registration .work-detail__meta-item, body.page-assisted-driving-vision .work-detail__meta-item,
+body.page-board-games-onboarding .work-detail__meta-item, body.page-course-registration .work-detail__meta-item, body.page-fashionxai-research .work-detail__meta-item, body.page-assisted-driving-vision .work-detail__meta-item,
 body.page-sound-transit .work-detail__meta-item,
 body.page-inclusive-lab .work-detail__meta-item {
   margin: 0;
@@ -9692,7 +9713,7 @@ body.page-breaking-barriers .work-detail__meta dt,
 body.page-bloom-and-vine .work-detail__meta dt,
 body.page-makeability-lab .work-detail__meta dt,
 body.page-nordstrom-rack .work-detail__meta dt, body.page-ai-healthcare .work-detail__meta dt,
-body.page-board-games-onboarding .work-detail__meta, body.page-course-registration .work-detail__meta, body.page-assisted-driving-vision .work-detail__meta dt,
+body.page-board-games-onboarding .work-detail__meta, body.page-course-registration .work-detail__meta, body.page-fashionxai-research .work-detail__meta, body.page-assisted-driving-vision .work-detail__meta dt,
 body.page-sound-transit .work-detail__meta dt,
 body.page-inclusive-lab .work-detail__meta dt {
   margin: 0 0 4px;
@@ -9711,7 +9732,7 @@ body.page-breaking-barriers .work-detail__meta dd,
 body.page-bloom-and-vine .work-detail__meta dd,
 body.page-makeability-lab .work-detail__meta dd,
 body.page-nordstrom-rack .work-detail__meta dd, body.page-ai-healthcare .work-detail__meta dd,
-body.page-board-games-onboarding .work-detail__meta, body.page-course-registration .work-detail__meta, body.page-assisted-driving-vision .work-detail__meta dd,
+body.page-board-games-onboarding .work-detail__meta, body.page-course-registration .work-detail__meta, body.page-fashionxai-research .work-detail__meta, body.page-assisted-driving-vision .work-detail__meta dd,
 body.page-sound-transit .work-detail__meta dd,
 body.page-inclusive-lab .work-detail__meta dd {
   margin: 0;
@@ -9728,7 +9749,7 @@ body.page-breaking-barriers .work-detail__actions,
 body.page-bloom-and-vine .work-detail__actions,
 body.page-makeability-lab .work-detail__actions,
 body.page-nordstrom-rack .work-detail__actions, body.page-ai-healthcare .work-detail__actions,
-body.page-board-games-onboarding .work-detail__actions, body.page-course-registration .work-detail__actions, body.page-assisted-driving-vision .work-detail__actions,
+body.page-board-games-onboarding .work-detail__actions, body.page-course-registration .work-detail__actions, body.page-fashionxai-research .work-detail__actions, body.page-assisted-driving-vision .work-detail__actions,
 body.page-sound-transit .work-detail__actions,
 body.page-inclusive-lab .work-detail__actions,
 body.page-sachacks .work-detail__footer-actions,
@@ -9738,7 +9759,7 @@ body.page-breaking-barriers .work-detail__footer-actions,
 body.page-bloom-and-vine .work-detail__footer-actions,
 body.page-makeability-lab .work-detail__footer-actions,
 body.page-nordstrom-rack .work-detail__footer-actions, body.page-ai-healthcare .work-detail__footer-actions,
-body.page-board-games-onboarding .work-detail__footer-actions, body.page-course-registration .work-detail__footer-actions, body.page-assisted-driving-vision .work-detail__footer-actions,
+body.page-board-games-onboarding .work-detail__footer-actions, body.page-course-registration .work-detail__footer-actions, body.page-fashionxai-research .work-detail__footer-actions, body.page-assisted-driving-vision .work-detail__footer-actions,
 body.page-sound-transit .work-detail__footer-actions,
 body.page-inclusive-lab .work-detail__footer-actions,
 body.page-inclusive-lab .work-detail__actions {
@@ -9756,7 +9777,7 @@ body.page-breaking-barriers .work-detail__cta,
 body.page-bloom-and-vine .work-detail__cta,
 body.page-makeability-lab .work-detail__cta,
 body.page-nordstrom-rack .work-detail__cta, body.page-ai-healthcare .work-detail__cta,
-body.page-board-games-onboarding .work-detail__cta, body.page-course-registration .work-detail__cta, body.page-assisted-driving-vision .work-detail__cta,
+body.page-board-games-onboarding .work-detail__cta, body.page-course-registration .work-detail__cta, body.page-fashionxai-research .work-detail__cta, body.page-assisted-driving-vision .work-detail__cta,
 body.page-sound-transit .work-detail__cta,
 body.page-inclusive-lab .work-detail__cta {
   display: inline-flex;
@@ -9783,7 +9804,7 @@ body.page-breaking-barriers .work-detail__cta:hover,
 body.page-bloom-and-vine .work-detail__cta:hover,
 body.page-makeability-lab .work-detail__cta:hover,
 body.page-nordstrom-rack .work-detail__cta:hover, body.page-ai-healthcare .work-detail__cta:hover,
-body.page-board-games-onboarding .work-detail__cta:hover, body.page-course-registration .work-detail__cta, body.page-assisted-driving-vision .work-detail__cta:hover,
+body.page-board-games-onboarding .work-detail__cta:hover, body.page-course-registration .work-detail__cta, body.page-fashionxai-research .work-detail__cta, body.page-assisted-driving-vision .work-detail__cta:hover,
 body.page-sound-transit .work-detail__cta:hover,
 body.page-inclusive-lab .work-detail__cta:hover,
 body.page-inclusive-lab .work-detail__cta:hover {
@@ -9800,7 +9821,7 @@ body.page-breaking-barriers .work-detail__cta--ghost,
 body.page-bloom-and-vine .work-detail__cta--ghost,
 body.page-makeability-lab .work-detail__cta--ghost,
 body.page-nordstrom-rack .work-detail__cta--ghost, body.page-ai-healthcare .work-detail__cta--ghost,
-body.page-board-games-onboarding .work-detail__cta--ghost, body.page-course-registration .work-detail__cta--ghost, body.page-assisted-driving-vision .work-detail__cta--ghost,
+body.page-board-games-onboarding .work-detail__cta--ghost, body.page-course-registration .work-detail__cta--ghost, body.page-fashionxai-research .work-detail__cta--ghost, body.page-assisted-driving-vision .work-detail__cta--ghost,
 body.page-sound-transit .work-detail__cta--ghost,
 body.page-inclusive-lab .work-detail__cta--ghost {
   background: transparent;
@@ -9815,7 +9836,7 @@ body.page-breaking-barriers .work-detail__cta--ghost:hover,
 body.page-bloom-and-vine .work-detail__cta--ghost:hover,
 body.page-makeability-lab .work-detail__cta--ghost:hover,
 body.page-nordstrom-rack .work-detail__cta--ghost:hover, body.page-ai-healthcare .work-detail__cta--ghost:hover,
-body.page-board-games-onboarding .work-detail__cta--ghost:hover, body.page-course-registration .work-detail__cta--ghost, body.page-assisted-driving-vision .work-detail__cta--ghost:hover,
+body.page-board-games-onboarding .work-detail__cta--ghost:hover, body.page-course-registration .work-detail__cta--ghost, body.page-fashionxai-research .work-detail__cta--ghost, body.page-assisted-driving-vision .work-detail__cta--ghost:hover,
 body.page-sound-transit .work-detail__cta--ghost:hover,
 body.page-inclusive-lab .work-detail__cta--ghost:hover,
 body.page-inclusive-lab .work-detail__cta--ghost:hover {
@@ -9831,7 +9852,7 @@ body.page-breaking-barriers .work-detail__section,
 body.page-bloom-and-vine .work-detail__section,
 body.page-makeability-lab .work-detail__section,
 body.page-nordstrom-rack .work-detail__section, body.page-ai-healthcare .work-detail__section,
-body.page-board-games-onboarding .work-detail__section, body.page-course-registration .work-detail__section, body.page-assisted-driving-vision .work-detail__section,
+body.page-board-games-onboarding .work-detail__section, body.page-course-registration .work-detail__section, body.page-fashionxai-research .work-detail__section, body.page-assisted-driving-vision .work-detail__section,
 body.page-sound-transit .work-detail__section,
 body.page-inclusive-lab .work-detail__section {
   padding: clamp(36px, 6vh, 56px) 0 0;
@@ -9846,7 +9867,7 @@ body.page-breaking-barriers .work-detail__heading,
 body.page-bloom-and-vine .work-detail__heading,
 body.page-makeability-lab .work-detail__heading,
 body.page-nordstrom-rack .work-detail__heading, body.page-ai-healthcare .work-detail__heading,
-body.page-board-games-onboarding .work-detail__heading, body.page-course-registration .work-detail__heading, body.page-assisted-driving-vision .work-detail__heading,
+body.page-board-games-onboarding .work-detail__heading, body.page-course-registration .work-detail__heading, body.page-fashionxai-research .work-detail__heading, body.page-assisted-driving-vision .work-detail__heading,
 body.page-sound-transit .work-detail__heading,
 body.page-inclusive-lab .work-detail__heading {
   margin: 0;
@@ -9865,7 +9886,7 @@ body.page-breaking-barriers .work-detail__kicker,
 body.page-bloom-and-vine .work-detail__kicker,
 body.page-makeability-lab .work-detail__kicker,
 body.page-nordstrom-rack .work-detail__kicker, body.page-ai-healthcare .work-detail__kicker,
-body.page-board-games-onboarding .work-detail__kicker, body.page-course-registration .work-detail__kicker, body.page-assisted-driving-vision .work-detail__kicker,
+body.page-board-games-onboarding .work-detail__kicker, body.page-course-registration .work-detail__kicker, body.page-fashionxai-research .work-detail__kicker, body.page-assisted-driving-vision .work-detail__kicker,
 body.page-sound-transit .work-detail__kicker,
 body.page-inclusive-lab .work-detail__kicker {
   margin: clamp(12px, 2vh, 18px) 0 0;
@@ -10377,7 +10398,7 @@ body.page-breaking-barriers .work-detail__lead,
 body.page-bloom-and-vine .work-detail__lead,
 body.page-makeability-lab .work-detail__lead,
 body.page-nordstrom-rack .work-detail__lead, body.page-ai-healthcare .work-detail__lead,
-body.page-board-games-onboarding .work-detail__lead, body.page-course-registration .work-detail__lead, body.page-assisted-driving-vision .work-detail__lead,
+body.page-board-games-onboarding .work-detail__lead, body.page-course-registration .work-detail__lead, body.page-fashionxai-research .work-detail__lead, body.page-assisted-driving-vision .work-detail__lead,
 body.page-sound-transit .work-detail__lead,
 body.page-inclusive-lab .work-detail__lead {
   margin: clamp(12px, 2vh, 16px) 0 0;
@@ -10396,7 +10417,7 @@ body.page-breaking-barriers .work-detail__prose,
 body.page-bloom-and-vine .work-detail__prose,
 body.page-makeability-lab .work-detail__prose,
 body.page-nordstrom-rack .work-detail__prose, body.page-ai-healthcare .work-detail__prose,
-body.page-board-games-onboarding .work-detail__prose, body.page-course-registration .work-detail__prose, body.page-assisted-driving-vision .work-detail__prose,
+body.page-board-games-onboarding .work-detail__prose, body.page-course-registration .work-detail__prose, body.page-fashionxai-research .work-detail__prose, body.page-assisted-driving-vision .work-detail__prose,
 body.page-sound-transit .work-detail__prose,
 body.page-inclusive-lab .work-detail__prose {
   display: flex;
@@ -10413,7 +10434,7 @@ body.page-breaking-barriers .work-detail__prose p,
 body.page-bloom-and-vine .work-detail__prose p,
 body.page-makeability-lab .work-detail__prose p,
 body.page-nordstrom-rack .work-detail__prose p, body.page-ai-healthcare .work-detail__prose p,
-body.page-board-games-onboarding .work-detail__prose p, body.page-course-registration .work-detail__prose p, body.page-assisted-driving-vision .work-detail__prose p,
+body.page-board-games-onboarding .work-detail__prose p, body.page-course-registration .work-detail__prose p, body.page-fashionxai-research .work-detail__prose p, body.page-assisted-driving-vision .work-detail__prose p,
 body.page-sound-transit .work-detail__prose p,
 body.page-inclusive-lab .work-detail__prose p {
   margin: 0;
@@ -10450,7 +10471,7 @@ body.page-breaking-barriers .work-detail__stats,
 body.page-bloom-and-vine .work-detail__stats,
 body.page-makeability-lab .work-detail__stats,
 body.page-nordstrom-rack .work-detail__stats, body.page-ai-healthcare .work-detail__stats,
-body.page-board-games-onboarding .work-detail__stats, body.page-course-registration .work-detail__stats, body.page-assisted-driving-vision .work-detail__stats,
+body.page-board-games-onboarding .work-detail__stats, body.page-course-registration .work-detail__stats, body.page-fashionxai-research .work-detail__stats, body.page-assisted-driving-vision .work-detail__stats,
 body.page-sound-transit .work-detail__stats,
 body.page-inclusive-lab .work-detail__stats {
   display: grid;
@@ -10678,6 +10699,7 @@ body.page-breaking-barriers .work-detail__figure-frame video,
 body.page-bloom-and-vine .work-detail__figure-frame video,
 body.page-makeability-lab .work-detail__figure-frame video,
 body.page-nordstrom-rack .work-detail__figure-frame video, body.page-ai-healthcare .work-detail__figure-frame video,
+body.page-fashionxai-research .work-detail__figure-frame video,
 body.page-sound-transit .work-detail__figure-frame video,
 body.page-inclusive-lab .work-detail__figure-frame video {
   display: block;
@@ -10694,6 +10716,7 @@ body.page-breaking-barriers .work-detail__figure-frame--video,
 body.page-bloom-and-vine .work-detail__figure-frame--video,
 body.page-makeability-lab .work-detail__figure-frame--video,
 body.page-nordstrom-rack .work-detail__figure-frame--video, body.page-ai-healthcare .work-detail__figure-frame--video,
+body.page-fashionxai-research .work-detail__figure-frame--video,
 body.page-sound-transit .work-detail__figure-frame--video,
 body.page-inclusive-lab .work-detail__figure-frame--video {
   max-height: none;
@@ -11124,7 +11147,7 @@ body.page-sound-transit .work-detail__gallery,
 }
 
 /* Work detail — goal cards (Nordstrom Rack; 2-col side-by-side) */
-body.page-nordstrom-rack .work-detail__goals , body.page-ai-healthcare .work-detail__goals , body.page-sound-transit .work-detail__goals , body.page-course-registration .work-detail__goals, body.page-assisted-driving-vision .work-detail__goals {
+body.page-nordstrom-rack .work-detail__goals , body.page-ai-healthcare .work-detail__goals , body.page-sound-transit .work-detail__goals , body.page-course-registration .work-detail__goals, body.page-fashionxai-research .work-detail__goals, body.page-assisted-driving-vision .work-detail__goals {
   margin: clamp(20px, 3vh, 28px) 0 0;
   padding: 0;
   list-style: none;
@@ -11133,7 +11156,7 @@ body.page-nordstrom-rack .work-detail__goals , body.page-ai-healthcare .work-det
 }
 
 @media only screen and (min-width: 768px) {
-  body.page-nordstrom-rack .work-detail__goals , body.page-ai-healthcare .work-detail__goals , body.page-sound-transit .work-detail__goals , body.page-course-registration .work-detail__goals, body.page-assisted-driving-vision .work-detail__goals {
+  body.page-nordstrom-rack .work-detail__goals , body.page-ai-healthcare .work-detail__goals , body.page-sound-transit .work-detail__goals , body.page-course-registration .work-detail__goals, body.page-fashionxai-research .work-detail__goals, body.page-assisted-driving-vision .work-detail__goals {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -12861,7 +12884,7 @@ body.page-nordstrom-rack .work-detail__section,
 body.page-nordstrom-rack-pickup .work-detail__section,
 body.page-sound-transit .work-detail__section,
 body.page-ai-healthcare .work-detail__section,
-body.page-board-games-onboarding .work-detail__section, body.page-course-registration .work-detail__section, body.page-assisted-driving-vision .work-detail__section,
+body.page-board-games-onboarding .work-detail__section, body.page-course-registration .work-detail__section, body.page-fashionxai-research .work-detail__section, body.page-assisted-driving-vision .work-detail__section,
 body.page-inclusive-lab .work-detail__section,
 body.page-inclusive-design-lab .work-detail__section {
   padding: clamp(52px, 8vh, 88px) 0 0;
@@ -12871,7 +12894,7 @@ body.page-nordstrom-rack .work-detail__inner,
 body.page-nordstrom-rack-pickup .work-detail__inner,
 body.page-sound-transit .work-detail__inner,
 body.page-ai-healthcare .work-detail__inner,
-body.page-board-games-onboarding .work-detail__inner, body.page-course-registration .work-detail__inner, body.page-assisted-driving-vision .work-detail__inner,
+body.page-board-games-onboarding .work-detail__inner, body.page-course-registration .work-detail__inner, body.page-fashionxai-research .work-detail__inner, body.page-assisted-driving-vision .work-detail__inner,
 body.page-inclusive-lab .work-detail__inner,
 body.page-inclusive-design-lab .work-detail__inner {
   max-width: 44rem;
@@ -12881,7 +12904,7 @@ body.page-nordstrom-rack .work-detail__hero-inner,
 body.page-nordstrom-rack-pickup .work-detail__hero-inner,
 body.page-sound-transit .work-detail__hero-inner,
 body.page-ai-healthcare .work-detail__hero-inner,
-body.page-board-games-onboarding .work-detail__hero-inner, body.page-course-registration .work-detail__hero-inner, body.page-assisted-driving-vision .work-detail__hero-inner,
+body.page-board-games-onboarding .work-detail__hero-inner, body.page-course-registration .work-detail__hero-inner, body.page-fashionxai-research .work-detail__hero-inner, body.page-assisted-driving-vision .work-detail__hero-inner,
 body.page-inclusive-lab .work-detail__hero-inner,
 body.page-inclusive-design-lab .work-detail__hero-inner {
   max-width: 44rem;
@@ -12891,7 +12914,7 @@ body.page-nordstrom-rack .work-detail__prose,
 body.page-nordstrom-rack-pickup .work-detail__prose,
 body.page-sound-transit .work-detail__prose,
 body.page-ai-healthcare .work-detail__prose,
-body.page-board-games-onboarding .work-detail__prose, body.page-course-registration .work-detail__prose, body.page-assisted-driving-vision .work-detail__prose,
+body.page-board-games-onboarding .work-detail__prose, body.page-course-registration .work-detail__prose, body.page-fashionxai-research .work-detail__prose, body.page-assisted-driving-vision .work-detail__prose,
 body.page-inclusive-lab .work-detail__prose,
 body.page-inclusive-design-lab .work-detail__prose {
   gap: clamp(18px, 2.8vh, 28px);
@@ -12902,7 +12925,7 @@ body.page-nordstrom-rack .work-detail__prose p,
 body.page-nordstrom-rack-pickup .work-detail__prose p,
 body.page-sound-transit .work-detail__prose p,
 body.page-ai-healthcare .work-detail__prose p,
-body.page-board-games-onboarding .work-detail__prose p, body.page-course-registration .work-detail__prose p, body.page-assisted-driving-vision .work-detail__prose p,
+body.page-board-games-onboarding .work-detail__prose p, body.page-course-registration .work-detail__prose p, body.page-fashionxai-research .work-detail__prose p, body.page-assisted-driving-vision .work-detail__prose p,
 body.page-inclusive-lab .work-detail__prose p,
 body.page-inclusive-design-lab .work-detail__prose p {
   line-height: 1.78;
@@ -12912,7 +12935,7 @@ body.page-nordstrom-rack .work-detail__heading,
 body.page-nordstrom-rack-pickup .work-detail__heading,
 body.page-sound-transit .work-detail__heading,
 body.page-ai-healthcare .work-detail__heading,
-body.page-board-games-onboarding .work-detail__heading, body.page-course-registration .work-detail__heading, body.page-assisted-driving-vision .work-detail__heading,
+body.page-board-games-onboarding .work-detail__heading, body.page-course-registration .work-detail__heading, body.page-fashionxai-research .work-detail__heading, body.page-assisted-driving-vision .work-detail__heading,
 body.page-inclusive-lab .work-detail__heading,
 body.page-inclusive-design-lab .work-detail__heading {
   margin-bottom: clamp(4px, 0.8vh, 8px);
@@ -12922,7 +12945,7 @@ body.page-nordstrom-rack .work-detail__kicker,
 body.page-nordstrom-rack-pickup .work-detail__kicker,
 body.page-sound-transit .work-detail__kicker,
 body.page-ai-healthcare .work-detail__kicker,
-body.page-board-games-onboarding .work-detail__kicker, body.page-course-registration .work-detail__kicker, body.page-assisted-driving-vision .work-detail__kicker,
+body.page-board-games-onboarding .work-detail__kicker, body.page-course-registration .work-detail__kicker, body.page-fashionxai-research .work-detail__kicker, body.page-assisted-driving-vision .work-detail__kicker,
 body.page-inclusive-lab .work-detail__kicker,
 body.page-inclusive-design-lab .work-detail__kicker {
   margin-top: clamp(28px, 4vh, 40px);
@@ -12930,7 +12953,7 @@ body.page-inclusive-design-lab .work-detail__kicker {
 
 /* Board Game Onboarding — survey content (flat editorial layout) */
 body.page-board-games-onboarding .work-detail__prose--survey,
-body.page-course-registration .work-detail__prose--survey,
+body.page-course-registration .work-detail__prose--survey, body.page-fashionxai-research .work-detail__prose--survey,
 body.page-assisted-driving-vision .work-detail__prose--survey {
   display: flex;
   flex-direction: column;
@@ -12938,7 +12961,7 @@ body.page-assisted-driving-vision .work-detail__prose--survey {
 }
 
 body.page-board-games-onboarding .work-detail__survey-options,
-body.page-course-registration .work-detail__survey-options,
+body.page-course-registration .work-detail__survey-options, body.page-fashionxai-research .work-detail__survey-options,
 body.page-assisted-driving-vision .work-detail__survey-options {
   list-style: none;
   margin: 0;
@@ -12951,7 +12974,7 @@ body.page-assisted-driving-vision .work-detail__survey-options {
 }
 
 body.page-board-games-onboarding .work-detail__survey-options li,
-body.page-course-registration .work-detail__survey-options li,
+body.page-course-registration .work-detail__survey-options li, body.page-fashionxai-research .work-detail__survey-options li,
 body.page-assisted-driving-vision .work-detail__survey-options li {
   display: flex;
   align-items: flex-start;
@@ -12961,7 +12984,7 @@ body.page-assisted-driving-vision .work-detail__survey-options li {
 }
 
 body.page-board-games-onboarding .work-detail__survey-options li::before,
-body.page-course-registration .work-detail__survey-options li::before,
+body.page-course-registration .work-detail__survey-options li::before, body.page-fashionxai-research .work-detail__survey-options li::before,
 body.page-assisted-driving-vision .work-detail__survey-options li::before {
   content: "";
   flex-shrink: 0;
@@ -12974,19 +12997,19 @@ body.page-assisted-driving-vision .work-detail__survey-options li::before {
 }
 
 body.page-board-games-onboarding .work-detail__survey-options--checkbox li::before,
-body.page-course-registration .work-detail__survey-options--checkbox li::before,
+body.page-course-registration .work-detail__survey-options--checkbox li::before, body.page-fashionxai-research .work-detail__survey-options--checkbox li::before,
 body.page-assisted-driving-vision .work-detail__survey-options--checkbox li::before {
   border-radius: 3px;
 }
 
 body.page-board-games-onboarding .work-detail__survey-options--radio li::before,
-body.page-course-registration .work-detail__survey-options--radio li::before,
+body.page-course-registration .work-detail__survey-options--radio li::before, body.page-fashionxai-research .work-detail__survey-options--radio li::before,
 body.page-assisted-driving-vision .work-detail__survey-options--radio li::before {
   border-radius: 50%;
 }
 
 body.page-board-games-onboarding .work-detail__survey-question,
-body.page-course-registration .work-detail__survey-question,
+body.page-course-registration .work-detail__survey-question, body.page-fashionxai-research .work-detail__survey-question,
 body.page-assisted-driving-vision .work-detail__survey-question {
   display: flex;
   flex-direction: column;
@@ -12999,7 +13022,7 @@ body.page-assisted-driving-vision .work-detail__survey-question {
 }
 
 body.page-board-games-onboarding .work-detail__survey-question > p:first-child,
-body.page-course-registration .work-detail__survey-question > p:first-child,
+body.page-course-registration .work-detail__survey-question > p:first-child, body.page-fashionxai-research .work-detail__survey-question > p:first-child,
 body.page-assisted-driving-vision .work-detail__survey-question > p:first-child {
   margin: 0;
   font-weight: var(--tj-fw-sbold);
@@ -13009,46 +13032,46 @@ body.page-assisted-driving-vision .work-detail__survey-question > p:first-child 
 }
 
 body.page-board-games-onboarding .work-detail__survey-question--optional,
-body.page-course-registration .work-detail__survey-question--optional,
+body.page-course-registration .work-detail__survey-question--optional, body.page-fashionxai-research .work-detail__survey-question--optional,
 body.page-assisted-driving-vision .work-detail__survey-question--optional {
   border-left-color: rgba(255, 255, 255, 0.14);
   background: none;
 }
 
 body.page-board-games-onboarding .work-detail__survey-question--optional > p:first-child,
-body.page-course-registration .work-detail__survey-question--optional > p:first-child,
+body.page-course-registration .work-detail__survey-question--optional > p:first-child, body.page-fashionxai-research .work-detail__survey-question--optional > p:first-child,
 body.page-assisted-driving-vision .work-detail__survey-question--optional > p:first-child {
   font-weight: var(--tj-fw-medium, 500);
   color: rgba(255, 255, 255, 0.68);
 }
 
-body.page-board-games-onboarding .work-detail__survey-part, body.page-course-registration .work-detail__survey-part, body.page-assisted-driving-vision .work-detail__survey-part {
+body.page-board-games-onboarding .work-detail__survey-part, body.page-course-registration .work-detail__survey-part, body.page-fashionxai-research .work-detail__survey-part, body.page-assisted-driving-vision .work-detail__survey-part {
   margin-top: clamp(28px, 4vh, 40px);
   padding-top: clamp(20px, 3vh, 28px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-body.page-board-games-onboarding .work-detail__survey-part-header, body.page-course-registration .work-detail__survey-part-header, body.page-assisted-driving-vision .work-detail__survey-part-header {
+body.page-board-games-onboarding .work-detail__survey-part-header, body.page-course-registration .work-detail__survey-part-header, body.page-fashionxai-research .work-detail__survey-part-header, body.page-assisted-driving-vision .work-detail__survey-part-header {
   margin-bottom: clamp(12px, 1.8vh, 16px);
 }
 
 body.page-board-games-onboarding .work-detail__survey-part-header .work-detail__kicker,
-body.page-course-registration .work-detail__survey-part-header .work-detail__kicker,
+body.page-course-registration .work-detail__survey-part-header .work-detail__kicker, body.page-fashionxai-research .work-detail__survey-part-header .work-detail__kicker,
 body.page-assisted-driving-vision .work-detail__survey-part-header .work-detail__kicker {
   margin: 0;
 }
 
 body.page-board-games-onboarding .work-detail__survey-part-body > p,
-body.page-course-registration .work-detail__survey-part-body > p,
+body.page-course-registration .work-detail__survey-part-body > p, body.page-fashionxai-research .work-detail__survey-part-body > p,
 body.page-assisted-driving-vision .work-detail__survey-part-body > p {
   margin: 0 0 clamp(12px, 1.8vh, 16px);
 }
 
-body.page-board-games-onboarding .work-detail__figure, body.page-course-registration .work-detail__figure, body.page-assisted-driving-vision .work-detail__figure {
+body.page-board-games-onboarding .work-detail__figure, body.page-course-registration .work-detail__figure, body.page-fashionxai-research .work-detail__figure, body.page-assisted-driving-vision .work-detail__figure {
   margin: clamp(16px, 2.5vh, 24px) 0 0;
 }
 
-body.page-board-games-onboarding .work-detail__figure-frame, body.page-course-registration .work-detail__figure-frame, body.page-assisted-driving-vision .work-detail__figure-frame {
+body.page-board-games-onboarding .work-detail__figure-frame, body.page-course-registration .work-detail__figure-frame, body.page-fashionxai-research .work-detail__figure-frame, body.page-assisted-driving-vision .work-detail__figure-frame {
   border-radius: clamp(10px, 1.5vw, 14px);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -13056,7 +13079,7 @@ body.page-board-games-onboarding .work-detail__figure-frame, body.page-course-re
 }
 
 body.page-board-games-onboarding .work-detail__figure-frame img,
-body.page-course-registration .work-detail__figure-frame img,
+body.page-course-registration .work-detail__figure-frame img, body.page-fashionxai-research .work-detail__figure-frame img,
 body.page-assisted-driving-vision .work-detail__figure-frame img {
   display: block;
   width: 100%;
@@ -13064,13 +13087,13 @@ body.page-assisted-driving-vision .work-detail__figure-frame img {
 }
 
 body.page-board-games-onboarding .work-detail__survey-finding .work-detail__kicker,
-body.page-course-registration .work-detail__survey-finding .work-detail__kicker,
+body.page-course-registration .work-detail__survey-finding .work-detail__kicker, body.page-fashionxai-research .work-detail__survey-finding .work-detail__kicker,
 body.page-assisted-driving-vision .work-detail__survey-finding .work-detail__kicker {
   margin: 0 0 clamp(8px, 1.2vh, 10px);
 }
 
 body.page-board-games-onboarding .work-detail__survey-finding > p,
-body.page-course-registration .work-detail__survey-finding > p,
+body.page-course-registration .work-detail__survey-finding > p, body.page-fashionxai-research .work-detail__survey-finding > p,
 body.page-assisted-driving-vision .work-detail__survey-finding > p {
   margin: 0;
 }
@@ -13081,7 +13104,7 @@ body.page-nordstrom-rack-pickup .work-detail__survey-finding,
 body.page-inclusive-lab .work-detail__survey-finding,
 body.page-inclusive-design-lab .work-detail__survey-finding,
 body.page-board-games-onboarding .work-detail__survey-finding,
-body.page-course-registration .work-detail__survey-finding, body.page-assisted-driving-vision .work-detail__survey-finding {
+body.page-course-registration .work-detail__survey-finding, body.page-fashionxai-research .work-detail__survey-finding, body.page-assisted-driving-vision .work-detail__survey-finding {
   padding: 0;
   border: none;
   border-radius: 0;
@@ -13094,7 +13117,7 @@ body.page-nordstrom-rack-pickup .work-detail__survey-findings,
 body.page-inclusive-lab .work-detail__survey-findings,
 body.page-inclusive-design-lab .work-detail__survey-findings,
 body.page-board-games-onboarding .work-detail__survey-findings,
-body.page-course-registration .work-detail__survey-findings, body.page-assisted-driving-vision .work-detail__survey-findings {
+body.page-course-registration .work-detail__survey-findings, body.page-fashionxai-research .work-detail__survey-findings, body.page-assisted-driving-vision .work-detail__survey-findings {
   display: flex;
   flex-direction: column;
   gap: clamp(28px, 4vh, 40px);
@@ -13504,7 +13527,7 @@ body.page-ai-healthcare .work-detail__survey-finding,
 body.page-inclusive-lab .work-detail__survey-finding,
 body.page-inclusive-design-lab .work-detail__survey-finding,
 body.page-board-games-onboarding .work-detail__survey-finding,
-body.page-course-registration .work-detail__survey-finding, body.page-assisted-driving-vision .work-detail__survey-finding,
+body.page-course-registration .work-detail__survey-finding, body.page-fashionxai-research .work-detail__survey-finding, body.page-assisted-driving-vision .work-detail__survey-finding,
 body.page-nordstrom-rack .work-detail__research-question,
 body.page-nordstrom-rack-pickup .work-detail__research-question,
 body.page-sound-transit .work-detail__research-question,
@@ -13779,7 +13802,7 @@ body.page-ai-healthcare .work-detail__survey-question,
 body.page-inclusive-lab .work-detail__survey-question,
 body.page-inclusive-design-lab .work-detail__survey-question,
 body.page-board-games-onboarding .work-detail__survey-question,
-body.page-course-registration .work-detail__survey-question,
+body.page-course-registration .work-detail__survey-question, body.page-fashionxai-research .work-detail__survey-question,
 body.page-assisted-driving-vision .work-detail__survey-question {
   padding: clamp(4px, 0.7vh, 7px) 0 clamp(4px, 0.7vh, 7px) clamp(10px, 1.4vw, 12px);
   border: none;
@@ -13795,7 +13818,7 @@ body.page-ai-healthcare .work-detail__survey-question--optional,
 body.page-inclusive-lab .work-detail__survey-question--optional,
 body.page-inclusive-design-lab .work-detail__survey-question--optional,
 body.page-board-games-onboarding .work-detail__survey-question--optional,
-body.page-course-registration .work-detail__survey-question--optional,
+body.page-course-registration .work-detail__survey-question--optional, body.page-fashionxai-research .work-detail__survey-question--optional,
 body.page-assisted-driving-vision .work-detail__survey-question--optional {
   border-left-color: rgba(255, 255, 255, 0.14);
 }
@@ -13845,7 +13868,7 @@ body.page-ai-healthcare .work-detail__survey-findings,
 body.page-inclusive-lab .work-detail__survey-findings,
 body.page-inclusive-design-lab .work-detail__survey-findings,
 body.page-board-games-onboarding .work-detail__survey-findings,
-body.page-course-registration .work-detail__survey-findings, body.page-assisted-driving-vision .work-detail__survey-findings {
+body.page-course-registration .work-detail__survey-findings, body.page-fashionxai-research .work-detail__survey-findings, body.page-assisted-driving-vision .work-detail__survey-findings {
   display: flex;
   flex-direction: column;
   gap: clamp(28px, 4vh, 40px);
@@ -13914,7 +13937,7 @@ body.page-ai-healthcare .work-detail__prose--survey,
 body.page-inclusive-lab .work-detail__prose--survey,
 body.page-inclusive-design-lab .work-detail__prose--survey,
 body.page-board-games-onboarding .work-detail__prose--survey,
-body.page-course-registration .work-detail__prose--survey,
+body.page-course-registration .work-detail__prose--survey, body.page-fashionxai-research .work-detail__prose--survey,
 body.page-assisted-driving-vision .work-detail__prose--survey {
   display: flex;
   flex-direction: column;
