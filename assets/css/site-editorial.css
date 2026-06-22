@@ -877,18 +877,6 @@ body.page-home .home-landing__hero-statement--editorial::before {
   opacity: 0.95;
 }
 
-body.page-home .home-landing__hero-statement--editorial::after {
-  content: "";
-  display: block;
-  width: clamp(52px, 8vw, 96px);
-  height: 3px;
-  margin-top: clamp(20px, 2.8vh, 32px);
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--site-accent) 0%, var(--site-accent-violet) 100%);
-  box-shadow: 0 0 18px rgba(255, 77, 184, 0.35);
-  opacity: 0.88;
-}
-
 body.page-home .home-landing__statement-highlight {
   display: inline;
   font: inherit;
@@ -2037,7 +2025,7 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
     order: 10;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-survey {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey {
     order: 11;
   }
 
@@ -2053,15 +2041,15 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
     order: 14;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-interviews {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-survey {
     order: 15;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-fly-on-wall {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-interviews {
     order: 16;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-fly-on-wall {
     order: 17;
   }
 
@@ -8482,9 +8470,16 @@ body.page-about.site-editorial .about-overview .site-meta-panel {
 
 /* About page — dance reels */
 body.page-about.site-editorial .about-dance {
-  margin-top: clamp(40px, 5vh, 64px);
-  padding-top: clamp(24px, 3.5vh, 40px);
+  margin-top: clamp(24px, 3vh, 36px);
+  padding-top: clamp(12px, 1.8vh, 20px);
+  padding-bottom: clamp(4px, 0.8vh, 8px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.page-home.page-about.site-editorial .about-dance {
+  margin-top: clamp(16px, 2vh, 28px);
+  padding-top: clamp(8px, 1.2vh, 14px);
+  padding-bottom: 0;
 }
 
 /* About page — community & startup (editorial subsections) */
@@ -8510,7 +8505,7 @@ body.page-about.site-editorial .about-dance__header {
 }
 
 body.page-about.site-editorial .about-dance__header {
-  margin-bottom: clamp(12px, 2vh, 20px);
+  margin-bottom: clamp(8px, 1.2vh, 12px);
 }
 
 body.page-about.site-editorial .about-page__section-heading,
@@ -8595,18 +8590,26 @@ body.page-about.site-editorial .community-gallery__caption {
 body.page-about.site-editorial .about-dance__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(16px, 2.5vw, 24px);
+  gap: clamp(8px, 1.2vw, 12px);
+  max-width: 100%;
 }
 
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 520px) {
   body.page-about.site-editorial .about-dance__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) {
   body.page-about.site-editorial .about-dance__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  body.page-about.site-editorial .about-dance__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(8px, 1vw, 10px);
   }
 }
 
@@ -8614,7 +8617,7 @@ body.page-about.site-editorial .about-dance__reel {
   display: block;
   text-decoration: none;
   color: inherit;
-  border-radius: clamp(14px, 1.6vw, 18px);
+  border-radius: clamp(8px, 1vw, 12px);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
@@ -8625,13 +8628,13 @@ body.page-about.site-editorial .about-dance__reel:focus-visible {
 
 @media (hover: hover) {
   body.page-about.site-editorial .about-dance__reel:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
   }
 
   body.page-about.site-editorial .about-dance__reel:hover .about-dance__reel-frame {
     border-color: rgba(255, 77, 184, 0.45);
     box-shadow:
-      0 20px 48px rgba(0, 0, 0, 0.4),
+      0 12px 28px rgba(0, 0, 0, 0.35),
       0 0 0 1px rgba(255, 77, 184, 0.12);
   }
 }
@@ -8639,14 +8642,30 @@ body.page-about.site-editorial .about-dance__reel:focus-visible {
 body.page-about.site-editorial .about-dance__reel-frame {
   display: block;
   width: 100%;
+  max-width: 200px;
+  margin-inline: auto;
   position: relative;
-  aspect-ratio: 9 / 16;
-  border-radius: clamp(14px, 1.6vw, 18px);
+  aspect-ratio: 9 / 14;
+  max-height: clamp(160px, 20vw, 220px);
+  border-radius: clamp(8px, 1vw, 12px);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.04);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+@media only screen and (min-width: 768px) {
+  body.page-about.site-editorial .about-dance__reel-frame {
+    max-width: none;
+    max-height: clamp(180px, 22vw, 240px);
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  body.page-about.site-editorial .about-dance__reel-frame {
+    max-height: clamp(170px, 18vw, 210px);
+  }
 }
 
 body.page-about.site-editorial .about-dance__reel-video,
