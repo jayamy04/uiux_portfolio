@@ -2564,6 +2564,147 @@ body.page-home.site-editorial .home-trailing__container .home-trailing__block--c
   padding-top: clamp(40px, 6vh, 64px);
 }
 
+body.page-home.site-editorial .home-cv-header,
+body.page-home.site-editorial .home-trailing .home-cv-header.about-page-header:has(.about-page__section-heading) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px 24px;
+  max-width: none;
+  margin-bottom: clamp(20px, 3vh, 32px);
+}
+
+body.page-home.site-editorial .home-trailing__block--cv .about-overview {
+  margin-top: 0;
+}
+
+body.page-home.site-editorial .home-trailing__block--cv .about-overview__header {
+  margin-bottom: clamp(16px, 2.5vh, 24px);
+}
+
+/* Home CV — résumé-style overview panel */
+body.page-home.site-editorial .home-trailing__block--cv .site-meta-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 1.8vh, 18px) clamp(36px, 5vw, 64px);
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: clamp(18px, 2.4vh, 26px) clamp(22px, 3vw, 36px);
+  border-radius: 18px;
+  background:
+    linear-gradient(152deg, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.012) 48%, rgba(180, 122, 255, 0.03) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 28px 56px -36px rgba(0, 0, 0, 0.62);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  position: relative;
+  isolation: isolate;
+}
+
+body.page-home.site-editorial .home-trailing__block--cv .site-meta-panel__row {
+  display: grid;
+  grid-template-columns: minmax(6rem, 8.5rem) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(6px, 0.8vh, 8px) clamp(16px, 2.2vw, 28px);
+  margin: 0;
+  padding-bottom: clamp(8px, 1vh, 11px);
+}
+
+body.page-home.site-editorial .home-trailing__block--cv .site-meta-panel__row:last-child {
+  padding-bottom: 0;
+}
+
+body.page-home.site-editorial .home-trailing__block--cv .site-meta-panel__label {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding-top: 5px;
+  color: var(--site-accent);
+  font-family: var(--tj-ff-body);
+  font-size: clamp(0.6875rem, 0.66rem + 0.18vw, 0.75rem);
+  font-weight: 600;
+  font-variant: all-small-caps;
+  letter-spacing: 0.14em;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+body.page-home.site-editorial .home-trailing__block--cv .site-meta-panel__label::before {
+  content: "";
+  flex-shrink: 0;
+  width: 5px;
+  height: 5px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--site-accent) 0%, var(--site-accent-violet) 100%);
+  box-shadow: 0 0 10px rgba(255, 77, 184, 0.55);
+}
+
+body.page-home.site-editorial .home-trailing__block--cv .site-meta-panel__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: flex-start;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-family: var(--tj-ff-body);
+  font-size: clamp(0.8125rem, 0.78rem + 0.22vw, 0.9375rem);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  text-wrap: pretty;
+}
+
+body.page-home.site-editorial .home-trailing__block--cv .site-meta-panel__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 1.875rem;
+  max-width: 100%;
+  padding: 5px 12px;
+  border-radius: 999px;
+  white-space: normal;
+  text-align: center;
+  font-size: clamp(0.75rem, 0.72rem + 0.15vw, 0.875rem);
+  line-height: 1.35;
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.88);
+}
+
+body.page-home.site-editorial .home-trailing__block--cv .site-meta-panel__item + .site-meta-panel__item::before {
+  content: none;
+  display: none;
+}
+
+@media (max-width: 991px) {
+  body.page-home.site-editorial .home-trailing__block--cv .site-meta-panel {
+    grid-template-columns: 1fr;
+    padding: clamp(16px, 4vw, 22px);
+  }
+
+  body.page-home.site-editorial .home-trailing__block--cv .site-meta-panel__row {
+    grid-template-columns: minmax(5.5rem, 7.5rem) minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  body.page-home.site-editorial .home-trailing__block--cv .site-meta-panel__row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding-bottom: clamp(14px, 3vw, 18px);
+  }
+
+  body.page-home.site-editorial .home-trailing__block--cv .site-meta-panel__label {
+    padding-top: 0;
+  }
+}
+
 body.page-home.site-editorial .home-project-grid--live .ibm-logo {
   display: block;
   width: auto;
@@ -14103,31 +14244,3 @@ body.page-assisted-driving-vision .work-detail__figure-frame {
   border-radius: 0;
   background: none;
 }
-
-/* Home CV — flat overview (no meta panel container box) */
-body.page-home.site-editorial .home-trailing__block--cv .site-meta-panel {
-  padding: 0;
-  border-radius: 0;
-  background: none;
-  box-shadow: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
-
-body.page-home.site-editorial .home-trailing__block--cv .site-meta-panel__item {
-  background: none;
-  padding: 0;
-  min-height: 0;
-  border-radius: 0;
-}
-
-body.page-home.site-editorial .home-trailing__block--cv .site-meta-panel__items {
-  gap: 0.35em 0.65em;
-}
-
-body.page-home.site-editorial .home-trailing__block--cv .site-meta-panel__item + .site-meta-panel__item::before {
-  content: "·";
-  margin-right: 0.65em;
-  color: rgba(255, 255, 255, 0.38);
-}
-
