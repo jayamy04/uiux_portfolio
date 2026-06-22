@@ -1,6 +1,16 @@
-# Chatbase widget avatar — manual dashboard update
+# Chatbase widget avatar
 
-The chat widget (blue **Amy Seunghyun Lee** tab) is loaded by **Chatbase** outside this repo. A full grep of all HTML/JS files found **no Chatbase embed script** in the repository — the avatar URL is configured in the Chatbase dashboard, not in site source.
+The chat widget (blue **Amy Seunghyun Lee** tab) is loaded by **Chatbase** outside this repo. A full grep of all HTML/JS files found **no Chatbase embed script** in the repository (confirmed on live `home.html` as well) — the widget and its default avatar URL are configured in the Chatbase dashboard, not in site source.
+
+## DOM override (all pages)
+
+`assets/js/chat-avatar-fix.js` is included on every page that loads `main.js`. A `MutationObserver` watches for Chatbase widget avatar `<img>` nodes and forces:
+
+```
+https://seunghyun-lee.com/assets/images/about/amy-chat-about.png?v=20260622about
+```
+
+This fixes the launcher/tab photo immediately without waiting for a dashboard CDN update. The dashboard URL below should still be updated when possible.
 
 ## Source of truth
 
