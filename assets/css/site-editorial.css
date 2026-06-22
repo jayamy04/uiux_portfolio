@@ -984,11 +984,8 @@ body.page-about .site-meta-panel {
   border-radius: 18px;
   background:
     linear-gradient(152deg, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.012) 48%, rgba(180, 122, 255, 0.03) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    0 28px 56px -36px rgba(0, 0, 0, 0.62),
-    0 0 0 1px rgba(255, 77, 184, 0.05);
+  border: 0;
+  box-shadow: 0 28px 56px -36px rgba(0, 0, 0, 0.62);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   position: relative;
@@ -996,42 +993,14 @@ body.page-about .site-meta-panel {
 }
 
 body.page-about .site-meta-panel::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: clamp(22px, 3vw, 36px);
-  right: clamp(22px, 3vw, 36px);
-  height: 1px;
-  border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 77, 184, 0.55) 18%,
-    rgba(180, 122, 255, 0.45) 82%,
-    transparent 100%
-  );
-  opacity: 0.75;
-  pointer-events: none;
+  content: none;
+  display: none;
 }
 
 @media only screen and (min-width: 992px) {
   body.page-about .site-meta-panel::after {
-    content: "";
-    position: absolute;
-    top: clamp(18px, 2.4vh, 26px);
-    bottom: clamp(18px, 2.4vh, 26px);
-    left: 50%;
-    width: 1px;
-    transform: translateX(-50%);
-    background: linear-gradient(
-      180deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.07) 16%,
-      rgba(255, 77, 184, 0.12) 50%,
-      rgba(255, 255, 255, 0.07) 84%,
-      transparent 100%
-    );
-    pointer-events: none;
+    content: none;
+    display: none;
   }
 }
 
@@ -1042,12 +1011,11 @@ body.page-about .site-meta-panel__row {
   gap: clamp(6px, 0.8vh, 8px) clamp(16px, 2.2vw, 28px);
   margin: 0;
   padding-bottom: clamp(8px, 1vh, 11px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 0;
 }
 
 body.page-about .site-meta-panel__row:last-child {
   padding-bottom: 0;
-  border-bottom: 0;
 }
 
 @media only screen and (min-width: 992px) {
@@ -1115,9 +1083,9 @@ body.page-about .site-meta-panel__item {
   text-wrap: pretty;
   overflow-wrap: break-word;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 0;
   color: rgba(255, 255, 255, 0.88);
-  transition: border-color 0.25s ease, background-color 0.25s ease;
+  transition: background-color 0.25s ease;
 }
 
 body.page-about .site-meta-panel__sep {
@@ -1839,16 +1807,14 @@ body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb {
   background:
     radial-gradient(ellipse 72% 58% at 50% 28%, rgba(255, 77, 184, 0.11) 0%, transparent 58%),
     radial-gradient(ellipse 48% 42% at 82% 72%, rgba(180, 122, 255, 0.07) 0%, transparent 52%),
-    linear-gradient(165deg, #1a1428 0%, #120f1c 42%, #0a0812 100%);
+    linear-gradient(165deg, #1a1428 0%, #120f1c 55%, rgba(255, 255, 255, 0.02) 100%);
   box-shadow: none;
   transition: box-shadow 0.4s ease;
 }
 
 body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:hover .home-hero-projects__thumb,
 body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:focus-visible .home-hero-projects__thumb {
-  box-shadow:
-    0 0 0 1px rgba(255, 77, 184, 0.28),
-    0 8px 32px rgba(0, 0, 0, 0.38);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.38);
 }
 
 body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb img,
@@ -2063,36 +2029,40 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
     order: 8;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-course-registration {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack-interviews {
     order: 9;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-survey {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-course-registration {
     order: 10;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-survey {
     order: 11;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab-poster {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab {
     order: 12;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab-poster {
     order: 13;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-interviews {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare {
     order: 14;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-fly-on-wall {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-interviews {
     order: 15;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-fly-on-wall {
     order: 16;
+  }
+
+  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey {
+    order: 17;
   }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {
@@ -8512,8 +8482,8 @@ body.page-about.site-editorial .about-overview .site-meta-panel {
 
 /* About page — dance reels */
 body.page-about.site-editorial .about-dance {
-  margin-top: clamp(56px, 8vh, 96px);
-  padding-top: clamp(40px, 6vh, 64px);
+  margin-top: clamp(40px, 5vh, 64px);
+  padding-top: clamp(24px, 3.5vh, 40px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -8537,6 +8507,10 @@ body.page-about.site-editorial .about-startup__header,
 body.page-about.site-editorial .about-dance__header {
   max-width: 36rem;
   margin-bottom: clamp(20px, 3vh, 32px);
+}
+
+body.page-about.site-editorial .about-dance__header {
+  margin-bottom: clamp(12px, 2vh, 20px);
 }
 
 body.page-about.site-editorial .about-page__section-heading,

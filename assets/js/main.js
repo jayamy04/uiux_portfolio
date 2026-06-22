@@ -2429,10 +2429,12 @@ const BOARD_GAMES_SECTION_HASHES = new Set([
   "board-games-interview-heading",
   "board-games-fly-on-wall-heading",
 ]);
+const NORDSTROM_RACK_INTERVIEWS_HASH = "nordstrom-interviews-heading";
 const CASE_STUDY_LANDING_HASHES = new Set([
   ...SOUND_TRANSIT_SECTION_HASHES,
   ...BOARD_GAMES_SECTION_HASHES,
   NORDSTROM_PICKUP_RECOMMENDATIONS_HASH,
+  NORDSTROM_RACK_INTERVIEWS_HASH,
 ]);
 const CASE_STUDY_DOCUMENT_TITLE_SUFFIX = " — Amy Seunghyun Lee";
 
