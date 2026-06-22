@@ -12199,7 +12199,8 @@ body.page-inclusive-design-lab .work-detail__survey-part-body ul:not(.work-detai
 }
 
 body.page-inclusive-lab .work-detail__interview-guidelines,
-body.page-inclusive-design-lab .work-detail__interview-guidelines {
+body.page-inclusive-design-lab .work-detail__interview-guidelines,
+body.page-assisted-driving-vision .work-detail__interview-guidelines {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -12209,7 +12210,8 @@ body.page-inclusive-design-lab .work-detail__interview-guidelines {
 }
 
 body.page-inclusive-lab .work-detail__interview-guidelines li,
-body.page-inclusive-design-lab .work-detail__interview-guidelines li {
+body.page-inclusive-design-lab .work-detail__interview-guidelines li,
+body.page-assisted-driving-vision .work-detail__interview-guidelines li {
   position: relative;
   margin: 0;
   padding: clamp(8px, 1vh, 10px) clamp(10px, 1.4vw, 12px) clamp(8px, 1vh, 10px) clamp(26px, 2.2vw, 30px);
@@ -12222,7 +12224,8 @@ body.page-inclusive-design-lab .work-detail__interview-guidelines li {
 }
 
 body.page-inclusive-lab .work-detail__interview-guidelines li::before,
-body.page-inclusive-design-lab .work-detail__interview-guidelines li::before {
+body.page-inclusive-design-lab .work-detail__interview-guidelines li::before,
+body.page-assisted-driving-vision .work-detail__interview-guidelines li::before {
   content: "→";
   position: absolute;
   left: clamp(10px, 1.2vw, 12px);
@@ -13456,7 +13459,8 @@ body.page-nordstrom-rack-pickup .work-detail__interview-guidelines,
 body.page-sound-transit .work-detail__interview-guidelines,
 body.page-ai-healthcare .work-detail__interview-guidelines,
 body.page-inclusive-lab .work-detail__interview-guidelines,
-body.page-inclusive-design-lab .work-detail__interview-guidelines {
+body.page-inclusive-design-lab .work-detail__interview-guidelines,
+body.page-assisted-driving-vision .work-detail__interview-guidelines {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -13470,7 +13474,8 @@ body.page-nordstrom-rack-pickup .work-detail__interview-guidelines li,
 body.page-sound-transit .work-detail__interview-guidelines li,
 body.page-ai-healthcare .work-detail__interview-guidelines li,
 body.page-inclusive-lab .work-detail__interview-guidelines li,
-body.page-inclusive-design-lab .work-detail__interview-guidelines li {
+body.page-inclusive-design-lab .work-detail__interview-guidelines li,
+body.page-assisted-driving-vision .work-detail__interview-guidelines li {
   position: relative;
   margin: 0;
   padding: clamp(8px, 1vh, 10px) clamp(10px, 1.4vw, 12px) clamp(8px, 1vh, 10px) clamp(26px, 2.2vw, 30px);
@@ -13487,7 +13492,8 @@ body.page-nordstrom-rack-pickup .work-detail__interview-guidelines li::before,
 body.page-sound-transit .work-detail__interview-guidelines li::before,
 body.page-ai-healthcare .work-detail__interview-guidelines li::before,
 body.page-inclusive-lab .work-detail__interview-guidelines li::before,
-body.page-inclusive-design-lab .work-detail__interview-guidelines li::before {
+body.page-inclusive-design-lab .work-detail__interview-guidelines li::before,
+body.page-assisted-driving-vision .work-detail__interview-guidelines li::before {
   content: "→";
   position: absolute;
   left: clamp(10px, 1.2vw, 12px);
@@ -13501,7 +13507,8 @@ body.page-nordstrom-rack-pickup .work-detail__interview-guidelines li::marker,
 body.page-sound-transit .work-detail__interview-guidelines li::marker,
 body.page-ai-healthcare .work-detail__interview-guidelines li::marker,
 body.page-inclusive-lab .work-detail__interview-guidelines li::marker,
-body.page-inclusive-design-lab .work-detail__interview-guidelines li::marker {
+body.page-inclusive-design-lab .work-detail__interview-guidelines li::marker,
+body.page-assisted-driving-vision .work-detail__interview-guidelines li::marker {
   content: none;
 }
 
@@ -13814,5 +13821,50 @@ body.page-ai-healthcare .work-detail__usability-finding--results .work-detail__k
 body.page-inclusive-lab .work-detail__usability-finding--results .work-detail__kicker,
 body.page-inclusive-design-lab .work-detail__usability-finding--results .work-detail__kicker {
   margin-top: 0;
+}
+
+/* Assisted Driving — interview guide (flat editorial, no card boxes) */
+body.page-assisted-driving-vision .work-detail__interview-guide {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 4vh, 40px);
+  margin-top: clamp(16px, 2.5vh, 24px);
+}
+
+body.page-assisted-driving-vision .interview-guide__block {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.8vh, 18px);
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+body.page-assisted-driving-vision .interview-guide__block-header {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+body.page-assisted-driving-vision .interview-guide__block-body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 2vh, 20px);
+}
+
+body.page-assisted-driving-vision .interview-guide__block-body > p {
+  margin: 0;
+  font-size: clamp(1.0625rem, 1.1vw, 1.125rem);
+  line-height: 1.78;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+body.page-assisted-driving-vision .work-detail__lead {
+  margin: 0 0 clamp(12px, 1.8vh, 18px);
+  font-size: clamp(0.9375rem, 1.05vw, 1rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.62);
 }
 
