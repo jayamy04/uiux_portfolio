@@ -8799,32 +8799,26 @@ body.page-about.site-editorial .about-overview .site-meta-panel {
   }
 }
 
-/* About page — dance reels */
-body.page-about.site-editorial .about-dance {
-  margin-top: clamp(24px, 3vh, 36px);
-  padding-top: clamp(12px, 1.8vh, 20px);
-  padding-bottom: clamp(4px, 0.8vh, 8px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-body.page-home.page-about.site-editorial .about-dance {
-  margin-top: clamp(16px, 2vh, 28px);
-  padding-top: clamp(8px, 1.2vh, 14px);
-  padding-bottom: 0;
-}
-
-/* About page — community & startup (editorial subsections) */
+/* About page — community, startup & dance (equal vertical rhythm) */
 body.page-about.site-editorial .about-community,
-body.page-about.site-editorial .about-startup {
-  margin-top: clamp(56px, 8vh, 96px);
-  padding-top: clamp(40px, 6vh, 64px);
+body.page-about.site-editorial .about-startup,
+body.page-about.site-editorial .about-dance {
+  margin-top: clamp(48px, 7vh, 72px);
+  padding-top: clamp(24px, 3.5vh, 40px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Home — no section divider lines between Work / About / CV / Contact or subsections */
-body.page-home.page-about.site-editorial .about-dance,
+body.page-about.site-editorial .about-dance {
+  padding-bottom: clamp(4px, 0.8vh, 8px);
+}
+
+/* Home — no section divider lines; equal gaps only via margin */
 body.page-home.page-about.site-editorial .about-community,
-body.page-home.page-about.site-editorial .about-startup {
+body.page-home.page-about.site-editorial .about-startup,
+body.page-home.page-about.site-editorial .about-dance {
+  margin-top: clamp(48px, 7vh, 72px);
+  padding-top: 0;
+  padding-bottom: 0;
   border-top: none;
 }
 
