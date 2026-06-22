@@ -2075,43 +2075,19 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
 @media only screen and (min-width: 768px) {
   body.page-home .home-hero-projects__grid--editorial {
     --home-projects-gap: clamp(20px, 2.2vw, 28px);
+    display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: var(--home-projects-gap);
+    row-gap: 0;
     align-items: start;
-    gap: clamp(20px, 2vw, 32px);
   }
 
-  /* Balanced 3-column placement — row 1: IBM | Sound Transit | IDL */
-  body.page-home .home-hero-projects__grid--editorial #hero-project-ibm { grid-column: 1; grid-row: 1; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit { grid-column: 2; grid-row: 1; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab { grid-column: 3; grid-row: 1; }
-
-  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack-pickup { grid-column: 1; grid-row: 2; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-usability { grid-column: 2; grid-row: 2; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab-poster { grid-column: 3; grid-row: 2; }
-
-  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack-pickup-recommendations { grid-column: 1; grid-row: 3; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-stakeholder-interviews { grid-column: 2; grid-row: 3; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-makeability { grid-column: 3; grid-row: 3; }
-
-  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack { grid-column: 1; grid-row: 4; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-report { grid-column: 2; grid-row: 4; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-survey { grid-column: 3; grid-row: 4; }
-
-  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack-interviews { grid-column: 1; grid-row: 5; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-presentation-video { grid-column: 2; grid-row: 5; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-interviews { grid-column: 3; grid-row: 5; }
-
-  body.page-home .home-hero-projects__grid--editorial #hero-project-course-registration { grid-column: 1; grid-row: 6; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare { grid-column: 2; grid-row: 6; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-fly-on-wall { grid-column: 3; grid-row: 6; }
-
-  body.page-home .home-hero-projects__grid--editorial #hero-project-assisted-driving-vision { grid-column: 1; grid-row: 7; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey { grid-column: 2; grid-row: 7; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-fashionxai-research { grid-column: 3; grid-row: 7; }
-
-  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__col,
+  /* Independent flex columns — equal vertical gap between cards (no shared row tracks) */
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__column {
-    display: contents;
+    display: flex;
+    flex-direction: column;
+    gap: var(--home-projects-gap);
+    min-width: 0;
   }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-body {
@@ -2133,8 +2109,36 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
 
 @media only screen and (max-width: 767px) {
   body.page-home .home-hero-projects__grid--editorial {
+    display: flex;
+    flex-direction: column;
     gap: var(--home-projects-gap);
   }
+
+  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__column {
+    display: contents;
+  }
+
+  body.page-home .home-hero-projects__grid--editorial #hero-project-ibm { order: 1; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit { order: 2; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-usability { order: 3; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-stakeholder-interviews { order: 4; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-report { order: 5; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit-presentation-video { order: 6; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab { order: 7; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-design-lab-poster { order: 8; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-makeability { order: 9; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare { order: 10; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack-pickup { order: 11; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack-pickup-recommendations { order: 12; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack { order: 13; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack-interviews { order: 14; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-course-registration { order: 15; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-survey { order: 16; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-interviews { order: 17; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-fly-on-wall { order: 18; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-fashionxai-research { order: 19; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-assisted-driving-vision { order: 20; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey { order: 21; }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {
     border-radius: 12px;
@@ -2170,11 +2174,10 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
 
 @media only screen and (min-width: 992px) {
   body.page-home .home-hero-projects__grid--editorial {
-    --home-projects-gap: clamp(22px, 2vw, 32px);
-    gap: clamp(24px, 2.4vw, 36px);
+    --home-projects-gap: clamp(24px, 2.4vw, 36px);
+    column-gap: var(--home-projects-gap);
   }
 
-  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__col,
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__column {
     gap: var(--home-projects-gap);
   }
