@@ -1913,6 +1913,16 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey
   object-position: center center;
 }
 
+/* Makeability Lab — ARTennis demo video, cover fill */
+body.page-home .home-hero-projects__grid--editorial #hero-project-makeability .home-hero-projects__thumb video {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
 /* AI Healthcare — HCDE showcase photo, centered contain */
 body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare .home-hero-projects__thumb img {
   max-width: min(88%, 100%);
@@ -2032,20 +2042,24 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
     order: 14;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-makeability {
     order: 15;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-survey {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-ai-healthcare {
     order: 16;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-interviews {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-survey {
     order: 17;
   }
 
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-fly-on-wall {
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-interviews {
     order: 18;
+  }
+
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-fly-on-wall {
+    order: 19;
   }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {

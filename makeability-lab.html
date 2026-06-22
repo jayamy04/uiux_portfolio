@@ -126,26 +126,29 @@
                 <span class="work-detail__back-arrow" aria-hidden="true">←</span>
                 <span>Work</span>
               </a>
-              <p class="work-detail__eyebrow tj-fade" data-on-scroll="0">UW Makeability Lab · 2023 · Published at UIST 2023</p>
               <h1 class="work-detail__title tj-fade" data-on-scroll="0" data-delay=".04">
                 <span class="work-detail__title-line">ARTennis</span>
-                <span class="work-detail__title-line work-detail__title-line--accent">Low vision sports AR</span>
               </h1>
-              <p class="work-detail__subtitle tj-fade" data-on-scroll="0" data-delay=".08">
-                Real-time augmented reality to support low vision sports
-              </p>
               <dl class="work-detail__meta tj-fade" data-on-scroll="0" data-delay=".12">
-                <div class="work-detail__meta-item">
-                  <dt>Lab</dt>
-                  <dd>UW Makeability Lab, advised by Jon E. Froehlich</dd>
-                </div>
                 <div class="work-detail__meta-item">
                   <dt>Role</dt>
                   <dd>Research contributor — user research, pilot evaluation, prototype brainstorming, paper writing, figure design</dd>
                 </div>
                 <div class="work-detail__meta-item">
+                  <dt>Lab</dt>
+                  <dd>UW Makeability Lab, advised by Jon E. Froehlich</dd>
+                </div>
+                <div class="work-detail__meta-item">
+                  <dt>Timeline</dt>
+                  <dd>June 2023 – August 2023</dd>
+                </div>
+                <div class="work-detail__meta-item">
+                  <dt>Methods</dt>
+                  <dd>Wearable AR · Real-time computer vision · Co-design · Pilot evaluation</dd>
+                </div>
+                <div class="work-detail__meta-item">
                   <dt>Publication</dt>
-                  <dd><a href="https://uist.acm.org/2023/" target="_blank" rel="noopener noreferrer">UIST 2023 Adjunct</a> · ACM Symposium on User Interface Software and Technology — published</dd>
+                  <dd><a href="https://uist.acm.org/2023/" target="_blank" rel="noopener noreferrer">UIST 2023 Adjunct</a> — published</dd>
                 </div>
                 <div class="work-detail__meta-item">
                   <dt>Authors</dt>
@@ -153,47 +156,59 @@
                 </div>
               </dl>
               <div class="work-detail__actions tj-fade" data-on-scroll="0" data-delay=".16">
-                <a class="work-detail__cta" href="https://uist.acm.org/2023/" target="_blank" rel="noopener noreferrer">
-                  <span class="work-detail__cta-label">UIST 2023</span>
+                <a class="work-detail__cta" href="https://dl.acm.org/doi/epdf/10.1145/3586182.3615815" target="_blank" rel="noopener noreferrer">
+                  <span class="work-detail__cta-label">ACM paper PDF</span>
                   <span class="work-detail__cta-arrow" aria-hidden="true">↗</span>
                 </a>
-                <a class="work-detail__cta work-detail__cta--ghost" href="https://dl.acm.org/doi/epdf/10.1145/3586182.3615815" target="_blank" rel="noopener noreferrer">
-                  <span class="work-detail__cta-label">ACM paper PDF</span>
+                <a class="work-detail__cta work-detail__cta--ghost" href="https://uist.acm.org/2023/" target="_blank" rel="noopener noreferrer">
+                  <span class="work-detail__cta-label">UIST 2023</span>
                   <span class="work-detail__cta-arrow" aria-hidden="true">↗</span>
                 </a>
               </div>
             </div>
           </header>
 
-          <section class="work-detail__section" aria-labelledby="makeability-problem-heading">
+          <section class="work-detail__section" aria-labelledby="makeability-abstract-heading">
             <div class="work-detail__inner">
-              <h2 id="makeability-problem-heading" class="work-detail__heading tj-fade" data-on-scroll="0">The problem</h2>
+              <h2 id="makeability-abstract-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Abstract</h2>
               <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
-                <p>People with low vision face significant barriers to physical activity — research shows they are less likely to engage in exercise and sport compared to sighted peers, with downstream effects on health and wellbeing. Fast-moving ball sports are especially difficult: tracking a small object at speed across a court requires precisely the kind of visual acuity that low vision users lack. Existing accessibility solutions either simplified the sport itself or relied on audio feedback — neither preserved the real game experience.</p>
-                <p>The research question was: could wearable augmented reality enhance a low vision player's perception of the ball in real time, without changing the sport?</p>
+                <p>Individuals with low vision (LV) can experience vision-related challenges when participating in sports, especially those with fast moving objects. We introduce ARTennis, a prototype for wearable augmented reality (AR) that utilizes real-time computer vision (CV) to enhance the visual saliency of tennis balls. Preliminary findings indicate that while ARTennis is helpful, combining both visual and auditory cues may be more effective. As AR and CV technologies continue to improve, we expect head-worn AR to broaden the inclusivity of sports.</p>
               </div>
             </div>
           </section>
 
-          <section class="work-detail__section" aria-labelledby="makeability-system-heading">
+          <section class="work-detail__section" aria-labelledby="makeability-introduction-heading">
             <div class="work-detail__inner">
-              <h2 id="makeability-system-heading" class="work-detail__heading tj-fade" data-on-scroll="0">The system: how ARTennis works</h2>
+              <h2 id="makeability-introduction-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Introduction</h2>
               <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
-                <p>ARTennis is a prototype built on a Microsoft HoloLens 2. It works in three steps:</p>
-                <ol>
-                  <li>The HoloLens streams first-person video to a backend server at approximately 25 FPS using WebRTC.</li>
-                  <li>The server runs a fine-tuned YOLOv7 object detection model to locate the tennis ball in each frame.</li>
-                  <li>The result is sent back to the HoloLens, where the ball is highlighted in real time with enhanced color contrast and a crosshair overlay. The round-trip happens fast enough to be usable during live play.</li>
-                </ol>
-
-                <h3 class="work-detail__kicker" id="makeability-fpv-heading">Why first-person matters</h3>
-                <p>Existing tennis ball tracking systems like TrackNet were built for third-person broadcast footage. No prior system had tackled real-time, first-person AR tracking from a wearable headset — the perspective a player actually has on the court.</p>
+                <p>People with low vision (LV) often encounter obstacles when participating in sports or exercise, which can negatively affect physical activity. Researchers have devised various prototypes to address this issue, including Kobayashi et al.'s camera- and audio-based assistive tools for wall climbing, bowling, and Mölkky, as well as accessible fitness games featuring tennis, bowling, and yoga. Among different physical activities, competitive sports such as tennis and soccer are particularly challenging as they involve fast, continuously moving elements such as balls and players. Our goal is to overcome this challenge by enabling LV individuals to participate in ball-based sports using real-time computer vision (CV) and wearable augmented reality (AR) headsets with an initial focus on tennis.</p>
+                <p>Traditionally, tracking tennis balls in real-time required expensive hardware. However, recent advancements in deep learning have led to models like TrackNet, a neural network capable of tracking tennis balls in third-person recordings of tennis games. To explore how LV individuals may be able to play tennis with AR, we designed ARTennis, a prototype system capable of tracking and enhancing the visual saliency of tennis balls from a first-person point-of-view (POV). We achieve this by streaming video from a pair of AR glasses to a backend server, analyzing the frames using a custom-trained deep learning model, and sending back the results for real-time overlaid visualization.</p>
+                <p>Our key contributions include: (1) an initial real-time prototype capable of tracking and visually augmenting a tennis ball in wearable AR, and (2) findings from a pilot evaluation with a single LV user. At the UIST demo session, we envision attendees trying ARTennis by manipulating and throwing a tennis ball with the research team.</p>
               </div>
               <figure class="work-detail__figure tj-fade" data-on-scroll="0" data-delay=".08">
                 <div class="work-detail__figure-frame">
-                  <img src="./assets/images/makeability-lab/makeSystem.jpg" alt="ARTennis system diagram — HoloLens video stream, YOLOv7 ball detection, and AR overlay pipeline" width="1200" height="800" loading="lazy" decoding="async">
+                  <img src="./assets/images/makeability-lab/MakeabilityCoverBigger.jpg" alt="Comparison of first-person POV footage captured directly from the HoloLens with and without ARTennis" width="1200" height="800" loading="lazy" decoding="async">
                 </div>
-                <figcaption class="work-detail__figure-caption">ARTennis pipeline — first-person capture, server-side detection, and real-time AR overlay on the HoloLens.</figcaption>
+                <figcaption class="work-detail__figure-caption">Figure 1: Comparison of first-person POV footage captured directly from the HoloLens with (right) and without (left) ARTennis.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="work-detail__section" aria-labelledby="makeability-prototype-heading">
+            <div class="work-detail__inner">
+              <h2 id="makeability-prototype-heading" class="work-detail__heading tj-fade" data-on-scroll="0">ARTennis Prototype</h2>
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
+                <p>ARTennis is implemented on a HoloLens 2 and is composed of: (1) a real-time bidirectional data stream running at approximately 25 FPS, and (2) a YOLOv7 model fine-tuned on a custom dataset.</p>
+
+                <h3 class="work-detail__kicker" id="makeability-system-implementation-heading">System Implementation</h3>
+                <p><strong>Real-time Bidirectional Streaming.</strong> To enable real-time video streaming, we implemented custom data senders and receivers based on the Web Real-Time Communication (WebRTC) protocol using the MixedReality-WebRTC and aiortc libraries. When the server receives a frame, it runs a fine-tuned YOLOv7 model to locate tennis balls. Once the model has processed the frame, the result is sent back to the HoloLens, where it is visualized.</p>
+                <p><strong>Visualizing the Result.</strong> To increase the visual saliency of a tennis ball, ARTennis enhances the ball's color contrast and adds a crosshair in real-time. We selected this design after a brainstorming session with an LV research team member. Designing improved visualizations is an open research area.</p>
+              </div>
+              <figure class="work-detail__figure tj-fade" data-on-scroll="0" data-delay=".08">
+                <div class="work-detail__figure-frame">
+                  <img src="./assets/images/makeability-lab/makeSystem.jpg" alt="ARTennis overview and implementation details" width="1200" height="800" loading="lazy" decoding="async">
+                </div>
+                <figcaption class="work-detail__figure-caption">Figure 2: ARTennis overview and implementation details.</figcaption>
               </figure>
               <figure class="work-detail__figure tj-fade" data-on-scroll="0" data-delay=".12">
                 <div class="work-detail__figure-frame work-detail__figure-frame--video">
@@ -203,98 +218,63 @@
                 </div>
                 <figcaption class="work-detail__figure-caption">ARTennis demo — real-time ball saliency augmentations during live play.</figcaption>
               </figure>
-            </div>
-          </section>
 
-          <section class="work-detail__section" aria-labelledby="makeability-model-heading">
-            <div class="work-detail__inner">
-              <h2 id="makeability-model-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Building the model</h2>
-              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
-                <p>Training a reliable detector required building a custom dataset from scratch. The team collected 13 minutes of first-person HoloLens footage — approximately 23,000 frames — of a researcher playing tennis. Standard pre-trained YOLOv7 detected a tennis ball in only 30% of those frames, far too low for real use.</p>
-                <p>To solve this, the team developed an automated labeling approach: each frame was divided into a 10×10 grid, and a search region was defined based on the ball's location in the two preceding frames, expanding if needed. This raised detection to 60% of frames. A random sample of 10% of those labeled frames showed 96% bounding box accuracy. The team then fine-tuned YOLOv7 on this dataset, achieving mAP@0.5 of 91%.</p>
-                <p>To evaluate whether the model could realistically support live play, the team segmented a test video into 150ms clips — roughly the threshold of human reaction time to visual stimuli (180–200ms). The model successfully detected a tennis ball in 85% of segments, demonstrating practical viability for real-time use.</p>
-              </div>
-              <ul class="work-detail__stats tj-fade" data-on-scroll="0" data-delay=".08" role="list" aria-label="Model training and evaluation metrics">
-                <li class="work-detail__stats-item">
-                  <span class="work-detail__stats-value">30→60%</span>
-                  <span class="work-detail__stats-label">Ball detection rate after automated labeling</span>
-                </li>
-                <li class="work-detail__stats-item">
-                  <span class="work-detail__stats-value">96%</span>
-                  <span class="work-detail__stats-label">Bounding box accuracy (10% random sample)</span>
-                </li>
-                <li class="work-detail__stats-item">
-                  <span class="work-detail__stats-value">91%</span>
-                  <span class="work-detail__stats-label">mAP@0.5 after fine-tuning YOLOv7</span>
-                </li>
-                <li class="work-detail__stats-item">
-                  <span class="work-detail__stats-value">85%</span>
-                  <span class="work-detail__stats-label">Detection in 150ms clips (reaction-time scale)</span>
-                </li>
-              </ul>
-            </div>
-          </section>
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".16">
+                <h3 class="work-detail__kicker" id="makeability-data-collection-heading">Initial Data Collection</h3>
+                <p>To train the YOLOv7 model, we first collected 13 minutes of first-person POV video (23k frames) from the HoloLens of a research team member playing tennis. While there exists large amounts of tennis video datasets online, these recordings are third-person POV rather than first-person.</p>
 
-          <section class="work-detail__section" aria-labelledby="makeability-viz-heading">
-            <div class="work-detail__inner">
-              <h2 id="makeability-viz-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Visualization design</h2>
-              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
-                <p>Two design choices shaped the AR overlay: enhanced color contrast and a real-time crosshair. Both were selected to maximize visual saliency for a user with reduced visual acuity — drawing on prior work in contrast enhancement for low vision displays and sports broadcast tracking systems. The specific design was developed through a brainstorming session with a low vision member of the research team, grounding it in lived experience rather than assumption.</p>
+                <h3 class="work-detail__kicker" id="makeability-dataset-generation-heading">Custom Dataset Generation</h3>
+                <p>Given the large number of frames, we automated the dataset generation process rather than manually labeling each frame. When using a pre-trained YOLOv7 model, we were only able to detect a tennis ball in 30% of the images. Thus, we divided each image into a 10×10 grid and defined a search region based on the ball's grid location in the previous two frames, expanding the search region if necessary. This approach found a tennis ball in 60% of the images. When we randomly sampled 10% of those images, we found that this method had generated an accurate bounding box for 96% of images in the sample.</p>
+
+                <h3 class="work-detail__kicker" id="makeability-fine-tuning-heading">Fine-tuning YOLO Model</h3>
+                <p>We then fine-tuned the YOLOv7 model using our custom dataset and achieved an mAP@0.5 of 91%. Given that the average human reaction time to visual stimuli ranges from 180 to 200 ms, we evaluated our model by dividing a test video into 150 ms segments and found that it successfully identified a tennis ball in 85% of the segments, demonstrating its potential.</p>
               </div>
-              <figure class="work-detail__figure tj-fade" data-on-scroll="0" data-delay=".08">
-                <div class="work-detail__figure-frame">
-                  <img src="./assets/images/makeability-lab/MakeabilityCoverBigger.jpg" alt="First-person tennis view without and with ARTennis visual augmentation highlighting the ball" width="1200" height="800" loading="lazy" decoding="async">
-                </div>
-                <figcaption class="work-detail__figure-caption">Without augmentation (left) vs. with ARTennis overlay (right) — enhanced contrast and crosshair tracking the ball in real time.</figcaption>
-              </figure>
-              <figure class="work-detail__figure tj-fade" data-on-scroll="0" data-delay=".12">
-                <div class="work-detail__figure-frame">
-                  <img src="./assets/images/makeability-lab/makeAdrian.jpg" alt="How a low vision researcher on the team perceived the ARTennis visual augmentation on court" width="1200" height="800" loading="lazy" decoding="async">
-                </div>
-                <figcaption class="work-detail__figure-caption">Co-design view — how a low vision member of the research team experienced the augmentation.</figcaption>
-              </figure>
             </div>
           </section>
 
           <section class="work-detail__section" aria-labelledby="makeability-pilot-heading">
             <div class="work-detail__inner">
-              <h2 id="makeability-pilot-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Pilot evaluation</h2>
+              <h2 id="makeability-pilot-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Pilot Evaluation</h2>
               <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
-                <p>The team conducted a pilot evaluation with a low vision researcher who had never played tennis before. His left eye has no light perception; a Coloboma affects the upper right portion of his right eye. He can distinguish colors and shapes but has no depth perception, with visual acuity of 20/450. The session lasted 45 minutes on a real tennis court.</p>
-
-                <h3 class="work-detail__kicker" id="makeability-pilot-worked-heading">What worked</h3>
-                <p>He reported that ARTennis gave him "assurance that the ball is in play" and that it "detected the ball from nearly the span of the court" in many instances. He described it as matching "the best tracking performance I've tried in an AR-based system."</p>
-
-                <h3 class="work-detail__kicker" id="makeability-pilot-didnt-heading">What didn't</h3>
-                <p>When the ball moved outside the HoloLens 2's 52° diagonal field of view, the visual guidance extended beyond his usable vision and became, in his words, "unhelpful flashes of green." He elaborated: "beyond 10 or so feet, since I didn't have much lateral vision, I still only saw one arrow, and this arrow occupied the majority of the usable field-of-view." He identified the HoloLens' narrow FOV as the root constraint — the display exacerbates discontinuity because the ball constantly enters and exits the frame.</p>
+                <p>To evaluate our prototype, an LV research team member played tennis using ARTennis (see demo video). His left eye has no light perception and a Coloboma dominates the right superior portion of his right eye. Consequently, while he can discern colors and shapes, he does not have depth perception, and his visual acuity is 20/450.</p>
+                <p>After a 45-min play session—his first ever in tennis—he noted that ARTennis (1) provided him "assurance that the ball is in play", (2) "detected the ball from nearly the span of the court" in many instances, and (3) "matched the best tracking performance I've tried in an AR-based system". However, ARTennis' visual guidance often extended beyond his field of vision, which rendered the system into "unhelpful flashes of green" when the ball is too high or too far.</p>
               </div>
+
               <figure class="work-detail__quote tj-fade" data-on-scroll="0" data-delay=".08">
                 <blockquote>
                   <p>"Beyond 10 or so feet, since I didn't have much lateral vision, I still only saw one arrow, and this arrow occupied the majority of the usable field-of-view."</p>
                 </blockquote>
-                <figcaption class="work-detail__quote-caption">Pilot participant — on HoloLens field-of-view limits</figcaption>
+                <figcaption class="work-detail__quote-caption">Pilot participant</figcaption>
               </figure>
+
               <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".1">
-                <h3 class="work-detail__kicker" id="makeability-pilot-future-heading">What it pointed toward</h3>
-                <p>The participant himself hypothesized that audio cues could compensate for the FOV limitation — a finding that directly shaped the team's future research directions. He also noted that the system's real-time visual guidance would be more effective on a headset with a wider FOV.</p>
+                <p>He hypothesized that "the HoloLens' small field-of-view (FOV) is a limitation because it exacerbates discontinuity in the UI as the ball tends to enter and exit the display" and suggested that "audio cues could be a way to overcome this issue". Since the HoloLens 2 has a limited diagonal FOV (52°), we hope to utilize a wearable AR device with a larger FOV in future system versions.</p>
+              </div>
+
+              <figure class="work-detail__figure tj-fade" data-on-scroll="0" data-delay=".12">
+                <div class="work-detail__figure-frame">
+                  <img src="./assets/images/makeability-lab/makeAdrian.jpg" alt="How a member of the research team who has low vision saw the visualization due to limits with lateral vision and the HoloLens 2's 52° FOV" width="1200" height="800" loading="lazy" decoding="async">
+                </div>
+                <figcaption class="work-detail__figure-caption">Figure 3: How a member of the research team who has low vision saw the visualization in Figure 1 due to limits with lateral vision and the HoloLens 2's 52° FOV.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="work-detail__section" aria-labelledby="makeability-future-heading">
+            <div class="work-detail__inner">
+              <h2 id="makeability-future-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Future Works and Conclusion</h2>
+              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
+                <p>While our prototype currently focuses on tennis balls, we aim to expand to other tennis-related elements like the net and court lines, as well as other ball-based sports such as basketball, baseball, and badminton. Tennis poses unique challenges for a real-time wearable system due to the fast pace and diminishing size of the ball as it moves away from the player. However, because our approach achieved accurate tracking in such scenarios, we are confident in its potential to support a wide variety of sports. Moreover, as we introduce additional functionalities like ball trajectory estimation, we envision supporting beginners seeking guidance during sports activities. Furthermore, while our focus has primarily been on playing sports, we also hope to explore how our prototype can enhance the viewing experience for sports fans with varying abilities.</p>
+                <p>In closing, while the HoloLens 2's size, bulkiness, and limited FOV restricts practical sports deployment, our ARTennis prototype enabled us to create and explore innovative ball tracking and real-time overlay visualizations in head-worn AR. With more lightweight and powerful AR headsets, we envision AR glasses as a powerful tool to enable LV individuals to participate in sports that they otherwise could not.</p>
               </div>
             </div>
           </section>
 
-          <section class="work-detail__section" aria-labelledby="makeability-limitations-heading">
+          <section class="work-detail__section" aria-labelledby="makeability-outcome-heading">
             <div class="work-detail__inner">
-              <h2 id="makeability-limitations-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Limitations and future directions</h2>
+              <h2 id="makeability-outcome-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Outcome</h2>
               <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
-                <p>The HoloLens 2's size, weight, and 52° FOV are fundamental constraints for a sports deployment. The team identified several directions for future work: expanding tracking to other court elements like the net and boundary lines; extending to other ball sports (basketball, baseball, badminton); incorporating ball trajectory estimation to support beginners; and exploring how the system could enhance the viewing experience for sports fans with low vision, not just players.</p>
-              </div>
-            </div>
-          </section>
-
-          <section class="work-detail__section" aria-labelledby="makeability-matters-heading">
-            <div class="work-detail__inner">
-              <h2 id="makeability-matters-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Why this research matters</h2>
-              <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".04">
-                <p>ARTennis is an existence proof — evidence that real-time, first-person AR ball tracking for low vision sports is technically achievable with consumer hardware and a custom-trained model. The pilot findings are as valuable for what they reveal about failure as for what they show working: the FOV problem is not a software bug but a hardware constraint that current AR headsets impose on this entire category of accessibility application. As headsets improve, the approach ARTennis validated becomes more deployable.</p>
+                <p>Co-authored <em>Towards Real-time Computer Vision and Augmented Reality to Support Low Vision Sports: A Demonstration of ARTennis</em> — published at <a href="https://uist.acm.org/2023/" target="_blank" rel="noopener noreferrer">UIST 2023 Adjunct</a>.</p>
                 <p class="work-detail__note"><a href="https://dl.acm.org/doi/epdf/10.1145/3586182.3615815" target="_blank" rel="noopener noreferrer">Read the ACM paper ↗</a></p>
               </div>
               <figure class="work-detail__figure tj-fade" data-on-scroll="0" data-delay=".12">
@@ -309,12 +289,12 @@
           </section>
 
           <div class="work-detail__footer-actions tj-fade" data-on-scroll="0" data-delay=".12">
-            <a class="work-detail__cta" href="https://uist.acm.org/2023/" target="_blank" rel="noopener noreferrer">
-              <span class="work-detail__cta-label">UIST 2023</span>
+            <a class="work-detail__cta" href="https://dl.acm.org/doi/epdf/10.1145/3586182.3615815" target="_blank" rel="noopener noreferrer">
+              <span class="work-detail__cta-label">ACM paper PDF</span>
               <span class="work-detail__cta-arrow" aria-hidden="true">↗</span>
             </a>
-            <a class="work-detail__cta work-detail__cta--ghost" href="https://dl.acm.org/doi/epdf/10.1145/3586182.3615815" target="_blank" rel="noopener noreferrer">
-              <span class="work-detail__cta-label">ACM paper PDF</span>
+            <a class="work-detail__cta work-detail__cta--ghost" href="https://uist.acm.org/2023/" target="_blank" rel="noopener noreferrer">
+              <span class="work-detail__cta-label">UIST 2023</span>
               <span class="work-detail__cta-arrow" aria-hidden="true">↗</span>
             </a>
             <a class="work-detail__cta work-detail__cta--ghost" href="home.html#work">
