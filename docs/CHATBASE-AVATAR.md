@@ -4,10 +4,16 @@ The chat widget (blue **Amy Seunghyun Lee** tab) is loaded by **Chatbase** outsi
 
 ## DOM override (all pages)
 
-`assets/js/chat-avatar-fix.js` is included on every page that loads `main.js`. A `MutationObserver` watches for Chatbase widget avatar `<img>` nodes and forces:
+Every HTML page includes `assets/js/chat-avatar-fix.js` before `</body>` (after `main.js` when present). A `MutationObserver` watches for Chatbase widget avatar/header `<img>` nodes (including shadow DOM) and forces:
 
 ```
 https://seunghyun-lee.com/assets/images/about/amy-chat-about.png?v=20260622about
+```
+
+If that image fails to load, the script falls back to:
+
+```
+https://seunghyun-lee.com/assets/images/about/amy-about-graduation.png?v=20260622about
 ```
 
 This fixes the launcher/tab photo immediately without waiting for a dashboard CDN update. The dashboard URL below should still be updated when possible.

@@ -7,6 +7,8 @@
 
   var AVATAR =
     "https://seunghyun-lee.com/assets/images/about/amy-chat-about.png?v=20260622about";
+  var AVATAR_FALLBACK =
+    "https://seunghyun-lee.com/assets/images/about/amy-about-graduation.png?v=20260622about";
 
   var LEGACY_PATTERNS = [
     /amy-headshot/i,
@@ -25,11 +27,12 @@
       if (
         id.indexOf("chatbase") !== -1 ||
         cls.indexOf("chatbase") !== -1 ||
-        el.getAttribute("data-chatbase") != null
+        el.getAttribute("data-chatbase") != null ||
+        el.tagName === "CHATBASE-BUBBLE"
       ) {
         return true;
       }
-      el = el.parentElement;
+      el = el.parentElement || (el.getRootNode && el.getRootNode().host) || null;
     }
     return false;
   }
@@ -37,7 +40,7 @@
   function shouldOverride(img) {
     if (!(img instanceof HTMLImageElement)) return false;
     var src = img.currentSrc || img.src || img.getAttribute("src") || "";
-    if (src === AVATAR) return false;
+    if (src === AVATAR || src === AVATAR_FALLBACK) return false;
     if (isChatbaseContext(img)) return true;
     return LEGACY_PATTERNS.some(function (pattern) {
       return pattern.test(src);
@@ -46,6 +49,13 @@
 
   function applyAvatar(img) {
     if (!shouldOverride(img)) return;
+    img.onerror = function onAvatarError() {
+      img.onerror = null;
+      if (img.getAttribute("src") !== AVATAR_FALLBACK) {
+        img.src = AVATAR_FALLBACK;
+        img.setAttribute("src", AVATAR_FALLBACK);
+      }
+    };
     img.src = AVATAR;
     img.setAttribute("src", AVATAR);
   }
@@ -53,6 +63,9 @@
   function scan(root) {
     if (!root || !root.querySelectorAll) return;
     root.querySelectorAll("img").forEach(applyAvatar);
+    root.querySelectorAll("*").forEach(function (el) {
+      if (el.shadowRoot) scan(el.shadowRoot);
+    });
   }
 
   function onMutations(mutations) {
@@ -70,6 +83,7 @@
   }
 
   function start() {
+    if (!document.documentElement) return;
     scan(document.body || document.documentElement);
     new MutationObserver(onMutations).observe(document.documentElement, {
       childList: true,
