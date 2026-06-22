@@ -1335,11 +1335,11 @@ body.page-home .home-landing__hero-landing {
 
 @keyframes home-org-logo-marquee {
   from {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 
   to {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
@@ -1365,20 +1365,22 @@ body.page-home .home-landing__org-logos-viewport {
 }
 
 body.page-home .home-landing__org-logos-track {
+  --home-org-logo-set-gap: clamp(48px, 7vw, 80px);
   display: flex;
   align-items: center;
-  gap: clamp(48px, 7vw, 80px);
+  gap: 0;
   width: max-content;
-  animation: home-org-logo-marquee 28s linear infinite;
+  will-change: transform;
+  animation: home-org-logo-marquee var(--home-org-marquee-duration, 28s) linear infinite;
 }
 
 body.page-home .home-landing__org-logos-set {
   display: flex;
   align-items: center;
   flex: 0 0 auto;
-  gap: clamp(48px, 7vw, 80px);
+  gap: var(--home-org-logo-set-gap);
   margin: 0;
-  padding: 0;
+  padding: 0 var(--home-org-logo-set-gap) 0 0;
   list-style: none;
 }
 
@@ -1419,11 +1421,6 @@ body.page-home .home-landing__org-logo--mark img {
   height: clamp(22px, 2.4vw, 28px);
   width: auto;
   max-width: clamp(32px, 3.6vw, 40px);
-}
-
-body.page-home .home-landing__org-logos:hover .home-landing__org-logos-track,
-body.page-home .home-landing__org-logos:focus-within .home-landing__org-logos-track {
-  animation-play-state: paused;
 }
 
 body.page-home .home-landing__split-head--spread > .home-landing__hero-statement + .home-landing__org-logos {

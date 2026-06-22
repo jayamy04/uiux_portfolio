@@ -2673,6 +2673,66 @@ const initHomeHeroProjectCarousel = () => {
   start(HOME_HERO_CAROUSEL_INTERVAL_MS);
 };
 
+/** Home org-logo strip — px/s for seamless infinite marquee. */
+const HOME_ORG_LOGO_MARQUEE_SPEED_PX_S = 42;
+
+const initHomeOrgLogoMarquee = () => {
+  if (!document.body.classList.contains("page-home")) return;
+
+  const viewport = document.querySelector(".home-landing__org-logos-viewport");
+  const track = document.querySelector(".home-landing__org-logos-track");
+  if (!viewport || !track || track.dataset.marqueeInit === "true") return;
+
+  const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (motionQuery.matches) return;
+
+  const sourceSet =
+    track.querySelector(".home-landing__org-logos-set[role='list']") ||
+    track.querySelector(".home-landing__org-logos-set");
+  if (!sourceSet) return;
+
+  track.dataset.marqueeInit = "true";
+  const template = sourceSet.cloneNode(true);
+
+  const appendSet = (isPrimary) => {
+    const set = template.cloneNode(true);
+    if (isPrimary) {
+      set.setAttribute("role", "list");
+      set.removeAttribute("aria-hidden");
+    } else {
+      set.removeAttribute("role");
+      set.setAttribute("aria-hidden", "true");
+    }
+    track.appendChild(set);
+  };
+
+  const rebuildTrack = () => {
+    track.replaceChildren();
+    appendSet(true);
+
+    while (track.scrollWidth < viewport.clientWidth * 2 + 2) {
+      appendSet(false);
+    }
+
+    if (track.querySelectorAll(".home-landing__org-logos-set").length % 2 !== 0) {
+      appendSet(false);
+    }
+  };
+
+  const refreshMarquee = () => {
+    rebuildTrack();
+    const loopDistancePx = track.scrollWidth / 2;
+    const durationSec = Math.max(
+      loopDistancePx / HOME_ORG_LOGO_MARQUEE_SPEED_PX_S,
+      12
+    );
+    track.style.setProperty("--home-org-marquee-duration", `${durationSec}s`);
+  };
+
+  refreshMarquee();
+  window.addEventListener("resize", refreshMarquee, { passive: true });
+};
+
 const initHomeHeroProjectBento = () => {
   const root = document.querySelector("[data-home-hero-bento]");
   if (!root || root.dataset.bentoInit === "true") return;
@@ -3620,6 +3680,7 @@ const initProjectPageEnhancements = () => {
   initLoopVideoLifecycle();
   initHomeScrollToWorkLinkIntent();
   initHomeLandingScroll();
+  initHomeOrgLogoMarquee();
   initHomeNavScrollSpy();
   initVideoPopupControls();
   initWicsSocialSlideshow();
