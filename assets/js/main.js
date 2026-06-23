@@ -2964,6 +2964,31 @@ const initAboutDanceReels = () => {
   bindContinuousLoopVideos(videos, { pauseOffscreen: true });
 };
 
+const initAboutExtraVideos = () => {
+  const videos = document.querySelectorAll(".page-about .about-extra__video");
+  if (!videos.length) return;
+
+  videos.forEach((video) => {
+    const frame = video.closest(".about-extra__frame");
+    const showPosterFallback = () => {
+      const poster = video.getAttribute("poster");
+      if (!poster || frame?.querySelector(".about-extra__poster")) return;
+      const img = document.createElement("img");
+      img.className = "about-extra__poster";
+      img.src = poster;
+      img.alt = "";
+      img.setAttribute("aria-hidden", "true");
+      img.decoding = "async";
+      frame?.prepend(img);
+      video.style.display = "none";
+    };
+
+    video.addEventListener("error", showPosterFallback, { once: true });
+  });
+
+  bindContinuousLoopVideos(videos, { pauseOffscreen: true });
+};
+
 /** Continuous community marquee speed (px/s). */
 const COMMUNITY_MARQUEE_SPEED_PX_S = 48;
 const COMMUNITY_MARQUEE_SPEED_SINGLE_PX_S = 18;
@@ -3699,6 +3724,7 @@ const initProjectPageEnhancements = () => {
   initEditorialProjectFilter();
   initDanceReels();
   initAboutDanceReels();
+  initAboutExtraVideos();
   if (typeof initDanceOutletWall === "function") {
     initDanceOutletWall();
   }

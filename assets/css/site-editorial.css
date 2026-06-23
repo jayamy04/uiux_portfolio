@@ -8856,23 +8856,26 @@ body.page-about.site-editorial .about-overview .site-meta-panel {
   }
 }
 
-/* About page — community, startup & dance (equal vertical rhythm) */
+/* About page — community, startup, dance & extra (equal vertical rhythm) */
 body.page-about.site-editorial .about-community,
 body.page-about.site-editorial .about-startup,
-body.page-about.site-editorial .about-dance {
+body.page-about.site-editorial .about-dance,
+body.page-about.site-editorial .about-extra {
   margin-top: clamp(48px, 7vh, 72px);
   padding-top: clamp(24px, 3.5vh, 40px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-body.page-about.site-editorial .about-dance {
+body.page-about.site-editorial .about-dance,
+body.page-about.site-editorial .about-extra {
   padding-bottom: clamp(4px, 0.8vh, 8px);
 }
 
 /* Home — no section divider lines; equal gaps only via margin */
 body.page-home.page-about.site-editorial .about-community,
 body.page-home.page-about.site-editorial .about-startup,
-body.page-home.page-about.site-editorial .about-dance {
+body.page-home.page-about.site-editorial .about-dance,
+body.page-home.page-about.site-editorial .about-extra {
   margin-top: clamp(48px, 7vh, 72px);
   padding-top: 0;
   padding-bottom: 0;
@@ -8881,7 +8884,8 @@ body.page-home.page-about.site-editorial .about-dance {
 
 body.page-about.site-editorial .about-community__header,
 body.page-about.site-editorial .about-startup__header,
-body.page-about.site-editorial .about-dance__header {
+body.page-about.site-editorial .about-dance__header,
+body.page-about.site-editorial .about-extra__header {
   max-width: 36rem;
   margin-bottom: clamp(20px, 3vh, 32px);
 }
@@ -9140,6 +9144,94 @@ body.page-about.site-editorial .about-dance__reel-arrow {
 @media (prefers-reduced-motion: reduce) {
   body.page-about.site-editorial .about-dance__reel,
   body.page-about.site-editorial .about-dance__reel-arrow {
+    transition: none;
+  }
+}
+
+/* About page — extra project videos */
+body.page-about.site-editorial .about-extra__header {
+  margin-bottom: clamp(8px, 1.2vh, 12px);
+}
+
+body.page-about.site-editorial .about-extra__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 18px);
+  max-width: none;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1100px) {
+  body.page-about.site-editorial .about-extra__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(10px, 1.2vw, 14px);
+  }
+}
+
+body.page-about.site-editorial .about-extra__item {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.2vh, 10px);
+  text-decoration: none;
+  color: inherit;
+  border-radius: clamp(8px, 1vw, 12px);
+  transition: transform 0.35s ease;
+}
+
+body.page-about.site-editorial .about-extra__item:focus-visible {
+  outline: 2px solid var(--site-accent, #ff4db8);
+  outline-offset: 4px;
+}
+
+@media (hover: hover) {
+  body.page-about.site-editorial .about-extra__item:hover {
+    transform: translateY(-2px);
+  }
+
+  body.page-about.site-editorial .about-extra__item:hover .about-extra__frame {
+    border-color: rgba(255, 77, 184, 0.45);
+    box-shadow:
+      0 12px 28px rgba(0, 0, 0, 0.35),
+      0 0 0 1px rgba(255, 77, 184, 0.12);
+  }
+}
+
+body.page-about.site-editorial .about-extra__frame {
+  display: block;
+  width: 100%;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: clamp(8px, 1vw, 12px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+body.page-about.site-editorial .about-extra__video,
+body.page-about.site-editorial .about-extra__poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+body.page-about.site-editorial .about-extra__label {
+  margin: 0;
+  padding: 0 2px;
+  font-family: var(--tj-ff-body);
+  font-size: clamp(0.8125rem, 1vw, 0.875rem);
+  font-weight: var(--tj-fw-medium);
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.page-about.site-editorial .about-extra__item {
     transition: none;
   }
 }
