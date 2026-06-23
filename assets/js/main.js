@@ -2425,6 +2425,7 @@ const BOARD_GAMES_SECTION_HASHES = new Set([
   "board-games-survey-heading",
   "board-games-interview-heading",
   "board-games-fly-on-wall-heading",
+  "board-games-prototype-video-heading",
 ]);
 const NORDSTROM_RACK_INTERVIEWS_HASH = "nordstrom-interviews-heading";
 const CASE_STUDY_LANDING_HASHES = new Set([
