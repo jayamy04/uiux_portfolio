@@ -245,6 +245,13 @@ body.site-editorial .tj-header_right {
 }
 
 body.site-editorial .site-header-cv-btn {
+  color: #ffffff;
+  background: linear-gradient(135deg, #ff4db8 0%, #b56cff 100%);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow:
+    0 6px 20px rgba(255, 77, 184, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
   display: inline-flex;
   align-items: center;
   justify-content: center;
