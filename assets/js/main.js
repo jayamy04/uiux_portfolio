@@ -2347,7 +2347,7 @@ const scrollHomePageToWork = () => {
 };
 
 const HOME_NAV_SCROLL_OFFSET = "top 88px";
-const HOME_LANDING_SECTION_HASHES = new Set(["about", "cv", "contact"]);
+const HOME_LANDING_SECTION_HASHES = new Set(["about", "cv", "contact", "extra"]);
 
 const scrollHomePageToSection = (sectionId) => {
   const target = document.getElementById(sectionId);
@@ -3546,6 +3546,7 @@ const getHomeNavKeyFromLink = (link) => {
 
   const href = link.getAttribute("href") || "";
   if (href.includes("#about")) return "about";
+  if (href.includes("#extra")) return "extra";
   if (href.includes("#cv")) return "cv";
   if (href.includes("#contact")) return "contact";
   if (href.includes("#work")) return "home";
@@ -3573,7 +3574,7 @@ const getHomeNavScrollSpyTargets = () => {
   const heroBand = document.querySelector(".home-hero-band");
   if (heroBand) targets.push({ el: heroBand, navKey: "home" });
 
-  ["about", "cv", "contact"].forEach((id) => {
+  ["about", "cv", "contact", "extra"].forEach((id) => {
     const el = document.getElementById(id);
     if (el) targets.push({ el, navKey: id });
   });

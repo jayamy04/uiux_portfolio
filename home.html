@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="assets/css/agina-icons.css">
   <link rel="stylesheet" href="assets/css/meanmenu.css">
   <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/site-editorial.css?v=20260622extra">
+  <link rel="stylesheet" href="assets/css/site-editorial.css?v=20260622extranav">
   <link rel="preload" as="image" href="./assets/images/inclusive-design-lab/hcde-showcase-2.png?v=20260619idlfaces">
   <link rel="preload" href="./assets/videos/nordstrom_homepage_v.mp4" as="fetch" type="video/mp4" crossorigin>
   <link rel="preload" as="image" href="./assets/images/projects/nordstrom_homepage_poster.jpg">
@@ -146,13 +146,24 @@
                     <a href="home.html#about" data-nav-section="about">About</a>
                   </li>
                   <li>
-                    <a href="home.html#cv" data-nav-section="cv">CV</a>
+                    <a href="home.html#contact" data-nav-section="contact">Contact</a>
                   </li>
                   <li>
-                    <a href="home.html#contact" data-nav-section="contact">Contact</a>
+                    <a href="home.html#extra" data-nav-section="extra">Extra</a>
                   </li>
                 </ul>
               </nav>
+            </div>
+
+            <div class="tj-header_right">
+              <a
+                class="site-header-cv-btn"
+                href="./assets/documents/Amy_Lee_Resume.pdf?v=20260622resume"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View CV (opens PDF)">
+                CV
+              </a>
             </div>
 
           </div>
@@ -923,97 +934,6 @@
                 </a>
               </div>
             </section>
-
-            <section class="about-extra tj-fade" data-on-scroll="0" data-delay=".29" aria-labelledby="about-extra-heading">
-              <header class="about-extra__header">
-                <h2 id="about-extra-heading" class="about-page__subsection-heading">Extra</h2>
-              </header>
-
-              <div class="about-extra__grid" role="list" aria-label="Additional project videos">
-                <a
-                  class="about-extra__item"
-                  role="listitem"
-                  href="schedgo.html"
-                  aria-label="SchedGo Personalization — app preview">
-                  <div class="about-extra__frame">
-                    <video
-                      class="about-extra__video"
-                      poster="./assets/images/projects/schedgo_video_poster.jpg"
-                      muted
-                      loop
-                      playsinline
-                      webkit-playsinline
-                      preload="metadata"
-                      aria-label="SchedGo app preview">
-                      <source src="./assets/videos/schedgo_v.mp4" type="video/mp4">
-                      <source src="./assets/videos/schedgo_video.mov" type="video/quicktime">
-                    </video>
-                  </div>
-                  <p class="about-extra__label">SchedGo Personalization</p>
-                </a>
-                <a
-                  class="about-extra__item"
-                  role="listitem"
-                  href="breaking-barriers.html"
-                  aria-label="Breaking Barriers Home Page Front-end Development — website preview">
-                  <div class="about-extra__frame">
-                    <video
-                      class="about-extra__video"
-                      poster="./assets/images/projects/breaking_barriers_video_poster.jpg"
-                      muted
-                      loop
-                      playsinline
-                      webkit-playsinline
-                      preload="metadata"
-                      aria-label="Breaking Barriers website preview">
-                      <source src="./assets/videos/breaking_barriers_video.mp4" type="video/mp4">
-                      <source src="./assets/videos/breaking_barriers_video.mov" type="video/quicktime">
-                    </video>
-                  </div>
-                  <p class="about-extra__label">Breaking Barriers Home Page Front-end Development</p>
-                </a>
-                <a
-                  class="about-extra__item"
-                  role="listitem"
-                  href="bloom-and-vine.html"
-                  aria-label="Bloom &amp; Vine Gallery Redesign — website preview">
-                  <div class="about-extra__frame">
-                    <video
-                      class="about-extra__video"
-                      poster="./assets/images/projects/bloomandvine_video_poster.jpg"
-                      muted
-                      loop
-                      playsinline
-                      webkit-playsinline
-                      preload="metadata"
-                      aria-label="Bloom and Vine website preview">
-                      <source src="./assets/videos/bloomandvine_video.mp4" type="video/mp4">
-                      <source src="./assets/videos/bloomandvine_video.mov" type="video/quicktime">
-                    </video>
-                  </div>
-                  <p class="about-extra__label">Bloom &amp; Vine Gallery Redesign</p>
-                </a>
-                <a
-                  class="about-extra__item"
-                  role="listitem"
-                  href="ideas.html"
-                  aria-label="Reimagining Animal Crossing in AR/VR — motion sequence preview">
-                  <div class="about-extra__frame">
-                    <video
-                      class="about-extra__video"
-                      muted
-                      loop
-                      playsinline
-                      webkit-playsinline
-                      preload="metadata"
-                      aria-label="AR/VR interaction prototypes for public spaces">
-                      <source src="./assets/videos/playground/playground-sequence.mp4" type="video/mp4">
-                    </video>
-                  </div>
-                  <p class="about-extra__label">Reimagining Animal Crossing in AR/VR</p>
-                </a>
-              </div>
-            </section>
           </div>
         </section>
       
@@ -1163,6 +1083,99 @@
 
           </div>
         </section>
+
+            <div class="container-fluid home-trailing__container">
+            <section id="extra" class="about-extra home-trailing__block home-trailing__block--extra tj-fade" data-on-scroll="0" data-delay=".29" aria-labelledby="about-extra-heading">
+              <header class="about-extra__header">
+                <h2 id="about-extra-heading" class="about-page__subsection-heading">Extra</h2>
+              </header>
+
+              <div class="about-extra__grid" role="list" aria-label="Additional project videos">
+                <a
+                  class="about-extra__item"
+                  role="listitem"
+                  href="schedgo.html"
+                  aria-label="SchedGo Personalization — app preview">
+                  <div class="about-extra__frame">
+                    <video
+                      class="about-extra__video"
+                      poster="./assets/images/projects/schedgo_video_poster.jpg"
+                      muted
+                      loop
+                      playsinline
+                      webkit-playsinline
+                      preload="metadata"
+                      aria-label="SchedGo app preview">
+                      <source src="./assets/videos/schedgo_v.mp4" type="video/mp4">
+                      <source src="./assets/videos/schedgo_video.mov" type="video/quicktime">
+                    </video>
+                  </div>
+                  <p class="about-extra__label">SchedGo Personalization</p>
+                </a>
+                <a
+                  class="about-extra__item"
+                  role="listitem"
+                  href="breaking-barriers.html"
+                  aria-label="Breaking Barriers Home Page Front-end Development — website preview">
+                  <div class="about-extra__frame">
+                    <video
+                      class="about-extra__video"
+                      poster="./assets/images/projects/breaking_barriers_video_poster.jpg"
+                      muted
+                      loop
+                      playsinline
+                      webkit-playsinline
+                      preload="metadata"
+                      aria-label="Breaking Barriers website preview">
+                      <source src="./assets/videos/breaking_barriers_video.mp4" type="video/mp4">
+                      <source src="./assets/videos/breaking_barriers_video.mov" type="video/quicktime">
+                    </video>
+                  </div>
+                  <p class="about-extra__label">Breaking Barriers Home Page Front-end Development</p>
+                </a>
+                <a
+                  class="about-extra__item"
+                  role="listitem"
+                  href="bloom-and-vine.html"
+                  aria-label="Bloom &amp; Vine Gallery Redesign — website preview">
+                  <div class="about-extra__frame">
+                    <video
+                      class="about-extra__video"
+                      poster="./assets/images/projects/bloomandvine_video_poster.jpg"
+                      muted
+                      loop
+                      playsinline
+                      webkit-playsinline
+                      preload="metadata"
+                      aria-label="Bloom and Vine website preview">
+                      <source src="./assets/videos/bloomandvine_video.mp4" type="video/mp4">
+                      <source src="./assets/videos/bloomandvine_video.mov" type="video/quicktime">
+                    </video>
+                  </div>
+                  <p class="about-extra__label">Bloom &amp; Vine Gallery Redesign</p>
+                </a>
+                <a
+                  class="about-extra__item"
+                  role="listitem"
+                  href="ideas.html"
+                  aria-label="Reimagining Animal Crossing in AR/VR — motion sequence preview">
+                  <div class="about-extra__frame">
+                    <video
+                      class="about-extra__video"
+                      muted
+                      loop
+                      playsinline
+                      webkit-playsinline
+                      preload="metadata"
+                      aria-label="AR/VR interaction prototypes for public spaces">
+                      <source src="./assets/videos/playground/playground-sequence.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <p class="about-extra__label">Reimagining Animal Crossing in AR/VR</p>
+                </a>
+              </div>
+            </section>
+            </div>
         </div>
 
       </main>
@@ -1184,7 +1197,7 @@
   <script src="assets/js/window-shape-animation.js"></script>
   <script src="assets/js/preloader.js"></script>
   <script src="assets/js/gsap-custom-animations.js"></script>
-  <script src="assets/js/main.js?v=20260622extra"></script>
+  <script src="assets/js/main.js?v=20260622extranav"></script>
   <script src="assets/js/chat-avatar-fix.js?v=20260622about"></script>
   <script src="assets/js/contact-form.js"></script>
 </body>
