@@ -2053,6 +2053,11 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-makeability .h
 }
 
 /* FashionXAI — app demo video, cover fill */
+body.page-home .home-hero-projects__grid--editorial #hero-project-schedgo .home-hero-projects__thumb video {
+  object-fit: cover;
+  object-position: center top;
+}
+
 body.page-home .home-hero-projects__grid--editorial #hero-project-fashionxai-research .home-hero-projects__thumb video {
   width: 100%;
   height: 100%;
@@ -2143,13 +2148,14 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
   body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack { order: 13; }
   body.page-home .home-hero-projects__grid--editorial #hero-project-nordstrom-rack-interviews { order: 14; }
   body.page-home .home-hero-projects__grid--editorial #hero-project-course-registration { order: 15; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-survey { order: 16; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-interviews { order: 17; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-fly-on-wall { order: 18; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-showcase { order: 19; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-fashionxai-research { order: 20; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-assisted-driving-vision { order: 21; }
-  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey { order: 22; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-schedgo { order: 16; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-survey { order: 17; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-interviews { order: 18; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-fly-on-wall { order: 19; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-showcase { order: 20; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-assisted-driving-vision { order: 22; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-fashionxai-research { order: 23; }
+  body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey { order: 24; }
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card {
     border-radius: 12px;
@@ -7852,30 +7858,68 @@ body.page-dance .dance-reel-card__poster {
 }
 
 @media only screen and (max-width: 991px) {
+  body.page-dance .dance-page-section {
+    padding-bottom: clamp(48px, 8vh, 72px);
+  }
+
   body.page-dance .dance-page-layout {
     grid-template-columns: 1fr;
-    gap: clamp(28px, 5vh, 40px);
+    gap: clamp(16px, 3vh, 24px);
+  }
+
+  body.page-dance .dance-page__title {
+    margin-bottom: clamp(12px, 1.8vh, 16px);
   }
 
   body.page-dance .dance-page__title-line {
     font-size: clamp(1.875rem, 7.5vw, 2.5rem);
   }
 
+  body.page-dance .dance-page__lead {
+    margin-bottom: clamp(12px, 1.8vh, 16px);
+    font-size: clamp(1.0625rem, 4.2vw, 1.25rem);
+  }
+
+  body.page-dance .dance-page__lead + .dance-page__prompt {
+    margin-top: clamp(8px, 1.2vh, 12px);
+  }
+
+  body.page-dance .dance-page__prompt + .dance-page__training {
+    margin-top: clamp(8px, 1.2vh, 12px);
+  }
+
+  body.page-dance .dance-page__cta {
+    margin-top: clamp(12px, 2vh, 18px);
+  }
+
   body.page-dance .dance-page-layout__intro {
     position: static;
     max-width: 100%;
-    padding-right: 0;
+    padding: 0;
+  }
+
+  body.page-dance .dance-reels-stage {
+    padding: clamp(4px, 1vh, 8px) 0;
+  }
+
+  body.page-dance .dance-reels-track {
+    padding: clamp(4px, 1vh, 8px) 0;
   }
 
   body.page-dance .dance-reels-bento {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: minmax(clamp(150px, 42vw, 220px), auto);
-    gap: clamp(10px, 2.5vw, 14px);
+    grid-auto-rows: minmax(clamp(100px, 28vw, 140px), auto);
+    gap: clamp(8px, 2vw, 10px);
   }
 
   body.page-dance .dance-reels-bento .dance-reel-card--1 {
     grid-column: 1 / -1;
-    grid-row: span 2;
+    grid-row: span 1;
+  }
+
+  body.page-dance .dance-reels-bento .dance-reel-card--1 .dance-reel-card__frame {
+    min-height: clamp(100px, 28vw, 130px);
+    aspect-ratio: 16 / 9;
   }
 
   body.page-dance .dance-reels-bento .dance-reel-card--2,
@@ -7892,24 +7936,26 @@ body.page-dance .dance-reel-card__poster {
     grid-column: 1 / -1;
     grid-row: auto;
   }
+
+  body.page-dance .dance-reel-card__frame {
+    min-height: clamp(100px, 28vw, 130px);
+    border-radius: 10px;
+  }
 }
 
 @media only screen and (max-width: 575px) {
   body.page-dance .dance-reels-bento {
-    grid-template-columns: minmax(0, 1fr);
-    gap: clamp(12px, 4vw, 16px);
+    grid-auto-rows: minmax(clamp(88px, 26vw, 110px), auto);
+    gap: clamp(6px, 1.8vw, 8px);
   }
 
-  body.page-dance .dance-reels-bento .dance-reel-card--1,
-  body.page-dance .dance-reels-bento .dance-reel-card--2,
-  body.page-dance .dance-reels-bento .dance-reel-card--3,
-  body.page-dance .dance-reels-bento .dance-reel-card--4,
-  body.page-dance .dance-reels-bento .dance-reel-card--5,
-  body.page-dance .dance-reels-bento .dance-reel-card--6,
-  body.page-dance .dance-reels-bento .dance-reel-card--7,
-  body.page-dance .dance-reels-bento .dance-reel-card--landscape {
-    grid-column: 1 / -1;
-    grid-row: auto;
+  body.page-dance .dance-reel-card__frame {
+    min-height: clamp(88px, 26vw, 110px);
+    border-radius: 8px;
+  }
+
+  body.page-dance .dance-reels-bento .dance-reel-card--1 .dance-reel-card__frame {
+    min-height: clamp(88px, 24vw, 110px);
   }
 }
 
@@ -8978,6 +9024,45 @@ body.page-about.site-editorial .about-dance__grid {
 @media only screen and (min-width: 1680px) {
   body.page-about.site-editorial .about-dance__grid {
     grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body.page-about.site-editorial .about-dance {
+    margin-top: clamp(28px, 4.5vh, 40px);
+    padding-top: clamp(12px, 2vh, 20px);
+  }
+
+  body.page-home.page-about.site-editorial .about-dance {
+    margin-top: clamp(28px, 4.5vh, 40px);
+  }
+
+  body.page-about.site-editorial .about-dance__header {
+    margin-bottom: clamp(6px, 1vh, 10px);
+  }
+
+  body.page-about.site-editorial .about-dance__grid {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: clamp(8px, 2vw, 10px);
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    margin-right: calc(-1 * var(--site-content-inset) * 0.35);
+    padding: clamp(2px, 0.5vh, 4px) 0 clamp(6px, 1vh, 10px);
+  }
+
+  body.page-about.site-editorial .about-dance__grid::-webkit-scrollbar {
+    display: none;
+    height: 0;
+  }
+
+  body.page-about.site-editorial .about-dance__reel {
+    flex: 0 0 clamp(120px, 34vw, 140px);
+    scroll-snap-align: start;
   }
 }
 
