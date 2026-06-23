@@ -2353,26 +2353,35 @@ const scrollHomePageToSection = (sectionId) => {
   const target = document.getElementById(sectionId);
   if (!target) return;
 
-  const smoother =
-    typeof ScrollSmoother !== "undefined" ? ScrollSmoother.get() : null;
-  if (smoother && typeof smoother.scrollTo === "function") {
-    smoother.scrollTo(target, true, HOME_NAV_SCROLL_OFFSET);
-    return;
-  }
+  const run = () => {
+    const smoother =
+      typeof ScrollSmoother !== "undefined" ? ScrollSmoother.get() : null;
+    if (smoother && typeof smoother.scrollTo === "function") {
+      smoother.scrollTo(target, true, HOME_NAV_SCROLL_OFFSET);
+      return;
+    }
 
-  if (typeof gsap !== "undefined" && typeof gsap.to === "function") {
-    gsap.to(window, {
-      duration: prefersReducedMotion() ? 0 : 0.55,
-      scrollTo: { y: target, offsetY: 88 },
-      ease: "power2.out",
+    if (typeof gsap !== "undefined" && typeof gsap.to === "function") {
+      gsap.to(window, {
+        duration: prefersReducedMotion() ? 0 : 0.55,
+        scrollTo: { y: target, offsetY: 88 },
+        ease: "power2.out",
+      });
+      return;
+    }
+
+    target.scrollIntoView({
+      behavior: prefersReducedMotion() ? "auto" : "smooth",
+      block: "start",
     });
+  };
+
+  if (pageUsesScrollSmoother() && !getScrollSmootherInstance()) {
+    waitForScrollSmootherReady(run);
     return;
   }
 
-  target.scrollIntoView({
-    behavior: prefersReducedMotion() ? "auto" : "smooth",
-    block: "start",
-  });
+  run();
 };
 
 const initHomeLandingScroll = () => {
@@ -2400,8 +2409,9 @@ const initHomeLandingScroll = () => {
   const hashId = window.location.hash.slice(1);
   if (HOME_LANDING_SECTION_HASHES.has(hashId)) {
     const syncSectionAnchor = () => scrollHomePageToSection(hashId);
+    waitForScrollSmootherReady(syncSectionAnchor);
     window.addEventListener("load", syncSectionAnchor, { once: true });
-    window.setTimeout(syncSectionAnchor, 2300);
+    window.setTimeout(() => waitForScrollSmootherReady(syncSectionAnchor), 2300);
     return;
   }
 
@@ -3667,7 +3677,13 @@ const initHomeNavScrollSpy = () => {
     }
   });
 
-  window.addEventListener("hashchange", applyHashNavState);
+  window.addEventListener("hashchange", () => {
+    const hashId = window.location.hash.slice(1);
+    if (HOME_LANDING_SECTION_HASHES.has(hashId)) {
+      waitForScrollSmootherReady(() => scrollHomePageToSection(hashId));
+    }
+    applyHashNavState();
+  });
 
   document.addEventListener("click", (event) => {
     if (!document.body.classList.contains("page-home")) return;
@@ -3694,7 +3710,7 @@ const initHomeNavScrollSpy = () => {
       scrollHomePageToTop();
       history.replaceState(null, "", location.pathname + location.search);
     } else {
-      scrollHomePageToSection(navKey);
+      waitForScrollSmootherReady(() => scrollHomePageToSection(navKey));
       history.replaceState(null, "", `#${navKey}`);
     }
 

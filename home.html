@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="assets/css/agina-icons.css">
   <link rel="stylesheet" href="assets/css/meanmenu.css">
   <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/site-editorial.css?v=20260622extranav">
+  <link rel="stylesheet" href="assets/css/site-editorial.css?v=20260622extrascroll">
   <link rel="preload" as="image" href="./assets/images/inclusive-design-lab/hcde-showcase-2.png?v=20260619idlfaces">
   <link rel="preload" href="./assets/videos/nordstrom_homepage_v.mp4" as="fetch" type="video/mp4" crossorigin>
   <link rel="preload" as="image" href="./assets/images/projects/nordstrom_homepage_poster.jpg">
@@ -34,10 +34,13 @@
       try {
         scrollToWork = sessionStorage.getItem("homeScrollToWork") === "1";
       } catch (e) {}
-      if (window.location.hash === "#work" && !scrollToWork) {
+      var hash = window.location.hash;
+      var landingHashes = { about: 1, cv: 1, contact: 1, extra: 1 };
+      if (hash === "#work" && !scrollToWork) {
         history.replaceState(null, "", location.pathname + location.search);
       }
-      if (window.location.hash === "#work" && scrollToWork) return;
+      if (hash === "#work" && scrollToWork) return;
+      if (hash && landingHashes[hash.slice(1)]) return;
       if ("scrollRestoration" in history) history.scrollRestoration = "manual";
       window.scrollTo(0, 0);
     })();
@@ -1189,7 +1192,7 @@
   <script src="assets/js/window-shape-animation.js"></script>
   <script src="assets/js/preloader.js"></script>
   <script src="assets/js/gsap-custom-animations.js"></script>
-  <script src="assets/js/main.js?v=20260622extranav"></script>
+  <script src="assets/js/main.js?v=20260622extrascroll"></script>
   <script src="assets/js/chat-avatar-fix.js?v=20260622about"></script>
   <script src="assets/js/contact-form.js"></script>
 </body>

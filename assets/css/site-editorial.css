@@ -2271,7 +2271,19 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
 
 body.page-home.site-editorial .home-trailing__block--extra {
   padding-top: clamp(48px, 7vh, 72px);
-  padding-bottom: clamp(24px, 4vh, 40px);
+  padding-bottom: clamp(56px, 9vh, 88px);
+  scroll-margin-top: 88px;
+}
+
+body.page-home.site-editorial #about,
+body.page-home.site-editorial #cv,
+body.page-home.site-editorial #contact,
+body.page-home.site-editorial #extra {
+  scroll-margin-top: 88px;
+}
+
+body.page-home.site-editorial #smooth-content {
+  padding-bottom: clamp(56px, 9vh, 96px);
 }
 
 body.page-home.site-editorial .home-trailing__block--extra .about-extra__header {
@@ -2282,7 +2294,7 @@ body.page-home.site-editorial .home-trailing__block--extra .about-extra__header 
 body.page-home.site-editorial .home-trailing {
   position: relative;
   z-index: 1;
-  padding-bottom: clamp(20px, 3vh, 32px);
+  padding-bottom: clamp(48px, 8vh, 72px);
 }
 
 body.page-home.site-editorial .home-trailing__container {
