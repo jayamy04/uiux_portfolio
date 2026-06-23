@@ -9282,6 +9282,21 @@ body.page-about.site-editorial .about-extra__poster {
   display: block;
 }
 
+body.page-about.site-editorial .about-extra__item--static {
+  cursor: default;
+}
+
+@media (hover: hover) {
+  body.page-about.site-editorial .about-extra__item--static:hover {
+    transform: none;
+  }
+
+  body.page-about.site-editorial .about-extra__item--static:hover .about-extra__frame {
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
 body.page-about.site-editorial .about-extra__label {
   margin: 0;
   padding: 0 2px;
