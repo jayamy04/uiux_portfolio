@@ -9291,28 +9291,18 @@ body.page-about.site-editorial .about-extra__grid {
 
 @media only screen and (max-width: 767px) {
   body.page-about.site-editorial .about-extra__grid {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: stretch;
-    gap: clamp(12px, 3vw, 16px);
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    margin-right: calc(-1 * var(--site-content-inset) * 0.35);
-    padding: clamp(2px, 0.5vh, 4px) 0 clamp(8px, 1.2vh, 12px);
-  }
-
-  body.page-about.site-editorial .about-extra__grid::-webkit-scrollbar {
-    display: none;
-    height: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(16px, 4vw, 22px);
+    overflow: visible;
+    margin-right: 0;
+    padding: 0;
   }
 
   body.page-about.site-editorial .about-extra__item {
-    flex: 0 0 100%;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+    flex: none;
+    scroll-snap-align: unset;
+    scroll-snap-stop: unset;
   }
 
   body.page-about.site-editorial .about-extra__frame {
