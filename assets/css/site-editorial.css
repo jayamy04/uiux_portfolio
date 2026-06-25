@@ -2015,7 +2015,7 @@ body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb {
   max-width: none;
   margin: 0;
   height: auto;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   border-radius: 12px 12px 0 0;
   background:
     radial-gradient(ellipse 72% 58% at 50% 28%, rgba(255, 77, 184, 0.11) 0%, transparent 58%),
@@ -2033,9 +2033,8 @@ body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card:fo
 body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb img,
 body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb video {
   display: block;
-  flex: 0 1 auto;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -2043,9 +2042,13 @@ body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb v
   opacity: 1;
 }
 
-/* Per-card native aspect ratios — carousel/showcase only; stack uses unified 16/10 */
+/* Per-card native aspect ratios in editorial stack */
 body.page-home .home-hero-projects__thumb--ratio-16x9 {
   aspect-ratio: 16 / 9;
+}
+
+body.page-home .home-hero-projects__thumb--ratio-16x10 {
+  aspect-ratio: 16 / 10;
 }
 
 body.page-home .home-hero-projects__thumb--ratio-nordstrom {
@@ -2061,11 +2064,28 @@ body.page-home .home-hero-projects__thumb--ratio-ibm {
   aspect-ratio: 3 / 2;
 }
 
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb--ratio-16x9,
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb--ratio-nordstrom,
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb--ratio-idl,
-body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb--ratio-ibm {
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb--ratio-16x9 {
+  aspect-ratio: 16 / 9;
+  max-width: 100%;
+}
+
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb--ratio-16x10 {
   aspect-ratio: 16 / 10;
+  max-width: 100%;
+}
+
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb--ratio-nordstrom {
+  aspect-ratio: 1486 / 926;
+  max-width: 100%;
+}
+
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb--ratio-idl {
+  aspect-ratio: 768 / 1024;
+  max-width: 100%;
+}
+
+body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb--ratio-ibm {
+  aspect-ratio: 3 / 2;
   max-width: 100%;
 }
 
@@ -2138,33 +2158,25 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-dancers-survey
   object-position: center center;
 }
 
-/* Board Game Onboarding — RuleMate prototype video, centered contain */
+/* Board Game Onboarding — RuleMate prototype video */
+body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-showcase .home-hero-projects__thumb {
+  background: #ffffff;
+}
+
 body.page-home .home-hero-projects__grid--editorial #hero-project-board-games-showcase .home-hero-projects__thumb video {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
   object-fit: contain;
   object-position: center center;
 }
 
-/* Makeability Lab — ARTennis demo video, cover fill */
+/* Makeability Lab — ARTennis demo video */
 body.page-home .home-hero-projects__grid--editorial #hero-project-makeability .home-hero-projects__thumb video {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
 }
 
-/* FashionXAI — app demo video, cover fill */
+/* FashionXAI — app demo video */
 body.page-home .home-hero-projects__grid--editorial #hero-project-fashionxai-research .home-hero-projects__thumb video {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
 }
 
@@ -2269,12 +2281,6 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-inclusive-desi
 
   body.page-home .home-hero-projects__grid--editorial .home-hero-projects__card-desc {
     max-width: none;
-  }
-
-  body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb {
-    aspect-ratio: 16 / 10;
-    min-height: 0;
-    height: auto;
   }
 
   body.page-home .home-hero-projects__thumb--ratio-idl {
@@ -9303,11 +9309,6 @@ body.page-about.site-editorial .about-extra__grid {
     flex: none;
     scroll-snap-align: unset;
     scroll-snap-stop: unset;
-  }
-
-  body.page-about.site-editorial .about-extra__frame {
-    aspect-ratio: 16 / 10;
-    border-radius: 12px;
   }
 
   body.page-about.site-editorial .about-extra__label {
