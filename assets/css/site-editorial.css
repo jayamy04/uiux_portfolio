@@ -319,14 +319,27 @@ body.site-editorial .site-header-cv-btn:focus-visible {
   outline-offset: 3px;
 }
 
+body.site-editorial .offcanvas_header-actions {
+  display: none;
+}
+
 @media only screen and (max-width: 991px) {
+  body.site-editorial .offcanvas_header-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: clamp(10px, 2.5vw, 12px);
+    margin: clamp(18px, 4vw, 24px) 0 clamp(22px, 5vw, 28px);
+    padding: 0 clamp(4px, 1vw, 8px);
+  }
+
   body.site-editorial .tj-header_right {
-    order: 2;
-    margin-left: auto;
+    display: none;
   }
 
   body.site-editorial .tj-header_mobile_toggle {
     order: 3;
+    margin-left: auto;
   }
 }
 

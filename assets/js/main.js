@@ -164,6 +164,11 @@
 				".offcanvas_menu .mean-nav a:not(.mean-expand)",
 				closeOffcanvas,
 			);
+			$(document).on(
+				"click",
+				".offcanvas_header-actions a",
+				closeOffcanvas,
+			);
 		}
 
 		/* 
