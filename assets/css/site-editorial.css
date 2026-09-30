@@ -1043,6 +1043,8 @@ body.page-home .home-landing__statement-tagline {
 }
 
 body.page-home .home-landing__statement-tagline {
+  display: block;
+  margin-top: 0.22em;
   font-weight: var(--tj-fw-bold);
   color: #ffffff;
 }
