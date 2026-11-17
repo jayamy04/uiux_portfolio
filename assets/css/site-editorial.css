@@ -14264,6 +14264,21 @@ body.page-nordstrom-rack-pickup .work-detail__usability-finding .work-detail__me
   margin: 0;
 }
 
+body.page-nordstrom-rack-pickup .work-detail__usability-finding .work-detail__prose .work-detail__figure--inline {
+  margin: clamp(12px, 1.8vh, 18px) 0;
+}
+
+body.page-nordstrom-rack-pickup .work-detail__usability-finding .work-detail__figure--inline .work-detail__figure-frame {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+body.page-nordstrom-rack-pickup .work-detail__usability-finding .work-detail__figure--inline img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 body.page-nordstrom-rack-pickup .work-detail__media-pair {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
