@@ -2178,7 +2178,6 @@ body.page-home .home-hero-projects__thumb--cover video {
   object-position: center center;
 }
 
-body.page-home #hero-project-nordstrom-rack .home-hero-projects__thumb--cover video,
 body.page-home #hero-project-sound-transit .home-hero-projects__thumb--cover video {
   object-position: center center;
 }
@@ -2199,13 +2198,41 @@ body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb--
 }
 
 /* Nordstrom Rack + Sound Transit — fill the media plane in horizontal cards */
-body.page-home .home-hero-projects__grid--editorial.home-hero-projects__grid--horizontal #hero-project-nordstrom-rack .home-hero-projects__thumb video,
 body.page-home .home-hero-projects__grid--editorial.home-hero-projects__grid--horizontal #hero-project-sound-transit .home-hero-projects__thumb video {
   max-width: none;
   max-height: none;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
+  transform: none;
+}
+
+/* Nordstrom — UI screenshot of pickup filter (contain on clean plane) */
+body.page-home #hero-project-nordstrom-rack .home-hero-projects__thumb--ui {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(18px, 3.2vw, 36px);
+  background:
+    linear-gradient(165deg, #f7f7f5 0%, #ffffff 48%, #f1f1ee 100%);
+}
+
+body.page-home #hero-project-nordstrom-rack .home-hero-projects__thumb--ui::after {
+  background:
+    linear-gradient(to right, transparent 74%, rgba(12, 17, 13, 0.1) 100%);
+  opacity: 0.5;
+}
+
+body.page-home .home-hero-projects__grid--editorial.home-hero-projects__grid--horizontal #hero-project-nordstrom-rack .home-hero-projects__thumb--ui img,
+body.page-home .home-hero-projects__grid--horizontal #hero-project-nordstrom-rack .home-hero-projects__thumb--ui img {
+  position: relative;
+  z-index: 0;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   object-position: center center;
   transform: none;
 }
@@ -2480,7 +2507,6 @@ body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__thumb 
 /* Override stack contain rules so horizontal feature media stays full-bleed cover */
 body.page-home .home-hero-projects__grid--editorial.home-hero-projects__grid--horizontal .home-hero-projects__thumb--cover img,
 body.page-home .home-hero-projects__grid--editorial.home-hero-projects__grid--horizontal .home-hero-projects__thumb--cover video,
-body.page-home .home-hero-projects__grid--editorial.home-hero-projects__grid--horizontal #hero-project-nordstrom-rack .home-hero-projects__thumb video,
 body.page-home .home-hero-projects__grid--editorial.home-hero-projects__grid--horizontal #hero-project-sound-transit .home-hero-projects__thumb video {
   max-width: none;
   max-height: none;
@@ -2490,12 +2516,18 @@ body.page-home .home-hero-projects__grid--editorial.home-hero-projects__grid--ho
   object-position: center 42%;
 }
 
-body.page-home #hero-project-nordstrom-rack .home-hero-projects__thumb video {
-  object-position: center 38%;
-}
-
 body.page-home #hero-project-sound-transit .home-hero-projects__thumb video {
   object-position: center 45%;
+}
+
+/* Nordstrom UI crop — keep filter readable; soft hover only */
+body.page-home .home-hero-projects__grid--horizontal #hero-project-nordstrom-rack .home-hero-projects__thumb--ui img {
+  transform: none;
+}
+
+body.page-home .home-hero-projects__grid--horizontal #hero-project-nordstrom-rack:hover .home-hero-projects__thumb--ui img,
+body.page-home .home-hero-projects__grid--horizontal #hero-project-nordstrom-rack:focus-visible .home-hero-projects__thumb--ui img {
+  transform: scale(1.03);
 }
 
 @media only screen and (min-width: 768px) {
