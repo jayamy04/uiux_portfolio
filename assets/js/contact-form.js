@@ -28,7 +28,12 @@
     }
     form.reset();
     try {
-      history.replaceState(null, "", "contact.html");
+      var path = window.location.pathname || "home.html";
+      if (path.indexOf("contact") !== -1) {
+        history.replaceState(null, "", path);
+      } else if (path.indexOf("home") !== -1 || /\/$/.test(path)) {
+        history.replaceState(null, "", path.split("#")[0] + "#contact");
+      }
     } catch (e) {}
   }
 
