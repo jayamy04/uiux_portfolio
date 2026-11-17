@@ -18,10 +18,18 @@
   <link rel="stylesheet" href="assets/css/agina-icons.css">
   <link rel="stylesheet" href="assets/css/meanmenu.css">
   <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/site-editorial.css?v=20261117notoc">
+  <link rel="stylesheet" href="assets/css/site-editorial.css?v=20261117idlfmt">
+
+  <script>
+    (function () {
+      if (window.location.hash) return;
+      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+      window.scrollTo(0, 0);
+    })();
+  </script>
 </head>
 
-<body class="no-js site-editorial page-inclusive-lab page-inclusive-design-lab">
+<body class="site-editorial page-inclusive-lab page-inclusive-design-lab">
   <div class="tj-preloader">
     <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
       <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
@@ -142,9 +150,9 @@
                 <span>Work</span>
               </a>
               <h1 class="work-detail__title tj-fade" data-on-scroll="0" data-delay=".04">
-                <span class="work-detail__title-line">Blind and Low Vision User Interviews</span>
+                <span class="work-detail__title-line" data-work-detail-title>Blind and Low Vision User Interviews</span>
               </h1>
-              <dl class="work-detail__meta tj-fade" data-on-scroll="0" data-delay=".12">
+              <dl class="work-detail__meta work-detail__meta--extended tj-fade" data-on-scroll="0" data-delay=".12">
                 <div class="work-detail__meta-item">
                   <dt>Role</dt>
                   <dd>Graduate Researcher</dd>
@@ -154,12 +162,16 @@
                   <dd>UW Inclusive Design Lab</dd>
                 </div>
                 <div class="work-detail__meta-item">
-                  <dt>Timeline</dt>
-                  <dd>January 2025 – Present</dd>
+                  <dt>Focus</dt>
+                  <dd>Urban &amp; public art accessibility · BLV</dd>
                 </div>
                 <div class="work-detail__meta-item">
                   <dt>Methods</dt>
                   <dd>Semi-structured interviews · Design probes · Thematic analysis</dd>
+                </div>
+                <div class="work-detail__meta-item">
+                  <dt>Timeline</dt>
+                  <dd>January 2025 – Present</dd>
                 </div>
                 <div class="work-detail__meta-item">
                   <dt>Publication</dt>
@@ -169,10 +181,6 @@
               <div class="work-detail__actions tj-fade" data-on-scroll="0" data-delay=".16">
                 <a class="work-detail__cta" href="https://www.researchgate.net/publication/403307665_Unseen_City_Canvases_Exploring_Blind_and_Low_Vision_People's_Perspectives_on_Urban_and_Public_Art_Accessibility" target="_blank" rel="noopener noreferrer">
                   <span class="work-detail__cta-label">ResearchGate paper</span>
-                  <span class="work-detail__cta-arrow" aria-hidden="true">↗</span>
-                </a>
-                <a class="work-detail__cta work-detail__cta--ghost" href="https://assets26.sigaccess.org/" target="_blank" rel="noopener noreferrer">
-                  <span class="work-detail__cta-label">ASSETS 2026</span>
                   <span class="work-detail__cta-arrow" aria-hidden="true">↗</span>
                 </a>
               </div>
@@ -749,15 +757,7 @@
           </section>
 
           <div class="work-detail__footer-actions tj-fade" data-on-scroll="0" data-delay=".12">
-            <a class="work-detail__cta" href="https://www.researchgate.net/publication/403307665_Unseen_City_Canvases_Exploring_Blind_and_Low_Vision_People's_Perspectives_on_Urban_and_Public_Art_Accessibility" target="_blank" rel="noopener noreferrer">
-              <span class="work-detail__cta-label">ResearchGate paper</span>
-              <span class="work-detail__cta-arrow" aria-hidden="true">↗</span>
-            </a>
-            <a class="work-detail__cta work-detail__cta--ghost" href="https://assets26.sigaccess.org/" target="_blank" rel="noopener noreferrer">
-              <span class="work-detail__cta-label">ASSETS 2026</span>
-              <span class="work-detail__cta-arrow" aria-hidden="true">↗</span>
-            </a>
-            <a class="work-detail__cta work-detail__cta--ghost" href="home.html#work">
+            <a class="work-detail__cta" href="home.html#work">
               <span class="work-detail__cta-label">More work</span>
               <span class="work-detail__cta-arrow" aria-hidden="true">→</span>
             </a>

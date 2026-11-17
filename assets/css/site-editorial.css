@@ -10775,9 +10775,11 @@ body.page-inclusive-lab .work-detail__heading {
   text-transform: lowercase;
 }
 
-/* Nordstrom case studies — matcha section titles, title case (not lowercase) */
+/* Nordstrom + Inclusive Design — matcha section titles, title case (not lowercase) */
 body.page-nordstrom-rack.site-editorial .work-detail .work-detail__heading,
-body.page-nordstrom-rack-pickup.site-editorial .work-detail .work-detail__heading {
+body.page-nordstrom-rack-pickup.site-editorial .work-detail .work-detail__heading,
+body.page-inclusive-lab.site-editorial .work-detail .work-detail__heading,
+body.page-inclusive-design-lab.site-editorial .work-detail .work-detail__heading {
   color: var(--site-accent);
   text-transform: none;
 }
@@ -13610,16 +13612,22 @@ body.page-inclusive-design-lab .work-detail__hero-inner {
   max-width: 44rem;
 }
 
-/* Nordstrom case study — wider reading column, less sparse side gutters */
+/* Nordstrom + Inclusive Design — wider reading column, less sparse side gutters */
 body.page-nordstrom-rack.site-editorial,
-body.page-nordstrom-rack-pickup.site-editorial {
+body.page-nordstrom-rack-pickup.site-editorial,
+body.page-inclusive-lab.site-editorial,
+body.page-inclusive-design-lab.site-editorial {
   --site-content-inset: clamp(16px, 3.2vw, 36px);
 }
 
 body.page-nordstrom-rack .work-detail__inner,
 body.page-nordstrom-rack-pickup .work-detail__inner,
+body.page-inclusive-lab .work-detail__inner,
+body.page-inclusive-design-lab .work-detail__inner,
 body.page-nordstrom-rack .work-detail__hero-inner,
-body.page-nordstrom-rack-pickup .work-detail__hero-inner {
+body.page-nordstrom-rack-pickup .work-detail__hero-inner,
+body.page-inclusive-lab .work-detail__hero-inner,
+body.page-inclusive-design-lab .work-detail__hero-inner {
   width: 100%;
   max-width: min(94vw, 68rem);
 }
@@ -14019,9 +14027,13 @@ body.page-sound-transit .work-detail__section--visual .work-detail__inner {
   max-width: 920px;
 }
 
-/* Nordstrom Rack Pickup — usability study visual polish */
+/* Nordstrom Rack Pickup + Inclusive Design — title case hero titles */
 body.page-nordstrom-rack-pickup .work-detail__title-line,
-body.page-nordstrom-rack-pickup .work-detail [data-work-detail-title] {
+body.page-nordstrom-rack-pickup .work-detail [data-work-detail-title],
+body.page-inclusive-lab .work-detail__title-line,
+body.page-inclusive-design-lab .work-detail__title-line,
+body.page-inclusive-lab .work-detail [data-work-detail-title],
+body.page-inclusive-design-lab .work-detail [data-work-detail-title] {
   text-transform: none;
 }
 
@@ -14060,7 +14072,9 @@ body.page-nordstrom-rack-pickup .work-detail__subtitle {
   color: rgba(255, 255, 255, 0.62);
 }
 
-body.page-nordstrom-rack-pickup .work-detail__meta--extended {
+body.page-nordstrom-rack-pickup .work-detail__meta--extended,
+body.page-inclusive-lab .work-detail__meta--extended,
+body.page-inclusive-design-lab .work-detail__meta--extended {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: clamp(28px, 4.5vh, 40px);
   padding-top: clamp(24px, 3.5vh, 32px);
@@ -14068,7 +14082,9 @@ body.page-nordstrom-rack-pickup .work-detail__meta--extended {
 }
 
 @media only screen and (max-width: 767px) {
-  body.page-nordstrom-rack-pickup .work-detail__meta--extended {
+  body.page-nordstrom-rack-pickup .work-detail__meta--extended,
+  body.page-inclusive-lab .work-detail__meta--extended,
+  body.page-inclusive-design-lab .work-detail__meta--extended {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
