@@ -1494,7 +1494,7 @@ body.page-home.site-editorial .home-about {
 body.page-home.site-editorial .home-about__body {
   display: block;
   width: 100%;
-  max-width: 52rem;
+  max-width: none;
 }
 
 body.page-home.site-editorial .home-about__copy {
@@ -1502,7 +1502,8 @@ body.page-home.site-editorial .home-about__copy {
   display: flex;
   flex-direction: column;
   gap: clamp(16px, 2.2vh, 22px);
-  max-width: 52rem;
+  width: 100%;
+  max-width: none;
   padding-left: clamp(14px, 1.6vw, 22px);
 }
 
@@ -1523,7 +1524,7 @@ body.page-home.site-editorial .home-about__copy::before {
 
 body.page-home.site-editorial .home-about__text {
   margin: 0;
-  max-width: 50rem;
+  max-width: none;
   font-family: var(--tj-ff-body);
   font-size: clamp(1.0625rem, 1.15vw + 0.55rem, 1.25rem);
   font-weight: var(--tj-fw-regular, 400);
