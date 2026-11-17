@@ -14279,10 +14279,11 @@ body.page-nordstrom-rack-pickup .work-detail__usability-finding .work-detail__fi
 body.page-nordstrom-rack-pickup .work-detail__usability-finding .work-detail__figure--inline img {
   display: block;
   width: 100%;
+  max-width: 920px;
   height: auto;
+  margin: 0 auto;
   opacity: 1;
   filter: none;
-  image-rendering: -webkit-optimize-contrast;
 }
 
 body.page-nordstrom-rack-pickup .work-detail__media-pair {

@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="assets/css/agina-icons.css">
   <link rel="stylesheet" href="assets/css/meanmenu.css">
   <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/site-editorial.css?v=20261117crisp">
+  <link rel="stylesheet" href="assets/css/site-editorial.css?v=20261117sharp">
 
   <script>
     (function () {
@@ -206,8 +206,8 @@
           <section class="work-detail__section" aria-labelledby="nordstrom-favorite-moment-heading">
             <div class="work-detail__inner">
               <h2 id="nordstrom-favorite-moment-heading" class="work-detail__heading tj-fade" data-on-scroll="0">Favorite Research Moment</h2>
-              <figure class="work-detail__figure work-detail__figure--fav-clip tj-fade" data-on-scroll="0" data-delay=".04">
-                <div class="work-detail__figure-frame work-detail__figure-frame--video">
+              <figure class="work-detail__figure work-detail__figure--fav-clip work-detail__figure--editorial tj-fade" data-on-scroll="0" data-delay=".04">
+                <div class="work-detail__figure-frame work-detail__figure-frame--video work-detail__figure-frame--editorial">
                   <video
                     class="work-detail__figure-video--full"
                     controls
@@ -215,7 +215,7 @@
                     webkit-playsinline
                     preload="metadata"
                     aria-label="Teammate applying Available Today and size filters, then finding no matching colors">
-                    <source src="./assets/videos/nordstrom-rack-available-today-filter.mp4?v=20261117fav" type="video/mp4">
+                    <source src="./assets/videos/nordstrom-rack-available-today-filter.mp4?v=20261117media" type="video/mp4">
                   </video>
                 </div>
                 <figcaption class="work-detail__figure-caption">Trying the “Available Today” + size filters before testing — nothing available in that size.</figcaption>
@@ -241,6 +241,18 @@
                   <article class="work-detail__usability-finding tj-fade" data-on-scroll="0" data-delay=".16">
                     <div class="work-detail__prose">
                       <p><strong>First, the “Available Today” filter did not work as expected.</strong> · Severity: High</p>
+                      <figure class="work-detail__figure work-detail__figure--inline work-detail__figure--editorial work-detail__figure--sidebar">
+                        <div class="work-detail__figure-frame work-detail__figure-frame--ui">
+                          <img
+                            src="./assets/images/projects/nordstrom-available-today-sidebar.png?v=20261117media"
+                            alt="Nordstrom Rack Free Pickup sidebar showing the Available today checkbox under Downtown Seattle"
+                            width="1024"
+                            height="565"
+                            loading="lazy"
+                            decoding="async">
+                        </div>
+                        <figcaption class="work-detail__figure-caption">“Available today” in the Free Pickup sidebar — the checkbox shoppers relied on.</figcaption>
+                      </figure>
                       <p>Participants expected every result to be available for same-day pickup. The filter operates at the product level, not the size level, so products showed up as long as at least one size or color was available for pickup — even if the shopper’s selected size was entirely unavailable. People clicked through about 10.6 size and color combinations on average to find a pair of shoes they could actually pick up. When “Available Today” and a size filter were applied together, some results still appeared with no colors available in that size for same- or next-day pickup — a direct contradiction of what the filter implies. Some participants almost gave up; 3 of 8 tried to abandon the task 1–3 times because the filters felt broken. (7 of 8 applied “Available Today”; 4 of 8 also applied a size filter. Separately, 2 of 8 never noticed the filter at all — one gave up, another got lucky on the first try.)</p>
                     </div>
                     <div class="work-detail__usability-quotes">
@@ -265,10 +277,10 @@
                       <figure class="work-detail__figure work-detail__figure--inline">
                         <div class="work-detail__figure-frame">
                           <img
-                            src="./assets/images/projects/nordstrom-fulfillment-pickup-to-ship.png?v=20261117crisp"
-                            alt="Side-by-side product page: before size selection shows Pickup; after selecting Small it switches to Ship to store"
-                            width="2400"
-                            height="996"
+                            src="./assets/images/projects/nordstrom-fulfillment-pickup-to-ship.png?v=20261117sharp"
+                            alt="UI comparison: Free pickup available tomorrow changes to Free ship to store arriving later"
+                            width="1930"
+                            height="320"
                             loading="lazy"
                             decoding="async">
                         </div>
