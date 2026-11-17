@@ -2528,15 +2528,16 @@ body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--split {
     flex-direction: row;
     align-items: stretch;
-    min-height: clamp(300px, 36vh, 380px);
-    height: auto;
+    height: clamp(340px, 38vh, 400px);
+    min-height: clamp(340px, 38vh, 400px);
+    max-height: clamp(340px, 38vh, 400px);
   }
 
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__thumb {
     flex: 0 0 36%;
     width: 36%;
     max-width: none;
-    height: auto;
+    height: 100%;
     min-height: 100%;
     align-self: stretch;
     aspect-ratio: auto;
@@ -2588,22 +2589,24 @@ body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--
     line-height: 1.7;
   }
 
-  body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--split {
-    min-height: clamp(300px, 36vh, 400px);
-  }
-
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--split .home-hero-projects__card-desc {
     max-width: none;
     width: 100%;
     font-size: clamp(0.96875rem, 1.05vw, 1.0625rem);
     line-height: 1.7;
   }
+
+  body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--split .home-hero-projects__card-copy {
+    overflow: hidden;
+  }
 }
 
 @media only screen and (min-width: 1100px) {
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card,
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--split {
-    min-height: clamp(320px, 38vh, 420px);
+    height: clamp(360px, 40vh, 420px);
+    min-height: clamp(360px, 40vh, 420px);
+    max-height: clamp(360px, 40vh, 420px);
   }
 
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__thumb {
