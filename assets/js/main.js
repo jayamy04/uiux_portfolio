@@ -1439,8 +1439,10 @@
 	document.addEventListener("readystatechange", () => {
 		if (document.readyState === "complete") {
 			mainCustomJs();
+			// Preloader is disabled — init ScrollSmoother immediately so the first
+			// paint does not jump ~2s later when the smoother wraps the page.
 			if (typeof GSAPAnimations !== "undefined") {
-				setTimeout(() => GSAPAnimations.init(), 2000);
+				requestAnimationFrame(() => GSAPAnimations.init());
 			}
 		}
 	});
@@ -2354,11 +2356,12 @@ const scrollHomePageToWork = () => {
 };
 
 const HOME_NAV_SCROLL_OFFSET = "top 88px";
-const HOME_LANDING_SECTION_HASHES = new Set(["about"]);
+const HOME_LANDING_SECTION_HASHES = new Set(["about", "contact"]);
 const HOME_NAV_SECTION_IDS = {
   home: null,
   about: "about",
   projects: "work",
+  contact: "contact",
 };
 
 const scrollHomePageToSection = (sectionId) => {
@@ -2413,8 +2416,10 @@ const initHomeLandingScroll = () => {
   if (scrollToWork) {
     clearHomeScrollToWorkIntent();
     const syncWorkAnchor = () => scrollHomePageToWork();
-    window.addEventListener("load", syncWorkAnchor, { once: true });
-    window.setTimeout(syncWorkAnchor, 2300);
+    waitForScrollSmootherReady(syncWorkAnchor);
+    window.addEventListener("load", () => waitForScrollSmootherReady(syncWorkAnchor), {
+      once: true,
+    });
     return;
   }
 
@@ -2422,16 +2427,26 @@ const initHomeLandingScroll = () => {
   if (HOME_LANDING_SECTION_HASHES.has(hashId)) {
     const syncSectionAnchor = () => scrollHomePageToSection(hashId);
     waitForScrollSmootherReady(syncSectionAnchor);
-    window.addEventListener("load", syncSectionAnchor, { once: true });
-    window.setTimeout(() => waitForScrollSmootherReady(syncSectionAnchor), 2300);
+    window.addEventListener("load", () => waitForScrollSmootherReady(syncSectionAnchor), {
+      once: true,
+    });
     return;
   }
 
+  // Keep the first visit pinned to the hero without a delayed yank back to top
+  // after ScrollSmoother mounts (that delay was causing a visible jump).
+  const pinHeroIfStillAtTop = () => {
+    const y =
+      typeof ScrollSmoother !== "undefined" && ScrollSmoother.get()
+        ? ScrollSmoother.get().scrollTop()
+        : window.scrollY || document.documentElement.scrollTop || 0;
+    if (y <= 8) scrollHomePageToTop();
+  };
+
   scrollHomePageToTop();
   requestAnimationFrame(scrollHomePageToTop);
-  window.addEventListener("load", scrollHomePageToTop, { once: true });
-  // ScrollSmoother initializes ~2s after load; keep fresh visits at the hero.
-  window.setTimeout(scrollHomePageToTop, 2300);
+  waitForScrollSmootherReady(pinHeroIfStillAtTop);
+  window.addEventListener("load", pinHeroIfStillAtTop, { once: true });
 };
 
 const SOUND_TRANSIT_CASE_STUDY_PATH = "sound-transit.html";
@@ -3191,6 +3206,7 @@ const getHomeNavKeyFromLink = (link) => {
   }
   if (href.includes("#about")) return "about";
   if (href.includes("#work")) return "projects";
+  if (href.includes("#contact")) return "contact";
   if (/^(?:\.\/)?home\.html(?:[#?]|$)/.test(href) || href === "" || href === "#")
     return "home";
   return null;
@@ -3225,6 +3241,7 @@ const getHomeNavScrollSpyTargets = () => {
   [
     { id: "about", navKey: "about" },
     { id: "work", navKey: "projects" },
+    { id: "contact", navKey: "contact" },
   ].forEach(({ id, navKey }) => {
     const el = document.getElementById(id);
     if (el) targets.push({ el, navKey });

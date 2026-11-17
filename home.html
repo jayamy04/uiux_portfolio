@@ -30,7 +30,7 @@
         scrollToWork = sessionStorage.getItem("homeScrollToWork") === "1";
       } catch (e) {}
       var hash = window.location.hash;
-      var landingHashes = { about: 1 };
+      var landingHashes = { about: 1, contact: 1 };
       if (hash === "#work" && !scrollToWork) {
         history.replaceState(null, "", location.pathname + location.search);
       }
@@ -371,7 +371,7 @@
   <script src="assets/js/window-shape-animation.js"></script>
   <script src="assets/js/preloader.js"></script>
   <script src="assets/js/gsap-custom-animations.js"></script>
-  <script src="assets/js/main.js?v=20261117notoc"></script>
+  <script src="assets/js/main.js?v=20261117nojump"></script>
   <script src="assets/js/chat-avatar-fix.js?v=20260622about"></script>
   <script src="assets/js/contact-form.js?v=20261117form"></script>
 </body>
