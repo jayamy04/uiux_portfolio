@@ -2461,7 +2461,7 @@ body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-t
 
 body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-desc {
   margin: 0;
-  max-width: 42em;
+  max-width: none;
   width: 100%;
   color: rgba(232, 228, 210, 0.78);
   font-size: clamp(0.9375rem, 2.2vw, 1.0625rem);
@@ -2563,8 +2563,8 @@ body.page-home .home-hero-projects__grid--horizontal #hero-project-nordstrom-rac
   }
 
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__thumb {
-    flex: 0 0 42%;
-    width: 42%;
+    flex: 0 0 36%;
+    width: 36%;
     max-width: none;
     height: auto;
     min-height: 100%;
@@ -2580,11 +2580,12 @@ body.page-home .home-hero-projects__grid--horizontal #hero-project-nordstrom-rac
   }
 
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-body {
-    flex: 1 1 58%;
-    width: 58%;
+    flex: 1 1 64%;
+    width: 64%;
+    min-width: 0;
     justify-content: space-between;
     gap: clamp(16px, 2.2vh, 24px);
-    padding: clamp(24px, 2.6vw, 36px) clamp(26px, 3.2vw, 44px) clamp(22px, 2.4vw, 32px) clamp(22px, 2.8vw, 36px);
+    padding: clamp(22px, 2.2vw, 32px) clamp(20px, 2.2vw, 28px) clamp(20px, 2.2vw, 28px) clamp(18px, 2vw, 26px);
     border-left: none;
   }
 
@@ -2609,8 +2610,9 @@ body.page-home .home-hero-projects__grid--horizontal #hero-project-nordstrom-rac
     margin-bottom: 14px;
   }
 
-  body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-desc {
-    max-width: 40em;
+  body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-desc,
+  body.page-home .home-hero-projects__grid--editorial.home-hero-projects__grid--horizontal .home-hero-projects__card-desc {
+    max-width: none;
     width: 100%;
     font-size: clamp(0.96875rem, 1.05vw, 1.0625rem);
     line-height: 1.7;
@@ -2621,6 +2623,8 @@ body.page-home .home-hero-projects__grid--horizontal #hero-project-nordstrom-rac
   }
 
   body.page-home #hero-project-nordstrom-rack .home-hero-projects__card-desc {
+    max-width: none;
+    width: 100%;
     font-size: clamp(0.96875rem, 1.05vw, 1.0625rem);
     line-height: 1.7;
   }
@@ -2633,14 +2637,14 @@ body.page-home .home-hero-projects__grid--horizontal #hero-project-nordstrom-rac
   }
 
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__thumb {
-    flex-basis: 40%;
-    width: 40%;
+    flex-basis: 34%;
+    width: 34%;
   }
 
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-body {
-    flex-basis: 60%;
-    width: 60%;
-    padding: clamp(28px, 2.8vw, 40px) clamp(32px, 3.4vw, 48px) clamp(26px, 2.6vw, 36px) clamp(24px, 2.6vw, 40px);
+    flex-basis: 66%;
+    width: 66%;
+    padding: clamp(24px, 2.4vw, 34px) clamp(22px, 2.4vw, 32px) clamp(22px, 2.4vw, 30px) clamp(20px, 2.2vw, 28px);
   }
 
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-title {
@@ -2653,6 +2657,8 @@ body.page-home .home-hero-projects__grid--horizontal #hero-project-nordstrom-rac
   }
 
   body.page-home #hero-project-nordstrom-rack .home-hero-projects__card-desc {
+    max-width: none;
+    width: 100%;
     font-size: clamp(1rem, 1.1vw, 1.1rem);
     line-height: 1.7;
   }
