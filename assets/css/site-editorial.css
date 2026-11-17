@@ -2368,18 +2368,19 @@ body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-b
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: clamp(22px, 3.5vh, 32px);
+  gap: clamp(20px, 3vh, 28px);
   padding: clamp(22px, 5vw, 28px) clamp(20px, 5vw, 26px) clamp(22px, 5vw, 28px);
 }
 
 body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-copy {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 0;
   min-width: 0;
   width: 100%;
-  max-width: 36rem;
+  max-width: none;
+  flex: 1 1 auto;
 }
 
 body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-meta {
@@ -2395,12 +2396,13 @@ body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-m
 
 body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-title {
   margin: 0 0 12px;
-  max-width: 28ch;
+  max-width: none;
+  width: 100%;
   color: #ffffff;
   font-size: clamp(1.25rem, 3.4vw, 1.625rem);
   font-weight: var(--tj-fw-bold);
   letter-spacing: -0.035em;
-  line-height: 1.15;
+  line-height: 1.18;
   text-wrap: balance;
 }
 
@@ -2410,22 +2412,25 @@ body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-t
 
 body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-desc {
   margin: 0;
-  max-width: 38em;
-  color: rgba(232, 236, 220, 0.8);
-  font-size: clamp(0.875rem, 2.2vw, 0.96875rem);
-  line-height: 1.58;
+  max-width: none;
+  width: 100%;
+  color: rgba(232, 236, 220, 0.84);
+  font-size: clamp(0.9375rem, 2.3vw, 1.0625rem);
+  line-height: 1.62;
   letter-spacing: -0.012em;
   text-wrap: pretty;
 }
 
-/* Nordstrom — long evaluative brief; grow with copy, keep CTA anchored */
-body.page-home #hero-project-nordstrom-rack .home-hero-projects__card-body {
+/* Matched pair — shared body rhythm for Nordstrom + Sound Transit */
+body.page-home #hero-project-nordstrom-rack .home-hero-projects__card-body,
+body.page-home #hero-project-sound-transit .home-hero-projects__card-body {
   gap: clamp(18px, 2.4vh, 28px);
 }
 
-body.page-home #hero-project-nordstrom-rack .home-hero-projects__card-desc {
-  font-size: clamp(0.8125rem, 1.9vw, 0.9375rem);
-  line-height: 1.55;
+body.page-home #hero-project-nordstrom-rack .home-hero-projects__card-desc,
+body.page-home #hero-project-sound-transit .home-hero-projects__card-desc {
+  font-size: clamp(0.9375rem, 2.3vw, 1.0625rem);
+  line-height: 1.62;
 }
 
 body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-cta {
@@ -2498,13 +2503,13 @@ body.page-home #hero-project-sound-transit .home-hero-projects__thumb video {
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--split {
     flex-direction: row;
     align-items: stretch;
-    min-height: clamp(280px, 34vh, 360px);
+    min-height: clamp(300px, 36vh, 380px);
     height: auto;
   }
 
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__thumb {
-    flex: 0 0 48%;
-    width: 48%;
+    flex: 0 0 40%;
+    width: 40%;
     max-width: none;
     height: auto;
     min-height: 100%;
@@ -2520,16 +2525,17 @@ body.page-home #hero-project-sound-transit .home-hero-projects__thumb video {
   }
 
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-body {
-    flex: 1 1 52%;
-    width: 52%;
+    flex: 1 1 60%;
+    width: 60%;
     justify-content: space-between;
-    gap: clamp(20px, 2.8vh, 32px);
-    padding: clamp(24px, 2.6vw, 36px) clamp(26px, 3vw, 40px) clamp(22px, 2.4vw, 32px);
+    gap: clamp(18px, 2.4vh, 28px);
+    padding: clamp(26px, 2.8vw, 40px) clamp(28px, 3.4vw, 48px) clamp(24px, 2.6vw, 36px);
     border-left: 1px solid rgba(197, 220, 173, 0.1);
   }
 
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-copy {
-    max-width: 36rem;
+    max-width: none;
+    width: 100%;
   }
 
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-meta {
@@ -2539,54 +2545,66 @@ body.page-home #hero-project-sound-transit .home-hero-projects__thumb video {
 
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-title {
     margin-bottom: 12px;
-    max-width: 24ch;
-    font-size: clamp(1.3125rem, 1.55vw, 1.5625rem);
+    max-width: none;
+    width: 100%;
+    font-size: clamp(1.375rem, 1.7vw, 1.75rem);
   }
 
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-title + .home-hero-projects__card-meta {
-    margin-bottom: 14px;
+    margin-bottom: 16px;
   }
 
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-desc {
-    max-width: 40em;
-    font-size: clamp(0.875rem, 0.98vw, 0.96875rem);
-    line-height: 1.55;
+    max-width: none;
+    width: 100%;
+    font-size: clamp(0.96875rem, 1.1vw, 1.0625rem);
+    line-height: 1.64;
   }
 
-  body.page-home #hero-project-nordstrom-rack {
-    min-height: clamp(340px, 42vh, 460px);
+  /* Matched pair height — both feature cards share the same plane */
+  body.page-home #hero-project-nordstrom-rack,
+  body.page-home #hero-project-sound-transit {
+    min-height: clamp(320px, 38vh, 420px);
   }
 
-  body.page-home #hero-project-nordstrom-rack .home-hero-projects__card-desc {
-    font-size: clamp(0.8125rem, 0.92vw, 0.90625rem);
-    line-height: 1.52;
+  body.page-home #hero-project-nordstrom-rack .home-hero-projects__card-desc,
+  body.page-home #hero-project-sound-transit .home-hero-projects__card-desc {
+    font-size: clamp(0.96875rem, 1.1vw, 1.0625rem);
+    line-height: 1.64;
   }
 }
 
 @media only screen and (min-width: 1100px) {
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card,
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--split {
-    min-height: clamp(300px, 36vh, 380px);
+    min-height: clamp(320px, 38vh, 400px);
   }
 
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__thumb {
-    flex-basis: 46%;
-    width: 46%;
+    flex-basis: 38%;
+    width: 38%;
   }
 
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-body {
-    flex-basis: 54%;
-    width: 54%;
-    padding: clamp(28px, 2.8vw, 40px) clamp(32px, 3.2vw, 44px) clamp(26px, 2.6vw, 36px);
+    flex-basis: 62%;
+    width: 62%;
+    padding: clamp(30px, 3vw, 44px) clamp(36px, 3.8vw, 52px) clamp(28px, 2.8vw, 40px);
   }
 
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-title {
-    max-width: 26ch;
-    font-size: clamp(1.375rem, 1.6vw, 1.625rem);
+    max-width: none;
+    font-size: clamp(1.4375rem, 1.75vw, 1.8125rem);
   }
 
-  body.page-home #hero-project-nordstrom-rack {
-    min-height: clamp(360px, 44vh, 480px);
+  body.page-home #hero-project-nordstrom-rack,
+  body.page-home #hero-project-sound-transit {
+    min-height: clamp(340px, 40vh, 440px);
+  }
+
+  body.page-home #hero-project-nordstrom-rack .home-hero-projects__card-desc,
+  body.page-home #hero-project-sound-transit .home-hero-projects__card-desc {
+    font-size: clamp(1rem, 1.15vw, 1.125rem);
+    line-height: 1.65;
   }
 }
 
@@ -2601,7 +2619,7 @@ body.page-home #hero-project-sound-transit .home-hero-projects__thumb video {
   }
 
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-title {
-    max-width: 24ch;
+    max-width: none;
   }
 }
 
