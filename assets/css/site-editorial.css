@@ -10715,7 +10715,9 @@ body.page-ibm-saas-console .work-detail__heading,
 body.page-breaking-barriers .work-detail__heading,
 body.page-bloom-and-vine .work-detail__heading,
 body.page-makeability-lab .work-detail__heading,
-body.page-nordstrom-rack .work-detail__heading, body.page-ai-healthcare .work-detail__heading,
+body.page-nordstrom-rack .work-detail__heading,
+body.page-nordstrom-rack-pickup .work-detail__heading,
+body.page-ai-healthcare .work-detail__heading,
 body.page-board-games-onboarding .work-detail__heading, body.page-course-registration .work-detail__heading, body.page-fashionxai-research .work-detail__heading, body.page-assisted-driving-vision .work-detail__heading,
 body.page-sound-transit .work-detail__heading,
 body.page-inclusive-lab .work-detail__heading {
@@ -10726,6 +10728,13 @@ body.page-inclusive-lab .work-detail__heading {
   letter-spacing: -0.03em;
   color: #ffffff;
   text-transform: lowercase;
+}
+
+/* Nordstrom case studies — matcha section titles, title case (not lowercase) */
+body.page-nordstrom-rack.site-editorial .work-detail .work-detail__heading,
+body.page-nordstrom-rack-pickup.site-editorial .work-detail .work-detail__heading {
+  color: var(--site-accent);
+  text-transform: none;
 }
 
 body.page-sachacks .work-detail__kicker,
