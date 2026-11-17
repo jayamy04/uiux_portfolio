@@ -3,9 +3,9 @@
  *
  * 1) Optional: set WEB3FORMS_ACCESS_KEY (free at https://web3forms.com) for
  *    reliable delivery to the email you register there (e.g. Gmail).
- * 2) Otherwise tries FormSubmit AJAX to slee45@uw.edu.
+ * 2) Otherwise tries FormSubmit AJAX to amylee041182@gmail.com.
  * 3) If both fail, opens a mailto: draft so the visitor can send from their
- *    own mail app (still addressed to slee45@uw.edu).
+ *    own mail app (still addressed to amylee041182@gmail.com).
  *
  * Web forms cannot SMS your phone; your number is included in the email body.
  */
@@ -16,7 +16,7 @@
   /** Paste your Web3Forms access key here (https://web3forms.com) or leave "". */
   var WEB3FORMS_ACCESS_KEY = "";
 
-  var RECIPIENT_EMAIL = "slee45@uw.edu";
+  var RECIPIENT_EMAIL = "amylee041182@gmail.com";
 
   function showSent() {
     var ok = document.getElementById("contact-form-sent");
