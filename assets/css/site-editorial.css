@@ -14019,7 +14019,7 @@ body.page-nordstrom-rack-pickup .work-detail__meta--extended {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: clamp(28px, 4.5vh, 40px);
   padding-top: clamp(24px, 3.5vh, 32px);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: none;
 }
 
 @media only screen and (max-width: 767px) {
