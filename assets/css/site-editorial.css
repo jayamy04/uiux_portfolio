@@ -2104,10 +2104,6 @@ body.page-home .home-hero-projects__thumb--cover video {
   object-position: center center;
 }
 
-body.page-home #hero-project-sound-transit .home-hero-projects__thumb--cover video {
-  object-position: center center;
-}
-
 /* Native — carousel/showcase only; stack uses centered contain below */
 body.page-home .home-hero-projects__thumb--native img {
   object-fit: contain;
@@ -2119,17 +2115,6 @@ body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb--
 body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb--cover video,
 body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb--native img {
   object-fit: contain;
-  object-position: center center;
-  transform: none;
-}
-
-/* Nordstrom Rack + Sound Transit — fill the media plane in horizontal cards */
-body.page-home .home-hero-projects__grid--editorial.home-hero-projects__grid--horizontal #hero-project-sound-transit .home-hero-projects__thumb video {
-  max-width: none;
-  max-height: none;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   object-position: center center;
   transform: none;
 }
@@ -2374,14 +2359,12 @@ body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-d
   text-wrap: pretty;
 }
 
-/* Matched pair — shared body rhythm for Nordstrom + Sound Transit */
-body.page-home #hero-project-nordstrom-rack .home-hero-projects__card-body,
-body.page-home #hero-project-sound-transit .home-hero-projects__card-body {
+/* Nordstrom feature card — body rhythm */
+body.page-home #hero-project-nordstrom-rack .home-hero-projects__card-body {
   gap: clamp(18px, 2.4vh, 28px);
 }
 
-body.page-home #hero-project-nordstrom-rack .home-hero-projects__card-desc,
-body.page-home #hero-project-sound-transit .home-hero-projects__card-desc {
+body.page-home #hero-project-nordstrom-rack .home-hero-projects__card-desc {
   font-size: clamp(0.9375rem, 2.3vw, 1.0625rem);
   line-height: 1.62;
 }
@@ -2432,18 +2415,13 @@ body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__thumb 
 
 /* Override stack contain rules so horizontal feature media stays full-bleed cover */
 body.page-home .home-hero-projects__grid--editorial.home-hero-projects__grid--horizontal .home-hero-projects__thumb--cover img,
-body.page-home .home-hero-projects__grid--editorial.home-hero-projects__grid--horizontal .home-hero-projects__thumb--cover video,
-body.page-home .home-hero-projects__grid--editorial.home-hero-projects__grid--horizontal #hero-project-sound-transit .home-hero-projects__thumb video {
+body.page-home .home-hero-projects__grid--editorial.home-hero-projects__grid--horizontal .home-hero-projects__thumb--cover video {
   max-width: none;
   max-height: none;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 42%;
-}
-
-body.page-home #hero-project-sound-transit .home-hero-projects__thumb video {
-  object-position: center 45%;
 }
 
 /* Nordstrom UI crop — keep filter readable; soft hover only */
@@ -2519,14 +2497,11 @@ body.page-home .home-hero-projects__grid--horizontal #hero-project-nordstrom-rac
     line-height: 1.64;
   }
 
-  /* Matched pair height — both feature cards share the same plane */
-  body.page-home #hero-project-nordstrom-rack,
-  body.page-home #hero-project-sound-transit {
+  body.page-home #hero-project-nordstrom-rack {
     min-height: clamp(320px, 38vh, 420px);
   }
 
-  body.page-home #hero-project-nordstrom-rack .home-hero-projects__card-desc,
-  body.page-home #hero-project-sound-transit .home-hero-projects__card-desc {
+  body.page-home #hero-project-nordstrom-rack .home-hero-projects__card-desc {
     font-size: clamp(0.96875rem, 1.1vw, 1.0625rem);
     line-height: 1.64;
   }
@@ -2554,13 +2529,11 @@ body.page-home .home-hero-projects__grid--horizontal #hero-project-nordstrom-rac
     font-size: clamp(1.4375rem, 1.75vw, 1.8125rem);
   }
 
-  body.page-home #hero-project-nordstrom-rack,
-  body.page-home #hero-project-sound-transit {
+  body.page-home #hero-project-nordstrom-rack {
     min-height: clamp(340px, 40vh, 440px);
   }
 
-  body.page-home #hero-project-nordstrom-rack .home-hero-projects__card-desc,
-  body.page-home #hero-project-sound-transit .home-hero-projects__card-desc {
+  body.page-home #hero-project-nordstrom-rack .home-hero-projects__card-desc {
     font-size: clamp(1rem, 1.15vw, 1.125rem);
     line-height: 1.65;
   }
