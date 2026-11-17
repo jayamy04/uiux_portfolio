@@ -13975,6 +13975,11 @@ body.page-sound-transit .work-detail__section--visual .work-detail__inner {
 }
 
 /* Nordstrom Rack Pickup — usability study visual polish */
+body.page-nordstrom-rack-pickup .work-detail__title-line,
+body.page-nordstrom-rack-pickup .work-detail [data-work-detail-title] {
+  text-transform: none;
+}
+
 body.page-nordstrom-rack-pickup .work-detail__subtitle {
   margin: clamp(14px, 2.2vh, 20px) 0 0;
   font-size: clamp(1rem, 1.08vw, 1.0625rem);
