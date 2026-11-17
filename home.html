@@ -8,7 +8,7 @@
   <meta http-equiv="Cache-Control" content="no-cache">
   <meta name="description" content="Amy is a UX researcher and designer who makes websites and apps easier to use for diverse communities."
 
-  <title>Amy Seunghyun Lee — Mixed-methods UX Researcher</title>
+  <title></title>
 
   <link rel="icon" href="./favicon.ico?v=20260609j" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32.png?v=20260609j">
@@ -19,14 +19,11 @@
   <link rel="stylesheet" href="assets/css/agina-icons.css">
   <link rel="stylesheet" href="assets/css/meanmenu.css">
   <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/site-editorial.css?v=20260929landing">
-  <link rel="preload" as="image" href="./assets/images/inclusive-design-lab/hcde-showcase-2.png?v=20260619idlfaces">
+  <link rel="stylesheet" href="assets/css/site-editorial.css?v=20261116twocards">
   <link rel="preload" href="./assets/videos/nordstrom_homepage_v.mp4" as="fetch" type="video/mp4" crossorigin>
   <link rel="preload" as="image" href="./assets/images/projects/nordstrom_homepage_poster.jpg">
   <link rel="preload" href="./assets/videos/sound_transit_capstone_full.mp4" as="fetch" type="video/mp4" crossorigin>
   <link rel="preload" as="image" href="./assets/images/projects/sound_transit_capstone_poster.jpg">
-  <link rel="preload" href="./assets/videos/schedgo_v.mp4" as="fetch" type="video/mp4" crossorigin>
-  <link rel="preload" as="image" href="./assets/images/projects/schedgo_video_poster.jpg">
 
   <script>
     (function () {
@@ -35,7 +32,7 @@
         scrollToWork = sessionStorage.getItem("homeScrollToWork") === "1";
       } catch (e) {}
       var hash = window.location.hash;
-      var landingHashes = { about: 1, cv: 1, contact: 1, extra: 1 };
+      var landingHashes = { about: 1, contact: 1 };
       if (hash === "#work" && !scrollToWork) {
         history.replaceState(null, "", location.pathname + location.search);
       }
@@ -170,9 +167,6 @@
                   <li>
                     <a href="home.html#contact" data-nav-section="contact">Contact</a>
                   </li>
-                  <li>
-                    <a href="home.html#extra" data-nav-section="extra">Extra</a>
-                  </li>
                 </ul>
               </nav>
             </div>
@@ -218,7 +212,7 @@
         <section class="home-landing-section home-landing-section--editorial home-landing-section--solo" aria-label="Introduction">
           <div class="container-fluid home-landing__container">
             <div class="home-landing__inner home-landing__inner--split">
-              <h1 class="visually-hidden">Amy Seunghyun Lee — UX Researcher and Designer</h1>
+              <h1 class="visually-hidden">Amy Lee</h1>
 
               <div class="home-landing__split">
                 <div class="home-landing__split-col home-landing__split-col--headline">
@@ -258,16 +252,8 @@
 
                     <div class="home-landing__hero-landing tj-fade" data-on-scroll="0" data-delay=".045">
                       <div id="work" class="home-hero-projects" data-home-hero-bento>
-                                                <div class="home-hero-projects__grid home-hero-projects__grid--editorial" aria-label="Selected work highlights">
-                          <div class="home-hero-projects__column" role="list" aria-label="Featured work column 1">
-                          <div class="home-hero-projects__card home-hero-projects__card--no-media" id="hero-project-ibm" role="listitem" tabindex="0" data-work-href="ibm-saas-console.html" aria-label="IBM Client Engineering — Innovation Designer">
-                            <div class="home-hero-projects__card-body">
-                              <img class="home-hero-projects__card-logo home-hero-projects__card-logo--wide" src="./assets/images/logos/ibm.svg?v=20260618reallogos" alt="" width="120" height="45" loading="lazy" decoding="async">
-                              <h2 class="home-hero-projects__card-title">IBM Client Engineering</h2>
-                              <p class="home-hero-projects__card-desc">Mural discovery workshops with CVS Health and MCNA, IBM SaaS Console notification redesign, and an MVP resource guide for future designer interns — interdisciplinary Client Engineering work.</p>
-                            </div>
-                          </div>
-                          <div class="home-hero-projects__card" id="hero-project-nordstrom-rack-pickup" role="listitem" tabindex="0" data-work-href="nordstrom-rack-pickup.html" aria-label="Nordstrom Rack — Same-day Pickup Experience User Testing">
+                        <div class="home-hero-projects__grid home-hero-projects__grid--editorial" role="list" aria-label="Selected work highlights">
+                          <div class="home-hero-projects__card" id="hero-project-nordstrom-rack" role="listitem" tabindex="0" data-work-href="nordstrom-rack-pickup.html" aria-label="Nordstrom Rack — Same-day Pickup and In-person Shopping Research">
                             <span class="home-hero-projects__thumb home-hero-projects__thumb--cover home-hero-projects__thumb--ratio-nordstrom">
                               <video poster="./assets/images/projects/nordstrom_homepage_poster.jpg" muted loop autoplay playsinline webkit-playsinline preload="auto" aria-hidden="true">
                                 <source src="./assets/videos/nordstrom_homepage_v.mp4" type="video/mp4">
@@ -275,87 +261,11 @@
                             </span>
                             <div class="home-hero-projects__card-body">
                               <img class="home-hero-projects__card-logo home-hero-projects__card-logo--wide" src="./assets/images/logos/nordstrom-rack.svg?v=20260618reallogos" alt="" width="148" height="51" loading="lazy" decoding="async">
-                              <h2 class="home-hero-projects__card-title">Same-day Pickup Experience User Testing</h2>
-                              <p class="home-hero-projects__card-desc">Moderated usability testing with eight participants on nordstromrack.com same-day pickup — task scenarios covered filtering accuracy, multi-store checkout, and pre-checkout pickup logistics, surfacing fulfillment and filter pain points.</p>
+                              <h2 class="home-hero-projects__card-title">Nordstrom Rack</h2>
+                              <p class="home-hero-projects__card-desc">Same-day pickup usability testing and in-person shopping research — moderated sessions on filtering, multi-store checkout, and pickup logistics, plus survey and interview work on personal style discovery.</p>
                             </div>
                           </div>
-                          <div class="home-hero-projects__card home-hero-projects__card--no-media" id="hero-project-nordstrom-rack-pickup-recommendations" role="listitem" tabindex="0" data-work-href="nordstrom-rack-pickup.html" aria-label="Nordstrom Rack — Same-day Pickup Experience Recommendations">
-                            <div class="home-hero-projects__card-body">
-                              <img class="home-hero-projects__card-logo home-hero-projects__card-logo--wide" src="./assets/images/logos/nordstrom-rack.svg?v=20260618reallogos" alt="" width="148" height="51" loading="lazy" decoding="async">
-                              <h2 class="home-hero-projects__card-title">Same-day Pickup Experience Recommendations</h2>
-                              <p class="home-hero-projects__card-desc">Stakeholder presentation deck translating pickup usability findings into recommendations for filtering accuracy, fulfillment clarity, multi-store checkout, and pickup logistics on nordstromrack.com.</p>
-                            </div>
-                          </div>
-                          <div class="home-hero-projects__card home-hero-projects__card--lead home-hero-projects__card--no-media" id="hero-project-nordstrom-rack" role="listitem" tabindex="0" data-work-href="nordstrom-rack.html" aria-label="Nordstrom Rack — In-person Shopping Experiences Survey">
-                            <div class="home-hero-projects__card-body">
-                              <img class="home-hero-projects__card-logo home-hero-projects__card-logo--wide" src="./assets/images/logos/nordstrom-rack.svg?v=20260618reallogos" alt="" width="148" height="51" loading="lazy" decoding="async">
-                              <h2 class="home-hero-projects__card-title">In-person Shopping Experiences Survey</h2>
-                              <p class="home-hero-projects__card-desc">Independent survey in collaboration with Nordstrom Rack — seven respondents on in-person shopping and personal style discovery for shoppers unsure of their style, covering store experiences, challenges, and tools used.</p>
-                            </div>
-                          </div>
-                          <div class="home-hero-projects__card home-hero-projects__card--no-media" id="hero-project-nordstrom-rack-interviews" role="listitem" tabindex="0" data-work-href="nordstrom-rack.html#nordstrom-interviews-heading" aria-label="Nordstrom Rack — In-person Shopping Experiences User Interviews">
-                            <div class="home-hero-projects__card-body">
-                              <img class="home-hero-projects__card-logo home-hero-projects__card-logo--wide" src="./assets/images/logos/nordstrom-rack.svg?v=20260618reallogos" alt="" width="148" height="51" loading="lazy" decoding="async">
-                              <h2 class="home-hero-projects__card-title">In-person Shopping Experiences User Interviews (in progress)</h2>
-                              <p class="home-hero-projects__card-desc">Interviews in progress with survey respondents and other participants — semi-structured sessions on in-person shopping habits, style-discovery pain points, and whether tools or services help shoppers find their personal style.</p>
-                            </div>
-                          </div>
-                          <div class="home-hero-projects__card home-hero-projects__card--no-media" id="hero-project-course-registration" role="listitem" tabindex="0" data-work-href="course-registration.html" aria-label="University of Washington — Course Registration Research Plan and Survey">
-                            <div class="home-hero-projects__card-body">
-                              <img class="home-hero-projects__card-logo home-hero-projects__card-logo--mark" src="./assets/images/logos/uw-mark.svg?v=20260618reallogos" alt="" width="44" height="30" loading="lazy" decoding="async">
-                              <h2 class="home-hero-projects__card-title">Course Registration Research Plan and Survey</h2>
-                              <p class="home-hero-projects__card-desc">Research plan and survey on course registration for students with unmet expectations — 12 students reported openness to better planning tools, reliance on degree audits and official systems, and friction from time conflicts and course availability.</p>
-                            </div>
-                          </div>
-                          <div class="home-hero-projects__card home-hero-projects__card--no-media" id="hero-project-assisted-driving-vision" role="listitem" tabindex="0" data-work-href="assisted-driving-vision.html" aria-label="University of Washington — Assisted Driving Co-Design Research">
-                            <div class="home-hero-projects__card-body">
-                              <img class="home-hero-projects__card-logo home-hero-projects__card-logo--mark" src="./assets/images/logos/uw-mark.svg?v=20260618reallogos" alt="" width="44" height="30" loading="lazy" decoding="async">
-                              <h2 class="home-hero-projects__card-title">Assisted Driving Co-Design Research</h2>
-                              <p class="home-hero-projects__card-desc">Co-design research with a driver facing color weakness, astigmatism, and dry-eye vision loss — documenting dangerous situations with traffic signals, oncoming headlights, and anxiety about daily driving routines.</p>
-                            </div>
-                          </div>
-                          <div class="home-hero-projects__card" id="hero-project-fashionxai-research" role="listitem" tabindex="0" data-work-href="fashionxai-research.html" aria-label="FashionXAI — Research">
-                            <span class="home-hero-projects__thumb home-hero-projects__thumb--cover home-hero-projects__thumb--ratio-16x10">
-                              <video poster="./assets/images/projects/fitted_cover.png?v=20260622fxai" muted loop autoplay playsinline webkit-playsinline preload="auto" aria-hidden="true">
-                                <source src="./assets/videos/fitted_video.mp4?v=20260622fxai" type="video/mp4">
-                              </video>
-                            </span>
-                            <div class="home-hero-projects__card-body">
-                              <h2 class="home-hero-projects__card-title">FashionXAI Research</h2>
-                              <p class="home-hero-projects__card-desc">Goal: understand pain points around purchasing clothing online when it comes to size and fit. Methods: Netnography.</p>
-                            </div>
-                          </div>
-                          </div>
-                          <div class="home-hero-projects__column" role="list" aria-label="Featured work column 2">
-                          <div class="home-hero-projects__card home-hero-projects__card--no-media" id="hero-project-sound-transit" role="listitem" tabindex="0" data-work-href="sound-transit.html" aria-label="Sound Transit — Website Redesign Card Sorting">
-                            <div class="home-hero-projects__card-body">
-                              <img class="home-hero-projects__card-logo home-hero-projects__card-logo--wide" src="./assets/images/logos/sound-transit.svg?v=20260618reallogos" alt="" width="168" height="26" loading="lazy" decoding="async">
-                              <h2 class="home-hero-projects__card-title">Website Redesign Card Sorting</h2>
-                              <p class="home-hero-projects__card-desc">Two closed card sorts with 50 participants — Seattle regular riders and non-local non-riders — mapping how users categorize transit site content to inform Sound Transit's IA redesign.</p>
-                            </div>
-                          </div>
-                          <div class="home-hero-projects__card home-hero-projects__card--no-media" id="hero-project-sound-transit-usability" role="listitem" tabindex="0" data-work-href="sound-transit.html" aria-label="Sound Transit — Website Redesign Usability Testing">
-                            <div class="home-hero-projects__card-body">
-                              <img class="home-hero-projects__card-logo home-hero-projects__card-logo--wide" src="./assets/images/logos/sound-transit.svg?v=20260618reallogos" alt="" width="168" height="26" loading="lazy" decoding="async">
-                              <h2 class="home-hero-projects__card-title">Website Redesign Usability Testing</h2>
-                              <p class="home-hero-projects__card-desc">Six moderated usability sessions with Sound Transit riders on soundtransit.org — navigation buried too deep, label mismatches like Get to Know Us, and search used as a fallback when menus failed.</p>
-                            </div>
-                          </div>
-                          <div class="home-hero-projects__card home-hero-projects__card--no-media" id="hero-project-sound-transit-stakeholder-interviews" role="listitem" tabindex="0" data-work-href="sound-transit.html" aria-label="Sound Transit — Website Redesign Stakeholder Interviews">
-                            <div class="home-hero-projects__card-body">
-                              <img class="home-hero-projects__card-logo home-hero-projects__card-logo--wide" src="./assets/images/logos/sound-transit.svg?v=20260618reallogos" alt="" width="168" height="26" loading="lazy" decoding="async">
-                              <h2 class="home-hero-projects__card-title">Website Redesign Stakeholder Interviews</h2>
-                              <p class="home-hero-projects__card-desc">Semi-structured interviews with Community Engagement, Technical SME, and Passenger Experience teams — surfacing internal perspectives on content ownership, navigation constraints, and schedule discoverability on soundtransit.org.</p>
-                            </div>
-                          </div>
-                          <div class="home-hero-projects__card home-hero-projects__card--no-media" id="hero-project-sound-transit-report" role="listitem" tabindex="0" data-work-href="sound-transit.html" aria-label="Sound Transit — Website Redesign Research Report and Presentation">
-                            <div class="home-hero-projects__card-body">
-                              <img class="home-hero-projects__card-logo home-hero-projects__card-logo--wide" src="./assets/images/logos/sound-transit.svg?v=20260618reallogos" alt="" width="168" height="26" loading="lazy" decoding="async">
-                              <h2 class="home-hero-projects__card-title">Website Redesign Research Report and Presentation</h2>
-                              <p class="home-hero-projects__card-desc">Capstone slide deck synthesizing GA4 analytics, card sorting, heuristic evaluation, usability testing, and stakeholder interviews into IA recommendations for Sound Transit's website redesign.</p>
-                            </div>
-                          </div>
-                          <div class="home-hero-projects__card" id="hero-project-sound-transit-presentation-video" role="listitem" tabindex="0" data-work-href="sound-transit.html" aria-label="Sound Transit — Website Redesign Research Presentation Video">
+                          <div class="home-hero-projects__card" id="hero-project-sound-transit" role="listitem" tabindex="0" data-work-href="sound-transit.html" aria-label="Sound Transit — Website Redesign Research">
                             <span class="home-hero-projects__thumb home-hero-projects__thumb--cover home-hero-projects__thumb--ratio-16x9">
                               <video poster="./assets/images/projects/sound_transit_capstone_poster.jpg" muted loop autoplay playsinline webkit-playsinline preload="auto" aria-hidden="true">
                                 <source src="./assets/videos/sound_transit_capstone_full.mp4" type="video/mp4">
@@ -363,107 +273,9 @@
                             </span>
                             <div class="home-hero-projects__card-body">
                               <img class="home-hero-projects__card-logo home-hero-projects__card-logo--wide" src="./assets/images/logos/sound-transit.svg?v=20260618reallogos" alt="" width="168" height="26" loading="lazy" decoding="async">
-                              <h2 class="home-hero-projects__card-title">Website Redesign Research Presentation Video</h2>
-                              <p class="home-hero-projects__card-desc">Recording of the capstone stakeholder presentation — a video walkthrough of research findings and IA recommendations delivered to the Sound Transit digital web team.</p>
+                              <h2 class="home-hero-projects__card-title">Sound Transit</h2>
+                              <p class="home-hero-projects__card-desc">Website redesign research for soundtransit.org — card sorting, usability testing, stakeholder interviews, and a capstone presentation synthesizing IA recommendations for the digital web team.</p>
                             </div>
-                          </div>
-                          <div class="home-hero-projects__card home-hero-projects__card--no-media" id="hero-project-ai-healthcare" role="listitem" tabindex="0" data-work-href="ai-healthcare.html" aria-label="HCDE 519: Qualitative Research — AI in Healthcare Education User Interviews">
-                            <div class="home-hero-projects__card-body">
-                              <img class="home-hero-projects__card-logo home-hero-projects__card-logo--mark" src="./assets/images/logos/hcde-mark.svg?v=20260618reallogos" alt="" width="44" height="30" loading="lazy" decoding="async">
-                              <h2 class="home-hero-projects__card-title">AI in Healthcare Education User Interviews</h2>
-                              <p class="home-hero-projects__card-desc">Seven semi-structured interviews with healthcare students on generative AI in study routines — coding and thematic analysis surfaced how AI simplifies materials but traditional methods aid retention.</p>
-                            </div>
-                          </div>
-                          <div class="home-hero-projects__card" id="hero-project-dancers-survey" role="listitem" aria-label="UW Department of Dance — Dancers Survey (in progress)">
-                            <span class="home-hero-projects__thumb home-hero-projects__thumb--cover home-hero-projects__thumb--ratio-16x9">
-                              <video poster="https://scontent-sea5-1.cdninstagram.com/v/t51.71878-15/701635966_1292915533005105_5585980017461051891_n.jpg?stp=dst-jpg_e15_tt6" muted loop autoplay playsinline webkit-playsinline preload="auto" aria-hidden="true">
-                                <source src="./assets/videos/dance/dance-reel-06.mp4?v=20260622dancerssurvey" type="video/mp4">
-                              </video>
-                            </span>
-                            <div class="home-hero-projects__card-body">
-                              <img class="home-hero-projects__card-logo home-hero-projects__card-logo--mark" src="./assets/images/logos/uw-mark.svg?v=20260618reallogos" alt="" width="44" height="30" loading="lazy" decoding="async">
-                              <h2 class="home-hero-projects__card-title">Dancers Survey (in progress)</h2>
-                              <p class="home-hero-projects__card-desc">This study aims to understand dancers' journeys — from when they started, to how their relationship with dance developed over time, to where it stands today. It focuses on what a typical dancer's journey looks like, how much these journeys vary, and the ups and downs along the way, if any.</p>
-                              <p class="home-hero-projects__card-desc">It also explores what kinds of technological tools could support them along the way and if they are using any at the moment.</p>
-                            </div>
-                          </div>
-                          </div>
-                          <div class="home-hero-projects__column" role="list" aria-label="Featured work column 3">
-                          <div class="home-hero-projects__card home-hero-projects__card--no-media" id="hero-project-inclusive-design-lab" role="listitem" tabindex="0" data-work-href="inclusive-design-lab.html" aria-label="UW Inclusive Design Lab — Blind and Low Vision User Interviews">
-                            <div class="home-hero-projects__card-body">
-                              <img class="home-hero-projects__card-logo home-hero-projects__card-logo--mark" src="./assets/images/logos/idl-mark.svg?v=20260618reallogos" alt="" width="44" height="30" loading="lazy" decoding="async">
-                              <h2 class="home-hero-projects__card-title">Blind and Low Vision User Interviews</h2>
-                              <p class="home-hero-projects__card-desc">Semi-structured interviews with 16 BLV participants on urban public art accessibility for Unseen City Canvases — prior art experiences plus design probes — submitted to ASSETS 2026.</p>
-                            </div>
-                          </div>
-                          <div class="home-hero-projects__card" id="hero-project-inclusive-design-lab-poster" role="listitem" tabindex="0" data-work-href="inclusive-design-lab.html" aria-label="UW Inclusive Design Lab — Poster Presentation">
-                            <span class="home-hero-projects__thumb home-hero-projects__thumb--native home-hero-projects__thumb--ratio-idl">
-                              <img src="./assets/images/inclusive-design-lab/hcde-showcase-2.png?v=20260619idlfaces" alt="" width="768" height="1024" loading="lazy" decoding="async">
-                            </span>
-                            <div class="home-hero-projects__card-body">
-                              <img class="home-hero-projects__card-logo home-hero-projects__card-logo--mark" src="./assets/images/logos/idl-mark.svg?v=20260618reallogos" alt="" width="44" height="30" loading="lazy" decoding="async">
-                              <h2 class="home-hero-projects__card-title">Inclusive Design Lab Poster Presentation</h2>
-                              <p class="home-hero-projects__card-desc">Presented the Unseen City Canvases poster at HCDE Research Showcase and Create Community Day — summarizing BLV perspectives on urban public art accessibility for researchers and peers.</p>
-                            </div>
-                          </div>
-                          <div class="home-hero-projects__card" id="hero-project-makeability" role="listitem" tabindex="0" data-work-href="makeability-lab.html" aria-label="UW Makeability Lab — ARTennis">
-                            <span class="home-hero-projects__thumb home-hero-projects__thumb--cover home-hero-projects__thumb--ratio-16x9">
-                              <video poster="./assets/images/projects/makeability_video_poster.jpg" muted loop autoplay playsinline webkit-playsinline preload="auto" aria-hidden="true">
-                                <source src="./assets/videos/makeability_final.mp4" type="video/mp4">
-                              </video>
-                            </span>
-                            <div class="home-hero-projects__card-body">
-                              <img class="home-hero-projects__card-logo home-hero-projects__card-logo--mark" src="./assets/images/logos/uw-mark.svg?v=20260618reallogos" alt="" width="44" height="30" loading="lazy" decoding="async">
-                              <h2 class="home-hero-projects__card-title">ARTennis</h2>
-                              <p class="home-hero-projects__card-desc">Wearable AR prototype utilizing real-time computer vision to enhance tennis ball visual saliency for low vision players — preliminary pilot evaluation published at <a href="https://uist.acm.org/2023/" target="_blank" rel="noopener noreferrer">UIST 2023</a>.</p>
-                            </div>
-                          </div>
-                          <div class="home-hero-projects__card home-hero-projects__card--no-media" id="hero-project-board-games-survey" role="listitem" tabindex="0" data-work-href="board-games-onboarding.html" aria-label="University of Washington — Board Game Onboarding Survey">
-                            <div class="home-hero-projects__card-body">
-                              <img class="home-hero-projects__card-logo home-hero-projects__card-logo--mark" src="./assets/images/logos/uw-mark.svg?v=20260618reallogos" alt="" width="44" height="30" loading="lazy" decoding="async">
-                              <h2 class="home-hero-projects__card-title">Board Game Onboarding Survey</h2>
-                              <p class="home-hero-projects__card-desc">Survey of 45 board game players on how they learn rules, the challenges that slow onboarding — lengthy rules, lack of visual aids, difficulty understanding mechanics — and what support would help them get to the table faster.</p>
-                            </div>
-                          </div>
-                          <div class="home-hero-projects__card home-hero-projects__card--no-media" id="hero-project-board-games-interviews" role="listitem" tabindex="0" data-work-href="board-games-onboarding.html" aria-label="University of Washington — Board Game Onboarding User Interviews">
-                            <div class="home-hero-projects__card-body">
-                              <img class="home-hero-projects__card-logo home-hero-projects__card-logo--mark" src="./assets/images/logos/uw-mark.svg?v=20260618reallogos" alt="" width="44" height="30" loading="lazy" decoding="async">
-                              <h2 class="home-hero-projects__card-title">Board Game Onboarding User Interviews</h2>
-                              <p class="home-hero-projects__card-desc">Semi-structured interviews with four board game players on learning rules in context — friends as teachers, rulebook IA pain points, and social pressure that slows onboarding.</p>
-                            </div>
-                          </div>
-                          <div class="home-hero-projects__card home-hero-projects__card--no-media" id="hero-project-board-games-fly-on-wall" role="listitem" tabindex="0" data-work-href="board-games-onboarding.html" aria-label="University of Washington — Board Game Onboarding Fly on the Wall Observations">
-                            <div class="home-hero-projects__card-body">
-                              <img class="home-hero-projects__card-logo home-hero-projects__card-logo--mark" src="./assets/images/logos/uw-mark.svg?v=20260618reallogos" alt="" width="44" height="30" loading="lazy" decoding="async">
-                              <h2 class="home-hero-projects__card-title">Board Game Onboarding Fly on the Wall Observations</h2>
-                              <p class="home-hero-projects__card-desc">Fly-on-the-wall observation of three participants learning Hues and Cues without a pre-existing expert — watching rulebook friction, one person becoming the teacher, and play starting before rules were fully understood.</p>
-                            </div>
-                          </div>
-                          <div class="home-hero-projects__card" id="hero-project-board-games-showcase" role="listitem" tabindex="0" data-work-href="board-games-onboarding.html#board-games-prototype-video-heading" aria-label="University of Washington — Board Game Onboarding Video and Showcase">
-                            <span class="home-hero-projects__thumb home-hero-projects__thumb--cover home-hero-projects__thumb--ratio-16x9">
-                              <video poster="./assets/images/projects/rulemate_cover.png?v=20260622bgo" muted loop autoplay playsinline webkit-playsinline preload="auto" aria-hidden="true">
-                                <source src="./assets/videos/rulemate_video.mp4?v=20260622bgo" type="video/mp4">
-                              </video>
-                            </span>
-                            <div class="home-hero-projects__card-body">
-                              <img class="home-hero-projects__card-logo home-hero-projects__card-logo--mark" src="./assets/images/logos/uw-mark.svg?v=20260618reallogos" alt="" width="44" height="30" loading="lazy" decoding="async">
-                              <h2 class="home-hero-projects__card-title">Board Game Onboarding Video &amp; Showcase</h2>
-                              <p class="home-hero-projects__card-desc">Prototype demo video for RuleMate — an AR/VR board game onboarding concept showcasing visual rule guidance and interactive tutorials informed by the survey, interviews, and observations.</p>
-                            </div>
-                          </div>
-                          <div class="home-hero-projects__card" id="hero-project-schedgo" role="listitem" tabindex="0" data-work-href="schedgo.html" aria-label="SchedGo — view project">
-                            <span class="home-hero-projects__thumb home-hero-projects__thumb--cover home-hero-projects__thumb--ratio-16x9">
-                              <video poster="./assets/images/projects/schedgo_video_poster.jpg?v=20260622schedgo" muted loop autoplay playsinline webkit-playsinline preload="auto" aria-hidden="true">
-                                <source src="./assets/videos/schedgo_v.mp4?v=20260622schedgo" type="video/mp4">
-                                <source src="./assets/videos/schedgo_video.mov?v=20260622schedgo" type="video/quicktime">
-                              </video>
-                            </span>
-                            <div class="home-hero-projects__card-body">
-                              <img class="home-hero-projects__card-logo" src="./assets/images/projects/schedgo_logo.png?v=20260622schedgo" alt="" width="120" height="40" loading="lazy" decoding="async">
-                              <h2 class="home-hero-projects__card-title">SchedGo</h2>
-                              <p class="home-hero-projects__card-desc">Led UX and front-end engineering for an AI-powered degree planning app — 500+ active users across 4 California colleges, winning $20K First Place and People's Choice at UC Davis Big Bang!</p>
-                            </div>
-                          </div>
                           </div>
                         </div>
                       </div>
@@ -476,7 +288,7 @@
         </section>
         </div>
 
-        <div class="home-trailing" aria-label="About, resume, and contact">
+        <div class="home-trailing" aria-label="About and contact">
 <section id="about" class="about-page-section" aria-label="About me">
           <div class="about-page-layout">
             <div class="about-page-grid">
@@ -533,207 +345,6 @@
                 </div>
               </article>
             </div>
-
-            <section class="about-community tj-fade" data-on-scroll="0" data-delay=".26" aria-labelledby="about-community-heading">
-              <header class="about-community__header">
-                <h2 id="about-community-heading" class="about-page__subsection-heading">Community</h2>
-              </header>
-
-              <div class="about-community__galleries">
-                <div class="about-community__gallery-row">
-                  <p class="community-page__links community-page__links--row" aria-label="CSSA Instagram">
-                    <a href="https://www.instagram.com/cssaatucdavis/" target="_blank" rel="noopener noreferrer">@cssaatucdavis</a>
-                  </p>
-                  <div class="community-gallery-carousel community-gallery-carousel--cssa" data-community-carousel>
-                  <p class="community-gallery-carousel__hint" aria-hidden="true">Scroll</p>
-                  <div class="community-gallery community-gallery--cssa community-gallery-carousel__viewport" role="list" tabindex="0" aria-label="CSSA social graphics">
-                    <div class="community-gallery-carousel__track">
-                      <article class="community-gallery__item community-gallery__item--square" role="listitem">
-                        <figure class="community-gallery__figure">
-                          <a class="community-gallery__media" href="https://aggielife.ucdavis.edu/cssa/home/" target="_blank" rel="noopener noreferrer" aria-label="CSSA social graphic 1 on CSSA website">
-                            <img src="./assets/images/projects/cssa/cssa-01.png" alt="CSSA at UC Davis — social graphic 1" width="1024" height="1024" loading="lazy" decoding="async">
-                          </a>
-                        </figure>
-                      </article>
-                      <article class="community-gallery__item community-gallery__item--square" role="listitem">
-                        <figure class="community-gallery__figure">
-                          <a class="community-gallery__media" href="https://aggielife.ucdavis.edu/cssa/home/" target="_blank" rel="noopener noreferrer" aria-label="CSSA social graphic 2 on CSSA website">
-                            <img src="./assets/images/projects/cssa/cssa-02.png" alt="CSSA at UC Davis — social graphic 2" width="1021" height="1024" loading="lazy" decoding="async">
-                          </a>
-                        </figure>
-                      </article>
-                      <article class="community-gallery__item community-gallery__item--square" role="listitem">
-                        <figure class="community-gallery__figure">
-                          <a class="community-gallery__media" href="https://aggielife.ucdavis.edu/cssa/home/" target="_blank" rel="noopener noreferrer" aria-label="CSSA social graphic 3 on CSSA website">
-                            <img src="./assets/images/projects/cssa/cssa-03.png" alt="CSSA at UC Davis — social graphic 3" width="1024" height="1024" loading="lazy" decoding="async">
-                          </a>
-                        </figure>
-                      </article>
-                      <article class="community-gallery__item community-gallery__item--square" role="listitem">
-                        <figure class="community-gallery__figure">
-                          <a class="community-gallery__media" href="https://aggielife.ucdavis.edu/cssa/home/" target="_blank" rel="noopener noreferrer" aria-label="CSSA social graphic 4 on CSSA website">
-                            <img src="./assets/images/projects/cssa/cssa-04.png" alt="CSSA at UC Davis — social graphic 4" width="1024" height="1024" loading="lazy" decoding="async">
-                          </a>
-                        </figure>
-                      </article>
-                      <article class="community-gallery__item community-gallery__item--square" role="listitem">
-                        <figure class="community-gallery__figure">
-                          <a class="community-gallery__media" href="https://aggielife.ucdavis.edu/cssa/home/" target="_blank" rel="noopener noreferrer" aria-label="CSSA social graphic 5 on CSSA website">
-                            <img src="./assets/images/projects/cssa/cssa-05.png" alt="CSSA at UC Davis — social graphic 5" width="1024" height="1024" loading="lazy" decoding="async">
-                          </a>
-                        </figure>
-                      </article>
-                      <article class="community-gallery__item community-gallery__item--square" role="listitem">
-                        <figure class="community-gallery__figure">
-                          <a class="community-gallery__media" href="https://aggielife.ucdavis.edu/cssa/home/" target="_blank" rel="noopener noreferrer" aria-label="CSSA social graphic 6 on CSSA website">
-                            <img src="./assets/images/projects/cssa/cssa-06.png" alt="CSSA at UC Davis — social graphic 6" width="1024" height="1024" loading="lazy" decoding="async">
-                          </a>
-                        </figure>
-                      </article>
-                    </div>
-                  </div>
-                  </div>
-                </div>
-
-                <div class="about-community__gallery-row">
-                  <p class="community-page__links community-page__links--row" aria-label="WiCS Instagram">
-                    <a href="https://www.instagram.com/wicsdavis/" target="_blank" rel="noopener noreferrer">@wicsdavis</a>
-                  </p>
-                  <div class="community-gallery-carousel community-gallery-carousel--wics" data-community-carousel>
-                  <p class="community-gallery-carousel__hint" aria-hidden="true">Scroll</p>
-                  <div class="community-gallery community-gallery--wics community-gallery-carousel__viewport" role="list" tabindex="0" aria-label="WiCS social graphics">
-                    <div class="community-gallery-carousel__track">
-                      <article class="community-gallery__item community-gallery__item--square" role="listitem">
-                        <figure class="community-gallery__figure">
-                          <a class="community-gallery__media" href="https://www.instagram.com/wicsdavis/" target="_blank" rel="noopener noreferrer" aria-label="WiCS Job Interviews Workshop on Instagram">
-                            <img src="./assets/images/projects/community/wics/job-interviews-workshop.png" alt="WiCS at UC Davis — Job Interviews Workshop promotional graphic" width="1080" height="1080" loading="lazy" decoding="async">
-                          </a>
-                        </figure>
-                      </article>
-                      <article class="community-gallery__item community-gallery__item--square" role="listitem">
-                        <figure class="community-gallery__figure">
-                          <a class="community-gallery__media" href="https://www.instagram.com/wicsdavis/" target="_blank" rel="noopener noreferrer" aria-label="WiCS Leetcode and Boba on Instagram">
-                            <img src="./assets/images/projects/community/wics/leetcode-boba.png" alt="WiCS at UC Davis — Leetcode &amp; Boba promotional graphic" width="1080" height="1080" loading="lazy" decoding="async">
-                          </a>
-                        </figure>
-                      </article>
-                      <article class="community-gallery__item community-gallery__item--square" role="listitem">
-                        <figure class="community-gallery__figure">
-                          <a class="community-gallery__media" href="https://www.instagram.com/wicsdavis/" target="_blank" rel="noopener noreferrer" aria-label="WiCS General Meeting #1 on Instagram">
-                            <img src="./assets/images/projects/community/wics/general-meeting-1.png" alt="WiCS at UC Davis — General Meeting #1 promotional graphic" width="1080" height="1080" loading="lazy" decoding="async">
-                          </a>
-                        </figure>
-                      </article>
-                      <article class="community-gallery__item community-gallery__item--square" role="listitem">
-                        <figure class="community-gallery__figure">
-                          <a class="community-gallery__media" href="https://www.instagram.com/wicsdavis/" target="_blank" rel="noopener noreferrer" aria-label="WiCS Board Applications on Instagram">
-                            <img src="./assets/images/projects/community/wics/board-applications.png" alt="WiCS at UC Davis — Board Applications promotional graphic" width="1080" height="1080" loading="lazy" decoding="async">
-                          </a>
-                        </figure>
-                      </article>
-                      <article class="community-gallery__item community-gallery__item--square" role="listitem">
-                        <figure class="community-gallery__figure">
-                          <a class="community-gallery__media" href="https://www.instagram.com/wicsdavis/" target="_blank" rel="noopener noreferrer" aria-label="WiCS Board Game Social on Instagram">
-                            <img src="./assets/images/projects/community/wics/board-game-social.png" alt="WiCS at UC Davis — Board Game Social promotional graphic" width="1080" height="1080" loading="lazy" decoding="async">
-                          </a>
-                        </figure>
-                      </article>
-                      <article class="community-gallery__item community-gallery__item--square" role="listitem">
-                        <figure class="community-gallery__figure">
-                          <a class="community-gallery__media" href="https://www.instagram.com/wicsdavis/" target="_blank" rel="noopener noreferrer" aria-label="ASA x WiCS Machine Learning Workshop on Instagram">
-                            <img src="./assets/images/projects/community/wics/asa-wics-ml-workshop.png" alt="ASA x WiCS at UC Davis — Machine Learning Workshop promotional graphic" width="1080" height="1080" loading="lazy" decoding="async">
-                          </a>
-                        </figure>
-                      </article>
-                      <article class="community-gallery__item community-gallery__item--square" role="listitem">
-                        <figure class="community-gallery__figure">
-                          <a class="community-gallery__media" href="https://www.instagram.com/wicsdavis/" target="_blank" rel="noopener noreferrer" aria-label="WiCS Emotional Self-Defense Seminar on Instagram">
-                            <img src="./assets/images/projects/community/wics/emotional-self-defense-seminar.png" alt="WiCS at UC Davis — Emotional Self-Defense Seminar promotional graphic" width="1080" height="1080" loading="lazy" decoding="async">
-                          </a>
-                        </figure>
-                      </article>
-                      <article class="community-gallery__item community-gallery__item--square" role="listitem">
-                        <figure class="community-gallery__figure">
-                          <a class="community-gallery__media" href="https://www.instagram.com/wicsdavis/" target="_blank" rel="noopener noreferrer" aria-label="WiCS Networking at Tech Conferences on Instagram">
-                            <img src="./assets/images/projects/community/wics/networking-tech-conferences.png" alt="WiCS at UC Davis — Networking at Tech Conferences promotional graphic" width="1080" height="1080" loading="lazy" decoding="async">
-                          </a>
-                        </figure>
-                      </article>
-                    </div>
-                  </div>
-                  </div>
-                </div>
-
-                <div class="about-community__gallery-row">
-                  <p class="community-page__links community-page__links--row" aria-label="SacHacks Instagram">
-                    <a href="https://www.instagram.com/sachacks/" target="_blank" rel="noopener noreferrer">@sachacks</a>
-                  </p>
-                  <div class="community-gallery-carousel community-gallery-carousel--sachacks" data-community-carousel>
-                  <p class="community-gallery-carousel__hint" aria-hidden="true">Scroll</p>
-                  <div class="community-gallery community-gallery--sachacks community-gallery-carousel__viewport" role="list" tabindex="0" aria-label="SacHacks Instagram posts">
-                    <div class="community-gallery-carousel__track">
-                      <article class="community-gallery__item community-gallery__item--square" role="listitem">
-                        <figure class="community-gallery__figure">
-                          <a class="community-gallery__media" href="https://www.instagram.com/sachacks/" target="_blank" rel="noopener noreferrer" aria-label="SacHacks social graphic 1 on Instagram">
-                            <img src="./assets/images/projects/community/sachacks/sachacks-01.jpg" alt="SacHacks — Instagram post 1" width="1080" height="1080" loading="lazy" decoding="async">
-                          </a>
-                        </figure>
-                      </article>
-                      <article class="community-gallery__item community-gallery__item--square" role="listitem">
-                        <figure class="community-gallery__figure">
-                          <a class="community-gallery__media" href="https://www.instagram.com/sachacks/" target="_blank" rel="noopener noreferrer" aria-label="SacHacks social graphic 2 on Instagram">
-                            <img src="./assets/images/projects/community/sachacks/sachacks-02.jpg" alt="SacHacks — Instagram post 2" width="1080" height="1080" loading="lazy" decoding="async">
-                          </a>
-                        </figure>
-                      </article>
-                      <article class="community-gallery__item community-gallery__item--square" role="listitem">
-                        <figure class="community-gallery__figure">
-                          <a class="community-gallery__media" href="https://www.instagram.com/sachacks/" target="_blank" rel="noopener noreferrer" aria-label="SacHacks social graphic 3 on Instagram">
-                            <img src="./assets/images/projects/community/sachacks/sachacks-03.jpg" alt="SacHacks — Instagram post 3" width="1080" height="1080" loading="lazy" decoding="async">
-                          </a>
-                        </figure>
-                      </article>
-                      <article class="community-gallery__item community-gallery__item--square" role="listitem">
-                        <figure class="community-gallery__figure">
-                          <a class="community-gallery__media" href="https://www.instagram.com/sachacks/" target="_blank" rel="noopener noreferrer" aria-label="SacHacks social graphic 4 on Instagram">
-                            <img src="./assets/images/projects/community/sachacks/sachacks-04.jpg" alt="SacHacks — Instagram post 4" width="1080" height="1080" loading="lazy" decoding="async">
-                          </a>
-                        </figure>
-                      </article>
-                      <article class="community-gallery__item community-gallery__item--square" role="listitem">
-                        <figure class="community-gallery__figure">
-                          <a class="community-gallery__media" href="https://www.instagram.com/sachacks/" target="_blank" rel="noopener noreferrer" aria-label="SacHacks social graphic 5 on Instagram">
-                            <img src="./assets/images/projects/community/sachacks/sachacks-05.jpg" alt="SacHacks — Instagram post 5" width="1080" height="1080" loading="lazy" decoding="async">
-                          </a>
-                        </figure>
-                      </article>
-                      <article class="community-gallery__item community-gallery__item--square" role="listitem">
-                        <figure class="community-gallery__figure">
-                          <a class="community-gallery__media" href="https://www.instagram.com/sachacks/" target="_blank" rel="noopener noreferrer" aria-label="SacHacks social graphic 6 on Instagram">
-                            <img src="./assets/images/projects/community/sachacks/sachacks-06.jpg" alt="SacHacks — Instagram post 6" width="1080" height="1080" loading="lazy" decoding="async">
-                          </a>
-                        </figure>
-                      </article>
-                      <article class="community-gallery__item community-gallery__item--square" role="listitem">
-                        <figure class="community-gallery__figure">
-                          <a class="community-gallery__media" href="https://www.instagram.com/sachacks/" target="_blank" rel="noopener noreferrer" aria-label="SacHacks social graphic 7 on Instagram">
-                            <img src="./assets/images/projects/community/sachacks/sachacks-07.jpg" alt="SacHacks — Instagram post 7" width="1080" height="1080" loading="lazy" decoding="async">
-                          </a>
-                        </figure>
-                      </article>
-                      <article class="community-gallery__item community-gallery__item--square" role="listitem">
-                        <figure class="community-gallery__figure">
-                          <a class="community-gallery__media" href="https://www.instagram.com/sachacks/" target="_blank" rel="noopener noreferrer" aria-label="SacHacks social graphic 8 on Instagram">
-                            <img src="./assets/images/projects/community/sachacks/sachacks-08.jpg" alt="SacHacks — Instagram post 8" width="1080" height="1080" loading="lazy" decoding="async">
-                          </a>
-                        </figure>
-                      </article>
-                    </div>
-                  </div>
-                  </div>
-                </div>
-              </div>
-            </section>
 
             <section class="about-startup tj-fade" data-on-scroll="0" data-delay=".27" aria-labelledby="about-startup-heading">
               <header class="about-startup__header">
@@ -962,49 +573,6 @@
             </section>
           </div>
         </section>
-      
-            <div class="container-fluid home-trailing__container">
-            <section id="cv" class="home-trailing__block home-trailing__block--cv tj-fade" data-on-scroll="0" data-delay=".08" aria-labelledby="home-cv-heading">
-              <header class="about-page-header home-cv-header">
-                <h2 id="home-cv-heading" class="about-page__section-heading">CV</h2>
-                <a class="work-detail__cta" href="./assets/documents/Amy_Lee_Resume.pdf?v=20260627resume" target="_blank" rel="noopener noreferrer">
-                  <span class="work-detail__cta-label">View CV</span>
-                  <span class="work-detail__cta-arrow" aria-hidden="true">↗</span>
-                </a>
-              </header>
-              <section class="about-overview tj-fade" data-on-scroll="0" data-delay=".22" aria-labelledby="about-overview-heading">
-                <header class="about-overview__header">
-                  <h2 id="about-overview-heading" class="about-page__subsection-heading">Overview</h2>
-                </header>
-                <dl class="site-meta-panel site-meta-panel--editorial" aria-label="Background and interests">
-                <div class="site-meta-panel__row">
-                  <dt class="site-meta-panel__label">Education</dt>
-                  <dd class="site-meta-panel__items"><span class="site-meta-panel__item">B.S. in Cognitive Science</span><span class="site-meta-panel__item">B.A. in UX Design</span><span class="site-meta-panel__item">M.S. in Human-Centered Design &amp; Engineering</span></dd>
-                </div>
-                <div class="site-meta-panel__row">
-                  <dt class="site-meta-panel__label">Hard Skills</dt>
-                  <dd class="site-meta-panel__items"><span class="site-meta-panel__item">Design thinking</span><span class="site-meta-panel__item">Survey</span><span class="site-meta-panel__item">Usability Testing</span><span class="site-meta-panel__item">Tree Testing</span><span class="site-meta-panel__item">User Interviews</span><span class="site-meta-panel__item">Card Sorting</span></dd>
-                </div>
-                <div class="site-meta-panel__row">
-                  <dt class="site-meta-panel__label">Focus</dt>
-                  <dd class="site-meta-panel__items"><span class="site-meta-panel__item">AR/VR</span><span class="site-meta-panel__item">AI</span><span class="site-meta-panel__item">Apps</span><span class="site-meta-panel__item">Websites</span></dd>
-                </div>
-                <div class="site-meta-panel__row">
-                  <dt class="site-meta-panel__label">Soft skills</dt>
-                  <dd class="site-meta-panel__items"><span class="site-meta-panel__item">Communication</span><span class="site-meta-panel__item">Empathy</span></dd>
-                </div>
-                <div class="site-meta-panel__row">
-                  <dt class="site-meta-panel__label">Companies</dt>
-                  <dd class="site-meta-panel__items"><span class="site-meta-panel__item">IBM</span><span class="site-meta-panel__item">Nordstrom Rack</span><span class="site-meta-panel__item">Sound Transit</span></dd>
-                </div>
-                <div class="site-meta-panel__row">
-                  <dt class="site-meta-panel__label">Hobbies</dt>
-                  <dd class="site-meta-panel__items"><span class="site-meta-panel__item">Matcha</span><span class="site-meta-panel__item">One Piece</span><span class="site-meta-panel__item">Running</span><span class="site-meta-panel__item">Reading</span><span class="site-meta-panel__item">Dancing</span></dd>
-                </div>
-                </dl>
-              </section>
-            </section>
-            </div>
 <section id="contact" class="contact-page-section contact-page-section--editorial" aria-label="Contact">
           <div class="contact-page__ambient" aria-hidden="true">
             <span class="contact-page__glow contact-page__glow--left"></span>
@@ -1110,126 +678,6 @@
           </div>
         </section>
 
-            <div class="container-fluid home-trailing__container">
-            <section id="extra" class="about-extra home-trailing__block home-trailing__block--extra tj-fade" data-on-scroll="0" data-delay=".29" aria-labelledby="about-extra-heading">
-              <header class="about-extra__header">
-                <h2 id="about-extra-heading" class="about-page__subsection-heading">Extra</h2>
-              </header>
-
-              <div class="about-extra__grid" role="list" aria-label="Additional project videos">
-                <a
-                  class="about-extra__item"
-                  role="listitem"
-                  href="https://schedgo.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="SchedGo Personalization — opens schedgo.com">
-                  <div class="about-extra__frame">
-                    <video
-                      class="about-extra__video"
-                      poster="./assets/images/projects/schedgo_video_poster.jpg"
-                      muted
-                      loop
-                      playsinline
-                      webkit-playsinline
-                      preload="metadata"
-                      aria-label="SchedGo app preview">
-                      <source src="./assets/videos/schedgo_v.mp4" type="video/mp4">
-                      <source src="./assets/videos/schedgo_video.mov" type="video/quicktime">
-                    </video>
-                  </div>
-                  <p class="about-extra__label">SchedGo Personalization</p>
-                </a>
-                <a
-                  class="about-extra__item"
-                  role="listitem"
-                  href="https://breaking-barriers-davis.web.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Breaking Barriers Home Page Front-end Development — opens breaking-barriers-davis.web.app">
-                  <div class="about-extra__frame">
-                    <video
-                      class="about-extra__video"
-                      poster="./assets/images/projects/breaking_barriers_video_poster.jpg"
-                      muted
-                      loop
-                      playsinline
-                      webkit-playsinline
-                      preload="metadata"
-                      aria-label="Breaking Barriers website preview">
-                      <source src="./assets/videos/breaking_barriers_video.mp4" type="video/mp4">
-                      <source src="./assets/videos/breaking_barriers_video.mov" type="video/quicktime">
-                    </video>
-                  </div>
-                  <p class="about-extra__label">Breaking Barriers Home Page Front-end Development</p>
-                </a>
-                <a
-                  class="about-extra__item"
-                  role="listitem"
-                  href="https://www.bloomandvine.net/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Bloom &amp; Vine Gallery Redesign — opens bloomandvine.net">
-                  <div class="about-extra__frame">
-                    <video
-                      class="about-extra__video"
-                      poster="./assets/images/projects/bloomandvine_video_poster.jpg"
-                      muted
-                      loop
-                      playsinline
-                      webkit-playsinline
-                      preload="metadata"
-                      aria-label="Bloom and Vine website preview">
-                      <source src="./assets/videos/bloomandvine_video.mp4" type="video/mp4">
-                      <source src="./assets/videos/bloomandvine_video.mov" type="video/quicktime">
-                    </video>
-                  </div>
-                  <p class="about-extra__label">Bloom &amp; Vine Gallery Redesign</p>
-                </a>
-                <a
-                  class="about-extra__item"
-                  role="listitem"
-                  href="https://sachacks.io/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="SacHacks Website Redesign — opens sachacks.io">
-                  <div class="about-extra__frame">
-                    <video
-                      class="about-extra__video"
-                      poster="./assets/images/projects/sachacks_video_poster.jpg"
-                      muted
-                      loop
-                      playsinline
-                      webkit-playsinline
-                      preload="metadata"
-                      aria-label="SacHacks website preview">
-                      <source src="./assets/videos/sachacks_video.mp4" type="video/mp4">
-                      <source src="./assets/videos/sachacks_video.mov" type="video/quicktime">
-                    </video>
-                  </div>
-                  <p class="about-extra__label">SacHacks Website Redesign</p>
-                </a>
-                <article
-                  class="about-extra__item about-extra__item--static"
-                  role="listitem"
-                  aria-label="Reimagining Animal Crossing in AR/VR — motion sequence preview">
-                  <div class="about-extra__frame">
-                    <video
-                      class="about-extra__video"
-                      muted
-                      loop
-                      playsinline
-                      webkit-playsinline
-                      preload="metadata"
-                      aria-label="AR/VR interaction prototypes for public spaces">
-                      <source src="./assets/videos/playground/playground-sequence.mp4" type="video/mp4">
-                    </video>
-                  </div>
-                  <p class="about-extra__label">Reimagining Animal Crossing in AR/VR</p>
-                </article>
-              </div>
-            </section>
-            </div>
         </div>
 
       </main>
