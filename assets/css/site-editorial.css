@@ -2191,8 +2191,8 @@ body.page-home .home-hero-projects__grid--editorial .home-hero-projects__thumb--
   transform: none;
 }
 
-/* Nordstrom — UI crop sits in ambient matcha, not a white SaaS panel */
-body.page-home #hero-project-nordstrom-rack .home-hero-projects__thumb--ui {
+/* Horizontal feature cards — UI crop sits in ambient matcha, not a white SaaS panel */
+body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--split .home-hero-projects__thumb--ui {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2202,14 +2202,16 @@ body.page-home #hero-project-nordstrom-rack .home-hero-projects__thumb--ui {
     linear-gradient(160deg, #1c2619 0%, #121912 48%, #0e1410 100%);
 }
 
-body.page-home #hero-project-nordstrom-rack .home-hero-projects__thumb--ui::after {
+body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--split .home-hero-projects__thumb--ui::after {
   background:
     linear-gradient(to right, transparent 62%, rgba(14, 20, 16, 0.55) 88%, rgba(14, 20, 16, 0.92) 100%);
   opacity: 0.85;
 }
 
-body.page-home .home-hero-projects__grid--editorial.home-hero-projects__grid--horizontal #hero-project-nordstrom-rack .home-hero-projects__thumb--ui img,
-body.page-home .home-hero-projects__grid--horizontal #hero-project-nordstrom-rack .home-hero-projects__thumb--ui img {
+body.page-home .home-hero-projects__grid--editorial.home-hero-projects__grid--horizontal .home-hero-projects__card--split .home-hero-projects__thumb--ui img,
+body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--split .home-hero-projects__thumb--ui img,
+body.page-home .home-hero-projects__grid--editorial.home-hero-projects__grid--horizontal .home-hero-projects__card--split .home-hero-projects__thumb--ui video,
+body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--split .home-hero-projects__thumb--ui video {
   position: relative;
   z-index: 0;
   max-width: 100%;
@@ -2436,12 +2438,12 @@ body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-d
   text-wrap: pretty;
 }
 
-/* Nordstrom feature — quieter body rhythm */
-body.page-home #hero-project-nordstrom-rack .home-hero-projects__card-body {
+/* Horizontal feature cards — shared body rhythm */
+body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--split .home-hero-projects__card-body {
   gap: clamp(16px, 2.2vh, 24px);
 }
 
-body.page-home #hero-project-nordstrom-rack .home-hero-projects__card-desc {
+body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--split .home-hero-projects__card-desc {
   font-size: clamp(0.9375rem, 2.2vw, 1.0625rem);
   line-height: 1.68;
 }
@@ -2508,13 +2510,16 @@ body.page-home .home-hero-projects__grid--editorial.home-hero-projects__grid--ho
   object-position: center 42%;
 }
 
-/* Nordstrom UI crop — keep filter readable; soft hover only */
-body.page-home .home-hero-projects__grid--horizontal #hero-project-nordstrom-rack .home-hero-projects__thumb--ui img {
+/* UI crop — keep media readable; soft hover only */
+body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--split .home-hero-projects__thumb--ui img,
+body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--split .home-hero-projects__thumb--ui video {
   transform: none;
 }
 
-body.page-home .home-hero-projects__grid--horizontal #hero-project-nordstrom-rack:hover .home-hero-projects__thumb--ui img,
-body.page-home .home-hero-projects__grid--horizontal #hero-project-nordstrom-rack:focus-visible .home-hero-projects__thumb--ui img {
+body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--split:hover .home-hero-projects__thumb--ui img,
+body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--split:focus-visible .home-hero-projects__thumb--ui img,
+body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--split:hover .home-hero-projects__thumb--ui video,
+body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--split:focus-visible .home-hero-projects__thumb--ui video {
   transform: scale(1.015);
 }
 
@@ -2583,11 +2588,11 @@ body.page-home .home-hero-projects__grid--horizontal #hero-project-nordstrom-rac
     line-height: 1.7;
   }
 
-  body.page-home #hero-project-nordstrom-rack {
+  body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--split {
     min-height: clamp(300px, 36vh, 400px);
   }
 
-  body.page-home #hero-project-nordstrom-rack .home-hero-projects__card-desc {
+  body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--split .home-hero-projects__card-desc {
     max-width: none;
     width: 100%;
     font-size: clamp(0.96875rem, 1.05vw, 1.0625rem);
@@ -2598,7 +2603,7 @@ body.page-home .home-hero-projects__grid--horizontal #hero-project-nordstrom-rac
 @media only screen and (min-width: 1100px) {
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card,
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--split {
-    min-height: clamp(310px, 36vh, 390px);
+    min-height: clamp(320px, 38vh, 420px);
   }
 
   body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__thumb {
@@ -2617,11 +2622,7 @@ body.page-home .home-hero-projects__grid--horizontal #hero-project-nordstrom-rac
     font-size: clamp(1.375rem, 1.7vw, 1.75rem);
   }
 
-  body.page-home #hero-project-nordstrom-rack {
-    min-height: clamp(320px, 38vh, 420px);
-  }
-
-  body.page-home #hero-project-nordstrom-rack .home-hero-projects__card-desc {
+  body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card--split .home-hero-projects__card-desc {
     max-width: none;
     width: 100%;
     font-size: clamp(1rem, 1.1vw, 1.1rem);
