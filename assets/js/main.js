@@ -2354,12 +2354,11 @@ const scrollHomePageToWork = () => {
 };
 
 const HOME_NAV_SCROLL_OFFSET = "top 88px";
-const HOME_LANDING_SECTION_HASHES = new Set(["about", "contact", "products"]);
+const HOME_LANDING_SECTION_HASHES = new Set(["about", "contact"]);
 const HOME_NAV_SECTION_IDS = {
   home: null,
   about: "about",
   projects: "work",
-  products: "products",
   contact: "contact",
 };
 
@@ -3514,7 +3513,6 @@ const getHomeNavKeyFromLink = (link) => {
 
   const href = link.getAttribute("href") || "";
   if (href.includes("#about")) return "about";
-  if (href.includes("#products")) return "products";
   if (href.includes("#contact")) return "contact";
   if (href.includes("#work")) return "projects";
   if (/^(?:\.\/)?home\.html(?:[#?]|$)/.test(href) || href === "" || href === "#")
@@ -3551,7 +3549,6 @@ const getHomeNavScrollSpyTargets = () => {
   [
     { id: "work", navKey: "projects" },
     { id: "about", navKey: "about" },
-    { id: "products", navKey: "products" },
     { id: "contact", navKey: "contact" },
   ].forEach(({ id, navKey }) => {
     const el = document.getElementById(id);

@@ -1028,8 +1028,8 @@ body.page-home .home-landing__statement-highlight {
 }
 
 body.page-home .home-landing-section--solo .home-landing__hero-statement {
-  font-size: clamp(2rem, 4.2vw + 0.35rem, 5.25rem);
-  line-height: 1.04;
+  font-size: clamp(1.75rem, 2.8vw + 0.55rem, 3.75rem);
+  line-height: 1.08;
 }
 
 body.page-home .home-landing__statement-kicker,
@@ -1443,15 +1443,16 @@ body.page-home .home-landing__hero-landing {
 }
 
 body.page-home .home-landing__hero-eyebrow {
-  margin: 0 0 clamp(14px, 2vh, 20px);
-  max-width: 36em;
+  margin: 0 0 clamp(16px, 2.2vh, 24px);
+  max-width: 40em;
   font-family: var(--tj-ff-body);
-  font-size: clamp(0.8125rem, 1.05vw, 0.9375rem);
-  font-weight: var(--tj-fw-sbold);
+  font-size: clamp(0.9375rem, 1.35vw, 1.125rem);
+  font-weight: var(--tj-fw-bold);
   line-height: 1.35;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #d7e6c4;
+  color: #eef5e2;
+  text-shadow: 0 1px 18px rgba(197, 220, 173, 0.35);
   text-wrap: pretty;
 }
 
@@ -1562,96 +1563,23 @@ body.page-home .home-landing__hero-statement + .home-landing__hero-landing {
   margin-top: clamp(28px, 4vh, 44px);
 }
 
-/* Quiet editorial section labels (Projects / About / Products / Contact) */
+/* Section headers (Projects / About / Contact) — muted but bold, below hero scale */
 body.site-editorial .site-section-label,
 body.page-home.site-editorial .site-section-label,
 body.page-home.site-editorial .about-page__section-heading.site-section-label,
 body.page-home.site-editorial .home-trailing .contact-page__section-heading.site-section-label {
-  margin: 0 0 clamp(14px, 2vh, 20px);
+  margin: 0 0 clamp(18px, 2.4vh, 28px);
   font-family: var(--tj-ff-body);
-  font-size: clamp(0.6875rem, 0.95vw, 0.8125rem);
-  font-weight: var(--tj-fw-medium);
-  letter-spacing: 0.2em;
+  font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+  font-weight: var(--tj-fw-bold);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  line-height: 1.35;
-  color: rgba(214, 218, 208, 0.48);
+  line-height: 1.2;
+  color: rgba(214, 218, 208, 0.72);
 }
 
 body.page-home .home-hero-projects > .site-section-label {
-  margin-bottom: clamp(16px, 2.2vh, 22px);
-}
-
-/* Home — products stub */
-body.page-home.site-editorial .home-products-section {
-  position: relative;
-  z-index: 1;
-  padding: clamp(48px, 8vh, 88px) 0 clamp(40px, 6vh, 64px);
-}
-
-body.page-home.site-editorial .home-products-section__inner {
-  max-width: 42rem;
-  margin: 0;
-}
-
-body.page-home.site-editorial .home-products-section__lead {
-  margin: 0 0 clamp(14px, 2vh, 18px);
-  font-family: var(--tj-ff-body);
-  font-size: clamp(1rem, 1.35vw, 1.125rem);
-  font-weight: var(--tj-fw-medium);
-  line-height: 1.55;
-  letter-spacing: -0.01em;
-  color: rgba(255, 255, 255, 0.78);
-  text-wrap: pretty;
-}
-
-body.page-home.site-editorial .home-products-section__list {
-  margin: 0 0 clamp(18px, 2.4vh, 24px);
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.55em;
-  font-family: var(--tj-ff-body);
-  font-size: clamp(0.9375rem, 1.1vw, 1.0625rem);
-  line-height: 1.45;
-  color: rgba(232, 236, 220, 0.62);
-}
-
-body.page-home.site-editorial .home-products-section__list li {
-  position: relative;
-  padding-left: 1.05em;
-}
-
-body.page-home.site-editorial .home-products-section__list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: 0.35em;
-  height: 0.35em;
-  border-radius: 50%;
-  background: rgba(197, 220, 173, 0.55);
-}
-
-body.page-home.site-editorial .home-products-section__link {
-  margin: 0;
-  font-family: var(--tj-ff-body);
-  font-size: clamp(0.875rem, 1vw, 0.9375rem);
-  font-weight: var(--tj-fw-sbold);
-  letter-spacing: 0.04em;
-}
-
-body.page-home.site-editorial .home-products-section__link a {
-  color: rgba(246, 243, 234, 0.88);
-  text-decoration: underline;
-  text-decoration-color: rgba(197, 220, 173, 0.45);
-  text-underline-offset: 0.18em;
-}
-
-body.page-home.site-editorial .home-products-section__link a:hover,
-body.page-home.site-editorial .home-products-section__link a:focus-visible {
-  color: #ffffff;
-  text-decoration-color: rgba(197, 220, 173, 0.85);
+  margin-bottom: clamp(20px, 2.6vh, 28px);
 }
 
 /* About — static “Previously worked for” logo row */
@@ -2375,198 +2303,66 @@ body.page-home .home-hero-projects__grid--editorial #hero-project-sound-transit 
   }
 }
 
-/* Home — slanted horizontal project rows (About/Contact portrait language) */
-body.page-home .home-hero-projects__grid--slant {
+/* Home — horizontal editorial cards (bordered chrome, media beside copy) */
+body.page-home .home-hero-projects__grid--editorial.home-hero-projects__grid--horizontal {
   display: flex;
   flex-direction: column;
-  gap: clamp(40px, 6.5vh, 72px);
-  width: 100%;
-  max-width: 100%;
-  padding-block: clamp(4px, 0.8vh, 12px);
+  gap: clamp(22px, 3.2vh, 36px);
 }
 
-body.page-home .home-hero-projects__row {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(22px, 3.5vw, 36px);
-  align-items: center;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-  cursor: pointer;
-  outline: none;
-  transition: opacity 0.3s ease;
-}
-
-body.page-home .home-hero-projects__row:focus-visible {
-  outline: 2px solid rgba(246, 243, 234, 0.85);
-  outline-offset: 6px;
-  border-radius: 8px;
-}
-
-body.page-home .home-hero-projects__row:hover .home-project-portrait__wrap--left,
-body.page-home .home-hero-projects__row:focus-visible .home-project-portrait__wrap--left {
-  transform: rotate(-2deg) translateY(-4px);
-}
-
-body.page-home .home-hero-projects__row:hover .home-project-portrait__wrap--right,
-body.page-home .home-hero-projects__row:focus-visible .home-project-portrait__wrap--right {
-  transform: rotate(2.5deg) translateY(-4px);
-}
-
-body.page-home .home-hero-projects__media {
-  margin: 0;
-  width: 100%;
-  min-width: 0;
-}
-
-body.page-home .home-project-portrait {
-  margin: 0;
-  width: 100%;
-  max-width: min(360px, 86vw);
-}
-
-body.page-home .home-project-portrait__wrap {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  overflow: visible;
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-body.page-home .home-project-portrait__frame {
-  position: relative;
-  aspect-ratio: 4 / 5;
-  width: 100%;
-  margin: 0;
-  border-radius: clamp(16px, 2vw, 24px);
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background:
-    linear-gradient(145deg, rgba(197, 220, 173, 0.12) 0%, transparent 42%),
-    linear-gradient(220deg, rgba(120, 80, 255, 0.18) 0%, transparent 50%),
-    rgba(255, 255, 255, 0.04);
-  box-shadow:
-    0 24px 64px rgba(0, 0, 0, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-}
-
-body.page-home .home-project-portrait__media {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-  display: block;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-body.page-home .home-hero-projects__grid--slant .home-hero-projects__card-body {
-  display: flex;
+body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card {
   flex-direction: column;
-  align-items: flex-start;
-  gap: clamp(10px, 1.4vh, 14px);
-  min-width: 0;
-  padding: 0;
-  margin: 0;
+  align-items: stretch;
+  height: auto;
 }
 
-body.page-home .home-hero-projects__grid--slant .home-hero-projects__card-logo {
-  height: clamp(24px, 2.5vw, 30px);
-  min-height: clamp(24px, 2.5vw, 30px);
-  max-width: clamp(112px, 14vw, 148px);
-  opacity: 0.92;
+body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__thumb {
+  width: 100%;
+  flex: 0 0 auto;
+  border-radius: 12px 12px 0 0;
+  aspect-ratio: 16 / 9;
 }
 
-body.page-home .home-hero-projects__grid--slant .home-hero-projects__card-title {
-  margin: 0;
-  font-family: var(--tj-ff-body);
-  font-size: clamp(1.5rem, 2.6vw, 2.125rem);
-  font-weight: var(--tj-fw-bold);
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-  color: #ffffff;
-}
-
-body.page-home .home-hero-projects__grid--slant .home-hero-projects__card-desc {
-  margin: 0;
-  max-width: 36em;
-  font-family: var(--tj-ff-body);
-  font-size: clamp(0.9375rem, 1.1vw, 1.0625rem);
-  font-weight: var(--tj-fw-medium);
-  line-height: 1.55;
-  letter-spacing: -0.01em;
-  color: rgba(232, 236, 220, 0.72);
-  text-wrap: pretty;
+body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-body {
+  flex: 1 1 auto;
+  justify-content: center;
 }
 
 @media only screen and (min-width: 768px) {
-  body.page-home .home-project-portrait {
-    max-width: 400px;
-    margin: 0;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  body.page-home .home-hero-projects__row {
-    grid-template-columns: minmax(220px, 0.36fr) minmax(0, 0.64fr);
-    gap: clamp(28px, 3.5vw, 48px);
-    align-items: center;
+  body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card {
+    flex-direction: row;
+    align-items: stretch;
+    min-height: clamp(220px, 28vh, 300px);
   }
 
-  body.page-home .home-project-portrait {
+  body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__thumb {
+    flex: 0 0 clamp(42%, 46%, 48%);
+    width: clamp(42%, 46%, 48%);
     max-width: none;
-  }
-
-  body.page-home .home-project-portrait__wrap {
-    margin: 0;
-    max-width: none;
-    transform-origin: center center;
-  }
-
-  body.page-home .home-project-portrait__wrap--left {
-    transform: rotate(-2deg);
-  }
-
-  body.page-home .home-project-portrait__wrap--right {
-    transform: rotate(2.5deg);
-  }
-
-  body.page-home .home-project-portrait__frame {
-    width: 100%;
-    max-height: min(58vh, 520px);
     height: auto;
-    aspect-ratio: 4 / 5;
+    min-height: 100%;
+    aspect-ratio: auto;
+    border-radius: 12px 0 0 12px;
   }
 
-  body.page-home .home-hero-projects__grid--slant .home-hero-projects__card-body {
-    padding-inline: clamp(4px, 0.8vw, 12px);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  body.page-home .home-project-portrait__wrap,
-  body.page-home .home-hero-projects__row:hover .home-project-portrait__wrap--left,
-  body.page-home .home-hero-projects__row:focus-visible .home-project-portrait__wrap--left,
-  body.page-home .home-hero-projects__row:hover .home-project-portrait__wrap--right,
-  body.page-home .home-hero-projects__row:focus-visible .home-project-portrait__wrap--right {
-    transition: none;
+  body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__thumb img,
+  body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__thumb video {
+    object-fit: cover;
   }
 
-  body.page-home .home-hero-projects__row:hover .home-project-portrait__wrap--left,
-  body.page-home .home-hero-projects__row:focus-visible .home-project-portrait__wrap--left {
-    transform: rotate(-2deg);
+  body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-body {
+    flex: 1 1 auto;
+    padding: clamp(22px, 2.4vw, 34px);
+    justify-content: center;
   }
 
-  body.page-home .home-hero-projects__row:hover .home-project-portrait__wrap--right,
-  body.page-home .home-hero-projects__row:focus-visible .home-project-portrait__wrap--right {
-    transform: rotate(2.5deg);
+  body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-title {
+    font-size: clamp(1.125rem, 1.45vw, 1.375rem);
+  }
+
+  body.page-home .home-hero-projects__grid--horizontal .home-hero-projects__card-desc {
+    font-size: clamp(0.875rem, 1.05vw, 1rem);
+    max-width: 38em;
   }
 }
 
@@ -3209,11 +3005,12 @@ body.site-editorial .contact-page__social-link:focus-visible {
   }
 
   body.page-home .home-landing-section--solo .home-landing__hero-statement {
-    font-size: clamp(2.75rem, 4.8vw, 5.75rem);
-    line-height: 1.02;
+    font-size: clamp(1.85rem, 2.6vw + 0.4rem, 3.5rem);
+    line-height: 1.1;
   }
 
 }
+
 
 @media only screen and (min-width: 992px) and (max-height: 820px) {
   body.page-home .home-landing-section--solo {

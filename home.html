@@ -6,7 +6,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache">
-  <meta name="description" content="Amy is a UX researcher and designer who makes websites and apps easier to use for diverse communities."
+  <meta name="description" content="Amy is a UX researcher who makes websites and apps easier to use for diverse communities."
 
   <title></title>
 
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="assets/css/agina-icons.css">
   <link rel="stylesheet" href="assets/css/meanmenu.css">
   <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/site-editorial.css?v=20261117eyebrow">
+  <link rel="stylesheet" href="assets/css/site-editorial.css?v=20261117noprod">
   <link rel="preload" href="./assets/videos/nordstrom_homepage_v.mp4" as="fetch" type="video/mp4" crossorigin>
   <link rel="preload" as="image" href="./assets/images/projects/nordstrom_homepage_poster.jpg">
   <link rel="preload" href="./assets/videos/sound_transit_capstone_full.mp4" as="fetch" type="video/mp4" crossorigin>
@@ -32,7 +32,7 @@
         scrollToWork = sessionStorage.getItem("homeScrollToWork") === "1";
       } catch (e) {}
       var hash = window.location.hash;
-      var landingHashes = { about: 1, contact: 1, products: 1 };
+      var landingHashes = { about: 1, contact: 1 };
       if (hash === "#work" && !scrollToWork) {
         history.replaceState(null, "", location.pathname + location.search);
       }
@@ -45,7 +45,7 @@
 
 </head>
 
-<body class="site-editorial page-home page-projects page-about page-products page-contact">
+<body class="site-editorial page-home page-projects page-about page-contact">
   <!-- Preloader -->
   <div class="tj-preloader">
 
@@ -144,9 +144,6 @@
                     <a href="home.html#work" data-nav-section="projects">Projects</a>
                   </li>
                   <li>
-                    <a href="home.html#products" data-nav-section="products">Products</a>
-                  </li>
-                  <li>
                     <a href="home.html#contact" data-nav-section="contact">Contact</a>
                   </li>
                 </ul>
@@ -182,8 +179,8 @@
                   <header class="home-landing__split-head home-landing__split-head--spread">
                     <div class="home-landing__hero-intro" data-nav-spy-home>
                       <p class="home-landing__hero-eyebrow tj-fade" data-on-scroll="0" data-delay=".02">Open to UX Research Opportunities</p>
-                      <p class="home-landing__hero-statement home-landing__hero-statement--editorial home-landing__hero-statement--title tj-fade" data-on-scroll="0" data-delay=".03">
-                        <span class="home-landing__statement-kicker">UX Researcher</span>
+                      <p class="home-landing__hero-statement home-landing__hero-statement--editorial tj-fade" data-on-scroll="0" data-delay=".03">
+                        <span class="home-landing__statement-kicker">Amy is a <span class="home-landing__statement-highlight">UX researcher</span> who makes websites and apps easier to use for diverse communities.</span>
                       </p>
                       <div class="home-landing__hero-ctas tj-fade" data-on-scroll="0" data-delay=".04" aria-label="Connect">
                         <a
@@ -208,73 +205,31 @@
                     <div class="home-landing__hero-landing tj-fade" data-on-scroll="0" data-delay=".045">
                       <div id="work" class="home-hero-projects" data-home-hero-bento>
                         <h2 id="home-projects-heading" class="site-section-label">Projects</h2>
-                        <div class="home-hero-projects__grid home-hero-projects__grid--slant" role="list" aria-label="Selected work highlights">
-                          <article
-                            class="home-hero-projects__row"
-                            id="hero-project-nordstrom-rack"
-                            role="listitem"
-                            tabindex="0"
-                            data-work-href="nordstrom-rack-pickup.html"
-                            aria-label="Nordstrom Rack — Same-day Pickup and In-person Shopping Research">
-                            <aside class="home-hero-projects__media">
-                              <figure class="home-project-portrait">
-                                <div class="home-project-portrait__wrap home-project-portrait__wrap--left">
-                                  <div class="home-project-portrait__frame">
-                                    <video
-                                      class="home-project-portrait__media"
-                                      poster="./assets/images/projects/nordstrom_homepage_poster.jpg"
-                                      muted
-                                      loop
-                                      autoplay
-                                      playsinline
-                                      webkit-playsinline
-                                      preload="auto"
-                                      aria-hidden="true">
-                                      <source src="./assets/videos/nordstrom_homepage_v.mp4" type="video/mp4">
-                                    </video>
-                                  </div>
-                                </div>
-                              </figure>
-                            </aside>
+                        <div class="home-hero-projects__grid home-hero-projects__grid--editorial home-hero-projects__grid--horizontal" role="list" aria-label="Selected work highlights">
+                          <div class="home-hero-projects__card" id="hero-project-nordstrom-rack" role="listitem" tabindex="0" data-work-href="nordstrom-rack-pickup.html" aria-label="Nordstrom Rack — Same-day Pickup and In-person Shopping Research">
+                            <span class="home-hero-projects__thumb home-hero-projects__thumb--cover home-hero-projects__thumb--ratio-16x9">
+                              <video poster="./assets/images/projects/nordstrom_homepage_poster.jpg" muted loop autoplay playsinline webkit-playsinline preload="auto" aria-hidden="true">
+                                <source src="./assets/videos/nordstrom_homepage_v.mp4" type="video/mp4">
+                              </video>
+                            </span>
                             <div class="home-hero-projects__card-body">
                               <img class="home-hero-projects__card-logo home-hero-projects__card-logo--wide" src="./assets/images/logos/nordstrom-rack.svg?v=20260618reallogos" alt="" width="148" height="51" loading="lazy" decoding="async">
-                              <h3 class="home-hero-projects__card-title">Nordstrom Rack</h3>
+                              <h2 class="home-hero-projects__card-title">Nordstrom Rack</h2>
                               <p class="home-hero-projects__card-desc">Same-day pickup usability testing and in-person shopping research — moderated sessions on filtering, multi-store checkout, and pickup logistics, plus survey and interview work on personal style discovery.</p>
                             </div>
-                          </article>
-                          <article
-                            class="home-hero-projects__row"
-                            id="hero-project-sound-transit"
-                            role="listitem"
-                            tabindex="0"
-                            data-work-href="sound-transit.html"
-                            aria-label="Sound Transit — Website Redesign Research">
-                            <aside class="home-hero-projects__media">
-                              <figure class="home-project-portrait">
-                                <div class="home-project-portrait__wrap home-project-portrait__wrap--right">
-                                  <div class="home-project-portrait__frame">
-                                    <video
-                                      class="home-project-portrait__media"
-                                      poster="./assets/images/projects/sound_transit_capstone_poster.jpg"
-                                      muted
-                                      loop
-                                      autoplay
-                                      playsinline
-                                      webkit-playsinline
-                                      preload="auto"
-                                      aria-hidden="true">
-                                      <source src="./assets/videos/sound_transit_capstone_full.mp4" type="video/mp4">
-                                    </video>
-                                  </div>
-                                </div>
-                              </figure>
-                            </aside>
+                          </div>
+                          <div class="home-hero-projects__card" id="hero-project-sound-transit" role="listitem" tabindex="0" data-work-href="sound-transit.html" aria-label="Sound Transit — Website Redesign Research">
+                            <span class="home-hero-projects__thumb home-hero-projects__thumb--cover home-hero-projects__thumb--ratio-16x9">
+                              <video poster="./assets/images/projects/sound_transit_capstone_poster.jpg" muted loop autoplay playsinline webkit-playsinline preload="auto" aria-hidden="true">
+                                <source src="./assets/videos/sound_transit_capstone_full.mp4" type="video/mp4">
+                              </video>
+                            </span>
                             <div class="home-hero-projects__card-body">
                               <img class="home-hero-projects__card-logo home-hero-projects__card-logo--wide" src="./assets/images/logos/sound-transit.svg?v=20260618reallogos" alt="" width="168" height="26" loading="lazy" decoding="async">
-                              <h3 class="home-hero-projects__card-title">Sound Transit</h3>
+                              <h2 class="home-hero-projects__card-title">Sound Transit</h2>
                               <p class="home-hero-projects__card-desc">Website redesign research for soundtransit.org — card sorting, usability testing, stakeholder interviews, and a capstone presentation synthesizing IA recommendations for the digital web team.</p>
                             </div>
-                          </article>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -286,7 +241,7 @@
         </section>
         </div>
 
-        <div class="home-trailing" aria-label="About, products, and contact">
+        <div class="home-trailing" aria-label="About and contact">
 <section id="about" class="about-page-section" aria-label="About me">
           <div class="about-page-layout">
             <div class="about-page-grid">
@@ -359,26 +314,6 @@
               </article>
             </div>
 
-          </div>
-        </section>
-
-        <section id="products" class="home-products-section" aria-labelledby="home-products-heading">
-          <div class="container-fluid home-products-section__inner">
-            <header class="home-products-section__header tj-fade" data-on-scroll="0">
-              <h2 id="home-products-heading" class="site-section-label">Products</h2>
-            </header>
-            <div class="home-products-section__body tj-fade" data-on-scroll="0" data-delay=".06">
-              <p class="home-products-section__lead">
-                Side product experiments in AR, fashion, and interaction — early prototypes living in the playground.
-              </p>
-              <ul class="home-products-section__list" role="list">
-                <li role="listitem">FITTED — fashion styling with AR and AI</li>
-                <li role="listitem">RuleMate — board game rules with AR/VR</li>
-              </ul>
-              <p class="home-products-section__link">
-                <a href="playground.html">View playground →</a>
-              </p>
-            </div>
           </div>
         </section>
 
