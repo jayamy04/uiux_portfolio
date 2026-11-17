@@ -1501,7 +1501,10 @@ body.page-home.site-editorial .home-about__body {
 
 body.page-home.site-editorial .home-about__copy {
   position: relative;
-  max-width: 42rem;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.2vh, 22px);
+  max-width: 46rem;
   padding-left: clamp(14px, 1.6vw, 22px);
 }
 
@@ -1522,7 +1525,7 @@ body.page-home.site-editorial .home-about__copy::before {
 
 body.page-home.site-editorial .home-about__text {
   margin: 0;
-  max-width: 38rem;
+  max-width: 44rem;
   font-family: var(--tj-ff-body);
   font-size: clamp(1.0625rem, 1.15vw + 0.55rem, 1.25rem);
   font-weight: var(--tj-fw-regular, 400);
@@ -1530,6 +1533,12 @@ body.page-home.site-editorial .home-about__text {
   letter-spacing: -0.012em;
   color: rgba(255, 255, 255, 0.86);
   text-wrap: pretty;
+}
+
+@media only screen and (min-width: 768px) {
+  body.page-home.site-editorial .home-about__body {
+    align-items: start;
+  }
 }
 
 body.page-home.site-editorial .home-about__portrait {
@@ -13792,6 +13801,20 @@ body.page-board-games-onboarding .work-detail__hero-inner, body.page-course-regi
 body.page-inclusive-lab .work-detail__hero-inner,
 body.page-inclusive-design-lab .work-detail__hero-inner {
   max-width: 44rem;
+}
+
+/* Nordstrom case study — wider reading column, less sparse side gutters */
+body.page-nordstrom-rack.site-editorial,
+body.page-nordstrom-rack-pickup.site-editorial {
+  --site-content-inset: clamp(16px, 3.2vw, 36px);
+}
+
+body.page-nordstrom-rack .work-detail__inner,
+body.page-nordstrom-rack-pickup .work-detail__inner,
+body.page-nordstrom-rack .work-detail__hero-inner,
+body.page-nordstrom-rack-pickup .work-detail__hero-inner {
+  width: 100%;
+  max-width: min(94vw, 68rem);
 }
 
 body.page-nordstrom-rack .work-detail__prose,
