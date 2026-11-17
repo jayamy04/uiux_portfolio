@@ -13980,6 +13980,33 @@ body.page-nordstrom-rack-pickup .work-detail [data-work-detail-title] {
   text-transform: none;
 }
 
+body.page-nordstrom-rack-pickup .work-detail__figure--fav-clip {
+  width: min(100%, 420px);
+  max-width: 420px;
+  margin: clamp(12px, 2vh, 20px) auto clamp(20px, 3vh, 28px);
+}
+
+body.page-nordstrom-rack-pickup .work-detail__figure--fav-clip .work-detail__figure-frame--video {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+body.page-nordstrom-rack-pickup .work-detail__figure--fav-clip video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(52vh, 360px);
+  object-fit: contain;
+  object-position: center center;
+}
+
+body.page-nordstrom-rack-pickup .work-detail__figure--fav-clip .work-detail__figure-caption {
+  margin-top: 10px;
+  text-align: center;
+}
+
 body.page-nordstrom-rack-pickup .work-detail__subtitle {
   margin: clamp(14px, 2.2vh, 20px) 0 0;
   font-size: clamp(1rem, 1.08vw, 1.0625rem);
