@@ -1540,7 +1540,7 @@ body.page-home.site-editorial .home-about__text {
 
 body.page-home.site-editorial .home-about__portrait {
   margin: 0;
-  width: min(100%, 168px);
+  width: min(100%, 220px);
   justify-self: start;
 }
 
@@ -1558,20 +1558,20 @@ body.page-home.site-editorial .home-about__portrait img {
 
 @media only screen and (min-width: 768px) {
   body.page-home.site-editorial .home-about__body {
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: auto minmax(0, 1fr);
     gap: clamp(36px, 5vw, 72px);
     align-items: center;
   }
 
   body.page-home.site-editorial .home-about__portrait {
-    width: clamp(160px, 16vw, 220px);
-    justify-self: end;
+    width: clamp(240px, 26vw, 340px);
+    justify-self: start;
   }
 }
 
 @media only screen and (max-width: 575px) {
   body.page-home.site-editorial .home-about__portrait {
-    width: min(42vw, 132px);
+    width: min(58vw, 200px);
   }
 }
 
