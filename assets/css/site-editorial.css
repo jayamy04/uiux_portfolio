@@ -14272,7 +14272,8 @@ body.page-nordstrom-rack-pickup .work-detail__figure--fav-clip .work-detail__fig
   justify-content: center;
   width: 100%;
   max-height: none;
-  min-height: min(42vh, 360px);
+  min-height: min(28vh, 260px);
+  padding: clamp(16px, 2.5vh, 28px) 0;
   border-radius: 14px;
   overflow: hidden;
   background: #0a0f0c;
@@ -14286,8 +14287,8 @@ body.page-nordstrom-rack-pickup .work-detail__figure--fav-clip video {
   display: block;
   width: auto;
   height: auto;
-  max-width: min(42%, 280px);
-  max-height: min(48vh, 400px);
+  max-width: min(28%, 180px);
+  max-height: min(32vh, 260px);
   object-fit: contain;
   object-position: center center;
   background: transparent;
