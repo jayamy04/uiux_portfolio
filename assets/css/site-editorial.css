@@ -1582,7 +1582,7 @@ body.page-home.site-editorial .home-contact {
   margin-top: clamp(64px, 9vh, 112px);
   padding: clamp(28px, 4vh, 40px) 0 clamp(8px, 1.5vh, 16px);
   scroll-margin-top: 88px;
-  border-top: 1px solid rgba(197, 220, 173, 0.16);
+  border-top: none;
 }
 
 body.page-home.site-editorial .home-contact__layout {
