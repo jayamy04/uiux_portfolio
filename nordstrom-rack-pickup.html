@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 
 <head>
-  <!-- deploy vidsm -->
+  <!-- deploy findingsflow -->
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -264,17 +264,14 @@
                 <div class="work-detail__usability-findings-group">
                   <h3 class="work-detail__kicker tj-fade" data-on-scroll="0" data-delay=".12" id="nordstrom-issues-heading">Issues &amp; Evidence</h3>
 
-                  <article class="work-detail__usability-finding tj-fade" data-on-scroll="0" data-delay=".14">
+                  <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".14">
+                    <p>Here is a little bit about the findings from the usability tests. The pickup experience broke down in a few places.</p>
+                  </div>
+
+                  <article class="work-detail__usability-finding tj-fade" data-on-scroll="0" data-delay=".16">
                     <div class="work-detail__prose">
-                      <p><strong>"Available Today" filter doesn't accurately reflect size-level availability</strong> · Severity: High</p>
-                      <p>The filter operates at the product level, not the size level. A shoe appears in results as long as any size or color variation is available for same-day pickup — even if the shopper's selected size is entirely unavailable. Participants wasted significant effort clicking through products only to discover nothing in their size was actually eligible.</p>
-                      <p>A compounding issue: when "Available Today" and a size filter are applied together, some results appear that have no colors available in that size for same or next-day pickup — a direct contradiction of what the filter implies.</p>
-                      <ul>
-                        <li>7 of 8 participants applied the "Available today" filter</li>
-                        <li>4 of 8 also applied a size filter</li>
-                        <li>Participants checked an average of 10.6 size/color combinations before finding an eligible shoe</li>
-                        <li>3 of 8 participants tried to give up on the task 1–3 times due to the filters appearing broken</li>
-                      </ul>
+                      <p><strong>First, the “Available Today” filter did not work as expected.</strong> · Severity: High</p>
+                      <p>Participants expected every result to be available for same-day pickup. The filter operates at the product level, not the size level, so products showed up as long as at least one size or color was available for pickup — even if the shopper’s selected size was entirely unavailable. People clicked through about 10.6 size and color combinations on average to find a pair of shoes they could actually pick up. When “Available Today” and a size filter were applied together, some results still appeared with no colors available in that size for same- or next-day pickup — a direct contradiction of what the filter implies. Some participants almost gave up; 3 of 8 tried to abandon the task 1–3 times because the filters felt broken. (7 of 8 applied “Available Today”; 4 of 8 also applied a size filter. Separately, 2 of 8 never noticed the filter at all — one gave up, another got lucky on the first try.)</p>
                     </div>
                     <div class="work-detail__usability-quotes">
                       <figure class="work-detail__quote">
@@ -292,13 +289,10 @@
                     </div>
                   </article>
 
-                  <article class="work-detail__usability-finding tj-fade" data-on-scroll="0" data-delay=".2">
+                  <article class="work-detail__usability-finding tj-fade" data-on-scroll="0" data-delay=".22">
                     <div class="work-detail__prose">
-                      <p><strong>Participants miss when fulfillment silently switches from "pickup" to "ship to store"</strong> · Severity: High</p>
-                      <p>On the product detail page, selecting a size or color that isn't available for same-day pickup causes the fulfillment method to change from "Free pickup" to "Free ship to store." This UI change is subtle and easy to miss, especially when a participant is focused on selecting their size.</p>
-                      <ul>
-                        <li>4 of 8 participants added a "ship to store" item to their bag believing it was available for same-day pickup</li>
-                      </ul>
+                      <p><strong>Then, on the product page, fulfillment silently switched from pickup to ship to store.</strong> · Severity: High</p>
+                      <p>Selecting a size or color that wasn’t available for same-day pickup changed “Free pickup” to “Free ship to store.” That UI change is subtle and easy to miss when someone is focused on picking a size. Some participants didn’t notice and added items to their bag thinking they could get them by tomorrow. 4 of 8 added a “ship to store” item believing it was available for same-day pickup. One participant accidentally added a ship-to-store item after assuming “Available Today” meant everything would be ready for pickup by today or tomorrow — then realized it only meant the item was purchasable today, and that there didn’t seem to be a filter for what they actually wanted.</p>
                     </div>
                     <div class="work-detail__usability-quotes">
                       <figure class="work-detail__quote">
@@ -318,14 +312,9 @@
 
                   <article class="work-detail__usability-finding tj-fade" data-on-scroll="0" data-delay=".28">
                     <div class="work-detail__prose">
-                      <p><strong>Adding pickup items from multiple stores causes silent, confusing reassignment at checkout</strong> · Severity: Medium</p>
-                      <p>When a shopper adds pickup items from Store A, switches store location, then adds items from Store B, the system consolidates all items under Store B at checkout. If Store A items aren't available for same-day pickup at Store B, their fulfillment method changes — but this happens without a clear, proactive notification.</p>
-                      <ul>
-                        <li>5 of 8 participants expected to check out from multiple stores in a single transaction</li>
-                        <li>All 8 participants expressed confusion or annoyance when "Available Today" items became unavailable at checkout</li>
-                        <li>5 of 8 noticed the store switch on their own at checkout; 3 of 8 did not notice and had to be prompted</li>
-                      </ul>
-                      <p class="work-detail__note">When both items are available at Store B, the consolidation behavior is actually well-received — participants appreciated not having to make multiple trips. The problem is specifically the silent fulfillment downgrade with no warning.</p>
+                      <p><strong>Also, buying from more than one store broke down at checkout.</strong> · Severity: Medium</p>
+                      <p>When participants added pickup items from Store A, switched location, then added items from Store B, everything consolidated under Store B at checkout — without a clear, proactive notice. If Store A items weren’t available for same-day pickup at Store B, fulfillment changed quietly. A “sold out” message also appeared for items that were still available elsewhere: one item was moved to “Saved for Later” with “We moved your sold-out items to Saved for Later,” even though a popup mentioned it was “available nearby.” That “sold-out” label made people unsure whether the item was globally out of stock or just unavailable at the selected store. 5 of 8 expected to check out from multiple stores in one purchase; all 8 were confused or annoyed when “Available Today” items became unavailable at checkout. 5 of 8 noticed the store switch on their own; 3 of 8 needed a prompt.</p>
+                      <p class="work-detail__note">When both items were available at Store B, consolidation was actually well-received — people liked not making multiple trips. The problem was the silent fulfillment downgrade and the misleading sold-out language.</p>
                     </div>
                     <div class="work-detail__usability-quotes">
                       <figure class="work-detail__quote">
@@ -340,33 +329,19 @@
                         </blockquote>
                         <figcaption class="work-detail__quote-caption">Participant E</figcaption>
                       </figure>
+                      <figure class="work-detail__quote">
+                        <blockquote>
+                          <p>"I'm kind of confused why it says 'sold-out'...I'm not sure if that means that the item is actually sold out, like someone bought it already, or more like, oh, you just can't check out from two different locations."</p>
+                        </blockquote>
+                        <figcaption class="work-detail__quote-caption">Participant D</figcaption>
+                      </figure>
                     </div>
                   </article>
 
                   <article class="work-detail__usability-finding tj-fade" data-on-scroll="0" data-delay=".34">
                     <div class="work-detail__prose">
-                      <p><strong>"Sold Out" message appears for items that are available at nearby stores</strong> · Severity: Medium</p>
-                      <p>One participant's item was moved to "Saved for Later" at checkout, with a notification reading "We moved your sold-out items to Saved for Later." While a popup mentioned the item was "available nearby," the "sold-out" label was genuinely confusing — participants couldn't determine if the item was globally out of stock or simply unavailable at their selected store.</p>
-                    </div>
-                    <figure class="work-detail__quote">
-                      <blockquote>
-                        <p>"I'm kind of confused why it says 'sold-out'...I'm not sure if that means that the item is actually sold out, like someone bought it already, or more like, oh, you just can't check out from two different locations."</p>
-                      </blockquote>
-                      <figcaption class="work-detail__quote-caption">Participant D</figcaption>
-                    </figure>
-                  </article>
-
-                  <article class="work-detail__usability-finding tj-fade" data-on-scroll="0" data-delay=".38">
-                    <div class="work-detail__prose">
-                      <p><strong>The "Available Today" filter is hard to notice, and pickup logistics info is buried</strong> · Severity: Medium (filter visibility) / Low (logistics discoverability)</p>
-                      <p>Two related issues surfaced in this category. First, 2 of 8 participants didn't notice the "Available Today" filter when tasked with finding a same-day pickup item. One gave up on the task entirely; the other got lucky selecting a pickup item on the first try. A third participant found the filter only after struggling without it.</p>
-                      <p>Second, when tasked with finding how long Nordstrom Rack holds pickup orders, participants instinctively looked at the checkout page and shopping bag — both of which lack this information. The information required an average of 7 clicks to locate; one participant gave up and searched Google.</p>
-                      <ul>
-                        <li>2 of 8 participants missed the "Available Today" filter entirely</li>
-                        <li>6 of 8 first looked for hold policy on the checkout or bag page</li>
-                        <li>7 average clicks to find the order hold duration</li>
-                        <li>1 participant gave up and Googled the answer</li>
-                      </ul>
+                      <p><strong>Finally, pickup details were hard to find.</strong> · Severity: Low (logistics discoverability)</p>
+                      <p>Information on when orders are ready for pickup and how long they are held is absent from the checkout page, product details page, and main FAQ page. Most participants first looked on the checkout or bag page (6 of 8), and it took an average of 7 clicks to find how long an order would be held. One person gave up and turned to Google.</p>
                     </div>
                     <div class="work-detail__usability-quotes">
                       <figure class="work-detail__quote">
@@ -383,6 +358,10 @@
                       </figure>
                     </div>
                   </article>
+
+                  <div class="work-detail__prose tj-fade" data-on-scroll="0" data-delay=".4">
+                    <p>So the pickup experience broke down when what the site showed did not match what was actually available.</p>
+                  </div>
                 </div>
 
                 <article class="work-detail__usability-finding work-detail__usability-finding--results tj-fade" data-on-scroll="0" data-delay=".44">
