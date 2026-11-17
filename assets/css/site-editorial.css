@@ -1454,9 +1454,190 @@ body.page-home .home-landing__hero-support {
   text-wrap: pretty;
 }
 
+body.page-home .home-landing__hero-statement--title {
+  text-transform: none;
+  letter-spacing: -0.035em;
+}
+
+body.page-home .home-landing__hero-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+body.page-home .home-landing__hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(10px, 1.6vw, 14px);
+  margin-top: clamp(18px, 2.4vh, 26px);
+}
+
+body.page-home .home-landing__hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.72em 1.55em;
+  border-radius: 999px;
+  font-family: var(--tj-ff-body);
+  font-size: clamp(0.8125rem, 1.05vw, 0.9375rem);
+  font-weight: var(--tj-fw-sbold);
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    filter 0.22s ease,
+    background-color 0.22s ease,
+    border-color 0.22s ease,
+    color 0.22s ease;
+}
+
+body.page-home .home-landing__hero-cta--linkedin {
+  color: #f6f3ea;
+  background: rgba(246, 243, 234, 0.1);
+  border: 1.5px solid rgba(246, 243, 234, 0.55);
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+body.page-home .home-landing__hero-cta--linkedin:hover,
+body.page-home .home-landing__hero-cta--linkedin:focus-visible {
+  color: #ffffff;
+  background: rgba(246, 243, 234, 0.18);
+  border-color: rgba(246, 243, 234, 0.78);
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+body.page-home .home-landing__hero-cta--cv {
+  color: #10160f;
+  background: linear-gradient(145deg, #d7e6c4 0%, #a8c48a 48%, #7f9f62 100%);
+  border: 1.5px solid rgba(246, 243, 234, 0.35);
+  box-shadow:
+    0 10px 28px rgba(127, 159, 98, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+body.page-home .home-landing__hero-cta--cv:hover,
+body.page-home .home-landing__hero-cta--cv:focus-visible {
+  color: #0c120b;
+  filter: brightness(1.05);
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 34px rgba(127, 159, 98, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.42);
+}
+
+body.page-home .home-landing__hero-cta:focus-visible {
+  outline: 2px solid rgba(246, 243, 234, 0.9);
+  outline-offset: 3px;
+}
+
+body.page-home .home-landing__hero-intro + .home-landing__hero-landing,
 body.page-home .home-landing__hero-statement + .home-landing__hero-support + .home-landing__hero-landing,
 body.page-home .home-landing__hero-statement + .home-landing__hero-landing {
-  margin-top: clamp(20px, 2.8vh, 32px);
+  margin-top: clamp(28px, 4vh, 44px);
+}
+
+/* Quiet editorial section labels (Projects / About / Products / Contact) */
+body.site-editorial .site-section-label,
+body.page-home.site-editorial .site-section-label,
+body.page-home.site-editorial .about-page__section-heading.site-section-label,
+body.page-home.site-editorial .home-trailing .contact-page__section-heading.site-section-label {
+  margin: 0 0 clamp(14px, 2vh, 20px);
+  font-family: var(--tj-ff-body);
+  font-size: clamp(0.6875rem, 0.95vw, 0.8125rem);
+  font-weight: var(--tj-fw-medium);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  line-height: 1.35;
+  color: rgba(214, 218, 208, 0.48);
+}
+
+body.page-home .home-hero-projects > .site-section-label {
+  margin-bottom: clamp(16px, 2.2vh, 22px);
+}
+
+/* Home — products stub */
+body.page-home.site-editorial .home-products-section {
+  position: relative;
+  z-index: 1;
+  padding: clamp(48px, 8vh, 88px) 0 clamp(40px, 6vh, 64px);
+}
+
+body.page-home.site-editorial .home-products-section__inner {
+  max-width: 42rem;
+  margin: 0;
+}
+
+body.page-home.site-editorial .home-products-section__lead {
+  margin: 0 0 clamp(14px, 2vh, 18px);
+  font-family: var(--tj-ff-body);
+  font-size: clamp(1rem, 1.35vw, 1.125rem);
+  font-weight: var(--tj-fw-medium);
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.78);
+  text-wrap: pretty;
+}
+
+body.page-home.site-editorial .home-products-section__list {
+  margin: 0 0 clamp(18px, 2.4vh, 24px);
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55em;
+  font-family: var(--tj-ff-body);
+  font-size: clamp(0.9375rem, 1.1vw, 1.0625rem);
+  line-height: 1.45;
+  color: rgba(232, 236, 220, 0.62);
+}
+
+body.page-home.site-editorial .home-products-section__list li {
+  position: relative;
+  padding-left: 1.05em;
+}
+
+body.page-home.site-editorial .home-products-section__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.35em;
+  height: 0.35em;
+  border-radius: 50%;
+  background: rgba(197, 220, 173, 0.55);
+}
+
+body.page-home.site-editorial .home-products-section__link {
+  margin: 0;
+  font-family: var(--tj-ff-body);
+  font-size: clamp(0.875rem, 1vw, 0.9375rem);
+  font-weight: var(--tj-fw-sbold);
+  letter-spacing: 0.04em;
+}
+
+body.page-home.site-editorial .home-products-section__link a {
+  color: rgba(246, 243, 234, 0.88);
+  text-decoration: underline;
+  text-decoration-color: rgba(197, 220, 173, 0.45);
+  text-underline-offset: 0.18em;
+}
+
+body.page-home.site-editorial .home-products-section__link a:hover,
+body.page-home.site-editorial .home-products-section__link a:focus-visible {
+  color: #ffffff;
+  text-decoration-color: rgba(197, 220, 173, 0.85);
 }
 
 /* About — static “Previously worked for” logo row */
@@ -2491,7 +2672,7 @@ body.page-home.page-contact.site-editorial .home-trailing #contact .contact-page
   z-index: 1;
 }
 
-body.page-home.site-editorial .home-trailing .contact-page__section-heading {
+body.page-home.site-editorial .home-trailing .contact-page__section-heading:not(.site-section-label) {
   margin: 0 0 clamp(10px, 1.5vh, 14px);
   font-family: var(--tj-ff-body);
   font-size: clamp(10px, 2.5vw, 11px);
@@ -8903,8 +9084,8 @@ body.page-about.site-editorial .about-dance__header {
   margin-bottom: clamp(8px, 1.2vh, 12px);
 }
 
-body.page-about.site-editorial .about-page__section-heading,
-body.page-home.site-editorial .about-page__section-heading {
+body.page-about.site-editorial .about-page__section-heading:not(.site-section-label),
+body.page-home.site-editorial .about-page__section-heading:not(.site-section-label) {
   margin: 0;
   font-family: var(--tj-ff-body);
   font-size: clamp(1.75rem, 3.2vw, 2.25rem);

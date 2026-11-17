@@ -2352,7 +2352,14 @@ const scrollHomePageToWork = () => {
 };
 
 const HOME_NAV_SCROLL_OFFSET = "top 88px";
-const HOME_LANDING_SECTION_HASHES = new Set(["about", "contact"]);
+const HOME_LANDING_SECTION_HASHES = new Set(["about", "contact", "products"]);
+const HOME_NAV_SECTION_IDS = {
+  home: null,
+  about: "about",
+  projects: "work",
+  products: "products",
+  contact: "contact",
+};
 
 const scrollHomePageToSection = (sectionId) => {
   const target = document.getElementById(sectionId);
@@ -3501,8 +3508,9 @@ const getHomeNavKeyFromLink = (link) => {
 
   const href = link.getAttribute("href") || "";
   if (href.includes("#about")) return "about";
+  if (href.includes("#products")) return "products";
   if (href.includes("#contact")) return "contact";
-  if (href.includes("#work")) return "home";
+  if (href.includes("#work")) return "projects";
   if (/^(?:\.\/)?home\.html(?:[#?]|$)/.test(href) || href === "" || href === "#")
     return "home";
   return null;
@@ -3524,12 +3532,24 @@ const setHomeNavActive = (navKey) => {
 
 const getHomeNavScrollSpyTargets = () => {
   const targets = [];
-  const heroBand = document.querySelector(".home-hero-band");
-  if (heroBand) targets.push({ el: heroBand, navKey: "home" });
+  const homeIntro =
+    document.querySelector("[data-nav-spy-home]") ||
+    document.querySelector(".home-landing__hero-intro");
+  if (homeIntro) {
+    targets.push({ el: homeIntro, navKey: "home" });
+  } else {
+    const heroBand = document.querySelector(".home-hero-band");
+    if (heroBand) targets.push({ el: heroBand, navKey: "home" });
+  }
 
-  ["about", "contact"].forEach((id) => {
+  [
+    { id: "work", navKey: "projects" },
+    { id: "about", navKey: "about" },
+    { id: "products", navKey: "products" },
+    { id: "contact", navKey: "contact" },
+  ].forEach(({ id, navKey }) => {
     const el = document.getElementById(id);
-    if (el) targets.push({ el, navKey: id });
+    if (el) targets.push({ el, navKey });
   });
 
   return targets;
@@ -3594,9 +3614,9 @@ const initHomeNavScrollSpy = () => {
       scrollSpy?.setTrackedKey(hashId);
       return;
     }
-    if (window.location.hash === HOME_WORK_HASH && shouldScrollHomeToWork()) {
-      setHomeNavActive("home");
-      scrollSpy?.setTrackedKey("home");
+    if (window.location.hash === HOME_WORK_HASH) {
+      setHomeNavActive("projects");
+      scrollSpy?.setTrackedKey("projects");
       return;
     }
     if (!window.location.hash) {
@@ -3653,8 +3673,10 @@ const initHomeNavScrollSpy = () => {
       scrollHomePageToTop();
       history.replaceState(null, "", location.pathname + location.search);
     } else {
-      waitForScrollSmootherReady(() => scrollHomePageToSection(navKey));
-      history.replaceState(null, "", `#${navKey}`);
+      const sectionId = HOME_NAV_SECTION_IDS[navKey] || navKey;
+      const hashId = sectionId === "work" ? "work" : sectionId;
+      waitForScrollSmootherReady(() => scrollHomePageToSection(sectionId));
+      history.replaceState(null, "", `#${hashId}`);
     }
 
     setHomeNavActive(navKey);

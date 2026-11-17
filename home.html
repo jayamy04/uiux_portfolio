@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="assets/css/agina-icons.css">
   <link rel="stylesheet" href="assets/css/meanmenu.css">
   <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/site-editorial.css?v=20261117homehero">
+  <link rel="stylesheet" href="assets/css/site-editorial.css?v=20261117navcta">
   <link rel="preload" href="./assets/videos/nordstrom_homepage_v.mp4" as="fetch" type="video/mp4" crossorigin>
   <link rel="preload" as="image" href="./assets/images/projects/nordstrom_homepage_poster.jpg">
   <link rel="preload" href="./assets/videos/sound_transit_capstone_full.mp4" as="fetch" type="video/mp4" crossorigin>
@@ -32,7 +32,7 @@
         scrollToWork = sessionStorage.getItem("homeScrollToWork") === "1";
       } catch (e) {}
       var hash = window.location.hash;
-      var landingHashes = { about: 1, contact: 1 };
+      var landingHashes = { about: 1, contact: 1, products: 1 };
       if (hash === "#work" && !scrollToWork) {
         history.replaceState(null, "", location.pathname + location.search);
       }
@@ -45,7 +45,7 @@
 
 </head>
 
-<body class="site-editorial page-home page-projects page-about page-contact">
+<body class="site-editorial page-home page-projects page-about page-products page-contact">
   <!-- Preloader -->
   <div class="tj-preloader">
 
@@ -97,25 +97,6 @@
 
       <div class="offcanvas_menu mobile_menu d-lg-none"></div>
 
-      <div class="offcanvas_header-actions d-lg-none" aria-label="LinkedIn and CV">
-        <a
-          class="site-header-linkedin-btn"
-          href="https://www.linkedin.com/in/seunghyun-amy-lee/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Amy Lee on LinkedIn (opens in new tab)">
-          LinkedIn
-        </a>
-        <a
-          class="site-header-cv-btn"
-          href="./assets/documents/Amy_Lee_Resume.pdf?v=20260627resume"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="View CV (opens PDF)">
-          CV
-        </a>
-      </div>
-
       <div class="offcanvas_contact tj_contact contact">
         <div class="sec_subtitle contact_title"><span>Contact</span></div>
         <a href="tel:+19257855578" class="contact_info">+1 925 785 5578</a>
@@ -160,29 +141,16 @@
                     <a href="home.html#about" data-nav-section="about">About</a>
                   </li>
                   <li>
+                    <a href="home.html#work" data-nav-section="projects">Projects</a>
+                  </li>
+                  <li>
+                    <a href="home.html#products" data-nav-section="products">Products</a>
+                  </li>
+                  <li>
                     <a href="home.html#contact" data-nav-section="contact">Contact</a>
                   </li>
                 </ul>
               </nav>
-            </div>
-
-            <div class="tj-header_right">
-              <a
-                class="site-header-linkedin-btn"
-                href="https://www.linkedin.com/in/seunghyun-amy-lee/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Amy Lee on LinkedIn (opens in new tab)">
-                LinkedIn
-              </a>
-              <a
-                class="site-header-cv-btn"
-                href="./assets/documents/Amy_Lee_Resume.pdf?v=20260627resume"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View CV (opens PDF)">
-                CV
-              </a>
             </div>
 
           </div>
@@ -212,13 +180,34 @@
               <div class="home-landing__split">
                 <div class="home-landing__split-col home-landing__split-col--headline">
                   <header class="home-landing__split-head home-landing__split-head--spread">
-                    <p class="home-landing__hero-statement home-landing__hero-statement--editorial tj-fade" data-on-scroll="0" data-delay=".03">
-                      <span class="home-landing__statement-kicker">Amy is a <span class="home-landing__statement-highlight">UX researcher and designer</span> who makes websites and apps easier to use for diverse communities.</span>
-                    </p>
-                    <p class="home-landing__hero-support tj-fade" data-on-scroll="0" data-delay=".035">Open to UX Research Opportunities</p>
+                    <div class="home-landing__hero-intro" data-nav-spy-home>
+                      <p class="home-landing__hero-statement home-landing__hero-statement--editorial home-landing__hero-statement--title tj-fade" data-on-scroll="0" data-delay=".03">
+                        <span class="home-landing__statement-kicker">UX Researcher</span>
+                      </p>
+                      <p class="home-landing__hero-support tj-fade" data-on-scroll="0" data-delay=".035">Open to UX Research Opportunities</p>
+                      <div class="home-landing__hero-ctas tj-fade" data-on-scroll="0" data-delay=".04" aria-label="Connect">
+                        <a
+                          class="home-landing__hero-cta home-landing__hero-cta--linkedin"
+                          href="https://www.linkedin.com/in/seunghyun-amy-lee/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Amy Lee on LinkedIn (opens in new tab)">
+                          LinkedIn
+                        </a>
+                        <a
+                          class="home-landing__hero-cta home-landing__hero-cta--cv"
+                          href="./assets/documents/Amy_Lee_Resume.pdf?v=20260627resume"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="View CV (opens PDF)">
+                          CV
+                        </a>
+                      </div>
+                    </div>
 
                     <div class="home-landing__hero-landing tj-fade" data-on-scroll="0" data-delay=".045">
                       <div id="work" class="home-hero-projects" data-home-hero-bento>
+                        <h2 id="home-projects-heading" class="site-section-label">Projects</h2>
                         <div class="home-hero-projects__grid home-hero-projects__grid--editorial" role="list" aria-label="Selected work highlights">
                           <div class="home-hero-projects__card" id="hero-project-nordstrom-rack" role="listitem" tabindex="0" data-work-href="nordstrom-rack-pickup.html" aria-label="Nordstrom Rack — Same-day Pickup and In-person Shopping Research">
                             <span class="home-hero-projects__thumb home-hero-projects__thumb--cover home-hero-projects__thumb--ratio-16x9">
@@ -255,7 +244,7 @@
         </section>
         </div>
 
-        <div class="home-trailing" aria-label="About and contact">
+        <div class="home-trailing" aria-label="About, products, and contact">
 <section id="about" class="about-page-section" aria-label="About me">
           <div class="about-page-layout">
             <div class="about-page-grid">
@@ -278,7 +267,7 @@
 
               <article class="about-page-main">
                 <header class="about-page-header tj-fade" data-on-scroll="0">
-                  <h2 id="home-about-heading" class="about-page__section-heading">About</h2>
+                  <h2 id="home-about-heading" class="site-section-label about-page__section-heading">About</h2>
                 </header>
 
                 <div class="about-page-story tj-fade" data-on-scroll="0" data-delay=".1">
@@ -330,6 +319,27 @@
 
           </div>
         </section>
+
+        <section id="products" class="home-products-section" aria-labelledby="home-products-heading">
+          <div class="container-fluid home-products-section__inner">
+            <header class="home-products-section__header tj-fade" data-on-scroll="0">
+              <h2 id="home-products-heading" class="site-section-label">Products</h2>
+            </header>
+            <div class="home-products-section__body tj-fade" data-on-scroll="0" data-delay=".06">
+              <p class="home-products-section__lead">
+                Side product experiments in AR, fashion, and interaction — early prototypes living in the playground.
+              </p>
+              <ul class="home-products-section__list" role="list">
+                <li role="listitem">FITTED — fashion styling with AR and AI</li>
+                <li role="listitem">RuleMate — board game rules with AR/VR</li>
+              </ul>
+              <p class="home-products-section__link">
+                <a href="playground.html">View playground →</a>
+              </p>
+            </div>
+          </div>
+        </section>
+
 <section id="contact" class="contact-page-section contact-page-section--editorial" aria-label="Contact">
           <div class="contact-page__ambient" aria-hidden="true">
             <span class="contact-page__glow contact-page__glow--left"></span>
@@ -357,7 +367,7 @@
 
               <div class="contact-page-main">
                 <header class="contact-page-layout__intro tj-fade" data-on-scroll="0" data-delay=".08">
-                  <h2 id="home-contact-heading" class="contact-page__section-heading">Contact</h2>
+                  <h2 id="home-contact-heading" class="site-section-label contact-page__section-heading">Contact</h2>
                   <h1 class="contact-page__title">
                     <span class="contact-page__title-word">contact me</span>
                   </h1>
@@ -452,7 +462,7 @@
   <script src="assets/js/window-shape-animation.js"></script>
   <script src="assets/js/preloader.js"></script>
   <script src="assets/js/gsap-custom-animations.js"></script>
-  <script src="assets/js/main.js?v=20261117homehero"></script>
+  <script src="assets/js/main.js?v=20261117navcta"></script>
   <script src="assets/js/chat-avatar-fix.js?v=20260622about"></script>
   <script src="assets/js/contact-form.js"></script>
 </body>
