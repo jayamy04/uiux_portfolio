@@ -2354,8 +2354,10 @@ const scrollHomePageToWork = () => {
 };
 
 const HOME_NAV_SCROLL_OFFSET = "top 88px";
+const HOME_LANDING_SECTION_HASHES = new Set(["about"]);
 const HOME_NAV_SECTION_IDS = {
   home: null,
+  about: "about",
   projects: "work",
 };
 
@@ -2413,6 +2415,15 @@ const initHomeLandingScroll = () => {
     const syncWorkAnchor = () => scrollHomePageToWork();
     window.addEventListener("load", syncWorkAnchor, { once: true });
     window.setTimeout(syncWorkAnchor, 2300);
+    return;
+  }
+
+  const hashId = window.location.hash.slice(1);
+  if (HOME_LANDING_SECTION_HASHES.has(hashId)) {
+    const syncSectionAnchor = () => scrollHomePageToSection(hashId);
+    waitForScrollSmootherReady(syncSectionAnchor);
+    window.addEventListener("load", syncSectionAnchor, { once: true });
+    window.setTimeout(() => waitForScrollSmootherReady(syncSectionAnchor), 2300);
     return;
   }
 
@@ -3508,6 +3519,7 @@ const getHomeNavKeyFromLink = (link) => {
   ) {
     return null;
   }
+  if (href.includes("#about")) return "about";
   if (href.includes("#work")) return "projects";
   if (/^(?:\.\/)?home\.html(?:[#?]|$)/.test(href) || href === "" || href === "#")
     return "home";
@@ -3540,8 +3552,13 @@ const getHomeNavScrollSpyTargets = () => {
     if (heroBand) targets.push({ el: heroBand, navKey: "home" });
   }
 
-  const work = document.getElementById("work");
-  if (work) targets.push({ el: work, navKey: "projects" });
+  [
+    { id: "about", navKey: "about" },
+    { id: "work", navKey: "projects" },
+  ].forEach(({ id, navKey }) => {
+    const el = document.getElementById(id);
+    if (el) targets.push({ el, navKey });
+  });
 
   return targets;
 };
@@ -3599,6 +3616,12 @@ const initHomeNavScrollSpy = () => {
   let scrollSpy = null;
 
   const applyHashNavState = () => {
+    const hashId = window.location.hash.slice(1);
+    if (HOME_LANDING_SECTION_HASHES.has(hashId)) {
+      setHomeNavActive(hashId);
+      scrollSpy?.setTrackedKey(hashId);
+      return;
+    }
     if (window.location.hash === HOME_WORK_HASH) {
       setHomeNavActive("projects");
       scrollSpy?.setTrackedKey("projects");
@@ -3626,7 +3649,10 @@ const initHomeNavScrollSpy = () => {
   });
 
   window.addEventListener("hashchange", () => {
-    if (window.location.hash === HOME_WORK_HASH) {
+    const hashId = window.location.hash.slice(1);
+    if (HOME_LANDING_SECTION_HASHES.has(hashId)) {
+      waitForScrollSmootherReady(() => scrollHomePageToSection(hashId));
+    } else if (window.location.hash === HOME_WORK_HASH) {
       waitForScrollSmootherReady(() => scrollHomePageToSection("work"));
     }
     applyHashNavState();
