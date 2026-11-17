@@ -14271,12 +14271,18 @@ body.page-nordstrom-rack-pickup .work-detail__usability-finding .work-detail__pr
 body.page-nordstrom-rack-pickup .work-detail__usability-finding .work-detail__figure--inline .work-detail__figure-frame {
   border-radius: 12px;
   overflow: hidden;
+  max-height: none;
+  background: #fff;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.28);
 }
 
 body.page-nordstrom-rack-pickup .work-detail__usability-finding .work-detail__figure--inline img {
   display: block;
   width: 100%;
   height: auto;
+  opacity: 1;
+  filter: none;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 body.page-nordstrom-rack-pickup .work-detail__media-pair {
