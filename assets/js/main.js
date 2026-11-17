@@ -3034,21 +3034,9 @@ const initCommunityGalleries = () => {
   }
 };
 
-const WORK_DETAIL_TOC_MIN_SECTIONS = 2;
-const WORK_DETAIL_TOC_SCROLL_OFFSET = "top 112px";
-const WORK_DETAIL_TOC_DESKTOP_MQ = "(min-width: 1320px)";
-const WORK_DETAIL_TOC_MOUNT_RETRY_MS = 100;
-const WORK_DETAIL_TOC_MOUNT_MAX_RETRIES = 60;
-const WORK_DETAIL_TOC_SMOOTHER_WAIT_MS = 5500;
-
-const slugifyWorkDetailHeading = (text) =>
-  text
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
-
-const getWorkDetailHeadingLabel = (heading) =>
-  heading.textContent.replace(/\s+/g, " ").trim();
+const WORK_DETAIL_SCROLL_OFFSET = "top 112px";
+const WORK_DETAIL_SMOOTHER_WAIT_MS = 5500;
+const WORK_DETAIL_SMOOTHER_RETRY_MS = 100;
 
 const getScrollSmootherInstance = () =>
   typeof ScrollSmoother !== "undefined" ? ScrollSmoother.get() : null;
@@ -3091,11 +3079,11 @@ const waitForScrollSmootherReady = (callback) => {
       finish(smoother);
       return;
     }
-    if (Date.now() - startedAt >= WORK_DETAIL_TOC_SMOOTHER_WAIT_MS) {
+    if (Date.now() - startedAt >= WORK_DETAIL_SMOOTHER_WAIT_MS) {
       finish(null);
       return;
     }
-    window.setTimeout(tick, WORK_DETAIL_TOC_MOUNT_RETRY_MS);
+    window.setTimeout(tick, WORK_DETAIL_SMOOTHER_RETRY_MS);
   };
 
   tick();
@@ -3104,7 +3092,7 @@ const waitForScrollSmootherReady = (callback) => {
 const scrollToWorkDetailHeading = (target) => {
   const smoother = getScrollSmootherInstance();
   if (smoother && typeof smoother.scrollTo === "function") {
-    smoother.scrollTo(target, true, WORK_DETAIL_TOC_SCROLL_OFFSET);
+    smoother.scrollTo(target, true, WORK_DETAIL_SCROLL_OFFSET);
     return;
   }
 
@@ -3121,324 +3109,6 @@ const scrollToWorkDetailHeading = (target) => {
     behavior: prefersReducedMotion() ? "auto" : "smooth",
     block: "start",
   });
-};
-
-const createWorkDetailScrollSpy = (headings, setActiveLink) => {
-  if (prefersReducedMotion()) {
-    return { reconnect: () => {}, disconnect: () => {} };
-  }
-
-  let observer = null;
-  let trackedActiveId = null;
-
-  const connect = () => {
-    observer?.disconnect();
-    observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort(
-            (a, b) => a.boundingClientRect.top - b.boundingClientRect.top
-          );
-        if (!visible.length) return;
-
-        const id = visible[0].target.id;
-        if (!id || id === trackedActiveId) return;
-        trackedActiveId = id;
-        setActiveLink(id);
-      },
-      { rootMargin: "-18% 0px -62% 0px", threshold: 0 }
-    );
-    headings.forEach((heading) => observer.observe(heading));
-  };
-
-  connect();
-
-  return {
-    reconnect: connect,
-    disconnect: () => observer?.disconnect(),
-  };
-};
-
-const mountWorkDetailToc = (nav, article, state) => {
-  if (!nav || !article || nav.dataset.tocMounting === "true") return;
-
-  nav.dataset.tocMounting = "true";
-
-  const desktopMq = window.matchMedia(WORK_DETAIL_TOC_DESKTOP_MQ);
-  let mountRetries = 0;
-
-  const clearPin = () => {
-    state.pinTrigger?.kill();
-    state.pinTrigger = null;
-  };
-
-  const restoreToArticle = () => {
-    nav.classList.remove("work-detail__toc--detached");
-    if (state.mountPlaceholder?.parentNode) {
-      state.mountPlaceholder.parentNode.insertBefore(
-        nav,
-        state.mountPlaceholder.nextSibling
-      );
-      return;
-    }
-
-    const hero = article.querySelector(".work-detail__hero");
-    if (hero && nav.parentElement !== article) {
-      hero.insertAdjacentElement("afterend", nav);
-      return;
-    }
-
-    if (nav.parentElement !== article) {
-      article.prepend(nav);
-    }
-  };
-
-  const applyMount = () => {
-    clearPin();
-
-    const smoothWrapper = document.getElementById("smooth-wrapper");
-    const usesSmoother = pageUsesScrollSmoother();
-    const isDesktop = desktopMq.matches;
-
-    if (usesSmoother && !smoothWrapper) {
-      if (mountRetries < WORK_DETAIL_TOC_MOUNT_MAX_RETRIES) {
-        mountRetries += 1;
-        window.setTimeout(applyMount, WORK_DETAIL_TOC_MOUNT_RETRY_MS);
-        return;
-      }
-    }
-
-    mountRetries = 0;
-
-    if (isDesktop && smoothWrapper) {
-      if (!state.mountPlaceholder) {
-        state.mountPlaceholder = document.createComment("work-detail-toc");
-        nav.parentNode?.insertBefore(state.mountPlaceholder, nav);
-      }
-      if (nav.parentElement !== smoothWrapper) {
-        smoothWrapper.appendChild(nav);
-      }
-      nav.classList.add("work-detail__toc--detached");
-    } else {
-      restoreToArticle();
-      if (
-        !isDesktop &&
-        usesSmoother &&
-        getScrollSmootherInstance() &&
-        typeof ScrollTrigger !== "undefined"
-      ) {
-        state.pinTrigger = ScrollTrigger.create({
-          trigger: nav,
-          start: "top 88px",
-          endTrigger: article,
-          end: "bottom bottom",
-          pin: true,
-          pinSpacing: false,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        });
-      }
-    }
-
-    nav.dataset.tocMounted = "true";
-    nav.dataset.tocMounting = "false";
-
-    if (typeof ScrollTrigger !== "undefined") {
-      ScrollTrigger.refresh();
-    }
-  };
-
-  applyMount();
-
-  if (!state.listenersBound) {
-    state.listenersBound = true;
-
-    let resizeTimer = null;
-    const scheduleRemount = () => {
-      window.clearTimeout(resizeTimer);
-      resizeTimer = window.setTimeout(() => {
-        nav.dataset.tocMounted = "false";
-        applyMount();
-        state.scrollSpy?.reconnect();
-      }, 150);
-    };
-
-    desktopMq.addEventListener("change", scheduleRemount);
-    window.addEventListener("resize", scheduleRemount, { passive: true });
-
-    article.querySelectorAll("details").forEach((detailsEl) => {
-      detailsEl.addEventListener("toggle", () => {
-        window.setTimeout(() => {
-          if (typeof ScrollTrigger !== "undefined") {
-            ScrollTrigger.refresh();
-          }
-          state.scrollSpy?.reconnect();
-        }, 80);
-      });
-    });
-  }
-};
-
-const activateWorkDetailToc = (article, nav, headings) => {
-  if (article.dataset.tocActive === "true") return;
-  article.dataset.tocActive = "true";
-
-  const links = nav.querySelectorAll(".work-detail__toc-link");
-  let activeId = null;
-
-  const setActiveLink = (id) => {
-    if (!id || id === activeId) return;
-    activeId = id;
-    links.forEach((link) => {
-      const isActive = link.dataset.tocTarget === id;
-      link.classList.toggle("is-active", isActive);
-      link.closest(".work-detail__toc-item")?.classList.toggle("is-active", isActive);
-    });
-  };
-
-  const state = { pinTrigger: null, mountPlaceholder: null, scrollSpy: null };
-
-  if (!nav.dataset.tocClickBound) {
-    nav.dataset.tocClickBound = "true";
-    nav.addEventListener("click", (event) => {
-      const link = event.target.closest(".work-detail__toc-link");
-      if (!link) return;
-      event.preventDefault();
-
-      const id = link.dataset.tocTarget;
-      const target = id ? document.getElementById(id) : null;
-      if (!target) return;
-
-      const runScroll = () => {
-        scrollToWorkDetailHeading(target);
-        history.replaceState(null, "", `#${id}`);
-        setActiveLink(id);
-      };
-
-      if (pageUsesScrollSmoother() && !getScrollSmootherInstance()) {
-        waitForScrollSmootherReady(runScroll);
-        return;
-      }
-
-      runScroll();
-    });
-  }
-
-  state.scrollSpy = createWorkDetailScrollSpy(headings, setActiveLink);
-  mountWorkDetailToc(nav, article, state);
-
-  if (window.location.hash) {
-    const hashId = window.location.hash.slice(1);
-    if (headings.some((heading) => heading.id === hashId)) {
-      setActiveLink(hashId);
-    }
-  } else if (headings[0]?.id) {
-    setActiveLink(headings[0].id);
-  }
-};
-
-const createWorkDetailTocLink = (heading) => {
-  const link = document.createElement("a");
-  link.className = "work-detail__toc-link";
-  link.href = `#${heading.id}`;
-  link.dataset.tocTarget = heading.id;
-  link.textContent = getWorkDetailHeadingLabel(heading);
-  return link;
-};
-
-const createWorkDetailTocItem = (heading) => {
-  const isParent = heading.tagName === "H2";
-  const item = document.createElement("li");
-  item.className = isParent
-    ? "work-detail__toc-item work-detail__toc-item--parent"
-    : "work-detail__toc-item work-detail__toc-item--child";
-  item.dataset.tocLevel = isParent ? "2" : "3";
-  item.appendChild(createWorkDetailTocLink(heading));
-  return item;
-};
-
-const buildWorkDetailTocList = (headings) => {
-  const list = document.createElement("ol");
-  list.className = "work-detail__toc-list";
-
-  let currentParent = null;
-  let sublist = null;
-
-  headings.forEach((heading) => {
-    const item = createWorkDetailTocItem(heading);
-
-    if (heading.tagName === "H2") {
-      currentParent = item;
-      sublist = null;
-      list.appendChild(item);
-      return;
-    }
-
-    if (currentParent) {
-      if (!sublist) {
-        sublist = document.createElement("ol");
-        sublist.className = "work-detail__toc-sublist";
-        currentParent.appendChild(sublist);
-      }
-      sublist.appendChild(item);
-      return;
-    }
-
-    list.appendChild(item);
-  });
-
-  return list;
-};
-
-const initWorkDetailToc = () => {
-  const article = document.querySelector(".work-detail");
-  if (!article || article.dataset.tocInit === "true") return;
-
-  const headings = Array.from(
-    article.querySelectorAll(
-      ".work-detail__section .work-detail__inner > h2.work-detail__heading, .work-detail__section .work-detail__inner > h3.work-detail__kicker"
-    )
-  );
-
-  headings.forEach((heading, index) => {
-    if (!heading.id) {
-      const slug =
-        slugifyWorkDetailHeading(getWorkDetailHeadingLabel(heading)) ||
-        `section-${index + 1}`;
-      heading.id = slug;
-    }
-  });
-
-  if (headings.length < WORK_DETAIL_TOC_MIN_SECTIONS) return;
-
-  article.dataset.tocInit = "true";
-  article.classList.add("work-detail--has-toc");
-
-  let nav = article.querySelector(".work-detail__toc");
-  if (!nav) {
-    nav = document.createElement("nav");
-    nav.className = "work-detail__toc";
-    nav.setAttribute("aria-label", "On this page");
-
-    const label = document.createElement("p");
-    label.className = "work-detail__toc-label";
-    label.textContent = "On this page";
-
-    const list = buildWorkDetailTocList(headings);
-
-    nav.append(label, list);
-
-    const hero = article.querySelector(".work-detail__hero");
-    if (hero) {
-      hero.insertAdjacentElement("afterend", nav);
-    } else {
-      article.prepend(nav);
-    }
-  }
-
-  const boot = () => activateWorkDetailToc(article, nav, headings);
-  waitForScrollSmootherReady(boot);
 };
 
 const getCaseStudyTitleAccent = (article) => {
@@ -3709,7 +3379,6 @@ const initProjectPageEnhancements = () => {
   initHomeWorkSectionMotion();
   initCaseStudyPreviewVideos();
   initCaseStudyHashTitle();
-  initWorkDetailToc();
   initPlaygroundProjectGridMedia();
   initPlaygroundCarousel();
   initEditorialProjectFilter();
