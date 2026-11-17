@@ -1473,17 +1473,17 @@ body.page-home .home-landing__hero-statement + .home-landing__hero-landing {
   margin-top: clamp(48px, 7vh, 72px);
 }
 
-/* Section headers (Projects) — matcha accent */
+/* Section headers (Projects) — matcha accent; medium step below hero one-liner */
 body.site-editorial .site-section-label,
 body.page-home.site-editorial .site-section-label,
 body.page-home.site-editorial #home-projects-heading.site-section-label {
   margin: 0 0 clamp(18px, 2.4vh, 28px);
   font-family: var(--tj-ff-body);
-  font-size: clamp(2.75rem, 10vw, 6.5rem);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
   font-weight: var(--tj-fw-bold);
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
   text-transform: none;
-  line-height: 0.95;
+  line-height: 1.1;
   color: var(--site-accent);
 }
 
@@ -1495,7 +1495,7 @@ body.page-home .home-hero-projects > .site-section-label {
   body.site-editorial .site-section-label,
   body.page-home.site-editorial .site-section-label,
   body.page-home.site-editorial #home-projects-heading.site-section-label {
-    font-size: clamp(2.25rem, 12vw, 3.25rem);
+    font-size: clamp(1.25rem, 5.5vw, 1.75rem);
   }
 }
 
