@@ -1554,11 +1554,10 @@ body.page-home .home-landing__hero-statement + .home-landing__hero-landing {
   margin-top: clamp(48px, 7vh, 72px);
 }
 
-/* Section headers (Projects / About / Contact) — match About “Amy” accent */
+/* Section headers (Projects) — matcha accent */
 body.site-editorial .site-section-label,
 body.page-home.site-editorial .site-section-label,
-body.page-home.site-editorial .about-page__section-heading.site-section-label,
-body.page-home.site-editorial .home-trailing .contact-page__section-heading.site-section-label {
+body.page-home.site-editorial #home-projects-heading.site-section-label {
   margin: 0 0 clamp(18px, 2.4vh, 28px);
   font-family: var(--tj-ff-body);
   font-size: clamp(2.75rem, 10vw, 6.5rem);
@@ -1576,8 +1575,7 @@ body.page-home .home-hero-projects > .site-section-label {
 @media only screen and (max-width: 575px) {
   body.site-editorial .site-section-label,
   body.page-home.site-editorial .site-section-label,
-  body.page-home.site-editorial .about-page__section-heading.site-section-label,
-  body.page-home.site-editorial .home-trailing .contact-page__section-heading.site-section-label {
+  body.page-home.site-editorial #home-projects-heading.site-section-label {
     font-size: clamp(2.25rem, 12vw, 3.25rem);
   }
 }

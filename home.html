@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="assets/css/agina-icons.css">
   <link rel="stylesheet" href="assets/css/meanmenu.css">
   <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/site-editorial.css?v=20261117section1">
+  <link rel="stylesheet" href="assets/css/site-editorial.css?v=20261117home1">
   <link rel="preload" as="image" href="./assets/images/projects/nordstrom-rack-pickup-filter.png?v=20261117cards6">
   <link rel="preload" href="./assets/videos/sound_transit_capstone_full.mp4" as="fetch" type="video/mp4" crossorigin>
   <link rel="preload" as="image" href="./assets/images/projects/sound_transit_capstone_poster.jpg">
@@ -31,12 +31,10 @@
         scrollToWork = sessionStorage.getItem("homeScrollToWork") === "1";
       } catch (e) {}
       var hash = window.location.hash;
-      var landingHashes = { about: 1, contact: 1 };
       if (hash === "#work" && !scrollToWork) {
         history.replaceState(null, "", location.pathname + location.search);
       }
       if (hash === "#work" && scrollToWork) return;
-      if (hash && landingHashes[hash.slice(1)]) return;
       if ("scrollRestoration" in history) history.scrollRestoration = "manual";
       window.scrollTo(0, 0);
     })();
@@ -44,7 +42,7 @@
 
 </head>
 
-<body class="site-editorial page-home page-projects page-about page-contact">
+<body class="site-editorial page-home page-projects">
   <!-- Preloader -->
   <div class="tj-preloader">
 
@@ -137,13 +135,7 @@
                     <a href="home.html" data-nav-section="home">Home</a>
                   </li>
                   <li>
-                    <a href="home.html#about" data-nav-section="about">About</a>
-                  </li>
-                  <li>
                     <a href="home.html#work" data-nav-section="projects">Projects</a>
-                  </li>
-                  <li>
-                    <a href="home.html#contact" data-nav-section="contact">Contact</a>
                   </li>
                 </ul>
               </nav>
@@ -251,181 +243,6 @@
         </section>
         </div>
 
-        <div class="home-trailing" aria-label="About and contact">
-<section id="about" class="about-page-section" aria-label="About me">
-          <div class="about-page-layout">
-            <div class="about-page-grid">
-              <aside class="about-page-aside tj-fade" data-on-scroll="0" data-delay=".06">
-                <figure class="about-portrait">
-                  <div class="about-portrait__wrap">
-                  <div class="about-portrait__frame">
-                    <img
-                      class="about-portrait__img about-portrait__img--primary"
-                      src="./assets/images/about/amy-about-graduation.png?v=20260618r0000064"
-                      alt="Amy Seunghyun Lee at UW HCDE graduation in a white dress and purple stole, holding a bouquet and mortarboard in front of the Drumheller fountain and brick campus building"
-                      width="682"
-                      height="1024"
-                      loading="eager"
-                      decoding="async">
-                  </div>
-                  </div>
-                </figure>
-              </aside>
-
-              <article class="about-page-main">
-                <header class="about-page-header tj-fade" data-on-scroll="0">
-                  <h2 id="home-about-heading" class="site-section-label about-page__section-heading">About</h2>
-                </header>
-
-                <div class="about-page-story tj-fade" data-on-scroll="0" data-delay=".1">
-                  <p class="about-page__text about-page__text--lead">
-                    <span class="about-page__title-word about-page__title-word--accent">Amy</span>
-                    has worked at
-                    <a href="https://www.nordstromrack.com/" target="_blank" rel="noopener noreferrer">Nordstrom Rack</a>
-                    (improving the online pickup experience),
-                    <a href="https://www.ibm.com/" target="_blank" rel="noopener noreferrer">IBM</a>
-                    (leading discovery and empathy workshops), and
-                    <a href="https://www.soundtransit.org/" target="_blank" rel="noopener noreferrer">Sound Transit</a>
-                    (redesigning their website).
-                  </p>
-                  <p class="about-page__text">
-                    She is also a published researcher at
-                    <a href="https://uist.acm.org/2023/" target="_blank" rel="noopener noreferrer">UIST 2023</a>
-                    (<a href="https://dl.acm.org/doi/epdf/10.1145/3586182.3615815" target="_blank" rel="noopener noreferrer">AR/VR accessibility in sports</a>) and currently working on
-                    <a href="https://www.researchgate.net/publication/403307665_Unseen_City_Canvases_Exploring_Blind_and_Low_Vision_People's_Perspectives_on_Urban_and_Public_Art_Accessibility" target="_blank" rel="noopener noreferrer">AI accessibility in public spaces and art</a>.
-                  </p>
-                  <p class="about-page__text">
-                    Beyond her main work, she builds communities from the ground up like the <a href="https://aggielife.ucdavis.edu/cssa/home/" target="_blank" rel="noopener noreferrer">Cognitive Science Student Association</a> (900+ members) and helps startups like
-                    <a href="https://schedgo.com/" target="_blank" rel="noopener noreferrer">SchedGo</a>
-                    (AI scheduling tool) grow.
-                  </p>
-                  <p class="about-page__text">
-                    Outside of work, she dances, reads, and runs.
-                  </p>
-                  <p class="about-page__text">
-                    Thank you for visiting her page!
-                  </p>
-                </div>
-
-                <div class="about-previous-orgs tj-fade" data-on-scroll="0" data-delay=".14" aria-label="Previously worked for">
-                  <p class="about-previous-orgs__label">Previously worked for:</p>
-                  <ul class="about-previous-orgs__logos" role="list">
-                    <li class="about-previous-orgs__logo" role="listitem">
-                      <img src="./assets/images/logos/ibm.svg?v=20260618reallogos" alt="IBM" width="120" height="45" loading="lazy" decoding="async">
-                    </li>
-                    <li class="about-previous-orgs__logo" role="listitem">
-                      <img src="./assets/images/logos/nordstrom-rack.svg?v=20260618reallogos" alt="Nordstrom Rack" width="148" height="51" loading="lazy" decoding="async">
-                    </li>
-                    <li class="about-previous-orgs__logo" role="listitem">
-                      <img src="./assets/images/logos/sound-transit.svg?v=20260618reallogos" alt="Sound Transit" width="168" height="26" loading="lazy" decoding="async">
-                    </li>
-                  </ul>
-                </div>
-              </article>
-            </div>
-
-          </div>
-        </section>
-
-<section id="contact" class="contact-page-section contact-page-section--editorial" aria-label="Contact">
-          <div class="contact-page__ambient" aria-hidden="true">
-            <span class="contact-page__glow contact-page__glow--left"></span>
-            <span class="contact-page__glow contact-page__glow--right"></span>
-          </div>
-
-          <div class="container-fluid contact-page-layout contact-page-layout--editorial">
-            <div class="contact-page-grid">
-              <aside class="contact-page-aside tj-fade" data-on-scroll="0" data-delay=".04">
-                <figure class="contact-page-portrait">
-                  <div class="contact-page-portrait__wrap">
-                    <div class="contact-page-portrait__frame">
-                      <img
-                        class="contact-page-portrait__img"
-                        src="./assets/images/about/amy-contact-graduation.png?v=20260619contactgrad"
-                        alt="Amy Seunghyun Lee at UW HCDE graduation in a white dress and purple stole, holding a bouquet and mortarboard in front of the Drumheller fountain and brick campus building"
-                        width="682"
-                        height="1024"
-                        loading="eager"
-                        decoding="async">
-                    </div>
-                  </div>
-                </figure>
-              </aside>
-
-              <div class="contact-page-main">
-                <header class="contact-page-layout__intro tj-fade" data-on-scroll="0" data-delay=".08">
-                  <h2 id="home-contact-heading" class="site-section-label contact-page__section-heading">Contact</h2>
-                  <h1 class="contact-page__title">
-                    <span class="contact-page__title-word">contact me</span>
-                  </h1>
-                  <p class="contact-page__direct">
-                    <a class="contact-page__direct-link" href="mailto:amylee041182@gmail.com">amylee041182@gmail.com</a>
-                    <span class="contact-page__direct-sep" aria-hidden="true">·</span>
-                    <a class="contact-page__direct-link" href="tel:+19257855578">+1 925 785 5578</a>
-                  </p>
-                  <div class="contact-page__social" role="list" aria-label="Social profiles">
-                    <a class="contact-page__social-cta work-detail__cta" role="listitem" href="https://www.linkedin.com/in/seunghyun-amy-lee/" target="_blank" rel="noopener noreferrer" aria-label="Amy Lee on LinkedIn">
-                      <span class="work-detail__cta-label">LinkedIn</span>
-                      <span class="work-detail__cta-arrow" aria-hidden="true">↗</span>
-                    </a>
-                    <a class="contact-page__social-cta work-detail__cta" role="listitem" href="./assets/documents/Amy_Lee_Resume.pdf?v=20260627resume" target="_blank" rel="noopener noreferrer" aria-label="View Amy Lee CV">
-                      <span class="work-detail__cta-label">CV</span>
-                      <span class="work-detail__cta-arrow" aria-hidden="true">↗</span>
-                    </a>
-                  </div>
-                </header>
-
-                <div class="contact-page-layout__form contact-page__form-panel tj-contact-section-3 tj-fade" data-on-scroll="0" data-delay=".12">
-                  <div class="contact-form style-3 contact-form--compact">
-                    <div id="contact-form-sent" class="alert alert-success contact-form__alert" role="status" style="display: none;">
-                      Thanks — your message was sent. I will get back to you soon.
-                    </div>
-                    <div id="contact-form-error" class="alert alert-warning contact-form__alert" role="alert" style="display: none;"></div>
-                    <form id="contact-form-3" class="contact-form__fields" action="#" method="post">
-                      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-5000px;width:0;height:0;opacity:0;pointer-events:none;border:0;padding:0;margin:0;">
-                      <div class="form-input contact-form__field">
-                        <label class="cf-label">Name<span>*</span></label>
-                        <input type="text" name="name" required autocomplete="name">
-                      </div>
-                      <div class="form-input contact-form__field">
-                        <label class="cf-label">Email<span>*</span></label>
-                        <input type="email" name="email" required autocomplete="email">
-                      </div>
-                      <div class="form-input contact-form__field contact-form__field--full">
-                        <label class="cf-label">Phone <span class="cf-label-optional">(optional)</span></label>
-                        <input type="tel" name="phone" autocomplete="tel">
-                      </div>
-                      <div class="form-input contact-form__field contact-form__field--full contact-form__field--message">
-                        <label class="cf-label">Message<span>*</span></label>
-                        <textarea name="message" required rows="3"></textarea>
-                      </div>
-                      <div class="submit-area">
-                        <div class="submit-btn">
-                          <button type="submit" class="tj_icon_btn flip-text-wrap">
-                            <span class="icon_btn scale">
-                              <span>
-                                <i class="tji-arrow-right"></i>
-                                <i class="tji-arrow-right"></i>
-                              </span>
-                            </span>
-                            <span class="flip-text">
-                              Send Message
-                            </span>
-                          </button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          </div>
-        </section>
-
-        </div>
-
       </main>
     </div>
   </div>
@@ -445,9 +262,8 @@
   <script src="assets/js/window-shape-animation.js"></script>
   <script src="assets/js/preloader.js"></script>
   <script src="assets/js/gsap-custom-animations.js"></script>
-  <script src="assets/js/main.js?v=20261117eyebrow"></script>
+  <script src="assets/js/main.js?v=20261117home1"></script>
   <script src="assets/js/chat-avatar-fix.js?v=20260622about"></script>
-  <script src="assets/js/contact-form.js"></script>
 </body>
 
 </html>
