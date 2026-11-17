@@ -13981,8 +13981,8 @@ body.page-nordstrom-rack-pickup .work-detail [data-work-detail-title] {
 }
 
 body.page-nordstrom-rack-pickup .work-detail__figure--fav-clip {
-  width: min(100%, 420px);
-  max-width: 420px;
+  width: min(100%, 720px);
+  max-width: 720px;
   margin: clamp(12px, 2vh, 20px) auto clamp(20px, 3vh, 28px);
 }
 
@@ -13997,7 +13997,7 @@ body.page-nordstrom-rack-pickup .work-detail__figure--fav-clip video {
   display: block;
   width: 100%;
   height: auto;
-  max-height: min(52vh, 360px);
+  max-height: min(62vh, 520px);
   object-fit: contain;
   object-position: center center;
 }
