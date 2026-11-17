@@ -3500,6 +3500,14 @@ const getHomeNavKeyFromLink = (link) => {
   if (link.dataset.navSection) return link.dataset.navSection;
 
   const href = link.getAttribute("href") || "";
+  // External connect links live in the same nav list but are not section spy targets.
+  if (
+    href.includes("linkedin.com") ||
+    href.includes("Amy_Lee_Resume.pdf") ||
+    link.getAttribute("target") === "_blank"
+  ) {
+    return null;
+  }
   if (href.includes("#work")) return "projects";
   if (/^(?:\.\/)?home\.html(?:[#?]|$)/.test(href) || href === "" || href === "#")
     return "home";
