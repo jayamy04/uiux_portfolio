@@ -2261,7 +2261,9 @@ const initHomeProjectGridMedia = () => {
 };
 
 const initHomeHeroProjectVideos = () => {
-  const heroVideos = document.querySelectorAll(".home-hero-projects__thumb video");
+  const heroVideos = document.querySelectorAll(
+    ".home-hero-projects__thumb video, .home-project-portrait__media"
+  );
   bindContinuousLoopVideos(heroVideos, { pauseOffscreen: false });
 
   if (prefersReducedMotion()) return;
@@ -2727,9 +2729,13 @@ const initHomeHeroProjectBento = () => {
     });
   });
 
-  root.querySelectorAll(".home-hero-projects__thumb video").forEach((video) => {
-    ensureLoopingVideo(video);
-  });
+  root
+    .querySelectorAll(
+      ".home-hero-projects__thumb video, .home-project-portrait__media"
+    )
+    .forEach((video) => {
+      ensureLoopingVideo(video);
+    });
 };
 
 const initHomeWorkSectionMotion = () => {
