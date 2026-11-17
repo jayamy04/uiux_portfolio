@@ -14285,9 +14285,9 @@ body.page-nordstrom-rack-pickup .work-detail__figure--fav-clip .work-detail__fig
 
 body.page-nordstrom-rack-pickup .work-detail__figure--fav-clip video {
   display: block;
-  width: min(560px, 52vw);
+  width: min(480px, 46vw);
   height: auto;
-  max-width: 560px;
+  max-width: 480px;
   max-height: none;
   object-fit: contain;
   object-position: center center;
