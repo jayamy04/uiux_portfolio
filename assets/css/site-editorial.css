@@ -14267,11 +14267,15 @@ body.page-nordstrom-rack-pickup .work-detail__figure--fav-clip {
 
 body.page-nordstrom-rack-pickup .work-detail__figure--fav-clip .work-detail__figure-frame--video,
 body.page-nordstrom-rack-pickup .work-detail__figure--fav-clip .work-detail__figure-frame--editorial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   max-height: none;
+  min-height: min(42vh, 360px);
   border-radius: 14px;
   overflow: hidden;
-  background: #0e1510;
+  background: #0a0f0c;
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.05) inset,
@@ -14280,12 +14284,13 @@ body.page-nordstrom-rack-pickup .work-detail__figure--fav-clip .work-detail__fig
 
 body.page-nordstrom-rack-pickup .work-detail__figure--fav-clip video {
   display: block;
-  width: 100%;
+  width: auto;
   height: auto;
-  max-height: none;
+  max-width: min(42%, 280px);
+  max-height: min(48vh, 400px);
   object-fit: contain;
   object-position: center center;
-  background: #0e1510;
+  background: transparent;
 }
 
 body.page-nordstrom-rack-pickup .work-detail__figure--fav-clip .work-detail__figure-caption {
